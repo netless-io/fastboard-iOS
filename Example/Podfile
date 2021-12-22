@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'Fastboard_Example' do
+  pod 'Fastboard', :path => '../'
+
+  target 'Fastboard_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
