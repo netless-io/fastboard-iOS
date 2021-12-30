@@ -8,18 +8,30 @@
 import UIKit
 
 public struct DefaultTheme {
-    static var defaultLightTheme: ThemeProvider {
+    public static var defaultLightTheme: ThemeProvider {
         let map: [ThemeComponentType: UIColor] = [
-            .background: .systemBlue
+            .background: .white,
+            .border: .gray,
+            .controlSelected: .black,
+            .controlSelectedDark: .black,
+            .controlNormal: .black,
+            .controlDisable: .gray,
+            .controlSelectedBg: UIColor(hexString: "#EAF2FF")
         ]
         return { type, collection in
             map[type]!
         }
     }
     
-    static var defaultDarkTheme: ThemeProvider {
+    public static var defaultDarkTheme: ThemeProvider {
         let map: [ThemeComponentType: UIColor] = [
-            .background: .systemYellow
+            .background: .black,
+            .border: .gray,
+            .controlSelected: .systemBlue,
+            .controlSelectedDark: .blue,
+            .controlNormal: .black,
+            .controlDisable: .gray,
+            .controlSelectedBg: .systemGray
         ]
         return { type, collection in
             map[type]!
@@ -27,7 +39,7 @@ public struct DefaultTheme {
     }
     
     @available (iOS 13, *)
-    static var defaultAutoTheme: ThemeProvider {
+    public static var defaultAutoTheme: ThemeProvider {
         let light = defaultLightTheme
         let dark = defaultDarkTheme
         return { type, collection in
@@ -39,6 +51,8 @@ public struct DefaultTheme {
                 return light(type, collection)
             case .dark:
                 return dark(type, collection)
+            @unknown default:
+                return light(type, collection)
             }
         }
     }

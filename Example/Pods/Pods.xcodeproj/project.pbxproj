@@ -1,0 +1,2454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0021FD3F592FC7F065A208419FB25A48 /* WhiteRoomCallbacks+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = B6968EB1C97D0781A55E8A7DF245AEE4 /* WhiteRoomCallbacks+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		020E04A09A59C0574363DF50FC47E6F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
+		03377B78A2276AD1D5CF4CE1C411A6B0 /* WhiteSceneState.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FB8CE294472973C42225949A067D08 /* WhiteSceneState.m */; };
+		050B5BF9890C11E34205E0EA12E15785 /* WhiteScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C71CA87FCA42F763A1DD233A888C7D4 /* WhiteScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06DFCA6B42CFA03A0E5354D15D1DF224 /* WhiteConversionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3234B572F8CA7DF47B9E53D7DAAE23E7 /* WhiteConversionInfo.m */; };
+		0AF86D2D94CBEABEAD4A01C82F356826 /* WhiteDisplayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E4C4B21F642F1C2464470AA3FD85788F /* WhiteDisplayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B8A5EE6F3BEE8F06740663DBB362A8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
+		0B9E9282E067C2941FFACC57D71C2031 /* WhiteRoomConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 98449AF19D7DFC1BBEE207A001123226 /* WhiteRoomConfig.m */; };
+		0BF6ABCBD0CA0ACD5A7853EDC9AE7D97 /* runtime.36e3f0da.js in Resources */ = {isa = PBXBuildFile; fileRef = 5B2C9153CFF1F03048C2A97F71A796EF /* runtime.36e3f0da.js */; };
+		0FBE3DCAF87E8946F5C3928A789EE93A /* WhitePlayerEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 8243995A2FD3F02E5D58711979DB6D82 /* WhitePlayerEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11239D57B5B31DE928A58FB1AF74BB90 /* WhiteConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D136A70D584D8FFEA0704031EA49E9 /* WhiteConsts.m */; };
+		1360FCE0DF4E8C16198FF9AF3970DD8C /* DWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B7B76D1C6B3D29E056431DB34B2EC9 /* DWKWebView.m */; };
+		13C5A966379C1ED336166E3474BC55CA /* Whiteboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08407D7362EF1A3F477665A92A4ECC7C /* Whiteboard-dummy.m */; };
+		14ABACB725CC2CFF1D4D8456AE5A4A4D /* FastError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68A3C588D074050E2F682F40E0695D /* FastError.swift */; };
+		152F5BEDC3CB5854C693F8C22661509E /* WhiteWebViewInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = F7263074588024F2EC7DD9E7D7261A06 /* WhiteWebViewInjection.m */; };
+		15A84DF6011C942FB21349868E94C4A4 /* Fastboard-Icons in Resources */ = {isa = PBXBuildFile; fileRef = 92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */; };
+		16F051F99FF1D954786298BE39518FF0 /* WhiteMemberInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = A94A1201930D7AC1B9007928F64D3349 /* WhiteMemberInformation.m */; };
+		19202E362EC7515783FF77AC7FB7BD71 /* WhiteMemberInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = C5293091F0F03B645A6E11C120DA045A /* WhiteMemberInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A09DCC8708BC5B8634A983D88507519 /* WhiteFontFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A20502CF85EB28457D2DC3442115F32 /* WhiteFontFace.m */; };
+		1BD936EC8F87F47CD6A6454842B7D3C4 /* WhitePanEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE777CE592477A2EF4F2579F6A64ECC /* WhitePanEvent.m */; };
+		1C977B41907D1AC5179BB964DBB3431C /* Pods-Fastboard_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC21DE136DBA898B87DB23107F1CCE5 /* Pods-Fastboard_Tests-dummy.m */; };
+		1F6C11FD1C5767538DB2B93AF661CB3E /* Pods-Fastboard_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F55C1CFDEEA7CD57CF273E63186639D /* Pods-Fastboard_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		208CA07616BFEAB732B4BFBE4A331001 /* WhiteRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 295D029F9742EB079144C1C9B2AFE56D /* WhiteRoom.m */; };
+		2110B5D991955702A8FD1DF197F5C493 /* WhitePptPage.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2FBA144597BD8CF4C24740F79CF4D4 /* WhitePptPage.m */; };
+		228158BE2A8D78F030545F3749F04BE2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61ED79B8053194CAB40D1ACB7A14CDC6 /* Icons.xcassets */; };
+		2307E835A200395FD3B3A91B8878CA52 /* WhiteVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4E25DB577BFA0BBD6C4540957EB8C /* WhiteVideoView.m */; };
+		242546290EB07148E8C56FC7C9F38344 /* WhiteSDK+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 93FB2F54B7FA41AA3B319D27C70E3D7F /* WhiteSDK+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		24807F28298BDB94EF0F526B5833A381 /* UIImage+tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C0512014E70DD42BF316E3ADC0FD5 /* UIImage+tint.swift */; };
+		2C986AE043621EF94034CF79F0C32473 /* WhiteSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E6661825E08D85036637A7B5A2229F /* WhiteSliderView.m */; };
+		2D02392F358CE5D311C8C6227623259A /* WhiteMemberState.m in Sources */ = {isa = PBXBuildFile; fileRef = 821CB375AC8A132417D1900296E289C1 /* WhiteMemberState.m */; };
+		2D1E5A90B103C5023F9AD49A456BE607 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
+		32744A6399361309E2F49AE4DD626D1C /* WhiteSdkConfiguration+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D3B24A4A9C2992785A2489FC58961FD /* WhiteSdkConfiguration+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		33075DB048B6BBFF83E60FC0D6685193 /* Whiteboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 84EED637E6C0E9C99DECAF01C88979E1 /* Whiteboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		342541DDD76574AC9468C83A9F572B85 /* main.50f2aeb1.js in Resources */ = {isa = PBXBuildFile; fileRef = ED165D8AD74311DBF37B76765B30164A /* main.50f2aeb1.js */; };
+		34A25AB11AA55E9F0EBFDF3E4CA0AA39 /* FastOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperation.swift */; };
+		354FEEE46848346CB5C077D533E1AF43 /* WhiteSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA7A62B1495B6116C1F9B133F3FE9AE /* WhiteSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37AAF86D3054D550591913945F3C7B2C /* WhiteCameraConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B138E4FC360B205C24C88A0D95B0A0E7 /* WhiteCameraConfig.m */; };
+		37FBC1E55A765DD042EA0FF38F3247CC /* WhitePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 337902F011ED411F6497F482170B0E35 /* WhitePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AFC3AD00C5F7EE343AAFBE08EC942B9 /* dsbridge.h in Headers */ = {isa = PBXBuildFile; fileRef = DF41905968762E15C39B99525BB00123 /* dsbridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B9B9996CD662B6F5254BCA9DEF921B3 /* f0d404d in Resources */ = {isa = PBXBuildFile; fileRef = B433A001522FB26960218F1BD51FF845 /* f0d404d */; };
+		3BFAD7618BB45534949A6DDAC4F88E1B /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C2569403A10795724419A772FB3F5AE /* YYClassInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C8F9620D0A2CCE8FE88B8CED7F33247 /* WhiteImageInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F40917D5EB5D27BADD898AA7C8A667 /* WhiteImageInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		409BC4E7209C8E444B11AB4F3B2FFC84 /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A5FE84C70A94A4551D743594435F33 /* DelegateProxy.swift */; };
+		40C8FEB98CC5618DE644351535043D83 /* WhiteCombinePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A25623FBADF1E2465C74B4E6CD3F39 /* WhiteCombinePlayer.m */; };
+		444DD93F2626DC3568D57A5295D691F7 /* WhiteRoomMember.h in Headers */ = {isa = PBXBuildFile; fileRef = 119BD010430C72E94B32D3D59F92DB2F /* WhiteRoomMember.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		445F5F5BC367380F8B1F0B65805413A2 /* WhiteCameraState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2030D951C948C1EF3E6D831CADA319C1 /* WhiteCameraState.m */; };
+		476DD36DAE0E47EFE0D43110A67DAB3A /* WhiteSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = FF869E507F43F15C20217C79353C593B /* WhiteSDK.m */; };
+		4A9DF0C7B2EE846FDF07BE9A76C14A3E /* WhiteConversionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 352DA653397A0CAD35220BC6D930A27D /* WhiteConversionInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4ABFAD71C90BEF2D6FCDA9BE2AE26F59 /* vendor.782af06e.js in Resources */ = {isa = PBXBuildFile; fileRef = 203B62947EE0E9D36501BA7F1990A29B /* vendor.782af06e.js */; };
+		4C8555534BE06A3929714EC1E745B4C0 /* WhiteRoomMember.m in Sources */ = {isa = PBXBuildFile; fileRef = A99DFAB9ABDEB0A959ECF27F89E387BF /* WhiteRoomMember.m */; };
+		4EAC78726CDD024BBA1D8349A4694BFC /* WhiteImageInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6997D44AD9468EA0CEAE3793F458379D /* WhiteImageInformation.m */; };
+		4F9BA3FEE945910F073672EF4556F68E /* WhiteBoardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 61ABCB52C8C402B037E33723B4290E3E /* WhiteBoardView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5202B07DF6F6D038D95C579F78E5ABB0 /* WhiteDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10EFA216234E35C752A9BDB0ECCF97 /* WhiteDisplayer.m */; };
+		5262B8138975DBACDE2D9E1AA97F4B4B /* WhiteAppParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 2119C6A3AC8B006FDF273EF4912F372E /* WhiteAppParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		529C7F91442DCBC737529551CE66B38F /* WhiteCameraBound.h in Headers */ = {isa = PBXBuildFile; fileRef = 61595DAD7A7889830F76B9F8E26DA9AE /* WhiteCameraBound.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52CB56920D70711E68ADDAA1939F2483 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C32E67C7E868B151C340EEC3A0FD93 /* YYClassInfo.m */; };
+		568331A4392DB07F4D2A2ADBEB3B1496 /* WhiteWebViewInjection.h in Headers */ = {isa = PBXBuildFile; fileRef = D6CF8D952B31B127C955BF6244BEBC8D /* WhiteWebViewInjection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58C66F60848EF6EEA6F3A12BCCB6223F /* WhiteRoomState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435C910206F57DDAD32E52ADD3FE919 /* WhiteRoomState.m */; };
+		5916B360F9B3A335D24A17446A7B6540 /* WhiteCommonCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = DE495D52F0C82F26F918BC7993E6AD62 /* WhiteCommonCallbacks.m */; };
+		5A4CD89FFDE2D3692B21D186DD6C9EC1 /* WhitePlayerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ADC3B1E2E3B5E65A5360BF28EF0F46 /* WhitePlayerEvent.m */; };
+		5A8D62D4B888939EBF806E40E5B3A584 /* FastboardSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D2632A242B9C1873D2DD27D53FA2C /* FastboardSDK.swift */; };
+		5A8FF684705E80300E1B0ED233BB5413 /* WhitePlayerState.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC800E542CE9468B4DCB2A9F4A79977 /* WhitePlayerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D2057742225843F2848890424ACA0CD /* WhitePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4129EDD3EEE923F068FB07F08D1F7352 /* WhitePlayer.m */; };
+		5E7645564C7C032A0A817E67551BD247 /* WhiteSceneState.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA8990E3CC8155317BCC9645E55B86E /* WhiteSceneState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E8E3A9296CB81681A6FBE2ECE7FE3B9 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C2CAA5E8ADFEE0055D9B090D4671CBBF /* index.html */; };
+		601E5396301E13EDB2F6EF9C3B6E50B8 /* vendor.fb021a05.css in Resources */ = {isa = PBXBuildFile; fileRef = 367B623D17670FBD735F92E43E039764 /* vendor.fb021a05.css */; };
+		622A8EF71080DED9A5E0086AB4A35E78 /* FastProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B7F000687B6A36876017DF0D04CFEC /* FastProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66839F5F668444EA29DC394DAC0887CF /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A7A16EA12781F32BB500A80733FDA /* ControlBar.swift */; };
+		66D947A64DE11F89FC37B42FE99CB459 /* Fastboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6102925A14B5182332638E37A7E4C1F5 /* Fastboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6840252AAABA27CC447A76A7044C8191 /* WhiteRoomCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF10A5C85F1B482B22B393262F75896 /* WhiteRoomCallbacks.m */; };
+		6CABD7A699DB0B762B931940FEA58FF0 /* InternalApis.h in Headers */ = {isa = PBXBuildFile; fileRef = 2520F5E28F24CA090FC7DF2F3DCA11AD /* InternalApis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CC621A5CB53EC335610A0495FD937BB /* WhiteObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 87CFA5A02844B1A09EFE984788F45C08 /* WhiteObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71E9C00AC6CD2D461D832F31CDC36663 /* Pods-OCExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 445B98484705D0C33F331764BA570A12 /* Pods-OCExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71F801B04AAEE1FF891E02F5C6762FBD /* WhitePanEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3115CF6B34DAD697ACC6752CC8A616 /* WhitePanEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73C6616C46E02F5B26F3644A0D155879 /* WhiteRoom+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 31622D73C5D9CC888CE6267EEA8F9C4D /* WhiteRoom+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		73ED5AFF6DF6BBD73E212BB8929F09A2 /* FastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C56123025440D10A540CDC32DDAC9D /* FastboardView.swift */; };
+		74A6CB826C743E4C2804ACAF94F3AAFF /* InternalApis.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4196C1739DDE08EEF8B75B063E4DEB /* InternalApis.m */; };
+		755D3D6C419E5451E41FF39734D7DCE9 /* main.1413e9a0.css in Resources */ = {isa = PBXBuildFile; fileRef = EABAC8A666C489670B969F85B5D083BC /* main.1413e9a0.css */; };
+		7656FA58426D54769FC4A5BF35B155F2 /* WhiteCombinePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB5C1B4F1557D2E00F4B3E52EF36AA6 /* WhiteCombinePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77CE5613BD967BA21C783B45C7E56049 /* WhiteSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C1E9B542001230F3F0626FFA04B1F30E /* WhiteSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A41A29CA8E8DCAE51B532986E57F16B /* WhiteBoardView+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0A8707694EAF00B6875C7ADF421C5C /* WhiteBoardView+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		7A43519619455E8266F200FE078DFC68 /* WhitePlayerConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 38BF18EB7DD3B150F59CD161F43F72B2 /* WhitePlayerConsts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B4DBEDE1083B74A870ED54A2BDF7F5C /* WhiteDisplayerState.h in Headers */ = {isa = PBXBuildFile; fileRef = 917DF701236760ABAA66FB14DCA5623C /* WhiteDisplayerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C49934D13091FFB0AD70EAD15099C6E /* WhiteSdkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3788042F219E915A901F20F5CB6CCA /* WhiteSdkConfiguration.m */; };
+		7CC1608A8C6464974796BC09E2F781B3 /* WhiteRoom.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A81B968AD60634605429E547A808E54 /* WhiteRoom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80939A21B6F658B7F43BE537E3C201C7 /* WhiteRectangleConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A18F0845B59331AC1880F42307A2C2C2 /* WhiteRectangleConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		809B2B92DE68A59F57C74D4420E4A9DB /* DSCallInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = C89640F3076138B3C33DCBDE48C55E1D /* DSCallInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		822E7BECE2B4BE6922636790A8909D06 /* WhitePlayerEvent+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 228574B201D5A136D98E4312483F8E67 /* WhitePlayerEvent+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		83706BFD5E7A16DE19C47C7A21E1EEAC /* WhiteDisplayerState.m in Sources */ = {isa = PBXBuildFile; fileRef = A218D70B15A5EF99EDA1C4EB4C587FD7 /* WhiteDisplayerState.m */; };
+		843219C3E31DE139CA67FC95327D66E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
+		86067F07AE66A0102E8733E745E926C6 /* WhitePlayerConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D792892B317DA3004FBCBE10843132 /* WhitePlayerConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86D4A83309AB74480302B863817D13D0 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280B6E6AB6D8532395C6689D1FBF03D5 /* DefaultTheme.swift */; };
+		8AA434E3277D9BEA003681E6 /* SubPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E2277D9BEA003681E6 /* SubPanelView.swift */; };
+		8AA434E5277DA1A9003681E6 /* IndicatorMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E4277DA1A9003681E6 /* IndicatorMoreButton.swift */; };
+		8AA434E7277DB100003681E6 /* UIImage+ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E6277DB100003681E6 /* UIImage+ColorItem.swift */; };
+		8AA434E9277DB287003681E6 /* UIColor+Convince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E8277DB287003681E6 /* UIColor+Convince.swift */; };
+		8C817FE6C2EDF7DC2D0A5AA47BBEF9E2 /* web-sdk.e60073fb.js in Resources */ = {isa = PBXBuildFile; fileRef = 969DF64AD1756056D150A6E6618D24E2 /* web-sdk.e60073fb.js */; };
+		8F386DA46B07EF785820337AE78AFE4E /* DWKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EFEEB1DC97BE02F46C74BC6E3E3BAA /* DWKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9226E32DE6A70F14C141E0B3DE033A20 /* Whiteboard-Whiteboard in Resources */ = {isa = PBXBuildFile; fileRef = B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */; };
+		9728340DA7A4AEA41C5D97EC2EB281D8 /* WhiteConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DFB0FA271CDBC9EDFC58212A19A4A0 /* WhiteConverter.m */; };
+		9734A01735BA4623F83F1F1A4958ABFD /* WhitePptPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C27F43783321EBE2A8DDE7731A2B1AD /* WhitePptPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98E5505C9E7340B038ACE23EF1D49625 /* UIImage+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C36CCA1A8AC7A44B65240B65275724 /* UIImage+Bundle.swift */; };
+		9911D64B71294F1A195C3A7490C38B7E /* WhiteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E468A58725324ADA83525E4AA1B9613 /* WhiteObject.m */; };
+		99DCAC3F8B3E70E3B3A701516F91CADF /* Pods-Fastboard_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DC32DDBFB2DD21679673B799A0D661 /* Pods-Fastboard_Example-dummy.m */; };
+		9A4EC5F865A8B16ADB972E169F1938F3 /* WhitePlayerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B8D2E5DA5ED38842D3C0B9417042E /* WhitePlayerState.m */; };
+		9CFA6E1B5FEB201C001E749B6F82C919 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93DB95A6C32DA31668145D91D5B911A /* WebKit.framework */; };
+		9D46B90674275EB1B5DD063509F1F943 /* WhiteRoomState.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D01C3EC3F35164E2E82B3DE5A2030E0 /* WhiteRoomState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A01217DADEFBA88EDDCAD99D35926F43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
+		A3617B5C92A335F9E4DA4690B52C3690 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D425F910C53921FA9F2D9BA07E3E288 /* NSObject+YYModel.m */; };
+		A47F8F33B3FC8335E77576E671E5116C /* Pods-Fastboard_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B17B75DA2006373B580596BBDFB6C514 /* Pods-Fastboard_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4E6DD66C27BFA66A6FAFBBE7BAC7872 /* WhiteAudioMixerBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = ECDF04182E6B5E5042A8B5A28617F224 /* WhiteAudioMixerBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A61D8570183A8D50D8D543DA4889D6AA /* WhiteSDK+Room.h in Headers */ = {isa = PBXBuildFile; fileRef = 028868712BF7EA39998AB2B656B0542C /* WhiteSDK+Room.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A877157EFB4B2DC40909475F141D9999 /* Fastboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2AB580355356AE57F2B896E3939B4 /* Fastboard.swift */; };
+		A8E26226601C76B2A365EFDEA7795179 /* WhiteSDK+Replayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A4FB9B4B3A8103935E499EB42E5A54 /* WhiteSDK+Replayer.m */; };
+		AE1623BDC16616A49B3899AC346F5CBC /* WhiteSDK+Replayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 52ADFA2C1AE9B1B587565F094E4E3882 /* WhiteSDK+Replayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE375B7FF4FD4A7E6D4EB4550F7AAC67 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
+		AEF7C51E238000A1272FB60AC829F2B9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2338967813D2B6011268E4CADBECB798 /* CoreFoundation.framework */; };
+		AF8131EC31B6B2691C39D87F0CC5E6E9 /* WhiteGlobalState.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A61B09EF2BB3B690A7F9975703E6E7 /* WhiteGlobalState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B012DC76AFA698A79564E6174F397C8E /* WhiteCameraBound.m in Sources */ = {isa = PBXBuildFile; fileRef = B38F89BF1A0BF5F842BAD009E363E479 /* WhiteCameraBound.m */; };
+		B119C3960E69F54FE75A30CA9C565747 /* WhiteCameraConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B37EC1C4C7B3D1E95B5DA189143C44E2 /* WhiteCameraConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B196099F6E4773A4322B362AF690D59C /* dsBridge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9DF6FBFADFA4ADE827A35854964F1B /* dsBridge-dummy.m */; };
+		B36F45E8FD762D24CA81FB5A6AE9CEE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
+		BCF76B8DCD02F11D1FA5BF8345A49756 /* WhiteConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 890859F347689407D7D8A1260ECCE5BE /* WhiteConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDE73B103FA42BCBB8ADCCE369E355CB /* Whiteboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 594760CF8E84188B2717825E5BA3E68E /* Whiteboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEDEA297651C1A728BB3DD27883E7F1E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F78F729959C350C47985B2E93F8E9A4 /* AVFoundation.framework */; };
+		C2EB0781B9A07F45C00179D9C4318EC1 /* FastboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65B7E53D55C064EEF6CA5FA9C48FE76 /* FastboardDelegate.swift */; };
+		C314B62E8F0D64FA0910E240CF600037 /* WhitePlayerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F46F6C91E8CEDBCB0EB514AE819B3CE /* WhitePlayerConfig.m */; };
+		C83F56DB5CEB2341C62CB9E0277EDC88 /* WhiteCommonCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 31DEEA0EE8F76758C8A758DD964AB99E /* WhiteCommonCallbacks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA9B99345CBE1EBF4E8041DA7B8D0336 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADC6B98B40C4E9C2A22152274E4475 /* Theme.swift */; };
+		CFF17291385779885F3538B73DAF599A /* WhitePlayerTimeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0967983659A08C4024B6B993772CC0 /* WhitePlayerTimeInfo.m */; };
+		D2487D63708E17C47E815CC08BA0D64F /* JSBUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4847EBE73B9A34DA30E153D9163AEF /* JSBUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4D3DA4E0E96068B7753DF79529CE056 /* dsBridge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2379E1CA201EF2556D3ADCC376B51AAC /* dsBridge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6A626F1030D28E454AA98837FA0098E /* WhitePlayerTimeInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 61511E17D8A573BF39CE4AA401670ACC /* WhitePlayerTimeInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6FEA4ABA12C8FB482C98E890E0B5682 /* WhiteAppParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D756C0A5DF064AA869D6A64FED91AE /* WhiteAppParam.m */; };
+		D9B452DC3F911117E0F49CEBB9DE8066 /* Fastboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2971774A325A84693BD4D24C66A779E1 /* Fastboard-dummy.m */; };
+		DB2379C6C1DD1D8C1832CA8B10F4FFDB /* WhiteConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB0BD471C0573CBB8307E8F046AAEB1 /* WhiteConsts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB629F9EDB50EA0DBD77ECDE1A978597 /* DSCallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E88E784719A85656978842CE9082F /* DSCallInfo.m */; };
+		DBA5F78549A4C1ADEBF93221AE84C70B /* WhiteMemberState.h in Headers */ = {isa = PBXBuildFile; fileRef = D4CC4AE1932AB0B9113BDBDBF7C66CBE /* WhiteMemberState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDE97AAF94D4C34CD997869FA6075426 /* JSBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6485BBA6A9DEEBA2F36A67C79EEC5 /* JSBUtil.m */; };
+		DF0132585AE5D95D927EA39D54747692 /* WhiteCameraState.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FE0BB73299C4DCC4A2C2D7DC99334D4 /* WhiteCameraState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF81688716C9E35B952BAEC1CD7BA718 /* WhiteBroadcastState.h in Headers */ = {isa = PBXBuildFile; fileRef = 306729FDC1063C0B15D83B31557E728F /* WhiteBroadcastState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E067E6765FDAC9151272D5ED5A94AEC3 /* WhiteBroadcastState.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CEA3AB3F6DE41A7116DA8E7CFE9EBB /* WhiteBroadcastState.m */; };
+		E3D3AB4B1E36A92A2CB3F377E049B0BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
+		E3F8A335602DCFE875509A3A28431F52 /* WhitePlayer+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E09ACDF0FE13D8B07513FC99879DB671 /* WhitePlayer+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E4D5A6B548391B58175512AC26169974 /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = EB4C694A12854BBF9125BB3EED614A94 /* NSObject+YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E53EA17C9037A65A6B65384DCA578F31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
+		E55085665CDE09E03CFA5FDCC2A53B70 /* WhiteAudioMixerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2070E6FEA0728DDE413E45B6E8210CE7 /* WhiteAudioMixerBridge.m */; };
+		E5D313C5174B8067DC6D7C1A8D293145 /* WhiteSDK+Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 353F65D9B8B5310F93116208E0B7A2DF /* WhiteSDK+Room.m */; };
+		E64027F04C9769054BCB59A06A4F734F /* WhiteFontFace.h in Headers */ = {isa = PBXBuildFile; fileRef = 48004DC0509BE07102F95557072639A9 /* WhiteFontFace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E659A36EBB06C6D9FE5BE80057C3F6F6 /* WhiteEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = BB9317B596DF8C83613793F4237EEB9E /* WhiteEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E80308E7F2DDF2476D00591100C238EC /* FastProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7086EE5EEE6C55A15AEAE3B55DB0519 /* FastProxy.m */; };
+		E9EB0B118CBEAD3801697C7537D973C2 /* YYModel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A0D2D713854B423062D8CC7BBBA0CD /* YYModel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB9CE5C0488C31ED726A77DEA82D426E /* WhiteVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B61BEE9811D2C0DFAF8186DD5D9C310 /* WhiteVideoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECA1F7B6934091A8E7E453F43F30A7F5 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160540BC3EF27BD0DA5534AD0A3DBF48 /* ThemeManager.swift */; };
+		EEE473AA1528A565F0F0D76410033070 /* WhiteDisplayer+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D4060B76E3E279D126455E95619BA6D /* WhiteDisplayer+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EF2712F3555C5DD66FA06CAF9FE15ABD /* WhiteRoomCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E9613DC836E2A5CCE370C0582CB323B /* WhiteRoomCallbacks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF60DAD9FFCF94987CC32F5FBC47DB04 /* Pods-OCExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF739FC3CBF82E15AEA919F30A88116 /* Pods-OCExample-dummy.m */; };
+		EFA8666CDFC4D3B4D249491723E493E7 /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD764E23A52B265169D89C489611345 /* YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0DFC32C79349FD81EA48A56D7742FC4 /* WhiteScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C114286DACF2AA5F0A54BCF34133B9 /* WhiteScene.m */; };
+		F10272BB1685F1EB8984421C405ADAB6 /* WhiteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 73685DA04710DF9B8B86C2949CF3587B /* WhiteEvent.m */; };
+		F15B147814C57F6DC7FAC58B37DDC373 /* WhiteRectangleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FC30C29BD9C56D321A05FE20C07919 /* WhiteRectangleConfig.m */; };
+		F4E40F7F24515C05F7A71F8E748C0ACC /* WhiteRoomConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = D88391318EF8C9AF20E77B075632DED7 /* WhiteRoomConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F84A652040A992B95C64A88A236595E4 /* WhiteSdkConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B94127585E77A155F6B66E9504586ED /* WhiteSdkConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F969343D0E679F2F2722E8E8BDC73E98 /* YYModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A614B253CE19757C11259C0F4CECDF /* YYModel-dummy.m */; };
+		F97D05458CEA13447F5FDB9571711062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
+		FAD39FFF2F4C0E4415F1A596ACCF5D4D /* WhiteGlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3E08C4E2C332573BDC6A97EC968D95 /* WhiteGlobalState.m */; };
+		FBF6E941013E5879B96E221153C21B68 /* UIColor+NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E7B0893BDB676AEA51DE54CB221FBD /* UIColor+NSNumber.swift */; };
+		FD2523272C84EA7A258304B666E7FF61 /* WhiteBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 457916281B8E52E61ECBE45F146032C5 /* WhiteBoardView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11A232BFA75B60D5403040560590A223 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84B44807A12996D487A4A591A481D6A0;
+			remoteInfo = YYModel;
+		};
+		34865C61F68B52F6D0C4D8BA9234C8FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A6F633BD0A4B9EF892715BEB76AC948;
+			remoteInfo = dsBridge;
+		};
+		364D6ABC49EB0334E1F4CDBAD46ABE07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74C38FD99466DAF9B1FB86943AFC4A50;
+			remoteInfo = "Pods-Fastboard_Example";
+		};
+		56DA11F4D96DD523C7C68439440ABBEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 887E769F555AF76F514A7276E2BA1CB8;
+			remoteInfo = Whiteboard;
+		};
+		6F2DE524E3B4BA88B92BEB6F90C1E548 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A6F633BD0A4B9EF892715BEB76AC948;
+			remoteInfo = dsBridge;
+		};
+		741B5C27033B296857674D8B2B19E301 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EB9E06B4A4636CA9288D815FC9DBFC5;
+			remoteInfo = "Whiteboard-Whiteboard";
+		};
+		784B188807B82A1882FB28F063DCC01B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 887E769F555AF76F514A7276E2BA1CB8;
+			remoteInfo = Whiteboard;
+		};
+		8B96258A024287059E8F49D854D3B755 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 750579D9E74AA25AB515AD198A40FF8D;
+			remoteInfo = "Fastboard-Icons";
+		};
+		95CB49AC98F0CD4A3D8E31175B418BA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE49CDB6FCC514206F1F9C497AE5AB09;
+			remoteInfo = Fastboard;
+		};
+		9A59E51F75C2E1A3A88AD158338DABB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84B44807A12996D487A4A591A481D6A0;
+			remoteInfo = YYModel;
+		};
+		A865B2E98ABFA77D696EF32CB83DA329 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 887E769F555AF76F514A7276E2BA1CB8;
+			remoteInfo = Whiteboard;
+		};
+		B06FB64BB3FA8B5EEC0CF32EAA629044 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84B44807A12996D487A4A591A481D6A0;
+			remoteInfo = YYModel;
+		};
+		B53CF85A9627C02A90FAB429BC7A04D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A6F633BD0A4B9EF892715BEB76AC948;
+			remoteInfo = dsBridge;
+		};
+		CCF7A4BEBE7D4E968BDAF640D7CA255E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE49CDB6FCC514206F1F9C497AE5AB09;
+			remoteInfo = Fastboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		028868712BF7EA39998AB2B656B0542C /* WhiteSDK+Room.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSDK+Room.h"; path = "Whiteboard/Classes/Room/WhiteSDK+Room.h"; sourceTree = "<group>"; };
+		034D2632A242B9C1873D2DD27D53FA2C /* FastboardSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardSDK.swift; sourceTree = "<group>"; };
+		03504BC490B33B26405B98309F94474E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		03E7B0893BDB676AEA51DE54CB221FBD /* UIColor+NSNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+NSNumber.swift"; sourceTree = "<group>"; };
+		0435C910206F57DDAD32E52ADD3FE919 /* WhiteRoomState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomState.m; path = Whiteboard/Classes/Room/WhiteRoomState.m; sourceTree = "<group>"; };
+		0496A30F7B825EF5707DE53EDB879541 /* Pods-Fastboard_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Fastboard_Example"; path = Pods_Fastboard_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08407D7362EF1A3F477665A92A4ECC7C /* Whiteboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Whiteboard-dummy.m"; sourceTree = "<group>"; };
+		08EFEEB1DC97BE02F46C74BC6E3E3BAA /* DWKWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWKWebView.h; path = dsbridge/DWKWebView.h; sourceTree = "<group>"; };
+		0B94127585E77A155F6B66E9504586ED /* WhiteSdkConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSdkConfiguration.h; path = Whiteboard/Classes/SDK/WhiteSdkConfiguration.h; sourceTree = "<group>"; };
+		0BEBA6AB8545C3E86D0A57B0ECC737B4 /* ResourceBundle-Icons-Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Icons-Fastboard-Info.plist"; sourceTree = "<group>"; };
+		0C27F43783321EBE2A8DDE7731A2B1AD /* WhitePptPage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePptPage.h; path = Whiteboard/Classes/Object/WhitePptPage.h; sourceTree = "<group>"; };
+		0D4060B76E3E279D126455E95619BA6D /* WhiteDisplayer+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteDisplayer+Private.h"; path = "Whiteboard/Classes/Displayer/WhiteDisplayer+Private.h"; sourceTree = "<group>"; };
+		0D425F910C53921FA9F2D9BA07E3E288 /* NSObject+YYModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YYModel.m"; path = "YYModel/NSObject+YYModel.m"; sourceTree = "<group>"; };
+		0D5233440922D5A8B33D5A53D5AF0F02 /* dsBridge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = dsBridge.modulemap; sourceTree = "<group>"; };
+		0D5B551E1849DBA47CB4C68790A54F6D /* Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Fastboard-Info.plist"; sourceTree = "<group>"; };
+		0DF10A5C85F1B482B22B393262F75896 /* WhiteRoomCallbacks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomCallbacks.m; path = Whiteboard/Classes/Room/WhiteRoomCallbacks.m; sourceTree = "<group>"; };
+		0E2BB5391735E043FEA4FA5094EB70DB /* Pods-Fastboard_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Fastboard_Tests"; path = Pods_Fastboard_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F46F6C91E8CEDBCB0EB514AE819B3CE /* WhitePlayerConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerConfig.m; path = Whiteboard/Classes/Replayer/WhitePlayerConfig.m; sourceTree = "<group>"; };
+		0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0F78F729959C350C47985B2E93F8E9A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		0F95B528D75D6934381426EB0789ABE4 /* YYModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYModel.release.xcconfig; sourceTree = "<group>"; };
+		119BD010430C72E94B32D3D59F92DB2F /* WhiteRoomMember.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomMember.h; path = Whiteboard/Classes/Object/WhiteRoomMember.h; sourceTree = "<group>"; };
+		133E5098DCE4F0F8A7CA00D28590526B /* ResourceBundle-Whiteboard-Whiteboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Whiteboard-Whiteboard-Info.plist"; sourceTree = "<group>"; };
+		141B8D2E5DA5ED38842D3C0B9417042E /* WhitePlayerState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerState.m; path = Whiteboard/Classes/Replayer/WhitePlayerState.m; sourceTree = "<group>"; };
+		14C114286DACF2AA5F0A54BCF34133B9 /* WhiteScene.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteScene.m; path = Whiteboard/Classes/Object/WhiteScene.m; sourceTree = "<group>"; };
+		15ADC3B1E2E3B5E65A5360BF28EF0F46 /* WhitePlayerEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerEvent.m; path = Whiteboard/Classes/Replayer/WhitePlayerEvent.m; sourceTree = "<group>"; };
+		160540BC3EF27BD0DA5534AD0A3DBF48 /* ThemeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		1C531CB2A4BB11E49E1D343AFA2A7F07 /* Fastboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Fastboard.release.xcconfig; sourceTree = "<group>"; };
+		2030D951C948C1EF3E6D831CADA319C1 /* WhiteCameraState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraState.m; path = Whiteboard/Classes/Object/WhiteCameraState.m; sourceTree = "<group>"; };
+		203B62947EE0E9D36501BA7F1990A29B /* vendor.782af06e.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = vendor.782af06e.js; path = Whiteboard/Resource/vendor.782af06e.js; sourceTree = "<group>"; };
+		2070E6FEA0728DDE413E45B6E8210CE7 /* WhiteAudioMixerBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteAudioMixerBridge.m; path = Whiteboard/Classes/Displayer/WhiteAudioMixerBridge.m; sourceTree = "<group>"; };
+		2119C6A3AC8B006FDF273EF4912F372E /* WhiteAppParam.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteAppParam.h; path = Whiteboard/Classes/Object/WhiteAppParam.h; sourceTree = "<group>"; };
+		228574B201D5A136D98E4312483F8E67 /* WhitePlayerEvent+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhitePlayerEvent+Private.h"; path = "Whiteboard/Classes/Replayer/WhitePlayerEvent+Private.h"; sourceTree = "<group>"; };
+		2338967813D2B6011268E4CADBECB798 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		2379E1CA201EF2556D3ADCC376B51AAC /* dsBridge-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsBridge-umbrella.h"; sourceTree = "<group>"; };
+		245BA694CFA781F342005D662342F607 /* dsBridge-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "dsBridge-Info.plist"; sourceTree = "<group>"; };
+		2520F5E28F24CA090FC7DF2F3DCA11AD /* InternalApis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InternalApis.h; path = dsbridge/InternalApis.h; sourceTree = "<group>"; };
+		280B6E6AB6D8532395C6689D1FBF03D5 /* DefaultTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
+		28C56123025440D10A540CDC32DDAC9D /* FastboardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardView.swift; sourceTree = "<group>"; };
+		28F40917D5EB5D27BADD898AA7C8A667 /* WhiteImageInformation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteImageInformation.h; path = Whiteboard/Classes/Room/WhiteImageInformation.h; sourceTree = "<group>"; };
+		295D029F9742EB079144C1C9B2AFE56D /* WhiteRoom.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoom.m; path = Whiteboard/Classes/Room/WhiteRoom.m; sourceTree = "<group>"; };
+		2971774A325A84693BD4D24C66A779E1 /* Fastboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Fastboard-dummy.m"; sourceTree = "<group>"; };
+		2DD6485BBA6A9DEEBA2F36A67C79EEC5 /* JSBUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSBUtil.m; path = dsbridge/JSBUtil.m; sourceTree = "<group>"; };
+		2EE4E25DB577BFA0BBD6C4540957EB8C /* WhiteVideoView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteVideoView.m; path = Whiteboard/Classes/NativeReplayer/WhiteVideoView.m; sourceTree = "<group>"; };
+		2F97F3B7A006C0CFB5CF290FA69B2671 /* Pods-OCExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OCExample"; path = Pods_OCExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		306729FDC1063C0B15D83B31557E728F /* WhiteBroadcastState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteBroadcastState.h; path = Whiteboard/Classes/Room/WhiteBroadcastState.h; sourceTree = "<group>"; };
+		31622D73C5D9CC888CE6267EEA8F9C4D /* WhiteRoom+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteRoom+Private.h"; path = "Whiteboard/Classes/Room/WhiteRoom+Private.h"; sourceTree = "<group>"; };
+		316E0787E2462FA25DD41BB01DE0518E /* Pods-Fastboard_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fastboard_Example.release.xcconfig"; sourceTree = "<group>"; };
+		31DEEA0EE8F76758C8A758DD964AB99E /* WhiteCommonCallbacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCommonCallbacks.h; path = Whiteboard/Classes/Displayer/WhiteCommonCallbacks.h; sourceTree = "<group>"; };
+		3218522EC69F4F2943146840F1FF6480 /* Pods-OCExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OCExample.debug.xcconfig"; sourceTree = "<group>"; };
+		3234B572F8CA7DF47B9E53D7DAAE23E7 /* WhiteConversionInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConversionInfo.m; path = Whiteboard/Classes/Converter/WhiteConversionInfo.m; sourceTree = "<group>"; };
+		337902F011ED411F6497F482170B0E35 /* WhitePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayer.h; path = Whiteboard/Classes/Replayer/WhitePlayer.h; sourceTree = "<group>"; };
+		33A25623FBADF1E2465C74B4E6CD3F39 /* WhiteCombinePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCombinePlayer.m; path = Whiteboard/Classes/NativeReplayer/WhiteCombinePlayer.m; sourceTree = "<group>"; };
+		352DA653397A0CAD35220BC6D930A27D /* WhiteConversionInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConversionInfo.h; path = Whiteboard/Classes/Converter/WhiteConversionInfo.h; sourceTree = "<group>"; };
+		353F65D9B8B5310F93116208E0B7A2DF /* WhiteSDK+Room.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WhiteSDK+Room.m"; path = "Whiteboard/Classes/Room/WhiteSDK+Room.m"; sourceTree = "<group>"; };
+		367B623D17670FBD735F92E43E039764 /* vendor.fb021a05.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = vendor.fb021a05.css; path = Whiteboard/Resource/vendor.fb021a05.css; sourceTree = "<group>"; };
+		38BF18EB7DD3B150F59CD161F43F72B2 /* WhitePlayerConsts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerConsts.h; path = Whiteboard/Classes/Replayer/WhitePlayerConsts.h; sourceTree = "<group>"; };
+		3C17AB998B90AD94B58AEAA2612038C7 /* Pods-Fastboard_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Fastboard_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3C8A7E960B95332C3C9DDA5D720E7ADB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3E468A58725324ADA83525E4AA1B9613 /* WhiteObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteObject.m; path = Whiteboard/Classes/Model/WhiteObject.m; sourceTree = "<group>"; };
+		3F09853F0B932CA4049939C012B2FBD9 /* Pods-OCExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OCExample-Info.plist"; sourceTree = "<group>"; };
+		3F55C1CFDEEA7CD57CF273E63186639D /* Pods-Fastboard_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Fastboard_Example-umbrella.h"; sourceTree = "<group>"; };
+		4129EDD3EEE923F068FB07F08D1F7352 /* WhitePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayer.m; path = Whiteboard/Classes/Replayer/WhitePlayer.m; sourceTree = "<group>"; };
+		440C74D9410334AD22506BFDD8171540 /* Pods-Fastboard_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fastboard_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		445B98484705D0C33F331764BA570A12 /* Pods-OCExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OCExample-umbrella.h"; sourceTree = "<group>"; };
+		457916281B8E52E61ECBE45F146032C5 /* WhiteBoardView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteBoardView.m; path = Whiteboard/Classes/Displayer/WhiteBoardView.m; sourceTree = "<group>"; };
+		45EDAB583CD31F7CFD85370B21B41626 /* Pods-Fastboard_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Fastboard_Example-frameworks.sh"; sourceTree = "<group>"; };
+		48004DC0509BE07102F95557072639A9 /* WhiteFontFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteFontFace.h; path = Whiteboard/Classes/Object/WhiteFontFace.h; sourceTree = "<group>"; };
+		48FB8CE294472973C42225949A067D08 /* WhiteSceneState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSceneState.m; path = Whiteboard/Classes/Object/WhiteSceneState.m; sourceTree = "<group>"; };
+		4B61BEE9811D2C0DFAF8186DD5D9C310 /* WhiteVideoView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteVideoView.h; path = Whiteboard/Classes/NativeReplayer/WhiteVideoView.h; sourceTree = "<group>"; };
+		4FE0BB73299C4DCC4A2C2D7DC99334D4 /* WhiteCameraState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraState.h; path = Whiteboard/Classes/Object/WhiteCameraState.h; sourceTree = "<group>"; };
+		52ADFA2C1AE9B1B587565F094E4E3882 /* WhiteSDK+Replayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSDK+Replayer.h"; path = "Whiteboard/Classes/Replayer/WhiteSDK+Replayer.h"; sourceTree = "<group>"; };
+		570B8B2FF721780186B8DCA46D852A1C /* Whiteboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Whiteboard-Info.plist"; sourceTree = "<group>"; };
+		577230DC24B02DC426AC2483B4F3F180 /* Pods-Fastboard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fastboard_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		594760CF8E84188B2717825E5BA3E68E /* Whiteboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whiteboard-umbrella.h"; sourceTree = "<group>"; };
+		59DFB0FA271CDBC9EDFC58212A19A4A0 /* WhiteConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConverter.m; path = Whiteboard/Classes/Converter/WhiteConverter.m; sourceTree = "<group>"; };
+		5B2C9153CFF1F03048C2A97F71A796EF /* runtime.36e3f0da.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = runtime.36e3f0da.js; path = Whiteboard/Resource/runtime.36e3f0da.js; sourceTree = "<group>"; };
+		5D3B24A4A9C2992785A2489FC58961FD /* WhiteSdkConfiguration+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSdkConfiguration+Private.h"; path = "Whiteboard/Classes/SDK/WhiteSdkConfiguration+Private.h"; sourceTree = "<group>"; };
+		5DDDE576C18992A53D65A889043BB374 /* dsBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsBridge.debug.xcconfig; sourceTree = "<group>"; };
+		60352D9DCF9F73899470FC64A755450E /* Pods-OCExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OCExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		6102925A14B5182332638E37A7E4C1F5 /* Fastboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Fastboard-umbrella.h"; sourceTree = "<group>"; };
+		61511E17D8A573BF39CE4AA401670ACC /* WhitePlayerTimeInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerTimeInfo.h; path = Whiteboard/Classes/Replayer/WhitePlayerTimeInfo.h; sourceTree = "<group>"; };
+		61595DAD7A7889830F76B9F8E26DA9AE /* WhiteCameraBound.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraBound.h; path = Whiteboard/Classes/Object/WhiteCameraBound.h; sourceTree = "<group>"; };
+		61ABCB52C8C402B037E33723B4290E3E /* WhiteBoardView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteBoardView.h; path = Whiteboard/Classes/Displayer/WhiteBoardView.h; sourceTree = "<group>"; };
+		61ED79B8053194CAB40D1ACB7A14CDC6 /* Icons.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Icons.xcassets; path = Fastboard/Assets/Icons.xcassets; sourceTree = "<group>"; };
+		62C36CCA1A8AC7A44B65240B65275724 /* UIImage+Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Bundle.swift"; sourceTree = "<group>"; };
+		66A0D2D713854B423062D8CC7BBBA0CD /* YYModel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYModel-umbrella.h"; sourceTree = "<group>"; };
+		67FC30C29BD9C56D321A05FE20C07919 /* WhiteRectangleConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRectangleConfig.m; path = Whiteboard/Classes/Object/WhiteRectangleConfig.m; sourceTree = "<group>"; };
+		6997D44AD9468EA0CEAE3793F458379D /* WhiteImageInformation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteImageInformation.m; path = Whiteboard/Classes/Room/WhiteImageInformation.m; sourceTree = "<group>"; };
+		6AF279AB629184C658EFA156D552216E /* Fastboard */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Fastboard; path = Fastboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA8990E3CC8155317BCC9645E55B86E /* WhiteSceneState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSceneState.h; path = Whiteboard/Classes/Object/WhiteSceneState.h; sourceTree = "<group>"; };
+		6CE777CE592477A2EF4F2579F6A64ECC /* WhitePanEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePanEvent.m; path = Whiteboard/Classes/Object/WhitePanEvent.m; sourceTree = "<group>"; };
+		6D0967983659A08C4024B6B993772CC0 /* WhitePlayerTimeInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerTimeInfo.m; path = Whiteboard/Classes/Replayer/WhitePlayerTimeInfo.m; sourceTree = "<group>"; };
+		6E9613DC836E2A5CCE370C0582CB323B /* WhiteRoomCallbacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomCallbacks.h; path = Whiteboard/Classes/Room/WhiteRoomCallbacks.h; sourceTree = "<group>"; };
+		6F4196C1739DDE08EEF8B75B063E4DEB /* InternalApis.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = InternalApis.m; path = dsbridge/InternalApis.m; sourceTree = "<group>"; };
+		72B11EE0BE05C2E4ACE00D08E82272A2 /* Fastboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Fastboard.modulemap; sourceTree = "<group>"; };
+		73685DA04710DF9B8B86C2949CF3587B /* WhiteEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteEvent.m; path = Whiteboard/Classes/Object/WhiteEvent.m; sourceTree = "<group>"; };
+		73E6661825E08D85036637A7B5A2229F /* WhiteSliderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSliderView.m; path = Whiteboard/Classes/NativeReplayer/WhiteSliderView.m; sourceTree = "<group>"; };
+		74B8E12D068CDD7202FE0F52F984177A /* dsBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsBridge.release.xcconfig; sourceTree = "<group>"; };
+		759FE9ADACC562648CF3FC02BA64603C /* Whiteboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Whiteboard.modulemap; sourceTree = "<group>"; };
+		767CC14C000C6EC64354402E641FA3DD /* Pods-OCExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OCExample-frameworks.sh"; sourceTree = "<group>"; };
+		76A5FE84C70A94A4551D743594435F33 /* DelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
+		797D46A7F1534583458B98BF2BB479A7 /* dsBridge */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = dsBridge; path = dsBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79B7B76D1C6B3D29E056431DB34B2EC9 /* DWKWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DWKWebView.m; path = dsbridge/DWKWebView.m; sourceTree = "<group>"; };
+		7A20502CF85EB28457D2DC3442115F32 /* WhiteFontFace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteFontFace.m; path = Whiteboard/Classes/Object/WhiteFontFace.m; sourceTree = "<group>"; };
+		7AF739FC3CBF82E15AEA919F30A88116 /* Pods-OCExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OCExample-dummy.m"; sourceTree = "<group>"; };
+		7C2569403A10795724419A772FB3F5AE /* YYClassInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYClassInfo.h; path = YYModel/YYClassInfo.h; sourceTree = "<group>"; };
+		821CB375AC8A132417D1900296E289C1 /* WhiteMemberState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteMemberState.m; path = Whiteboard/Classes/Object/WhiteMemberState.m; sourceTree = "<group>"; };
+		8243995A2FD3F02E5D58711979DB6D82 /* WhitePlayerEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerEvent.h; path = Whiteboard/Classes/Replayer/WhitePlayerEvent.h; sourceTree = "<group>"; };
+		824C84543FC019027C0934BD8BC9DA44 /* Pods-Fastboard_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fastboard_Example-Info.plist"; sourceTree = "<group>"; };
+		84A4FB9B4B3A8103935E499EB42E5A54 /* WhiteSDK+Replayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WhiteSDK+Replayer.m"; path = "Whiteboard/Classes/Replayer/WhiteSDK+Replayer.m"; sourceTree = "<group>"; };
+		84EED637E6C0E9C99DECAF01C88979E1 /* Whiteboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Whiteboard.h; path = Whiteboard/Classes/Whiteboard.h; sourceTree = "<group>"; };
+		87CFA5A02844B1A09EFE984788F45C08 /* WhiteObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteObject.h; path = Whiteboard/Classes/Model/WhiteObject.h; sourceTree = "<group>"; };
+		88D792892B317DA3004FBCBE10843132 /* WhitePlayerConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerConfig.h; path = Whiteboard/Classes/Replayer/WhitePlayerConfig.h; sourceTree = "<group>"; };
+		890859F347689407D7D8A1260ECCE5BE /* WhiteConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConverter.h; path = Whiteboard/Classes/Converter/WhiteConverter.h; sourceTree = "<group>"; };
+		8A81B968AD60634605429E547A808E54 /* WhiteRoom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoom.h; path = Whiteboard/Classes/Room/WhiteRoom.h; sourceTree = "<group>"; };
+		8AA434E2277D9BEA003681E6 /* SubPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubPanelView.swift; sourceTree = "<group>"; };
+		8AA434E4277DA1A9003681E6 /* IndicatorMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorMoreButton.swift; sourceTree = "<group>"; };
+		8AA434E6277DB100003681E6 /* UIImage+ColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorItem.swift"; sourceTree = "<group>"; };
+		8AA434E8277DB287003681E6 /* UIColor+Convince.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convince.swift"; sourceTree = "<group>"; };
+		8C71CA87FCA42F763A1DD233A888C7D4 /* WhiteScene.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteScene.h; path = Whiteboard/Classes/Object/WhiteScene.h; sourceTree = "<group>"; };
+		8E4C8E8C5C96893519E51A44760AE239 /* Pods-OCExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OCExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8FB0BD471C0573CBB8307E8F046AAEB1 /* WhiteConsts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConsts.h; path = Whiteboard/Classes/Object/WhiteConsts.h; sourceTree = "<group>"; };
+		917DF701236760ABAA66FB14DCA5623C /* WhiteDisplayerState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteDisplayerState.h; path = Whiteboard/Classes/Displayer/WhiteDisplayerState.h; sourceTree = "<group>"; };
+		91C92976FF59AC3784D375E157F818AE /* Pods-Fastboard_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Fastboard_Tests.modulemap"; sourceTree = "<group>"; };
+		92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Fastboard-Icons"; path = Icons.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		93FB2F54B7FA41AA3B319D27C70E3D7F /* WhiteSDK+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSDK+Private.h"; path = "Whiteboard/Classes/SDK/WhiteSDK+Private.h"; sourceTree = "<group>"; };
+		94659C4F39E14E2FDE6426B70636165A /* Whiteboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whiteboard-prefix.pch"; sourceTree = "<group>"; };
+		969DF64AD1756056D150A6E6618D24E2 /* web-sdk.e60073fb.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = "web-sdk.e60073fb.js"; path = "Whiteboard/Resource/web-sdk.e60073fb.js"; sourceTree = "<group>"; };
+		96B7F000687B6A36876017DF0D04CFEC /* FastProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FastProxy.h; sourceTree = "<group>"; };
+		9763F96611FB5B6B5B6944047079D574 /* Pods-Fastboard_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fastboard_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		98449AF19D7DFC1BBEE207A001123226 /* WhiteRoomConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomConfig.m; path = Whiteboard/Classes/Room/WhiteRoomConfig.m; sourceTree = "<group>"; };
+		99D136A70D584D8FFEA0704031EA49E9 /* WhiteConsts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConsts.m; path = Whiteboard/Classes/Object/WhiteConsts.m; sourceTree = "<group>"; };
+		9D01C3EC3F35164E2E82B3DE5A2030E0 /* WhiteRoomState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomState.h; path = Whiteboard/Classes/Room/WhiteRoomState.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F3E88E784719A85656978842CE9082F /* DSCallInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCallInfo.m; path = dsbridge/DSCallInfo.m; sourceTree = "<group>"; };
+		9FB5C1B4F1557D2E00F4B3E52EF36AA6 /* WhiteCombinePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCombinePlayer.h; path = Whiteboard/Classes/NativeReplayer/WhiteCombinePlayer.h; sourceTree = "<group>"; };
+		A0CEA3AB3F6DE41A7116DA8E7CFE9EBB /* WhiteBroadcastState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteBroadcastState.m; path = Whiteboard/Classes/Room/WhiteBroadcastState.m; sourceTree = "<group>"; };
+		A0F0DE46840EE52509321C3DC727A8D5 /* Pods-OCExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OCExample.release.xcconfig"; sourceTree = "<group>"; };
+		A18F0845B59331AC1880F42307A2C2C2 /* WhiteRectangleConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRectangleConfig.h; path = Whiteboard/Classes/Object/WhiteRectangleConfig.h; sourceTree = "<group>"; };
+		A218D70B15A5EF99EDA1C4EB4C587FD7 /* WhiteDisplayerState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteDisplayerState.m; path = Whiteboard/Classes/Displayer/WhiteDisplayerState.m; sourceTree = "<group>"; };
+		A2A61B09EF2BB3B690A7F9975703E6E7 /* WhiteGlobalState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteGlobalState.h; path = Whiteboard/Classes/Displayer/WhiteGlobalState.h; sourceTree = "<group>"; };
+		A3A614B253CE19757C11259C0F4CECDF /* YYModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYModel-dummy.m"; sourceTree = "<group>"; };
+		A5C16E4BB7AAB2E43FE0C3DDDE921250 /* YYModel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YYModel-Info.plist"; sourceTree = "<group>"; };
+		A66C0512014E70DD42BF316E3ADC0FD5 /* UIImage+tint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+tint.swift"; sourceTree = "<group>"; };
+		A877FF6C0C02110F5DDD71022A40FFDA /* Pods-Fastboard_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Fastboard_Example.modulemap"; sourceTree = "<group>"; };
+		A94A1201930D7AC1B9007928F64D3349 /* WhiteMemberInformation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteMemberInformation.m; path = Whiteboard/Classes/Object/WhiteMemberInformation.m; sourceTree = "<group>"; };
+		A99DFAB9ABDEB0A959ECF27F89E387BF /* WhiteRoomMember.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomMember.m; path = Whiteboard/Classes/Object/WhiteRoomMember.m; sourceTree = "<group>"; };
+		AAA7A62B1495B6116C1F9B133F3FE9AE /* WhiteSliderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSliderView.h; path = Whiteboard/Classes/NativeReplayer/WhiteSliderView.h; sourceTree = "<group>"; };
+		AB0A8707694EAF00B6875C7ADF421C5C /* WhiteBoardView+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteBoardView+Private.h"; path = "Whiteboard/Classes/Displayer/WhiteBoardView+Private.h"; sourceTree = "<group>"; };
+		AB3E08C4E2C332573BDC6A97EC968D95 /* WhiteGlobalState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteGlobalState.m; path = Whiteboard/Classes/Displayer/WhiteGlobalState.m; sourceTree = "<group>"; };
+		AE4847EBE73B9A34DA30E153D9163AEF /* JSBUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSBUtil.h; path = dsbridge/JSBUtil.h; sourceTree = "<group>"; };
+		AE720D9021D8F66E0BBCB922A717060E /* Whiteboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Whiteboard.debug.xcconfig; sourceTree = "<group>"; };
+		B138E4FC360B205C24C88A0D95B0A0E7 /* WhiteCameraConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraConfig.m; path = Whiteboard/Classes/Object/WhiteCameraConfig.m; sourceTree = "<group>"; };
+		B17B75DA2006373B580596BBDFB6C514 /* Pods-Fastboard_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Fastboard_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B2D756C0A5DF064AA869D6A64FED91AE /* WhiteAppParam.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteAppParam.m; path = Whiteboard/Classes/Object/WhiteAppParam.m; sourceTree = "<group>"; };
+		B37EC1C4C7B3D1E95B5DA189143C44E2 /* WhiteCameraConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraConfig.h; path = Whiteboard/Classes/Object/WhiteCameraConfig.h; sourceTree = "<group>"; };
+		B38F89BF1A0BF5F842BAD009E363E479 /* WhiteCameraBound.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraBound.m; path = Whiteboard/Classes/Object/WhiteCameraBound.m; sourceTree = "<group>"; };
+		B433A001522FB26960218F1BD51FF845 /* f0d404d */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = f0d404d; path = Whiteboard/Resource/f0d404d; sourceTree = "<group>"; };
+		B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Whiteboard-Whiteboard"; path = Whiteboard.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6968EB1C97D0781A55E8A7DF245AEE4 /* WhiteRoomCallbacks+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteRoomCallbacks+Private.h"; path = "Whiteboard/Classes/Room/WhiteRoomCallbacks+Private.h"; sourceTree = "<group>"; };
+		B7DC32DDBFB2DD21679673B799A0D661 /* Pods-Fastboard_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Fastboard_Example-dummy.m"; sourceTree = "<group>"; };
+		B966427192A60CDC5E62355DCDC50B36 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BA10EFA216234E35C752A9BDB0ECCF97 /* WhiteDisplayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteDisplayer.m; path = Whiteboard/Classes/Displayer/WhiteDisplayer.m; sourceTree = "<group>"; };
+		BB9317B596DF8C83613793F4237EEB9E /* WhiteEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteEvent.h; path = Whiteboard/Classes/Object/WhiteEvent.h; sourceTree = "<group>"; };
+		BBC800E542CE9468B4DCB2A9F4A79977 /* WhitePlayerState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerState.h; path = Whiteboard/Classes/Replayer/WhitePlayerState.h; sourceTree = "<group>"; };
+		BCC21DE136DBA898B87DB23107F1CCE5 /* Pods-Fastboard_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Fastboard_Tests-dummy.m"; sourceTree = "<group>"; };
+		BF07350E583AF349A194294437B0C06E /* Whiteboard */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Whiteboard; path = Whiteboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0E8B3200EE3D6D066C2B348085A8C8 /* Pods-OCExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OCExample.modulemap"; sourceTree = "<group>"; };
+		C1E9B542001230F3F0626FFA04B1F30E /* WhiteSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSDK.h; path = Whiteboard/Classes/SDK/WhiteSDK.h; sourceTree = "<group>"; };
+		C2ADC6B98B40C4E9C2A22152274E4475 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C2CAA5E8ADFEE0055D9B090D4671CBBF /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = index.html; path = Whiteboard/Resource/index.html; sourceTree = "<group>"; };
+		C5293091F0F03B645A6E11C120DA045A /* WhiteMemberInformation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteMemberInformation.h; path = Whiteboard/Classes/Object/WhiteMemberInformation.h; sourceTree = "<group>"; };
+		C89640F3076138B3C33DCBDE48C55E1D /* DSCallInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCallInfo.h; path = dsbridge/DSCallInfo.h; sourceTree = "<group>"; };
+		C97E8DF873340E1C8C24CFF80A5649A1 /* YYModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YYModel.modulemap; sourceTree = "<group>"; };
+		CAD764E23A52B265169D89C489611345 /* YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYModel.h; path = YYModel/YYModel.h; sourceTree = "<group>"; };
+		D3A0335CBADE386B9D1B3824A92D2BE5 /* YYModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYModel-prefix.pch"; sourceTree = "<group>"; };
+		D4CC4AE1932AB0B9113BDBDBF7C66CBE /* WhiteMemberState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteMemberState.h; path = Whiteboard/Classes/Object/WhiteMemberState.h; sourceTree = "<group>"; };
+		D6CF8D952B31B127C955BF6244BEBC8D /* WhiteWebViewInjection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteWebViewInjection.h; path = Whiteboard/Classes/Displayer/WhiteWebViewInjection.h; sourceTree = "<group>"; };
+		D88391318EF8C9AF20E77B075632DED7 /* WhiteRoomConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomConfig.h; path = Whiteboard/Classes/Room/WhiteRoomConfig.h; sourceTree = "<group>"; };
+		DB7D0C8C0C71A6CE7A7584E32BA8EA21 /* Whiteboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Whiteboard.release.xcconfig; sourceTree = "<group>"; };
+		DE495D52F0C82F26F918BC7993E6AD62 /* WhiteCommonCallbacks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCommonCallbacks.m; path = Whiteboard/Classes/Displayer/WhiteCommonCallbacks.m; sourceTree = "<group>"; };
+		DF41905968762E15C39B99525BB00123 /* dsbridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dsbridge.h; path = dsbridge/dsbridge.h; sourceTree = "<group>"; };
+		E09ACDF0FE13D8B07513FC99879DB671 /* WhitePlayer+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhitePlayer+Private.h"; path = "Whiteboard/Classes/Replayer/WhitePlayer+Private.h"; sourceTree = "<group>"; };
+		E0C32E67C7E868B151C340EEC3A0FD93 /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
+		E20D8435D6CF4B2EAA3F85B9FF77D098 /* dsBridge-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsBridge-prefix.pch"; sourceTree = "<group>"; };
+		E460D5B0416D36F66EE8EC89E5D2FA0A /* YYModel */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YYModel; path = YYModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C4B21F642F1C2464470AA3FD85788F /* WhiteDisplayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteDisplayer.h; path = Whiteboard/Classes/Displayer/WhiteDisplayer.h; sourceTree = "<group>"; };
+		E7DD6D4730098CF5515E030205E64DC6 /* Pods-Fastboard_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fastboard_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E800A59CFCD0163DF151A7D99F61A8FD /* Pods-Fastboard_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Fastboard_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E8199BCD09E8549EE56116AFAAD35025 /* Pods-Fastboard_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fastboard_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		E9348F2F5AC7FCFFAB1E1BBB64AF43F6 /* Fastboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Fastboard.debug.xcconfig; sourceTree = "<group>"; };
+		EABAC8A666C489670B969F85B5D083BC /* main.1413e9a0.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = main.1413e9a0.css; path = Whiteboard/Resource/main.1413e9a0.css; sourceTree = "<group>"; };
+		EB4C694A12854BBF9125BB3EED614A94 /* NSObject+YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYModel.h"; path = "YYModel/NSObject+YYModel.h"; sourceTree = "<group>"; };
+		EB9A7A16EA12781F32BB500A80733FDA /* ControlBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
+		EC68A3C588D074050E2F682F40E0695D /* FastError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastError.swift; sourceTree = "<group>"; };
+		EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastOperation.swift; sourceTree = "<group>"; };
+		ECDF04182E6B5E5042A8B5A28617F224 /* WhiteAudioMixerBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteAudioMixerBridge.h; path = Whiteboard/Classes/Displayer/WhiteAudioMixerBridge.h; sourceTree = "<group>"; };
+		ED165D8AD74311DBF37B76765B30164A /* main.50f2aeb1.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = main.50f2aeb1.js; path = Whiteboard/Resource/main.50f2aeb1.js; sourceTree = "<group>"; };
+		EE3115CF6B34DAD697ACC6752CC8A616 /* WhitePanEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePanEvent.h; path = Whiteboard/Classes/Object/WhitePanEvent.h; sourceTree = "<group>"; };
+		EE3788042F219E915A901F20F5CB6CCA /* WhiteSdkConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSdkConfiguration.m; path = Whiteboard/Classes/SDK/WhiteSdkConfiguration.m; sourceTree = "<group>"; };
+		F2E0469294C9148FB86F6BDD909CEEB9 /* Fastboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Fastboard-prefix.pch"; sourceTree = "<group>"; };
+		F366A14CA820EB00712C6AC84DBF534A /* YYModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYModel.debug.xcconfig; sourceTree = "<group>"; };
+		F65B7E53D55C064EEF6CA5FA9C48FE76 /* FastboardDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardDelegate.swift; sourceTree = "<group>"; };
+		F7086EE5EEE6C55A15AEAE3B55DB0519 /* FastProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FastProxy.m; sourceTree = "<group>"; };
+		F7263074588024F2EC7DD9E7D7261A06 /* WhiteWebViewInjection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteWebViewInjection.m; path = Whiteboard/Classes/Displayer/WhiteWebViewInjection.m; sourceTree = "<group>"; };
+		F8D2AB580355356AE57F2B896E3939B4 /* Fastboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fastboard.swift; sourceTree = "<group>"; };
+		F91F207C021D7A6E52E22421254A2966 /* Fastboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Fastboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F93DB95A6C32DA31668145D91D5B911A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		FA2FBA144597BD8CF4C24740F79CF4D4 /* WhitePptPage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePptPage.m; path = Whiteboard/Classes/Object/WhitePptPage.m; sourceTree = "<group>"; };
+		FAB55B6F0D486A4929DBD68E20BCDB8F /* Pods-Fastboard_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fastboard_Tests-Info.plist"; sourceTree = "<group>"; };
+		FE9DF6FBFADFA4ADE827A35854964F1B /* dsBridge-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "dsBridge-dummy.m"; sourceTree = "<group>"; };
+		FF869E507F43F15C20217C79353C593B /* WhiteSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSDK.m; path = Whiteboard/Classes/SDK/WhiteSDK.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		003E4FAFB35C09B6927CF2F41966738C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				020E04A09A59C0574363DF50FC47E6F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17DF9928985496F691D9B15869693BCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEF7C51E238000A1272FB60AC829F2B9 /* CoreFoundation.framework in Frameworks */,
+				F97D05458CEA13447F5FDB9571711062 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2829B1EB4FC20A2AC1CFE99CC13C82BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEDEA297651C1A728BB3DD27883E7F1E /* AVFoundation.framework in Frameworks */,
+				E3D3AB4B1E36A92A2CB3F377E049B0BD /* Foundation.framework in Frameworks */,
+				843219C3E31DE139CA67FC95327D66E3 /* UIKit.framework in Frameworks */,
+				9CFA6E1B5FEB201C001E749B6F82C919 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EA679C539A311D9702AB09BA918AE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B8A5EE6F3BEE8F06740663DBB362A8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46F90FCFEE2DCC206ECFA61160B9FED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF92142F98CA8592AADA348AFD116387 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D1E5A90B103C5023F9AD49A456BE607 /* Foundation.framework in Frameworks */,
+				AE375B7FF4FD4A7E6D4EB4550F7AAC67 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D35EFF805AAC20CBEC31BA697028D1D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E629162202EC1994498D32028D1710D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E53EA17C9037A65A6B65384DCA578F31 /* Foundation.framework in Frameworks */,
+				A01217DADEFBA88EDDCAD99D35926F43 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDD2CB0F6DA57C3AA882297A93ADAD85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B36F45E8FD762D24CA81FB5A6AE9CEE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		076745561503E87181E3A33036D753A1 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				034D2632A242B9C1873D2DD27D53FA2C /* FastboardSDK.swift */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		0A44F4D4236088F4463450EFF101ABEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87CFA5A02844B1A09EFE984788F45C08 /* WhiteObject.h */,
+				3E468A58725324ADA83525E4AA1B9613 /* WhiteObject.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		15C21666EEA0D180458C972AA9CC6B80 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				ECDF04182E6B5E5042A8B5A28617F224 /* WhiteAudioMixerBridge.h */,
+				2070E6FEA0728DDE413E45B6E8210CE7 /* WhiteAudioMixerBridge.m */,
+				61ABCB52C8C402B037E33723B4290E3E /* WhiteBoardView.h */,
+				457916281B8E52E61ECBE45F146032C5 /* WhiteBoardView.m */,
+				AB0A8707694EAF00B6875C7ADF421C5C /* WhiteBoardView+Private.h */,
+				31DEEA0EE8F76758C8A758DD964AB99E /* WhiteCommonCallbacks.h */,
+				DE495D52F0C82F26F918BC7993E6AD62 /* WhiteCommonCallbacks.m */,
+				E4C4B21F642F1C2464470AA3FD85788F /* WhiteDisplayer.h */,
+				BA10EFA216234E35C752A9BDB0ECCF97 /* WhiteDisplayer.m */,
+				0D4060B76E3E279D126455E95619BA6D /* WhiteDisplayer+Private.h */,
+				917DF701236760ABAA66FB14DCA5623C /* WhiteDisplayerState.h */,
+				A218D70B15A5EF99EDA1C4EB4C587FD7 /* WhiteDisplayerState.m */,
+				A2A61B09EF2BB3B690A7F9975703E6E7 /* WhiteGlobalState.h */,
+				AB3E08C4E2C332573BDC6A97EC968D95 /* WhiteGlobalState.m */,
+				C1E9B542001230F3F0626FFA04B1F30E /* WhiteSDK.h */,
+				FF869E507F43F15C20217C79353C593B /* WhiteSDK.m */,
+				93FB2F54B7FA41AA3B319D27C70E3D7F /* WhiteSDK+Private.h */,
+				0B94127585E77A155F6B66E9504586ED /* WhiteSdkConfiguration.h */,
+				EE3788042F219E915A901F20F5CB6CCA /* WhiteSdkConfiguration.m */,
+				5D3B24A4A9C2992785A2489FC58961FD /* WhiteSdkConfiguration+Private.h */,
+				D6CF8D952B31B127C955BF6244BEBC8D /* WhiteWebViewInjection.h */,
+				F7263074588024F2EC7DD9E7D7261A06 /* WhiteWebViewInjection.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		1605FC50E67E9E516D6F535B18DCA22B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				03E7B0893BDB676AEA51DE54CB221FBD /* UIColor+NSNumber.swift */,
+				8AA434E8277DB287003681E6 /* UIColor+Convince.swift */,
+				62C36CCA1A8AC7A44B65240B65275724 /* UIImage+Bundle.swift */,
+				A66C0512014E70DD42BF316E3ADC0FD5 /* UIImage+tint.swift */,
+				8AA434E6277DB100003681E6 /* UIImage+ColorItem.swift */,
+			);
+			name = Extension;
+			path = Fastboard/Classes/Extension;
+			sourceTree = "<group>";
+		};
+		17C66FA6D6538462175811C7E832BDC8 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				2119C6A3AC8B006FDF273EF4912F372E /* WhiteAppParam.h */,
+				B2D756C0A5DF064AA869D6A64FED91AE /* WhiteAppParam.m */,
+				61595DAD7A7889830F76B9F8E26DA9AE /* WhiteCameraBound.h */,
+				B38F89BF1A0BF5F842BAD009E363E479 /* WhiteCameraBound.m */,
+				B37EC1C4C7B3D1E95B5DA189143C44E2 /* WhiteCameraConfig.h */,
+				B138E4FC360B205C24C88A0D95B0A0E7 /* WhiteCameraConfig.m */,
+				4FE0BB73299C4DCC4A2C2D7DC99334D4 /* WhiteCameraState.h */,
+				2030D951C948C1EF3E6D831CADA319C1 /* WhiteCameraState.m */,
+				8FB0BD471C0573CBB8307E8F046AAEB1 /* WhiteConsts.h */,
+				99D136A70D584D8FFEA0704031EA49E9 /* WhiteConsts.m */,
+				BB9317B596DF8C83613793F4237EEB9E /* WhiteEvent.h */,
+				73685DA04710DF9B8B86C2949CF3587B /* WhiteEvent.m */,
+				48004DC0509BE07102F95557072639A9 /* WhiteFontFace.h */,
+				7A20502CF85EB28457D2DC3442115F32 /* WhiteFontFace.m */,
+				C5293091F0F03B645A6E11C120DA045A /* WhiteMemberInformation.h */,
+				A94A1201930D7AC1B9007928F64D3349 /* WhiteMemberInformation.m */,
+				D4CC4AE1932AB0B9113BDBDBF7C66CBE /* WhiteMemberState.h */,
+				821CB375AC8A132417D1900296E289C1 /* WhiteMemberState.m */,
+				EE3115CF6B34DAD697ACC6752CC8A616 /* WhitePanEvent.h */,
+				6CE777CE592477A2EF4F2579F6A64ECC /* WhitePanEvent.m */,
+				0C27F43783321EBE2A8DDE7731A2B1AD /* WhitePptPage.h */,
+				FA2FBA144597BD8CF4C24740F79CF4D4 /* WhitePptPage.m */,
+				A18F0845B59331AC1880F42307A2C2C2 /* WhiteRectangleConfig.h */,
+				67FC30C29BD9C56D321A05FE20C07919 /* WhiteRectangleConfig.m */,
+				119BD010430C72E94B32D3D59F92DB2F /* WhiteRoomMember.h */,
+				A99DFAB9ABDEB0A959ECF27F89E387BF /* WhiteRoomMember.m */,
+				8C71CA87FCA42F763A1DD233A888C7D4 /* WhiteScene.h */,
+				14C114286DACF2AA5F0A54BCF34133B9 /* WhiteScene.m */,
+				6BA8990E3CC8155317BCC9645E55B86E /* WhiteSceneState.h */,
+				48FB8CE294472973C42225949A067D08 /* WhiteSceneState.m */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		1ABB0931402DFCEA87376F77BBDFE70E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBA14BBA19D95E52B40B9E3759D53D /* dsBridge */,
+				81AF4CD321E1112AEC4A43082C23D435 /* Whiteboard */,
+				91A9CEF3BFB4E743293F799778BEEB76 /* YYModel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		20CA44A59A1D0815D548851453BB68B5 /* Replayer */ = {
+			isa = PBXGroup;
+			children = (
+				337902F011ED411F6497F482170B0E35 /* WhitePlayer.h */,
+				4129EDD3EEE923F068FB07F08D1F7352 /* WhitePlayer.m */,
+				E09ACDF0FE13D8B07513FC99879DB671 /* WhitePlayer+Private.h */,
+				88D792892B317DA3004FBCBE10843132 /* WhitePlayerConfig.h */,
+				0F46F6C91E8CEDBCB0EB514AE819B3CE /* WhitePlayerConfig.m */,
+				38BF18EB7DD3B150F59CD161F43F72B2 /* WhitePlayerConsts.h */,
+				8243995A2FD3F02E5D58711979DB6D82 /* WhitePlayerEvent.h */,
+				15ADC3B1E2E3B5E65A5360BF28EF0F46 /* WhitePlayerEvent.m */,
+				228574B201D5A136D98E4312483F8E67 /* WhitePlayerEvent+Private.h */,
+				BBC800E542CE9468B4DCB2A9F4A79977 /* WhitePlayerState.h */,
+				141B8D2E5DA5ED38842D3C0B9417042E /* WhitePlayerState.m */,
+				61511E17D8A573BF39CE4AA401670ACC /* WhitePlayerTimeInfo.h */,
+				6D0967983659A08C4024B6B993772CC0 /* WhitePlayerTimeInfo.m */,
+				52ADFA2C1AE9B1B587565F094E4E3882 /* WhiteSDK+Replayer.h */,
+				84A4FB9B4B3A8103935E499EB42E5A54 /* WhiteSDK+Replayer.m */,
+			);
+			name = Replayer;
+			sourceTree = "<group>";
+		};
+		2D40EBCCB0F189E1AFA475226EC1BB91 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6413052651303C6FA052A64AB83BB556 /* Pods-Fastboard_Example */,
+				2E580AAA2DD807E8B9FD9C9FEE968663 /* Pods-Fastboard_Tests */,
+				F7E9741B3786554C6036854569D83D05 /* Pods-OCExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2D84187BF243A9873409AEC59169D0BF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0F78F729959C350C47985B2E93F8E9A4 /* AVFoundation.framework */,
+				2338967813D2B6011268E4CADBECB798 /* CoreFoundation.framework */,
+				0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */,
+				03504BC490B33B26405B98309F94474E /* UIKit.framework */,
+				F93DB95A6C32DA31668145D91D5B911A /* WebKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		2E580AAA2DD807E8B9FD9C9FEE968663 /* Pods-Fastboard_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				91C92976FF59AC3784D375E157F818AE /* Pods-Fastboard_Tests.modulemap */,
+				E800A59CFCD0163DF151A7D99F61A8FD /* Pods-Fastboard_Tests-acknowledgements.markdown */,
+				9763F96611FB5B6B5B6944047079D574 /* Pods-Fastboard_Tests-acknowledgements.plist */,
+				BCC21DE136DBA898B87DB23107F1CCE5 /* Pods-Fastboard_Tests-dummy.m */,
+				FAB55B6F0D486A4929DBD68E20BCDB8F /* Pods-Fastboard_Tests-Info.plist */,
+				B17B75DA2006373B580596BBDFB6C514 /* Pods-Fastboard_Tests-umbrella.h */,
+				E7DD6D4730098CF5515E030205E64DC6 /* Pods-Fastboard_Tests.debug.xcconfig */,
+				440C74D9410334AD22506BFDD8171540 /* Pods-Fastboard_Tests.release.xcconfig */,
+			);
+			name = "Pods-Fastboard_Tests";
+			path = "Target Support Files/Pods-Fastboard_Tests";
+			sourceTree = "<group>";
+		};
+		31CA5AEFA67527788616814F33755145 /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				352DA653397A0CAD35220BC6D930A27D /* WhiteConversionInfo.h */,
+				3234B572F8CA7DF47B9E53D7DAAE23E7 /* WhiteConversionInfo.m */,
+				890859F347689407D7D8A1260ECCE5BE /* WhiteConverter.h */,
+				59DFB0FA271CDBC9EDFC58212A19A4A0 /* WhiteConverter.m */,
+			);
+			name = Converter;
+			sourceTree = "<group>";
+		};
+		3689DA37E411261C9E26ACA04DD93DF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB9A7A16EA12781F32BB500A80733FDA /* ControlBar.swift */,
+				28C56123025440D10A540CDC32DDAC9D /* FastboardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B78BD4AADF1AC1EDD189833BA9109AF /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D7397393DC3AF0F28E7FA31A6886219 /* Fastboard */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3D7397393DC3AF0F28E7FA31A6886219 /* Fastboard */ = {
+			isa = PBXGroup;
+			children = (
+				61ED79B8053194CAB40D1ACB7A14CDC6 /* Icons.xcassets */,
+				1605FC50E67E9E516D6F535B18DCA22B /* Extension */,
+				7244A39234665F03B8EF767CA8CAE013 /* Help */,
+				7ED862E57824CD1A48301BDD1050CB56 /* Pod */,
+				67ED7A7D86E34F45382589D177D7C57B /* Public */,
+				7AA80BFB2C24D73C7E30771AA0406DB1 /* Support Files */,
+			);
+			name = Fastboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3DFBA14BBA19D95E52B40B9E3759D53D /* dsBridge */ = {
+			isa = PBXGroup;
+			children = (
+				DF41905968762E15C39B99525BB00123 /* dsbridge.h */,
+				C89640F3076138B3C33DCBDE48C55E1D /* DSCallInfo.h */,
+				9F3E88E784719A85656978842CE9082F /* DSCallInfo.m */,
+				08EFEEB1DC97BE02F46C74BC6E3E3BAA /* DWKWebView.h */,
+				79B7B76D1C6B3D29E056431DB34B2EC9 /* DWKWebView.m */,
+				2520F5E28F24CA090FC7DF2F3DCA11AD /* InternalApis.h */,
+				6F4196C1739DDE08EEF8B75B063E4DEB /* InternalApis.m */,
+				AE4847EBE73B9A34DA30E153D9163AEF /* JSBUtil.h */,
+				2DD6485BBA6A9DEEBA2F36A67C79EEC5 /* JSBUtil.m */,
+				9974E00B6D6F2138A6D1C2D4161E9B00 /* Support Files */,
+			);
+			path = dsBridge;
+			sourceTree = "<group>";
+		};
+		501ACC7EE6EB2D4847E10FB59996A806 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				280B6E6AB6D8532395C6689D1FBF03D5 /* DefaultTheme.swift */,
+				C2ADC6B98B40C4E9C2A22152274E4475 /* Theme.swift */,
+				160540BC3EF27BD0DA5534AD0A3DBF48 /* ThemeManager.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		573399020ABCF46BE63486A4C3CEC36C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				797D46A7F1534583458B98BF2BB479A7 /* dsBridge */,
+				6AF279AB629184C658EFA156D552216E /* Fastboard */,
+				92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */,
+				0496A30F7B825EF5707DE53EDB879541 /* Pods-Fastboard_Example */,
+				0E2BB5391735E043FEA4FA5094EB70DB /* Pods-Fastboard_Tests */,
+				2F97F3B7A006C0CFB5CF290FA69B2671 /* Pods-OCExample */,
+				BF07350E583AF349A194294437B0C06E /* Whiteboard */,
+				B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */,
+				E460D5B0416D36F66EE8EC89E5D2FA0A /* YYModel */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6413052651303C6FA052A64AB83BB556 /* Pods-Fastboard_Example */ = {
+			isa = PBXGroup;
+			children = (
+				A877FF6C0C02110F5DDD71022A40FFDA /* Pods-Fastboard_Example.modulemap */,
+				3C17AB998B90AD94B58AEAA2612038C7 /* Pods-Fastboard_Example-acknowledgements.markdown */,
+				E8199BCD09E8549EE56116AFAAD35025 /* Pods-Fastboard_Example-acknowledgements.plist */,
+				B7DC32DDBFB2DD21679673B799A0D661 /* Pods-Fastboard_Example-dummy.m */,
+				45EDAB583CD31F7CFD85370B21B41626 /* Pods-Fastboard_Example-frameworks.sh */,
+				824C84543FC019027C0934BD8BC9DA44 /* Pods-Fastboard_Example-Info.plist */,
+				3F55C1CFDEEA7CD57CF273E63186639D /* Pods-Fastboard_Example-umbrella.h */,
+				577230DC24B02DC426AC2483B4F3F180 /* Pods-Fastboard_Example.debug.xcconfig */,
+				316E0787E2462FA25DD41BB01DE0518E /* Pods-Fastboard_Example.release.xcconfig */,
+			);
+			name = "Pods-Fastboard_Example";
+			path = "Target Support Files/Pods-Fastboard_Example";
+			sourceTree = "<group>";
+		};
+		67ED7A7D86E34F45382589D177D7C57B /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				BBE01AFC4A7708B3F56403B89F977DE2 /* Fastboard */,
+				99C1BE227BD09DEF3056815FA23BAB87 /* Panel */,
+				076745561503E87181E3A33036D753A1 /* SDK */,
+				501ACC7EE6EB2D4847E10FB59996A806 /* Theme */,
+				3689DA37E411261C9E26ACA04DD93DF6 /* View */,
+			);
+			name = Public;
+			path = Fastboard/Classes/Public;
+			sourceTree = "<group>";
+		};
+		71EB67522C45573217587FEE44B99022 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				133E5098DCE4F0F8A7CA00D28590526B /* ResourceBundle-Whiteboard-Whiteboard-Info.plist */,
+				759FE9ADACC562648CF3FC02BA64603C /* Whiteboard.modulemap */,
+				08407D7362EF1A3F477665A92A4ECC7C /* Whiteboard-dummy.m */,
+				570B8B2FF721780186B8DCA46D852A1C /* Whiteboard-Info.plist */,
+				94659C4F39E14E2FDE6426B70636165A /* Whiteboard-prefix.pch */,
+				594760CF8E84188B2717825E5BA3E68E /* Whiteboard-umbrella.h */,
+				AE720D9021D8F66E0BBCB922A717060E /* Whiteboard.debug.xcconfig */,
+				DB7D0C8C0C71A6CE7A7584E32BA8EA21 /* Whiteboard.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Whiteboard";
+			sourceTree = "<group>";
+		};
+		7244A39234665F03B8EF767CA8CAE013 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				76A5FE84C70A94A4551D743594435F33 /* DelegateProxy.swift */,
+				96B7F000687B6A36876017DF0D04CFEC /* FastProxy.h */,
+				F7086EE5EEE6C55A15AEAE3B55DB0519 /* FastProxy.m */,
+			);
+			name = Help;
+			path = Fastboard/Classes/Help;
+			sourceTree = "<group>";
+		};
+		7AA80BFB2C24D73C7E30771AA0406DB1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				72B11EE0BE05C2E4ACE00D08E82272A2 /* Fastboard.modulemap */,
+				2971774A325A84693BD4D24C66A779E1 /* Fastboard-dummy.m */,
+				0D5B551E1849DBA47CB4C68790A54F6D /* Fastboard-Info.plist */,
+				F2E0469294C9148FB86F6BDD909CEEB9 /* Fastboard-prefix.pch */,
+				6102925A14B5182332638E37A7E4C1F5 /* Fastboard-umbrella.h */,
+				E9348F2F5AC7FCFFAB1E1BBB64AF43F6 /* Fastboard.debug.xcconfig */,
+				1C531CB2A4BB11E49E1D343AFA2A7F07 /* Fastboard.release.xcconfig */,
+				0BEBA6AB8545C3E86D0A57B0ECC737B4 /* ResourceBundle-Icons-Fastboard-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Fastboard";
+			sourceTree = "<group>";
+		};
+		7ED862E57824CD1A48301BDD1050CB56 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F91F207C021D7A6E52E22421254A2966 /* Fastboard.podspec */,
+				3C8A7E960B95332C3C9DDA5D720E7ADB /* LICENSE */,
+				B966427192A60CDC5E62355DCDC50B36 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		81AF4CD321E1112AEC4A43082C23D435 /* Whiteboard */ = {
+			isa = PBXGroup;
+			children = (
+				84EED637E6C0E9C99DECAF01C88979E1 /* Whiteboard.h */,
+				15C21666EEA0D180458C972AA9CC6B80 /* Base */,
+				31CA5AEFA67527788616814F33755145 /* Converter */,
+				0A44F4D4236088F4463450EFF101ABEC /* Model */,
+				FBE659AF66893E00F1976F8D423E55FC /* NativeReplayer */,
+				17C66FA6D6538462175811C7E832BDC8 /* Object */,
+				20CA44A59A1D0815D548851453BB68B5 /* Replayer */,
+				AEE251EFBFF79CBA64160E7A31E39F3C /* Resources */,
+				F9B617854625DCDE4ECFF06C1CADEED6 /* Room */,
+				71EB67522C45573217587FEE44B99022 /* Support Files */,
+			);
+			path = Whiteboard;
+			sourceTree = "<group>";
+		};
+		91A9CEF3BFB4E743293F799778BEEB76 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				EB4C694A12854BBF9125BB3EED614A94 /* NSObject+YYModel.h */,
+				0D425F910C53921FA9F2D9BA07E3E288 /* NSObject+YYModel.m */,
+				7C2569403A10795724419A772FB3F5AE /* YYClassInfo.h */,
+				E0C32E67C7E868B151C340EEC3A0FD93 /* YYClassInfo.m */,
+				CAD764E23A52B265169D89C489611345 /* YYModel.h */,
+				DE288EE9F3B0F414E00435FDDD2B6CC8 /* Support Files */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		9974E00B6D6F2138A6D1C2D4161E9B00 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D5233440922D5A8B33D5A53D5AF0F02 /* dsBridge.modulemap */,
+				FE9DF6FBFADFA4ADE827A35854964F1B /* dsBridge-dummy.m */,
+				245BA694CFA781F342005D662342F607 /* dsBridge-Info.plist */,
+				E20D8435D6CF4B2EAA3F85B9FF77D098 /* dsBridge-prefix.pch */,
+				2379E1CA201EF2556D3ADCC376B51AAC /* dsBridge-umbrella.h */,
+				5DDDE576C18992A53D65A889043BB374 /* dsBridge.debug.xcconfig */,
+				74B8E12D068CDD7202FE0F52F984177A /* dsBridge.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/dsBridge";
+			sourceTree = "<group>";
+		};
+		99C1BE227BD09DEF3056815FA23BAB87 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperation.swift */,
+				8AA434E4277DA1A9003681E6 /* IndicatorMoreButton.swift */,
+				8AA434E2277D9BEA003681E6 /* SubPanelView.swift */,
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
+		AEE251EFBFF79CBA64160E7A31E39F3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B433A001522FB26960218F1BD51FF845 /* f0d404d */,
+				C2CAA5E8ADFEE0055D9B090D4671CBBF /* index.html */,
+				EABAC8A666C489670B969F85B5D083BC /* main.1413e9a0.css */,
+				ED165D8AD74311DBF37B76765B30164A /* main.50f2aeb1.js */,
+				5B2C9153CFF1F03048C2A97F71A796EF /* runtime.36e3f0da.js */,
+				203B62947EE0E9D36501BA7F1990A29B /* vendor.782af06e.js */,
+				367B623D17670FBD735F92E43E039764 /* vendor.fb021a05.css */,
+				969DF64AD1756056D150A6E6618D24E2 /* web-sdk.e60073fb.js */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B94D7768568A9992200DB461E8CF687F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D84187BF243A9873409AEC59169D0BF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBE01AFC4A7708B3F56403B89F977DE2 /* Fastboard */ = {
+			isa = PBXGroup;
+			children = (
+				F8D2AB580355356AE57F2B896E3939B4 /* Fastboard.swift */,
+				F65B7E53D55C064EEF6CA5FA9C48FE76 /* FastboardDelegate.swift */,
+				EC68A3C588D074050E2F682F40E0695D /* FastError.swift */,
+			);
+			path = Fastboard;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				3B78BD4AADF1AC1EDD189833BA9109AF /* Development Pods */,
+				B94D7768568A9992200DB461E8CF687F /* Frameworks */,
+				1ABB0931402DFCEA87376F77BBDFE70E /* Pods */,
+				573399020ABCF46BE63486A4C3CEC36C /* Products */,
+				2D40EBCCB0F189E1AFA475226EC1BB91 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DE288EE9F3B0F414E00435FDDD2B6CC8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C97E8DF873340E1C8C24CFF80A5649A1 /* YYModel.modulemap */,
+				A3A614B253CE19757C11259C0F4CECDF /* YYModel-dummy.m */,
+				A5C16E4BB7AAB2E43FE0C3DDDE921250 /* YYModel-Info.plist */,
+				D3A0335CBADE386B9D1B3824A92D2BE5 /* YYModel-prefix.pch */,
+				66A0D2D713854B423062D8CC7BBBA0CD /* YYModel-umbrella.h */,
+				F366A14CA820EB00712C6AC84DBF534A /* YYModel.debug.xcconfig */,
+				0F95B528D75D6934381426EB0789ABE4 /* YYModel.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/YYModel";
+			sourceTree = "<group>";
+		};
+		F7E9741B3786554C6036854569D83D05 /* Pods-OCExample */ = {
+			isa = PBXGroup;
+			children = (
+				BF0E8B3200EE3D6D066C2B348085A8C8 /* Pods-OCExample.modulemap */,
+				8E4C8E8C5C96893519E51A44760AE239 /* Pods-OCExample-acknowledgements.markdown */,
+				60352D9DCF9F73899470FC64A755450E /* Pods-OCExample-acknowledgements.plist */,
+				7AF739FC3CBF82E15AEA919F30A88116 /* Pods-OCExample-dummy.m */,
+				767CC14C000C6EC64354402E641FA3DD /* Pods-OCExample-frameworks.sh */,
+				3F09853F0B932CA4049939C012B2FBD9 /* Pods-OCExample-Info.plist */,
+				445B98484705D0C33F331764BA570A12 /* Pods-OCExample-umbrella.h */,
+				3218522EC69F4F2943146840F1FF6480 /* Pods-OCExample.debug.xcconfig */,
+				A0F0DE46840EE52509321C3DC727A8D5 /* Pods-OCExample.release.xcconfig */,
+			);
+			name = "Pods-OCExample";
+			path = "Target Support Files/Pods-OCExample";
+			sourceTree = "<group>";
+		};
+		F9B617854625DCDE4ECFF06C1CADEED6 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				306729FDC1063C0B15D83B31557E728F /* WhiteBroadcastState.h */,
+				A0CEA3AB3F6DE41A7116DA8E7CFE9EBB /* WhiteBroadcastState.m */,
+				28F40917D5EB5D27BADD898AA7C8A667 /* WhiteImageInformation.h */,
+				6997D44AD9468EA0CEAE3793F458379D /* WhiteImageInformation.m */,
+				8A81B968AD60634605429E547A808E54 /* WhiteRoom.h */,
+				295D029F9742EB079144C1C9B2AFE56D /* WhiteRoom.m */,
+				31622D73C5D9CC888CE6267EEA8F9C4D /* WhiteRoom+Private.h */,
+				6E9613DC836E2A5CCE370C0582CB323B /* WhiteRoomCallbacks.h */,
+				0DF10A5C85F1B482B22B393262F75896 /* WhiteRoomCallbacks.m */,
+				B6968EB1C97D0781A55E8A7DF245AEE4 /* WhiteRoomCallbacks+Private.h */,
+				D88391318EF8C9AF20E77B075632DED7 /* WhiteRoomConfig.h */,
+				98449AF19D7DFC1BBEE207A001123226 /* WhiteRoomConfig.m */,
+				9D01C3EC3F35164E2E82B3DE5A2030E0 /* WhiteRoomState.h */,
+				0435C910206F57DDAD32E52ADD3FE919 /* WhiteRoomState.m */,
+				028868712BF7EA39998AB2B656B0542C /* WhiteSDK+Room.h */,
+				353F65D9B8B5310F93116208E0B7A2DF /* WhiteSDK+Room.m */,
+			);
+			name = Room;
+			sourceTree = "<group>";
+		};
+		FBE659AF66893E00F1976F8D423E55FC /* NativeReplayer */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5C1B4F1557D2E00F4B3E52EF36AA6 /* WhiteCombinePlayer.h */,
+				33A25623FBADF1E2465C74B4E6CD3F39 /* WhiteCombinePlayer.m */,
+				AAA7A62B1495B6116C1F9B133F3FE9AE /* WhiteSliderView.h */,
+				73E6661825E08D85036637A7B5A2229F /* WhiteSliderView.m */,
+				4B61BEE9811D2C0DFAF8186DD5D9C310 /* WhiteVideoView.h */,
+				2EE4E25DB577BFA0BBD6C4540957EB8C /* WhiteVideoView.m */,
+			);
+			name = NativeReplayer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		071543BA5B725EE52FE7AB582C3FA137 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A47F8F33B3FC8335E77576E671E5116C /* Pods-Fastboard_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A9DA4BFB3811E84C4746DBC6FE0123E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71E9C00AC6CD2D461D832F31CDC36663 /* Pods-OCExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3192DAA995C81D1E964F7B7408B239F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D947A64DE11F89FC37B42FE99CB459 /* Fastboard-umbrella.h in Headers */,
+				622A8EF71080DED9A5E0086AB4A35E78 /* FastProxy.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EA350AED1127A37563DAC821489B0FC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6C11FD1C5767538DB2B93AF661CB3E /* Pods-Fastboard_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BF3115D7D2D788A6DA61B201DB1FDA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFC3AD00C5F7EE343AAFBE08EC942B9 /* dsbridge.h in Headers */,
+				D4D3DA4E0E96068B7753DF79529CE056 /* dsBridge-umbrella.h in Headers */,
+				809B2B92DE68A59F57C74D4420E4A9DB /* DSCallInfo.h in Headers */,
+				8F386DA46B07EF785820337AE78AFE4E /* DWKWebView.h in Headers */,
+				6CABD7A699DB0B762B931940FEA58FF0 /* InternalApis.h in Headers */,
+				D2487D63708E17C47E815CC08BA0D64F /* JSBUtil.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDB4432365832C510582B2CE2E4AD2E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4D5A6B548391B58175512AC26169974 /* NSObject+YYModel.h in Headers */,
+				3BFAD7618BB45534949A6DDAC4F88E1B /* YYClassInfo.h in Headers */,
+				EFA8666CDFC4D3B4D249491723E493E7 /* YYModel.h in Headers */,
+				E9EB0B118CBEAD3801697C7537D973C2 /* YYModel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A7BC147AAE7402C0D0BCECE3158C6D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5262B8138975DBACDE2D9E1AA97F4B4B /* WhiteAppParam.h in Headers */,
+				A4E6DD66C27BFA66A6FAFBBE7BAC7872 /* WhiteAudioMixerBridge.h in Headers */,
+				33075DB048B6BBFF83E60FC0D6685193 /* Whiteboard.h in Headers */,
+				BDE73B103FA42BCBB8ADCCE369E355CB /* Whiteboard-umbrella.h in Headers */,
+				4F9BA3FEE945910F073672EF4556F68E /* WhiteBoardView.h in Headers */,
+				7A41A29CA8E8DCAE51B532986E57F16B /* WhiteBoardView+Private.h in Headers */,
+				DF81688716C9E35B952BAEC1CD7BA718 /* WhiteBroadcastState.h in Headers */,
+				529C7F91442DCBC737529551CE66B38F /* WhiteCameraBound.h in Headers */,
+				B119C3960E69F54FE75A30CA9C565747 /* WhiteCameraConfig.h in Headers */,
+				DF0132585AE5D95D927EA39D54747692 /* WhiteCameraState.h in Headers */,
+				7656FA58426D54769FC4A5BF35B155F2 /* WhiteCombinePlayer.h in Headers */,
+				C83F56DB5CEB2341C62CB9E0277EDC88 /* WhiteCommonCallbacks.h in Headers */,
+				DB2379C6C1DD1D8C1832CA8B10F4FFDB /* WhiteConsts.h in Headers */,
+				4A9DF0C7B2EE846FDF07BE9A76C14A3E /* WhiteConversionInfo.h in Headers */,
+				BCF76B8DCD02F11D1FA5BF8345A49756 /* WhiteConverter.h in Headers */,
+				0AF86D2D94CBEABEAD4A01C82F356826 /* WhiteDisplayer.h in Headers */,
+				EEE473AA1528A565F0F0D76410033070 /* WhiteDisplayer+Private.h in Headers */,
+				7B4DBEDE1083B74A870ED54A2BDF7F5C /* WhiteDisplayerState.h in Headers */,
+				E659A36EBB06C6D9FE5BE80057C3F6F6 /* WhiteEvent.h in Headers */,
+				E64027F04C9769054BCB59A06A4F734F /* WhiteFontFace.h in Headers */,
+				AF8131EC31B6B2691C39D87F0CC5E6E9 /* WhiteGlobalState.h in Headers */,
+				3C8F9620D0A2CCE8FE88B8CED7F33247 /* WhiteImageInformation.h in Headers */,
+				19202E362EC7515783FF77AC7FB7BD71 /* WhiteMemberInformation.h in Headers */,
+				DBA5F78549A4C1ADEBF93221AE84C70B /* WhiteMemberState.h in Headers */,
+				6CC621A5CB53EC335610A0495FD937BB /* WhiteObject.h in Headers */,
+				71F801B04AAEE1FF891E02F5C6762FBD /* WhitePanEvent.h in Headers */,
+				37FBC1E55A765DD042EA0FF38F3247CC /* WhitePlayer.h in Headers */,
+				E3F8A335602DCFE875509A3A28431F52 /* WhitePlayer+Private.h in Headers */,
+				86067F07AE66A0102E8733E745E926C6 /* WhitePlayerConfig.h in Headers */,
+				7A43519619455E8266F200FE078DFC68 /* WhitePlayerConsts.h in Headers */,
+				0FBE3DCAF87E8946F5C3928A789EE93A /* WhitePlayerEvent.h in Headers */,
+				822E7BECE2B4BE6922636790A8909D06 /* WhitePlayerEvent+Private.h in Headers */,
+				5A8FF684705E80300E1B0ED233BB5413 /* WhitePlayerState.h in Headers */,
+				D6A626F1030D28E454AA98837FA0098E /* WhitePlayerTimeInfo.h in Headers */,
+				9734A01735BA4623F83F1F1A4958ABFD /* WhitePptPage.h in Headers */,
+				80939A21B6F658B7F43BE537E3C201C7 /* WhiteRectangleConfig.h in Headers */,
+				7CC1608A8C6464974796BC09E2F781B3 /* WhiteRoom.h in Headers */,
+				73C6616C46E02F5B26F3644A0D155879 /* WhiteRoom+Private.h in Headers */,
+				EF2712F3555C5DD66FA06CAF9FE15ABD /* WhiteRoomCallbacks.h in Headers */,
+				0021FD3F592FC7F065A208419FB25A48 /* WhiteRoomCallbacks+Private.h in Headers */,
+				F4E40F7F24515C05F7A71F8E748C0ACC /* WhiteRoomConfig.h in Headers */,
+				444DD93F2626DC3568D57A5295D691F7 /* WhiteRoomMember.h in Headers */,
+				9D46B90674275EB1B5DD063509F1F943 /* WhiteRoomState.h in Headers */,
+				050B5BF9890C11E34205E0EA12E15785 /* WhiteScene.h in Headers */,
+				5E7645564C7C032A0A817E67551BD247 /* WhiteSceneState.h in Headers */,
+				77CE5613BD967BA21C783B45C7E56049 /* WhiteSDK.h in Headers */,
+				242546290EB07148E8C56FC7C9F38344 /* WhiteSDK+Private.h in Headers */,
+				AE1623BDC16616A49B3899AC346F5CBC /* WhiteSDK+Replayer.h in Headers */,
+				A61D8570183A8D50D8D543DA4889D6AA /* WhiteSDK+Room.h in Headers */,
+				F84A652040A992B95C64A88A236595E4 /* WhiteSdkConfiguration.h in Headers */,
+				32744A6399361309E2F49AE4DD626D1C /* WhiteSdkConfiguration+Private.h in Headers */,
+				354FEEE46848346CB5C077D533E1AF43 /* WhiteSliderView.h in Headers */,
+				EB9CE5C0488C31ED726A77DEA82D426E /* WhiteVideoView.h in Headers */,
+				568331A4392DB07F4D2A2ADBEB3B1496 /* WhiteWebViewInjection.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0EB9E06B4A4636CA9288D815FC9DBFC5 /* Whiteboard-Whiteboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3C3CBEBF87F97915B2547A20B6BFB66 /* Build configuration list for PBXNativeTarget "Whiteboard-Whiteboard" */;
+			buildPhases = (
+				A45850A65CAB8CB0B39B7033A89E9F4D /* Sources */,
+				D35EFF805AAC20CBEC31BA697028D1D3 /* Frameworks */,
+				9BE4024D1826355558814A35BD9A1A97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Whiteboard-Whiteboard";
+			productName = Whiteboard;
+			productReference = B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */;
+			productType = "com.apple.product-type.bundle";
+		};
+		1A6F633BD0A4B9EF892715BEB76AC948 /* dsBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED684E8BDE027752B77A9E567F47013C /* Build configuration list for PBXNativeTarget "dsBridge" */;
+			buildPhases = (
+				7BF3115D7D2D788A6DA61B201DB1FDA4 /* Headers */,
+				E4DAEFF5A9460936E3A0E447BB63FA16 /* Sources */,
+				E629162202EC1994498D32028D1710D0 /* Frameworks */,
+				9BA3A5969254E2FB099DDD03AB5B2BB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dsBridge;
+			productName = dsBridge;
+			productReference = 797D46A7F1534583458B98BF2BB479A7 /* dsBridge */;
+			productType = "com.apple.product-type.framework";
+		};
+		205483BBB45EA83BC53758911C1C8F5F /* Pods-OCExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A84CE1EA90E7D0630CDF1F93DCEB44A7 /* Build configuration list for PBXNativeTarget "Pods-OCExample" */;
+			buildPhases = (
+				1A9DA4BFB3811E84C4746DBC6FE0123E /* Headers */,
+				E7008085E58664A5FFBEC3AB51EC5505 /* Sources */,
+				46EA679C539A311D9702AB09BA918AE1 /* Frameworks */,
+				8955DFA5C6506E5940492B8AFC871F57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E3156DAB093B5989FE688CD9D036F1E /* PBXTargetDependency */,
+				3F71D094DFE0FC8821E465D8932A38C1 /* PBXTargetDependency */,
+				54E898EF15F1F00CAC5CACFB6CC54905 /* PBXTargetDependency */,
+				1078010C7A3D17566D9A7C8174AD390E /* PBXTargetDependency */,
+			);
+			name = "Pods-OCExample";
+			productName = Pods_OCExample;
+			productReference = 2F97F3B7A006C0CFB5CF290FA69B2671 /* Pods-OCExample */;
+			productType = "com.apple.product-type.framework";
+		};
+		74C38FD99466DAF9B1FB86943AFC4A50 /* Pods-Fastboard_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99CFCE065120E672C7DCB259942FAA31 /* Build configuration list for PBXNativeTarget "Pods-Fastboard_Example" */;
+			buildPhases = (
+				3EA350AED1127A37563DAC821489B0FC /* Headers */,
+				AE38240022B8E240A6A75C1BBAE936CF /* Sources */,
+				EDD2CB0F6DA57C3AA882297A93ADAD85 /* Frameworks */,
+				063799A8AC000AD0CE9C517F94D10B9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B87CF70A215B2AF048440822004676DA /* PBXTargetDependency */,
+				38E4D8266B1F320FB824AB60D3643ECB /* PBXTargetDependency */,
+				F3363901D55E86DA1E2A50BF4B5C8A2B /* PBXTargetDependency */,
+				8F9DD586C4F7836B65D8F3CE718B8E68 /* PBXTargetDependency */,
+			);
+			name = "Pods-Fastboard_Example";
+			productName = Pods_Fastboard_Example;
+			productReference = 0496A30F7B825EF5707DE53EDB879541 /* Pods-Fastboard_Example */;
+			productType = "com.apple.product-type.framework";
+		};
+		750579D9E74AA25AB515AD198A40FF8D /* Fastboard-Icons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48C95F34B2CA013431EF7F8DA3E92D4C /* Build configuration list for PBXNativeTarget "Fastboard-Icons" */;
+			buildPhases = (
+				0C822DC628FFAC74DC3E3D8CDD026F70 /* Sources */,
+				46F90FCFEE2DCC206ECFA61160B9FED7 /* Frameworks */,
+				2FA17B2807E731A8E129348E7B6F89A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fastboard-Icons";
+			productName = Icons;
+			productReference = 92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */;
+			productType = "com.apple.product-type.bundle";
+		};
+		84B44807A12996D487A4A591A481D6A0 /* YYModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7ED1A87B806BDA6E6570DDFEA2CAD35 /* Build configuration list for PBXNativeTarget "YYModel" */;
+			buildPhases = (
+				BDB4432365832C510582B2CE2E4AD2E2 /* Headers */,
+				3DD4F3AFABAB42DE68962EB122A38AFF /* Sources */,
+				17DF9928985496F691D9B15869693BCA /* Frameworks */,
+				84F7A192C77DF85805B8D11A6A2123AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YYModel;
+			productName = YYModel;
+			productReference = E460D5B0416D36F66EE8EC89E5D2FA0A /* YYModel */;
+			productType = "com.apple.product-type.framework";
+		};
+		887E769F555AF76F514A7276E2BA1CB8 /* Whiteboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CE717A873363FF0BB564A1E9D449499 /* Build configuration list for PBXNativeTarget "Whiteboard" */;
+			buildPhases = (
+				F4A7BC147AAE7402C0D0BCECE3158C6D /* Headers */,
+				374C620C763CCCF0F729E34442241495 /* Sources */,
+				2829B1EB4FC20A2AC1CFE99CC13C82BB /* Frameworks */,
+				33F400191E0555F42C699403C3E4A74E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A9241690A99EA2F447CA19F9D0072CE /* PBXTargetDependency */,
+				A4CE9A745E8C383C4092E4F0FAED1216 /* PBXTargetDependency */,
+				5ACA3C5FCA7C7E0D6DD648FCB5EA2ECE /* PBXTargetDependency */,
+			);
+			name = Whiteboard;
+			productName = Whiteboard;
+			productReference = BF07350E583AF349A194294437B0C06E /* Whiteboard */;
+			productType = "com.apple.product-type.framework";
+		};
+		BE49CDB6FCC514206F1F9C497AE5AB09 /* Fastboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB12E1AE0B3D4C7A7855F0B46EC67C45 /* Build configuration list for PBXNativeTarget "Fastboard" */;
+			buildPhases = (
+				3192DAA995C81D1E964F7B7408B239F2 /* Headers */,
+				4E886D53112050D0E7D67F9471E85A95 /* Sources */,
+				AF92142F98CA8592AADA348AFD116387 /* Frameworks */,
+				0ED8F83F38A55A2CE02E6A78EF028737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E2244A08426AD483C3FDFEF16CAA2F5 /* PBXTargetDependency */,
+				E4E53C6DB63539A6CE27F4E2FBE0D21B /* PBXTargetDependency */,
+			);
+			name = Fastboard;
+			productName = Fastboard;
+			productReference = 6AF279AB629184C658EFA156D552216E /* Fastboard */;
+			productType = "com.apple.product-type.framework";
+		};
+		F3155E4D2FAF0393AC003B7A39858E46 /* Pods-Fastboard_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4121387CCC707DC00AE7123D75357DAE /* Build configuration list for PBXNativeTarget "Pods-Fastboard_Tests" */;
+			buildPhases = (
+				071543BA5B725EE52FE7AB582C3FA137 /* Headers */,
+				751E950AC4ADA714A48814D9BA01F27A /* Sources */,
+				003E4FAFB35C09B6927CF2F41966738C /* Frameworks */,
+				04E0499798C6B28DE374096F3E8B52F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEE8E06870A63A86638CA51FCB32C62A /* PBXTargetDependency */,
+			);
+			name = "Pods-Fastboard_Tests";
+			productName = Pods_Fastboard_Tests;
+			productReference = 0E2BB5391735E043FEA4FA5094EB70DB /* Pods-Fastboard_Tests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 573399020ABCF46BE63486A4C3CEC36C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A6F633BD0A4B9EF892715BEB76AC948 /* dsBridge */,
+				BE49CDB6FCC514206F1F9C497AE5AB09 /* Fastboard */,
+				750579D9E74AA25AB515AD198A40FF8D /* Fastboard-Icons */,
+				74C38FD99466DAF9B1FB86943AFC4A50 /* Pods-Fastboard_Example */,
+				F3155E4D2FAF0393AC003B7A39858E46 /* Pods-Fastboard_Tests */,
+				205483BBB45EA83BC53758911C1C8F5F /* Pods-OCExample */,
+				887E769F555AF76F514A7276E2BA1CB8 /* Whiteboard */,
+				0EB9E06B4A4636CA9288D815FC9DBFC5 /* Whiteboard-Whiteboard */,
+				84B44807A12996D487A4A591A481D6A0 /* YYModel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04E0499798C6B28DE374096F3E8B52F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		063799A8AC000AD0CE9C517F94D10B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ED8F83F38A55A2CE02E6A78EF028737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15A84DF6011C942FB21349868E94C4A4 /* Fastboard-Icons in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA17B2807E731A8E129348E7B6F89A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228158BE2A8D78F030545F3749F04BE2 /* Icons.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33F400191E0555F42C699403C3E4A74E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9226E32DE6A70F14C141E0B3DE033A20 /* Whiteboard-Whiteboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F7A192C77DF85805B8D11A6A2123AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8955DFA5C6506E5940492B8AFC871F57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BA3A5969254E2FB099DDD03AB5B2BB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE4024D1826355558814A35BD9A1A97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B9B9996CD662B6F5254BCA9DEF921B3 /* f0d404d in Resources */,
+				5E8E3A9296CB81681A6FBE2ECE7FE3B9 /* index.html in Resources */,
+				755D3D6C419E5451E41FF39734D7DCE9 /* main.1413e9a0.css in Resources */,
+				342541DDD76574AC9468C83A9F572B85 /* main.50f2aeb1.js in Resources */,
+				0BF6ABCBD0CA0ACD5A7853EDC9AE7D97 /* runtime.36e3f0da.js in Resources */,
+				4ABFAD71C90BEF2D6FCDA9BE2AE26F59 /* vendor.782af06e.js in Resources */,
+				601E5396301E13EDB2F6EF9C3B6E50B8 /* vendor.fb021a05.css in Resources */,
+				8C817FE6C2EDF7DC2D0A5AA47BBEF9E2 /* web-sdk.e60073fb.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C822DC628FFAC74DC3E3D8CDD026F70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		374C620C763CCCF0F729E34442241495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6FEA4ABA12C8FB482C98E890E0B5682 /* WhiteAppParam.m in Sources */,
+				E55085665CDE09E03CFA5FDCC2A53B70 /* WhiteAudioMixerBridge.m in Sources */,
+				13C5A966379C1ED336166E3474BC55CA /* Whiteboard-dummy.m in Sources */,
+				FD2523272C84EA7A258304B666E7FF61 /* WhiteBoardView.m in Sources */,
+				E067E6765FDAC9151272D5ED5A94AEC3 /* WhiteBroadcastState.m in Sources */,
+				B012DC76AFA698A79564E6174F397C8E /* WhiteCameraBound.m in Sources */,
+				37AAF86D3054D550591913945F3C7B2C /* WhiteCameraConfig.m in Sources */,
+				445F5F5BC367380F8B1F0B65805413A2 /* WhiteCameraState.m in Sources */,
+				40C8FEB98CC5618DE644351535043D83 /* WhiteCombinePlayer.m in Sources */,
+				5916B360F9B3A335D24A17446A7B6540 /* WhiteCommonCallbacks.m in Sources */,
+				11239D57B5B31DE928A58FB1AF74BB90 /* WhiteConsts.m in Sources */,
+				06DFCA6B42CFA03A0E5354D15D1DF224 /* WhiteConversionInfo.m in Sources */,
+				9728340DA7A4AEA41C5D97EC2EB281D8 /* WhiteConverter.m in Sources */,
+				5202B07DF6F6D038D95C579F78E5ABB0 /* WhiteDisplayer.m in Sources */,
+				83706BFD5E7A16DE19C47C7A21E1EEAC /* WhiteDisplayerState.m in Sources */,
+				F10272BB1685F1EB8984421C405ADAB6 /* WhiteEvent.m in Sources */,
+				1A09DCC8708BC5B8634A983D88507519 /* WhiteFontFace.m in Sources */,
+				FAD39FFF2F4C0E4415F1A596ACCF5D4D /* WhiteGlobalState.m in Sources */,
+				4EAC78726CDD024BBA1D8349A4694BFC /* WhiteImageInformation.m in Sources */,
+				16F051F99FF1D954786298BE39518FF0 /* WhiteMemberInformation.m in Sources */,
+				2D02392F358CE5D311C8C6227623259A /* WhiteMemberState.m in Sources */,
+				9911D64B71294F1A195C3A7490C38B7E /* WhiteObject.m in Sources */,
+				1BD936EC8F87F47CD6A6454842B7D3C4 /* WhitePanEvent.m in Sources */,
+				5D2057742225843F2848890424ACA0CD /* WhitePlayer.m in Sources */,
+				C314B62E8F0D64FA0910E240CF600037 /* WhitePlayerConfig.m in Sources */,
+				5A4CD89FFDE2D3692B21D186DD6C9EC1 /* WhitePlayerEvent.m in Sources */,
+				9A4EC5F865A8B16ADB972E169F1938F3 /* WhitePlayerState.m in Sources */,
+				CFF17291385779885F3538B73DAF599A /* WhitePlayerTimeInfo.m in Sources */,
+				2110B5D991955702A8FD1DF197F5C493 /* WhitePptPage.m in Sources */,
+				F15B147814C57F6DC7FAC58B37DDC373 /* WhiteRectangleConfig.m in Sources */,
+				208CA07616BFEAB732B4BFBE4A331001 /* WhiteRoom.m in Sources */,
+				6840252AAABA27CC447A76A7044C8191 /* WhiteRoomCallbacks.m in Sources */,
+				0B9E9282E067C2941FFACC57D71C2031 /* WhiteRoomConfig.m in Sources */,
+				4C8555534BE06A3929714EC1E745B4C0 /* WhiteRoomMember.m in Sources */,
+				58C66F60848EF6EEA6F3A12BCCB6223F /* WhiteRoomState.m in Sources */,
+				F0DFC32C79349FD81EA48A56D7742FC4 /* WhiteScene.m in Sources */,
+				03377B78A2276AD1D5CF4CE1C411A6B0 /* WhiteSceneState.m in Sources */,
+				476DD36DAE0E47EFE0D43110A67DAB3A /* WhiteSDK.m in Sources */,
+				A8E26226601C76B2A365EFDEA7795179 /* WhiteSDK+Replayer.m in Sources */,
+				E5D313C5174B8067DC6D7C1A8D293145 /* WhiteSDK+Room.m in Sources */,
+				7C49934D13091FFB0AD70EAD15099C6E /* WhiteSdkConfiguration.m in Sources */,
+				2C986AE043621EF94034CF79F0C32473 /* WhiteSliderView.m in Sources */,
+				2307E835A200395FD3B3A91B8878CA52 /* WhiteVideoView.m in Sources */,
+				152F5BEDC3CB5854C693F8C22661509E /* WhiteWebViewInjection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DD4F3AFABAB42DE68962EB122A38AFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3617B5C92A335F9E4DA4690B52C3690 /* NSObject+YYModel.m in Sources */,
+				52CB56920D70711E68ADDAA1939F2483 /* YYClassInfo.m in Sources */,
+				F969343D0E679F2F2722E8E8BDC73E98 /* YYModel-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E886D53112050D0E7D67F9471E85A95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66839F5F668444EA29DC394DAC0887CF /* ControlBar.swift in Sources */,
+				86D4A83309AB74480302B863817D13D0 /* DefaultTheme.swift in Sources */,
+				8AA434E9277DB287003681E6 /* UIColor+Convince.swift in Sources */,
+				8AA434E7277DB100003681E6 /* UIImage+ColorItem.swift in Sources */,
+				409BC4E7209C8E444B11AB4F3B2FFC84 /* DelegateProxy.swift in Sources */,
+				A877157EFB4B2DC40909475F141D9999 /* Fastboard.swift in Sources */,
+				D9B452DC3F911117E0F49CEBB9DE8066 /* Fastboard-dummy.m in Sources */,
+				8AA434E3277D9BEA003681E6 /* SubPanelView.swift in Sources */,
+				C2EB0781B9A07F45C00179D9C4318EC1 /* FastboardDelegate.swift in Sources */,
+				5A8D62D4B888939EBF806E40E5B3A584 /* FastboardSDK.swift in Sources */,
+				73ED5AFF6DF6BBD73E212BB8929F09A2 /* FastboardView.swift in Sources */,
+				14ABACB725CC2CFF1D4D8456AE5A4A4D /* FastError.swift in Sources */,
+				34A25AB11AA55E9F0EBFDF3E4CA0AA39 /* FastOperation.swift in Sources */,
+				E80308E7F2DDF2476D00591100C238EC /* FastProxy.m in Sources */,
+				CA9B99345CBE1EBF4E8041DA7B8D0336 /* Theme.swift in Sources */,
+				ECA1F7B6934091A8E7E453F43F30A7F5 /* ThemeManager.swift in Sources */,
+				8AA434E5277DA1A9003681E6 /* IndicatorMoreButton.swift in Sources */,
+				FBF6E941013E5879B96E221153C21B68 /* UIColor+NSNumber.swift in Sources */,
+				98E5505C9E7340B038ACE23EF1D49625 /* UIImage+Bundle.swift in Sources */,
+				24807F28298BDB94EF0F526B5833A381 /* UIImage+tint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		751E950AC4ADA714A48814D9BA01F27A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C977B41907D1AC5179BB964DBB3431C /* Pods-Fastboard_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A45850A65CAB8CB0B39B7033A89E9F4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE38240022B8E240A6A75C1BBAE936CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99DCAC3F8B3E70E3B3A701516F91CADF /* Pods-Fastboard_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4DAEFF5A9460936E3A0E447BB63FA16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B196099F6E4773A4322B362AF690D59C /* dsBridge-dummy.m in Sources */,
+				DB629F9EDB50EA0DBD77ECDE1A978597 /* DSCallInfo.m in Sources */,
+				1360FCE0DF4E8C16198FF9AF3970DD8C /* DWKWebView.m in Sources */,
+				74A6CB826C743E4C2804ACAF94F3AAFF /* InternalApis.m in Sources */,
+				DDE97AAF94D4C34CD997869FA6075426 /* JSBUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7008085E58664A5FFBEC3AB51EC5505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF60DAD9FFCF94987CC32F5FBC47DB04 /* Pods-OCExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1078010C7A3D17566D9A7C8174AD390E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dsBridge;
+			target = 1A6F633BD0A4B9EF892715BEB76AC948 /* dsBridge */;
+			targetProxy = 34865C61F68B52F6D0C4D8BA9234C8FE /* PBXContainerItemProxy */;
+		};
+		1A9241690A99EA2F447CA19F9D0072CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Whiteboard-Whiteboard";
+			target = 0EB9E06B4A4636CA9288D815FC9DBFC5 /* Whiteboard-Whiteboard */;
+			targetProxy = 741B5C27033B296857674D8B2B19E301 /* PBXContainerItemProxy */;
+		};
+		38E4D8266B1F320FB824AB60D3643ECB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Whiteboard;
+			target = 887E769F555AF76F514A7276E2BA1CB8 /* Whiteboard */;
+			targetProxy = 784B188807B82A1882FB28F063DCC01B /* PBXContainerItemProxy */;
+		};
+		3E2244A08426AD483C3FDFEF16CAA2F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Fastboard-Icons";
+			target = 750579D9E74AA25AB515AD198A40FF8D /* Fastboard-Icons */;
+			targetProxy = 8B96258A024287059E8F49D854D3B755 /* PBXContainerItemProxy */;
+		};
+		3F71D094DFE0FC8821E465D8932A38C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Whiteboard;
+			target = 887E769F555AF76F514A7276E2BA1CB8 /* Whiteboard */;
+			targetProxy = A865B2E98ABFA77D696EF32CB83DA329 /* PBXContainerItemProxy */;
+		};
+		54E898EF15F1F00CAC5CACFB6CC54905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YYModel;
+			target = 84B44807A12996D487A4A591A481D6A0 /* YYModel */;
+			targetProxy = 11A232BFA75B60D5403040560590A223 /* PBXContainerItemProxy */;
+		};
+		5ACA3C5FCA7C7E0D6DD648FCB5EA2ECE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dsBridge;
+			target = 1A6F633BD0A4B9EF892715BEB76AC948 /* dsBridge */;
+			targetProxy = B53CF85A9627C02A90FAB429BC7A04D9 /* PBXContainerItemProxy */;
+		};
+		5E3156DAB093B5989FE688CD9D036F1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Fastboard;
+			target = BE49CDB6FCC514206F1F9C497AE5AB09 /* Fastboard */;
+			targetProxy = CCF7A4BEBE7D4E968BDAF640D7CA255E /* PBXContainerItemProxy */;
+		};
+		8F9DD586C4F7836B65D8F3CE718B8E68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dsBridge;
+			target = 1A6F633BD0A4B9EF892715BEB76AC948 /* dsBridge */;
+			targetProxy = 6F2DE524E3B4BA88B92BEB6F90C1E548 /* PBXContainerItemProxy */;
+		};
+		A4CE9A745E8C383C4092E4F0FAED1216 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YYModel;
+			target = 84B44807A12996D487A4A591A481D6A0 /* YYModel */;
+			targetProxy = B06FB64BB3FA8B5EEC0CF32EAA629044 /* PBXContainerItemProxy */;
+		};
+		B87CF70A215B2AF048440822004676DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Fastboard;
+			target = BE49CDB6FCC514206F1F9C497AE5AB09 /* Fastboard */;
+			targetProxy = 95CB49AC98F0CD4A3D8E31175B418BA8 /* PBXContainerItemProxy */;
+		};
+		E4E53C6DB63539A6CE27F4E2FBE0D21B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Whiteboard;
+			target = 887E769F555AF76F514A7276E2BA1CB8 /* Whiteboard */;
+			targetProxy = 56DA11F4D96DD523C7C68439440ABBEF /* PBXContainerItemProxy */;
+		};
+		F3363901D55E86DA1E2A50BF4B5C8A2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YYModel;
+			target = 84B44807A12996D487A4A591A481D6A0 /* YYModel */;
+			targetProxy = 9A59E51F75C2E1A3A88AD158338DABB8 /* PBXContainerItemProxy */;
+		};
+		FEE8E06870A63A86638CA51FCB32C62A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Fastboard_Example";
+			target = 74C38FD99466DAF9B1FB86943AFC4A50 /* Pods-Fastboard_Example */;
+			targetProxy = 364D6ABC49EB0334E1F4CDBAD46ABE07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0913A98D775F4B158E912F95FBA192FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7DD6D4730098CF5515E030205E64DC6 /* Pods-Fastboard_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0CDC32CB4E232ADBD8A3133738D083BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9348F2F5AC7FCFFAB1E1BBB64AF43F6 /* Fastboard.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fastboard";
+				IBSC_MODULE = Fastboard;
+				INFOPLIST_FILE = "Target Support Files/Fastboard/ResourceBundle-Icons-Fastboard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = Icons;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		22A1D16CC324F4F8E4C5CB80AC2F94FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0F0DE46840EE52509321C3DC727A8D5 /* Pods-OCExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OCExample/Pods-OCExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OCExample/Pods-OCExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5AEF0AE564E65B41AE95A411531AF012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB7D0C8C0C71A6CE7A7584E32BA8EA21 /* Whiteboard.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Whiteboard";
+				IBSC_MODULE = Whiteboard;
+				INFOPLIST_FILE = "Target Support Files/Whiteboard/ResourceBundle-Whiteboard-Whiteboard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = Whiteboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		63492B6918407C811255A3DBE45A7D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C531CB2A4BB11E49E1D343AFA2A7F07 /* Fastboard.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Fastboard/Fastboard-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Fastboard/Fastboard-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Fastboard/Fastboard.modulemap";
+				PRODUCT_MODULE_NAME = Fastboard;
+				PRODUCT_NAME = Fastboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		65210372AAF087BAA656247E72EBDF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F95B528D75D6934381426EB0789ABE4 /* YYModel.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYModel/YYModel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYModel/YYModel.modulemap";
+				PRODUCT_MODULE_NAME = YYModel;
+				PRODUCT_NAME = YYModel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		68556EA48F43CADA4CAC0A4262C78C2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 440C74D9410334AD22506BFDD8171540 /* Pods-Fastboard_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		92B7A5243F65C49A5665BD97D6123963 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE720D9021D8F66E0BBCB922A717060E /* Whiteboard.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Whiteboard/Whiteboard-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Whiteboard/Whiteboard-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Whiteboard/Whiteboard.modulemap";
+				PRODUCT_MODULE_NAME = Whiteboard;
+				PRODUCT_NAME = Whiteboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9509B5BF907C8BCD664741351C8095B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE720D9021D8F66E0BBCB922A717060E /* Whiteboard.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Whiteboard";
+				IBSC_MODULE = Whiteboard;
+				INFOPLIST_FILE = "Target Support Files/Whiteboard/ResourceBundle-Whiteboard-Whiteboard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = Whiteboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A649A773CD1576AF91C431912C087FB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB7D0C8C0C71A6CE7A7584E32BA8EA21 /* Whiteboard.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Whiteboard/Whiteboard-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Whiteboard/Whiteboard-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Whiteboard/Whiteboard.modulemap";
+				PRODUCT_MODULE_NAME = Whiteboard;
+				PRODUCT_NAME = Whiteboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B6AB0B0D42F405C521B25702B4B36CB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DDDE576C18992A53D65A889043BB374 /* dsBridge.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/dsBridge/dsBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/dsBridge/dsBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/dsBridge/dsBridge.modulemap";
+				PRODUCT_MODULE_NAME = dsBridge;
+				PRODUCT_NAME = dsBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B91021F40521C842855C152F35D2903E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F366A14CA820EB00712C6AC84DBF534A /* YYModel.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YYModel/YYModel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYModel/YYModel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYModel/YYModel.modulemap";
+				PRODUCT_MODULE_NAME = YYModel;
+				PRODUCT_NAME = YYModel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B9146E31666A1559E46F9B6361C9E9C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9348F2F5AC7FCFFAB1E1BBB64AF43F6 /* Fastboard.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Fastboard/Fastboard-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Fastboard/Fastboard-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Fastboard/Fastboard.modulemap";
+				PRODUCT_MODULE_NAME = Fastboard;
+				PRODUCT_NAME = Fastboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BDAEEA376B41140509F59F8A86D71379 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74B8E12D068CDD7202FE0F52F984177A /* dsBridge.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/dsBridge/dsBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/dsBridge/dsBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/dsBridge/dsBridge.modulemap";
+				PRODUCT_MODULE_NAME = dsBridge;
+				PRODUCT_NAME = dsBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CD201E258916BC220D2C05F5D69C0275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 316E0787E2462FA25DD41BB01DE0518E /* Pods-Fastboard_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Fastboard_Example/Pods-Fastboard_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Fastboard_Example/Pods-Fastboard_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D12AFF2D6D42B96EE8B3D5F7D688F02D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577230DC24B02DC426AC2483B4F3F180 /* Pods-Fastboard_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Fastboard_Example/Pods-Fastboard_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Fastboard_Example/Pods-Fastboard_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FAFE9D2EFFA476D456D33DC57CFA99FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3218522EC69F4F2943146840F1FF6480 /* Pods-OCExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OCExample/Pods-OCExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OCExample/Pods-OCExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FCBA13195F6A18F1CED7785DD19C0C01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C531CB2A4BB11E49E1D343AFA2A7F07 /* Fastboard.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fastboard";
+				IBSC_MODULE = Fastboard;
+				INFOPLIST_FILE = "Target Support Files/Fastboard/ResourceBundle-Icons-Fastboard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = Icons;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CE717A873363FF0BB564A1E9D449499 /* Build configuration list for PBXNativeTarget "Whiteboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92B7A5243F65C49A5665BD97D6123963 /* Debug */,
+				A649A773CD1576AF91C431912C087FB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4121387CCC707DC00AE7123D75357DAE /* Build configuration list for PBXNativeTarget "Pods-Fastboard_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0913A98D775F4B158E912F95FBA192FF /* Debug */,
+				68556EA48F43CADA4CAC0A4262C78C2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
+				7EE7A78859F657F6BEFC651185B43192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48C95F34B2CA013431EF7F8DA3E92D4C /* Build configuration list for PBXNativeTarget "Fastboard-Icons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CDC32CB4E232ADBD8A3133738D083BF /* Debug */,
+				FCBA13195F6A18F1CED7785DD19C0C01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99CFCE065120E672C7DCB259942FAA31 /* Build configuration list for PBXNativeTarget "Pods-Fastboard_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D12AFF2D6D42B96EE8B3D5F7D688F02D /* Debug */,
+				CD201E258916BC220D2C05F5D69C0275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A84CE1EA90E7D0630CDF1F93DCEB44A7 /* Build configuration list for PBXNativeTarget "Pods-OCExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFE9D2EFFA476D456D33DC57CFA99FB /* Debug */,
+				22A1D16CC324F4F8E4C5CB80AC2F94FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3C3CBEBF87F97915B2547A20B6BFB66 /* Build configuration list for PBXNativeTarget "Whiteboard-Whiteboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9509B5BF907C8BCD664741351C8095B5 /* Debug */,
+				5AEF0AE564E65B41AE95A411531AF012 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7ED1A87B806BDA6E6570DDFEA2CAD35 /* Build configuration list for PBXNativeTarget "YYModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B91021F40521C842855C152F35D2903E /* Debug */,
+				65210372AAF087BAA656247E72EBDF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB12E1AE0B3D4C7A7855F0B46EC67C45 /* Build configuration list for PBXNativeTarget "Fastboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9146E31666A1559E46F9B6361C9E9C1 /* Debug */,
+				63492B6918407C811255A3DBE45A7D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED684E8BDE027752B77A9E567F47013C /* Build configuration list for PBXNativeTarget "dsBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6AB0B0D42F405C521B25702B4B36CB8 /* Debug */,
+				BDAEEA376B41140509F59F8A86D71379 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

@@ -11,7 +11,11 @@ public enum ThemeComponentType {
     case brand
     case background
     case controlSelected
+    case controlSelectedDark
+    case controlSelectedBg
     case controlNormal
+    case controlDisable
+    case border
 }
 
 public typealias ThemeProvider = ((ThemeComponentType, UITraitCollection?)-> UIColor)

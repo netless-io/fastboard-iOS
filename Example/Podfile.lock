@@ -1,0 +1,51 @@
+PODS:
+  - dsBridge (3.0.6)
+  - Fastboard (1.0.0):
+    - Whiteboard (~> 2.15.17)
+  - Whiteboard (2.15.17):
+    - Whiteboard/Base (= 2.15.17)
+    - Whiteboard/Converter (= 2.15.17)
+    - Whiteboard/Model (= 2.15.17)
+    - Whiteboard/NativeReplayer (= 2.15.17)
+    - Whiteboard/Object (= 2.15.17)
+    - Whiteboard/Replayer (= 2.15.17)
+    - Whiteboard/Room (= 2.15.17)
+  - Whiteboard/Base (2.15.17):
+    - dsBridge (~> 3.0.2)
+    - Whiteboard/Object
+  - Whiteboard/Converter (2.15.17):
+    - Whiteboard/Object
+  - Whiteboard/Model (2.15.17):
+    - YYModel (~> 1.0.4)
+  - Whiteboard/NativeReplayer (2.15.17):
+    - Whiteboard/Replayer
+  - Whiteboard/Object (2.15.17):
+    - Whiteboard/Model
+  - Whiteboard/Replayer (2.15.17):
+    - Whiteboard/Base
+  - Whiteboard/Room (2.15.17):
+    - Whiteboard/Base
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - Fastboard (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - dsBridge
+    - Whiteboard
+    - YYModel
+
+EXTERNAL SOURCES:
+  Fastboard:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
+  Fastboard: 27d8265c040a55215700abe608509339178003b7
+  Whiteboard: 30afb195f671cfa026603699103207ab8b9a3fde
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: fbfd6d9d568edf77f15381bbef8a2f0c1282b1da
+
+COCOAPODS: 1.11.2

@@ -16,6 +16,7 @@ public class ThemeManager: NSObject {
         } else {
             theme = DefaultTheme.defaultLightTheme
         }
+        super.init()
     }
     
     public var theme: ThemeProvider {

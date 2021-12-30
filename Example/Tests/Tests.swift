@@ -1,5 +1,4 @@
 import XCTest
-import Fastboard
 
 class Tests: XCTestCase {
     
