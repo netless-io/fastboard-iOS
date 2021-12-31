@@ -21,32 +21,48 @@ public class ThemeManager: NSObject {
     
     public var theme: ThemeProvider {
         didSet {
-            FastBoardSDK.weakTable.objectEnumerator().forEach { item in
-                guard let view = item as? FastboardView else { return }
+            func updateAppearanceFor(view: UIView ) {
                 // Manual update traitCollection
                 if #available(iOS 13.0, *) {
                     let style = view.traitCollection.userInterfaceStyle
-                    view.isHidden = true
+                    let isHide = view.isHidden
+                    if !isHide {
+                        view.isHidden = true
+                    }
                     switch style {
                     case .light:
                         DispatchQueue.main.async {
                             view.overrideUserInterfaceStyle = .dark
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            view.isHidden = false
-                            view.overrideUserInterfaceStyle = .light
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                if !isHide {
+                                    view.isHidden = false
+                                }
+                                view.overrideUserInterfaceStyle = .light
+                            }
                         }
                     case .dark:
                         DispatchQueue.main.async {
                             view.overrideUserInterfaceStyle = .light
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { view.isHidden = false
-                            view.overrideUserInterfaceStyle = .dark
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                if !isHide {
+                                    view.isHidden = false
+                                }
+                                view.overrideUserInterfaceStyle = .dark
+                            }
                         }
                     default: return
                     }
                 } else {
-                    view.rebuildStyleForBeforeOS12()
+                    (view as? FastThemeChangable)?.rebuildStyleForBeforeOS12()
+                }
+            }
+            
+            FastBoardSDK.weakTable.objectEnumerator().forEach { item in
+                guard let view = item as? FastboardView else { return }
+                updateAppearanceFor(view: view)
+                let subPanelViews = view.panels.flatMap { $0.value.items }.compactMap { $0 as? SubOpsItem }.map { $0.subPanelView }
+                for sub in subPanelViews {
+                    updateAppearanceFor(view: sub)
                 }
             }
         }
@@ -54,8 +70,7 @@ public class ThemeManager: NSObject {
     
     public func colorFor(_ type: ThemeComponentType) -> UIColor? {
         if #available(iOS 13.0, *) {
-            return UIColor { [weak self] collection in
-                guard let self = self else { return .white }
+            return UIColor { [unowned self] collection in
                 let color = self.theme(type, collection)
                 return color
             }

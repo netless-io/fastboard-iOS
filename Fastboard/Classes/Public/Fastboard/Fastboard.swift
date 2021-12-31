@@ -59,9 +59,20 @@ import Whiteboard
     func initState() {
         room?.getStateWithResult({ [weak self] state in
             if let appliance = state.memberState?.currentApplianceName {
-                self?.view.panel.updateWithApplianceOutside(appliance)
+                self?.view.operationPanel.updateWithApplianceOutside(appliance)
+                self?.view.updateUIWithInitAppliance(appliance)
+            } else {
+                self?.view.updateUIWithInitAppliance(nil)
             }
-            // TODO
+            
+            if let strokeWidth = state.memberState?.strokeWidth?.floatValue {
+                self?.view.colorAndStrokePanel.updateStrokeWidth(strokeWidth)
+            }
+            
+            if let nums = state.memberState?.strokeColor {
+                let color = UIColor.init(numberArray: nums)
+                self?.view.colorAndStrokePanel.updateSelectedColor(color)
+            }
         })
     }
     

@@ -41,7 +41,7 @@
 		32744A6399361309E2F49AE4DD626D1C /* WhiteSdkConfiguration+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D3B24A4A9C2992785A2489FC58961FD /* WhiteSdkConfiguration+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		33075DB048B6BBFF83E60FC0D6685193 /* Whiteboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 84EED637E6C0E9C99DECAF01C88979E1 /* Whiteboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		342541DDD76574AC9468C83A9F572B85 /* main.50f2aeb1.js in Resources */ = {isa = PBXBuildFile; fileRef = ED165D8AD74311DBF37B76765B30164A /* main.50f2aeb1.js */; };
-		34A25AB11AA55E9F0EBFDF3E4CA0AA39 /* FastOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperation.swift */; };
+		34A25AB11AA55E9F0EBFDF3E4CA0AA39 /* FastOperationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperationItem.swift */; };
 		354FEEE46848346CB5C077D533E1AF43 /* WhiteSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA7A62B1495B6116C1F9B133F3FE9AE /* WhiteSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37AAF86D3054D550591913945F3C7B2C /* WhiteCameraConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B138E4FC360B205C24C88A0D95B0A0E7 /* WhiteCameraConfig.m */; };
 		37FBC1E55A765DD042EA0FF38F3247CC /* WhitePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 337902F011ED411F6497F482170B0E35 /* WhitePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,6 +103,11 @@
 		8AA434E5277DA1A9003681E6 /* IndicatorMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E4277DA1A9003681E6 /* IndicatorMoreButton.swift */; };
 		8AA434E7277DB100003681E6 /* UIImage+ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E6277DB100003681E6 /* UIImage+ColorItem.swift */; };
 		8AA434E9277DB287003681E6 /* UIColor+Convince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E8277DB287003681E6 /* UIColor+Convince.swift */; };
+		8AA434EB277E9E33003681E6 /* FastPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434EA277E9E33003681E6 /* FastPanel.swift */; };
+		8AA434EE277E9EB7003681E6 /* DefaultOperationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434ED277E9EB7003681E6 /* DefaultOperationItem.swift */; };
+		8AA434F0277E9EF9003681E6 /* FastPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434EF277E9EF9003681E6 /* FastPanelDelegate.swift */; };
+		8AA434F2277EDC6C003681E6 /* TraitUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434F1277EDC6C003681E6 /* TraitUpdateHandler.swift */; };
+		8AA434F4277F02B9003681E6 /* FastThemeChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434F3277F02B9003681E6 /* FastThemeChangable.swift */; };
 		8C817FE6C2EDF7DC2D0A5AA47BBEF9E2 /* web-sdk.e60073fb.js in Resources */ = {isa = PBXBuildFile; fileRef = 969DF64AD1756056D150A6E6618D24E2 /* web-sdk.e60073fb.js */; };
 		8F386DA46B07EF785820337AE78AFE4E /* DWKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EFEEB1DC97BE02F46C74BC6E3E3BAA /* DWKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9226E32DE6A70F14C141E0B3DE033A20 /* Whiteboard-Whiteboard in Resources */ = {isa = PBXBuildFile; fileRef = B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */; };
@@ -399,6 +404,11 @@
 		8AA434E4277DA1A9003681E6 /* IndicatorMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorMoreButton.swift; sourceTree = "<group>"; };
 		8AA434E6277DB100003681E6 /* UIImage+ColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorItem.swift"; sourceTree = "<group>"; };
 		8AA434E8277DB287003681E6 /* UIColor+Convince.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convince.swift"; sourceTree = "<group>"; };
+		8AA434EA277E9E33003681E6 /* FastPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastPanel.swift; sourceTree = "<group>"; };
+		8AA434ED277E9EB7003681E6 /* DefaultOperationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOperationItem.swift; sourceTree = "<group>"; };
+		8AA434EF277E9EF9003681E6 /* FastPanelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastPanelDelegate.swift; sourceTree = "<group>"; };
+		8AA434F1277EDC6C003681E6 /* TraitUpdateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraitUpdateHandler.swift; sourceTree = "<group>"; };
+		8AA434F3277F02B9003681E6 /* FastThemeChangable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastThemeChangable.swift; sourceTree = "<group>"; };
 		8C71CA87FCA42F763A1DD233A888C7D4 /* WhiteScene.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteScene.h; path = Whiteboard/Classes/Object/WhiteScene.h; sourceTree = "<group>"; };
 		8E4C8E8C5C96893519E51A44760AE239 /* Pods-OCExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OCExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8FB0BD471C0573CBB8307E8F046AAEB1 /* WhiteConsts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConsts.h; path = Whiteboard/Classes/Object/WhiteConsts.h; sourceTree = "<group>"; };
@@ -475,7 +485,7 @@
 		EB4C694A12854BBF9125BB3EED614A94 /* NSObject+YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYModel.h"; path = "YYModel/NSObject+YYModel.h"; sourceTree = "<group>"; };
 		EB9A7A16EA12781F32BB500A80733FDA /* ControlBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
 		EC68A3C588D074050E2F682F40E0695D /* FastError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastError.swift; sourceTree = "<group>"; };
-		EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastOperation.swift; sourceTree = "<group>"; };
+		EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastOperationItem.swift; sourceTree = "<group>"; };
 		ECDF04182E6B5E5042A8B5A28617F224 /* WhiteAudioMixerBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteAudioMixerBridge.h; path = Whiteboard/Classes/Displayer/WhiteAudioMixerBridge.h; sourceTree = "<group>"; };
 		ED165D8AD74311DBF37B76765B30164A /* main.50f2aeb1.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = main.50f2aeb1.js; path = Whiteboard/Resource/main.50f2aeb1.js; sourceTree = "<group>"; };
 		EE3115CF6B34DAD697ACC6752CC8A616 /* WhitePanEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePanEvent.h; path = Whiteboard/Classes/Object/WhitePanEvent.h; sourceTree = "<group>"; };
@@ -623,6 +633,7 @@
 		1605FC50E67E9E516D6F535B18DCA22B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8AA434F1277EDC6C003681E6 /* TraitUpdateHandler.swift */,
 				03E7B0893BDB676AEA51DE54CB221FBD /* UIColor+NSNumber.swift */,
 				8AA434E8277DB287003681E6 /* UIColor+Convince.swift */,
 				62C36CCA1A8AC7A44B65240B65275724 /* UIImage+Bundle.swift */,
@@ -756,6 +767,7 @@
 			children = (
 				EB9A7A16EA12781F32BB500A80733FDA /* ControlBar.swift */,
 				28C56123025440D10A540CDC32DDAC9D /* FastboardView.swift */,
+				8AA434F3277F02B9003681E6 /* FastThemeChangable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -925,6 +937,15 @@
 			path = Whiteboard;
 			sourceTree = "<group>";
 		};
+		8AA434EC277E9E48003681E6 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperationItem.swift */,
+				8AA434ED277E9EB7003681E6 /* DefaultOperationItem.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
 		91A9CEF3BFB4E743293F799778BEEB76 /* YYModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -956,7 +977,9 @@
 		99C1BE227BD09DEF3056815FA23BAB87 /* Panel */ = {
 			isa = PBXGroup;
 			children = (
-				EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperation.swift */,
+				8AA434EC277E9E48003681E6 /* Operation */,
+				8AA434EA277E9E33003681E6 /* FastPanel.swift */,
+				8AA434EF277E9EF9003681E6 /* FastPanelDelegate.swift */,
 				8AA434E4277DA1A9003681E6 /* IndicatorMoreButton.swift */,
 				8AA434E2277D9BEA003681E6 /* SubPanelView.swift */,
 			);
@@ -1561,22 +1584,27 @@
 			files = (
 				66839F5F668444EA29DC394DAC0887CF /* ControlBar.swift in Sources */,
 				86D4A83309AB74480302B863817D13D0 /* DefaultTheme.swift in Sources */,
+				8AA434EB277E9E33003681E6 /* FastPanel.swift in Sources */,
 				8AA434E9277DB287003681E6 /* UIColor+Convince.swift in Sources */,
 				8AA434E7277DB100003681E6 /* UIImage+ColorItem.swift in Sources */,
 				409BC4E7209C8E444B11AB4F3B2FFC84 /* DelegateProxy.swift in Sources */,
 				A877157EFB4B2DC40909475F141D9999 /* Fastboard.swift in Sources */,
 				D9B452DC3F911117E0F49CEBB9DE8066 /* Fastboard-dummy.m in Sources */,
+				8AA434F2277EDC6C003681E6 /* TraitUpdateHandler.swift in Sources */,
+				8AA434EE277E9EB7003681E6 /* DefaultOperationItem.swift in Sources */,
 				8AA434E3277D9BEA003681E6 /* SubPanelView.swift in Sources */,
 				C2EB0781B9A07F45C00179D9C4318EC1 /* FastboardDelegate.swift in Sources */,
+				8AA434F4277F02B9003681E6 /* FastThemeChangable.swift in Sources */,
 				5A8D62D4B888939EBF806E40E5B3A584 /* FastboardSDK.swift in Sources */,
 				73ED5AFF6DF6BBD73E212BB8929F09A2 /* FastboardView.swift in Sources */,
 				14ABACB725CC2CFF1D4D8456AE5A4A4D /* FastError.swift in Sources */,
-				34A25AB11AA55E9F0EBFDF3E4CA0AA39 /* FastOperation.swift in Sources */,
+				34A25AB11AA55E9F0EBFDF3E4CA0AA39 /* FastOperationItem.swift in Sources */,
 				E80308E7F2DDF2476D00591100C238EC /* FastProxy.m in Sources */,
 				CA9B99345CBE1EBF4E8041DA7B8D0336 /* Theme.swift in Sources */,
 				ECA1F7B6934091A8E7E453F43F30A7F5 /* ThemeManager.swift in Sources */,
 				8AA434E5277DA1A9003681E6 /* IndicatorMoreButton.swift in Sources */,
 				FBF6E941013E5879B96E221153C21B68 /* UIColor+NSNumber.swift in Sources */,
+				8AA434F0277E9EF9003681E6 /* FastPanelDelegate.swift in Sources */,
 				98E5505C9E7340B038ACE23EF1D49625 /* UIImage+Bundle.swift in Sources */,
 				24807F28298BDB94EF0F526B5833A381 /* UIImage+tint.swift in Sources */,
 			);

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SubPanelView: UIView {
+class SubPanelView: UIView, FastThemeChangable {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         var inside = self.point(inside: point, with: event)
         if let exceptView = exceptView {
@@ -38,6 +38,12 @@ class SubPanelView: UIView {
         fatalError()
     }
     
+    func rebuildStyleForBeforeOS12() {
+        containerView.backgroundColor = ThemeManager.shared.colorFor(.background)
+        containerView.layer.borderColor = ThemeManager.shared.colorFor(.border)?.cgColor
+        // TODO:
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         containerView.frame = bounds.insetBy(dx: shadowMargin, dy: shadowMargin)
@@ -50,18 +56,42 @@ class SubPanelView: UIView {
     }
     
     let shadowMargin: CGFloat = 10
-    let maxRowPerLine: CGFloat = 4
+    let maxRowPerLine: Int = 4
     let itemSize: CGSize = .init(width: 44, height: 44)
     
+    func rebuildFrom(views: [UIView]) {
+        containerView.subviews.forEach { $0.removeFromSuperview() }
+        setupFromItemViews(views: views)
+    }
+    
     func setupFromItemViews(views: [UIView]) {
+        var rowIndex: CGFloat = -1
+        var lineIndex: CGFloat = -1
         views.enumerated().forEach { index, view in
+            if view is UISlider {
+                if rowIndex > 0 {
+                    rowIndex = 0
+                    lineIndex += 1
+                }
+                let slideHeight: CGFloat = 44
+                let inset: CGFloat = 8
+                let width: CGFloat = itemSize.width * CGFloat(maxRowPerLine) - (2 * inset)
+                let y = containerView.subviews.last?.frame.maxY ?? 0
+                view.frame = .init(x: inset,
+                                   y: y,
+                                   width: width,
+                                   height: slideHeight)
+            } else {
+                rowIndex = CGFloat(Int(rowIndex + 1) % maxRowPerLine)
+                lineIndex = rowIndex == 0 ? lineIndex + 1 : lineIndex
+                let x = rowIndex == 0 ? 0 : (containerView.subviews.last?.frame.maxX ?? 0)
+                let y = rowIndex == 0 ? (containerView.subviews.last?.frame.maxY ?? 0) : (containerView.subviews.last?.frame.minY ?? 0)
+                view.frame = .init(x: x,
+                                   y: y,
+                                   width: itemSize.width,
+                                   height: itemSize.height)
+            }
             containerView.addSubview(view)
-            let rIndex = CGFloat(index % 4)
-            let sIndex = CGFloat(index / 4)
-            view.frame = .init(x: itemSize.width * rIndex,
-                               y: itemSize.height * sIndex,
-                               width: itemSize.width,
-                               height: itemSize.height)
         }
         invalidateIntrinsicContentSize()
     }
@@ -76,6 +106,7 @@ class SubPanelView: UIView {
     
     lazy var containerView: UIView = {
         let view = UIView()
+        // TODO: this dynamic color function won't be called if view is not add to window.
         view.backgroundColor = ThemeManager.shared.colorFor(.background)
         view.clipsToBounds = true
         view.layer.cornerRadius = 8

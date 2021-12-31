@@ -10,6 +10,7 @@ import UIKit
 public struct DefaultTheme {
     public static var defaultLightTheme: ThemeProvider {
         let map: [ThemeComponentType: UIColor] = [
+            .brand: UIColor.systemBlue,
             .background: .white,
             .border: .gray,
             .controlSelected: .black,
@@ -25,11 +26,12 @@ public struct DefaultTheme {
     
     public static var defaultDarkTheme: ThemeProvider {
         let map: [ThemeComponentType: UIColor] = [
+            .brand: UIColor.systemBlue,
             .background: .black,
             .border: .gray,
             .controlSelected: .systemBlue,
             .controlSelectedDark: .blue,
-            .controlNormal: .black,
+            .controlNormal: .white,
             .controlDisable: .gray,
             .controlSelectedBg: .systemGray
         ]

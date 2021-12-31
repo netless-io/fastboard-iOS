@@ -8,6 +8,25 @@
 import UIKit
 import Whiteboard
 
+func methodExchange(cls: AnyClass, originalSelector: Selector, swizzledSelector: Selector) {
+    let original = class_getInstanceMethod(cls, originalSelector)!
+    let target = class_getInstanceMethod(cls, swizzledSelector)!
+    method_exchangeImplementations(original, target)
+}
+
+private struct Initializer {
+    private init() {
+        methodExchange(cls: UIViewController.self,
+                       originalSelector: #selector(UIViewController.traitCollectionDidChange(_:)),
+                       swizzledSelector: #selector(UIViewController.exchangedTraitCollectionDidChange(_:)))
+        
+        methodExchange(cls: UIView.self,
+                       originalSelector: #selector(UIView.traitCollectionDidChange(_:)),
+                       swizzledSelector: #selector(UIView.exchangedTraitCollectionDidChange(_:)))
+    }
+    static let shared = Initializer()
+}
+
 @objc public class FastBoardSDK: NSObject {
     static var weakTable: NSHashTable<FastboardView> = .init(options: .weakMemory)
     
@@ -42,6 +61,8 @@ import Whiteboard
         fastboard.whiteSDK = sdk
         weakTable.add(view)
         
+        // Make sure the method be executed once.
+        _ = Initializer.shared
         return fastboard
     }
 }
