@@ -70,8 +70,12 @@ class ControlBar: UIView {
         backgroundColor = ThemeManager.shared.colorFor(.background)
         
         clipsToBounds = true
-//        layer.maskedCorners = borderMask
         layer.cornerRadius = 10
+        if #available(iOS 11.0, *) {
+            layer.maskedCorners = borderMask
+        } else {
+            // TODO: mask
+        }
         
         layer.borderColor =  ThemeManager.shared.colorFor(.border)?.cgColor
         layer.borderWidth = 1 / UIScreen.main.scale

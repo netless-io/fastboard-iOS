@@ -94,7 +94,9 @@ public class FastPanel {
         }
     }
     
-    func setup(room: WhiteRoom) -> UIView {
+    func setup(room: WhiteRoom,
+               direction: NSLayoutConstraint.Axis = .vertical,
+               mask: CACornerMask = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMinXMaxYCorner]) -> UIView {
         let views = items.map { item -> UIView in
             item.room = room
             return item.buildView { [weak self] i in
@@ -102,8 +104,8 @@ public class FastPanel {
                 self.itemWillBeExecution(i)
             }
         }
-        let view = ControlBar(direction: .vertical,
-                          borderMask: [.layerMaxXMinYCorner, .layerMaxXMaxYCorner],
+        let view = ControlBar(direction: direction,
+                          borderMask: mask,
                           views: views)
         self.view = view
         return view

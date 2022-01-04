@@ -16,17 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-do{
-    let injectionBundle = Bundle.init(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")
-    if let bundle = injectionBundle{
-        try bundle.loadAndReturnError()
-    }else{
-         debugPrint("Injection注入失败,未能检测到Injection")
-    }
-    
- }catch{
-     debugPrint("Injection注入失败\(error)")
- }
+//do{
+//    let injectionBundle = Bundle.init(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")
+//    if let bundle = injectionBundle{
+//        try bundle.loadAndReturnError()
+//    }else{
+//         debugPrint("Injection注入失败,未能检测到Injection")
+//    }
+//
+// }catch{
+//     debugPrint("Injection注入失败\(error)")
+// }
         return true
     }
 

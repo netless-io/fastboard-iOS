@@ -11,6 +11,10 @@ import Fastboard
 import Whiteboard
 
 class ViewController: UIViewController {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .landscapeRight
+    }
+    
     var board: Fastboard!
     
     override func viewDidLoad() {
@@ -29,20 +33,21 @@ class ViewController: UIViewController {
         f.roomDelegate = self
         f.commonDelegate = self
         let board = f.view
+        view.autoresizesSubviews = true
         view.addSubview(board)
         board.frame = view.bounds
+        board.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        view.addSubview(btn)
-        btn.frame = .init(x: 200, y: 200, width: 66, height: 66)
+        view.addSubview(stack)
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.frame = .init(origin: .init(x: 20, y: 44), size: .init(width: 44, height: 100))
+        stack.sizeToFit()
         
         f.joinRoom { error in
             print(error)
         }
         self.board = f
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
     }
     
     enum TM: CaseIterable, Equatable {
@@ -78,10 +83,12 @@ class ViewController: UIViewController {
         }
     }
     
+    lazy var stack = UIStackView(arrangedSubviews: [btn])
+    
     lazy var btn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.backgroundColor = .systemOrange
-        btn.setTitle("update theme color", for: .normal)
+        btn.setTitle("theme", for: .normal)
         btn.addTarget(self, action: #selector(onClickUpdateTheme), for: .touchUpInside)
         return btn
     }()
@@ -95,8 +102,16 @@ extension ViewController: WhiteCommonCallbackDelegate {
 
 extension ViewController: WhiteRoomCallbackDelegate {
     func firePhaseChanged(_ phase: WhiteRoomPhase) {
-        print(#function, phase.rawValue)
+//        print(#function, phase.rawValue)
     }
+    
+//    func fireCanRedoStepsUpdate(_ canRedoSteps: Int) {
+//
+//    }
+//
+//    func fireCanUndoStepsUpdate(_ canUndoSteps: Int) {
+//
+//    }
 }
 
 extension ViewController: FastboardDelegate {

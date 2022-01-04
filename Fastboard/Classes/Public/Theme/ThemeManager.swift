@@ -60,7 +60,10 @@ public class ThemeManager: NSObject {
             FastBoardSDK.weakTable.objectEnumerator().forEach { item in
                 guard let view = item as? FastboardView else { return }
                 updateAppearanceFor(view: view)
-                let subPanelViews = view.panels.flatMap { $0.value.items }.compactMap { $0 as? SubOpsItem }.map { $0.subPanelView }
+                let subPanelViews = view.totalPanels
+                    .flatMap { $0.items }
+                    .compactMap { $0 as? SubOpsItem }
+                    .map { $0.subPanelView }
                 for sub in subPanelViews {
                     updateAppearanceFor(view: sub)
                 }

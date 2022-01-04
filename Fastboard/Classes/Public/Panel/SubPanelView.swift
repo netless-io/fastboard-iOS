@@ -47,6 +47,18 @@ class SubPanelView: UIView, FastThemeChangable {
     override func layoutSubviews() {
         super.layoutSubviews()
         containerView.frame = bounds.insetBy(dx: shadowMargin, dy: shadowMargin)
+        
+        if let exceptView = exceptView,
+           let window = UIApplication.shared.keyWindow {
+            let ef = exceptView.superview!.convert(exceptView.frame, to: window)
+            if ef.maxX > window.bounds.width / 2 {
+                rightAnchor.constraint(equalTo: exceptView.leftAnchor).isActive = true
+                leftAnchor.constraint(equalTo: exceptView.rightAnchor).isActive = false
+            } else {
+                rightAnchor.constraint(equalTo: exceptView.leftAnchor).isActive = false
+                leftAnchor.constraint(equalTo: exceptView.rightAnchor).isActive = true
+            }
+        }
     }
     
     override var intrinsicContentSize: CGSize {

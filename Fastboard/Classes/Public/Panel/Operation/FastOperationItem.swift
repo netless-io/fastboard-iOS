@@ -37,6 +37,25 @@ public protocol FastOperationItem: AnyObject {
     var identifier: String? { get }
     
     func buildView(interrupter: ((FastOperationItem)->Void)?) -> UIView
+    func setEnable(_ enable: Bool)
+}
+
+public class IndicatorItem: FastOperationItem {
+    init(view: UIView, identifier: String) {
+        self.associatedView = view
+        self.identifier = identifier
+    }
+    public var action: ((WhiteRoom, Any?) -> Void) = { _, _ in return }
+    public var room: WhiteRoom? = nil
+    public var associatedView: UIView?
+    public var identifier: String?
+    public func buildView(interrupter: ((FastOperationItem) -> Void)?) -> UIView {
+        return self.associatedView!
+    }
+    
+    public func setEnable(_ enable: Bool) {
+        return
+    }
 }
 
 public class JustExecutionItem: FastOperationItem {
@@ -56,6 +75,10 @@ public class JustExecutionItem: FastOperationItem {
         let color = ThemeManager.shared.colorFor(.controlNormal)!
         button.tintColor = color
         button.setImage(image, for: .normal)
+    }
+    
+    public func setEnable(_ enable: Bool) {
+        button.isEnabled = enable
     }
     
     lazy var button: UIButton = {
@@ -104,6 +127,10 @@ public class SliderOperationItem: FastOperationItem {
         return slider
     }()
     
+    public func setEnable(_ enable: Bool) {
+        slider.isEnabled = enable
+    }
+    
     func syncValueToSlider(_ value: Float) {
         self.value = value
         self.slider.value = value
@@ -132,6 +159,10 @@ public class ColorItem: FastOperationItem {
             state.strokeColor = self.color.getNumbersArray()
             room.setMemberState(state)
         }
+    }
+    
+    public func setEnable(_ enable: Bool) {
+        button.isEnabled = enable
     }
     
     let color: UIColor
@@ -172,6 +203,10 @@ public class ApplianceItem: FastOperationItem {
         self.identifier = identifier
     }
     
+    public func setEnable(_ enable: Bool) {
+        button.isEnabled = enable
+    }
+    
     public var identifier: String?
     var image: UIImage
     public var action: ((WhiteRoom, Any?)->Void)
@@ -203,6 +238,10 @@ public class SubOpsItem: FastOperationItem {
         self.subOps = subOps
         self.selectedApplianceItem = subOps.lazy.compactMap { $0 as? ApplianceItem }.first
         self.identifier = subOps.compactMap { $0.identifier }.joined(separator: "-")
+    }
+    
+    public func setEnable(_ enable: Bool) {
+        (associatedView as? UIButton)?.isEnabled = enable
     }
     
     func insertItem(_ item: FastOperationItem) {
@@ -268,7 +307,6 @@ public class SubOpsItem: FastOperationItem {
         
         if subPanelView.superview == nil {
             UIApplication.shared.keyWindow?.addSubview(subPanelView)
-            subPanelView.leftAnchor.constraint(equalTo: associatedView!.rightAnchor).isActive = true
             subPanelView.centerYAnchor.constraint(equalTo: associatedView!.centerYAnchor).isActive = true
             subPanelView.exceptView = associatedView
         }

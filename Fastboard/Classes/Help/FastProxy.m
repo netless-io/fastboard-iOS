@@ -28,6 +28,17 @@
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
+    // Should trigger respond to selector only once
+    if (invocation.selector == @selector(respondsToSelector:)) {
+        if ([self.middleMan respondsToSelector: invocation.selector]) {
+            [invocation invokeWithTarget:self.middleMan];
+            return;
+        } else if ([self.middleMan respondsToSelector: invocation.selector]) {
+            [invocation invokeWithTarget:self.target];
+            return;
+        }
+    }
+    
     if ([self.middleMan respondsToSelector:invocation.selector]) {
         [invocation invokeWithTarget:self.middleMan];
     }
@@ -35,6 +46,5 @@
         [invocation invokeWithTarget:self.target];
     }
 }
-
 
 @end

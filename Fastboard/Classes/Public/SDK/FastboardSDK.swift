@@ -52,8 +52,14 @@ private struct Initializer {
         return createFastboardWith(whiteSDKConfig: whiteConfig, whiteRoomConfig: roomConfig)
     }
     
-    @objc public class func createFastboardWith(whiteSDKConfig: WhiteSdkConfiguration, whiteRoomConfig: WhiteRoomConfig) -> Fastboard {
-        let view = FastboardView()
+    @objc public class func createFastboardWith(whiteSDKConfig: WhiteSdkConfiguration,
+                                                whiteRoomConfig: WhiteRoomConfig) -> Fastboard {
+        let view: FastboardView
+        if UIScreen.main.traitCollection.hasCompact {
+            view = CompactFastboardView()
+        } else {
+            view = RegularFastboardView()
+        }
         let fastboard = Fastboard(view: view, roomConfig: whiteRoomConfig)
         let sdk = WhiteSDK(whiteBoardView: view.whiteboardView,
                            config: whiteSDKConfig,

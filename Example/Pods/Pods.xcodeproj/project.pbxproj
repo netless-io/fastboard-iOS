@@ -99,6 +99,11 @@
 		843219C3E31DE139CA67FC95327D66E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
 		86067F07AE66A0102E8733E745E926C6 /* WhitePlayerConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D792892B317DA3004FBCBE10843132 /* WhitePlayerConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86D4A83309AB74480302B863817D13D0 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280B6E6AB6D8532395C6689D1FBF03D5 /* DefaultTheme.swift */; };
+		8A4B797E2783EEDD00C823E0 /* FastOperation+NeedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B797D2783EEDD00C823E0 /* FastOperation+NeedColor.swift */; };
+		8A4B79802783EEEF00C823E0 /* FastOperation+NeedDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B797F2783EEEF00C823E0 /* FastOperation+NeedDelete.swift */; };
+		8A4B79822783EF6E00C823E0 /* CompactFastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B79812783EF6E00C823E0 /* CompactFastboardView.swift */; };
+		8A4B79842783EF8200C823E0 /* RegularFastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B79832783EF8200C823E0 /* RegularFastboardView.swift */; };
+		8A4B79862784128600C823E0 /* TraitCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B79852784128600C823E0 /* TraitCollection+Extension.swift */; };
 		8AA434E3277D9BEA003681E6 /* SubPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E2277D9BEA003681E6 /* SubPanelView.swift */; };
 		8AA434E5277DA1A9003681E6 /* IndicatorMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E4277DA1A9003681E6 /* IndicatorMoreButton.swift */; };
 		8AA434E7277DB100003681E6 /* UIImage+ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA434E6277DB100003681E6 /* UIImage+ColorItem.swift */; };
@@ -399,6 +404,11 @@
 		87CFA5A02844B1A09EFE984788F45C08 /* WhiteObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteObject.h; path = Whiteboard/Classes/Model/WhiteObject.h; sourceTree = "<group>"; };
 		88D792892B317DA3004FBCBE10843132 /* WhitePlayerConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerConfig.h; path = Whiteboard/Classes/Replayer/WhitePlayerConfig.h; sourceTree = "<group>"; };
 		890859F347689407D7D8A1260ECCE5BE /* WhiteConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConverter.h; path = Whiteboard/Classes/Converter/WhiteConverter.h; sourceTree = "<group>"; };
+		8A4B797D2783EEDD00C823E0 /* FastOperation+NeedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FastOperation+NeedColor.swift"; sourceTree = "<group>"; };
+		8A4B797F2783EEEF00C823E0 /* FastOperation+NeedDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FastOperation+NeedDelete.swift"; sourceTree = "<group>"; };
+		8A4B79812783EF6E00C823E0 /* CompactFastboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactFastboardView.swift; sourceTree = "<group>"; };
+		8A4B79832783EF8200C823E0 /* RegularFastboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularFastboardView.swift; sourceTree = "<group>"; };
+		8A4B79852784128600C823E0 /* TraitCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TraitCollection+Extension.swift"; sourceTree = "<group>"; };
 		8A81B968AD60634605429E547A808E54 /* WhiteRoom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoom.h; path = Whiteboard/Classes/Room/WhiteRoom.h; sourceTree = "<group>"; };
 		8AA434E2277D9BEA003681E6 /* SubPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubPanelView.swift; sourceTree = "<group>"; };
 		8AA434E4277DA1A9003681E6 /* IndicatorMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorMoreButton.swift; sourceTree = "<group>"; };
@@ -634,6 +644,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA434F1277EDC6C003681E6 /* TraitUpdateHandler.swift */,
+				8A4B79852784128600C823E0 /* TraitCollection+Extension.swift */,
 				03E7B0893BDB676AEA51DE54CB221FBD /* UIColor+NSNumber.swift */,
 				8AA434E8277DB287003681E6 /* UIColor+Convince.swift */,
 				62C36CCA1A8AC7A44B65240B65275724 /* UIImage+Bundle.swift */,
@@ -767,6 +778,8 @@
 			children = (
 				EB9A7A16EA12781F32BB500A80733FDA /* ControlBar.swift */,
 				28C56123025440D10A540CDC32DDAC9D /* FastboardView.swift */,
+				8A4B79812783EF6E00C823E0 /* CompactFastboardView.swift */,
+				8A4B79832783EF8200C823E0 /* RegularFastboardView.swift */,
 				8AA434F3277F02B9003681E6 /* FastThemeChangable.swift */,
 			);
 			path = View;
@@ -942,6 +955,8 @@
 			children = (
 				EC9DB35F26FE3362D2E63F1C536CBF16 /* FastOperationItem.swift */,
 				8AA434ED277E9EB7003681E6 /* DefaultOperationItem.swift */,
+				8A4B797D2783EEDD00C823E0 /* FastOperation+NeedColor.swift */,
+				8A4B797F2783EEEF00C823E0 /* FastOperation+NeedDelete.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -1583,8 +1598,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				66839F5F668444EA29DC394DAC0887CF /* ControlBar.swift in Sources */,
+				8A4B797E2783EEDD00C823E0 /* FastOperation+NeedColor.swift in Sources */,
 				86D4A83309AB74480302B863817D13D0 /* DefaultTheme.swift in Sources */,
 				8AA434EB277E9E33003681E6 /* FastPanel.swift in Sources */,
+				8A4B79842783EF8200C823E0 /* RegularFastboardView.swift in Sources */,
+				8A4B79822783EF6E00C823E0 /* CompactFastboardView.swift in Sources */,
 				8AA434E9277DB287003681E6 /* UIColor+Convince.swift in Sources */,
 				8AA434E7277DB100003681E6 /* UIImage+ColorItem.swift in Sources */,
 				409BC4E7209C8E444B11AB4F3B2FFC84 /* DelegateProxy.swift in Sources */,
@@ -1603,7 +1621,9 @@
 				CA9B99345CBE1EBF4E8041DA7B8D0336 /* Theme.swift in Sources */,
 				ECA1F7B6934091A8E7E453F43F30A7F5 /* ThemeManager.swift in Sources */,
 				8AA434E5277DA1A9003681E6 /* IndicatorMoreButton.swift in Sources */,
+				8A4B79802783EEEF00C823E0 /* FastOperation+NeedDelete.swift in Sources */,
 				FBF6E941013E5879B96E221153C21B68 /* UIColor+NSNumber.swift in Sources */,
+				8A4B79862784128600C823E0 /* TraitCollection+Extension.swift in Sources */,
 				8AA434F0277E9EF9003681E6 /* FastPanelDelegate.swift in Sources */,
 				98E5505C9E7340B038ACE23EF1D49625 /* UIImage+Bundle.swift in Sources */,
 				24807F28298BDB94EF0F526B5833A381 /* UIImage+tint.swift in Sources */,

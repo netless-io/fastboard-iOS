@@ -62,6 +62,51 @@ public struct DefaultOperationItem {
         }, identifier: "strokeWidth")
     }
     
+    public static let redoIdentifier = "redo"
+    public static func redoItem() -> FastOperationItem {
+        JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_redo")!,
+                          action: { room, _ in
+            room.redo()
+        }, identifier: redoIdentifier)
+    }
+    
+    public static let unoIdentifier = "undo"
+    public static func undoItem() -> FastOperationItem {
+        JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_undo")!,
+                          action: { room, _ in
+            room.undo()
+        }, identifier: unoIdentifier)
+    }
+    
+    
+    public static let previousPageIdentifier = "previous"
+    public static func previousPageItem() -> FastOperationItem {
+        JustExecutionItem(image: UIImage.currentBundle(named: "scene_previous")!,
+                          action: { room, _ in
+            room.pptPreviousStep()
+        }, identifier: previousPageIdentifier)
+    }
+    
+    public static let nextPageIdentifier = "next"
+    public static func nextPageItem() -> FastOperationItem {
+        JustExecutionItem(image: UIImage.currentBundle(named: "scene_next")!,
+                          action: { room, _ in
+            room.pptNextStep()
+        }, identifier: nextPageIdentifier)
+    }
+    
+    public static let newPageIdentifier = "new"
+    public static func newPageItem() -> FastOperationItem {
+        JustExecutionItem(image: UIImage.currentBundle(named: "scene_new")!,
+                          action: { room, _ in
+            let index = room.sceneState.index
+            let nextIndex = UInt(index + 1)
+            room.putScenes("/", scenes: [WhiteScene()], index: nextIndex)
+            room.setSceneIndex(nextIndex, completionHandler: nil)
+        }, identifier: newPageIdentifier)
+    }
+    
+    
     public static func selectableApplianceItem(_ appliance: WhiteApplianceNameKey) -> FastOperationItem {
         ApplianceItem(image: UIImage.currentBundle(named: "whiteboard_\(appliance.rawValue)")!, action: { room, _ in
             let memberState = WhiteMemberState()
@@ -70,4 +115,9 @@ public struct DefaultOperationItem {
         }, identifier: appliance.rawValue)
     }
     
+    public static let pageIndicatorIdentifier = "pageIndicator"
+    public static func pageIndicatorItem() -> FastOperationItem {
+        let label = UILabel()
+        return IndicatorItem(view: label, identifier: pageIndicatorIdentifier)
+    }
 }
