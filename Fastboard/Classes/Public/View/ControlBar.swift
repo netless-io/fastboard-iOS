@@ -7,7 +7,7 @@
 
 import UIKit
 
-var globalRoomControlBarItemWidth: CGFloat = 48
+var globalRoomControlBarItemWidth: CGFloat = 40
 
 /// All the views inserted in this container should not update the button isHidden property
 /// call 'updateButtonHide'

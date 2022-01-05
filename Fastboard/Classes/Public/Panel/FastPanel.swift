@@ -30,6 +30,12 @@ public class FastPanel {
         if let _ = item as? SubOpsItem {
             deselectAll()
         }
+        if let colorItem = item as? ColorItem {
+            updateSelectedColor(colorItem.color)
+        }
+        if let strokeWidth = item as? SliderOperationItem {
+            updateStrokeWidth(strokeWidth.value)
+        }
         delegate?.itemWillBeExecution(fastPanel: self, item: item)
     }
     
@@ -42,37 +48,27 @@ public class FastPanel {
             .compactMap { $0 as? SubOpsItem }
             .flatMap { $0.subOps }
             .compactMap { $0 as? SliderOperationItem }
+        
         sliderOps.forEach {
             $0.syncValueToSlider(width)
         }
     }
     
     func updateSelectedColor(_ color: UIColor) {
-        let oldTarget = items
+        // Find all the subOps contains color
+        let allColorContainers = items
             .compactMap { $0 as? SubOpsItem }
-            .flatMap { $0.subOps }
-            .compactMap { $0 as? ColorItem }
-            .first(where: { $0.color == color })
-
-        let colorSubOps = items
-            .compactMap { $0 as? SubOpsItem }
-            .first(where: { $0.subOps.contains(where: { $0 is ColorItem })})
+            .filter { $0.subOps.contains(where: { $0 is ColorItem })}
         
-        if let target = oldTarget {
-            (target.associatedView as? UIButton)?.isSelected = true
-        } else {
-            if let colorSubOps = colorSubOps {
+        // Update selected color to all the subOps
+        allColorContainers.forEach { container in
+            let existItem = container.subOps.compactMap { $0 as? ColorItem }.first(where: { $0.color == color })
+            if let existItem = existItem {
+                container.selectedColorItem = existItem
+            } else {
                 let newItem = ColorItem(color: color)
-                colorSubOps.insertItem(newItem)
-            }
-        }
-        
-        if let colorSubOps = colorSubOps {
-            let targetItem = colorSubOps.subOps
-                .compactMap { $0 as? ColorItem }
-                .first(where: { $0.color == color })
-            if let targetItem = targetItem {
-                colorSubOps.selectedColorItem = targetItem
+                container.insertItem(newItem)
+                container.selectedColorItem = newItem
             }
         }
     }

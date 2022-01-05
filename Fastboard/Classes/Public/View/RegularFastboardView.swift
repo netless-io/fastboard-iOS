@@ -150,19 +150,36 @@ extension RegularFastboardView {
     }
     
     func createOperationPanel() -> FastPanel {
-        let shapes = SubOpsItem(subOps: [
+        var shapeOps: [FastOperationItem] = [
             DefaultOperationItem.selectableApplianceItem(.ApplianceRectangle),
             DefaultOperationItem.selectableApplianceItem(.ApplianceEllipse),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceStraight)
-        ])
+            DefaultOperationItem.selectableApplianceItem(.ApplianceStraight),
+            DefaultOperationItem.strokeWidthItem()
+        ]
+        shapeOps.append(contentsOf: DefaultOperationItem.defaultColorItems())
+        let shapes = SubOpsItem(subOps: shapeOps)
+        
+        var pencilSubOps: [FastOperationItem] = [
+            DefaultOperationItem.selectableApplianceItem(.AppliancePencil),
+            DefaultOperationItem.strokeWidthItem()
+        ]
+        pencilSubOps.append(contentsOf: DefaultOperationItem.defaultColorItems())
+        let pencilOp = SubOpsItem(subOps: pencilSubOps)
+        
+        var textSubOps: [FastOperationItem] = [
+            DefaultOperationItem.selectableApplianceItem(.ApplianceText)
+        ]
+        textSubOps.append(contentsOf: DefaultOperationItem.defaultColorItems())
+        let textOp = SubOpsItem(subOps: textSubOps)
         
         let ops: [FastOperationItem] = [
             DefaultOperationItem.selectableApplianceItem(.ApplianceClicker),
             DefaultOperationItem.selectableApplianceItem(.ApplianceSelector),
-            DefaultOperationItem.selectableApplianceItem(.AppliancePencil),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceText),
+            pencilOp,
+            textOp,
             DefaultOperationItem.selectableApplianceItem(.ApplianceEraser),
-            shapes
+            shapes,
+            DefaultOperationItem.clean()
         ]
         let panel = FastPanel(items: ops)
         panel.delegate = self

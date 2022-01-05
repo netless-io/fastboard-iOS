@@ -81,8 +81,8 @@ class SubPanelView: UIView, FastThemeChangable {
         var lineIndex: CGFloat = -1
         views.enumerated().forEach { index, view in
             if view is UISlider {
+                rowIndex = -1
                 if rowIndex > 0 {
-                    rowIndex = 0
                     lineIndex += 1
                 }
                 let slideHeight: CGFloat = 44

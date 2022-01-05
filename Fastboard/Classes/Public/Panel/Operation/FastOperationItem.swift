@@ -18,7 +18,6 @@ func setSelectableApplianceStyleFor(button: UIButton, image: UIImage) {
                                       backgroundColor: bg,
                                       cornerRadius: 5)
     let selectedImage = image.redraw(selectedColor,
-                                     backgroundColor: bg,
                                      cornerRadius: 5)
     let selectedHighlight = image.redraw(selectedDark,
                                          backgroundColor: bg,
@@ -138,6 +137,7 @@ public class SliderOperationItem: FastOperationItem {
     
     @objc func onSlider(_ sender: UISlider) {
         guard let room = room else { return }
+        self.value = sender.value
         interrupter?(self)
         action(room, sender.value)
     }
@@ -282,17 +282,36 @@ public class SubOpsItem: FastOperationItem {
         guard let btn = associatedView as? UIButton,
               let item = selectedColorItem
         else { return }
-        subPanelView.deselectAll()
-        let image = item.button.image(for: .normal)
-        btn.setImage(image, for: .normal)
-        (item.associatedView as? UIButton)?.isSelected = true
+        if containsSelectableAppliance {
+            deselectAllColorItems()
+            item.button.isSelected = true
+        } else {
+            subPanelView.deselectAll()
+            let image = item.button.image(for: .normal)
+            btn.setImage(image, for: .normal)
+            (item.associatedView as? UIButton)?.isSelected = true
+        }
+    }
+    
+    func deselectAllColorItems() {
+        subOps
+            .compactMap { $0 as? ColorItem }
+            .map { $0.button }
+            .forEach { $0.isSelected = false }
+    }
+    
+    var containsSelectableAppliance: Bool {
+        subOps.contains(where: {
+            $0 is ApplianceItem
+        })
     }
     
     func updateSelectedApplianceItem() {
         (associatedView as? UIButton)?.isSelected = true
         subPanelView.deselectAll()
         (selectedApplianceItem?.associatedView as? UIButton)?.isSelected = true
-        if let selectedApplianceItem = selectedApplianceItem, let image = image(for: selectedApplianceItem) {
+        if let selectedApplianceItem = selectedApplianceItem {
+            let image = selectedApplianceItem.image
             let btn = associatedView as! UIButton
             btn.setImage(image.redraw(ThemeManager.shared.colorFor(.controlNormal)!),
                          for: .normal)
@@ -313,21 +332,17 @@ public class SubOpsItem: FastOperationItem {
         subPanelView.isHidden = false
     }
     
-    func initImage() -> UIImage? {
-        for op in subOps {
-            if let item = op as? ApplianceItem { return item.image }
+    func initButtonInterface(button: UIButton) {
+        if let op = subOps.first {
+            if let item = op as? ApplianceItem {
+                setSelectableApplianceStyleFor(button: button, image: item.image)
+                return
+            }
             if let item = op as? ColorItem {
-                return item.button.image(for: .normal)
+                button.setImage(item.button.image(for: .normal)!, for: .normal)
+                return
             }
         }
-        return nil
-    }
-    
-    func image(for operation: FastOperationItem) -> UIImage? {
-        if let selectable = operation as? ApplianceItem {
-            return selectable.image
-        }
-        return nil
     }
     
     func subItemExecuted(subItem: FastOperationItem) {
@@ -352,22 +367,28 @@ public class SubOpsItem: FastOperationItem {
     
     public func buildView(interrupter: ((FastOperationItem) -> Void)?) -> UIView {
         let button = IndicatorMoreButton(type: .custom)
-        button.indicatorInset = .init(top: 8, left: 0, bottom: 0, right: 8)
+        button.indicatorInset = .init(top: 0, left: 0, bottom: 8, right: 8)
         button.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
-        if let image = initImage() {
-            button.setImage(image, for: .normal)
-        }
+        initButtonInterface(button: button)
         button.traitCollectionUpdateHandler = { [weak self] _ in
             self?.configInterfaceForTraitCollectionChanged()
         }
         self.interrupter = interrupter
         self.associatedView = button
-        let subOpsView = self.subOps.map { subOp -> UIView in
-            subOp.room = room
-            return subOp.buildView { [weak self] item in
-                self?.subItemExecuted(subItem: item)
+        
+        let singleAppliance = subOps.compactMap { $0 as? ApplianceItem }.count == 1
+        // Filter the single appliance
+        let subOpsView = self.subOps
+            .filter {
+                if singleAppliance, $0 is ApplianceItem { return false }
+                return true
             }
-        }
+            .map { subOp -> UIView in
+                subOp.room = room
+                return subOp.buildView { [weak self] item in
+                    self?.subItemExecuted(subItem: item)
+                }
+            }
         self.subPanelView.setupFromItemViews(views: subOpsView)
         return button
     }

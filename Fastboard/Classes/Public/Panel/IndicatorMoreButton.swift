@@ -19,7 +19,7 @@ class IndicatorMoreButton: UIButton {
         super.layoutSubviews()
         guard let size = indicatorView.image?.size else { return }
         let x = bounds.width - size.width - indicatorInset.right
-        let y = indicatorInset.top
+        let y = bounds.height - size.height - indicatorInset.bottom
         indicatorView.frame = .init(origin: .init(x: x, y: y), size: size)
     }
     
@@ -45,6 +45,7 @@ class IndicatorMoreButton: UIButton {
     
     lazy var indicatorView: UIImageView = {
         let view = UIImageView(image: UIImage.currentBundle(named: "subops_more"))
+        view.transform = .init(scaleX: 1, y: -1)
         view.tintColor = ThemeManager.shared.colorFor(.controlNormal)
         return view
     }()

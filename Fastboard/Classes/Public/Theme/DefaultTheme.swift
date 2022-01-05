@@ -13,7 +13,7 @@ public struct DefaultTheme {
             .brand: UIColor.systemBlue,
             .background: .white,
             .border: .gray,
-            .controlSelected: .black,
+            .controlSelected: .systemBlue,
             .controlSelectedDark: .black,
             .controlNormal: .black,
             .controlDisable: .gray,
