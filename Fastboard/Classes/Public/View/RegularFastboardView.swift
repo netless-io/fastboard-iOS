@@ -90,9 +90,9 @@ class RegularFastboardView: FastboardView {
         }
     }
     
-    override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?) {
+    override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         if let appliance = appliance {
-            operationPanel.updateWithApplianceOutside(appliance)
+            operationPanel.updateWithApplianceOutside(appliance, shape: shape)
         }
         if let appliance = appliance,
             let item = operationPanel.flatItems.first(where: { $0.identifier == appliance.rawValue }){
@@ -154,6 +154,11 @@ extension RegularFastboardView {
             DefaultOperationItem.selectableApplianceItem(.ApplianceRectangle),
             DefaultOperationItem.selectableApplianceItem(.ApplianceEllipse),
             DefaultOperationItem.selectableApplianceItem(.ApplianceStraight),
+            DefaultOperationItem.selectableApplianceItem(.ApplianceArrow),
+            DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypePentagram),
+            DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeRhombus),
+            DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeTriangle),
+            DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeSpeechBalloon),
             DefaultOperationItem.strokeWidthItem()
         ]
         shapeOps.append(contentsOf: DefaultOperationItem.defaultColorItems())

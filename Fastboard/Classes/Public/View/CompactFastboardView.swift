@@ -109,9 +109,9 @@ class CompactFastboardView: FastboardView {
         }
     }
     
-    override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?) {
+    override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         if let appliance = appliance {
-            operationPanel.updateWithApplianceOutside(appliance)
+            operationPanel.updateWithApplianceOutside(appliance, shape: shape)
         }
         
         if let appliance = appliance,

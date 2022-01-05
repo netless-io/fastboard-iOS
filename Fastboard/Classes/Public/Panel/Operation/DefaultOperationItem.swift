@@ -42,11 +42,12 @@ public struct DefaultOperationItem {
                           identifier: "clean")
     }
     
+    public static let deleteSelectionIdentifier = "deleteSelection"
     public static func deleteSelectionItem() -> FastOperationItem {
         let image = UIImage.currentBundle(named: "whiteboard_remove_selection")?.redraw(.systemRed)
         return JustExecutionItem(image: image!,
                           action: { room, _ in room.deleteOperation() },
-                                 identifier: "deleteSelection")
+                                 identifier: deleteSelectionIdentifier)
     }
     
     public static func strokeWidthItem() -> FastOperationItem {
@@ -106,18 +107,34 @@ public struct DefaultOperationItem {
         }, identifier: newPageIdentifier)
     }
     
-    
-    public static func selectableApplianceItem(_ appliance: WhiteApplianceNameKey) -> FastOperationItem {
-        ApplianceItem(image: UIImage.currentBundle(named: "whiteboard_\(appliance.rawValue)")!, action: { room, _ in
+    public static func selectableApplianceItem(_ appliance: WhiteApplianceNameKey,
+                                               shape: WhiteApplianceShapeTypeKey? = nil) -> FastOperationItem {
+        var name = "whiteboard_"
+        if appliance == .ApplianceShape, let shape = shape {
+            name = name + "shape_\(shape.rawValue)"
+        } else {
+            name += appliance.rawValue
+        }
+        let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
+        return ApplianceItem(image: UIImage.currentBundle(named: name)!, action: { room, _ in
             let memberState = WhiteMemberState()
             memberState.currentApplianceName = appliance
+            memberState.shapeType = shape
             room.setMemberState(memberState)
-        }, identifier: appliance.rawValue)
+        }, identifier: identifier)
     }
     
     public static let pageIndicatorIdentifier = "pageIndicator"
     public static func pageIndicatorItem() -> FastOperationItem {
         let label = UILabel()
         return IndicatorItem(view: label, identifier: pageIndicatorIdentifier)
+    }
+}
+
+func identifierFor(appliance: WhiteApplianceNameKey, withShapeKey shape: WhiteApplianceShapeTypeKey?) -> String {
+    if let shape = shape {
+        return appliance.rawValue + "_\(shape.rawValue)"
+    } else {
+        return appliance.rawValue
     }
 }

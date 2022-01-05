@@ -73,17 +73,18 @@ public class FastPanel {
         }
     }
     
-    func updateWithApplianceOutside(_ appliance: WhiteApplianceNameKey) {
+    func updateWithApplianceOutside(_ appliance: WhiteApplianceNameKey, shape: WhiteApplianceShapeTypeKey?) {
         deselectAll()
+        let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
         for item in items {
-            if let i = item as? ApplianceItem, i.identifier == appliance.rawValue {
+            if let i = item as? ApplianceItem, i.identifier == identifier {
                 (i.associatedView as? UIButton)?.isSelected = true
             }
             if let i = item as? SubOpsItem,
                let ids = i.identifier,
                let id = item.identifier,
                ids.contains(id) {
-                if let target = i.subOps.first(where: { $0.identifier == appliance.rawValue}) as? ApplianceItem {
+                if let target = i.subOps.first(where: { $0.identifier == identifier }) as? ApplianceItem {
                     i.selectedApplianceItem = target
                 }
             }

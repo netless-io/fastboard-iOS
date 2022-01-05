@@ -16,7 +16,7 @@ import Whiteboard
             if let room = room {
                 view.setupPanel(room: room)
             }
-            initState()
+            initStateAfterJoinRoom()
         }
     }
     
@@ -57,27 +57,26 @@ import Whiteboard
     }
     
     // MARK: - Private
-    func initState() {
-        room?.getStateWithResult({ [weak self] state in
-            if let appliance = state.memberState?.currentApplianceName {
-                self?.view.updateUIWithInitAppliance(appliance)
-            } else {
-                self?.view.updateUIWithInitAppliance(nil)
-            }
-            
-            if let scene = state.sceneState {
-                self?.view.updateSceneState(scene)
-            }
-            
-            if let strokeWidth = state.memberState?.strokeWidth?.floatValue {
-                self?.view.updateStrokeWidth(strokeWidth)
-            }
-            
-            if let nums = state.memberState?.strokeColor {
-                let color = UIColor.init(numberArray: nums)
-                self?.view.updateStrokeColor(color)
-            }
-        })
+    func initStateAfterJoinRoom() {
+        guard let state = room?.state else { return }
+        if let appliance = state.memberState?.currentApplianceName {
+            view.updateUIWithInitAppliance(appliance, shape: state.memberState?.shapeType)
+        } else {
+            view.updateUIWithInitAppliance(nil, shape: nil)
+        }
+        
+        if let scene = state.sceneState {
+            view.updateSceneState(scene)
+        }
+        
+        if let strokeWidth = state.memberState?.strokeWidth?.floatValue {
+            view.updateStrokeWidth(strokeWidth)
+        }
+        
+        if let nums = state.memberState?.strokeColor {
+            let color = UIColor.init(numberArray: nums)
+            view.updateStrokeColor(color)
+        }
     }
     
     init(view: FastboardView, roomConfig: WhiteRoomConfig){

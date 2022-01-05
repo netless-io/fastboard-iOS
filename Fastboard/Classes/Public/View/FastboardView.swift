@@ -8,7 +8,7 @@
 import Foundation
 import Whiteboard
 
-@objc public class FastboardView: UIView, FastThemeChangable, FastPanelDelegate {
+@objc public class FastboardView: UIView, FastThemeChangeable, FastPanelDelegate {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupWhiteboardView()
@@ -60,7 +60,7 @@ import Whiteboard
         fatalError("implement it in subclass")
     }
     
-    func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?) {
+    func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         fatalError("implement it in subclass")
     }
     

@@ -7,8 +7,9 @@
 
 import Foundation
 
-class SubPanelView: UIView, FastThemeChangable {
+class SubPanelView: UIView, FastThemeChangeable {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard !isHidden else { return nil }
         var inside = self.point(inside: point, with: event)
         if let exceptView = exceptView {
             let p = convert(point, to: exceptView)
@@ -48,16 +49,15 @@ class SubPanelView: UIView, FastThemeChangable {
         super.layoutSubviews()
         containerView.frame = bounds.insetBy(dx: shadowMargin, dy: shadowMargin)
         
-        if let exceptView = exceptView,
-           let window = UIApplication.shared.keyWindow {
+        guard let window = superview else { return }
+        if let exceptView = exceptView {
             let ef = exceptView.superview!.convert(exceptView.frame, to: window)
             if ef.maxX > window.bounds.width / 2 {
                 rightAnchor.constraint(equalTo: exceptView.leftAnchor).isActive = true
-                leftAnchor.constraint(equalTo: exceptView.rightAnchor).isActive = false
             } else {
-                rightAnchor.constraint(equalTo: exceptView.leftAnchor).isActive = false
                 leftAnchor.constraint(equalTo: exceptView.rightAnchor).isActive = true
             }
+            centerYAnchor.constraint(equalTo: exceptView.centerYAnchor).isActive = true
         }
     }
     
@@ -69,7 +69,7 @@ class SubPanelView: UIView, FastThemeChangable {
     
     let shadowMargin: CGFloat = 10
     let maxRowPerLine: Int = 4
-    let itemSize: CGSize = .init(width: 44, height: 44)
+    let itemSize: CGSize = .init(width: 40, height: 40)
     
     func rebuildFrom(views: [UIView]) {
         containerView.subviews.forEach { $0.removeFromSuperview() }

@@ -287,10 +287,18 @@ public class SubOpsItem: FastOperationItem {
             item.button.isSelected = true
         } else {
             subPanelView.deselectAll()
-            let image = item.button.image(for: .normal)
+            
+            let image = UIImage.colorItemImage(withColor: item.color, size: .init(width: 18, height: 18), radius: 4)
             btn.setImage(image, for: .normal)
             (item.associatedView as? UIButton)?.isSelected = true
         }
+    }
+    
+    func deselectAllApplianceItems() {
+        subOps
+            .compactMap { $0 as? ApplianceItem }
+            .map { $0.button }
+            .forEach { $0.isSelected = false }
     }
     
     func deselectAllColorItems() {
@@ -307,14 +315,13 @@ public class SubOpsItem: FastOperationItem {
     }
     
     func updateSelectedApplianceItem() {
-        (associatedView as? UIButton)?.isSelected = true
-        subPanelView.deselectAll()
-        (selectedApplianceItem?.associatedView as? UIButton)?.isSelected = true
+        deselectAllApplianceItems()
         if let selectedApplianceItem = selectedApplianceItem {
+            (selectedApplianceItem.associatedView as? UIButton)?.isSelected = true
             let image = selectedApplianceItem.image
             let btn = associatedView as! UIButton
-            btn.setImage(image.redraw(ThemeManager.shared.colorFor(.controlNormal)!),
-                         for: .normal)
+            setSelectableApplianceStyleFor(button: btn, image: image)
+            btn.isSelected = true
         }
     }
     
@@ -324,12 +331,25 @@ public class SubOpsItem: FastOperationItem {
         selectedApplianceItem?.action(room, nil)
         (associatedView as? UIButton)?.isSelected = true
         
+        func loopForFastboardView(from: UIView) -> FastboardView? {
+            var current: UIView? = from
+            while current != nil {
+                current = current?.superview
+                if let current = current as? FastboardView {
+                    return current
+                }
+            }
+            return nil
+        }
+        
         if subPanelView.superview == nil {
-            UIApplication.shared.keyWindow?.addSubview(subPanelView)
-            subPanelView.centerYAnchor.constraint(equalTo: associatedView!.centerYAnchor).isActive = true
+            let container = loopForFastboardView(from: associatedView!)
+            container?.addSubview(subPanelView)
             subPanelView.exceptView = associatedView
         }
         subPanelView.isHidden = false
+        subPanelView.setNeedsLayout()
+        subPanelView.layoutIfNeeded()
     }
     
     func initButtonInterface(button: UIButton) {
