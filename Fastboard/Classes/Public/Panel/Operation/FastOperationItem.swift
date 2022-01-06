@@ -9,24 +9,25 @@ import Foundation
 import Whiteboard
 
 func setSelectableApplianceStyleFor(button: UIButton, image: UIImage) {
-    let normalColor = ThemeManager.shared.colorFor(.controlNormal)!
-    button.tintColor = normalColor
-    let selectedColor = ThemeManager.shared.colorFor(.controlSelected)!
-    let selectedDark = ThemeManager.shared.colorFor(.controlSelectedDark)!
-    let bg = ThemeManager.shared.colorFor(.controlSelectedBg)!
-    let highlightImage = image.redraw(normalColor,
-                                      backgroundColor: bg,
-                                      cornerRadius: 5)
-    let selectedImage = image.redraw(selectedColor,
-                                     cornerRadius: 5)
-    let selectedHighlight = image.redraw(selectedDark,
-                                         backgroundColor: bg,
-                                         cornerRadius: 5)
     button.setImage(image, for: .normal)
-    button.setImage(selectedImage, for: .selected)
-    button.setImage(highlightImage, for: .highlighted)
-    button.setImage(selectedHighlight, for: [.highlighted, .selected])
-    button.adjustsImageWhenHighlighted = false
+//    let normalColor = ThemeManager.shared.colorFor(.controlNormal)!
+//    button.tintColor = normalColor
+//    let selectedColor = ThemeManager.shared.colorFor(.controlSelected)!
+//    let selectedDark = ThemeManager.shared.colorFor(.controlSelectedDark)!
+//    let bg = ThemeManager.shared.colorFor(.controlSelectedBg)!
+//    let highlightImage = image.redraw(normalColor,
+//                                      backgroundColor: bg,
+//                                      cornerRadius: 5)
+//    let selectedImage = image.redraw(selectedColor,
+//                                     cornerRadius: 5)
+//    let selectedHighlight = image.redraw(selectedDark,
+//                                         backgroundColor: bg,
+//                                         cornerRadius: 5)
+//    button.setImage(image, for: .normal)
+//    button.setImage(selectedImage, for: .selected)
+//    button.setImage(highlightImage, for: .highlighted)
+//    button.setImage(selectedHighlight, for: [.highlighted, .selected])
+//    button.adjustsImageWhenHighlighted = false
 }
 
 public protocol FastOperationItem: AnyObject {
@@ -59,33 +60,25 @@ public class IndicatorItem: FastOperationItem {
 
 public class JustExecutionItem: FastOperationItem {
     public init(image: UIImage, action: @escaping ((WhiteRoom, Any?) -> Void), identifier: String?) {
-        self.image = image
         self.action = action
         self.identifier = identifier
+        self.button.rawImage = image
     }
     
     public var identifier: String?
-    var image: UIImage
     public var action: ((WhiteRoom, Any?)->Void)
     public weak var associatedView: UIView? { button }
     public weak var room: WhiteRoom? = nil
     var interrupter: ((FastOperationItem)->Void)? = nil
-    func configInterface() {
-        let color = ThemeManager.shared.colorFor(.controlNormal)!
-        button.tintColor = color
-        button.setImage(image, for: .normal)
-    }
     
     public func setEnable(_ enable: Bool) {
         button.isEnabled = enable
     }
     
-    lazy var button: UIButton = {
-        let button = UIButton(type: .custom)
+    lazy var button: PanelItemButton = {
+        let button = PanelItemButton(type: .custom)
+        button.style = .justExecution
         button.addTarget(self, action: #selector(onClick), for: .touchUpInside)
-        button.traitCollectionUpdateHandler = { [weak self] collection in
-            self?.configInterface()
-        }
         return button
     }()
     
@@ -97,7 +90,6 @@ public class JustExecutionItem: FastOperationItem {
     
     public func buildView(interrupter: ((FastOperationItem)->Void)?) -> UIView {
         self.interrupter = interrupter
-        configInterface()
         return button
     }
 }
@@ -121,7 +113,6 @@ public class SliderOperationItem: FastOperationItem {
         let slider = UISlider(frame: .zero)
         sliderConfig?(slider)
         slider.isContinuous = false
-        slider.backgroundColor = ThemeManager.shared.colorFor(.background)
         slider.addTarget(self, action: #selector(onSlider(_:)), for: .valueChanged)
         return slider
     }()
@@ -172,13 +163,9 @@ public class ColorItem: FastOperationItem {
     public var associatedView: UIView? { button }
     public var action: ((WhiteRoom, Any?) -> Void)
     
-    lazy var button: UIButton = {
-        let btn = UIButton(type: .custom)
-        let image = UIImage.colorItemImage(withColor: color, size: .init(width: 24, height: 24), radius: 4)
-        let selectedImage = UIImage.selectedColorItemImage(withColor: color, size: .init(width: 24, height: 24), radius: 4, borderColor: ThemeManager.shared.colorFor(.brand)!)
-        btn.setImage(image, for: .normal)
-        btn.setImage(selectedImage, for: .selected)
-        btn.setImage(selectedImage, for: .highlighted)
+    lazy var button: PanelItemButton = {
+        let btn = PanelItemButton(type: .custom)
+        btn.style = .color(color)
         btn.addTarget(self, action: #selector(onClick), for: .touchUpInside)
         return btn
     }()
@@ -213,9 +200,9 @@ public class ApplianceItem: FastOperationItem {
     public weak var associatedView: UIView?  { button }
     public weak var room: WhiteRoom? = nil
     var interrupter: ((FastOperationItem)->Void)? = nil
-    lazy var button: UIButton = {
-        let button = UIButton(type: .custom)
-        setSelectableApplianceStyleFor(button: button, image: image)
+    lazy var button: PanelItemButton = {
+        let button = PanelItemButton(type: .custom)
+        button.rawImage = image
         button.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
         return button
     }()
@@ -317,10 +304,10 @@ public class SubOpsItem: FastOperationItem {
     func updateSelectedApplianceItem() {
         deselectAllApplianceItems()
         if let selectedApplianceItem = selectedApplianceItem {
-            (selectedApplianceItem.associatedView as? UIButton)?.isSelected = true
+            selectedApplianceItem.button.isSelected = true
             let image = selectedApplianceItem.image
-            let btn = associatedView as! UIButton
-            setSelectableApplianceStyleFor(button: btn, image: image)
+            let btn = associatedView as! PanelItemButton
+            btn.rawImage = image
             btn.isSelected = true
         }
     }
@@ -386,7 +373,8 @@ public class SubOpsItem: FastOperationItem {
     }
     
     public func buildView(interrupter: ((FastOperationItem) -> Void)?) -> UIView {
-        let button = IndicatorMoreButton(type: .custom)
+        let button = PanelItemButton(type: .custom)
+        button.hasSubOps = true
         button.indicatorInset = .init(top: 0, left: 0, bottom: 8, right: 8)
         button.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
         initButtonInterface(button: button)

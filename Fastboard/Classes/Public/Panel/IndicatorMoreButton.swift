@@ -46,7 +46,6 @@ class IndicatorMoreButton: UIButton {
     lazy var indicatorView: UIImageView = {
         let view = UIImageView(image: UIImage.currentBundle(named: "subops_more"))
         view.transform = .init(scaleX: 1, y: -1)
-        view.tintColor = ThemeManager.shared.colorFor(.controlNormal)
         return view
     }()
 }

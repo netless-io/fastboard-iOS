@@ -6,79 +6,139 @@
 //
 
 import UIKit
+import Whiteboard
+
+extension UIView {
+    @objc dynamic var borderColor: UIColor? {
+        get {
+            if let color = layer.borderColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+}
+
+extension WhiteBoardView {
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        // Workaround for dynamic color support
+        if #available(iOS 13.0, *) {
+            backgroundColor = backgroundColor
+        } else {
+        }
+    }
+}
+
+public struct DefaultTheme {
+    public static var defaultLightTheme: ThemeAble {
+        ThemeAsset(whiteboardAssets: WhiteboardAssets(whiteboardBackgroundColor: .white,
+                                                      containerColor: .lightGray),
+                   controlBarAssets: ControlBarAssets(backgroundColor: .white,
+                                                      borderColor: .lightGray),
+                   panelItemAssets: .init(normalIconColor: .black,
+                                          selectedIconColor: .systemBlue,
+                                          highlightBgColor: .init(hexString: "E8F0FE"),
+                                          subOpsIndicatorColor: .black,
+                                          pageTextLabelColor: .black))
+    }
+    
+    public static var defaultDarkTheme: ThemeAble {
+        ThemeAsset(whiteboardAssets: WhiteboardAssets(whiteboardBackgroundColor: .black,
+                                                      containerColor: .lightGray),
+                   controlBarAssets: ControlBarAssets(backgroundColor: .black,
+                                                      borderColor: .lightGray),
+                   panelItemAssets: .init(normalIconColor: .white,
+                                          selectedIconColor: .systemBlue,
+                                          highlightBgColor: .lightGray,
+                                          subOpsIndicatorColor: .lightGray,
+                                          pageTextLabelColor: .white))
+    }
+    
+    @available(iOS 13, *)
+    public static var defaultAutoTheme: ThemeAble {
+        let fastAsset = WhiteboardAssets(whiteboardBackgroundColor: .systemBackground, containerColor: .secondarySystemBackground)
+        let controlBarAssets = ControlBarAssets(backgroundColor: .clear, borderColor: .separator, effectStyle: .init(style: .systemMaterial))
+        let panelItemAssets = PanelItemAssets(normalIconColor: .init(dynamicProvider: { c in
+            if c.userInterfaceStyle == .dark {
+                return defaultDarkTheme.panelItemAssets.normalIconColor
+            } else {
+                return defaultLightTheme.panelItemAssets.normalIconColor
+            }
+        }), selectedIconColor: .init(dynamicProvider: { c in
+            if c.userInterfaceStyle == .dark {
+                return defaultDarkTheme.panelItemAssets.selectedIconColor
+            } else {
+                return defaultLightTheme.panelItemAssets.selectedIconColor
+            }
+        }), highlightBgColor: .init(dynamicProvider: { c in
+            if c.userInterfaceStyle == .dark {
+                return defaultDarkTheme.panelItemAssets.highlightBgColor
+            } else {
+                return defaultLightTheme.panelItemAssets.highlightBgColor
+            }
+        }), subOpsIndicatorColor: .init(dynamicProvider: { c in
+            if c.userInterfaceStyle == .dark {
+                return defaultDarkTheme.panelItemAssets.subOpsIndicatorColor
+            } else {
+                return defaultLightTheme.panelItemAssets.subOpsIndicatorColor
+            }
+        }), pageTextLabelColor: UIColor.label)
+        
+        return ThemeAsset(whiteboardAssets: fastAsset,
+                   controlBarAssets: controlBarAssets,
+                          panelItemAssets: panelItemAssets
+        )
+    }
+}
+
 
 @objc (FastboardThemeManager)
 public class ThemeManager: NSObject {
     @objc public static let shared = ThemeManager()
     private override init() {
-        if #available(iOS 13.0, *) {
-            theme = DefaultTheme.defaultAutoTheme
-        } else {
-            theme = DefaultTheme.defaultLightTheme
-        }
         super.init()
-    }
-    
-    public var theme: ThemeProvider {
-        didSet {
-            func updateAppearanceFor(view: UIView ) {
-                // Manual update traitCollection
-                if #available(iOS 13.0, *) {
-                    let style = view.traitCollection.userInterfaceStyle
-                    let isHide = view.isHidden
-                    if !isHide {
-                        view.isHidden = true
-                    }
-                    switch style {
-                    case .light:
-                        DispatchQueue.main.async {
-                            view.overrideUserInterfaceStyle = .dark
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                if !isHide {
-                                    view.isHidden = false
-                                }
-                                view.overrideUserInterfaceStyle = .light
-                            }
-                        }
-                    case .dark:
-                        DispatchQueue.main.async {
-                            view.overrideUserInterfaceStyle = .light
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                if !isHide {
-                                    view.isHidden = false
-                                }
-                                view.overrideUserInterfaceStyle = .dark
-                            }
-                        }
-                    default: return
-                    }
-                } else {
-                    (view as? FastThemeChangable)?.rebuildStyleForBeforeOS12()
-                }
-            }
-            
-            FastBoardSDK.weakTable.objectEnumerator().forEach { item in
-                guard let view = item as? FastboardView else { return }
-                updateAppearanceFor(view: view)
-                let subPanelViews = view.totalPanels
-                    .flatMap { $0.items }
-                    .compactMap { $0 as? SubOpsItem }
-                    .map { $0.subPanelView }
-                for sub in subPanelViews {
-                    updateAppearanceFor(view: sub)
-                }
-            }
-        }
-    }
-    
-    public func colorFor(_ type: ThemeComponentType) -> UIColor? {
         if #available(iOS 13.0, *) {
-            return UIColor { [unowned self] collection in
-                let color = self.theme(type, collection)
-                return color
-            }
+            apply(DefaultTheme.defaultAutoTheme)
         } else {
-            return theme(type, nil)
+            apply(DefaultTheme.defaultLightTheme)
         }
+    }
+    
+    public func apply(_ theme: ThemeAble) {
+        updateFastboard(theme.whiteboardAssets)
+        updateControlBar(theme.controlBarAssets)
+        updatePanelItem(theme.panelItemAssets)
+        
+        AppearanceManager.shared.commitUpdate()
+    }
+    
+    func updatePanelItem(_ asset: PanelItemAssets) {
+        PanelItemButton.appearance().iconNormalColor = asset.normalIconColor
+        PanelItemButton.appearance().iconSelectedColor = asset.selectedIconColor
+        PanelItemButton.appearance().iconHighlightBgColor = asset.highlightBgColor
+        
+        UIImageView.appearance(whenContainedInInstancesOf: [PanelItemButton.self]).tintColor = asset.subOpsIndicatorColor
+        UILabel.appearance(whenContainedInInstancesOf: [ControlBar.self]).textColor = asset.pageTextLabelColor
+    }
+    
+    func updateFastboard(_ asset: WhiteboardAssets) {
+        WhiteBoardView.appearance().backgroundColor = asset.whiteboardBackgroundColor
+        FastboardView.appearance().backgroundColor = asset.containerColor
+        FastBoardSDK.weakTable.allObjects.forEach { view in
+            view.whiteboardView.backgroundColor = asset.whiteboardBackgroundColor
+        }
+    }
+    
+    func updateControlBar(_ asset: ControlBarAssets) {
+        ControlBar.appearance().backgroundColor = asset.backgroundColor
+        ControlBar.appearance().borderColor = asset.borderColor
+        UIVisualEffectView.appearance(whenContainedInInstancesOf: [ControlBar.self]).effect = asset.effectStyle
+        
+        SubPanelContainer.appearance().backgroundColor = asset.backgroundColor
+        SubPanelContainer.appearance().borderColor = asset.borderColor
+        UIVisualEffectView.appearance(whenContainedInInstancesOf: [SubPanelContainer.self]).effect = asset.effectStyle
     }
 }

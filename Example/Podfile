@@ -8,6 +8,7 @@ target 'OCExample' do
 
 target 'Fastboard_Example' do
   pod 'Fastboard', :path => '../'
+  pod 'SnapKit'
 
   target 'Fastboard_Tests' do
     inherit! :search_paths

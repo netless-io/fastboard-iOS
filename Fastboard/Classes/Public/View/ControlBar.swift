@@ -12,6 +12,7 @@ var globalRoomControlBarItemWidth: CGFloat = 40
 /// All the views inserted in this container should not update the button isHidden property
 /// call 'updateButtonHide'
 class ControlBar: UIView {
+    
     enum NarrowStyle {
         case none
         case narrowMoreThan(count: Int)
@@ -56,29 +57,21 @@ class ControlBar: UIView {
             narrowMoreThan = count
         }
         super.init(frame: .zero)
-        //        let effect: UIBlurEffect
-        //        if #available(iOS 13.0, *) {
-        //            effect = .init(style: .systemMaterialLight)
-        //        } else {
-        //            effect = .init(style: .extraLight)
-        //        }
-        //        let effectView = UIVisualEffectView(effect: effect)
-        //        addSubview(effectView)
-        //        effectView.snp.makeConstraints { make in
-        //            make.edges.equalToSuperview()
-        //        }
-        backgroundColor = ThemeManager.shared.colorFor(.background)
+        
+        let effect: UIBlurEffect = .init(style: .regular)
+        let effectView = UIVisualEffectView(effect: effect)
+        addSubview(effectView)
+        effectView.frame = bounds
+        effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         clipsToBounds = true
         layer.cornerRadius = 10
+        layer.borderWidth = 1 / UIScreen.main.scale
         if #available(iOS 11.0, *) {
             layer.maskedCorners = borderMask
         } else {
             // TODO: mask
         }
-        
-        layer.borderColor =  ThemeManager.shared.colorFor(.border)?.cgColor
-        layer.borderWidth = 1 / UIScreen.main.scale
         
         autoresizesSubviews = true
         addSubview(stack)
@@ -88,11 +81,6 @@ class ControlBar: UIView {
         views.forEach({
             stack.addArrangedSubview($0)
         })
-//        if narrowMoreThan > 0 {
-//            stack.addArrangedSubview(foldButton)
-//            foldButton.widthAnchor.constraint(equalToConstant: itemWidth).isActive = true
-//            foldButton.heightAnchor.constraint(equalToConstant: itemWidth).isActive = true
-//        }
     }
     
     required init?(coder: NSCoder) {

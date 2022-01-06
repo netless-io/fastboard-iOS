@@ -7,7 +7,9 @@
 
 import Foundation
 
-class SubPanelView: UIView, FastThemeChangeable {
+class SubPanelContainer: UIView {}
+
+class SubPanelView: UIView {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard !isHidden else { return nil }
         var inside = self.point(inside: point, with: event)
@@ -37,12 +39,6 @@ class SubPanelView: UIView, FastThemeChangeable {
     
     required init?(coder: NSCoder) {
         fatalError()
-    }
-    
-    func rebuildStyleForBeforeOS12() {
-        containerView.backgroundColor = ThemeManager.shared.colorFor(.background)
-        containerView.layer.borderColor = ThemeManager.shared.colorFor(.border)?.cgColor
-        // TODO:
     }
     
     override func layoutSubviews() {
@@ -116,14 +112,18 @@ class SubPanelView: UIView, FastThemeChangeable {
         containerView.subviews
     }
     
-    lazy var containerView: UIView = {
-        let view = UIView()
-        // TODO: this dynamic color function won't be called if view is not add to window.
-        view.backgroundColor = ThemeManager.shared.colorFor(.background)
+    lazy var containerView: SubPanelContainer = {
+        let view = SubPanelContainer()
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
-        view.layer.borderColor = ThemeManager.shared.colorFor(.border)?.cgColor
         view.layer.borderWidth = 1 / UIScreen.main.scale
+        
+        view.autoresizesSubviews = true
+        let effect: UIBlurEffect = .init(style: .regular)
+        let effectView = UIVisualEffectView(effect: effect)
+        view.addSubview(effectView)
+        effectView.frame = bounds
+        effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return view
     }()
 }

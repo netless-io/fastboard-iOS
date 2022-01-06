@@ -7,15 +7,33 @@
 
 import UIKit
 
-public enum ThemeComponentType {
-    case brand
-    case background
-    case controlSelected
-    case controlSelectedDark
-    case controlSelectedBg
-    case controlNormal
-    case controlDisable
-    case border
+public struct WhiteboardAssets {
+    var whiteboardBackgroundColor: UIColor
+    var containerColor: UIColor
 }
 
-public typealias ThemeProvider = ((ThemeComponentType, UITraitCollection?)-> UIColor)
+public struct PanelItemAssets {
+    var normalIconColor: UIColor
+    var selectedIconColor: UIColor
+    var highlightBgColor: UIColor
+    var subOpsIndicatorColor: UIColor
+    var pageTextLabelColor: UIColor
+}
+
+public struct ControlBarAssets {
+    var backgroundColor: UIColor
+    var borderColor: UIColor
+    var effectStyle: UIBlurEffect?
+}
+
+public protocol ThemeAble {
+    var whiteboardAssets: WhiteboardAssets { get }
+    var controlBarAssets: ControlBarAssets { get }
+    var panelItemAssets: PanelItemAssets { get }
+}
+
+public struct ThemeAsset: ThemeAble {
+    public var whiteboardAssets: WhiteboardAssets
+    public var controlBarAssets: ControlBarAssets
+    public var panelItemAssets: PanelItemAssets
+}

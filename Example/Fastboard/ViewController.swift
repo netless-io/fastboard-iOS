@@ -8,30 +8,49 @@
 
 import UIKit
 import Fastboard
-import Whiteboard
+
+enum Theme: CaseIterable, Equatable {
+    case dark
+    case light
+    case auto
+}
 
 class ViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .landscapeRight
     }
     
+    var t: Theme = .auto {
+        didSet {
+            themeChangeBtn.setTitle("T / \(t)", for: .normal)
+            switch t {
+            case .light:
+                ThemeManager.shared.apply(DefaultTheme.defaultLightTheme)
+            case .dark:
+                ThemeManager.shared.apply(DefaultTheme.defaultDarkTheme)
+            case .auto:
+                if #available(iOS 13, *) {
+                    ThemeManager.shared.apply(DefaultTheme.defaultAutoTheme)
+                } else {
+                    return
+                }
+            }
+        }
+    }
+    
     var board: Fastboard!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 13, *) {
-            ThemeManager.shared.theme = DefaultTheme.defaultAutoTheme
-        } else {
-            // Fallback on earlier versions
-            ThemeManager.shared.theme = DefaultTheme.defaultLightTheme
-        }
+        setup()
+    }
+    
+    func setup() {
         let f = FastBoardSDK.createFastboardWith(appId: "283/VGiScM9Wiw2HJg",
                                                  roomUUID: "b8a446f06a0411ec8c31196f2bc4a1de",
                                                  roomToken: "WHITEcGFydG5lcl9pZD15TFExM0tTeUx5VzBTR3NkJnNpZz1mZTU3ZTVkNWRlM2Y0NDNlZjNjZjA2MjlhYzExZGY0ZTJlZjhhMzUzOmFrPXlMUTEzS1N5THlXMFNHc2QmY3JlYXRlX3RpbWU9MTY0MDkzMjkwNTQ1NCZleHBpcmVfdGltZT0xNjcyNDY4OTA1NDU0Jm5vbmNlPTE2NDA5MzI5MDU0NTQwMCZyb2xlPXJvb20mcm9vbUlkPWI4YTQ0NmYwNmEwNDExZWM4YzMxMTk2ZjJiYzRhMWRlJnRlYW1JZD05SUQyMFBRaUVldTNPNy1mQmNBek9n",
                                                  userUID: "dfgfdg")
         f.delegate = self
-        f.roomDelegate = self
-        f.commonDelegate = self
         let board = f.view
         view.autoresizesSubviews = true
         view.addSubview(board)
@@ -40,78 +59,63 @@ class ViewController: UIViewController {
         
         view.addSubview(stack)
         stack.axis = .vertical
-        stack.distribution = .fill
-        stack.frame = .init(origin: .init(x: 20, y: 44), size: .init(width: 44, height: 100))
+        stack.distribution = .fillEqually
+        stack.frame = .init(origin: .init(x: 20, y: 10), size: .init(width: 88, height: 120))
         stack.sizeToFit()
         
         f.joinRoom { error in
-            print(error)
+            if let error = error {
+                print(error)
+            }
         }
         self.board = f
     }
     
-    enum TM: CaseIterable, Equatable {
-        case light
-        case dark
-        case auto
-    }
-    var t: TM = .auto {
-        didSet {
-            print(t)
-            switch t {
-            case .light:
-                ThemeManager.shared.theme = DefaultTheme.defaultLightTheme
-            case .dark:
-                ThemeManager.shared.theme = DefaultTheme.defaultDarkTheme
-            case .auto:
-                if #available(iOS 13, *) {
-                    ThemeManager.shared.theme = DefaultTheme.defaultAutoTheme
-                } else {
-                    return
-                }
-            }
+    @objc func onClickUpdateDirection() {
+        if FastboardView.appearance().operationBarDirection == .left {
+            FastboardView.appearance().operationBarDirection = .right
+        } else {
+            FastboardView.appearance().operationBarDirection = .left
         }
+        AppearanceManager.shared.commitUpdate()
     }
     
     @objc func onClickUpdateTheme() {
-        let all = TM.allCases
+        let all = Theme.allCases
         let index = all.firstIndex(of: t)!
         if index == all.count - 1 {
             t = all.first!
         } else {
-            t = all[index + 1]
+            let target = all[index + 1]
+            if target == .auto {
+                if #available(iOS 13, *) {
+                    t = target
+                } else {
+                    t = all.first!
+                }
+            } else {
+                t = target
+            }
         }
     }
     
-    lazy var stack = UIStackView(arrangedSubviews: [btn])
+    lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn, operationDirectionChange])
     
-    lazy var btn: UIButton = {
+    lazy var themeChangeBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.backgroundColor = .systemOrange
-        btn.setTitle("theme", for: .normal)
+        btn.setTitle("T / auto", for: .normal)
         btn.addTarget(self, action: #selector(onClickUpdateTheme), for: .touchUpInside)
         return btn
     }()
-}
-
-extension ViewController: WhiteCommonCallbackDelegate {
-    func sdkSetupFail(_ error: Error) {
-        
-    }
-}
-
-extension ViewController: WhiteRoomCallbackDelegate {
-    func firePhaseChanged(_ phase: WhiteRoomPhase) {
-//        print(#function, phase.rawValue)
-    }
     
-//    func fireCanRedoStepsUpdate(_ canRedoSteps: Int) {
-//
-//    }
-//
-//    func fireCanUndoStepsUpdate(_ canUndoSteps: Int) {
-//
-//    }
+    lazy var operationDirectionChange: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = .systemOrange
+        btn.setTitle("OpDirect", for: .normal)
+        btn.addTarget(self, action: #selector(onClickUpdateDirection), for: .touchUpInside)
+        return btn
+    }()
 }
 
 extension ViewController: FastboardDelegate {

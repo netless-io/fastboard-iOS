@@ -69,6 +69,8 @@ private struct Initializer {
         
         // Make sure the method be executed once.
         _ = Initializer.shared
+        // Guarantee the default theme will be applied
+        _ = ThemeManager.shared
         return fastboard
     }
 }

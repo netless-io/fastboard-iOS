@@ -37,7 +37,8 @@ public struct DefaultOperationItem {
     }
     
     public static func clean() -> FastOperationItem {
-        JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_clean")!,
+        let image = UIImage.currentBundle(named: "whiteboard_clean")!
+        return JustExecutionItem(image: image,
                           action: { room, _ in room.cleanScene(true) },
                           identifier: "clean")
     }
@@ -127,6 +128,7 @@ public struct DefaultOperationItem {
     public static let pageIndicatorIdentifier = "pageIndicator"
     public static func pageIndicatorItem() -> FastOperationItem {
         let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .body)
         return IndicatorItem(view: label, identifier: pageIndicatorIdentifier)
     }
 }

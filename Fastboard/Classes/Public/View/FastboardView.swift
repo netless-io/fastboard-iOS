@@ -8,7 +8,18 @@
 import Foundation
 import Whiteboard
 
-@objc public class FastboardView: UIView, FastThemeChangeable, FastPanelDelegate {
+@objc public enum OperationBarDirection: Int {
+    case left = 0
+    case right
+}
+
+public class FastboardView: UIView, FastPanelDelegate {
+    @objc public dynamic var operationBarDirection: OperationBarDirection = .left {
+        didSet {
+            updateControlBarLayout()
+        }
+    }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupWhiteboardView()
@@ -16,11 +27,6 @@ import Whiteboard
     
     public required init?(coder: NSCoder) {
         fatalError()
-    }
-    
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        whiteboardView.backgroundColor = ThemeManager.shared.colorFor(.background)
     }
     
     public override func layoutSubviews() {
@@ -37,18 +43,10 @@ import Whiteboard
         whiteboardView.frame = .init(x: x, y: y, width: width, height: height)
     }
     
-    public func rebuildStyleForBeforeOS12() {
-        subviews.forEach { $0.removeFromSuperview() }
-        setupWhiteboardView()
-        // TODO: Panels
-    }
-    
     var whiteboardView: WhiteBoardView!
     
     func setupWhiteboardView() {
-        backgroundColor = .lightGray
         whiteboardView = WhiteBoardView()
-        whiteboardView.backgroundColor = ThemeManager.shared.colorFor(.background)
         addSubview(whiteboardView)
     }
     
@@ -86,5 +84,16 @@ import Whiteboard
     
     func updateRedoEnable(_ enable: Bool) {
         fatalError("implement it in subclass")
+    }
+    
+    func updateControlBarLayout() {
+        fatalError("implement it in subclass")
+    }
+}
+
+extension FastboardView {
+    @objc public dynamic var aa: UIColor {
+        get { return .lightGray }
+        set { print("haha")}
     }
 }

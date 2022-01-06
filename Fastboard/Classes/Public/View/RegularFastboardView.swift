@@ -8,7 +8,7 @@
 import Foundation
 import Whiteboard
 
-class RegularFastboardView: FastboardView {
+public class RegularFastboardView: FastboardView {
     override func setupPanel(room: WhiteRoom) {
         let operationView = operationPanel.setup(room: room)
         let deleteView = deleteSelectionPanel.setup(room: room)
@@ -21,9 +21,11 @@ class RegularFastboardView: FastboardView {
         addSubview(deleteView)
         addSubview(undoRedoView)
         addSubview(sceneView)
-            
+        
         let margin: CGFloat = 8
-        operationView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin).isActive = true
+        operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin)
+        operationRightConstraint = operationView.rightAnchor.constraint(equalTo: whiteboardView.rightAnchor, constant: -margin)
+        
         operationView.centerYAnchor.constraint(equalTo: whiteboardView.centerYAnchor).isActive = true
         operationView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -38,6 +40,22 @@ class RegularFastboardView: FastboardView {
         sceneView.centerXAnchor.constraint(equalTo: whiteboardView.centerXAnchor).isActive = true
         sceneView.bottomAnchor.constraint(equalTo: whiteboardView.bottomAnchor, constant: -margin).isActive = true
         sceneView.translatesAutoresizingMaskIntoConstraints = false
+        
+        updateControlBarLayout()
+    }
+    
+    var operationLeftConstraint: NSLayoutConstraint!
+    var operationRightConstraint: NSLayoutConstraint!
+
+    override func updateControlBarLayout() {
+        let isLeft = operationBarDirection == .left
+        if isLeft {
+            operationLeftConstraint.isActive = true
+            operationRightConstraint.isActive = false
+        } else {
+            operationLeftConstraint.isActive = false
+            operationRightConstraint.isActive = true
+        }
     }
     
     enum DisplayStyle {

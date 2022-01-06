@@ -17,16 +17,17 @@ class CompactFastboardView: FastboardView {
                                                direction: .horizontal)
         let sceneView = scenePanel.setup(room: room,
                                                direction: .horizontal)
-        
         addSubview(colorView)
         addSubview(operationView)
         addSubview(deleteView)
         addSubview(undoRedoView)
         addSubview(sceneView)
-            
+        
         let margin: CGFloat = 8
-        operationView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin).isActive = true
+        
         operationView.centerYAnchor.constraint(equalTo: whiteboardView.centerYAnchor).isActive = true
+        operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin)
+        operationRightConstraint = operationView.rightAnchor.constraint(equalTo: whiteboardView.rightAnchor, constant: -margin)
         operationView.translatesAutoresizingMaskIntoConstraints = false
         
         colorView.rightAnchor.constraint(equalTo: operationView.rightAnchor).isActive = true
@@ -44,6 +45,22 @@ class CompactFastboardView: FastboardView {
         sceneView.centerXAnchor.constraint(equalTo: whiteboardView.centerXAnchor).isActive = true
         sceneView.bottomAnchor.constraint(equalTo: whiteboardView.bottomAnchor, constant: -margin).isActive = true
         sceneView.translatesAutoresizingMaskIntoConstraints = false
+        
+        updateControlBarLayout()
+    }
+    
+    var operationLeftConstraint: NSLayoutConstraint!
+    var operationRightConstraint: NSLayoutConstraint!
+    
+    override func updateControlBarLayout() {
+        let isLeft = operationBarDirection == .left
+        if isLeft {
+            operationLeftConstraint.isActive = true
+            operationRightConstraint.isActive = false
+        } else {
+            operationLeftConstraint.isActive = false
+            operationRightConstraint.isActive = true
+        }
     }
     
     func updateDisplayStyleFromNewOperationItem(_ item: FastOperationItem) {
