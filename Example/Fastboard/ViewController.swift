@@ -67,15 +67,28 @@ class ViewController: UIViewController {
         view.addSubview(stack)
         stack.axis = .vertical
         stack.distribution = .fillEqually
-        stack.frame = .init(origin: .init(x: view.bounds.width - 88, y: 10),
-                            size: .init(width: 88, height: CGFloat(stack.arrangedSubviews.count * 66)))
+        stack.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.right.equalToSuperview().inset(88)
+            make.width.equalTo(120)
+        }
     }
     
     @objc func onClickUpdateDirection() {
         if FastboardView.appearance().operationBarDirection == .left {
             FastboardView.appearance().operationBarDirection = .right
+            stack.snp.remakeConstraints { make in
+                make.top.equalToSuperview().inset(10)
+                make.left.equalToSuperview().inset(88)
+                make.width.equalTo(120)
+            }
         } else {
             FastboardView.appearance().operationBarDirection = .left
+            stack.snp.remakeConstraints { make in
+                make.top.equalToSuperview().inset(10)
+                make.right.equalToSuperview().inset(88)
+                make.width.equalTo(120)
+            }
         }
         AppearanceManager.shared.commitUpdate()
     }
@@ -202,6 +215,7 @@ class ViewController: UIViewController {
         let btn = UIButton(type: .custom)
         btn.backgroundColor =  randomColor()
         btn.setTitle("T / auto", for: .normal)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         btn.addTarget(self, action: #selector(onClickUpdateTheme), for: .touchUpInside)
         return btn
     }()
@@ -211,6 +225,7 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("OpDirect", for: .normal)
         btn.addTarget(self, action: #selector(onClickUpdateDirection), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
     
@@ -219,6 +234,7 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("cBarSize", for: .normal)
         btn.addTarget(self, action: #selector(onClickUpdateControlBarSize), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
     
@@ -227,6 +243,7 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("icons", for: .normal)
         btn.addTarget(self, action: #selector(onClickCustomBundle), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
     
@@ -235,6 +252,7 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("hide all", for: .normal)
         btn.addTarget(self, action: #selector(onClickHideAll), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
     
@@ -243,6 +261,7 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("hide Item", for: .normal)
         btn.addTarget(self, action: #selector(onClickHideItem), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
     
@@ -251,6 +270,7 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("writable", for: .normal)
         btn.addTarget(self, action: #selector(onClickWritable), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
     
@@ -259,6 +279,7 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("reload", for: .normal)
         btn.addTarget(self, action: #selector(reload), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
     
@@ -267,6 +288,7 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("custom", for: .normal)
         btn.addTarget(self, action: #selector(customFast), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
         return btn
     }()
 }
