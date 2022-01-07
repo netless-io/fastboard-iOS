@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum ExampleTheme: CaseIterable, Equatable {
+    case dark
+    case light
+    case auto
+}

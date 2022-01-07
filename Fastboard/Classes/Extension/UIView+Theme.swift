@@ -5,4 +5,18 @@
 //  Created by xuyunshi on 2022/1/6.
 //
 
-import Foundation
+import UIKit
+
+extension UIView {
+    @objc dynamic var borderColor: UIColor? {
+        get {
+            if let color = layer.borderColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+}

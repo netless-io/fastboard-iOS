@@ -9,18 +9,12 @@
 import UIKit
 import Fastboard
 
-enum Theme: CaseIterable, Equatable {
-    case dark
-    case light
-    case auto
-}
-
 class ViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .landscapeRight
     }
     
-    var t: Theme = .auto {
+    var t: ExampleTheme = .auto {
         didSet {
             themeChangeBtn.setTitle("T / \(t)", for: .normal)
             switch t {
@@ -49,7 +43,8 @@ class ViewController: UIViewController {
         let f = FastBoardSDK.createFastboardWith(appId: "283/VGiScM9Wiw2HJg",
                                                  roomUUID: "b8a446f06a0411ec8c31196f2bc4a1de",
                                                  roomToken: "WHITEcGFydG5lcl9pZD15TFExM0tTeUx5VzBTR3NkJnNpZz1mZTU3ZTVkNWRlM2Y0NDNlZjNjZjA2MjlhYzExZGY0ZTJlZjhhMzUzOmFrPXlMUTEzS1N5THlXMFNHc2QmY3JlYXRlX3RpbWU9MTY0MDkzMjkwNTQ1NCZleHBpcmVfdGltZT0xNjcyNDY4OTA1NDU0Jm5vbmNlPTE2NDA5MzI5MDU0NTQwMCZyb2xlPXJvb20mcm9vbUlkPWI4YTQ0NmYwNmEwNDExZWM4YzMxMTk2ZjJiYzRhMWRlJnRlYW1JZD05SUQyMFBRaUVldTNPNy1mQmNBek9n",
-                                                 userUID: "dfgfdg")
+                                                 userUID: "sdflsjdflljsdfjewpj")
+        
         f.delegate = self
         let board = f.view
         view.autoresizesSubviews = true
@@ -60,14 +55,10 @@ class ViewController: UIViewController {
         view.addSubview(stack)
         stack.axis = .vertical
         stack.distribution = .fillEqually
-        stack.frame = .init(origin: .init(x: 20, y: 10), size: .init(width: 88, height: 120))
-        stack.sizeToFit()
+        stack.frame = .init(origin: .init(x: view.bounds.width - 88, y: 10),
+                            size: .init(width: 88, height: CGFloat(stack.arrangedSubviews.count * 66)))
         
-        f.joinRoom { error in
-            if let error = error {
-                print(error)
-            }
-        }
+        f.joinRoom()
         self.board = f
     }
     
@@ -81,7 +72,7 @@ class ViewController: UIViewController {
     }
     
     @objc func onClickUpdateTheme() {
-        let all = Theme.allCases
+        let all = ExampleTheme.allCases
         let index = all.firstIndex(of: t)!
         if index == all.count - 1 {
             t = all.first!
@@ -119,10 +110,15 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: FastboardDelegate {
+    func fastboardPhaseDidUpdate(_ fastboard: Fastboard, phase: FastPhase) {
+        print(#function, phase)
+    }
+    
     func fastboardUserKickedOut(_ fastboard: Fastboard, reason: String) {
-        
+        print(#function, reason)
     }
     
     func fastboard(_ fastboard: Fastboard, error: FastError) {
+        print(#function, error.localizedDescription)
     }
 }

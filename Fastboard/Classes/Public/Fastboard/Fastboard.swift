@@ -37,22 +37,26 @@ import Whiteboard
     lazy var sdkDelegateProxy = WhiteCommonCallbackDelegateProxy.target(nil, middleMan: self)
 
     // MARK: - Public
-    public func joinRoom(completionHandler: @escaping ((FastError?)->Void)) {
+    public func joinRoom(completionHandler: ((Result<WhiteRoom, FastError>)->Void)? = nil) {
+        delegate?.fastboardPhaseDidUpdate(self, phase: .connecting)
         whiteSDK.joinRoom(with: roomConfig,
                           callbacks: roomDelegateProxy) { [weak self] success, room, error in
+            guard let self = self else { return }
             if let error = error {
-                let fError = FastError(type: .joinRoom, error: error)
-                completionHandler(fError)
+                let fastError = FastError(type: .joinRoom, error: error)
+                self.delegate?.fastboard(self, error: fastError)
+                completionHandler?(.failure(fastError))
                 return
             }
             guard let room = room else {
-                let fError = FastError(type: .joinRoom, info: ["info": "join success without room"])
-                completionHandler(fError)
+                let fastError = FastError(type: .joinRoom, info: ["info": "join success without room"])
+                self.delegate?.fastboard(self, error: fastError)
+                completionHandler?(.failure(fastError))
                 return
             }
-            self?.room = room
+            self.room = room
             room.disableSerialization(false)
-            completionHandler(nil)
+            completionHandler?(.success(room))
         }
     }
     
@@ -96,6 +100,7 @@ extension Fastboard: WhiteCommonCallbackDelegate {
 
 extension Fastboard: WhiteRoomCallbackDelegate {
     public func firePhaseChanged(_ phase: WhiteRoomPhase) {
+        delegate?.fastboardPhaseDidUpdate(self, phase: .init(rawValue: phase.rawValue) ?? .unknown)
     }
     
     public func fireRoomStateChanged(_ modifyState: WhiteRoomState!) {
