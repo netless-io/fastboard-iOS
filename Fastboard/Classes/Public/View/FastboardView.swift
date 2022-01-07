@@ -7,13 +7,14 @@
 
 import Foundation
 import Whiteboard
+import UIKit
 
 @objc public enum OperationBarDirection: Int {
     case left = 0
     case right
 }
 
-public class FastboardView: UIView, FastPanelDelegate {
+public class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
     @objc public dynamic var operationBarDirection: OperationBarDirection = .left {
         didSet {
             updateControlBarLayout()
@@ -23,7 +24,6 @@ public class FastboardView: UIView, FastPanelDelegate {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupWhiteboardView()
-        setupControlView()
     }
     
     public required init?(coder: NSCoder) {
@@ -44,15 +44,7 @@ public class FastboardView: UIView, FastPanelDelegate {
         whiteboardView.frame = .init(x: x, y: y, width: width, height: height)
     }
     
-    func setupControlView() {
-        addSubview(controlViewContainer)
-        controlViewContainer.frame = bounds
-        controlViewContainer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    }
-    
     var whiteboardView: WhiteBoardView!
-    
-    public lazy var controlViewContainer = UIView()
     
     func setupWhiteboardView() {
         whiteboardView = WhiteBoardView()
@@ -96,6 +88,14 @@ public class FastboardView: UIView, FastPanelDelegate {
     }
     
     func updateControlBarLayout() {
+        fatalError("implement it in subclass")
+    }
+    
+    func setAllPanel(hide: Bool) {
+        fatalError("implement it in subclass")
+    }
+    
+    func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
         fatalError("implement it in subclass")
     }
 }

@@ -23,6 +23,31 @@ public class FastPanel {
     weak var delegate: FastPanelDelegate?
     weak var view: UIView?
     
+    func setItemHide(fromKey key: DefaultOperationKey, hide: Bool) {
+        for item in items {
+            if item.identifier == key.identifier {
+                (item.associatedView)?.isHidden = hide
+                // To fetch controlBar
+                item.associatedView?.superview?.superview?.invalidateIntrinsicContentSize()
+            }
+            
+            if let subOpsItem = item as? SubOpsItem {
+                for op in subOpsItem.subOps {
+                    if op.identifier == key.identifier {
+                        // To fetch subPanel view
+                        op.associatedView?.isHidden = hide
+                        (op.associatedView?.superview?.superview as? SubPanelView)?.rebuildLayout()
+                        
+                        // If the item is the only appliance in this subOps, hide them all
+                        if key.selectable, subOpsItem.subOps.filter({ $0 is ApplianceItem }).count == 1 {
+                            subOpsItem.associatedView?.isHidden = hide
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     func itemWillBeExecution(_ item: FastOperationItem) {
         if let _ = item as? ApplianceItem {
             deselectAll()

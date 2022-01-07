@@ -8,6 +8,83 @@
 import Foundation
 import Whiteboard
 
+public enum FastAppliance: String {
+    case clicker = "clicker"
+    case pencil = "pencil"
+    case selector = "selector"
+    case text = "text"
+    case ellipse = "ellipse"
+    case rectangle = "rectangle"
+    case eraser = "eraser"
+    case straight = "straight"
+    case arrow = "arrow"
+    case hand = "hand"
+    case laserPointer = "laserPointer"
+    case shape = "shape"
+}
+
+public enum FastShape: String {
+    case triangle = "triangle"
+    case rhombus = "rhombus"
+    case pentagram = "pentagram"
+    case speechBalloon = "speechBalloon"
+}
+
+public enum DefaultOperationKey: Equatable {
+    case appliance(FastAppliance)
+    case shape(FastShape)
+    case color(UIColor)
+    case deleteSelection
+    case strokeWidth
+    case clean
+    case redo
+    case undo
+    case newPage
+    case previousPage
+    case nextPage
+    case pageIndicator
+    
+    var selectable: Bool {
+        switch self {
+        case .appliance, .shape: return true
+        default: return false
+        }
+    }
+    
+    public static func ==(lhs: DefaultOperationKey, rhs: DefaultOperationKey) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+    
+    public var identifier: String {
+        switch self {
+        case .appliance(let fastAppliance):
+            return fastAppliance.rawValue
+        case .shape(let fastShape):
+            return fastShape.rawValue
+        case .color(let uIColor):
+            return uIColor.getNumbersArray().description
+        case .deleteSelection:
+            return "deleteSelection"
+        case .strokeWidth:
+            return "strokeWidth"
+        case .clean:
+            return "clean"
+        case .redo:
+            return "redo"
+        case .undo:
+            return "undo"
+        case .newPage:
+            return "newPage"
+        case .previousPage:
+            return "previousPage"
+        case .nextPage:
+            return "nextPage"
+        case .pageIndicator:
+            return "pageIndicator"
+        }
+    }
+}
+
 public struct DefaultOperationItem {
     public static var defaultColors: [UIColor] {
         return [
@@ -40,15 +117,14 @@ public struct DefaultOperationItem {
         let image = UIImage.currentBundle(named: "whiteboard_clean")!
         return JustExecutionItem(image: image,
                           action: { room, _ in room.cleanScene(true) },
-                          identifier: "clean")
+                                 identifier: DefaultOperationKey.clean.identifier)
     }
     
-    public static let deleteSelectionIdentifier = "deleteSelection"
     public static func deleteSelectionItem() -> FastOperationItem {
         let image = UIImage.currentBundle(named: "whiteboard_remove_selection")?.redraw(.systemRed)
         return JustExecutionItem(image: image!,
                           action: { room, _ in room.deleteOperation() },
-                                 identifier: deleteSelectionIdentifier)
+                                 identifier: DefaultOperationKey.deleteSelection.identifier)
     }
     
     public static func strokeWidthItem() -> FastOperationItem {
@@ -61,43 +137,38 @@ public struct DefaultOperationItem {
         }, sliderConfig: { slider in
             slider.minimumValue = 1
             slider.maximumValue = 20
-        }, identifier: "strokeWidth")
+        }, identifier: DefaultOperationKey.strokeWidth.identifier)
     }
     
-    public static let redoIdentifier = "redo"
     public static func redoItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_redo")!,
                           action: { room, _ in
             room.redo()
-        }, identifier: redoIdentifier)
+        }, identifier: DefaultOperationKey.redo.identifier)
     }
     
-    public static let unoIdentifier = "undo"
     public static func undoItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_undo")!,
                           action: { room, _ in
             room.undo()
-        }, identifier: unoIdentifier)
+        }, identifier: DefaultOperationKey.undo.identifier)
     }
     
     
-    public static let previousPageIdentifier = "previous"
     public static func previousPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_previous")!,
                           action: { room, _ in
             room.pptPreviousStep()
-        }, identifier: previousPageIdentifier)
+        }, identifier: DefaultOperationKey.previousPage.identifier)
     }
     
-    public static let nextPageIdentifier = "next"
     public static func nextPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_next")!,
                           action: { room, _ in
             room.pptNextStep()
-        }, identifier: nextPageIdentifier)
+        }, identifier: DefaultOperationKey.nextPage.identifier)
     }
     
-    public static let newPageIdentifier = "new"
     public static func newPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_new")!,
                           action: { room, _ in
@@ -105,19 +176,19 @@ public struct DefaultOperationItem {
             let nextIndex = UInt(index + 1)
             room.putScenes("/", scenes: [WhiteScene()], index: nextIndex)
             room.setSceneIndex(nextIndex, completionHandler: nil)
-        }, identifier: newPageIdentifier)
+        }, identifier: DefaultOperationKey.newPage.identifier)
     }
     
     public static func selectableApplianceItem(_ appliance: WhiteApplianceNameKey,
                                                shape: WhiteApplianceShapeTypeKey? = nil) -> FastOperationItem {
-        var name = "whiteboard_"
+        var imageName = "whiteboard_"
         if appliance == .ApplianceShape, let shape = shape {
-            name = name + "shape_\(shape.rawValue)"
+            imageName = imageName + "shape_\(shape.rawValue)"
         } else {
-            name += appliance.rawValue
+            imageName += appliance.rawValue
         }
         let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
-        return ApplianceItem(image: UIImage.currentBundle(named: name)!, action: { room, _ in
+        return ApplianceItem(image: UIImage.currentBundle(named: imageName)!, action: { room, _ in
             let memberState = WhiteMemberState()
             memberState.currentApplianceName = appliance
             memberState.shapeType = shape
@@ -125,18 +196,21 @@ public struct DefaultOperationItem {
         }, identifier: identifier)
     }
     
-    public static let pageIndicatorIdentifier = "pageIndicator"
     public static func pageIndicatorItem() -> FastOperationItem {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .body)
-        return IndicatorItem(view: label, identifier: pageIndicatorIdentifier)
+        return IndicatorItem(view: label,
+                             identifier: DefaultOperationKey.pageIndicator.identifier)
     }
 }
 
 func identifierFor(appliance: WhiteApplianceNameKey, withShapeKey shape: WhiteApplianceShapeTypeKey?) -> String {
-    if let shape = shape {
-        return appliance.rawValue + "_\(shape.rawValue)"
+    if let shape = shape, let fShape = FastShape(rawValue: shape.rawValue) {
+        return DefaultOperationKey.shape(fShape).identifier
     } else {
-        return appliance.rawValue
+        if let fAppliance = FastAppliance(rawValue: appliance.rawValue) {
+            return DefaultOperationKey.appliance(fAppliance).identifier
+        }
     }
+    return ""
 }

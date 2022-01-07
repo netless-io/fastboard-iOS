@@ -72,10 +72,13 @@ class SubPanelView: UIView {
         setupFromItemViews(views: views)
     }
     
-    func setupFromItemViews(views: [UIView]) {
+    func rebuildLayout() {
         var rowIndex: CGFloat = -1
         var lineIndex: CGFloat = -1
-        views.enumerated().forEach { index, view in
+        let layoutViews = containerView.subviews.filter { !($0 is UIVisualEffectView) && !$0.isHidden }
+        layoutViews.enumerated().forEach { index, view in
+            let lastView: UIView? = index == 0 ? nil : layoutViews[index - 1]
+            
             if view is UISlider {
                 rowIndex = -1
                 if rowIndex > 0 {
@@ -84,7 +87,7 @@ class SubPanelView: UIView {
                 let slideHeight: CGFloat = 44
                 let inset: CGFloat = 8
                 let width: CGFloat = itemSize.width * CGFloat(maxRowPerLine) - (2 * inset)
-                let y = containerView.subviews.last?.frame.maxY ?? 0
+                let y = lastView?.frame.maxY ?? 0
                 view.frame = .init(x: inset,
                                    y: y,
                                    width: width,
@@ -92,16 +95,20 @@ class SubPanelView: UIView {
             } else {
                 rowIndex = CGFloat(Int(rowIndex + 1) % maxRowPerLine)
                 lineIndex = rowIndex == 0 ? lineIndex + 1 : lineIndex
-                let x = rowIndex == 0 ? 0 : (containerView.subviews.last?.frame.maxX ?? 0)
-                let y = rowIndex == 0 ? (containerView.subviews.last?.frame.maxY ?? 0) : (containerView.subviews.last?.frame.minY ?? 0)
+                let x = rowIndex == 0 ? 0 : (lastView?.frame.maxX ?? 0)
+                let y = rowIndex == 0 ? (lastView?.frame.maxY ?? 0) : (lastView?.frame.minY ?? 0)
                 view.frame = .init(x: x,
                                    y: y,
                                    width: itemSize.width,
                                    height: itemSize.height)
             }
-            containerView.addSubview(view)
         }
         invalidateIntrinsicContentSize()
+    }
+    
+    func setupFromItemViews(views: [UIView]) {
+        views.forEach { containerView.addSubview($0) }
+        rebuildLayout()
     }
     
     func deselectAll() {

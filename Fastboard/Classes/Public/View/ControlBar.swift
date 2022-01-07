@@ -34,7 +34,7 @@ public class ControlBar: UIView {
     }
     
     public override var intrinsicContentSize: CGSize {
-        let hideCount = manualHideItemViews.count
+        let hideCount = stack.arrangedSubviews.filter { $0.isHidden }.count 
         if stack.axis == .vertical {
             return .init(width: itemWidth, height: itemWidth * CGFloat(stack.arrangedSubviews.count - hideCount))
         } else {

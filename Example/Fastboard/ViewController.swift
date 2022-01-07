@@ -116,15 +116,46 @@ class ViewController: UIViewController {
         }
     }
     
+    var isHide = false {
+        didSet {
+            board.setAllPanel(hide: isHide)
+        }
+    }
+    
     @objc func onClickHideAll() {
-        board.view.controlViewContainer.isHidden = !board.view.controlViewContainer.isHidden
+        isHide = !isHide
+    }
+    
+    @objc func onClickHideItem(_ sender: UIButton) {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let keys: [DefaultOperationKey] = [
+            .appliance(.pencil),
+            .appliance(.rectangle),
+            .shape(.pentagram),
+            .clean,
+            .previousPage,
+            .newPage,
+            .nextPage,
+            .redo,
+            .undo
+        ]
+        for key in keys {
+            alert.addAction(.init(title: key.identifier,
+                                  style: .default, handler: { _ in
+                self.board.setPanelItemHide(item: key, hide: true)
+            }))
+        }
+        alert.addAction(.init(title: "cancel", style: .cancel, handler: nil))
+        alert.popoverPresentationController?.sourceView = sender
+        present(alert, animated: true, completion: nil)
     }
     
     lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn,
                                                     operationDirectionChange,
                                                     updateControlBarSize,
                                                     customBundle,
-                                                    hideAllButton])
+                                                    hideAllButton,
+                                                    hideItemButton])
     
     
     func randomColor() -> UIColor {
@@ -180,6 +211,14 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("hide all", for: .normal)
         btn.addTarget(self, action: #selector(onClickHideAll), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var hideItemButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = randomColor()
+        btn.setTitle("hide Item", for: .normal)
+        btn.addTarget(self, action: #selector(onClickHideItem), for: .touchUpInside)
         return btn
     }()
 }

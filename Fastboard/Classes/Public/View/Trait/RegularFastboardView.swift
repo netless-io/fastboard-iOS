@@ -9,6 +9,14 @@ import Foundation
 import Whiteboard
 
 public class RegularFastboardView: FastboardView {
+    override func setAllPanel(hide: Bool) {
+        subviews.compactMap { $0 as? ControlBar }.forEach { $0.isHidden = hide }
+    }
+    
+    override func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
+        panels.values.forEach { $0.setItemHide(fromKey: item, hide: hide)}
+    }
+    
     override func setupPanel(room: WhiteRoom) {
         let operationView = operationPanel.setup(room: room)
         let deleteView = deleteSelectionPanel.setup(room: room)
@@ -17,10 +25,10 @@ public class RegularFastboardView: FastboardView {
         let sceneView = scenePanel.setup(room: room,
                                                direction: .horizontal)
         
-        controlViewContainer.addSubview(operationView)
-        controlViewContainer.addSubview(deleteView)
-        controlViewContainer.addSubview(undoRedoView)
-        controlViewContainer.addSubview(sceneView)
+        addSubview(operationView)
+        addSubview(deleteView)
+        addSubview(undoRedoView)
+        addSubview(sceneView)
         
         let margin: CGFloat = 8
         operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin)
@@ -103,7 +111,7 @@ public class RegularFastboardView: FastboardView {
     }
     
     override func updateSceneState(_ scene: WhiteSceneState) {
-        if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationItem.pageIndicatorIdentifier })?.associatedView as? UILabel {
+        if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationKey.pageIndicator.identifier })?.associatedView as? UILabel {
             label.text = "\(scene.index + 1) / \(scene.scenes.count)"
         }
     }
@@ -121,11 +129,13 @@ public class RegularFastboardView: FastboardView {
     }
     
     override func updateUndoEnable(_ enable: Bool) {
-        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationItem.unoIdentifier })?.setEnable(enable)
+        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationKey.undo.identifier
+        })?.setEnable(enable)
     }
     
     override func updateRedoEnable(_ enable: Bool) {
-        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationItem.redoIdentifier })?.setEnable(enable)
+        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationKey.redo.identifier
+        })?.setEnable(enable)
     }
     
     override var totalPanels: [FastPanel] {
