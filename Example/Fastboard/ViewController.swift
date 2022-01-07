@@ -14,6 +14,67 @@ class ViewController: UIViewController {
         .landscapeRight
     }
     
+    var fastboard: Fastboard!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupFastboard()
+        setupTools()
+    }
+    
+    func setupFastboard(custom: FastboardView? = nil) {
+        let fastboard = FastBoardSDK.createFastboardWith(appId: "283/VGiScM9Wiw2HJg",
+                                                 roomUUID: "b8a446f06a0411ec8c31196f2bc4a1de",
+                                                 roomToken: "WHITEcGFydG5lcl9pZD15TFExM0tTeUx5VzBTR3NkJnNpZz1mZTU3ZTVkNWRlM2Y0NDNlZjNjZjA2MjlhYzExZGY0ZTJlZjhhMzUzOmFrPXlMUTEzS1N5THlXMFNHc2QmY3JlYXRlX3RpbWU9MTY0MDkzMjkwNTQ1NCZleHBpcmVfdGltZT0xNjcyNDY4OTA1NDU0Jm5vbmNlPTE2NDA5MzI5MDU0NTQwMCZyb2xlPXJvb20mcm9vbUlkPWI4YTQ0NmYwNmEwNDExZWM4YzMxMTk2ZjJiYzRhMWRlJnRlYW1JZD05SUQyMFBRaUVldTNPNy1mQmNBek9n",
+                                                 userUID: "sdflsjdflljsdfjewpj",
+                                                 customFastBoardView: custom)
+        
+        fastboard.delegate = self
+        let fastboardView = fastboard.view
+        view.autoresizesSubviews = true
+        view.addSubview(fastboardView)
+        fastboardView.frame = view.bounds
+        fastboardView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        fastboard.joinRoom()
+        self.fastboard = fastboard
+    }
+    
+    func setupTools() {
+        view.addSubview(stack)
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.right.equalToSuperview().inset(88)
+            make.width.equalTo(120)
+        }
+    }
+    
+    func reloadFastboard(fastboardView: FastboardView? = nil) {
+        fastboard.view.removeFromSuperview()
+        setupFastboard(custom: fastboardView)
+        view.bringSubview(toFront: stack)
+    }
+    
+    func buttons() -> [UIButton] {
+        exampleItems.enumerated().map { index, element in
+            let btn = button(title: element.0, index: index)
+            btn.addTarget(self, action: #selector(onClick(sender:)), for: .touchUpInside)
+            return btn
+        }
+    }
+    lazy var stack = UIStackView(arrangedSubviews: buttons())
+    
+    @objc func onClick(sender: UIButton) {
+        exampleItems[sender.tag].1()
+    }
+    
+    var isHide = false {
+        didSet {
+            fastboard.setAllPanel(hide: isHide)
+        }
+    }
+    
     var currentTheme: ExampleTheme = .auto {
         didSet {
             themeChangeBtn.setTitle("T / \(currentTheme)", for: .normal)
@@ -29,57 +90,6 @@ class ViewController: UIViewController {
                     return
                 }
             }
-        }
-    }
-    
-    var board: Fastboard!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupFastboard()
-        setupTools()
-    }
-    
-    func reloadFastboard(fastboardView: FastboardView? = nil) {
-        board.view.removeFromSuperview()
-        setupFastboard(custom: fastboardView)
-        view.bringSubview(toFront: stack)
-    }
-    
-    func setupFastboard(custom: FastboardView? = nil) {
-        let f = FastBoardSDK.createFastboardWith(appId: "283/VGiScM9Wiw2HJg",
-                                                 roomUUID: "b8a446f06a0411ec8c31196f2bc4a1de",
-                                                 roomToken: "WHITEcGFydG5lcl9pZD15TFExM0tTeUx5VzBTR3NkJnNpZz1mZTU3ZTVkNWRlM2Y0NDNlZjNjZjA2MjlhYzExZGY0ZTJlZjhhMzUzOmFrPXlMUTEzS1N5THlXMFNHc2QmY3JlYXRlX3RpbWU9MTY0MDkzMjkwNTQ1NCZleHBpcmVfdGltZT0xNjcyNDY4OTA1NDU0Jm5vbmNlPTE2NDA5MzI5MDU0NTQwMCZyb2xlPXJvb20mcm9vbUlkPWI4YTQ0NmYwNmEwNDExZWM4YzMxMTk2ZjJiYzRhMWRlJnRlYW1JZD05SUQyMFBRaUVldTNPNy1mQmNBek9n",
-                                                 userUID: "sdflsjdflljsdfjewpj",
-                                                 customFastBoardView: custom)
-        
-        f.delegate = self
-        let board = f.view
-        view.autoresizesSubviews = true
-        view.addSubview(board)
-        board.frame = view.bounds
-        board.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        f.joinRoom()
-        self.board = f
-    }
-    
-    func setupTools() {
-        view.addSubview(stack)
-        stack.axis = .vertical
-        stack.distribution = .fillEqually
-        stack.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(10)
-            make.right.equalToSuperview().inset(88)
-            make.width.equalTo(120)
-        }
-    }
-    
-    lazy var stack = UIStackView(arrangedSubviews: exampleItems.enumerated().map { button(title: $0.element.0, index: $0.offset)})
-    
-    
-    var isHide = false {
-        didSet {
-            board.setAllPanel(hide: isHide)
         }
     }
     
@@ -159,15 +169,15 @@ class ViewController: UIViewController {
             for key in values {
                 alert.addAction(.init(title: key.identifier,
                                       style: .default, handler: { _ in
-                    self.board.setPanelItemHide(item: key, hide: true)
+                    self.fastboard.setPanelItemHide(item: key, hide: true)
                 }))
             }
             alert.addAction(.init(title: "cancel", style: .cancel, handler: nil))
-            alert.popoverPresentationController?.sourceView = self.board.view.whiteboardView
+            alert.popoverPresentationController?.sourceView = self.fastboard.view.whiteboardView
             self.present(alert, animated: true, completion: nil)
         }),
         ("writable", {
-            guard let room = self.board.room else { return }
+            guard let room = self.fastboard.room else { return }
             let writable = room.isWritable
             room.setWritable(!writable) { new, error in
                 print("update writable \(!writable)", error?.localizedDescription ?? "success")
@@ -182,20 +192,6 @@ class ViewController: UIViewController {
             UIApplication.shared.keyWindow?.rootViewController = ViewController()
         }),
     ]
-
-    @objc func onClick(sender: UIButton) {
-        exampleItems[sender.tag].1()
-    }
-    
-    func button(title: String, index: Int) -> UIButton {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle(title, for: .normal)
-        btn.tag = index
-        btn.addTarget(self, action: #selector(onClick(sender:)), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }
 }
 
 extension ViewController: FastboardDelegate {
