@@ -7,11 +7,14 @@
 
 import UIKit
 
-var globalRoomControlBarItemWidth: CGFloat = 40
-
 /// All the views inserted in this container should not update the button isHidden property
 /// call 'updateButtonHide'
-class ControlBar: UIView {
+public class ControlBar: UIView {
+    @objc public dynamic var itemWidth: CGFloat = 40 {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
     
     enum NarrowStyle {
         case none
@@ -30,12 +33,12 @@ class ControlBar: UIView {
         invalidateIntrinsicContentSize()
     }
     
-    override var intrinsicContentSize: CGSize {
+    public override var intrinsicContentSize: CGSize {
         let hideCount = manualHideItemViews.count
         if stack.axis == .vertical {
-            return .init(width: globalRoomControlBarItemWidth, height: globalRoomControlBarItemWidth * CGFloat(stack.arrangedSubviews.count - hideCount))
+            return .init(width: itemWidth, height: itemWidth * CGFloat(stack.arrangedSubviews.count - hideCount))
         } else {
-            return .init(width: globalRoomControlBarItemWidth * CGFloat(stack.arrangedSubviews.count - hideCount), height: globalRoomControlBarItemWidth)
+            return .init(width: itemWidth * CGFloat(stack.arrangedSubviews.count - hideCount), height: itemWidth)
         }
     }
     
@@ -46,8 +49,7 @@ class ControlBar: UIView {
     init(direction: NSLayoutConstraint.Axis,
          borderMask: CACornerMask,
          views: [UIView],
-         narrowStyle: NarrowStyle = .none,
-         itemWidth: CGFloat = globalRoomControlBarItemWidth) {
+         narrowStyle: NarrowStyle = .none) {
         self.direction = direction
         self.borderMask = borderMask
         switch narrowStyle {

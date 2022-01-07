@@ -71,6 +71,15 @@ class ViewController: UIViewController {
         AppearanceManager.shared.commitUpdate()
     }
     
+    @objc func onClickUpdateControlBarSize() {
+        if ControlBar.appearance().itemWidth == 48 {
+            ControlBar.appearance().itemWidth = 40
+        } else {
+            ControlBar.appearance().itemWidth = 48
+        }
+        AppearanceManager.shared.commitUpdate()
+    }
+    
     @objc func onClickUpdateTheme() {
         let all = ExampleTheme.allCases
         let index = all.firstIndex(of: t)!
@@ -90,7 +99,7 @@ class ViewController: UIViewController {
         }
     }
     
-    lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn, operationDirectionChange])
+    lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn, operationDirectionChange, updateControlBarSize])
     
     lazy var themeChangeBtn: UIButton = {
         let btn = UIButton(type: .custom)
@@ -105,6 +114,14 @@ class ViewController: UIViewController {
         btn.backgroundColor = .systemOrange
         btn.setTitle("OpDirect", for: .normal)
         btn.addTarget(self, action: #selector(onClickUpdateDirection), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var updateControlBarSize: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = .systemOrange
+        btn.setTitle("cBarSize", for: .normal)
+        btn.addTarget(self, action: #selector(onClickUpdateControlBarSize), for: .touchUpInside)
         return btn
     }()
 }
