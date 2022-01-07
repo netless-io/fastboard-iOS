@@ -14,10 +14,10 @@ class ViewController: UIViewController {
         .landscapeRight
     }
     
-    var t: ExampleTheme = .auto {
+    var currentTheme: ExampleTheme = .auto {
         didSet {
-            themeChangeBtn.setTitle("T / \(t)", for: .normal)
-            switch t {
+            themeChangeBtn.setTitle("T / \(currentTheme)", for: .normal)
+            switch currentTheme {
             case .light:
                 ThemeManager.shared.apply(DefaultTheme.defaultLightTheme)
             case .dark:
@@ -74,71 +74,8 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func onClickUpdateDirection() {
-        if FastboardView.appearance().operationBarDirection == .left {
-            FastboardView.appearance().operationBarDirection = .right
-            stack.snp.remakeConstraints { make in
-                make.top.equalToSuperview().inset(10)
-                make.left.equalToSuperview().inset(88)
-                make.width.equalTo(120)
-            }
-        } else {
-            FastboardView.appearance().operationBarDirection = .left
-            stack.snp.remakeConstraints { make in
-                make.top.equalToSuperview().inset(10)
-                make.right.equalToSuperview().inset(88)
-                make.width.equalTo(120)
-            }
-        }
-        AppearanceManager.shared.commitUpdate()
-    }
+    lazy var stack = UIStackView(arrangedSubviews: exampleItems.enumerated().map { button(title: $0.element.0, index: $0.offset)})
     
-    @objc func reload() {
-        UIApplication.shared.keyWindow?.rootViewController = ViewController()
-    }
-    
-    @objc func customFast() {
-        reloadFastboard(fastboardView: CustomFastboardView())
-        ControlBar.appearance().itemWidth = 66
-        AppearanceManager.shared.commitUpdate()
-    }
-    
-    @objc func onClickUpdateControlBarSize() {
-        if ControlBar.appearance().itemWidth == 48 {
-            ControlBar.appearance().itemWidth = 40
-        } else {
-            ControlBar.appearance().itemWidth = 48
-        }
-        AppearanceManager.shared.commitUpdate()
-    }
-    
-    @objc func onClickUpdateTheme() {
-        let all = ExampleTheme.allCases
-        let index = all.firstIndex(of: t)!
-        if index == all.count - 1 {
-            t = all.first!
-        } else {
-            let target = all[index + 1]
-            if target == .auto {
-                if #available(iOS 13, *) {
-                    t = target
-                } else {
-                    t = all.first!
-                }
-            } else {
-                t = target
-            }
-        }
-    }
-    
-    @objc func onClickCustomBundle(_ sender: UIButton) {
-        ThemeManager.shared.updateIcons(using: Bundle.main)
-        reloadFastboard()
-        sender.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            sender.isEnabled = true
-        }
-    }
     
     var isHide = false {
         didSet {
@@ -146,151 +83,119 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func onClickHideAll() {
-        isHide = !isHide
+    var themeChangeBtn: UIButton {
+        stack.arrangedSubviews[0] as! UIButton
     }
     
-    @objc func onClickHideItem(_ sender: UIButton) {
-        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
-        var values: [DefaultOperationKey] = []
-        values.append(contentsOf: FastAppliance.allCases.map { DefaultOperationKey.appliance($0) })
-        values.append(contentsOf: FastShape.allCases.map { DefaultOperationKey.shape($0) })
-        let others: [DefaultOperationKey] = [
-            .clean,
-            .previousPage,
-            .newPage,
-            .nextPage,
-            .redo,
-            .undo
-        ]
-        values.append(contentsOf: others)
-        for key in values {
-            alert.addAction(.init(title: key.identifier,
-                                  style: .default, handler: { _ in
-                self.board.setPanelItemHide(item: key, hide: true)
-            }))
-        }
-        alert.addAction(.init(title: "cancel", style: .cancel, handler: nil))
-        alert.popoverPresentationController?.sourceView = sender
-        present(alert, animated: true, completion: nil)
+    typealias ExampleItem = ((String, (()->Void)))
+    lazy var exampleItems: [ExampleItem] = [
+        ("theme", {
+            let all = ExampleTheme.allCases
+            let index = all.firstIndex(of: self.currentTheme)!
+            if index == all.count - 1 {
+                self.currentTheme = all.first!
+            } else {
+                let targeCurrentTheme = all[index + 1]
+                if targeCurrentTheme == .auto {
+                    if #available(iOS 13, *) {
+                        self.currentTheme = targeCurrentTheme
+                    } else {
+                        self.currentTheme = all.first!
+                    }
+                } else {
+                    self.currentTheme = targeCurrentTheme
+                }
+            }
+        }),
+        ("direction", {
+            if FastboardView.appearance().operationBarDirection == .left {
+                FastboardView.appearance().operationBarDirection = .right
+                self.stack.snp.remakeConstraints { make in
+                    make.top.equalToSuperview().inset(10)
+                    make.left.equalToSuperview().inset(88)
+                    make.width.equalTo(120)
+                }
+            } else {
+                FastboardView.appearance().operationBarDirection = .left
+                self.stack.snp.remakeConstraints { make in
+                    make.top.equalToSuperview().inset(10)
+                    make.right.equalToSuperview().inset(88)
+                    make.width.equalTo(120)
+                }
+            }
+            AppearanceManager.shared.commitUpdate()
+        }),
+        ("barSize", {
+            if ControlBar.appearance().itemWidth == 48 {
+                ControlBar.appearance().itemWidth = 40
+            } else {
+                ControlBar.appearance().itemWidth = 48
+            }
+            AppearanceManager.shared.commitUpdate()
+        }),
+        ("icons", {
+            ThemeManager.shared.updateIcons(using: Bundle.main)
+            self.reloadFastboard()
+            self.view.isUserInteractionEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.view.isUserInteractionEnabled = true
+            }
+        }),
+        ("hideAll", { self.isHide = !self.isHide}),
+        ("hideItem", {
+            let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+            var values: [DefaultOperationKey] = []
+            values.append(contentsOf: FastAppliance.allCases.map { DefaultOperationKey.appliance($0) })
+            values.append(contentsOf: FastShape.allCases.map { DefaultOperationKey.shape($0) })
+            let others: [DefaultOperationKey] = [
+                .clean,
+                .previousPage,
+                .newPage,
+                .nextPage,
+                .redo,
+                .undo
+            ]
+            values.append(contentsOf: others)
+            for key in values {
+                alert.addAction(.init(title: key.identifier,
+                                      style: .default, handler: { _ in
+                    self.board.setPanelItemHide(item: key, hide: true)
+                }))
+            }
+            alert.addAction(.init(title: "cancel", style: .cancel, handler: nil))
+            alert.popoverPresentationController?.sourceView = self.board.view.whiteboardView
+            self.present(alert, animated: true, completion: nil)
+        }),
+        ("writable", {
+            guard let room = self.board.room else { return }
+            let writable = room.isWritable
+            room.setWritable(!writable) { new, error in
+                print("update writable \(!writable)", error?.localizedDescription ?? "success")
+            }
+        }),
+        ("custom", {
+            self.reloadFastboard(fastboardView: CustomFastboardView())
+            ControlBar.appearance().itemWidth = 66
+            AppearanceManager.shared.commitUpdate()
+        }),
+        ("reload", {
+            UIApplication.shared.keyWindow?.rootViewController = ViewController()
+        }),
+    ]
+
+    @objc func onClick(sender: UIButton) {
+        exampleItems[sender.tag].1()
     }
     
-    @objc func onClickWritable() {
-        guard let room = board.room else { return }
-        let writable = room.isWritable
-        room.setWritable(!writable) { new, error in
-            print("update writable \(!writable)", error?.localizedDescription)
-        }
+    func button(title: String, index: Int) -> UIButton {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = randomColor()
+        btn.setTitle(title, for: .normal)
+        btn.tag = index
+        btn.addTarget(self, action: #selector(onClick(sender:)), for: .touchUpInside)
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
+        return btn
     }
-    
-    lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn,
-                                                    operationDirectionChange,
-                                                    updateControlBarSize,
-                                                    customBundle,
-                                                    hideAllButton,
-                                                    hideItemButton,
-                                                    writableButton,
-                                                    customFastButton,
-                                                    reloadButton])
-    
-    
-    func randomColor() -> UIColor {
-        let indicates: [UIColor] = [
-            .systemRed,
-            .black,
-            .systemOrange,
-            .systemBlue,
-            .systemGreen,
-            .systemPink,
-            .systemYellow,
-            .systemGray,
-            .systemPurple,
-            .systemTeal
-        ]
-        let i = Int.random(in: 0..<10)
-        return indicates[i]
-    }
-    
-    lazy var themeChangeBtn: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor =  randomColor()
-        btn.setTitle("T / auto", for: .normal)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        btn.addTarget(self, action: #selector(onClickUpdateTheme), for: .touchUpInside)
-        return btn
-    }()
-    
-    lazy var operationDirectionChange: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle("OpDirect", for: .normal)
-        btn.addTarget(self, action: #selector(onClickUpdateDirection), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }()
-    
-    lazy var updateControlBarSize: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle("cBarSize", for: .normal)
-        btn.addTarget(self, action: #selector(onClickUpdateControlBarSize), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }()
-    
-    lazy var customBundle: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle("icons", for: .normal)
-        btn.addTarget(self, action: #selector(onClickCustomBundle), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }()
-    
-    lazy var hideAllButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle("hide all", for: .normal)
-        btn.addTarget(self, action: #selector(onClickHideAll), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }()
-    
-    lazy var hideItemButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle("hide Item", for: .normal)
-        btn.addTarget(self, action: #selector(onClickHideItem), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }()
-    
-    lazy var writableButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle("writable", for: .normal)
-        btn.addTarget(self, action: #selector(onClickWritable), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }()
-    
-    lazy var reloadButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle("reload", for: .normal)
-        btn.addTarget(self, action: #selector(reload), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }()
-    
-    lazy var customFastButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.backgroundColor = randomColor()
-        btn.setTitle("custom", for: .normal)
-        btn.addTarget(self, action: #selector(customFast), for: .touchUpInside)
-        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
-        return btn
-    }()
 }
 
 extension ViewController: FastboardDelegate {
