@@ -23,6 +23,7 @@ public class FastboardView: UIView, FastPanelDelegate {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupWhiteboardView()
+        setupControlView()
     }
     
     public required init?(coder: NSCoder) {
@@ -43,7 +44,15 @@ public class FastboardView: UIView, FastPanelDelegate {
         whiteboardView.frame = .init(x: x, y: y, width: width, height: height)
     }
     
+    func setupControlView() {
+        addSubview(controlViewContainer)
+        controlViewContainer.frame = bounds
+        controlViewContainer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
     var whiteboardView: WhiteBoardView!
+    
+    public lazy var controlViewContainer = UIView()
     
     func setupWhiteboardView() {
         whiteboardView = WhiteBoardView()

@@ -36,15 +36,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        setupFastboard()
+        setupTools()
     }
     
     func reloadFastboard() {
         board.view.removeFromSuperview()
-        setup()
+        setupFastboard()
+        view.bringSubview(toFront: stack)
     }
     
-    func setup() {
+    func setupFastboard() {
         let f = FastBoardSDK.createFastboardWith(appId: "283/VGiScM9Wiw2HJg",
                                                  roomUUID: "b8a446f06a0411ec8c31196f2bc4a1de",
                                                  roomToken: "WHITEcGFydG5lcl9pZD15TFExM0tTeUx5VzBTR3NkJnNpZz1mZTU3ZTVkNWRlM2Y0NDNlZjNjZjA2MjlhYzExZGY0ZTJlZjhhMzUzOmFrPXlMUTEzS1N5THlXMFNHc2QmY3JlYXRlX3RpbWU9MTY0MDkzMjkwNTQ1NCZleHBpcmVfdGltZT0xNjcyNDY4OTA1NDU0Jm5vbmNlPTE2NDA5MzI5MDU0NTQwMCZyb2xlPXJvb20mcm9vbUlkPWI4YTQ0NmYwNmEwNDExZWM4YzMxMTk2ZjJiYzRhMWRlJnRlYW1JZD05SUQyMFBRaUVldTNPNy1mQmNBek9n",
@@ -56,15 +58,16 @@ class ViewController: UIViewController {
         view.addSubview(board)
         board.frame = view.bounds
         board.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+        f.joinRoom()
+        self.board = f
+    }
+    
+    func setupTools() {
         view.addSubview(stack)
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.frame = .init(origin: .init(x: view.bounds.width - 88, y: 10),
                             size: .init(width: 88, height: CGFloat(stack.arrangedSubviews.count * 66)))
-        
-        f.joinRoom()
-        self.board = f
     }
     
     @objc func onClickUpdateDirection() {
@@ -104,15 +107,24 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func onClickCustomBundle() {
+    @objc func onClickCustomBundle(_ sender: UIButton) {
         ThemeManager.shared.updateIcons(using: Bundle.main)
         reloadFastboard()
+        sender.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            sender.isEnabled = true
+        }
+    }
+    
+    @objc func onClickHideAll() {
+        board.view.controlViewContainer.isHidden = !board.view.controlViewContainer.isHidden
     }
     
     lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn,
                                                     operationDirectionChange,
                                                     updateControlBarSize,
-                                                    customBundle])
+                                                    customBundle,
+                                                    hideAllButton])
     
     
     func randomColor() -> UIColor {
@@ -160,6 +172,14 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("icons", for: .normal)
         btn.addTarget(self, action: #selector(onClickCustomBundle), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var hideAllButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = randomColor()
+        btn.setTitle("hide all", for: .normal)
+        btn.addTarget(self, action: #selector(onClickHideAll), for: .touchUpInside)
         return btn
     }()
 }

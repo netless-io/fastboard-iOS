@@ -17,11 +17,11 @@ class CompactFastboardView: FastboardView {
                                                direction: .horizontal)
         let sceneView = scenePanel.setup(room: room,
                                                direction: .horizontal)
-        addSubview(colorView)
-        addSubview(operationView)
-        addSubview(deleteView)
-        addSubview(undoRedoView)
-        addSubview(sceneView)
+        controlViewContainer.addSubview(colorView)
+        controlViewContainer.addSubview(operationView)
+        controlViewContainer.addSubview(deleteView)
+        controlViewContainer.addSubview(undoRedoView)
+        controlViewContainer.addSubview(sceneView)
         
         let margin: CGFloat = 8
         

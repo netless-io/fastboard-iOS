@@ -17,10 +17,10 @@ public class RegularFastboardView: FastboardView {
         let sceneView = scenePanel.setup(room: room,
                                                direction: .horizontal)
         
-        addSubview(operationView)
-        addSubview(deleteView)
-        addSubview(undoRedoView)
-        addSubview(sceneView)
+        controlViewContainer.addSubview(operationView)
+        controlViewContainer.addSubview(deleteView)
+        controlViewContainer.addSubview(undoRedoView)
+        controlViewContainer.addSubview(sceneView)
         
         let margin: CGFloat = 8
         operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin)
