@@ -10,7 +10,7 @@ import Whiteboard
 
 class CompactFastboardView: FastboardView {
     override func setAllPanel(hide: Bool) {
-        subviews.compactMap { $0 as? ControlBar }.forEach { $0.isHidden = hide }
+        totalPanels.forEach { $0.view?.isHidden = hide }
     }
     
     override func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
@@ -57,17 +57,17 @@ class CompactFastboardView: FastboardView {
         updateControlBarLayout()
     }
     
-    var operationLeftConstraint: NSLayoutConstraint!
-    var operationRightConstraint: NSLayoutConstraint!
+    var operationLeftConstraint: NSLayoutConstraint?
+    var operationRightConstraint: NSLayoutConstraint?
     
     override func updateControlBarLayout() {
         let isLeft = operationBarDirection == .left
         if isLeft {
-            operationLeftConstraint.isActive = true
-            operationRightConstraint.isActive = false
+            operationLeftConstraint?.isActive = true
+            operationRightConstraint?.isActive = false
         } else {
-            operationLeftConstraint.isActive = false
-            operationRightConstraint.isActive = true
+            operationLeftConstraint?.isActive = false
+            operationRightConstraint?.isActive = true
         }
     }
     
@@ -137,11 +137,11 @@ class CompactFastboardView: FastboardView {
     override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         if let appliance = appliance {
             operationPanel.updateWithApplianceOutside(appliance, shape: shape)
-        }
-        
-        if let appliance = appliance,
-            let item = operationPanel.flatItems.first(where: { $0.identifier == appliance.rawValue }){
-            updateDisplayStyleFromNewOperationItem(item)
+            
+            let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
+            if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }){
+                updateDisplayStyleFromNewOperationItem(item)
+            }
         } else {
             updateDisplayStyle(.all)
         }

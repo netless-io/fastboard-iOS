@@ -9,15 +9,15 @@ import Foundation
 import Whiteboard
 
 public class RegularFastboardView: FastboardView {
-    override func setAllPanel(hide: Bool) {
-        subviews.compactMap { $0 as? ControlBar }.forEach { $0.isHidden = hide }
+    public override func setAllPanel(hide: Bool) {
+        totalPanels.forEach { $0.view?.isHidden = hide }
     }
     
-    override func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
+    public override func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
         panels.values.forEach { $0.setItemHide(fromKey: item, hide: hide)}
     }
     
-    override func setupPanel(room: WhiteRoom) {
+    public override func setupPanel(room: WhiteRoom) {
         let operationView = operationPanel.setup(room: room)
         let deleteView = deleteSelectionPanel.setup(room: room)
         let undoRedoView = undoRedoPanel.setup(room: room,
@@ -31,6 +31,7 @@ public class RegularFastboardView: FastboardView {
         addSubview(sceneView)
         
         let margin: CGFloat = 8
+        
         operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin)
         operationRightConstraint = operationView.rightAnchor.constraint(equalTo: whiteboardView.rightAnchor, constant: -margin)
         
@@ -52,17 +53,17 @@ public class RegularFastboardView: FastboardView {
         updateControlBarLayout()
     }
     
-    var operationLeftConstraint: NSLayoutConstraint!
-    var operationRightConstraint: NSLayoutConstraint!
+    var operationLeftConstraint: NSLayoutConstraint?
+    var operationRightConstraint: NSLayoutConstraint?
 
-    override func updateControlBarLayout() {
+    public override func updateControlBarLayout() {
         let isLeft = operationBarDirection == .left
         if isLeft {
-            operationLeftConstraint.isActive = true
-            operationRightConstraint.isActive = false
+            operationLeftConstraint?.isActive = true
+            operationRightConstraint?.isActive = false
         } else {
-            operationLeftConstraint.isActive = false
-            operationRightConstraint.isActive = true
+            operationLeftConstraint?.isActive = false
+            operationRightConstraint?.isActive = true
         }
     }
     
@@ -88,7 +89,7 @@ public class RegularFastboardView: FastboardView {
         }
     }
     
-    override func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
+    public override func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
         if item is JustExecutionItem { return }
         if item is ColorItem { return }
         if item is SliderOperationItem { return }
@@ -102,43 +103,44 @@ public class RegularFastboardView: FastboardView {
         updateDisplayStyleFromNewOperationItem(item)
     }
     
-    override func updateStrokeColor(_ color: UIColor) {
+    public override func updateStrokeColor(_ color: UIColor) {
         operationPanel.updateSelectedColor(color)
     }
     
-    override func updateStrokeWidth(_ width: Float) {
+    public override func updateStrokeWidth(_ width: Float) {
         operationPanel.updateStrokeWidth(width)
     }
     
-    override func updateSceneState(_ scene: WhiteSceneState) {
+    public override func updateSceneState(_ scene: WhiteSceneState) {
         if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationKey.pageIndicator.identifier })?.associatedView as? UILabel {
             label.text = "\(scene.index + 1) / \(scene.scenes.count)"
         }
     }
     
-    override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
+    public override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         if let appliance = appliance {
             operationPanel.updateWithApplianceOutside(appliance, shape: shape)
-        }
-        if let appliance = appliance,
-            let item = operationPanel.flatItems.first(where: { $0.identifier == appliance.rawValue }){
-            updateDisplayStyleFromNewOperationItem(item)
+            
+            let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
+            if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) {
+                updateDisplayStyleFromNewOperationItem(item)
+            }
         } else {
             updateDisplayStyle(.all)
         }
     }
     
-    override func updateUndoEnable(_ enable: Bool) {
+    public override func updateUndoEnable(_ enable: Bool) {
         undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationKey.undo.identifier
         })?.setEnable(enable)
     }
     
-    override func updateRedoEnable(_ enable: Bool) {
+    public override func updateRedoEnable(_ enable: Bool) {
         undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationKey.redo.identifier
         })?.setEnable(enable)
     }
     
-    override var totalPanels: [FastPanel] {
+    public override var totalPanels: [FastPanel] {
         panels.map { $0.value }
     }
     

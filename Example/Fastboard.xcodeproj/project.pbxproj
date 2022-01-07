@@ -21,6 +21,7 @@
 		8AAB0EDF277AB0E40062E8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAB0EDE277AB0E40062E8D1 /* Assets.xcassets */; };
 		8AAB0EE2277AB0E40062E8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AAB0EE0277AB0E40062E8D1 /* LaunchScreen.storyboard */; };
 		8AAB0EE5277AB0E40062E8D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0EE4277AB0E40062E8D1 /* main.m */; };
+		8AE965822788350000722F89 /* CustomFastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE965812788350000722F89 /* CustomFastboardView.swift */; };
 		9627928B49C28EE0329C6222 /* Pods_Fastboard_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2FF5119E81A1DBCCD932E7 /* Pods_Fastboard_Example.framework */; };
 		BCCEAFD7A067CCFB0CAFF5AC /* Pods_Fastboard_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D8375C2A3EC5932FB496E1 /* Pods_Fastboard_Tests.framework */; };
 		EF7103A710936AA046D21FDE /* Pods_OCExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4815D0F332F98B23B8759 /* Pods_OCExample.framework */; };
@@ -67,6 +68,7 @@
 		8AAB0EE1277AB0E40062E8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AAB0EE3277AB0E40062E8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAB0EE4277AB0E40062E8D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8AE965812788350000722F89 /* CustomFastboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFastboardView.swift; sourceTree = "<group>"; };
 		96FF1AB9A8B5AED401A61FB7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		978DC14B4A1B879B28A46EFF /* Pods-Fastboard_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3D8375C2A3EC5932FB496E1 /* Pods_Fastboard_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fastboard_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				8A310FC02787DEA800376BB5 /* ExampleTheme.swift */,
+				8AE965812788350000722F89 /* CustomFastboardView.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE965822788350000722F89 /* CustomFastboardView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				8A310FC12787DEA800376BB5 /* ExampleTheme.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,

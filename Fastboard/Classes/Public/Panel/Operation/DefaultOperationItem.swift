@@ -8,7 +8,7 @@
 import Foundation
 import Whiteboard
 
-public enum FastAppliance: String {
+public enum FastAppliance: String, CaseIterable {
     case clicker = "clicker"
     case pencil = "pencil"
     case selector = "selector"
@@ -23,7 +23,7 @@ public enum FastAppliance: String {
     case shape = "shape"
 }
 
-public enum FastShape: String {
+public enum FastShape: String, CaseIterable {
     case triangle = "triangle"
     case rhombus = "rhombus"
     case pentagram = "pentagram"

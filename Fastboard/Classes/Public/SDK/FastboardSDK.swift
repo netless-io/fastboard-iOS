@@ -35,7 +35,8 @@ private struct Initializer {
     @objc public class func createFastboardWith(appId: String,
                                                 roomUUID: String,
                                                 roomToken: String,
-                                                userUID: String)  -> Fastboard {
+                                                userUID: String,
+                                                customFastBoardView: FastboardView? = nil)  -> Fastboard {
         let whiteConfig = WhiteSdkConfiguration(app: appId)
         whiteConfig.renderEngine = .canvas
         whiteConfig.userCursor = false
@@ -49,23 +50,27 @@ private struct Initializer {
         windowParas.containerSizeRatio = NSNumber(value: 1 / globalFastboardRatio)
         roomConfig.windowParams = windowParas
         
-        return createFastboardWith(whiteSDKConfig: whiteConfig, whiteRoomConfig: roomConfig)
+        return createFastboardWith(whiteSDKConfig: whiteConfig, whiteRoomConfig: roomConfig, customFastBoardView: customFastBoardView)
     }
     
     @objc public class func createFastboardWith(whiteSDKConfig: WhiteSdkConfiguration,
-                                                whiteRoomConfig: WhiteRoomConfig) -> Fastboard {
-        let view: FastboardView
-        if UIScreen.main.traitCollection.hasCompact {
-            view = CompactFastboardView()
-        } else {
-            view = RegularFastboardView()
+                                                whiteRoomConfig: WhiteRoomConfig,
+                                                customFastBoardView: FastboardView?) -> Fastboard {
+        func defaultFastboardView() -> FastboardView {
+            if UIScreen.main.traitCollection.hasCompact {
+                return CompactFastboardView()
+            } else {
+                return RegularFastboardView()
+            }
         }
-        let fastboard = Fastboard(view: view, roomConfig: whiteRoomConfig)
-        let sdk = WhiteSDK(whiteBoardView: view.whiteboardView,
+        let fastboardView = customFastBoardView ?? defaultFastboardView()
+        let fastboard = Fastboard(view: fastboardView,
+                                  roomConfig: whiteRoomConfig)
+        let sdk = WhiteSDK(whiteBoardView: fastboardView.whiteboardView,
                            config: whiteSDKConfig,
                            commonCallbackDelegate: fastboard.sdkDelegateProxy)
         fastboard.whiteSDK = sdk
-        weakTable.add(view)
+        weakTable.add(fastboardView)
         
         // Make sure the method be executed once.
         _ = Initializer.shared

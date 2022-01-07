@@ -40,17 +40,18 @@ class ViewController: UIViewController {
         setupTools()
     }
     
-    func reloadFastboard() {
+    func reloadFastboard(fastboardView: FastboardView? = nil) {
         board.view.removeFromSuperview()
-        setupFastboard()
+        setupFastboard(custom: fastboardView)
         view.bringSubview(toFront: stack)
     }
     
-    func setupFastboard() {
+    func setupFastboard(custom: FastboardView? = nil) {
         let f = FastBoardSDK.createFastboardWith(appId: "283/VGiScM9Wiw2HJg",
                                                  roomUUID: "b8a446f06a0411ec8c31196f2bc4a1de",
                                                  roomToken: "WHITEcGFydG5lcl9pZD15TFExM0tTeUx5VzBTR3NkJnNpZz1mZTU3ZTVkNWRlM2Y0NDNlZjNjZjA2MjlhYzExZGY0ZTJlZjhhMzUzOmFrPXlMUTEzS1N5THlXMFNHc2QmY3JlYXRlX3RpbWU9MTY0MDkzMjkwNTQ1NCZleHBpcmVfdGltZT0xNjcyNDY4OTA1NDU0Jm5vbmNlPTE2NDA5MzI5MDU0NTQwMCZyb2xlPXJvb20mcm9vbUlkPWI4YTQ0NmYwNmEwNDExZWM4YzMxMTk2ZjJiYzRhMWRlJnRlYW1JZD05SUQyMFBRaUVldTNPNy1mQmNBek9n",
-                                                 userUID: "sdflsjdflljsdfjewpj")
+                                                 userUID: "sdflsjdflljsdfjewpj",
+                                                 customFastBoardView: custom)
         
         f.delegate = self
         let board = f.view
@@ -76,6 +77,16 @@ class ViewController: UIViewController {
         } else {
             FastboardView.appearance().operationBarDirection = .left
         }
+        AppearanceManager.shared.commitUpdate()
+    }
+    
+    @objc func reload() {
+        UIApplication.shared.keyWindow?.rootViewController = ViewController()
+    }
+    
+    @objc func customFast() {
+        reloadFastboard(fastboardView: CustomFastboardView())
+        ControlBar.appearance().itemWidth = 66
         AppearanceManager.shared.commitUpdate()
     }
     
@@ -128,10 +139,10 @@ class ViewController: UIViewController {
     
     @objc func onClickHideItem(_ sender: UIButton) {
         let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
-        let keys: [DefaultOperationKey] = [
-            .appliance(.pencil),
-            .appliance(.rectangle),
-            .shape(.pentagram),
+        var values: [DefaultOperationKey] = []
+        values.append(contentsOf: FastAppliance.allCases.map { DefaultOperationKey.appliance($0) })
+        values.append(contentsOf: FastShape.allCases.map { DefaultOperationKey.shape($0) })
+        let others: [DefaultOperationKey] = [
             .clean,
             .previousPage,
             .newPage,
@@ -139,7 +150,8 @@ class ViewController: UIViewController {
             .redo,
             .undo
         ]
-        for key in keys {
+        values.append(contentsOf: others)
+        for key in values {
             alert.addAction(.init(title: key.identifier,
                                   style: .default, handler: { _ in
                 self.board.setPanelItemHide(item: key, hide: true)
@@ -164,22 +176,25 @@ class ViewController: UIViewController {
                                                     customBundle,
                                                     hideAllButton,
                                                     hideItemButton,
-                                                    writableButton])
+                                                    writableButton,
+                                                    customFastButton,
+                                                    reloadButton])
     
     
     func randomColor() -> UIColor {
         let indicates: [UIColor] = [
-            .red,
+            .systemRed,
             .black,
-            .orange,
-            .blue,
-            .green,
+            .systemOrange,
+            .systemBlue,
+            .systemGreen,
             .systemPink,
-            .brown,
-            .gray,
-            .purple
+            .systemYellow,
+            .systemGray,
+            .systemPurple,
+            .systemTeal
         ]
-        let i = Int.random(in: 0..<9)
+        let i = Int.random(in: 0..<10)
         return indicates[i]
     }
     
@@ -236,6 +251,22 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("writable", for: .normal)
         btn.addTarget(self, action: #selector(onClickWritable), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var reloadButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = randomColor()
+        btn.setTitle("reload", for: .normal)
+        btn.addTarget(self, action: #selector(reload), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var customFastButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = randomColor()
+        btn.setTitle("custom", for: .normal)
+        btn.addTarget(self, action: #selector(customFast), for: .touchUpInside)
         return btn
     }()
 }

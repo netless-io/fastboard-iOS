@@ -14,8 +14,8 @@ import UIKit
     case right
 }
 
-public class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
-    @objc public dynamic var operationBarDirection: OperationBarDirection = .left {
+open class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
+    @objc open dynamic var operationBarDirection: OperationBarDirection = .left {
         didSet {
             updateControlBarLayout()
         }
@@ -30,7 +30,7 @@ public class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
         fatalError()
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         // Try fill width first
         var width = bounds.width
@@ -44,65 +44,58 @@ public class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
         whiteboardView.frame = .init(x: x, y: y, width: width, height: height)
     }
     
-    var whiteboardView: WhiteBoardView!
+    open var whiteboardView: WhiteBoardView!
     
     func setupWhiteboardView() {
         whiteboardView = WhiteBoardView()
         addSubview(whiteboardView)
     }
     
-    var totalPanels: [FastPanel] {
+    open var totalPanels: [FastPanel] {
         fatalError("implement it in subclass")
     }
     
-    func setupPanel(room: WhiteRoom) {
+    open func setupPanel(room: WhiteRoom) {
         fatalError("implement it in subclass")
     }
     
-    func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
+    open func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         fatalError("implement it in subclass")
     }
     
-    func updateStrokeColor(_ color: UIColor) {
+    open func updateStrokeColor(_ color: UIColor) {
         fatalError("implement it in subclass")
     }
     
-    func updateStrokeWidth(_ width: Float) {
+    open func updateStrokeWidth(_ width: Float) {
         fatalError("implement it in subclass")
     }
     
-    func updateSceneState(_ scene: WhiteSceneState) {
+    open func updateSceneState(_ scene: WhiteSceneState) {
         fatalError("implement it in subclass")
     }
     
-    func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
+    open func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
         fatalError("implement it in subclass")
     }
     
-    func updateUndoEnable(_ enable: Bool) {
+    open func updateUndoEnable(_ enable: Bool) {
         fatalError("implement it in subclass")
     }
     
-    func updateRedoEnable(_ enable: Bool) {
+    open func updateRedoEnable(_ enable: Bool) {
         fatalError("implement it in subclass")
     }
     
-    func updateControlBarLayout() {
+    open func updateControlBarLayout() {
         fatalError("implement it in subclass")
     }
     
-    func setAllPanel(hide: Bool) {
+    open func setAllPanel(hide: Bool) {
         fatalError("implement it in subclass")
     }
     
-    func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
+    open func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
         fatalError("implement it in subclass")
-    }
-}
-
-extension FastboardView {
-    @objc public dynamic var aa: UIColor {
-        get { return .lightGray }
-        set { print("haha")}
     }
 }

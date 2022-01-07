@@ -12,18 +12,18 @@ public class FastPanel {
     public init(items: [FastOperationItem]) {
         self.items = items
     }
-    var flatItems: [FastOperationItem] {
+    public var flatItems: [FastOperationItem] {
         return items
             .map {
                 (($0 as? SubOpsItem)?.subOps) ?? []
             }
             .flatMap { $0 }
     }
-    var items: [FastOperationItem]
+    public var items: [FastOperationItem]
     weak var delegate: FastPanelDelegate?
-    weak var view: UIView?
+    public weak var view: UIView?
     
-    func setItemHide(fromKey key: DefaultOperationKey, hide: Bool) {
+    public func setItemHide(fromKey key: DefaultOperationKey, hide: Bool) {
         for item in items {
             if item.identifier == key.identifier {
                 (item.associatedView)?.isHidden = hide
@@ -64,11 +64,11 @@ public class FastPanel {
         delegate?.itemWillBeExecution(fastPanel: self, item: item)
     }
     
-    func deselectAll() {
+    public func deselectAll() {
         items.compactMap { $0.associatedView as? UIButton }.forEach { $0.isSelected = false }
     }
     
-    func updateStrokeWidth(_ width: Float) {
+    public func updateStrokeWidth(_ width: Float) {
         let sliderOps = items
             .compactMap { $0 as? SubOpsItem }
             .flatMap { $0.subOps }
@@ -79,7 +79,7 @@ public class FastPanel {
         }
     }
     
-    func updateSelectedColor(_ color: UIColor) {
+    public func updateSelectedColor(_ color: UIColor) {
         // Find all the subOps contains color
         let allColorContainers = items
             .compactMap { $0 as? SubOpsItem }
@@ -98,7 +98,7 @@ public class FastPanel {
         }
     }
     
-    func updateWithApplianceOutside(_ appliance: WhiteApplianceNameKey, shape: WhiteApplianceShapeTypeKey?) {
+    public func updateWithApplianceOutside(_ appliance: WhiteApplianceNameKey, shape: WhiteApplianceShapeTypeKey?) {
         deselectAll()
         let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
         for item in items {
@@ -116,7 +116,7 @@ public class FastPanel {
         }
     }
     
-    func setup(room: WhiteRoom,
+    public func setup(room: WhiteRoom,
                direction: NSLayoutConstraint.Axis = .vertical,
                mask: CACornerMask = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMinXMaxYCorner]) -> UIView {
         let views = items.map { item -> UIView in
