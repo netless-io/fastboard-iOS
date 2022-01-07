@@ -150,12 +150,21 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @objc func onClickWritable() {
+        guard let room = board.room else { return }
+        let writable = room.isWritable
+        room.setWritable(!writable) { new, error in
+            print("update writable \(!writable)", error?.localizedDescription)
+        }
+    }
+    
     lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn,
                                                     operationDirectionChange,
                                                     updateControlBarSize,
                                                     customBundle,
                                                     hideAllButton,
-                                                    hideItemButton])
+                                                    hideItemButton,
+                                                    writableButton])
     
     
     func randomColor() -> UIColor {
@@ -219,6 +228,14 @@ class ViewController: UIViewController {
         btn.backgroundColor = randomColor()
         btn.setTitle("hide Item", for: .normal)
         btn.addTarget(self, action: #selector(onClickHideItem), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var writableButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = randomColor()
+        btn.setTitle("writable", for: .normal)
+        btn.addTarget(self, action: #selector(onClickWritable), for: .touchUpInside)
         return btn
     }()
 }
