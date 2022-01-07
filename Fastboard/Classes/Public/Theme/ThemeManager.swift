@@ -20,6 +20,11 @@ public class ThemeManager: NSObject {
         }
     }
     
+    /// You should call it before fastboard create
+    public func updateIcons(using bundle: Bundle) {
+        iconsBundle = bundle
+    }
+    
     public func apply(_ theme: ThemeAble) {
         updateFastboard(theme.whiteboardAssets)
         updateControlBar(theme.controlBarAssets)

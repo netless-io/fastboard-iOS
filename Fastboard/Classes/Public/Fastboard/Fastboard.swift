@@ -36,6 +36,12 @@ import Whiteboard
     lazy var roomDelegateProxy = WhiteRoomCallBackDelegateProxy.target(nil, middleMan: self)
     lazy var sdkDelegateProxy = WhiteCommonCallbackDelegateProxy.target(nil, middleMan: self)
 
+    deinit {
+        #if DEBUG
+        print("fastboard deinit")
+        #endif
+    }
+    
     // MARK: - Public
     public func joinRoom(completionHandler: ((Result<WhiteRoom, FastError>)->Void)? = nil) {
         delegate?.fastboardPhaseDidUpdate(self, phase: .connecting)

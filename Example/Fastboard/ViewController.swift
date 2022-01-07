@@ -39,6 +39,11 @@ class ViewController: UIViewController {
         setup()
     }
     
+    func reloadFastboard() {
+        board.view.removeFromSuperview()
+        setup()
+    }
+    
     func setup() {
         let f = FastBoardSDK.createFastboardWith(appId: "283/VGiScM9Wiw2HJg",
                                                  roomUUID: "b8a446f06a0411ec8c31196f2bc4a1de",
@@ -99,11 +104,36 @@ class ViewController: UIViewController {
         }
     }
     
-    lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn, operationDirectionChange, updateControlBarSize])
+    @objc func onClickCustomBundle() {
+        ThemeManager.shared.updateIcons(using: Bundle.main)
+        reloadFastboard()
+    }
+    
+    lazy var stack = UIStackView(arrangedSubviews: [themeChangeBtn,
+                                                    operationDirectionChange,
+                                                    updateControlBarSize,
+                                                    customBundle])
+    
+    
+    func randomColor() -> UIColor {
+        let indicates: [UIColor] = [
+            .red,
+            .black,
+            .orange,
+            .blue,
+            .green,
+            .systemPink,
+            .brown,
+            .gray,
+            .purple
+        ]
+        let i = Int.random(in: 0..<9)
+        return indicates[i]
+    }
     
     lazy var themeChangeBtn: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.backgroundColor = .systemOrange
+        btn.backgroundColor =  randomColor()
         btn.setTitle("T / auto", for: .normal)
         btn.addTarget(self, action: #selector(onClickUpdateTheme), for: .touchUpInside)
         return btn
@@ -111,7 +141,7 @@ class ViewController: UIViewController {
     
     lazy var operationDirectionChange: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.backgroundColor = .systemOrange
+        btn.backgroundColor = randomColor()
         btn.setTitle("OpDirect", for: .normal)
         btn.addTarget(self, action: #selector(onClickUpdateDirection), for: .touchUpInside)
         return btn
@@ -119,9 +149,17 @@ class ViewController: UIViewController {
     
     lazy var updateControlBarSize: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.backgroundColor = .systemOrange
+        btn.backgroundColor = randomColor()
         btn.setTitle("cBarSize", for: .normal)
         btn.addTarget(self, action: #selector(onClickUpdateControlBarSize), for: .touchUpInside)
+        return btn
+    }()
+    
+    lazy var customBundle: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = randomColor()
+        btn.setTitle("icons", for: .normal)
+        btn.addTarget(self, action: #selector(onClickCustomBundle), for: .touchUpInside)
         return btn
     }()
 }

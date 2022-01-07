@@ -7,13 +7,18 @@
 
 import Foundation
 
-var iconsBundle: Bundle = {
+let defaultBundle: Bundle = {
     let path = Bundle(for: FastBoardSDK.self).path(forResource: "Icons", ofType: "bundle")
     return Bundle(path: path!)!
 }()
 
+var iconsBundle: Bundle = defaultBundle
+
 extension UIImage {
     static func currentBundle(named: String) -> UIImage? {
-        return UIImage(named: named, in: iconsBundle, compatibleWith: nil)
+        if let img = UIImage(named: named, in: iconsBundle, compatibleWith: nil) {
+            return img
+        }
+        return UIImage(named: named, in: defaultBundle, compatibleWith: nil)
     }
 }
