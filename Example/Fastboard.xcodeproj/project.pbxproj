@@ -16,6 +16,7 @@
 		8A28DD16278BC1BD00B5CB71 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */; };
 		8A28DD18278BCB1900B5CB71 /* RoomInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD17278BCB1900B5CB71 /* RoomInfo.h */; };
 		8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD19278BCBD700B5CB71 /* RoomInfo.m */; };
+		8A28DD1C278BD84E00B5CB71 /* README-En.md in Resources */ = {isa = PBXBuildFile; fileRef = 8A28DD1B278BD84E00B5CB71 /* README-En.md */; };
 		8A310FC12787DEA800376BB5 /* ExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A310FC02787DEA800376BB5 /* ExampleTheme.swift */; };
 		8AAB0ED4277AB0E40062E8D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */; };
 		8AAB0ED7277AB0E40062E8D1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED6277AB0E40062E8D1 /* SceneDelegate.m */; };
@@ -59,11 +60,11 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		812F452516B81B7ADBC6F7AC /* Pods-Fastboard_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Tests.release.xcconfig"; path = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		829F94F2DB88098BADCF84A3 /* Pods-OCExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCExample.debug.xcconfig"; path = "Target Support Files/Pods-OCExample/Pods-OCExample.debug.xcconfig"; sourceTree = "<group>"; };
-		8A28DD13278BC08300B5CB71 /* README-zh.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "README-zh.md"; path = "../README-zh.md"; sourceTree = "<group>"; };
 		8A28DD14278BC0E900B5CB71 /* FastboardConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastboardConfig.xcconfig; sourceTree = "<group>"; };
 		8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 		8A28DD17278BCB1900B5CB71 /* RoomInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomInfo.h; sourceTree = "<group>"; };
 		8A28DD19278BCBD700B5CB71 /* RoomInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomInfo.m; sourceTree = "<group>"; };
+		8A28DD1B278BD84E00B5CB71 /* README-En.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "README-En.md"; path = "../README-En.md"; sourceTree = "<group>"; };
 		8A310FC02787DEA800376BB5 /* ExampleTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTheme.swift; sourceTree = "<group>"; };
 		8AAB0ED0277AB0E40062E8D1 /* OCExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAB0ED2277AB0E40062E8D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -193,7 +194,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				8A28DD13278BC08300B5CB71 /* README-zh.md */,
+				8A28DD1B278BD84E00B5CB71 /* README-En.md */,
 				5735BD3E615FCD4E13798F44 /* Fastboard.podspec */,
 				232246E3091BF31CA271C55B /* README.md */,
 				96FF1AB9A8B5AED401A61FB7 /* LICENSE */,
@@ -367,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AAB0EE2277AB0E40062E8D1 /* LaunchScreen.storyboard in Resources */,
+				8A28DD1C278BD84E00B5CB71 /* README-En.md in Resources */,
 				8AAB0EDF277AB0E40062E8D1 /* Assets.xcassets in Resources */,
 				8AAB0EDD277AB0E40062E8D1 /* Main.storyboard in Resources */,
 			);

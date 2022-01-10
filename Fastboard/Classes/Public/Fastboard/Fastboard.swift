@@ -120,7 +120,7 @@ extension Fastboard: WhiteRoomCallbackDelegate {
     }
     
     public func fireDisconnectWithError(_ error: String!) {
-        delegate?.fastboard(self, error: .init(type: .disconnected, info: ["info": error]))
+        delegate?.fastboard(self, error: .init(type: .disconnected, info: ["info": error ?? ""]))
     }
     
     public func fireKicked(withReason reason: String!) {
