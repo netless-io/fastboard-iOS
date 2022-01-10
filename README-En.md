@@ -1,38 +1,44 @@
 # Fastboard
-快速创建iOS端的白板界面，支持控制界面自定义。
-<p><a href="./README-En.md">En</a></p>
+Quickly create a whiteboard interface for iOS and support control interface customization.
+<p><a href="./README.md">中文</a></p>
 
-## 快速体验
-克隆仓库，并且在终端中进入Example目录，执行`pod install`
-找到FastboardConfig.xcconfig文件，填入APPID和ROOMUUID和ROOMTOKEN。
-打开Xcode进入workspace选择你Team，并且设定你的bundle identifier和证书
-选择一个模拟器或者真机，按下cmd+R运行示例工程。
+## Quick Start
 
-## 要求设备
-运行设备：iOS 10 +，开发环境：Xcode 12+
+Clone the repository and go to the Example directory in the terminal and execute `pod install`.
 
-## 代码示例
+Find the FastboardConfig.xcconfig file and fill in the APPID and ROMUUID and ROOMTOKEN.
+
+Open Xcode and go to workspace, select your team, and set your bundle identifier and credentials.
+
+Select an simulator or a real machine and press cmd+R to run the sample project.
+
+## Requirement
+Running device: iOS 10 +
+
+Development environment: Xcode 12+
+
+## Code Example
 ### Swift
 ```swift
-// 创建白板
+// Create fastboard
 let fastboard = FastBoardSDK.createFastboardWith(appId: “***”,
                                                  roomUUID: “***”,
                                                  roomToken: “***”,
                                                  userUID: “***”)
         
 fastboard.delegate = self
-// 添加到视图层级
+// Add to view hierarchy
 let fastboardView = fastboard.view
 view.addSubview(fastboardView)
 fastboardView.frame = view.bounds
-// 白板加入房间
+// Join room
 fastboard.joinRoom()
-// 持有白板
+// Hold the object
 self.fastboard = fastboard
 ```
 ### OC
 ```ObjectiveC
-// 创建、持有白板
+// Create and hold fastboard
 _fastboard = [FastBoardSDK createFastboardWithAppId:@“*”
                                   roomUUID: @“*”
                                  roomToken: @“*”
@@ -40,14 +46,13 @@ _fastboard = [FastBoardSDK createFastboardWithAppId:@“*”
                        customFastBoardView:nil];
 FastboardView *fastView = _fastboard.view;
 _fastboard.delegate = self;
-// 加入房间
+// join room
 [_fastboard joinRoom];
-//加入视图层级
+// Add to view hierarchy
 [self.view addSubview:fastView];
 fastView.frame = self.view.bounds;
 ```
-
-## 接入方式
+## Integration
 ### CocoaPods
 pod ‘Fastboard’
 ### SPM
