@@ -141,6 +141,7 @@
 - (void)setBackgroundColor:(UIColor *)backgroundColor
 {
     [super setBackgroundColor:backgroundColor];
+    
     if (self.room || self.player) {
         CGFloat r;
         CGFloat g;
