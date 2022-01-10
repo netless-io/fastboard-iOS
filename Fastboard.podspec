@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Fastboard'
-  s.version          = '1.0.0'
-  s.summary          = 'An open source SDK based on Whiteboard-iOS'
+  s.version          = '0.1.0'
+  s.summary          = 'Quickly create a whiteboard interface for iOS'
 
   s.description      = <<-DESC
   High-level SDK for Whiteboard-iOS with UI.
@@ -9,10 +9,10 @@ Pod::Spec.new do |s|
   We recommend using Whiteboard-iOS directly if you need more customization,
                        DESC
 
-  s.homepage         = 'https://github.com/yunshi/Fastboard'
+  s.homepage         = 'https://github.com/netless-io/Fastboard-iOS'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'yunshi' => 'xuyunshi@agora.io' }
-  s.source           = { :git => 'https://github.com/yunshi/Fastboard.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/netless-io/Fastboard-iOS.git', :tag => s.version.to_s }
 
   s.swift_version = '5.0'
   s.ios.deployment_target = '10.0'
