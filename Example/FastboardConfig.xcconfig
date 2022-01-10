@@ -1,0 +1,14 @@
+//
+//  FastboardConfig.xcconfig
+//  Fastboard
+//
+//  Created by xuyunshi on 2022/1/10.
+//  Copyright © 2022 CocoaPods. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APPID =
+ROOMUUID =
+ROOMTOKEN =
