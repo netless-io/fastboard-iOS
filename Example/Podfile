@@ -4,6 +4,7 @@ platform :ios, '10.0'
 
 target 'OCExample' do
   pod 'Fastboard', :path => '../'
+  pod 'Masonry'
   end
 
 target 'Fastboard_Example' do

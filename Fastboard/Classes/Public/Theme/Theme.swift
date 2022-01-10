@@ -7,33 +7,78 @@
 
 import UIKit
 
-public struct WhiteboardAssets {
-    var whiteboardBackgroundColor: UIColor
-    var containerColor: UIColor
+open class WhiteboardAssets: NSObject {
+    @objc
+    public init(whiteboardBackgroundColor: UIColor, containerColor: UIColor) {
+        self.whiteboardBackgroundColor = whiteboardBackgroundColor
+        self.containerColor = containerColor
+    }
+    
+    @objc
+    open var whiteboardBackgroundColor: UIColor
+    
+    @objc
+    open var containerColor: UIColor
 }
 
-public struct PanelItemAssets {
-    var normalIconColor: UIColor
-    var selectedIconColor: UIColor
-    var highlightBgColor: UIColor
-    var subOpsIndicatorColor: UIColor
-    var pageTextLabelColor: UIColor
+open class PanelItemAssets: NSObject {
+    @objc
+    public init(normalIconColor: UIColor, selectedIconColor: UIColor, highlightBgColor: UIColor, subOpsIndicatorColor: UIColor, pageTextLabelColor: UIColor) {
+        self.normalIconColor = normalIconColor
+        self.selectedIconColor = selectedIconColor
+        self.highlightBgColor = highlightBgColor
+        self.subOpsIndicatorColor = subOpsIndicatorColor
+        self.pageTextLabelColor = pageTextLabelColor
+    }
+    
+    @objc
+    open var normalIconColor: UIColor
+    
+    @objc
+    open var selectedIconColor: UIColor
+    
+    @objc
+    open var highlightBgColor: UIColor
+    
+    @objc
+    open var subOpsIndicatorColor: UIColor
+    
+    @objc
+    open var pageTextLabelColor: UIColor
 }
 
-public struct ControlBarAssets {
+open class ControlBarAssets: NSObject {
+    @objc
+    public init(backgroundColor: UIColor, borderColor: UIColor, effectStyle: UIBlurEffect? = nil) {
+        self.backgroundColor = backgroundColor
+        self.borderColor = borderColor
+        self.effectStyle = effectStyle
+    }
+    
+    @objc
     var backgroundColor: UIColor
+    
+    @objc
     var borderColor: UIColor
+    
+    @objc
     var effectStyle: UIBlurEffect?
 }
 
-public protocol ThemeAble {
-    var whiteboardAssets: WhiteboardAssets { get }
-    var controlBarAssets: ControlBarAssets { get }
-    var panelItemAssets: PanelItemAssets { get }
-}
-
-public struct ThemeAsset: ThemeAble {
-    public var whiteboardAssets: WhiteboardAssets
-    public var controlBarAssets: ControlBarAssets
-    public var panelItemAssets: PanelItemAssets
+open class ThemeAsset: NSObject {
+    @objc
+    public init(whiteboardAssets: WhiteboardAssets, controlBarAssets: ControlBarAssets, panelItemAssets: PanelItemAssets) {
+        self.whiteboardAssets = whiteboardAssets
+        self.controlBarAssets = controlBarAssets
+        self.panelItemAssets = panelItemAssets
+    }
+    
+    @objc
+    open var whiteboardAssets: WhiteboardAssets
+    
+    @objc
+    open var controlBarAssets: ControlBarAssets
+    
+    @objc
+    open var panelItemAssets: PanelItemAssets
 }

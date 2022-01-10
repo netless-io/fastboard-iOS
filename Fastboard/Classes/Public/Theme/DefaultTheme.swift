@@ -7,8 +7,10 @@
 
 import UIKit
 
-public struct DefaultTheme {
-    public static var defaultLightTheme: ThemeAble {
+public class DefaultTheme: NSObject {
+    
+    @objc
+    public class var defaultLightTheme: ThemeAsset {
         ThemeAsset(whiteboardAssets: WhiteboardAssets(whiteboardBackgroundColor: .white,
                                                       containerColor: .lightGray),
                    controlBarAssets: ControlBarAssets(backgroundColor: .white,
@@ -20,7 +22,8 @@ public struct DefaultTheme {
                                           pageTextLabelColor: .black))
     }
     
-    public static var defaultDarkTheme: ThemeAble {
+    @objc
+    public static var defaultDarkTheme: ThemeAsset {
         ThemeAsset(whiteboardAssets: WhiteboardAssets(whiteboardBackgroundColor: .black,
                                                       containerColor: .lightGray),
                    controlBarAssets: ControlBarAssets(backgroundColor: .black,
@@ -33,7 +36,8 @@ public struct DefaultTheme {
     }
     
     @available(iOS 13, *)
-    public static var defaultAutoTheme: ThemeAble {
+    @objc
+    public static var defaultAutoTheme: ThemeAsset {
         let fastAsset = WhiteboardAssets(whiteboardBackgroundColor: .systemBackground, containerColor: .secondarySystemBackground)
         let controlBarAssets = ControlBarAssets(backgroundColor: .clear, borderColor: .separator, effectStyle: .init(style: .systemMaterial))
         let panelItemAssets = PanelItemAssets(normalIconColor: .init(dynamicProvider: { c in

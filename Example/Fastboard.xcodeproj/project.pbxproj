@@ -27,6 +27,8 @@
 		8AAB0EE5277AB0E40062E8D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0EE4277AB0E40062E8D1 /* main.m */; };
 		8AE965822788350000722F89 /* CustomFastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE965812788350000722F89 /* CustomFastboardView.swift */; };
 		8AE96586278842FC00722F89 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE96585278842FC00722F89 /* Utility.swift */; };
+		8AFA91C9278C27A700E0CA61 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE96585278842FC00722F89 /* Utility.swift */; };
+		8AFA91CE278C280E00E0CA61 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91CD278C280E00E0CA61 /* Utility.m */; };
 		9627928B49C28EE0329C6222 /* Pods_Fastboard_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2FF5119E81A1DBCCD932E7 /* Pods_Fastboard_Example.framework */; };
 		BCCEAFD7A067CCFB0CAFF5AC /* Pods_Fastboard_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D8375C2A3EC5932FB496E1 /* Pods_Fastboard_Tests.framework */; };
 		EF7103A710936AA046D21FDE /* Pods_OCExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4815D0F332F98B23B8759 /* Pods_OCExample.framework */; };
@@ -80,6 +82,8 @@
 		8AAB0EE4277AB0E40062E8D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AE965812788350000722F89 /* CustomFastboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFastboardView.swift; sourceTree = "<group>"; };
 		8AE96585278842FC00722F89 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		8AFA91CC278C280E00E0CA61 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		8AFA91CD278C280E00E0CA61 /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		96FF1AB9A8B5AED401A61FB7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		978DC14B4A1B879B28A46EFF /* Pods-Fastboard_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3D8375C2A3EC5932FB496E1 /* Pods_Fastboard_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fastboard_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,13 +211,15 @@
 			isa = PBXGroup;
 			children = (
 				8AAB0ED2277AB0E40062E8D1 /* AppDelegate.h */,
+				8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */,
 				8A28DD17278BCB1900B5CB71 /* RoomInfo.h */,
 				8A28DD19278BCBD700B5CB71 /* RoomInfo.m */,
-				8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */,
 				8AAB0ED5277AB0E40062E8D1 /* SceneDelegate.h */,
 				8AAB0ED6277AB0E40062E8D1 /* SceneDelegate.m */,
 				8AAB0ED8277AB0E40062E8D1 /* ViewController.h */,
 				8AAB0ED9277AB0E40062E8D1 /* ViewController.m */,
+				8AFA91CC278C280E00E0CA61 /* Utility.h */,
+				8AFA91CD278C280E00E0CA61 /* Utility.m */,
 				8AAB0EDB277AB0E40062E8D1 /* Main.storyboard */,
 				8AAB0EDE277AB0E40062E8D1 /* Assets.xcassets */,
 				8AAB0EE0277AB0E40062E8D1 /* LaunchScreen.storyboard */,
@@ -433,6 +439,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-OCExample/Pods-OCExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework",
@@ -440,6 +447,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fastboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whiteboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/dsBridge.framework",
@@ -521,6 +529,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AFA91CE278C280E00E0CA61 /* Utility.m in Sources */,
+				8AFA91C9278C27A700E0CA61 /* Utility.swift in Sources */,
 				8AAB0EDA277AB0E40062E8D1 /* ViewController.m in Sources */,
 				8AAB0ED4277AB0E40062E8D1 /* AppDelegate.m in Sources */,
 				8AAB0EE5277AB0E40062E8D1 /* main.m in Sources */,
@@ -797,6 +807,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fb.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -834,6 +845,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fb.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

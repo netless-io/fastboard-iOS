@@ -7,10 +7,12 @@
 
 import Foundation
 
-public struct AppearanceManager {
+public class AppearanceManager: NSObject {
+    @objc
     public static let shared = AppearanceManager()
-    private init() {}
+    private override init() {}
     
+    @objc
     public func commitUpdate() {
         let window = UIApplication.shared.keyWindow
         window?.subviews.forEach {

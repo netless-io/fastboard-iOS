@@ -14,7 +14,6 @@ RoomInfoKey const RoomInfoRoomToken = @"ROOMTOKEN";
 
 @implementation RoomInfo
 
-
 + (NSString *)getValueFrom:(RoomInfoKey)key {
     NSDictionary* bundleDictionary = [[NSBundle mainBundle] infoDictionary];
     return bundleDictionary[key];

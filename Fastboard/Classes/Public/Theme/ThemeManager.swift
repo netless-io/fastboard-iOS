@@ -10,7 +10,9 @@ import Whiteboard
 
 @objc (FastboardThemeManager)
 public class ThemeManager: NSObject {
-    @objc public static let shared = ThemeManager()
+    @objc
+    public static let shared = ThemeManager()
+    
     private override init() {
         super.init()
         if #available(iOS 13.0, *) {
@@ -25,7 +27,8 @@ public class ThemeManager: NSObject {
         iconsBundle = bundle
     }
     
-    public func apply(_ theme: ThemeAble) {
+    @objc
+    public func apply(_ theme: ThemeAsset) {
         updateFastboard(theme.whiteboardAssets)
         updateControlBar(theme.controlBarAssets)
         updatePanelItem(theme.panelItemAssets)
