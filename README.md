@@ -50,5 +50,3 @@ fastView.frame = self.view.bounds;
 ## 接入方式
 ### CocoaPods
 pod ‘Fastboard’
-### SPM
-TODO:

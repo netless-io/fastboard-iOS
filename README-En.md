@@ -55,5 +55,3 @@ fastView.frame = self.view.bounds;
 ## Integration
 ### CocoaPods
 pod ‘Fastboard’
-### SPM
-TODO:
