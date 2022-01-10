@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum FastPhase: Int {
+@objc public enum FastPhase: Int {
     case connecting = 0
     case connected
     case reconnecting

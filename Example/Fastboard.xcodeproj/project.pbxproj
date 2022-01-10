@@ -14,6 +14,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8A28DD16278BC1BD00B5CB71 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */; };
+		8A28DD18278BCB1900B5CB71 /* RoomInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD17278BCB1900B5CB71 /* RoomInfo.h */; };
+		8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD19278BCBD700B5CB71 /* RoomInfo.m */; };
 		8A310FC12787DEA800376BB5 /* ExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A310FC02787DEA800376BB5 /* ExampleTheme.swift */; };
 		8AAB0ED4277AB0E40062E8D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */; };
 		8AAB0ED7277AB0E40062E8D1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED6277AB0E40062E8D1 /* SceneDelegate.m */; };
@@ -23,7 +25,7 @@
 		8AAB0EE2277AB0E40062E8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AAB0EE0277AB0E40062E8D1 /* LaunchScreen.storyboard */; };
 		8AAB0EE5277AB0E40062E8D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0EE4277AB0E40062E8D1 /* main.m */; };
 		8AE965822788350000722F89 /* CustomFastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE965812788350000722F89 /* CustomFastboardView.swift */; };
-		8AE96586278842FC00722F89 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE96585278842FC00722F89 /* Help.swift */; };
+		8AE96586278842FC00722F89 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE96585278842FC00722F89 /* Utility.swift */; };
 		9627928B49C28EE0329C6222 /* Pods_Fastboard_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2FF5119E81A1DBCCD932E7 /* Pods_Fastboard_Example.framework */; };
 		BCCEAFD7A067CCFB0CAFF5AC /* Pods_Fastboard_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D8375C2A3EC5932FB496E1 /* Pods_Fastboard_Tests.framework */; };
 		EF7103A710936AA046D21FDE /* Pods_OCExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4815D0F332F98B23B8759 /* Pods_OCExample.framework */; };
@@ -60,6 +62,8 @@
 		8A28DD13278BC08300B5CB71 /* README-zh.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "README-zh.md"; path = "../README-zh.md"; sourceTree = "<group>"; };
 		8A28DD14278BC0E900B5CB71 /* FastboardConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastboardConfig.xcconfig; sourceTree = "<group>"; };
 		8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
+		8A28DD17278BCB1900B5CB71 /* RoomInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomInfo.h; sourceTree = "<group>"; };
+		8A28DD19278BCBD700B5CB71 /* RoomInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomInfo.m; sourceTree = "<group>"; };
 		8A310FC02787DEA800376BB5 /* ExampleTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTheme.swift; sourceTree = "<group>"; };
 		8AAB0ED0277AB0E40062E8D1 /* OCExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAB0ED2277AB0E40062E8D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,7 +78,7 @@
 		8AAB0EE3277AB0E40062E8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAB0EE4277AB0E40062E8D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AE965812788350000722F89 /* CustomFastboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFastboardView.swift; sourceTree = "<group>"; };
-		8AE96585278842FC00722F89 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		8AE96585278842FC00722F89 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		96FF1AB9A8B5AED401A61FB7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		978DC14B4A1B879B28A46EFF /* Pods-Fastboard_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3D8375C2A3EC5932FB496E1 /* Pods_Fastboard_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fastboard_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,16 +150,16 @@
 		607FACD21AFB9204008FA782 /* Example for Fastboard */ = {
 			isa = PBXGroup;
 			children = (
+				8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				8AE96585278842FC00722F89 /* Help.swift */,
+				8AE96585278842FC00722F89 /* Utility.swift */,
 				8A310FC02787DEA800376BB5 /* ExampleTheme.swift */,
 				8AE965812788350000722F89 /* CustomFastboardView.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */,
 			);
 			name = "Example for Fastboard";
 			path = Fastboard;
@@ -202,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				8AAB0ED2277AB0E40062E8D1 /* AppDelegate.h */,
+				8A28DD17278BCB1900B5CB71 /* RoomInfo.h */,
+				8A28DD19278BCBD700B5CB71 /* RoomInfo.m */,
 				8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */,
 				8AAB0ED5277AB0E40062E8D1 /* SceneDelegate.h */,
 				8AAB0ED6277AB0E40062E8D1 /* SceneDelegate.m */,
@@ -493,7 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AE965822788350000722F89 /* CustomFastboardView.swift in Sources */,
-				8AE96586278842FC00722F89 /* Help.swift in Sources */,
+				8AE96586278842FC00722F89 /* Utility.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				8A310FC12787DEA800376BB5 /* ExampleTheme.swift in Sources */,
 				8A28DD16278BC1BD00B5CB71 /* RoomInfo.swift in Sources */,
@@ -517,6 +523,8 @@
 				8AAB0ED4277AB0E40062E8D1 /* AppDelegate.m in Sources */,
 				8AAB0EE5277AB0E40062E8D1 /* main.m in Sources */,
 				8AAB0ED7277AB0E40062E8D1 /* SceneDelegate.m in Sources */,
+				8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */,
+				8A28DD18278BCB1900B5CB71 /* RoomInfo.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

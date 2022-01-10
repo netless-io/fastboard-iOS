@@ -9,7 +9,7 @@ import UIKit
 import Whiteboard
 
 @objc public class Fastboard: NSObject {
-    public let view: FastboardView
+    @objc public let view: FastboardView
     public var whiteSDK: WhiteSDK!
     public var room: WhiteRoom? {
         didSet {
@@ -20,7 +20,7 @@ import Whiteboard
         }
     }
     
-    public weak var delegate: FastboardDelegate?
+    @objc public weak var delegate: FastboardDelegate?
     
     public var commonDelegate: WhiteCommonCallbackDelegate? {
         get { sdkDelegateProxy.target as? WhiteCommonCallbackDelegate }
@@ -43,6 +43,10 @@ import Whiteboard
     }
     
     // MARK: - Public
+    @objc public func joinRoom() {
+        joinRoom(completionHandler: nil)
+    }
+    
     public func joinRoom(completionHandler: ((Result<WhiteRoom, FastError>)->Void)? = nil) {
         delegate?.fastboardPhaseDidUpdate(self, phase: .connecting)
         whiteSDK.joinRoom(with: roomConfig,

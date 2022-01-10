@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     'Icons' => ['Fastboard/Assets/*']
   }
   
-  s.dependency 'Whiteboard', '~> 2.15.17'
+  s.dependency 'Whiteboard', '~> 2.15.20'
   s.frameworks = 'UIKit'
 
   

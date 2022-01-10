@@ -8,7 +8,7 @@
 import Foundation
 import Whiteboard
 
-public protocol FastboardDelegate: AnyObject {
+@objc public protocol FastboardDelegate: AnyObject {
     func fastboard(_ fastboard: Fastboard, error: FastError)
     
     func fastboardUserKickedOut(_ fastboard: Fastboard, reason: String)
