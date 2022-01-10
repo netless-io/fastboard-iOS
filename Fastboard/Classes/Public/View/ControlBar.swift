@@ -42,6 +42,12 @@ public class ControlBar: UIView {
         }
     }
     
+    override var borderColor: UIColor? {
+        didSet {
+            layer.borderColor = borderColor?.cgColor
+            borderLayer.fillColor = borderColor?.cgColor
+        }
+    }
     let direction: NSLayoutConstraint.Axis
     let borderMask: CACornerMask
     let narrowMoreThan: Int
@@ -66,13 +72,14 @@ public class ControlBar: UIView {
         effectView.frame = bounds
         effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        clipsToBounds = true
-        layer.cornerRadius = 10
-        layer.borderWidth = 1 / UIScreen.main.scale
         if #available(iOS 11.0, *) {
+            clipsToBounds = true
+            layer.borderWidth = borderWidth
+            layer.cornerRadius = commonRadius
             layer.maskedCorners = borderMask
         } else {
-            // TODO: mask
+            layer.mask = cornerRadiusLayer
+            layer.addSublayer(borderLayer)
         }
         
         autoresizesSubviews = true
@@ -87,6 +94,39 @@ public class ControlBar: UIView {
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    let borderWidth: CGFloat = 1 / UIScreen.main.scale
+    let commonRadius: CGFloat = 10
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        if #available(iOS 11.0, *) {
+
+        } else {
+            cornerRadiusLayer.frame = bounds
+            var corner: UIRectCorner = []
+            if borderMask.contains(.layerMinXMinYCorner) {
+                corner.insert(.topLeft)
+            }
+            if borderMask.contains(.layerMaxXMinYCorner) {
+                corner.insert(.topRight)
+            }
+            if borderMask.contains(.layerMinXMaxYCorner) {
+                corner.insert(.bottomLeft)
+            }
+            if borderMask.contains(.layerMaxXMaxYCorner) {
+                corner.insert(.bottomRight)
+            }
+            let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corner, cornerRadii: .init(width: commonRadius, height: commonRadius))
+            cornerRadiusLayer.path = path.cgPath
+            
+            borderLayer.frame = bounds
+            let innerPath = UIBezierPath(roundedRect: bounds.insetBy(dx: borderWidth, dy: borderWidth), byRoundingCorners: corner, cornerRadii: .init(width: commonRadius, height: commonRadius))
+            path.append(innerPath)
+            borderLayer.fillRule = .evenOdd
+            borderLayer.path = path.cgPath
+        }
     }
     
     @objc func onClickScale(_ sender: UIButton) {
@@ -131,5 +171,8 @@ public class ControlBar: UIView {
         btn.addTarget(self, action: #selector(onClickScale), for: .touchUpInside)
         return btn
     }()
+    
+    lazy var borderLayer = CAShapeLayer()
+    lazy var cornerRadiusLayer = CAShapeLayer()
 }
 
