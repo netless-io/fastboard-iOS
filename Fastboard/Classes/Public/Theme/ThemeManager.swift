@@ -23,6 +23,7 @@ public class ThemeManager: NSObject {
     }
     
     /// You should call it before fastboard create
+    @objc
     public func updateIcons(using bundle: Bundle) {
         iconsBundle = bundle
     }
@@ -36,6 +37,7 @@ public class ThemeManager: NSObject {
         AppearanceManager.shared.commitUpdate()
     }
     
+    @objc
     func updatePanelItem(_ asset: PanelItemAssets) {
         PanelItemButton.appearance().iconNormalColor = asset.normalIconColor
         PanelItemButton.appearance().iconSelectedColor = asset.selectedIconColor
@@ -45,6 +47,7 @@ public class ThemeManager: NSObject {
         UILabel.appearance(whenContainedInInstancesOf: [ControlBar.self]).textColor = asset.pageTextLabelColor
     }
     
+    @objc
     func updateFastboard(_ asset: WhiteboardAssets) {
         WhiteBoardView.appearance().backgroundColor = asset.whiteboardBackgroundColor
         FastboardView.appearance().backgroundColor = asset.containerColor
@@ -53,6 +56,7 @@ public class ThemeManager: NSObject {
         }
     }
     
+    @objc
     func updateControlBar(_ asset: ControlBarAssets) {
         ControlBar.appearance().backgroundColor = asset.backgroundColor
         ControlBar.appearance().borderColor = asset.borderColor

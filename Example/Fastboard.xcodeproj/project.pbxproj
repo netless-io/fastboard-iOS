@@ -22,13 +22,13 @@
 		8AAB0ED7277AB0E40062E8D1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED6277AB0E40062E8D1 /* SceneDelegate.m */; };
 		8AAB0EDA277AB0E40062E8D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED9277AB0E40062E8D1 /* ViewController.m */; };
 		8AAB0EDD277AB0E40062E8D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AAB0EDB277AB0E40062E8D1 /* Main.storyboard */; };
-		8AAB0EDF277AB0E40062E8D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AAB0EDE277AB0E40062E8D1 /* Assets.xcassets */; };
 		8AAB0EE2277AB0E40062E8D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AAB0EE0277AB0E40062E8D1 /* LaunchScreen.storyboard */; };
 		8AAB0EE5277AB0E40062E8D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0EE4277AB0E40062E8D1 /* main.m */; };
 		8AE965822788350000722F89 /* CustomFastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE965812788350000722F89 /* CustomFastboardView.swift */; };
 		8AE96586278842FC00722F89 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE96585278842FC00722F89 /* Utility.swift */; };
 		8AFA91C9278C27A700E0CA61 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE96585278842FC00722F89 /* Utility.swift */; };
 		8AFA91CE278C280E00E0CA61 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91CD278C280E00E0CA61 /* Utility.m */; };
+		8AFA91D5278C396D00E0CA61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		9627928B49C28EE0329C6222 /* Pods_Fastboard_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2FF5119E81A1DBCCD932E7 /* Pods_Fastboard_Example.framework */; };
 		BCCEAFD7A067CCFB0CAFF5AC /* Pods_Fastboard_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D8375C2A3EC5932FB496E1 /* Pods_Fastboard_Tests.framework */; };
 		EF7103A710936AA046D21FDE /* Pods_OCExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B4815D0F332F98B23B8759 /* Pods_OCExample.framework */; };
@@ -76,7 +76,6 @@
 		8AAB0ED8277AB0E40062E8D1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8AAB0ED9277AB0E40062E8D1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8AAB0EDC277AB0E40062E8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8AAB0EDE277AB0E40062E8D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AAB0EE1277AB0E40062E8D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AAB0EE3277AB0E40062E8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AAB0EE4277AB0E40062E8D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -221,7 +220,6 @@
 				8AFA91CC278C280E00E0CA61 /* Utility.h */,
 				8AFA91CD278C280E00E0CA61 /* Utility.m */,
 				8AAB0EDB277AB0E40062E8D1 /* Main.storyboard */,
-				8AAB0EDE277AB0E40062E8D1 /* Assets.xcassets */,
 				8AAB0EE0277AB0E40062E8D1 /* LaunchScreen.storyboard */,
 				8AAB0EE3277AB0E40062E8D1 /* Info.plist */,
 				8AAB0EE4277AB0E40062E8D1 /* main.m */,
@@ -374,8 +372,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AAB0EE2277AB0E40062E8D1 /* LaunchScreen.storyboard in Resources */,
+				8AFA91D5278C396D00E0CA61 /* Images.xcassets in Resources */,
 				8A28DD1C278BD84E00B5CB71 /* README-En.md in Resources */,
-				8AAB0EDF277AB0E40062E8D1 /* Assets.xcassets in Resources */,
 				8AAB0EDD277AB0E40062E8D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

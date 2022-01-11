@@ -15,6 +15,7 @@
 @interface ViewController() <FastboardDelegate>
 @property (nonatomic, strong) UIStackView* stackView;
 @property (nonatomic, copy) Theme theme;
+@property (nonatomic, assign) BOOL isHide;
 @end
 
 @implementation ViewController {
@@ -25,7 +26,7 @@
 // MARK: - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupFastboard];
+    [self setupFastboardWithCustom:nil];
     [self setupTools];
     if (@available(iOS 13.0, *)) {
         _theme = ThemeAuto;
@@ -61,14 +62,36 @@
     [AppearanceManager.shared commitUpdate];
 }
 
+- (void)onBarSize {
+    if (ControlBar.appearance.itemWidth == 48) {
+        ControlBar.appearance.itemWidth = 40;
+    } else {
+        ControlBar.appearance.itemWidth = 48;
+    }
+    [AppearanceManager.shared commitUpdate];
+}
+
+- (void)onIcons {
+    [FastboardThemeManager.shared updateIconsUsing:[NSBundle mainBundle]];
+    [self reloadFastboard:nil];
+    self.view.userInteractionEnabled = FALSE;
+    dispatch_after(DISPATCH_TIME_NOW + 3, dispatch_get_main_queue(), ^{
+        self.view.userInteractionEnabled = TRUE;
+    });
+}
+
+- (void)onHideAll {
+    self.isHide = !self.isHide;
+}
+
 // MARK: - Private
-- (void)setupFastboard {
+- (void)setupFastboardWithCustom: (FastboardView *)custom {
     FastBoardSDK.globalFastboardRatio = 16.0 / 9.0;
     _fastboard = [FastBoardSDK createFastboardWithAppId:[RoomInfo getValueFrom:RoomInfoAPPID]
                                                roomUUID:[RoomInfo getValueFrom:RoomInfoRoomID]
                                               roomToken:[RoomInfo getValueFrom:RoomInfoRoomToken]
                                                 userUID:@"some-unique"
-                                    customFastBoardView:nil];
+                                    customFastBoardView:custom];
     FastboardView *fastView = _fastboard.view;
     _fastboard.delegate = self;
     [_fastboard joinRoom];
@@ -88,6 +111,12 @@
         make.right.equalTo(self.view).inset(88);
         make.width.equalTo(@120);
     }];
+}
+
+- (void)reloadFastboard: (FastboardView *)fastboardView {
+    [_fastboard.view removeFromSuperview];
+    [self setupFastboardWithCustom:fastboardView];
+    [self.view bringSubviewToFront:self.stackView];
 }
 
 - (Theme)nextThemeFor: (Theme)theme {
@@ -123,17 +152,27 @@
 }
 
 - (NSArray<UIButton *> *)setupButtons {
-    NSArray* titles = @[@"onTheme",
-                        @"onDirection"];
+    NSArray* titles = @[@"Theme",
+                        @"Direction",
+                        @"BarSize",
+                        @"Icons",
+                        @"HideAll"];
     NSMutableArray* btns = [NSMutableArray new];
     [titles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString* title = obj;
         int index = (int)idx;
         UIButton* btn = [Utility buttonWith:title index:index];
-        [btn addTarget:self action:NSSelectorFromString(title) forControlEvents:UIControlEventTouchUpInside];
+        SEL sel = NSSelectorFromString([NSString stringWithFormat:@"on%@", title]);
+        [btn addTarget:self action:sel forControlEvents:UIControlEventTouchUpInside];
         [btns addObject:btn];
     }];
     return btns;
+}
+
+// MARK: - Setter
+- (void)setIsHide:(BOOL)isHide {
+    _isHide = isHide;
+    [_fastboard setAllPanelWithHide:isHide];
 }
 
 // MARK: - Lazy

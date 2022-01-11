@@ -8,11 +8,14 @@
 import Foundation
 
 extension Fastboard: FastPanelControl {
+    @objc
     public func setAllPanel(hide: Bool) {
         view.setAllPanel(hide: hide)
     }
     
-    public func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
+    public func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
         view.setPanelItemHide(item: item, hide: hide)
     }
 }
+
+

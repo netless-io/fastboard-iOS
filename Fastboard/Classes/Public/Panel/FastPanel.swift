@@ -23,7 +23,7 @@ public class FastPanel {
     weak var delegate: FastPanelDelegate?
     public weak var view: UIView?
     
-    public func setItemHide(fromKey key: DefaultOperationKey, hide: Bool) {
+    public func setItemHide(fromKey key: DefaultOperationIdentifier, hide: Bool) {
         for item in items {
             if item.identifier == key.identifier {
                 (item.associatedView)?.isHidden = hide

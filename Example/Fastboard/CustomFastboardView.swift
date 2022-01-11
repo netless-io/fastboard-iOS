@@ -16,7 +16,7 @@ class CustomFastboardView: FastboardView {
         totalPanels.forEach { $0.view?.isHidden = hide }
     }
     
-    override func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
+    override func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
         totalPanels.forEach { $0.setItemHide(fromKey: item, hide: hide)}
     }
     

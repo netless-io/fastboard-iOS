@@ -95,7 +95,7 @@ open class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
         fatalError("implement it in subclass")
     }
     
-    open func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
+    open func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
         fatalError("implement it in subclass")
     }
 }

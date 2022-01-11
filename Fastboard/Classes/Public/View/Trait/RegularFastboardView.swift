@@ -13,7 +13,7 @@ public class RegularFastboardView: FastboardView {
         totalPanels.forEach { $0.view?.isHidden = hide }
     }
     
-    public override func setPanelItemHide(item: DefaultOperationKey, hide: Bool) {
+    public override func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
         panels.values.forEach { $0.setItemHide(fromKey: item, hide: hide)}
     }
     
@@ -112,7 +112,7 @@ public class RegularFastboardView: FastboardView {
     }
     
     public override func updateSceneState(_ scene: WhiteSceneState) {
-        if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationKey.pageIndicator.identifier })?.associatedView as? UILabel {
+        if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.pageIndicator)!.identifier })?.associatedView as? UILabel {
             label.text = "\(scene.index + 1) / \(scene.scenes.count)"
         }
     }
@@ -131,12 +131,12 @@ public class RegularFastboardView: FastboardView {
     }
     
     public override func updateUndoEnable(_ enable: Bool) {
-        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationKey.undo.identifier
+        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.undo)!.identifier
         })?.setEnable(enable)
     }
     
     public override func updateRedoEnable(_ enable: Bool) {
-        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationKey.redo.identifier
+        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.redo)!.identifier
         })?.setEnable(enable)
     }
     

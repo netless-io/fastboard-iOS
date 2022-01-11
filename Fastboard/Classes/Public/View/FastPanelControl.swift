@@ -10,5 +10,5 @@ import Foundation
 protocol FastPanelControl {
     func setAllPanel(hide: Bool)
     
-    func setPanelItemHide(item: DefaultOperationKey, hide: Bool)
+    func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool)
 }

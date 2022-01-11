@@ -8,6 +8,35 @@
 
 import UIKit
 import Fastboard
+import Whiteboard
+
+extension WhiteApplianceNameKey: CaseIterable {
+    public static var allCases: [WhiteApplianceNameKey] {
+        [.ApplianceClicker,
+         .AppliancePencil,
+         .ApplianceSelector,
+         .ApplianceText,
+         .ApplianceEllipse,
+         .ApplianceRectangle,
+         .ApplianceEraser,
+         .ApplianceStraight,
+         .ApplianceArrow,
+         .ApplianceHand,
+         .ApplianceLaserPointer
+        ]
+    }
+}
+
+extension WhiteApplianceShapeTypeKey: CaseIterable {
+    public static var allCases: [WhiteApplianceShapeTypeKey] {
+        [
+            .ApplianceShapeTypeTriangle,
+            .ApplianceShapeTypeRhombus,
+            .ApplianceShapeTypePentagram,
+            .ApplianceShapeTypeSpeechBalloon
+        ]
+    }
+}
 
 class ViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -154,16 +183,16 @@ class ViewController: UIViewController {
         ("hideAll", { self.isHide = !self.isHide}),
         ("hideItem", {
             let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
-            var values: [DefaultOperationKey] = []
-            values.append(contentsOf: FastAppliance.allCases.map { DefaultOperationKey.appliance($0) })
-            values.append(contentsOf: FastShape.allCases.map { DefaultOperationKey.shape($0) })
-            let others: [DefaultOperationKey] = [
-                .clean,
-                .previousPage,
-                .newPage,
-                .nextPage,
-                .redo,
-                .undo
+            var values: [DefaultOperationIdentifier] = []
+            values.append(contentsOf: WhiteApplianceNameKey.allCases.map { .applice(key: $0, shape: nil)})
+            values.append(contentsOf: WhiteApplianceShapeTypeKey.allCases.map { .applice(key: .ApplianceShape, shape: $0) })
+            let others: [DefaultOperationIdentifier] = [
+                .operationType(.clean)!,
+                .operationType(.previousPage)!,
+                .operationType(.newPage)!,
+                .operationType(.nextPage)!,
+                .operationType(.redo)!,
+                .operationType(.undo)!
             ]
             values.append(contentsOf: others)
             for key in values {
@@ -173,7 +202,7 @@ class ViewController: UIViewController {
                 }))
             }
             alert.addAction(.init(title: "cancel", style: .cancel, handler: nil))
-            alert.popoverPresentationController?.sourceView = self.fastboard.view.whiteboardView
+            alert.popoverPresentationController?.sourceView = self.stack
             self.present(alert, animated: true, completion: nil)
         }),
         ("writable", {
