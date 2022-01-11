@@ -1,63 +1,53 @@
 //
-//  RegularFastboardView.swift
+//  RegularFastboardOverlay.swift
 //  Fastboard
 //
-//  Created by xuyunshi on 2022/1/4.
+//  Created by xuyunshi on 2022/1/11.
 //
 
 import Foundation
 import Whiteboard
 
-public class RegularFastboardView: FastboardView {
-    public override func setAllPanel(hide: Bool) {
-        totalPanels.forEach { $0.view?.isHidden = hide }
-    }
+@objc
+public class RegularFastboardOverlay: NSObject, FastboardOverlay {
+    var operationLeftConstraint: NSLayoutConstraint?
+    var operationRightConstraint: NSLayoutConstraint?
     
-    public override func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
-        panels.values.forEach { $0.setItemHide(fromKey: item, hide: hide)}
-    }
-    
-    public override func setupPanel(room: WhiteRoom) {
+    public func setupWith(room: WhiteRoom, fastboardView: FastboardView, direction: OperationBarDirection) {
         let operationView = operationPanel.setup(room: room)
         let deleteView = deleteSelectionPanel.setup(room: room)
         let undoRedoView = undoRedoPanel.setup(room: room,
                                                direction: .horizontal)
         let sceneView = scenePanel.setup(room: room,
                                                direction: .horizontal)
-        
-        addSubview(operationView)
-        addSubview(deleteView)
-        addSubview(undoRedoView)
-        addSubview(sceneView)
+        fastboardView.addSubview(operationView)
+        fastboardView.addSubview(deleteView)
+        fastboardView.addSubview(undoRedoView)
+        fastboardView.addSubview(sceneView)
         
         let margin: CGFloat = 8
+        operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin)
+        operationRightConstraint = operationView.rightAnchor.constraint(equalTo: fastboardView.whiteboardView.rightAnchor, constant: -margin)
         
-        operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin)
-        operationRightConstraint = operationView.rightAnchor.constraint(equalTo: whiteboardView.rightAnchor, constant: -margin)
-        
-        operationView.centerYAnchor.constraint(equalTo: whiteboardView.centerYAnchor).isActive = true
+        operationView.centerYAnchor.constraint(equalTo: fastboardView.whiteboardView.centerYAnchor).isActive = true
         operationView.translatesAutoresizingMaskIntoConstraints = false
         
         deleteView.rightAnchor.constraint(equalTo: operationView.rightAnchor).isActive = true
         deleteView.bottomAnchor.constraint(equalTo: operationView.topAnchor, constant: -margin).isActive = true
         deleteView.translatesAutoresizingMaskIntoConstraints = false
         
-        undoRedoView.leftAnchor.constraint(equalTo: whiteboardView.leftAnchor, constant: margin).isActive = true
-        undoRedoView.bottomAnchor.constraint(equalTo: whiteboardView.bottomAnchor, constant: -margin).isActive = true
+        undoRedoView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin).isActive = true
+        undoRedoView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin).isActive = true
         undoRedoView.translatesAutoresizingMaskIntoConstraints = false
         
-        sceneView.centerXAnchor.constraint(equalTo: whiteboardView.centerXAnchor).isActive = true
-        sceneView.bottomAnchor.constraint(equalTo: whiteboardView.bottomAnchor, constant: -margin).isActive = true
+        sceneView.centerXAnchor.constraint(equalTo: fastboardView.whiteboardView.centerXAnchor).isActive = true
+        sceneView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin).isActive = true
         sceneView.translatesAutoresizingMaskIntoConstraints = false
-        
-        updateControlBarLayout()
+        updateControlBarLayout(direction: direction)
     }
     
-    var operationLeftConstraint: NSLayoutConstraint?
-    var operationRightConstraint: NSLayoutConstraint?
-
-    public override func updateControlBarLayout() {
-        let isLeft = operationBarDirection == .left
+    public func updateControlBarLayout(direction: OperationBarDirection) {
+        let isLeft = direction == .left
         if isLeft {
             operationLeftConstraint?.isActive = true
             operationRightConstraint?.isActive = false
@@ -65,6 +55,65 @@ public class RegularFastboardView: FastboardView {
             operationLeftConstraint?.isActive = false
             operationRightConstraint?.isActive = true
         }
+    }
+    
+    public func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
+        if let appliance = appliance {
+            operationPanel.updateWithApplianceOutside(appliance, shape: shape)
+            
+            let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
+            if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) {
+                updateDisplayStyleFromNewOperationItem(item)
+            }
+        } else {
+            updateDisplayStyle(.all)
+        }
+    }
+    
+    public func updateStrokeColor(_ color: UIColor) {
+        operationPanel.updateSelectedColor(color)
+    }
+    
+    public func updateStrokeWidth(_ width: Float) {
+        operationPanel.updateStrokeWidth(width)
+    }
+    
+    public func updateSceneState(_ scene: WhiteSceneState) {
+        if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.pageIndicator)!.identifier })?.associatedView as? UILabel {
+            label.text = "\(scene.index + 1) / \(scene.scenes.count)"
+        }
+    }
+    
+    public func updateUndoEnable(_ enable: Bool) {
+        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.undo)!.identifier
+        })?.setEnable(enable)
+    }
+    
+    public func updateRedoEnable(_ enable: Bool) {
+        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.redo)!.identifier
+        })?.setEnable(enable)
+    }
+    
+    public func setAllPanel(hide: Bool) {
+        totalPanels.forEach { $0.view?.isHidden = hide }
+    }
+    
+    public func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
+        panels.values.forEach { $0.setItemHide(fromKey: item, hide: hide)}
+    }
+    
+    public func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
+        if item is JustExecutionItem { return }
+        if item is ColorItem { return }
+        if item is SliderOperationItem { return }
+        if let sub = item as? SubOpsItem {
+            if sub.subOps.allSatisfy({ i -> Bool in
+                return i is JustExecutionItem || i is ColorItem || i is SliderOperationItem
+            }) {
+                return
+            }
+        }
+        updateDisplayStyleFromNewOperationItem(item)
     }
     
     enum DisplayStyle {
@@ -89,60 +138,7 @@ public class RegularFastboardView: FastboardView {
         }
     }
     
-    public override func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
-        if item is JustExecutionItem { return }
-        if item is ColorItem { return }
-        if item is SliderOperationItem { return }
-        if let sub = item as? SubOpsItem {
-            if sub.subOps.allSatisfy({ i -> Bool in
-                return i is JustExecutionItem || i is ColorItem || i is SliderOperationItem
-            }) {
-                return
-            }
-        }
-        updateDisplayStyleFromNewOperationItem(item)
-    }
-    
-    public override func updateStrokeColor(_ color: UIColor) {
-        operationPanel.updateSelectedColor(color)
-    }
-    
-    public override func updateStrokeWidth(_ width: Float) {
-        operationPanel.updateStrokeWidth(width)
-    }
-    
-    public override func updateSceneState(_ scene: WhiteSceneState) {
-        if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.pageIndicator)!.identifier })?.associatedView as? UILabel {
-            label.text = "\(scene.index + 1) / \(scene.scenes.count)"
-        }
-    }
-    
-    public override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
-        if let appliance = appliance {
-            operationPanel.updateWithApplianceOutside(appliance, shape: shape)
-            
-            let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
-            if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) {
-                updateDisplayStyleFromNewOperationItem(item)
-            }
-        } else {
-            updateDisplayStyle(.all)
-        }
-    }
-    
-    public override func updateUndoEnable(_ enable: Bool) {
-        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.undo)!.identifier
-        })?.setEnable(enable)
-    }
-    
-    public override func updateRedoEnable(_ enable: Bool) {
-        undoRedoPanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.redo)!.identifier
-        })?.setEnable(enable)
-    }
-    
-    public override var totalPanels: [FastPanel] {
-        panels.map { $0.value }
-    }
+    var totalPanels: [FastPanel] { panels.map { $0.value } }
     
     lazy var panels: [PanelKey: FastPanel] = [
         .operations: createOperationPanel(),
@@ -152,7 +148,7 @@ public class RegularFastboardView: FastboardView {
     ]
 }
 
-extension RegularFastboardView {
+extension RegularFastboardOverlay {
     enum PanelKey: Equatable {
         case operations
         case deleteSelection

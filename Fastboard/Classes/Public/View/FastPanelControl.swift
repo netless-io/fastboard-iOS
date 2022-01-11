@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol FastPanelControl {
+@objc
+public protocol FastPanelControl: AnyObject {
     func setAllPanel(hide: Bool)
     
     func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool)

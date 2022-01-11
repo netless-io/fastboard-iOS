@@ -8,10 +8,14 @@
 import Foundation
 import Whiteboard
 
-public class FastPanel {
+@objc
+public class FastPanel: NSObject {
+    @objc
     public init(items: [FastOperationItem]) {
         self.items = items
     }
+    
+    @objc
     public var flatItems: [FastOperationItem] {
         return items
             .map {
@@ -19,10 +23,17 @@ public class FastPanel {
             }
             .flatMap { $0 }
     }
+    
+    @objc
     public var items: [FastOperationItem]
-    weak var delegate: FastPanelDelegate?
+    
+    @objc
+    public weak var delegate: FastPanelDelegate?
+    
+    @objc
     public weak var view: UIView?
     
+    @objc
     public func setItemHide(fromKey key: DefaultOperationIdentifier, hide: Bool) {
         for item in items {
             if item.identifier == key.identifier {
@@ -64,10 +75,12 @@ public class FastPanel {
         delegate?.itemWillBeExecution(fastPanel: self, item: item)
     }
     
+    @objc
     public func deselectAll() {
         items.compactMap { $0.associatedView as? UIButton }.forEach { $0.isSelected = false }
     }
     
+    @objc
     public func updateStrokeWidth(_ width: Float) {
         let sliderOps = items
             .compactMap { $0 as? SubOpsItem }
@@ -79,6 +92,7 @@ public class FastPanel {
         }
     }
     
+    @objc
     public func updateSelectedColor(_ color: UIColor) {
         // Find all the subOps contains color
         let allColorContainers = items
@@ -98,6 +112,7 @@ public class FastPanel {
         }
     }
     
+    @objc
     public func updateWithApplianceOutside(_ appliance: WhiteApplianceNameKey, shape: WhiteApplianceShapeTypeKey?) {
         deselectAll()
         let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
@@ -116,6 +131,7 @@ public class FastPanel {
         }
     }
     
+    @objc
     public func setup(room: WhiteRoom,
                direction: NSLayoutConstraint.Axis = .vertical,
                mask: CACornerMask = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMinXMaxYCorner]) -> UIView {

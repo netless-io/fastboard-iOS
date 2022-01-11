@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol FastPanelDelegate: AnyObject {
+@objc
+public protocol FastPanelDelegate: AnyObject {
     func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem)
 }

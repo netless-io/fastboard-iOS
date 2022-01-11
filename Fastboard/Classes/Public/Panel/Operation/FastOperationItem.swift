@@ -8,28 +8,7 @@
 import Foundation
 import Whiteboard
 
-func setSelectableApplianceStyleFor(button: UIButton, image: UIImage) {
-    button.setImage(image, for: .normal)
-//    let normalColor = ThemeManager.shared.colorFor(.controlNormal)!
-//    button.tintColor = normalColor
-//    let selectedColor = ThemeManager.shared.colorFor(.controlSelected)!
-//    let selectedDark = ThemeManager.shared.colorFor(.controlSelectedDark)!
-//    let bg = ThemeManager.shared.colorFor(.controlSelectedBg)!
-//    let highlightImage = image.redraw(normalColor,
-//                                      backgroundColor: bg,
-//                                      cornerRadius: 5)
-//    let selectedImage = image.redraw(selectedColor,
-//                                     cornerRadius: 5)
-//    let selectedHighlight = image.redraw(selectedDark,
-//                                         backgroundColor: bg,
-//                                         cornerRadius: 5)
-//    button.setImage(image, for: .normal)
-//    button.setImage(selectedImage, for: .selected)
-//    button.setImage(highlightImage, for: .highlighted)
-//    button.setImage(selectedHighlight, for: [.highlighted, .selected])
-//    button.adjustsImageWhenHighlighted = false
-}
-
+@objc
 public protocol FastOperationItem: AnyObject {
     var action: ((WhiteRoom, Any?)->Void) { get }
     var room: WhiteRoom? { get set }
@@ -342,7 +321,7 @@ public class SubOpsItem: FastOperationItem {
     func initButtonInterface(button: UIButton) {
         if let op = subOps.first {
             if let item = op as? ApplianceItem {
-                setSelectableApplianceStyleFor(button: button, image: item.image)
+                button.setImage(item.image, for: .normal)
                 return
             }
             if let item = op as? ColorItem {

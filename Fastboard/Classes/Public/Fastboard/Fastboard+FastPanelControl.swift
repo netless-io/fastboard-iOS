@@ -13,6 +13,7 @@ extension Fastboard: FastPanelControl {
         view.setAllPanel(hide: hide)
     }
     
+    @objc
     public func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
         view.setPanelItemHide(item: item, hide: hide)
     }

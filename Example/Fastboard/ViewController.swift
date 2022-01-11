@@ -9,6 +9,7 @@
 import UIKit
 import Fastboard
 import Whiteboard
+import SnapKit
 
 extension WhiteApplianceNameKey: CaseIterable {
     public static var allCases: [WhiteApplianceNameKey] {
@@ -51,12 +52,12 @@ class ViewController: UIViewController {
         setupTools()
     }
     
-    func setupFastboard(custom: FastboardView? = nil) {
+    func setupFastboard(custom: FastboardOverlay? = nil) {
         let fastboard = FastBoardSDK.createFastboardWith(appId: RoomInfo.APPID.value,
                                                  roomUUID: RoomInfo.ROOMUUID.value,
                                                  roomToken: RoomInfo.ROOMTOKEN.value,
                                                  userUID: "some-unique-id",
-                                                 customFastBoardView: custom)
+                                                 customOverlay: custom)
         
         fastboard.delegate = self
         let fastboardView = fastboard.view
@@ -79,9 +80,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func reloadFastboard(fastboardView: FastboardView? = nil) {
+    func reloadFastboard(overlay: FastboardOverlay? = nil) {
         fastboard.view.removeFromSuperview()
-        setupFastboard(custom: fastboardView)
+        setupFastboard(custom: overlay)
         view.bringSubview(toFront: stack)
     }
     
@@ -213,7 +214,7 @@ class ViewController: UIViewController {
             }
         }),
         ("custom", {
-            self.reloadFastboard(fastboardView: CustomFastboardView())
+            self.reloadFastboard(overlay: CustomFastboardOverlay())
             ControlBar.appearance().itemWidth = 66
             AppearanceManager.shared.commitUpdate()
         }),

@@ -36,7 +36,7 @@ private struct Initializer {
                                                 roomUUID: String,
                                                 roomToken: String,
                                                 userUID: String,
-                                                customFastBoardView: FastboardView? = nil)  -> Fastboard {
+                                                customOverlay: FastboardOverlay? = nil)  -> Fastboard {
         let whiteConfig = WhiteSdkConfiguration(app: appId)
         whiteConfig.renderEngine = .canvas
         whiteConfig.userCursor = false
@@ -50,20 +50,21 @@ private struct Initializer {
         windowParas.containerSizeRatio = NSNumber(value: 1 / globalFastboardRatio)
         roomConfig.windowParams = windowParas
         
-        return createFastboardWith(whiteSDKConfig: whiteConfig, whiteRoomConfig: roomConfig, customFastBoardView: customFastBoardView)
+        return createFastboardWith(whiteSDKConfig: whiteConfig, whiteRoomConfig: roomConfig, customOverlay: customOverlay)
     }
     
     @objc public class func createFastboardWith(whiteSDKConfig: WhiteSdkConfiguration,
                                                 whiteRoomConfig: WhiteRoomConfig,
-                                                customFastBoardView: FastboardView?) -> Fastboard {
-        func defaultFastboardView() -> FastboardView {
+                                                customOverlay: FastboardOverlay?) -> Fastboard {
+        func defaultOverlay() -> FastboardOverlay {
             if UIScreen.main.traitCollection.hasCompact {
-                return CompactFastboardView()
+                return CompactFastboardOverlay()
             } else {
-                return RegularFastboardView()
+                return RegularFastboardOverlay()
             }
         }
-        let fastboardView = customFastBoardView ?? defaultFastboardView()
+        let fastboardOverlay = customOverlay ?? defaultOverlay()
+        let fastboardView = FastboardView(overlay: fastboardOverlay)
         let fastboard = Fastboard(view: fastboardView,
                                   roomConfig: whiteRoomConfig)
         let sdk = WhiteSDK(whiteBoardView: fastboardView.whiteboardView,

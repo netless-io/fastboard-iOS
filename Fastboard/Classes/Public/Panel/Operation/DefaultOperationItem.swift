@@ -8,7 +8,9 @@
 import Foundation
 import Whiteboard
 
-public struct DefaultOperationItem {
+@objc
+public class DefaultOperationItem: NSObject {
+    @objc
     public static var defaultColors: [UIColor] {
         return [
             .init(hexString: "#EC3455"),
@@ -22,6 +24,7 @@ public struct DefaultOperationItem {
         ]
     }
     
+    @objc
     public static var defaultCompactAppliance: [WhiteApplianceNameKey] {
         [.ApplianceClicker,
          .ApplianceSelector,
@@ -32,10 +35,12 @@ public struct DefaultOperationItem {
          .ApplianceEllipse]
     }
     
+    @objc
     public static func defaultColorItems() -> [FastOperationItem] {
         defaultColors.map { ColorItem(color: $0) }
     }
     
+    @objc
     public static func clean() -> FastOperationItem {
         let image = UIImage.currentBundle(named: "whiteboard_clean")!
         return JustExecutionItem(image: image,
@@ -43,6 +48,7 @@ public struct DefaultOperationItem {
                                  identifier: DefaultOperationIdentifier.operationType(.clean)!.identifier)
     }
     
+    @objc
     public static func deleteSelectionItem() -> FastOperationItem {
         let image = UIImage.currentBundle(named: "whiteboard_remove_selection")?.redraw(.systemRed)
         return JustExecutionItem(image: image!,
@@ -50,6 +56,7 @@ public struct DefaultOperationItem {
                                  identifier: DefaultOperationIdentifier.operationType(.deleteSelection)!.identifier)
     }
     
+    @objc
     public static func strokeWidthItem() -> FastOperationItem {
         SliderOperationItem(value: 0,
                             action: { room, s in
@@ -63,6 +70,7 @@ public struct DefaultOperationItem {
         }, identifier: DefaultOperationIdentifier.operationType(.strokeWidth)!.identifier)
     }
     
+    @objc
     public static func redoItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_redo")!,
                           action: { room, _ in
@@ -70,6 +78,7 @@ public struct DefaultOperationItem {
         }, identifier: DefaultOperationIdentifier.operationType(.redo)!.identifier)
     }
     
+    @objc
     public static func undoItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_undo")!,
                           action: { room, _ in
@@ -77,7 +86,7 @@ public struct DefaultOperationItem {
         }, identifier: DefaultOperationIdentifier.operationType(.undo)!.identifier)
     }
     
-    
+    @objc
     public static func previousPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_previous")!,
                           action: { room, _ in
@@ -85,6 +94,7 @@ public struct DefaultOperationItem {
         }, identifier: DefaultOperationIdentifier.operationType(.previousPage)!.identifier)
     }
     
+    @objc
     public static func nextPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_next")!,
                           action: { room, _ in
@@ -92,6 +102,7 @@ public struct DefaultOperationItem {
         }, identifier: DefaultOperationIdentifier.operationType(.nextPage)!.identifier)
     }
     
+    @objc
     public static func newPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_new")!,
                           action: { room, _ in
@@ -102,6 +113,7 @@ public struct DefaultOperationItem {
         }, identifier: DefaultOperationIdentifier.operationType(.newPage)!.identifier)
     }
     
+    @objc
     public static func selectableApplianceItem(_ appliance: WhiteApplianceNameKey,
                                                shape: WhiteApplianceShapeTypeKey? = nil) -> FastOperationItem {
         var imageName = "whiteboard_"
@@ -119,6 +131,7 @@ public struct DefaultOperationItem {
         }, identifier: identifier)
     }
     
+    @objc
     public static func pageIndicatorItem() -> FastOperationItem {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .body)

@@ -10,7 +10,9 @@
 #import "RoomInfo.h"
 #import <Fastboard/Fastboard-Swift.h>
 #import <Masonry/Masonry.h>
+#import <Whiteboard/Whiteboard.h>
 #import "Utility.h"
+#import "CustomFastboardOverlay.h"
 
 @interface ViewController() <FastboardDelegate>
 @property (nonatomic, strong) UIStackView* stackView;
@@ -48,14 +50,14 @@
         FastboardView.appearance.operationBarDirection = OperationBarDirectionRight;
         [self.stackView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.view).inset(10);
-            make.right.equalTo(self.view).inset(88);
+            make.left.equalTo(self.view).inset(88);
             make.width.equalTo(@120);
         }];
     } else {
         FastboardView.appearance.operationBarDirection = OperationBarDirectionLeft;
         [self.stackView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.view).inset(10);
-            make.left.equalTo(self.view).inset(88);
+            make.right.equalTo(self.view).inset(88);
             make.width.equalTo(@120);
         }];
     }
@@ -73,7 +75,7 @@
 
 - (void)onIcons {
     [FastboardThemeManager.shared updateIconsUsing:[NSBundle mainBundle]];
-    [self reloadFastboard:nil];
+    [self reloadFastboardOverlay:nil];
     self.view.userInteractionEnabled = FALSE;
     dispatch_after(DISPATCH_TIME_NOW + 3, dispatch_get_main_queue(), ^{
         self.view.userInteractionEnabled = TRUE;
@@ -84,14 +86,75 @@
     self.isHide = !self.isHide;
 }
 
+- (void)onHideItem {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    NSMutableArray* values = [NSMutableArray array];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceClicker shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:AppliancePencil shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceSelector shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceText shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceEllipse shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceRectangle shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceEraser shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceStraight shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceArrow shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceHand shape:nil]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceLaserPointer shape:nil]];
+    
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceShape shape:ApplianceShapeTypeTriangle]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceShape shape:ApplianceShapeTypeRhombus]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceShape shape:ApplianceShapeTypePentagram]];
+    [values addObject:[DefaultOperationIdentifier appliceWithKey:ApplianceShape shape:ApplianceShapeTypeSpeechBalloon]];
+    
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypeDeleteSelection]];
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypeStrokeWidth]];
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypeClean]];
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypeRedo]];
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypeUndo]];
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypeNewPage]];
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypePreviousPage]];
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypeNextPage]];
+    [values addObject:[DefaultOperationIdentifier operationType:DefaultOperationTypePageIndicator]];
+    
+    for (DefaultOperationIdentifier* item in values) {
+        [alert addAction:[UIAlertAction actionWithTitle:item.identifier
+                                                  style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self->_fastboard setPanelItemHideWithItem:item hide:TRUE];
+        }]];
+    }
+    alert.popoverPresentationController.sourceView = self.stackView;
+    [self presentViewController:alert animated:TRUE completion:nil];
+}
+
+- (void)onWritable {
+    BOOL writable = _fastboard.room.isWritable;
+    [_fastboard.room setWritable:!writable completionHandler:^(BOOL isWritable, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"update writable fail");
+        } else {
+            NSLog(@"update writable successfully");
+        }
+    }];
+}
+
+- (void)onCustom {
+    [self reloadFastboardOverlay:[CustomFastboardOverlay new]];
+    ControlBar.appearance.itemWidth = 66;
+    [AppearanceManager.shared commitUpdate];
+}
+
+- (void)onReload {
+    UIApplication.sharedApplication.keyWindow.rootViewController = [ViewController new];
+}
+
 // MARK: - Private
-- (void)setupFastboardWithCustom: (FastboardView *)custom {
+- (void)setupFastboardWithCustom: (id<FastboardOverlay>)custom {
     FastBoardSDK.globalFastboardRatio = 16.0 / 9.0;
     _fastboard = [FastBoardSDK createFastboardWithAppId:[RoomInfo getValueFrom:RoomInfoAPPID]
                                                roomUUID:[RoomInfo getValueFrom:RoomInfoRoomID]
                                               roomToken:[RoomInfo getValueFrom:RoomInfoRoomToken]
                                                 userUID:@"some-unique"
-                                    customFastBoardView:custom];
+                                    customOverlay:custom];
     FastboardView *fastView = _fastboard.view;
     _fastboard.delegate = self;
     [_fastboard joinRoom];
@@ -113,9 +176,9 @@
     }];
 }
 
-- (void)reloadFastboard: (FastboardView *)fastboardView {
+- (void)reloadFastboardOverlay: (id<FastboardOverlay>)custom {
     [_fastboard.view removeFromSuperview];
-    [self setupFastboardWithCustom:fastboardView];
+    [self setupFastboardWithCustom:custom];
     [self.view bringSubviewToFront:self.stackView];
 }
 
@@ -156,7 +219,11 @@
                         @"Direction",
                         @"BarSize",
                         @"Icons",
-                        @"HideAll"];
+                        @"HideAll",
+                        @"HideItem",
+                        @"Writable",
+                        @"Custom",
+                        @"Reload"];
     NSMutableArray* btns = [NSMutableArray new];
     [titles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString* title = obj;

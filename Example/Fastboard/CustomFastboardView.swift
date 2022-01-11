@@ -11,56 +11,66 @@ import Whiteboard
 import Fastboard
 import SnapKit
 
-class CustomFastboardView: FastboardView {
-    override func setAllPanel(hide: Bool) {
-        totalPanels.forEach { $0.view?.isHidden = hide }
+class CustomFastboardOverlay: FastboardOverlay {
+    func updateControlBarLayout(direction: OperationBarDirection) {
+        return
     }
     
-    override func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
-        totalPanels.forEach { $0.setItemHide(fromKey: item, hide: hide)}
-    }
-    
-    override func setupPanel(room: WhiteRoom) {
-        let operationView = operationsPanel.setup(room: room, direction: .horizontal, mask: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
-        addSubview(operationView)
-        operationView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(self.whiteboardView)
+    func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
+        if let appliance = appliance {
+            operationsPanel.updateWithApplianceOutside(appliance, shape: shape)
         }
     }
     
-    override var totalPanels: [FastPanel] {
+    func updateStrokeColor(_ color: UIColor) {
+        return
+    }
+    
+    func updateStrokeWidth(_ width: Float) {
+        return
+    }
+    
+    func updateSceneState(_ scene: WhiteSceneState) {
+        return
+    }
+    
+    func updateUndoEnable(_ enable: Bool) {
+        return
+    }
+    
+    func updateRedoEnable(_ enable: Bool) {
+        return
+    }
+    
+    func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
+        return
+    }
+    
+    func setAllPanel(hide: Bool) {
+        totalPanels.forEach { $0.view?.isHidden = hide }
+    }
+    
+    func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
+        totalPanels.forEach { $0.setItemHide(fromKey: item, hide: hide)}
+    }
+    
+    func setupWith(room: WhiteRoom, fastboardView: FastboardView, direction: OperationBarDirection) {
+        let operationView = operationsPanel.setup(room: room, direction: .horizontal, mask: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        fastboardView.addSubview(operationView)
+        operationView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(fastboardView.whiteboardView)
+        }
+    }
+    
+    var totalPanels: [FastPanel] {
         [operationsPanel]
     }
     
     lazy var operationsPanel = createOperationPanel()
-    
-    open override func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
-    }
-    
-    open override func updateStrokeColor(_ color: UIColor) {
-    }
-    
-    open override func updateStrokeWidth(_ width: Float) {
-    }
-    
-    open override func updateSceneState(_ scene: WhiteSceneState) {
-    }
-    
-    open override func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
-    }
-    
-    open override func updateUndoEnable(_ enable: Bool) {
-    }
-    
-    open override func updateRedoEnable(_ enable: Bool) {
-    }
-    
-    open override func updateControlBarLayout() {
-    }
 }
 
-extension CustomFastboardView {
+extension CustomFastboardOverlay {
     func createOperationPanel() -> FastPanel {
         var items: [FastOperationItem] = []
         items.append(DefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
