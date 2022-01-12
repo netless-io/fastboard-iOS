@@ -153,6 +153,7 @@
     FastConfiguration* config = [[FastConfiguration alloc] initWithAppIdentifier:[RoomInfo getValueFrom:RoomInfoAPPID]
                                                                         roomUUID:[RoomInfo getValueFrom:RoomInfoRoomID]
                                                                        roomToken:[RoomInfo getValueFrom:RoomInfoRoomToken]
+                                                                          region: FastRegionCN
                                                                          userUID:@"some-unique"];
     config.customOverlay = custom;
     _fastboard = [FastboardManager createFastboardWithConfiguration:config];

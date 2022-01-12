@@ -147,6 +147,7 @@
 		8AFA91E2278D79F900E0CA61 /* CompactFastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91E1278D79F900E0CA61 /* CompactFastboardOverlay.swift */; };
 		8AFA91ED278E7FB200E0CA61 /* MethodHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91EC278E7FB200E0CA61 /* MethodHook.swift */; };
 		8AFA91F0278E86F700E0CA61 /* FastConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91EF278E86F700E0CA61 /* FastConfiguration.swift */; };
+		8AFA91F2278E8E6400E0CA61 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91F1278E8E6400E0CA61 /* Region.swift */; };
 		8C47EBC7C251EBAF33C44B68EA32084E /* WhiteConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 3251B46851A539D88D36BBB82BD1DE99 /* WhiteConsts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C6546C1EF4F153DF3795CC6FE189E5B /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E312092F60C198718721D8F81F224 /* ConstraintInsets.swift */; };
 		8D7894F318B0B0B53D50A23160874DAC /* FastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C321906E5C5AE57A36C5634EF0F147 /* FastboardView.swift */; };
@@ -544,6 +545,7 @@
 		8AFA91E1278D79F900E0CA61 /* CompactFastboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactFastboardOverlay.swift; sourceTree = "<group>"; };
 		8AFA91EC278E7FB200E0CA61 /* MethodHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodHook.swift; sourceTree = "<group>"; };
 		8AFA91EF278E86F700E0CA61 /* FastConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastConfiguration.swift; sourceTree = "<group>"; };
+		8AFA91F1278E8E6400E0CA61 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		8CA9EE05426C9BDA9E172F1DC62E5DED /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		8E2E1F2EBD85C1488017450B1E6C2E06 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		8E4C8E8C5C96893519E51A44760AE239 /* Pods-OCExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OCExample-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -976,6 +978,7 @@
 				0E745CE0FC404B044E99928287E49544 /* FastError.swift */,
 				994D7F87EEC4C705717656C36FA31383 /* FastboardManager.swift */,
 				8AFA91EF278E86F700E0CA61 /* FastConfiguration.swift */,
+				8AFA91F1278E8E6400E0CA61 /* Region.swift */,
 				15D24AF36DC415E8FE4F74D4BE0E254C /* Fastboard */,
 				B186C0BD4FFE068D6A35E9DE864BA271 /* Theme */,
 				8C02925546606D0294D6894753C71B87 /* View */,
@@ -2015,6 +2018,7 @@
 				FA6B49A34C6A2E4948DF354E985C35EE /* FastPanelDelegate.swift in Sources */,
 				8AFA91D9278D22D300E0CA61 /* DefaultOperationType.swift in Sources */,
 				17C1CE19F5F9EBD2C29CF860F6714704 /* FastPhase.swift in Sources */,
+				8AFA91F2278E8E6400E0CA61 /* Region.swift in Sources */,
 				052690814969FC02C39ECECC1576E92E /* FastProxy.m in Sources */,
 				CE92FC6C69529062CE74D968798D5EDF /* IndicatorMoreButton.swift in Sources */,
 				874B5C14FA256E70B709729A5ECCC5B5 /* SubPanelView.swift in Sources */,

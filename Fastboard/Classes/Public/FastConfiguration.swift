@@ -26,16 +26,19 @@ public class FastConfiguration: NSObject {
     ///   - appIdentifier: appIdentifier 白板项目的唯一标识。详见[获取白板项目的 App Identifier](https://docs.agora.io/cn/whiteboard/enable_whiteboard?platform=iOS#获取-app-identifier)。
     ///   - roomUUID: uuid 房间 UUID，即房间唯一标识符。
     ///   - roomToken: roomToken 用于鉴权的 Room Token。生成该 Room Token 的房间 UUID 必须和上面传入的房间 UUID 一致。
+    ///   - region: 数据中心
     ///   - userUID: 用户标识，可以为任意 string。
     @objc
     public init(appIdentifier: String,
                 roomUUID: String,
                 roomToken: String,
+                region: Region,
                 userUID: String) {
         let whiteSdkConfiguration = WhiteSdkConfiguration(app: appIdentifier)
         whiteSdkConfiguration.renderEngine = .canvas
         whiteSdkConfiguration.userCursor = false
         whiteSdkConfiguration.useMultiViews = true
+        whiteSdkConfiguration.region = region.toWhiteRegion()
         self.whiteSdkConfiguration = whiteSdkConfiguration
         let whiteRoomConfig = WhiteRoomConfig(uuid: roomUUID, roomToken: roomToken, uid: userUID)
         whiteRoomConfig.disableNewPencil = false

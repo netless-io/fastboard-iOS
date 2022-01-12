@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         let config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
                                        roomUUID: RoomInfo.ROOMUUID.value,
                                        roomToken: RoomInfo.ROOMTOKEN.value,
+                                       region: .CN,
                                        userUID: "some-unique-id")
         config.customOverlay = custom
         let fastboard = FastboardManager.createFastboardWithConfiguration(config)
