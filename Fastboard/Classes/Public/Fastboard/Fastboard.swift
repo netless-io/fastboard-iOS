@@ -9,12 +9,17 @@ import UIKit
 import Whiteboard
 
 public class Fastboard: NSObject {
+    /// The view you should add to your viewController
     @objc
     public let view: FastboardView
     
+    /// The whiteSDK object, do not update it's delegate directly
+    /// using 'commonDelegate' instead
     @objc
     public var whiteSDK: WhiteSDK!
     
+    /// The whiteRoom object, do not update it's delegate directly
+    /// using 'roomDelegate' instead
     @objc
     public var room: WhiteRoom? {
         didSet {
@@ -25,15 +30,19 @@ public class Fastboard: NSObject {
         }
     }
     
+    /// The delegate of fastboard
+    /// Wrapped the whiteRoom and whiteSDK event
     @objc
     public weak var delegate: FastboardDelegate?
     
+    /// Proxy for whiteSDK delegate
     @objc
     public var commonDelegate: WhiteCommonCallbackDelegate? {
         get { sdkDelegateProxy.target as? WhiteCommonCallbackDelegate }
         set { sdkDelegateProxy.target = newValue }
     }
 
+    /// Proxy for whiteRoom delegate
     @objc
     public var roomDelegate: WhiteRoomCallbackDelegate? {
         get { roomDelegateProxy.target as? WhiteRoomCallbackDelegate }
@@ -43,18 +52,15 @@ public class Fastboard: NSObject {
     
     lazy var roomDelegateProxy = WhiteRoomCallBackDelegateProxy.target(nil, middleMan: self)
     lazy var sdkDelegateProxy = WhiteCommonCallbackDelegateProxy.target(nil, middleMan: self)
-
-    deinit {
-        #if DEBUG
-        print("fastboard deinit")
-        #endif
-    }
     
     // MARK: - Public
+    
+    /// Call the method to join the whiteRoom
     @objc public func joinRoom() {
         joinRoom(completionHandler: nil)
     }
     
+    /// Call the method to join the whiteRoom
     public func joinRoom(completionHandler: ((Result<WhiteRoom, FastError>)->Void)? = nil) {
         delegate?.fastboardPhaseDidUpdate(self, phase: .connecting)
         whiteSDK.joinRoom(with: roomConfig,

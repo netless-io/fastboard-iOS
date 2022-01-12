@@ -141,7 +141,6 @@
 		89D7AEB0B27F108BDD33C110CCB15653 /* InternalApis.h in Headers */ = {isa = PBXBuildFile; fileRef = 04AFF0AB0A4954180B1793F0D5B48E70 /* InternalApis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A434D7C46E6F4CFBCB2932A8F0EF9C9 /* FastboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78621E48656E94D26C0356C045F8CFC2 /* FastboardDelegate.swift */; };
 		8AE868BC3E2E6FC92F4717835180C47D /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B2D67B29E86B22DA359B71AAE78780CB /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8AFA91D2278C2E3000E0CA61 /* DefaultThemeOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91D1278C2E3000E0CA61 /* DefaultThemeOC.swift */; };
 		8AFA91D9278D22D300E0CA61 /* DefaultOperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91D8278D22D300E0CA61 /* DefaultOperationType.swift */; };
 		8AFA91DE278D70ED00E0CA61 /* FastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91DD278D70ED00E0CA61 /* FastboardOverlay.swift */; };
 		8AFA91E0278D76B000E0CA61 /* RegularFastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91DF278D76B000E0CA61 /* RegularFastboardOverlay.swift */; };
@@ -537,7 +536,6 @@
 		8956D96615F63386B0C55D2E39314336 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		89ADAAE5969FB1BFEB87F616096BD2DA /* WhiteCameraState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraState.m; path = Whiteboard/Classes/Object/WhiteCameraState.m; sourceTree = "<group>"; };
 		8A4C439AE0748295C5C7A05FD2AAE020 /* FastPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastPhase.swift; sourceTree = "<group>"; };
-		8AFA91D1278C2E3000E0CA61 /* DefaultThemeOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultThemeOC.swift; sourceTree = "<group>"; };
 		8AFA91D8278D22D300E0CA61 /* DefaultOperationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOperationType.swift; sourceTree = "<group>"; };
 		8AFA91DD278D70ED00E0CA61 /* FastboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastboardOverlay.swift; sourceTree = "<group>"; };
 		8AFA91DF278D76B000E0CA61 /* RegularFastboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularFastboardOverlay.swift; sourceTree = "<group>"; };
@@ -881,8 +879,6 @@
 				76E1B6EC00798044AD102ABFE06EEE0A /* Fastboard.swift */,
 				9F2F898D9D946B1CE31372665ED5EA82 /* Fastboard+FastPanelControl.swift */,
 				78621E48656E94D26C0356C045F8CFC2 /* FastboardDelegate.swift */,
-				0E745CE0FC404B044E99928287E49544 /* FastError.swift */,
-				8A4C439AE0748295C5C7A05FD2AAE020 /* FastPhase.swift */,
 			);
 			path = Fastboard;
 			sourceTree = "<group>";
@@ -972,10 +968,10 @@
 		39E6EE1077C6B85F134304C745331C66 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				8B5E5EB387EE32B158020B2AACAEFCCC /* Appearance */,
+				8A4C439AE0748295C5C7A05FD2AAE020 /* FastPhase.swift */,
+				0E745CE0FC404B044E99928287E49544 /* FastError.swift */,
+				994D7F87EEC4C705717656C36FA31383 /* FastboardSDK.swift */,
 				15D24AF36DC415E8FE4F74D4BE0E254C /* Fastboard */,
-				481977D0953641E765870456E5D8A3C4 /* Panel */,
-				80C397A09FA7AB6ED7BAACCCC870EE6A /* SDK */,
 				B186C0BD4FFE068D6A35E9DE864BA271 /* Theme */,
 				8C02925546606D0294D6894753C71B87 /* View */,
 			);
@@ -1017,6 +1013,7 @@
 		481977D0953641E765870456E5D8A3C4 /* Panel */ = {
 			isa = PBXGroup;
 			children = (
+				C31AB051D3AA1FDCCFD7295ABE9FF439 /* ControlBar.swift */,
 				B4A5814543FBDA9D6E7E224EEFC417DA /* FastPanel.swift */,
 				0484C235BE80879E7F598D38EB097348 /* FastPanelDelegate.swift */,
 				96C7B538422621105DC6CF3685FA34E0 /* IndicatorMoreButton.swift */,
@@ -1163,14 +1160,6 @@
 			path = "../Target Support Files/SnapKit";
 			sourceTree = "<group>";
 		};
-		80C397A09FA7AB6ED7BAACCCC870EE6A /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				994D7F87EEC4C705717656C36FA31383 /* FastboardSDK.swift */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
 		8AFA91E3278D852E00E0CA61 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -1180,19 +1169,11 @@
 			path = Overlay;
 			sourceTree = "<group>";
 		};
-		8B5E5EB387EE32B158020B2AACAEFCCC /* Appearance */ = {
-			isa = PBXGroup;
-			children = (
-				B69E51FAEF2E7EF69FDC601E549B5450 /* Appearancemanager.swift */,
-			);
-			path = Appearance;
-			sourceTree = "<group>";
-		};
 		8C02925546606D0294D6894753C71B87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				481977D0953641E765870456E5D8A3C4 /* Panel */,
 				8AFA91E3278D852E00E0CA61 /* Overlay */,
-				C31AB051D3AA1FDCCFD7295ABE9FF439 /* ControlBar.swift */,
 				D2C321906E5C5AE57A36C5634EF0F147 /* FastboardView.swift */,
 				783A87ECCB2777859B014198F15F9C27 /* FastPanelControl.swift */,
 			);
@@ -1273,8 +1254,8 @@
 		B186C0BD4FFE068D6A35E9DE864BA271 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				B69E51FAEF2E7EF69FDC601E549B5450 /* Appearancemanager.swift */,
 				6D1F40EAF5736438730A136A77A36937 /* DefaultTheme.swift */,
-				8AFA91D1278C2E3000E0CA61 /* DefaultThemeOC.swift */,
 				7DB9DF0CD5F0F7C08F9D03F54960E43B /* Theme.swift */,
 				32C93B2295EAB8A218D44B6504D8C7FD /* ThemeManager.swift */,
 			);
@@ -1999,7 +1980,6 @@
 				DDC6588693708899219F74A5FF58E3C6 /* Appearancemanager.swift in Sources */,
 				15CA8AD2A324540CC9019599BAB6573D /* ApplianceButton.swift in Sources */,
 				E4E414F480FED60BD9DB539944F9DAD9 /* ControlBar.swift in Sources */,
-				8AFA91D2278C2E3000E0CA61 /* DefaultThemeOC.swift in Sources */,
 				46BFC9C1BA10ABB0D14D096783B94880 /* DefaultOperationItem.swift in Sources */,
 				51F3C22FC6FEF0DC0A069ABDB15074F1 /* DefaultTheme.swift in Sources */,
 				0B9B051EF8E0FAE60613E923467C478B /* DelegateProxy.swift in Sources */,

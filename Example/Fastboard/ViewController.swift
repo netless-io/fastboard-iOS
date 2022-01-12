@@ -58,7 +58,6 @@ class ViewController: UIViewController {
                                                  roomToken: RoomInfo.ROOMTOKEN.value,
                                                  userUID: "some-unique-id",
                                                  customOverlay: custom)
-        
         fastboard.delegate = self
         let fastboardView = fastboard.view
         view.autoresizesSubviews = true
