@@ -149,12 +149,13 @@
 
 // MARK: - Private
 - (void)setupFastboardWithCustom: (id<FastboardOverlay>)custom {
-    FastBoardSDK.globalFastboardRatio = 16.0 / 9.0;
-    _fastboard = [FastBoardSDK createFastboardWithAppId:[RoomInfo getValueFrom:RoomInfoAPPID]
-                                               roomUUID:[RoomInfo getValueFrom:RoomInfoRoomID]
-                                              roomToken:[RoomInfo getValueFrom:RoomInfoRoomToken]
-                                                userUID:@"some-unique"
-                                    customOverlay:custom];
+    FastboardManager.globalFastboardRatio = 16.0 / 9.0;
+    FastConfiguration* config = [[FastConfiguration alloc] initWithAppIdentifier:[RoomInfo getValueFrom:RoomInfoAPPID]
+                                                                        roomUUID:[RoomInfo getValueFrom:RoomInfoRoomID]
+                                                                       roomToken:[RoomInfo getValueFrom:RoomInfoRoomToken]
+                                                                         userUID:@"some-unique"];
+    config.customOverlay = custom;
+    _fastboard = [FastboardManager createFastboardWithConfiguration:config];
     FastboardView *fastView = _fastboard.view;
     _fastboard.delegate = self;
     [_fastboard joinRoom];

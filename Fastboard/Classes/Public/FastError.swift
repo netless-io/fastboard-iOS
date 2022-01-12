@@ -14,7 +14,9 @@ enum ErrorType: Int {
 }
 
 let errorDomain = "io.agora.fastboard"
-@objc public class FastError: NSError {
+
+@objc
+public class FastError: NSError {
     init(type: ErrorType, error: Error) {
         super.init(domain: errorDomain, code: type.rawValue, userInfo: (error as NSError).userInfo)
     }

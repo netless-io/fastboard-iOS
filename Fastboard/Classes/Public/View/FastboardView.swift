@@ -35,10 +35,10 @@ public class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
         super.layoutSubviews()
         // Try fill width first
         var width = bounds.width
-        var height = width / FastBoardSDK.globalFastboardRatio
+        var height = width / FastboardManager.globalFastboardRatio
         if height > bounds.height {
             height = bounds.height
-            width = FastBoardSDK.globalFastboardRatio * height
+            width = FastboardManager.globalFastboardRatio * height
         }
         let x = (bounds.width - width) / 2
         let y = (bounds.height - height) / 2

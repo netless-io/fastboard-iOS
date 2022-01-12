@@ -145,6 +145,8 @@
 		8AFA91DE278D70ED00E0CA61 /* FastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91DD278D70ED00E0CA61 /* FastboardOverlay.swift */; };
 		8AFA91E0278D76B000E0CA61 /* RegularFastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91DF278D76B000E0CA61 /* RegularFastboardOverlay.swift */; };
 		8AFA91E2278D79F900E0CA61 /* CompactFastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91E1278D79F900E0CA61 /* CompactFastboardOverlay.swift */; };
+		8AFA91ED278E7FB200E0CA61 /* MethodHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91EC278E7FB200E0CA61 /* MethodHook.swift */; };
+		8AFA91F0278E86F700E0CA61 /* FastConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA91EF278E86F700E0CA61 /* FastConfiguration.swift */; };
 		8C47EBC7C251EBAF33C44B68EA32084E /* WhiteConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = 3251B46851A539D88D36BBB82BD1DE99 /* WhiteConsts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C6546C1EF4F153DF3795CC6FE189E5B /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E312092F60C198718721D8F81F224 /* ConstraintInsets.swift */; };
 		8D7894F318B0B0B53D50A23160874DAC /* FastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C321906E5C5AE57A36C5634EF0F147 /* FastboardView.swift */; };
@@ -159,7 +161,7 @@
 		96B911F6CDA92C5BD70F1386CF86A6E7 /* WhiteSdkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 441C72F7EEBB9A387457518645FBA5F1 /* WhiteSdkConfiguration.m */; };
 		98A031FB44EE56AC485D6B5BD8A90AC2 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8415771B68A478970E89E887BE4275C /* NSObject+YYModel.m */; };
 		9BC437D8BD92C164E7818FF2326B316D /* WhiteGlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B4ECD08BB7C06D3E1B5504A7F9A540 /* WhiteGlobalState.m */; };
-		9C277C13475BD0E5E0B43C243558C373 /* FastboardSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D7F87EEC4C705717656C36FA31383 /* FastboardSDK.swift */; };
+		9C277C13475BD0E5E0B43C243558C373 /* FastboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D7F87EEC4C705717656C36FA31383 /* FastboardManager.swift */; };
 		9C4A2C8AFEE9736862AB09F263AA309A /* WhiteSDK+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = B873EA4F28DD4ABF6ED2B386848E175C /* WhiteSDK+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A0971AE007B48C4BA320376C5F7A489C /* DWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 114F51EAFE8DF9036537F30EAA9A4590 /* DWKWebView.m */; };
 		A0A3F45AE48FD75BC81F328A307ECAC0 /* YYModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE07AF48CF74803B4189C8B200F519A7 /* YYModel-dummy.m */; };
@@ -540,6 +542,8 @@
 		8AFA91DD278D70ED00E0CA61 /* FastboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastboardOverlay.swift; sourceTree = "<group>"; };
 		8AFA91DF278D76B000E0CA61 /* RegularFastboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularFastboardOverlay.swift; sourceTree = "<group>"; };
 		8AFA91E1278D79F900E0CA61 /* CompactFastboardOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactFastboardOverlay.swift; sourceTree = "<group>"; };
+		8AFA91EC278E7FB200E0CA61 /* MethodHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodHook.swift; sourceTree = "<group>"; };
+		8AFA91EF278E86F700E0CA61 /* FastConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastConfiguration.swift; sourceTree = "<group>"; };
 		8CA9EE05426C9BDA9E172F1DC62E5DED /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		8E2E1F2EBD85C1488017450B1E6C2E06 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		8E4C8E8C5C96893519E51A44760AE239 /* Pods-OCExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OCExample-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -557,7 +561,7 @@
 		97C84AF1D13BEA4FBAED0B4337BCA523 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		98C20967934BD9529985B516B26EB494 /* WhiteRoomConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomConfig.m; path = Whiteboard/Classes/Room/WhiteRoomConfig.m; sourceTree = "<group>"; };
 		98D1B150F29C4011242CD3C5B8EE7AB5 /* WhiteCameraConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraConfig.m; path = Whiteboard/Classes/Object/WhiteCameraConfig.m; sourceTree = "<group>"; };
-		994D7F87EEC4C705717656C36FA31383 /* FastboardSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardSDK.swift; sourceTree = "<group>"; };
+		994D7F87EEC4C705717656C36FA31383 /* FastboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardManager.swift; sourceTree = "<group>"; };
 		9958F2AB8411C85BF7DD31EE21581368 /* WhiteSDK+Replayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSDK+Replayer.h"; path = "Whiteboard/Classes/Replayer/WhiteSDK+Replayer.h"; sourceTree = "<group>"; };
 		9AF5039F559CB0778CD4F20FE388836C /* WhitePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayer.h; path = Whiteboard/Classes/Replayer/WhitePlayer.h; sourceTree = "<group>"; };
 		9B50F5C34C2BDD0C5D89F3D15ED16CE3 /* WhiteMemberState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteMemberState.m; path = Whiteboard/Classes/Object/WhiteMemberState.m; sourceTree = "<group>"; };
@@ -970,7 +974,8 @@
 			children = (
 				8A4C439AE0748295C5C7A05FD2AAE020 /* FastPhase.swift */,
 				0E745CE0FC404B044E99928287E49544 /* FastError.swift */,
-				994D7F87EEC4C705717656C36FA31383 /* FastboardSDK.swift */,
+				994D7F87EEC4C705717656C36FA31383 /* FastboardManager.swift */,
+				8AFA91EF278E86F700E0CA61 /* FastConfiguration.swift */,
 				15D24AF36DC415E8FE4F74D4BE0E254C /* Fastboard */,
 				B186C0BD4FFE068D6A35E9DE864BA271 /* Theme */,
 				8C02925546606D0294D6894753C71B87 /* View */,
@@ -1169,6 +1174,14 @@
 			path = Overlay;
 			sourceTree = "<group>";
 		};
+		8AFA91EE278E7FB600E0CA61 /* MethodHook */ = {
+			isa = PBXGroup;
+			children = (
+				8AFA91EC278E7FB200E0CA61 /* MethodHook.swift */,
+			);
+			path = MethodHook;
+			sourceTree = "<group>";
+		};
 		8C02925546606D0294D6894753C71B87 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1361,6 +1374,7 @@
 		EB01C20C3F631F5AEC159D37BD40A5B5 /* Fastboard */ = {
 			isa = PBXGroup;
 			children = (
+				8AFA91EE278E7FB600E0CA61 /* MethodHook */,
 				8858F3EEE7560577165C897767B57BE8 /* Icons.xcassets */,
 				BCB5E7F670DE13D3412A6E093170E6EF /* Extension */,
 				DA5002816E90993CA3A08C0609A69C83 /* Pod */,
@@ -1985,10 +1999,11 @@
 				0B9B051EF8E0FAE60613E923467C478B /* DelegateProxy.swift in Sources */,
 				06BF35F33E1338189694B9CD7CD243FD /* Fastboard.swift in Sources */,
 				AF2F8B440E7D93794984B37F655D32D8 /* Fastboard+FastPanelControl.swift in Sources */,
+				8AFA91F0278E86F700E0CA61 /* FastConfiguration.swift in Sources */,
 				8AFA91E0278D76B000E0CA61 /* RegularFastboardOverlay.swift in Sources */,
 				A4DEBA3CD5F784B9A5BFFC3BE75A04E2 /* Fastboard-dummy.m in Sources */,
 				8A434D7C46E6F4CFBCB2932A8F0EF9C9 /* FastboardDelegate.swift in Sources */,
-				9C277C13475BD0E5E0B43C243558C373 /* FastboardSDK.swift in Sources */,
+				9C277C13475BD0E5E0B43C243558C373 /* FastboardManager.swift in Sources */,
 				8D7894F318B0B0B53D50A23160874DAC /* FastboardView.swift in Sources */,
 				8AFA91E2278D79F900E0CA61 /* CompactFastboardOverlay.swift in Sources */,
 				16EE51E399083525D41F133C749BDCAC /* FastError.swift in Sources */,
@@ -2005,6 +2020,7 @@
 				874B5C14FA256E70B709729A5ECCC5B5 /* SubPanelView.swift in Sources */,
 				D01FFF9BB54E0378CF00109C84DC66C0 /* Theme.swift in Sources */,
 				E7814F59F04A93BB9DAE2AFEF71651BC /* ThemeManager.swift in Sources */,
+				8AFA91ED278E7FB200E0CA61 /* MethodHook.swift in Sources */,
 				E7496CCE2789FDF9D387B323778F16C8 /* TraitCollection+Extension.swift in Sources */,
 				C099620104FE8A9CA0D29B9D1C8AA345 /* TraitUpdateHandler.swift in Sources */,
 				26D389CD8E887F2094EBFC91CED5AC6C /* UIColor+Convince.swift in Sources */,

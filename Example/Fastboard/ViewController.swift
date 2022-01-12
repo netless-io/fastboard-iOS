@@ -53,11 +53,12 @@ class ViewController: UIViewController {
     }
     
     func setupFastboard(custom: FastboardOverlay? = nil) {
-        let fastboard = FastBoardSDK.createFastboardWith(appId: RoomInfo.APPID.value,
-                                                 roomUUID: RoomInfo.ROOMUUID.value,
-                                                 roomToken: RoomInfo.ROOMTOKEN.value,
-                                                 userUID: "some-unique-id",
-                                                 customOverlay: custom)
+        let config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
+                                       roomUUID: RoomInfo.ROOMUUID.value,
+                                       roomToken: RoomInfo.ROOMTOKEN.value,
+                                       userUID: "some-unique-id")
+        config.customOverlay = custom
+        let fastboard = FastboardManager.createFastboardWithConfiguration(config)
         fastboard.delegate = self
         let fastboardView = fastboard.view
         view.autoresizesSubviews = true

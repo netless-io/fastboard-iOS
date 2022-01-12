@@ -22,6 +22,9 @@ public class ThemeManager: NSObject {
         }
     }
     
+    /// Empty function for more readable to apply default behavior
+    func start() {}
+    
     /// You should call it before fastboard create
     @objc
     public func updateIcons(using bundle: Bundle) {
@@ -51,7 +54,7 @@ public class ThemeManager: NSObject {
     func updateFastboard(_ asset: WhiteboardAssets) {
         WhiteBoardView.appearance().backgroundColor = asset.whiteboardBackgroundColor
         FastboardView.appearance().backgroundColor = asset.containerColor
-        FastBoardSDK.weakTable.allObjects.forEach { view in
+        FastboardManager.weakTable.allObjects.forEach { view in
             view.whiteboardView.backgroundColor = asset.whiteboardBackgroundColor
         }
     }
