@@ -29,6 +29,6 @@ echo 'push commit to netless'
 git push netless --tags
 echo 'push tags to netless'
 echo 'begin push to trunk'
-pod trunk push Fastboard.podspec
-echo 'successfully🌹'
+pod trunk push Fastboard.podspec --allow-warnings
+echo 'successfully'
 
