@@ -12,6 +12,14 @@ import Fastboard
 import SnapKit
 
 class CustomFastboardOverlay: FastboardOverlay {
+    func invalidAllLayout() {
+        return
+    }
+    
+    func updateBoxState(_ state: WhiteWindowBoxState?) {
+        return
+    }
+    
     func updateControlBarLayout(direction: OperationBarDirection) {
         return
     }

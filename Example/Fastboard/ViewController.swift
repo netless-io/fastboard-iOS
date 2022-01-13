@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                                        region: .CN,
                                        userUID: "some-unique-id")
         config.customOverlay = custom
-        let fastboard = FastboardManager.createFastboardWithConfiguration(config)
+        let fastboard = Fastboard(configuration: config)
         fastboard.delegate = self
         let fastboardView = fastboard.view
         view.autoresizesSubviews = true
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(10)
+            make.top.equalToSuperview()
             make.right.equalToSuperview().inset(88)
             make.width.equalTo(120)
         }
@@ -148,18 +148,49 @@ class ViewController: UIViewController {
                 }
             }
         }),
+        ("userTheme", {
+            let white = WhiteboardAssets(whiteboardBackgroundColor: .green, containerColor: .yellow)
+            let control = ControlBarAssets(backgroundColor: .blue, borderColor: .gray, effectStyle: .init(style: .regular))
+            let panel = PanelItemAssets(normalIconColor: .black, selectedIconColor: .systemRed, highlightBgColor: .cyan, subOpsIndicatorColor: .yellow, pageTextLabelColor: .orange)
+            let theme = ThemeAsset(whiteboardAssets: white, controlBarAssets: control, panelItemAssets: panel)
+            ThemeManager.shared.apply(theme)
+        }),
+        ("color", {
+            DefaultOperationItem.defaultColors = [.red, .yellow, .blue]
+            self.reloadFastboard(overlay: nil)
+        }),
+        ("phone items", {
+            CompactFastboardOverlay.defaultCompactAppliance = [
+                .AppliancePencil,
+                .ApplianceSelector,
+                .ApplianceEraser
+            ]
+            self.reloadFastboard(overlay: nil)
+        }),
+        ("pad items", {
+            var items: [FastOperationItem] = []
+            let shape = SubOpsItem(subOps: RegularFastboardOverlay.shapeItems)
+            items.append(shape)
+            items.append(DefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
+            items.append(DefaultOperationItem.clean())
+            let panel = FastPanel(items: items)
+            RegularFastboardOverlay.customOptionPanel = {
+                return panel
+            }
+            self.reloadFastboard(overlay: nil)
+        }),
         ("direction", {
             if FastboardView.appearance().operationBarDirection == .left {
                 FastboardView.appearance().operationBarDirection = .right
                 self.stack.snp.remakeConstraints { make in
-                    make.top.equalToSuperview().inset(10)
+                    make.top.equalToSuperview()
                     make.left.equalToSuperview().inset(88)
                     make.width.equalTo(120)
                 }
             } else {
                 FastboardView.appearance().operationBarDirection = .left
                 self.stack.snp.remakeConstraints { make in
-                    make.top.equalToSuperview().inset(10)
+                    make.top.equalToSuperview()
                     make.right.equalToSuperview().inset(88)
                     make.width.equalTo(120)
                 }
@@ -210,7 +241,7 @@ class ViewController: UIViewController {
         ("writable", {
             guard let room = self.fastboard.room else { return }
             let writable = room.isWritable
-            room.setWritable(!writable) { new, error in
+            self.fastboard.updateWritable(!writable) { error in
                 print("update writable \(!writable)", error?.localizedDescription ?? "success")
             }
         }),
@@ -219,6 +250,51 @@ class ViewController: UIViewController {
             ControlBar.appearance().itemWidth = 66
             AppearanceManager.shared.commitUpdate()
         }),
+        ("layout", {
+            self.fastboard.view.overlay?.invalidAllLayout()
+            if let regular = self.fastboard.view.overlay as? RegularFastboardOverlay {
+                regular.operationPanel.view?.snp.makeConstraints { make in
+                    make.left.equalToSuperview()
+                    make.centerY.equalToSuperview()
+                }
+                
+                regular.deleteSelectionPanel.view?.snp.makeConstraints({ make in
+                    make.bottom.equalTo(regular.operationPanel.view!.snp.top).offset(-8)
+                    make.left.equalToSuperview()
+                })
+                
+                regular.undoRedoPanel.view?.snp.makeConstraints({ make in
+                    make.left.bottom.equalTo(self.fastboard.view.whiteboardView)
+                })
+                
+                regular.scenePanel.view?.snp.makeConstraints({ make in
+                    make.bottom.equalTo(self.fastboard.view.whiteboardView)
+                    make.centerX.equalToSuperview()
+                })
+            }
+            
+            if let compact = self.fastboard.view.overlay as? CompactFastboardOverlay {
+                compact.operationPanel.view?.snp.makeConstraints({ make in
+                    make.left.equalTo(self.fastboard.view.whiteboardView)
+                    make.centerY.equalToSuperview()
+                })
+                
+                compact.colorAndStrokePanel.view?.snp.makeConstraints({ make in
+                    make.left.equalTo(self.fastboard.view.whiteboardView)
+                    make.bottom.equalTo(compact.operationPanel.view!.snp.top).offset(-8)
+                })
+                
+                compact.deleteSelectionPanel.view?.snp.makeConstraints { $0.edges.equalTo(compact.colorAndStrokePanel.view!) }
+                
+                compact.undoRedoPanel.view?.snp.makeConstraints({ make in
+                    make.left.bottom.equalTo(self.fastboard.view.whiteboardView)
+                })
+                
+                compact.scenePanel.view?.snp.makeConstraints({ make in
+                    make.bottom.centerX.equalTo(self.fastboard.view.whiteboardView)
+                })
+            }
+        }),
         ("reload", {
             UIApplication.shared.keyWindow?.rootViewController = ViewController()
         }),
@@ -226,7 +302,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: FastboardDelegate {
-    func fastboardPhaseDidUpdate(_ fastboard: Fastboard, phase: FastPhase) {
+    func fastboardPhaseDidUpdate(_ fastboard: Fastboard, phase: FastRoomPhase) {
         print(#function, phase)
     }
     

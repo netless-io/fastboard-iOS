@@ -20,7 +20,13 @@ Theme const ThemeLight = @"light";
     btn.backgroundColor = [Utility randomColor];
     [btn setTitle:title forState:UIControlStateNormal];
     btn.tag = index;
-    btn.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    UITraitCollection* trait = UIApplication.sharedApplication.windows.firstObject.traitCollection;
+    BOOL hasCompact = trait.verticalSizeClass == UIUserInterfaceSizeClassCompact || trait.horizontalSizeClass == UIUserInterfaceSizeClassCompact;
+    if (hasCompact) {
+        btn.contentEdgeInsets = UIEdgeInsetsMake(4, 10, 4, 10);
+    } else {
+        btn.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    }
     return btn;
 }
 

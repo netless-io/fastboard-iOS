@@ -128,7 +128,7 @@
 
 - (void)onWritable {
     BOOL writable = _fastboard.room.isWritable;
-    [_fastboard.room setWritable:!writable completionHandler:^(BOOL isWritable, NSError * _Nullable error) {
+    [_fastboard updateWritable:!writable completion:^(NSError * _Nullable error) {
         if (error) {
             NSLog(@"update writable fail");
         } else {
@@ -137,10 +137,92 @@
     }];
 }
 
+- (void)onUserTheme {
+    WhiteboardAssets* white = [[WhiteboardAssets alloc] initWithWhiteboardBackgroundColor:UIColor.greenColor containerColor:UIColor.yellowColor];
+    ControlBarAssets* control = [[ControlBarAssets alloc] initWithBackgroundColor:UIColor.blueColor borderColor:UIColor.grayColor effectStyle:[UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular]];
+    PanelItemAssets* panel = [[PanelItemAssets alloc] initWithNormalIconColor:UIColor.blackColor selectedIconColor:UIColor.systemRedColor highlightBgColor:UIColor.cyanColor subOpsIndicatorColor:UIColor.yellowColor pageTextLabelColor:UIColor.orangeColor];
+    ThemeAsset* asset = [[ThemeAsset alloc] initWithWhiteboardAssets:white controlBarAssets:control panelItemAssets:panel];
+    [FastboardThemeManager.shared apply:asset];
+}
+
 - (void)onCustom {
-    [self reloadFastboardOverlay:[CustomFastboardOverlay new]];
+    [self reloadFastboardOverlay:[[CustomFastboardOverlay alloc] init]];
     ControlBar.appearance.itemWidth = 66;
     [AppearanceManager.shared commitUpdate];
+}
+
+- (void)onPhoneItems {
+    CompactFastboardOverlay.defaultCompactAppliance = @[
+        AppliancePencil,
+        ApplianceSelector,
+        ApplianceEraser
+    ];
+    [self reloadFastboardOverlay:nil];
+}
+
+- (void)onPadItems {
+    NSMutableArray* items = [NSMutableArray array];
+    [items addObject:[[SubOpsItem alloc] initWithSubOps:RegularFastboardOverlay.shapeItems]];
+    [items addObject:[DefaultOperationItem selectableApplianceItem:AppliancePencil shape:nil]];
+    [items addObject:[DefaultOperationItem clean]];
+    FastPanel* panel = [[FastPanel alloc] initWithItems:items];
+    RegularFastboardOverlay.customOptionPanel = ^FastPanel * _Nonnull{
+        return panel;
+    };
+    [self reloadFastboardOverlay:nil];
+}
+
+- (void)onLayout {
+    [_fastboard.view.overlay invalidAllLayout];
+    NSObject<FastboardOverlay>* overlay = _fastboard.view.overlay;
+    if ([overlay isKindOfClass:[RegularFastboardOverlay class]]) {
+        RegularFastboardOverlay* regular = overlay;
+        [regular.operationPanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(regular.operationPanel.view.superview).inset(20);
+            make.centerY.equalTo(regular.operationPanel.view.superview);
+        }];
+        
+        [regular.deleteSelectionPanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(regular.operationPanel.view);
+            make.bottom.equalTo(regular.operationPanel.view.mas_top).offset(-8);
+        }];
+        
+        [regular.undoRedoPanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(regular.undoRedoPanel.view.superview).inset(20);
+            make.bottom.equalTo(_fastboard.view.whiteboardView);
+        }];
+        
+        [regular.scenePanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(_fastboard.view.whiteboardView);
+            make.centerX.equalTo(regular.scenePanel.view.superview);
+        }];
+    }
+    
+    if ([overlay isKindOfClass:[CompactFastboardOverlay class]]) {
+        CompactFastboardOverlay* compact = overlay;
+        [compact.operationPanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_fastboard.view.whiteboardView);
+            make.centerY.equalTo(@0);
+        }];
+        
+        [compact.colorAndStrokePanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_fastboard.view.whiteboardView);
+            make.bottom.equalTo(compact.operationPanel.view.mas_top).offset(-8);
+        }];
+        
+        [compact.deleteSelectionPanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(compact.colorAndStrokePanel.view);
+        }];
+        
+        [compact.undoRedoPanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.bottom.equalTo(_fastboard.view.whiteboardView);
+        }];
+        
+        [compact.scenePanel.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(@0);
+            make.bottom.equalTo(_fastboard.view.whiteboardView);
+        }];
+    }
 }
 
 - (void)onReload {
@@ -156,7 +238,7 @@
                                                                           region: FastRegionCN
                                                                          userUID:@"some-unique"];
     config.customOverlay = custom;
-    _fastboard = [FastboardManager createFastboardWithConfiguration:config];
+    _fastboard = [[Fastboard alloc] initWithConfiguration:config];
     FastboardView *fastView = _fastboard.view;
     _fastboard.delegate = self;
     [_fastboard joinRoom];
@@ -218,13 +300,17 @@
 
 - (NSArray<UIButton *> *)setupButtons {
     NSArray* titles = @[@"Theme",
+                        @"UserTheme",
                         @"Direction",
+                        @"PhoneItems",
+                        @"PadItems",
                         @"BarSize",
                         @"Icons",
                         @"HideAll",
                         @"HideItem",
                         @"Writable",
                         @"Custom",
+                        @"Layout",
                         @"Reload"];
     NSMutableArray* btns = [NSMutableArray new];
     [titles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -258,7 +344,7 @@
     NSLog(@"error %@", error);
 }
 
-- (void)fastboardPhaseDidUpdate:(Fastboard * _Nonnull)fastboard phase:(enum FastPhase)phase {
+- (void)fastboardPhaseDidUpdate:(Fastboard * _Nonnull)fastboard phase:(enum FastRoomPhase)phase {
     NSLog(@"phase, %d", (int)phase);
 }
 

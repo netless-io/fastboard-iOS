@@ -13,7 +13,13 @@ func button(title: String, index: Int) -> UIButton {
     btn.backgroundColor = randomColor()
     btn.setTitle(title, for: .normal)
     btn.tag = index
-    btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
+    let t = UIApplication.shared.windows.first?.traitCollection
+    let hasCompact = t?.verticalSizeClass == .compact || t?.horizontalSizeClass == .compact
+    if hasCompact {
+        btn.contentEdgeInsets = .init(top: 4, left: 10, bottom: 4, right: 10)
+    } else {
+        btn.contentEdgeInsets = .init(top: 10, left: 10, bottom: 10, right: 10)
+    }
     return btn
 }
 
