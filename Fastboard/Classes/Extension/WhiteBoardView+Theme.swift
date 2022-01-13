@@ -16,4 +16,12 @@ extension WhiteBoardView {
         } else {
         }
     }
+    
+    @objc
+    dynamic var themeBgColor: UIColor? {
+        get { nil }
+        set {
+            backgroundColor = newValue
+        }
+    }
 }
