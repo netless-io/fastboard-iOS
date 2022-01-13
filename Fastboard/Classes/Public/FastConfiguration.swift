@@ -34,25 +34,26 @@ public class FastConfiguration: NSObject {
                 roomToken: String,
                 region: Region,
                 userUID: String) {
-        let whiteSdkConfiguration = WhiteSdkConfiguration(app: appIdentifier)
-        whiteSdkConfiguration.renderEngine = .canvas
-        whiteSdkConfiguration.userCursor = false
-        whiteSdkConfiguration.useMultiViews = true
-        whiteSdkConfiguration.region = region.toWhiteRegion()
-        self.whiteSdkConfiguration = whiteSdkConfiguration
-        let whiteRoomConfig = WhiteRoomConfig(uuid: roomUUID, roomToken: roomToken, uid: userUID)
-        whiteRoomConfig.disableNewPencil = false
+        let wsc = WhiteSdkConfiguration(app: appIdentifier)
+        wsc.renderEngine = .canvas
+        wsc.userCursor = false
+        wsc.useMultiViews = true
+        wsc.region = region.toWhiteRegion()
+        whiteSdkConfiguration = wsc
+        let wrc = WhiteRoomConfig(uuid: roomUUID, roomToken: roomToken, uid: userUID)
+        wrc.disableNewPencil = false
         let windowParas = WhiteWindowParams()
         windowParas.chessboard = false
         windowParas.containerSizeRatio = NSNumber(value: 1 / FastboardManager.globalFastboardRatio)
-        whiteRoomConfig.windowParams = windowParas
-        self.whiteRoomConfig = whiteRoomConfig
+        wrc.windowParams = windowParas
+        whiteRoomConfig = wrc
         
         if #available(iOS 14.0, *) {
             if ProcessInfo.processInfo.isiOSAppOnMac {
                 whiteSdkConfiguration.deviceType = .desktop
             }
         }
+        super.init()
     }
     
     @available(*, deprecated, message: "use the designed init instead")
