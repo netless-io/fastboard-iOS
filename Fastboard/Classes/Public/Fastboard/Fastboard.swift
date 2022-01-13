@@ -25,6 +25,7 @@ public class Fastboard: NSObject {
         didSet {
             if let room = room {
                 view.overlay?.setupWith(room: room, fastboardView: self.view, direction: view.operationBarDirection)
+                delegate?.fastboardDidSetupOverlay?(self, overlay: view.overlay)
             }
             initStateAfterJoinRoom()
         }
@@ -60,6 +61,16 @@ public class Fastboard: NSObject {
         joinRoom(completionHandler: nil)
     }
     
+    @objc
+    public func updateWritable(_ writable: Bool, completion: ((Error?)->Void)?) {
+        room?.setWritable(writable, completionHandler: { [weak room] success, error in
+            if success, writable {
+                room?.disableSerialization(false)
+            }
+            completion?(error)
+        })
+    }
+    
     /// Call the method to join the whiteRoom
     public func joinRoom(completionHandler: ((Result<WhiteRoom, FastError>)->Void)? = nil) {
         delegate?.fastboardPhaseDidUpdate(self, phase: .connecting)
@@ -78,8 +89,8 @@ public class Fastboard: NSObject {
                 completionHandler?(.failure(fastError))
                 return
             }
-            self.room = room
             room.disableSerialization(false)
+            self.room = room
             completionHandler?(.success(room))
         }
     }
@@ -93,6 +104,8 @@ public class Fastboard: NSObject {
             view.overlay?.updateUIWithInitAppliance(nil, shape: nil)
         }
         
+        view.overlay?.updateBoxState(state.windowBoxState)
+        
         if let scene = state.sceneState {
             view.overlay?.updateSceneState(scene)
         }
@@ -105,6 +118,26 @@ public class Fastboard: NSObject {
             let color = UIColor.init(numberArray: nums)
             view.overlay?.updateStrokeColor(color)
         }
+    }
+    
+    @objc
+    public convenience init(configuration: FastConfiguration) {
+        func defaultOverlay() -> FastboardOverlay {
+            if UIScreen.main.traitCollection.hasCompact {
+                return CompactFastboardOverlay()
+            } else {
+                return RegularFastboardOverlay()
+            }
+        }
+        let fastboardOverlay = configuration.customOverlay ?? defaultOverlay()
+        let fastboardView = FastboardView(overlay: fastboardOverlay)
+        self.init(view: fastboardView, roomConfig: configuration.whiteRoomConfig)
+        
+        
+        let whiteSDK = WhiteSDK(whiteBoardView: fastboardView.whiteboardView,
+                                config: configuration.whiteSdkConfiguration,
+                                commonCallbackDelegate: sdkDelegateProxy)
+        self.whiteSDK = whiteSDK
     }
     
     init(view: FastboardView, roomConfig: WhiteRoomConfig){
@@ -130,6 +163,9 @@ extension Fastboard: WhiteRoomCallbackDelegate {
     public func fireRoomStateChanged(_ modifyState: WhiteRoomState!) {
         if let sceneState = modifyState.sceneState {
             view.overlay?.updateSceneState(sceneState)
+        }
+        if let boxState = modifyState.windowBoxState {
+            view.overlay?.updateBoxState(boxState)
         }
     }
     
