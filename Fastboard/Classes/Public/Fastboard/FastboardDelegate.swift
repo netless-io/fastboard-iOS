@@ -8,10 +8,14 @@
 import Foundation
 import Whiteboard
 
-@objc public protocol FastboardDelegate: AnyObject {
+@objc
+public protocol FastboardDelegate: AnyObject {
     func fastboard(_ fastboard: Fastboard, error: FastError)
     
     func fastboardUserKickedOut(_ fastboard: Fastboard, reason: String)
     
-    func fastboardPhaseDidUpdate(_ fastboard: Fastboard, phase: FastPhase)
+    func fastboardPhaseDidUpdate(_ fastboard: Fastboard, phase: FastRoomPhase)
+    
+    @objc optional
+    func fastboardDidSetupOverlay(_ fastboard: Fastboard, overlay: FastboardOverlay?)
 }
