@@ -8,8 +8,45 @@
 import Foundation
 import Whiteboard
 
-@objc
 public class RegularFastboardOverlay: NSObject, FastboardOverlay {
+    @objc
+    public static var customOptionPanel: (()->FastPanel)?
+    
+    @objc
+    public static var shapeItems: [FastOperationItem] = [
+        DefaultOperationItem.selectableApplianceItem(.ApplianceRectangle),
+        DefaultOperationItem.selectableApplianceItem(.ApplianceEllipse),
+        DefaultOperationItem.selectableApplianceItem(.ApplianceStraight),
+        DefaultOperationItem.selectableApplianceItem(.ApplianceArrow),
+        DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypePentagram),
+        DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeRhombus),
+        DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeTriangle),
+        DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeSpeechBalloon)
+    ]
+    
+    var displayStyle: DisplayStyle? {
+        didSet {
+            if let displayStyle = displayStyle {
+                updateDisplayStyle(displayStyle)
+            }
+        }
+    }
+    
+    public func invalidAllLayout() {
+        allConstraints.forEach { $0.isActive = false }
+        operationLeftConstraint = nil
+        operationRightConstraint = nil
+    }
+    
+    public func updateBoxState(_ state: WhiteWindowBoxState?) {
+        let views = [undoRedoPanel.view, scenePanel.view]
+        let hide = state == .max
+        UIView.animate(withDuration: 0.3) {
+            views.forEach { $0?.alpha = hide ? 0 : 1 }
+        }
+    }
+    
+    var allConstraints: [NSLayoutConstraint] = []
     var operationLeftConstraint: NSLayoutConstraint?
     var operationRightConstraint: NSLayoutConstraint?
     
@@ -29,20 +66,38 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay {
         operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin)
         operationRightConstraint = operationView.rightAnchor.constraint(equalTo: fastboardView.whiteboardView.rightAnchor, constant: -margin)
         
-        operationView.centerYAnchor.constraint(equalTo: fastboardView.whiteboardView.centerYAnchor).isActive = true
+        let operationC0 = operationView.centerYAnchor.constraint(equalTo: fastboardView.whiteboardView.centerYAnchor)
+        operationC0.isActive = true
         operationView.translatesAutoresizingMaskIntoConstraints = false
         
-        deleteView.rightAnchor.constraint(equalTo: operationView.rightAnchor).isActive = true
-        deleteView.bottomAnchor.constraint(equalTo: operationView.topAnchor, constant: -margin).isActive = true
+        let deleteC0 = deleteView.rightAnchor.constraint(equalTo: operationView.rightAnchor)
+        deleteC0.isActive = true
+        let deleteC1 = deleteView.bottomAnchor.constraint(equalTo: operationView.topAnchor, constant: -margin)
+        deleteC1.isActive = true
         deleteView.translatesAutoresizingMaskIntoConstraints = false
         
-        undoRedoView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin).isActive = true
-        undoRedoView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin).isActive = true
+        let undoRedoC0 = undoRedoView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin)
+        undoRedoC0.isActive = true
+        let undoRedoC1 = undoRedoView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin)
+        undoRedoC1.isActive = true
         undoRedoView.translatesAutoresizingMaskIntoConstraints = false
         
-        sceneView.centerXAnchor.constraint(equalTo: fastboardView.whiteboardView.centerXAnchor).isActive = true
-        sceneView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin).isActive = true
+        let sceneC0 = sceneView.centerXAnchor.constraint(equalTo: fastboardView.whiteboardView.centerXAnchor)
+        sceneC0.isActive = true
+        let sceneC1 = sceneView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin)
+        sceneC1.isActive = true
         sceneView.translatesAutoresizingMaskIntoConstraints = false
+        
+        allConstraints.append(operationLeftConstraint!)
+        allConstraints.append(operationRightConstraint!)
+        allConstraints.append(operationC0)
+        allConstraints.append(deleteC0)
+        allConstraints.append(deleteC1)
+        allConstraints.append(undoRedoC0)
+        allConstraints.append(undoRedoC1)
+        allConstraints.append(sceneC0)
+        allConstraints.append(sceneC1)
+        
         updateControlBarLayout(direction: direction)
     }
     
@@ -96,6 +151,14 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay {
     
     public func setAllPanel(hide: Bool) {
         totalPanels.forEach { $0.view?.isHidden = hide }
+        if !hide {
+            if let displayStyle = displayStyle {
+                updateDisplayStyle(displayStyle)
+            } else {
+                print("error status")
+                updateDisplayStyle(.all)
+            }
+        }
     }
     
     public func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
@@ -123,9 +186,9 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay {
     
     func updateDisplayStyleFromNewOperationItem(_ item: FastOperationItem) {
         if item.needDelete {
-            updateDisplayStyle(.all)
+            displayStyle = .all
         } else {
-            updateDisplayStyle(.hideDelete)
+            displayStyle = .hideDelete
         }
     }
     
@@ -156,10 +219,17 @@ extension RegularFastboardOverlay {
         case scenes
     }
     
-    var operationPanel: FastPanel { panels[.operations]! }
-    var deleteSelectionPanel: FastPanel { panels[.deleteSelection]! }
-    var undoRedoPanel: FastPanel { panels[.undoRedo]! }
-    var scenePanel: FastPanel { panels[.scenes]! }
+    @objc
+    public var operationPanel: FastPanel { panels[.operations]! }
+    
+    @objc
+    public var deleteSelectionPanel: FastPanel { panels[.deleteSelection]! }
+    
+    @objc
+    public var undoRedoPanel: FastPanel { panels[.undoRedo]! }
+    
+    @objc
+    public var scenePanel: FastPanel { panels[.scenes]! }
     
     func createDeleteSelectionPanel() -> FastPanel {
         let items: [FastOperationItem] = [DefaultOperationItem.deleteSelectionItem()]
@@ -176,17 +246,13 @@ extension RegularFastboardOverlay {
     }
     
     func createOperationPanel() -> FastPanel {
-        var shapeOps: [FastOperationItem] = [
-            DefaultOperationItem.selectableApplianceItem(.ApplianceRectangle),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceEllipse),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceStraight),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceArrow),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypePentagram),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeRhombus),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeTriangle),
-            DefaultOperationItem.selectableApplianceItem(.ApplianceShape, shape: .ApplianceShapeTypeSpeechBalloon),
-            DefaultOperationItem.strokeWidthItem()
-        ]
+        if let panel = RegularFastboardOverlay.customOptionPanel?() {
+            panel.delegate = self
+            return panel
+        }
+        
+        var shapeOps: [FastOperationItem] = RegularFastboardOverlay.shapeItems
+        shapeOps.append(DefaultOperationItem.strokeWidthItem())
         shapeOps.append(contentsOf: DefaultOperationItem.defaultColorItems())
         let shapes = SubOpsItem(subOps: shapeOps)
         

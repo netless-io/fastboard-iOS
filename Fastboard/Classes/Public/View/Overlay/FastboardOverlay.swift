@@ -18,6 +18,8 @@ public enum OperationBarDirection: Int {
 public protocol FastboardOverlay: FastPanelControl, FastPanelDelegate {
     func setupWith(room: WhiteRoom, fastboardView: FastboardView, direction: OperationBarDirection)
     
+    func invalidAllLayout()
+    
     func updateControlBarLayout(direction: OperationBarDirection)
     
     func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?)
@@ -31,4 +33,6 @@ public protocol FastboardOverlay: FastPanelControl, FastPanelDelegate {
     func updateUndoEnable(_ enable: Bool)
     
     func updateRedoEnable(_ enable: Bool)
+    
+    func updateBoxState(_ state: WhiteWindowBoxState?)
 }

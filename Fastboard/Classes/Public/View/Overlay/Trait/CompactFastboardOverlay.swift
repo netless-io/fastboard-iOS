@@ -8,7 +8,37 @@
 import Foundation
 import Whiteboard
 
-public class CompactFastboardOverlay: FastboardOverlay {
+public class CompactFastboardOverlay: NSObject, FastboardOverlay {
+    @objc
+    public static var defaultCompactAppliance: [WhiteApplianceNameKey] = [
+        .ApplianceClicker,
+        .ApplianceSelector,
+        .AppliancePencil,
+        .ApplianceEraser,
+        .ApplianceArrow,
+        .ApplianceRectangle,
+        .ApplianceEllipse
+    ]
+    
+    var displayStyle: DisplayStyle? {
+        didSet {
+            if let displayStyle = displayStyle {
+                updateDisplayStyle(displayStyle)
+            }
+        }
+    }
+    
+    public func invalidAllLayout() {
+        allConstraints.forEach { $0.isActive = false }
+        operationLeftConstraint = nil
+        operationRightConstraint = nil
+    }
+    
+    public func updateBoxState(_ state: WhiteWindowBoxState?) {
+        return
+    }
+    
+    var allConstraints: [NSLayoutConstraint] = []
     var operationLeftConstraint: NSLayoutConstraint?
     var operationRightConstraint: NSLayoutConstraint?
     
@@ -28,31 +58,50 @@ public class CompactFastboardOverlay: FastboardOverlay {
         
         let margin: CGFloat = 8
         
-        operationView.centerYAnchor.constraint(equalTo: fastboardView.whiteboardView.centerYAnchor).isActive = true
         operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin)
         operationRightConstraint = operationView.rightAnchor.constraint(equalTo: fastboardView.whiteboardView.rightAnchor, constant: -margin)
+        let operationC0 = operationView.centerYAnchor.constraint(equalTo: fastboardView.whiteboardView.centerYAnchor)
+        operationC0.isActive = true
         operationView.translatesAutoresizingMaskIntoConstraints = false
         
-        colorView.rightAnchor.constraint(equalTo: operationView.rightAnchor).isActive = true
-        colorView.bottomAnchor.constraint(equalTo: operationView.topAnchor, constant: -margin).isActive = true
+        let colorC0 = colorView.rightAnchor.constraint(equalTo: operationView.rightAnchor)
+        colorC0.isActive = true
+        let colorC1 = colorView.bottomAnchor.constraint(equalTo: operationView.topAnchor, constant: -margin)
+        colorC1.isActive = true
         colorView.translatesAutoresizingMaskIntoConstraints = false
         
-        deleteView.rightAnchor.constraint(equalTo: colorView.rightAnchor).isActive = true
-        deleteView.bottomAnchor.constraint(equalTo: colorView.bottomAnchor).isActive = true
+        let deleteC0 = deleteView.rightAnchor.constraint(equalTo: colorView.rightAnchor)
+        deleteC0.isActive = true
+        let deleteC1 = deleteView.bottomAnchor.constraint(equalTo: colorView.bottomAnchor)
+        deleteC1.isActive = true
         deleteView.translatesAutoresizingMaskIntoConstraints = false
         
-        undoRedoView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin).isActive = true
-        undoRedoView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin).isActive = true
+        let undoRedoC0 = undoRedoView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin)
+        undoRedoC0.isActive = true
+        let undoRedoC1 = undoRedoView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin)
+        undoRedoC1.isActive = true
         undoRedoView.translatesAutoresizingMaskIntoConstraints = false
         
-        sceneView.centerXAnchor.constraint(equalTo: fastboardView.whiteboardView.centerXAnchor).isActive = true
-        sceneView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin).isActive = true
+        let sceneC0 = sceneView.centerXAnchor.constraint(equalTo: fastboardView.whiteboardView.centerXAnchor)
+        sceneC0.isActive = true
+        let sceneC1 = sceneView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin)
+        sceneC1.isActive = true
         sceneView.translatesAutoresizingMaskIntoConstraints = false
+        
+        allConstraints.append(operationLeftConstraint!)
+        allConstraints.append(operationRightConstraint!)
+        allConstraints.append(operationC0)
+        allConstraints.append(colorC0)
+        allConstraints.append(colorC1)
+        allConstraints.append(deleteC0)
+        allConstraints.append(deleteC1)
+        allConstraints.append(undoRedoC0)
+        allConstraints.append(undoRedoC1)
+        allConstraints.append(sceneC0)
+        allConstraints.append(sceneC1)
         
         updateControlBarLayout(direction: direction)
     }
-    
-    
     
     public func updateControlBarLayout(direction: OperationBarDirection) {
         let isLeft = direction == .left
@@ -70,7 +119,7 @@ public class CompactFastboardOverlay: FastboardOverlay {
             operationPanel.updateWithApplianceOutside(appliance, shape: shape)
             
             let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
-            if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }){
+            if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) {
                 updateDisplayStyleFromNewOperationItem(item)
             }
         } else {
@@ -101,7 +150,16 @@ public class CompactFastboardOverlay: FastboardOverlay {
     }
     
     public func setAllPanel(hide: Bool) {
-        totalPanels.forEach { $0.view?.isHidden = hide }
+        if hide {
+            totalPanels.forEach { $0.view?.isHidden = hide }
+        } else {
+            if let displayStyle = displayStyle {
+                updateDisplayStyle(displayStyle)
+            } else {
+                print("error status")
+                updateDisplayStyle(.all)
+            }
+        }
     }
     
     public func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
@@ -131,19 +189,20 @@ public class CompactFastboardOverlay: FastboardOverlay {
     
     func updateDisplayStyleFromNewOperationItem(_ item: FastOperationItem) {
         if !item.needColor, !item.needDelete {
-            updateDisplayStyle(.hideColorAndDelete)
+            displayStyle = .hideColorAndDelete
             return
         }
         if item.needColor {
-            updateDisplayStyle(.hideDeleteShowColor)
+            displayStyle = .hideDeleteShowColor
         } else if item.needDelete {
-            updateDisplayStyle(.hideColorShowDelete)
+            displayStyle = .hideColorShowDelete
         } else {
-            updateDisplayStyle(.all)
+            displayStyle = .all
         }
     }
     
     func updateDisplayStyle(_ style: DisplayStyle) {
+        undoRedoPanel.view?.isHidden = false
         switch style {
         case .all:
             colorAndStrokePanel.view?.isHidden = false
@@ -186,11 +245,20 @@ extension CompactFastboardOverlay {
         case scenes
     }
     
-    var colorAndStrokePanel: FastPanel { panels[.colorsAndStrokeWidth]! }
-    var operationPanel: FastPanel { panels[.operations]! }
-    var deleteSelectionPanel: FastPanel { panels[.deleteSelection]! }
-    var undoRedoPanel: FastPanel { panels[.undoRedo]! }
-    var scenePanel: FastPanel { panels[.scenes]! }
+    @objc
+    public var colorAndStrokePanel: FastPanel { panels[.colorsAndStrokeWidth]! }
+    
+    @objc
+    public var operationPanel: FastPanel { panels[.operations]! }
+    
+    @objc
+    public var deleteSelectionPanel: FastPanel { panels[.deleteSelection]! }
+    
+    @objc
+    public var undoRedoPanel: FastPanel { panels[.undoRedo]! }
+    
+    @objc
+    public var scenePanel: FastPanel { panels[.scenes]! }
     
     func createDeleteSelectionPanel() -> FastPanel {
         let items: [FastOperationItem] = [DefaultOperationItem.deleteSelectionItem()]
@@ -215,7 +283,7 @@ extension CompactFastboardOverlay {
     }
     
     func createOperationPanel() -> FastPanel {
-        var ops = DefaultOperationItem.defaultCompactAppliance
+        var ops = Self.defaultCompactAppliance
             .map {
                 DefaultOperationItem.selectableApplianceItem($0)
             }
