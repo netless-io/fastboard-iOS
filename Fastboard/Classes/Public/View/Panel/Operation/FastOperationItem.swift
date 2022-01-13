@@ -330,12 +330,14 @@ public class SubOpsItem: NSObject, FastOperationItem {
         
         if subPanelView.superview == nil {
             let container = loopForFastboardView(from: associatedView!)
-            container?.addSubview(subPanelView)
+            if let whiteboardView = container!.whiteboardView {
+                container?.insertSubview(subPanelView, aboveSubview: whiteboardView)
+            } else {
+                container?.addSubview(subPanelView)
+            }
             subPanelView.exceptView = associatedView
         }
-        subPanelView.isHidden = false
-        subPanelView.setNeedsLayout()
-        subPanelView.layoutIfNeeded()
+        subPanelView.show()
     }
     
     func initButtonInterface(button: PanelItemButton) {

@@ -20,13 +20,74 @@ class SubPanelView: UIView {
             }
         }
         if !inside {
-            UIView.animate(withDuration: 0.3) {
-                self.isHidden = true
+            if let _ = layer.animation(forKey: "show") {
+                layer.removeAnimation(forKey: "show")
+            }
+            if let _ = layer.animation(forKey: "dismiss_1") {
+            } else {
+                let group = CAAnimationGroup()
+                let transAnimation = CASpringAnimation(keyPath: "transform.translation.x")
+                transAnimation.fromValue = 0
+                let isLeft: Bool
+                if let exceptView = exceptView,
+                   let window = exceptView.window {
+                    isLeft = exceptView.convert(exceptView.bounds, to: window).maxX < UIScreen.main.bounds.width / 2
+                } else {
+                    isLeft = false
+                }
+                if isLeft {
+                    transAnimation.toValue = -(exceptView?.frame.size.width ?? 0)
+                } else {
+                    transAnimation.toValue = (exceptView?.frame.size.width ?? 0)
+                }
+                transAnimation.damping = 999
+                transAnimation.stiffness = 999
+                transAnimation.initialVelocity = 30
+                
+                let alpha = CABasicAnimation(keyPath: "opacity")
+                alpha.fromValue = 1
+                alpha.toValue = 0
+                alpha.timingFunction = .init(name: .easeOut)
+                
+                group.animations = [transAnimation, alpha]
+                group.isRemovedOnCompletion = false
+                group.fillMode = .forwards
+                group.delegate = self
+                layer.add(group, forKey: "dismiss_1")
             }
         }
         return super.hitTest(point, with: event)
     }
     
+    func show() {
+        if let _ = layer.animation(forKey: "dismiss_1") {
+            layer.removeAnimation(forKey: "dismiss_1")
+        }
+        isHidden = false
+        setNeedsLayout()
+        layoutIfNeeded()
+        // Spring Animation
+        let targetFrame = frame
+        let offset: CGFloat
+        if targetFrame.maxX > UIScreen.main.bounds.width / 2 {
+            offset = (exceptView?.frame.size.width)!
+        } else {
+            offset = -(exceptView?.frame.size.width)!
+        }
+        
+        let transAnimation = CASpringAnimation(keyPath: "transform.translation.x")
+        transAnimation.fromValue = offset
+        transAnimation.toValue = 0
+        transAnimation.damping = 999
+        transAnimation.stiffness = 999
+        transAnimation.initialVelocity = 10
+        transAnimation.isRemovedOnCompletion = false
+        transAnimation.fillMode = .forwards
+        transAnimation.delegate = self
+        layer.add(transAnimation, forKey: "show")
+    }
+    
+    var animationOffset: CGFloat = 0
     var exceptView: UIView?
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -133,4 +194,17 @@ class SubPanelView: UIView {
         effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return view
     }()
+}
+
+extension SubPanelView: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if flag {
+            if layer.animation(forKey: "show") === anim {
+            } else {
+                // dismiss
+                isHidden = true
+            }
+            layer.removeAllAnimations()
+        }
+    }
 }
