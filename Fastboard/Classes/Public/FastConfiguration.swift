@@ -47,6 +47,12 @@ public class FastConfiguration: NSObject {
         windowParas.containerSizeRatio = NSNumber(value: 1 / FastboardManager.globalFastboardRatio)
         whiteRoomConfig.windowParams = windowParas
         self.whiteRoomConfig = whiteRoomConfig
+        
+        if #available(iOS 14.0, *) {
+            if ProcessInfo.processInfo.isiOSAppOnMac {
+                whiteSdkConfiguration.deviceType = .desktop
+            }
+        }
     }
     
     @available(*, deprecated, message: "use the designed init instead")
