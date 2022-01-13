@@ -18,8 +18,12 @@ public class FastPanel: NSObject {
     @objc
     public var flatItems: [FastOperationItem] {
         return items
-            .map {
-                (($0 as? SubOpsItem)?.subOps) ?? []
+            .map { item -> [FastOperationItem] in
+                if let sub = item as? SubOpsItem {
+                    return sub.subOps
+                } else {
+                    return [item]
+                }
             }
             .flatMap { $0 }
     }
@@ -31,7 +35,7 @@ public class FastPanel: NSObject {
     public weak var delegate: FastPanelDelegate?
     
     @objc
-    public weak var view: UIView?
+    public weak var view: ControlBar?
     
     @objc
     public func setItemHide(fromKey key: DefaultOperationIdentifier, hide: Bool) {
@@ -134,7 +138,7 @@ public class FastPanel: NSObject {
     @objc
     public func setup(room: WhiteRoom,
                direction: NSLayoutConstraint.Axis = .vertical,
-               mask: CACornerMask = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMinXMaxYCorner]) -> UIView {
+               mask: CACornerMask = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner, .layerMinXMaxYCorner]) -> ControlBar {
         let views = items.map { item -> UIView in
             item.room = room
             return item.buildView { [weak self] i in

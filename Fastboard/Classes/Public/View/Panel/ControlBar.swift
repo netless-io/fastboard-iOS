@@ -10,9 +10,32 @@ import UIKit
 /// All the views inserted in this container should not update the button isHidden property
 /// call 'updateButtonHide'
 public class ControlBar: UIView {
-    @objc public dynamic var itemWidth: CGFloat = 40 {
+    @objc
+    public dynamic var itemWidth: CGFloat = 40 {
         didSet {
             invalidateIntrinsicContentSize()
+        }
+    }
+    
+    @objc
+    public dynamic var borderWidth: CGFloat = 1 / UIScreen.main.scale {
+        didSet {
+            updateMask()
+        }
+    }
+    
+    @objc
+    public dynamic var commonRadius: CGFloat = 10 {
+        didSet {
+            updateMask()
+        }
+    }
+    
+    @objc
+    dynamic override var borderColor: UIColor? {
+        didSet {
+            layer.borderColor = borderColor?.cgColor
+            borderLayer.fillColor = borderColor?.cgColor
         }
     }
     
@@ -42,14 +65,20 @@ public class ControlBar: UIView {
         }
     }
     
-    override var borderColor: UIColor? {
+    @objc
+    public var direction: NSLayoutConstraint.Axis {
         didSet {
-            layer.borderColor = borderColor?.cgColor
-            borderLayer.fillColor = borderColor?.cgColor
+            stack.axis = direction
         }
     }
-    let direction: NSLayoutConstraint.Axis
-    let borderMask: CACornerMask
+    
+    @objc
+    public var borderMask: CACornerMask {
+        didSet {
+            updateMask()
+        }
+    }
+    
     let narrowMoreThan: Int
     
     init(direction: NSLayoutConstraint.Axis,
@@ -71,16 +100,7 @@ public class ControlBar: UIView {
         addSubview(effectView)
         effectView.frame = bounds
         effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        if #available(iOS 11.0, *) {
-            clipsToBounds = true
-            layer.borderWidth = borderWidth
-            layer.cornerRadius = commonRadius
-            layer.maskedCorners = borderMask
-        } else {
-            layer.mask = cornerRadiusLayer
-            layer.addSublayer(borderLayer)
-        }
+        updateMask()
         
         autoresizesSubviews = true
         addSubview(stack)
@@ -96,8 +116,21 @@ public class ControlBar: UIView {
         fatalError()
     }
     
-    let borderWidth: CGFloat = 1 / UIScreen.main.scale
-    let commonRadius: CGFloat = 10
+    func updateMask() {
+        if #available(iOS 11.0, *) {
+            clipsToBounds = true
+            layer.borderWidth = borderWidth
+            layer.cornerRadius = commonRadius
+            layer.maskedCorners = borderMask
+        } else {
+            layer.mask = cornerRadiusLayer
+            if borderLayer.superlayer == nil {
+                layer.addSublayer(borderLayer)
+            }
+            setNeedsLayout()
+            layoutIfNeeded()
+        }
+    }
     
     public override func layoutSubviews() {
         super.layoutSubviews()

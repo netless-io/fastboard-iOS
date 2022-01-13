@@ -199,8 +199,9 @@ public class ApplianceItem: FastOperationItem {
     }
 }
 
-public class SubOpsItem: FastOperationItem {
-    init(subOps: [FastOperationItem]) {
+public class SubOpsItem: NSObject, FastOperationItem {
+    @objc
+    public init(subOps: [FastOperationItem]) {
         self.subOps = subOps
         self.selectedApplianceItem = subOps.lazy.compactMap { $0 as? ApplianceItem }.first
         self.identifier = subOps.compactMap { $0.identifier }.joined(separator: "-")
@@ -217,7 +218,8 @@ public class SubOpsItem: FastOperationItem {
         let _ = item.buildView { [weak self] item in
             self?.subItemExecuted(subItem: item)
         }
-        let newViews = self.subOps.compactMap { $0.associatedView }
+        let newViews = self.enableSubOps
+            .compactMap { $0.associatedView }
         self.subPanelView.rebuildFrom(views: newViews)
     }
     
@@ -244,20 +246,40 @@ public class SubOpsItem: FastOperationItem {
         return view
     }()
     
-    func updateSelectedColorItem() {
+    func updateSelectedApplianceAssets() {
+        if let selectedApplianceItem = selectedApplianceItem {
+            let image = selectedApplianceItem.image
+            let btn = associatedView as! PanelItemButton
+            btn.rawImage = image
+        }
+    }
+    
+    func updateSelectedApplianceItem() {
+        updateSelectedApplianceAssets()
+        deselectAllApplianceItems()
+        if let selectedApplianceItem = selectedApplianceItem {
+            selectedApplianceItem.button.isSelected = true
+            let btn = associatedView as! PanelItemButton
+            btn.isSelected = true
+        }
+    }
+    
+    func updateSelectedColorAsset() {
         guard let btn = associatedView as? UIButton,
               let item = selectedColorItem
         else { return }
-        if containsSelectableAppliance {
-            deselectAllColorItems()
-            item.button.isSelected = true
-        } else {
-            subPanelView.deselectAll()
-            
+        if !containsSelectableAppliance {
             let image = UIImage.colorItemImage(withColor: item.color, size: .init(width: 18, height: 18), radius: 4)
             btn.setImage(image, for: .normal)
-            (item.associatedView as? UIButton)?.isSelected = true
         }
+    }
+    
+    func updateSelectedColorItem() {
+        updateSelectedColorAsset()
+        if !containsSelectableAppliance {
+            subPanelView.deselectAll()
+        }
+        (selectedColorItem?.associatedView as? UIButton)?.isSelected = true
     }
     
     func deselectAllApplianceItems() {
@@ -280,21 +302,19 @@ public class SubOpsItem: FastOperationItem {
         })
     }
     
-    func updateSelectedApplianceItem() {
-        deselectAllApplianceItems()
-        if let selectedApplianceItem = selectedApplianceItem {
-            selectedApplianceItem.button.isSelected = true
-            let image = selectedApplianceItem.image
-            let btn = associatedView as! PanelItemButton
-            btn.rawImage = image
-            btn.isSelected = true
-        }
-    }
-    
     @objc func onClick(_ sender: UIButton) {
         guard let room = room else { return }
         interrupter?(self)
         selectedApplianceItem?.action(room, nil)
+        
+        // Update self UI
+        if let _ = selectedApplianceItem {
+            updateSelectedApplianceItem()
+        }
+        if let _ = selectedColorItem {
+            updateSelectedColorItem()
+        }
+        
         (associatedView as? UIButton)?.isSelected = true
         
         func loopForFastboardView(from: UIView) -> FastboardView? {
@@ -318,10 +338,10 @@ public class SubOpsItem: FastOperationItem {
         subPanelView.layoutIfNeeded()
     }
     
-    func initButtonInterface(button: UIButton) {
+    func initButtonInterface(button: PanelItemButton) {
         if let op = subOps.first {
             if let item = op as? ApplianceItem {
-                button.setImage(item.image, for: .normal)
+                button.rawImage = item.image
                 return
             }
             if let item = op as? ColorItem {
@@ -344,10 +364,20 @@ public class SubOpsItem: FastOperationItem {
     
     func configInterfaceForTraitCollectionChanged() {
         if let _ = selectedColorItem {
-            updateSelectedColorItem()
+            updateSelectedColorAsset()
         }
         if let _ = selectedApplianceItem {
-            updateSelectedApplianceItem()
+            updateSelectedApplianceAssets()
+        }
+    }
+    
+    // Filter the single appliance
+    // The ops will show on the subpanel
+    var enableSubOps: [FastOperationItem] {
+        let singleAppliance = subOps.compactMap { $0 as? ApplianceItem }.count == 1
+        return subOps.filter {
+            if singleAppliance, $0 is ApplianceItem { return false }
+            return true
         }
     }
     
@@ -363,13 +393,7 @@ public class SubOpsItem: FastOperationItem {
         self.interrupter = interrupter
         self.associatedView = button
         
-        let singleAppliance = subOps.compactMap { $0 as? ApplianceItem }.count == 1
-        // Filter the single appliance
-        let subOpsView = self.subOps
-            .filter {
-                if singleAppliance, $0 is ApplianceItem { return false }
-                return true
-            }
+        let subOpsView = self.enableSubOps
             .map { subOp -> UIView in
                 subOp.room = room
                 return subOp.buildView { [weak self] item in
