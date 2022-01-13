@@ -336,8 +336,12 @@ public class SubOpsItem: NSObject, FastOperationItem {
                 container?.addSubview(subPanelView)
             }
             subPanelView.exceptView = associatedView
+            subPanelView.show()
+        } else {
+            if subPanelView.isHidden {
+                subPanelView.show()
+            }
         }
-        subPanelView.show()
     }
     
     func initButtonInterface(button: PanelItemButton) {

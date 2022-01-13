@@ -9,6 +9,7 @@ import Foundation
 
 class SubPanelContainer: UIView {}
 
+
 class SubPanelView: UIView {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard !isHidden else { return nil }
@@ -20,48 +21,19 @@ class SubPanelView: UIView {
             }
         }
         if !inside {
-            if let _ = layer.animation(forKey: "show") {
-                layer.removeAnimation(forKey: "show")
-            }
-            if let _ = layer.animation(forKey: "dismiss_1") {
-            } else {
-                let group = CAAnimationGroup()
-                let transAnimation = CASpringAnimation(keyPath: "transform.translation.x")
-                transAnimation.fromValue = 0
-                let isLeft: Bool
-                if let exceptView = exceptView,
-                   let window = exceptView.window {
-                    isLeft = exceptView.convert(exceptView.bounds, to: window).maxX < UIScreen.main.bounds.width / 2
-                } else {
-                    isLeft = false
-                }
-                if isLeft {
-                    transAnimation.toValue = -(exceptView?.frame.size.width ?? 0)
-                } else {
-                    transAnimation.toValue = (exceptView?.frame.size.width ?? 0)
-                }
-                transAnimation.damping = 999
-                transAnimation.stiffness = 999
-                transAnimation.initialVelocity = 30
-                
-                let alpha = CABasicAnimation(keyPath: "opacity")
-                alpha.fromValue = 1
-                alpha.toValue = 0
-                alpha.timingFunction = .init(name: .easeOut)
-                
-                group.animations = [transAnimation, alpha]
-                group.isRemovedOnCompletion = false
-                group.fillMode = .forwards
-                group.delegate = self
-                layer.add(group, forKey: "dismiss_1")
-            }
+            hide()
         }
         return super.hitTest(point, with: event)
     }
     
+    func hide() {
+        isHidden = true
+    }
+    
     func show() {
-        if let _ = layer.animation(forKey: "dismiss_1") {
-            layer.removeAnimation(forKey: "dismiss_1")
+        guard FastboardManager.enablePanelAnimation else {
+            isHidden = false
+            return
         }
         isHidden = false
         setNeedsLayout()
@@ -74,6 +46,8 @@ class SubPanelView: UIView {
         } else {
             offset = -(exceptView?.frame.size.width)!
         }
+        
+        let group = CAAnimationGroup()
         
         let transAnimation = CASpringAnimation(keyPath: "transform.translation.x")
         transAnimation.fromValue = offset

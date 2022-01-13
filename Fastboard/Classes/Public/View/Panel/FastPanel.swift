@@ -69,6 +69,12 @@ public class FastPanel: NSObject {
         }
         if let _ = item as? SubOpsItem {
             deselectAll()
+            // Deselect all other subPanel
+            let otherSubOps = items.compactMap { i -> SubOpsItem? in
+                if i === item { return nil }
+                return i as? SubOpsItem
+            }
+            otherSubOps.forEach { $0.subPanelView.hide() }
         }
         if let colorItem = item as? ColorItem {
             updateSelectedColor(colorItem.color)
