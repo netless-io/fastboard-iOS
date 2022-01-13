@@ -21,8 +21,9 @@ extension UIViewController {
         }
     }
     
-    @objc func exchangedTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.exchangedTraitCollectionDidChange(previousTraitCollection)
+    @objc
+    func _fastboard_exchangedTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self._fastboard_exchangedTraitCollectionDidChange(previousTraitCollection)
         traitCollectionUpdateHandler?(previousTraitCollection)
     }
 }
@@ -37,8 +38,9 @@ extension UIView {
         }
     }
     
-    @objc func exchangedTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        self.exchangedTraitCollectionDidChange(previousTraitCollection)
+    @objc
+    func _fastboard_exchangedTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self._fastboard_exchangedTraitCollectionDidChange(previousTraitCollection)
         traitCollectionUpdateHandler?(previousTraitCollection)
     }
 }
