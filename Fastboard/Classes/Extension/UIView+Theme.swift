@@ -8,7 +8,8 @@
 import UIKit
 
 extension UIView {
-    @objc dynamic var borderColor: UIColor? {
+    @objc
+    dynamic var borderColor: UIColor? {
         get {
             if let color = layer.borderColor {
                 return UIColor(cgColor: color)
@@ -17,6 +18,9 @@ extension UIView {
         }
         set {
             layer.borderColor = newValue?.cgColor
+            self.traitCollectionUpdateHandler = { [weak self] _ in
+                self?.layer.borderColor = newValue?.cgColor
+            }
         }
     }
 }
