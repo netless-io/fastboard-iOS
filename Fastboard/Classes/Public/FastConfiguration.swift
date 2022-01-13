@@ -60,6 +60,8 @@ public class FastConfiguration: NSObject {
         #if DEBUG
         fatalError("use the designed init instead")
         #else
+        self.whiteRoomConfig = WhiteRoomConfig()
+        self.whiteSdkConfiguration = WhiteSdkConfiguration.init(app: "")
         super.init()
         #endif
     }
