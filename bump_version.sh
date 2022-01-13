@@ -4,7 +4,7 @@ len() {
 
 NEWVERSION=$1
 VERSIONLENGTH=$(len $NEWVERSION)
-OLDTAG=$(git describe --abbrev=0)
+OLDTAG=$(git describe --tags --abbrev=0)
 echo 'input version is' $NEWVERSION
 echo 'old Version is' $OLDTAG
 if [ '0' = $VERSIONLENGTH ]; then
