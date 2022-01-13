@@ -39,6 +39,11 @@ public class FastConfiguration: NSObject {
         wsc.userCursor = false
         wsc.useMultiViews = true
         wsc.region = region.toWhiteRegion()
+        if #available(iOS 14.0, *) {
+            if ProcessInfo.processInfo.isiOSAppOnMac {
+                wsc.deviceType = .desktop
+            }
+        }
         whiteSdkConfiguration = wsc
         let wrc = WhiteRoomConfig(uuid: roomUUID, roomToken: roomToken, uid: userUID)
         wrc.disableNewPencil = false
@@ -47,12 +52,6 @@ public class FastConfiguration: NSObject {
         windowParas.containerSizeRatio = NSNumber(value: 1 / FastboardManager.globalFastboardRatio)
         wrc.windowParams = windowParas
         whiteRoomConfig = wrc
-        
-        if #available(iOS 14.0, *) {
-            if ProcessInfo.processInfo.isiOSAppOnMac {
-                whiteSdkConfiguration.deviceType = .desktop
-            }
-        }
         super.init()
     }
     
