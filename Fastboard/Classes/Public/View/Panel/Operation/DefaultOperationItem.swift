@@ -11,32 +11,18 @@ import Whiteboard
 @objc
 public class DefaultOperationItem: NSObject {
     @objc
-    public static var defaultColors: [UIColor] {
-        return [
-            .init(hexString: "#EC3455"),
-            .init(hexString: "#F5AD46"),
-            .init(hexString: "#68AB5D"),
-            .init(hexString: "#32C5FF"),
-            .init(hexString: "#005BF6"),
-            .init(hexString: "#6236FF"),
-            .init(hexString: "#9E51B6"),
-            .init(hexString: "#6D7278")
-        ]
-    }
+    public static var defaultColors: [UIColor] = [
+        .init(hexString: "#EC3455"),
+        .init(hexString: "#F5AD46"),
+        .init(hexString: "#68AB5D"),
+        .init(hexString: "#32C5FF"),
+        .init(hexString: "#005BF6"),
+        .init(hexString: "#6236FF"),
+        .init(hexString: "#9E51B6"),
+        .init(hexString: "#6D7278")
+    ]
     
-    @objc
-    public static var defaultCompactAppliance: [WhiteApplianceNameKey] {
-        [.ApplianceClicker,
-         .ApplianceSelector,
-         .AppliancePencil,
-         .ApplianceEraser,
-         .ApplianceArrow,
-         .ApplianceRectangle,
-         .ApplianceEllipse]
-    }
-    
-    @objc
-    public static func defaultColorItems() -> [FastOperationItem] {
+    static func defaultColorItems() -> [FastOperationItem] {
         defaultColors.map { ColorItem(color: $0) }
     }
     
