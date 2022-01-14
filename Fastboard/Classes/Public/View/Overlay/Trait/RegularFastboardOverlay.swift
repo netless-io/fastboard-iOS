@@ -171,8 +171,22 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay {
     }
     
     public func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
-        // Hide all the other subPanels
-        panels.forEach { $0.value.dismissAllSubPanels(except: item)}
+        if item is SubOpsItem {
+            // Hide all the other subPanels
+            panels.forEach { $0.value.dismissAllSubPanels(except: item)}
+        }
+        if item is ApplianceItem {
+            // If is single, hide all subPanel
+            // If has super, hide other subPanel
+            let superItem = panels
+                .map { $0.value.items }
+                .flatMap { $0 }
+                .compactMap { $0 as? SubOpsItem }
+                .first(where: { $0.subOps.contains { s in
+                    s === item
+                }})
+            panels.forEach { $0.value.dismissAllSubPanels(except: superItem)}
+        }
         
         if item is JustExecutionItem { return }
         if item is ColorItem { return }
