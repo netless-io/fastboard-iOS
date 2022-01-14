@@ -52,3 +52,54 @@ fastView.frame = self.view.bounds;
 ## 接入方式
 ### CocoaPods
 pod ‘Fastboard’
+
+## 界面自定义
+以下的所有的内容在示例工程中均有代码演示
+
+1. 切换主题
+    - 切换预置主题
+        - 白色 Themanager.shared.apply(DefaultTheme.defaultLightTheme)
+        - 黑色 Themanager.shared.apply(DefaultTheme.defaultDarkTheme)
+        - 跟随系统(iOS13以上) Themanager.shared.apply(DefaultTheme.defaultAutoTheme)
+
+    - 切换自定义主题
+    ```swift
+    let white = WhiteboardAssets(whiteboardBackgroundColor: .green, containerColor: .yellow)
+    let control = ControlBarAssets(backgroundColor: .blue, borderColor: .gray, effectStyle: .init(style: .regular))
+    let panel = PanelItemAssets(normalIconColor: .black, selectedIconColor: .systemRed, highlightBgColor: .cyan, subOpsIndicatorColor: .yellow, pageTextLabelColor: .orange)
+    let theme = ThemeAsset(whiteboardAssets: white, controlBarAssets: control, panelItemAssets: panel)
+    ThemeManager.shared.apply(theme)
+    ```
+2. 切换预置画笔颜色
+    - DefaultOperationItem.defaultColors = [.red, .yellow, .blue]
+3. 切换默认布局工具栏
+    - iPhone
+    ```swift
+    CompactFastboardOverlay.defaultCompactAppliance = [
+                .AppliancePencil,
+                .ApplianceSelector,
+                .ApplianceEraser]
+     ```
+     - iPad
+     ```swift
+     var items: [FastOperationItem] = []
+     let shape = SubOpsItem(subOps: RegularFastboardOverlay.shapeItems)
+     items.append(shape)
+     items.append(DefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
+     items.append(DefaultOperationItem.clean())
+     let panel = FastPanel(items: items)
+     RegularFastboardOverlay.customOptionPanel = {
+       return panel
+     }
+     ```       
+4. 调整全局外观
+    - 工具栏方向左边 FastboardView.appearance().operationBarDirection == .left
+    - 工具栏方向右边 FastboardView.appearance().operationBarDirection == .right
+    - 工具栏宽度 ControlBar.appearance().itemWidth = 64
+    - Icon替换 ThemeManager.shared.updateIcons(using: **Some Bundle**)
+5. 主动隐藏工具栏
+    - 全部隐藏 fastboard.setAllPanel(hide: **isHide**)
+    - 特定隐藏 fastboard.setPanelItemHide(item: **key**, hide: **isHide**)
+6. 设置是否可写 fastboard.updateWritable
+7. 设置完全自定义工具栏 FastConfiguration. customOverlay
+8. 设置自定义工具栏布局 fastboard.view.overlay?.invalidAllLayout()
