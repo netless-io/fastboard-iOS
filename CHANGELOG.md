@@ -1,5 +1,9 @@
 # ChangeLog
 
+## [1.0.0-beta.1]
+### 修复
+- 修复翻页错误
+- 修复颜色可以多选的错误
 ## [0.3.4] - 2022-01-14
 ### 新增
 - 主动隐藏SubPanel方法, Fastboard.dismissAllSubPanels
