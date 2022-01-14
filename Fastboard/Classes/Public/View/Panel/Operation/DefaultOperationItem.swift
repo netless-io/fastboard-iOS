@@ -76,7 +76,9 @@ public class DefaultOperationItem: NSObject {
     public static func previousPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_previous")!,
                           action: { room, _ in
-            room.pptPreviousStep()
+            let index = room.sceneState.index
+            let previousIndex = UInt(index - 1)
+            room.setSceneIndex(previousIndex, completionHandler: nil)
         }, identifier: DefaultOperationIdentifier.operationType(.previousPage)!.identifier)
     }
     
@@ -84,7 +86,9 @@ public class DefaultOperationItem: NSObject {
     public static func nextPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_next")!,
                           action: { room, _ in
-            room.pptNextStep()
+            let index = room.sceneState.index
+            let nextIndex = UInt(index + 1)
+            room.setSceneIndex(nextIndex, completionHandler: nil)
         }, identifier: DefaultOperationIdentifier.operationType(.nextPage)!.identifier)
     }
     
