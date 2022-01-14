@@ -276,9 +276,7 @@ public class SubOpsItem: NSObject, FastOperationItem {
     
     func updateSelectedColorItem() {
         updateSelectedColorAsset()
-        if !containsSelectableAppliance {
-            subPanelView.deselectAll()
-        }
+        deselectAllColorItems()
         (selectedColorItem?.associatedView as? UIButton)?.isSelected = true
     }
     
