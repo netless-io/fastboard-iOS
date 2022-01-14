@@ -21,11 +21,12 @@ Development environment: Xcode 12+
 ### Swift
 ```swift
 // Create fastboard
-let fastboard = FastBoardSDK.createFastboardWith(appId: “***”,
-                                                 roomUUID: “***”,
-                                                 roomToken: “***”,
-                                                 userUID: “***”)
-        
+let config = FastConfiguration(appIdentifier: *,
+                               roomUUID: *,
+                               mToken: *,
+                               region: *,
+                               userUID: *)                              
+let fastboard = Fastboard(configuration: config)
 fastboard.delegate = self
 // Add to view hierarchy
 let fastboardView = fastboard.view
@@ -36,14 +37,17 @@ fastboard.joinRoom()
 // Hold the object
 self.fastboard = fastboard
 ```
+
+```
 ### OC
 ```ObjectiveC
 // Create and hold fastboard
-_fastboard = [FastBoardSDK createFastboardWithAppId:@“*”
-                                  roomUUID: @“*”
-                                 roomToken: @“*”
-                                   userUID:@"some-unique"
-                       customFastBoardView:nil];
+FastConfiguration* config = [[FastConfiguration alloc] initWithAppIdentifier:*]
+                                                                    roomUUID:*
+                                                                    roomToken:*
+                                                                    region: *
+                                                                    userUID:*];
+_fastboard = [[Fastboard alloc] initWithConfiguration:config];
 FastboardView *fastView = _fastboard.view;
 _fastboard.delegate = self;
 // join room
