@@ -62,6 +62,11 @@ public class Fastboard: NSObject {
     }
     
     @objc
+    public func disconnectRoom() {
+        room?.disconnect(nil)
+    }
+    
+    @objc
     public func updateWritable(_ writable: Bool, completion: ((Error?)->Void)?) {
         room?.setWritable(writable, completionHandler: { [weak room] success, error in
             if success, writable {

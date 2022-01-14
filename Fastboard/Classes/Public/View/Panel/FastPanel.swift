@@ -69,12 +69,7 @@ public class FastPanel: NSObject {
         }
         if let _ = item as? SubOpsItem {
             deselectAll()
-            // Deselect all other subPanel
-            let otherSubOps = items.compactMap { i -> SubOpsItem? in
-                if i === item { return nil }
-                return i as? SubOpsItem
-            }
-            otherSubOps.forEach { $0.subPanelView.hide() }
+            dismissAllSubPanels(except: item)
         }
         if let colorItem = item as? ColorItem {
             updateSelectedColor(colorItem.color)
@@ -83,6 +78,17 @@ public class FastPanel: NSObject {
             updateStrokeWidth(strokeWidth.value)
         }
         delegate?.itemWillBeExecution(fastPanel: self, item: item)
+    }
+    
+    /// - Parameter except: The operation's associate view will not be dismissed
+    @objc
+    func dismissAllSubPanels(except: FastOperationItem?) {
+        // Deselect all other subPanel
+        let otherSubOps = items.compactMap { i -> SubOpsItem? in
+            if i === except { return nil }
+            return i as? SubOpsItem
+        }
+        otherSubOps.forEach { $0.subPanelView.hide() }
     }
     
     @objc

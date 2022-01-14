@@ -9,6 +9,11 @@ import Foundation
 
 extension Fastboard: FastPanelControl {
     @objc
+    public func dismissAllSubPanels() {
+        view.dismissAllSubPanels()
+    }
+    
+    @objc
     public func setAllPanel(hide: Bool) {
         view.setAllPanel(hide: hide)
     }

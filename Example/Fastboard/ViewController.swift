@@ -41,7 +41,7 @@ extension WhiteApplianceShapeTypeKey: CaseIterable {
 
 class ViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        .landscapeRight
+        .landscape
     }
     
     var fastboard: Fastboard!

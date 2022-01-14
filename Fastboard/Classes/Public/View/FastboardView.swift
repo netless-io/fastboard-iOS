@@ -64,6 +64,11 @@ public class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
     }
     
     @objc
+    public func dismissAllSubPanels() {
+        overlay?.dismissAllSubPanels()
+    }
+    
+    @objc
     public func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
         overlay?.itemWillBeExecution(fastPanel: fastPanel, item: item)
     }

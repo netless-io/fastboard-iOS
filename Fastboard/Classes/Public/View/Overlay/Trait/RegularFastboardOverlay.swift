@@ -10,6 +10,11 @@ import Whiteboard
 
 public class RegularFastboardOverlay: NSObject, FastboardOverlay {
     @objc
+    public func dismissAllSubPanels() {
+        panels.forEach { $0.value.dismissAllSubPanels(except: nil)}
+    }
+    
+    @objc
     public static var customOptionPanel: (()->FastPanel)?
     
     @objc

@@ -9,6 +9,10 @@ import Foundation
 import Whiteboard
 
 public class CompactFastboardOverlay: NSObject, FastboardOverlay {
+    public func dismissAllSubPanels() {
+        panels.forEach { $0.value.dismissAllSubPanels(except: nil)}
+    }
+    
     @objc
     public static var defaultCompactAppliance: [WhiteApplianceNameKey] = [
         .ApplianceClicker,

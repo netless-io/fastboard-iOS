@@ -12,6 +12,10 @@ import Fastboard
 import SnapKit
 
 class CustomFastboardOverlay: FastboardOverlay {
+    func dismissAllSubPanels() {
+        return
+    }
+    
     func invalidAllLayout() {
         return
     }
