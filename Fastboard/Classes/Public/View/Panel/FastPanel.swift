@@ -69,7 +69,6 @@ public class FastPanel: NSObject {
         }
         if let _ = item as? SubOpsItem {
             deselectAll()
-            dismissAllSubPanels(except: item)
         }
         if let colorItem = item as? ColorItem {
             updateSelectedColor(colorItem.color)

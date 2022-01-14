@@ -171,6 +171,9 @@ public class CompactFastboardOverlay: NSObject, FastboardOverlay {
     }
     
     public func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
+        // Hide all the other subPanels
+        panels.forEach { $0.value.dismissAllSubPanels(except: item)}
+        
         if item is JustExecutionItem { return }
         if item is ColorItem { return }
         if item is SliderOperationItem { return }
