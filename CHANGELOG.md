@@ -1,8 +1,10 @@
 # ChangeLog
 
-## [0.3.3] - 2022-01-14
+## [0.3.4] - 2022-01-14
 ### 新增
 - 主动隐藏SubPanel方法, Fastboard.dismissAllSubPanels
+### 优化
+- 优化默认SubPanel动画
 ## [0.3.2] - 2022-01-13
 ### 新增
 - 支持自定义布局
