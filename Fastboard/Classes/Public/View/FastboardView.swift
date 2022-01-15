@@ -9,13 +9,19 @@ import Foundation
 import Whiteboard
 import UIKit
 
-public class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
+public class FastboardView: UIView, FastPanelControl {
     @objc
     public dynamic var operationBarDirection: OperationBarDirection = .left {
         didSet {
             overlay?.updateControlBarLayout(direction: operationBarDirection)
         }
     }
+    
+    /// Store the gestures about pencil
+    var webPencilableGesture: NSHashTable<UIGestureRecognizer> = .weakObjects()
+    
+    /// Is whiteboard only drawable with pencil
+    var isPencilDrawOnly: Bool = false
     
     @objc
     public var overlay: FastboardOverlay?
@@ -66,10 +72,5 @@ public class FastboardView: UIView, FastPanelDelegate, FastPanelControl {
     @objc
     public func dismissAllSubPanels() {
         overlay?.dismissAllSubPanels()
-    }
-    
-    @objc
-    public func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
-        overlay?.itemWillBeExecution(fastPanel: fastPanel, item: item)
     }
 }

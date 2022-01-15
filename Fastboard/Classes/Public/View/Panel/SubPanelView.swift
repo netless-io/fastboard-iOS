@@ -27,6 +27,9 @@ class SubPanelView: UIView {
     }
     
     func hide() {
+        if let _ = layer.animation(forKey: "show") {
+            layer.removeAnimation(forKey: "show")
+        }
         isHidden = true
     }
     
@@ -35,7 +38,6 @@ class SubPanelView: UIView {
             isHidden = false
             return
         }
-        isHidden = false
         setNeedsLayout()
         layoutIfNeeded()
         // Spring Animation
@@ -47,14 +49,12 @@ class SubPanelView: UIView {
             offset = -(exceptView?.frame.size.width)!
         }
         
-        let group = CAAnimationGroup()
-        
         let transAnimation = CASpringAnimation(keyPath: "transform.translation.x")
         transAnimation.fromValue = offset
         transAnimation.toValue = 0
-        transAnimation.damping = 999
-        transAnimation.stiffness = 999
-        transAnimation.initialVelocity = 10
+        transAnimation.damping = 100
+        transAnimation.stiffness = 1000
+        transAnimation.initialVelocity = 0
         transAnimation.isRemovedOnCompletion = false
         transAnimation.fillMode = .forwards
         transAnimation.delegate = self
@@ -171,6 +171,12 @@ class SubPanelView: UIView {
 }
 
 extension SubPanelView: CAAnimationDelegate {
+    func animationDidStart(_ anim: CAAnimation) {
+        if let _ = layer.animation(forKey: "show") {
+            isHidden = false
+        }
+    }
+    
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
             if layer.animation(forKey: "show") === anim {

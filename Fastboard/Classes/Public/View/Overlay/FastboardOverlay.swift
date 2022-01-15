@@ -15,7 +15,7 @@ public enum OperationBarDirection: Int {
 }
 
 @objc
-public protocol FastboardOverlay: FastPanelControl, FastPanelDelegate {
+public protocol FastboardOverlay: FastPanelControl {
     func setupWith(room: WhiteRoom, fastboardView: FastboardView, direction: OperationBarDirection)
     
     func invalidAllLayout()
@@ -35,4 +35,8 @@ public protocol FastboardOverlay: FastPanelControl, FastPanelDelegate {
     func updateRedoEnable(_ enable: Bool)
     
     func updateBoxState(_ state: WhiteWindowBoxState?)
+    
+    @available(iOS 12.1, *)
+    @objc
+    optional func respondToPencilTap(_ tap: UIPencilPreferredAction)
 }

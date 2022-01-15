@@ -8,7 +8,7 @@
 import Foundation
 import Whiteboard
 
-public class CompactFastboardOverlay: NSObject, FastboardOverlay {
+public class CompactFastboardOverlay: NSObject, FastboardOverlay, FastPanelDelegate {
     public func dismissAllSubPanels() {
         panels.forEach { $0.value.dismissAllSubPanels(except: nil)}
     }

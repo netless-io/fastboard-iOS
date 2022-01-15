@@ -27,6 +27,7 @@ public class Fastboard: NSObject {
                 view.overlay?.setupWith(room: room, fastboardView: self.view, direction: view.operationBarDirection)
                 delegate?.fastboardDidSetupOverlay?(self, overlay: view.overlay)
             }
+            view.prepareForPencil()
             initStateAfterJoinRoom()
         }
     }
@@ -105,6 +106,9 @@ public class Fastboard: NSObject {
         guard let state = room?.state else { return }
         if let appliance = state.memberState?.currentApplianceName {
             view.overlay?.updateUIWithInitAppliance(appliance, shape: state.memberState?.shapeType)
+            if FastboardManager.followSystemPencilBehavoir {
+                updatePencilBehaviorAfterApplianceChanged(appliance)
+            }
         } else {
             view.overlay?.updateUIWithInitAppliance(nil, shape: nil)
         }
@@ -137,12 +141,11 @@ public class Fastboard: NSObject {
         let fastboardOverlay = configuration.customOverlay ?? defaultOverlay()
         let fastboardView = FastboardView(overlay: fastboardOverlay)
         self.init(view: fastboardView, roomConfig: configuration.whiteRoomConfig)
-        
-        
         let whiteSDK = WhiteSDK(whiteBoardView: fastboardView.whiteboardView,
                                 config: configuration.whiteSdkConfiguration,
                                 commonCallbackDelegate: sdkDelegateProxy)
         self.whiteSDK = whiteSDK
+        prepareForPencil()
     }
     
     init(view: FastboardView, roomConfig: WhiteRoomConfig){
@@ -166,6 +169,11 @@ extension Fastboard: WhiteRoomCallbackDelegate {
     }
     
     public func fireRoomStateChanged(_ modifyState: WhiteRoomState!) {
+        if FastboardManager.followSystemPencilBehavoir {
+            if let appliance = modifyState.memberState?.currentApplianceName {
+                updatePencilBehaviorAfterApplianceChanged(appliance)
+            }
+        }
         if let sceneState = modifyState.sceneState {
             view.overlay?.updateSceneState(sceneState)
         }

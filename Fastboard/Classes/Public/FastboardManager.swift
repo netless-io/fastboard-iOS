@@ -8,6 +8,8 @@
 import UIKit
 import Whiteboard
 
+let pencilBehaviorUpdateNotificationName = Notification.Name("pencilBehaviorUpdateNotificationName")
+
 public class FastboardManager: NSObject {
     /// Change this to update the whiteRoom ratio and whiteboardView ratio
     @objc
@@ -15,4 +17,11 @@ public class FastboardManager: NSObject {
     
     /// Enable default panel animation, default is true
     public static var enablePanelAnimation: Bool = true
+    
+    /// Change this value to indicate if pencil will follow the system preferrence
+    public static var followSystemPencilBehavoir = true {
+        didSet {
+            NotificationCenter.default.post(name: pencilBehaviorUpdateNotificationName, object: nil)
+        }
+    }
 }

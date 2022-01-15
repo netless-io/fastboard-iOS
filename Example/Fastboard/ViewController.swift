@@ -295,6 +295,12 @@ class ViewController: UIViewController {
                 })
             }
         }),
+        ("pencil", {
+            FastboardManager.followSystemPencilBehavoir = !FastboardManager.followSystemPencilBehavoir
+            if let btn = self.stack.arrangedSubviews[self.stack.arrangedSubviews.count - 2] as? UIButton {
+                btn.setTitle("P \(FastboardManager.followSystemPencilBehavoir)", for: .normal)
+            }
+        }),
         ("reload", {
             UIApplication.shared.keyWindow?.rootViewController = ViewController()
         }),

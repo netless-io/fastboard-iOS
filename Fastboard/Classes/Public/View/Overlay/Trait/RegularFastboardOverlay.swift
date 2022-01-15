@@ -8,7 +8,94 @@
 import Foundation
 import Whiteboard
 
-public class RegularFastboardOverlay: NSObject, FastboardOverlay {
+public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDelegate {
+    private var currentAppliance: FastOperationItem? {
+        didSet {
+            guard currentAppliance !== oldValue else { return }
+            previousAppliance = oldValue
+        }
+    }
+    private var previousAppliance: FastOperationItem? {
+        didSet {
+            print("previous is ", previousAppliance?.identifier)
+        }
+    }
+    private var exchangeForEraser: FastOperationItem?
+    
+    @available(iOS 12.1, *)
+    public func respondToPencilTap(_ tap: UIPencilPreferredAction) {
+        guard let currentAppliance = currentAppliance else { return }
+        func isCurrentEraser() -> Bool {
+            currentAppliance.identifier?.contains(identifierFor(appliance: .ApplianceEraser, withShapeKey: nil)) ?? false
+        }
+        func active(item: FastOperationItem, withSubPanel: Bool) {
+            if let a = item as? ApplianceItem {
+                a.onClick(a.button)
+            }
+            if let s = item as? SubOpsItem, let btn = s.associatedView as? UIButton {
+                s.onClick(btn)
+                if !withSubPanel {
+                    // Do not show panel
+                    s.subPanelView.hide()
+                }
+            }
+        }
+        switch tap {
+        case .ignore:
+            return
+        case .switchEraser:
+            // If is eraser
+            if isCurrentEraser() {
+                if let exchangeForEraser = exchangeForEraser {
+                    active(item: exchangeForEraser, withSubPanel: false)
+                } else {
+                    if let previousAppliance = previousAppliance {
+                        exchangeForEraser = previousAppliance
+                        active(item: previousAppliance, withSubPanel: false)
+                    } else {
+                        // Set pencil as exchang
+                        let pencilId = identifierFor(appliance: .AppliancePencil, withShapeKey: nil)
+                        if let pencil = operationPanel.items.first(where: {
+                            $0.identifier?.contains(pencilId) ?? false
+                        }) {
+                            exchangeForEraser = pencil
+                            active(item: pencil, withSubPanel: false)
+                        }
+                    }
+                }
+            } else {
+                // Set exchange for eraser
+                exchangeForEraser = currentAppliance
+                // Switch to eraser
+                if let eraser = operationPanel.items.compactMap({ $0 as? ApplianceItem }).first(where: { $0.identifier == identifierFor(appliance: .ApplianceEraser, withShapeKey: nil)}) {
+                    eraser.onClick(eraser.button)
+                }
+            }
+        case .switchPrevious:
+            if let previousAppliance = previousAppliance {
+                active(item: previousAppliance, withSubPanel: false)
+            }
+        case .showColorPalette:
+            if let sub = currentAppliance as? SubOpsItem {
+                if sub.subPanelView.isHidden {
+                    sub.subPanelView.show()
+                } else {
+                    sub.subPanelView.hide()
+                }
+            } else {
+                // Select to pencil
+                let pencilId = identifierFor(appliance: .AppliancePencil, withShapeKey: nil)
+                if let pencil = operationPanel.items.first(where: {
+                    $0.identifier?.contains(pencilId) ?? false
+                }) {
+                    active(item: pencil, withSubPanel: true)
+                }
+            }
+        @unknown default:
+            return
+        }
+    }
+    
     @objc
     public func dismissAllSubPanels() {
         panels.forEach { $0.value.dismissAllSubPanels(except: nil)}
@@ -122,6 +209,11 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay {
             operationPanel.updateWithApplianceOutside(appliance, shape: shape)
             
             let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
+            
+            if let item = operationPanel.items.first(where: { $0.identifier?.contains(identifier) ?? false }) {
+                currentAppliance = item
+            }
+            
             if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) {
                 updateDisplayStyleFromNewOperationItem(item)
             }
@@ -171,6 +263,12 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay {
     }
     
     public func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
+        if let appliance = item as? ApplianceItem {
+            currentAppliance = appliance
+        } else if let sub = item as? SubOpsItem, sub.containsSelectableAppliance {
+            currentAppliance = sub
+        }
+        
         if item is SubOpsItem {
             // Hide all the other subPanels
             panels.forEach { $0.value.dismissAllSubPanels(except: item)}
