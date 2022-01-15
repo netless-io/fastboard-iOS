@@ -12,7 +12,16 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
     private var currentAppliance: FastOperationItem? {
         didSet {
             guard currentAppliance !== oldValue else { return }
-            previousAppliance = oldValue
+            
+            if let sub = oldValue as? SubOpsItem {
+                if previousAppliance !== sub.selectedApplianceItem {
+                    previousAppliance = sub.selectedApplianceItem
+                }
+            } else if let op = oldValue as? ApplianceItem {
+                if previousAppliance !== op {
+                    previousAppliance = op
+                }
+            }
         }
     }
     private var previousAppliance: FastOperationItem? {
@@ -29,16 +38,30 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
             currentAppliance.identifier?.contains(identifierFor(appliance: .ApplianceEraser, withShapeKey: nil)) ?? false
         }
         func active(item: FastOperationItem, withSubPanel: Bool) {
-            if let a = item as? ApplianceItem {
-                a.onClick(a.button)
-            }
-            if let s = item as? SubOpsItem, let btn = s.associatedView as? UIButton {
-                s.onClick(btn)
+            func performSub(_ sub: SubOpsItem) {
+                sub.onClick(sub.associatedView as! UIButton)
                 if !withSubPanel {
                     // Do not show panel
-                    s.subPanelView.hide()
+                    sub.subPanelView.hide()
                 }
             }
+            
+            if let a = item as? ApplianceItem {
+                a.onClick(a.button)
+                return
+            }
+            if let sub = item as? SubOpsItem {
+                performSub(sub)
+                return
+            }
+            
+        }
+        
+        func pencilItem() -> FastOperationItem? {
+            let pencilId = identifierFor(appliance: .AppliancePencil, withShapeKey: nil)
+            return operationPanel.items.first(where: {
+                $0.identifier?.contains(pencilId) ?? false
+            })
         }
         switch tap {
         case .ignore:
@@ -54,10 +77,7 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
                         active(item: previousAppliance, withSubPanel: false)
                     } else {
                         // Set pencil as exchang
-                        let pencilId = identifierFor(appliance: .AppliancePencil, withShapeKey: nil)
-                        if let pencil = operationPanel.items.first(where: {
-                            $0.identifier?.contains(pencilId) ?? false
-                        }) {
+                        if let pencil = pencilItem() {
                             exchangeForEraser = pencil
                             active(item: pencil, withSubPanel: false)
                         }
@@ -74,14 +94,29 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
         case .switchPrevious:
             if let previousAppliance = previousAppliance {
                 active(item: previousAppliance, withSubPanel: false)
+            } else {
+                if let pencil = pencilItem() {
+                    active(item: pencil, withSubPanel: false)
+                }
             }
         case .showColorPalette:
-            if let sub = currentAppliance as? SubOpsItem {
-                if sub.subPanelView.isHidden {
+            func performShowColorPalette(on sub: SubOpsItem) {
+                if sub.subPanelView.superview == nil {
+                    sub.setupSubPanelViewHierarchy()
                     sub.subPanelView.show()
                 } else {
-                    sub.subPanelView.hide()
+                    if sub.subPanelView.isHidden {
+                        sub.subPanelView.show()
+                    } else {
+                        sub.subPanelView.hide()
+                    }
                 }
+            }
+            
+            if let sub = currentAppliance as? SubOpsItem {
+                performShowColorPalette(on: sub)
+            } else if let sub = operationPanel.items.compactMap ({ $0 as? SubOpsItem }).first(where: { $0.identifier?.contains(currentAppliance.identifier ?? "") ?? false}){
+                performShowColorPalette(on: sub)
             } else {
                 // Select to pencil
                 let pencilId = identifierFor(appliance: .AppliancePencil, withShapeKey: nil)

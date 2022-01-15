@@ -300,21 +300,7 @@ public class SubOpsItem: NSObject, FastOperationItem {
         })
     }
     
-    @objc func onClick(_ sender: UIButton) {
-        guard let room = room else { return }
-        interrupter?(self)
-        selectedApplianceItem?.action(room, nil)
-        
-        // Update self UI
-        if let _ = selectedApplianceItem {
-            updateSelectedApplianceItem()
-        }
-        if let _ = selectedColorItem {
-            updateSelectedColorItem()
-        }
-        
-        (associatedView as? UIButton)?.isSelected = true
-        
+    func setupSubPanelViewHierarchy() {
         func loopForFastboardView(from: UIView) -> FastboardView? {
             var current: UIView? = from
             while current != nil {
@@ -333,7 +319,25 @@ public class SubOpsItem: NSObject, FastOperationItem {
             } else {
                 container?.addSubview(subPanelView)
             }
-            subPanelView.exceptView = associatedView
+        }
+    }
+    
+    @objc func onClick(_ sender: UIButton) {
+        guard let room = room else { return }
+        interrupter?(self)
+        selectedApplianceItem?.action(room, nil)
+        
+        // Update self UI
+        if let _ = selectedApplianceItem {
+            updateSelectedApplianceItem()
+        }
+        if let _ = selectedColorItem {
+            updateSelectedColorItem()
+        }
+        (associatedView as? UIButton)?.isSelected = true
+
+        if subPanelView.superview == nil {
+            setupSubPanelViewHierarchy()
             subPanelView.show()
         } else {
             if subPanelView.isHidden {
@@ -397,14 +401,15 @@ public class SubOpsItem: NSObject, FastOperationItem {
         self.interrupter = interrupter
         self.associatedView = button
         
-        let subOpsView = self.enableSubOps
-            .map { subOp -> UIView in
-                subOp.room = room
-                return subOp.buildView { [weak self] item in
-                    self?.subItemExecuted(subItem: item)
-                }
+        subOps.forEach {
+            $0.room = room
+            _ = $0.buildView { [weak self] item in
+                self?.subItemExecuted(subItem: item)
             }
-        self.subPanelView.setupFromItemViews(views: subOpsView)
+        }
+        let showedSubOpsView = self.enableSubOps.map { $0.associatedView! }
+        self.subPanelView.setupFromItemViews(views: showedSubOpsView)
+        self.subPanelView.exceptView = associatedView
         return button
     }
 }

@@ -62,7 +62,7 @@ class SubPanelView: UIView {
     }
     
     var animationOffset: CGFloat = 0
-    var exceptView: UIView?
+    weak var exceptView: UIView?
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(containerView)
