@@ -46,6 +46,7 @@ class FastboardPencilDrawHandler: NSObject {
     weak var room: WhiteRoom?
     fileprivate var isPencilTouch = false
     fileprivate var removedAppliance: WhiteApplianceNameKey?
+    
     /// Temporarily removed appliance will trigger an async roomApplianceUpdate callback
     /// To distinguish from manual changing and temporally removed, the first callback will be dropped
     fileprivate var shouldDropFirstUpdate = false
