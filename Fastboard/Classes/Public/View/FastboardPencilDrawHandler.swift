@@ -46,23 +46,32 @@ class FastboardPencilDrawHandler: NSObject {
     weak var room: WhiteRoom?
     fileprivate var isPencilTouch = false
     fileprivate var removedAppliance: WhiteApplianceNameKey?
+    /// Temporarily removed appliance will trigger an async roomApplianceUpdate callback
+    /// To distinguish from manual changing and temporally removed, the first callback will be dropped
+    fileprivate var shouldDropFirstUpdate = false
 
     /// The function will be called after room appliance was manual changed
     /// To notify that appliance status is changed
     /// If appliance changed outside, then the removed status should be invalidate
-    func roomAppliaceDidUpdate() {
-        if let removedAppliance = removedAppliance {
-            if room?.memberState.currentApplianceName == removedAppliance {
-                self.removedAppliance = nil
-            }
+    func roomApplianceDidUpdate() {
+        guard let removedAppliance = removedAppliance
+        else { return }
+        if shouldDropFirstUpdate {
+            shouldDropFirstUpdate = false
+            return
+        }
+        if room?.memberState.currentApplianceName != removedAppliance {
+            self.removedAppliance = nil
         }
     }
     
-    /// Remove the appliance temporaly for touch direct on screen
+    /// Remove the appliance temporally or touch direct on screen
     /// It will recover after the pencil touch
     func removeApplianceIfNeed() {
-        guard let current = room?.memberState.currentApplianceName else { return }
+        guard removedAppliance == nil else { return }
+        guard let current = room?.state.memberState?.currentApplianceName else { return }
         if current.drawable {
+            shouldDropFirstUpdate = true
             removedAppliance = current
             let state = WhiteMemberState()
             state.currentApplianceName = .ApplianceClicker
@@ -70,10 +79,10 @@ class FastboardPencilDrawHandler: NSObject {
         }
     }
     
-    /// Try recover room appliance
-    /// - Pencil touch
-    /// - Room will disconnect
-    /// - App will terminate
+    /// Try recover room appliance from events:
+    /// - 1. Pencil touch
+    /// - 2. Room will disconnect
+    /// - 3. App will terminate
     func recoverApplianceFromTempRemove() {
         if let removedAppliance = removedAppliance {
             let state = WhiteMemberState()

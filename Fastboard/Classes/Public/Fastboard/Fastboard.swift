@@ -177,7 +177,7 @@ extension Fastboard: WhiteRoomCallbackDelegate {
     
     public func fireRoomStateChanged(_ modifyState: WhiteRoomState!) {
         if let _ = modifyState.memberState {
-            view.pencilHandler?.roomAppliaceDidUpdate()
+            view.pencilHandler?.roomApplianceDidUpdate()
         }
         if let sceneState = modifyState.sceneState {
             view.overlay?.updateSceneState(sceneState)
