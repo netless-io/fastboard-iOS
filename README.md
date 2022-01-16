@@ -16,10 +16,18 @@
   - [调整全局外观](#调整全局外观)
   - [工具栏显示隐藏](#工具栏显示隐藏)
   - [自定义工具栏](#自定义工具栏)
+  - [跟随Pencil行为](#跟随pencil行为)
 
 # Fastboard
-快速创建iOS端的白板界面，支持控制界面自定义。
 <p><a href="./README-En.md">En</a></p>
+
+快速创建带有操作面板的互动白板界面
+
+支持快速配置操作面板外观
+
+内置常用互动工具，根据需要自由选择
+
+支持跟随ApplePencil系统行为
 
 # 快速体验
 克隆仓库，并且在终端中进入Example目录，执行`pod install`
@@ -161,7 +169,7 @@ public func disconnectRoom()
   fastboard.setPanelItemHide(item: **key**, hide: **isHide**)
   ```
 ## 自定义工具栏
-- 自定义工具栏
+- 使用自己的工具栏（不推荐)
   ```swift
   let config = FastConfiguration(appIdentifier: *,
                                roomUUID: *,
@@ -174,8 +182,14 @@ public func disconnectRoom()
   config.customOverlay = customOverlay
   // 生成Fastboard
   ```
-- 重写工具栏约束
+- 自定义工具栏约束
   ```swift
   // 使默认布局失效
   public func invalidAllLayout()
+  ```
+
+## 跟随Pencil行为
+- 选择Pencil行为
+  ```swift
+  FastboardManager.followSystemPencilBehavior
   ```

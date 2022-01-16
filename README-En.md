@@ -16,9 +16,17 @@
   - [Adjust global appearance](#adjust-global-appearance)
   - [Overlay show hide](#overlay-show-hide)
   - [Customized overlay](#customized-overlay)
+  - [Follow ApplePencil preferred behavior](#follow-applepencil-preferred-behavior)
 # Fastboard
-Quickly create a whiteboard interface for iOS and support control interface customization.
 <p><a href="./README.md">中文</a></p>
+
+Quickly create interactive whiteboard interfaces with operator panels
+
+Quickly configure the appearance of the operator panel
+
+Built-in common interactive tools, choose freely as needed
+
+Support for following ApplePencil system behavior
 
 # Quick Start
 
@@ -161,7 +169,7 @@ All of the following are demonstrated in code in the sample project
   fastboard.setPanelItemHide(item: **key**, hide: **isHide**)
   ```
 ## Customized overlay
-- Customized overlay
+- Use your own overlay (not recommended)
   ```swift
   let config = FastConfiguration(appIdentifier: *,
                                roomUUID: *,
@@ -179,3 +187,9 @@ All of the following are demonstrated in code in the sample project
   // invalid all overlay layout
   public func invalidAllLayout()
   ```
+
+## Follow ApplePencil preferred behavior
+- Choose whether followSystemPencilBehavior
+```swift
+  FastboardManager.followSystemPencilBehavior
+```
