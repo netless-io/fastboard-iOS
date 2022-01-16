@@ -296,9 +296,9 @@ class ViewController: UIViewController {
             }
         }),
         ("pencil", {
-            FastboardManager.followSystemPencilBehavoir = !FastboardManager.followSystemPencilBehavoir
+            FastboardManager.followSystemPencilBehavior = !FastboardManager.followSystemPencilBehavior
             if let btn = self.stack.arrangedSubviews[self.stack.arrangedSubviews.count - 2] as? UIButton {
-                btn.setTitle("P \(FastboardManager.followSystemPencilBehavoir)", for: .normal)
+                btn.setTitle("P \(FastboardManager.followSystemPencilBehavior)", for: .normal)
             }
         }),
         ("reload", {

@@ -9,26 +9,15 @@ import Foundation
 import Whiteboard
 
 public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDelegate {
-    private var currentAppliance: FastOperationItem? {
+    private var currentAppliance: ApplianceItem? {
         didSet {
             guard currentAppliance !== oldValue else { return }
-            
-            if let sub = oldValue as? SubOpsItem {
-                if previousAppliance !== sub.selectedApplianceItem {
-                    previousAppliance = sub.selectedApplianceItem
-                }
-            } else if let op = oldValue as? ApplianceItem {
-                if previousAppliance !== op {
-                    previousAppliance = op
-                }
+            if previousAppliance !== oldValue {
+                previousAppliance = oldValue
             }
         }
     }
-    private var previousAppliance: FastOperationItem? {
-        didSet {
-            print("previous is ", previousAppliance?.identifier)
-        }
-    }
+    private var previousAppliance: ApplianceItem?
     private var exchangeForEraser: FastOperationItem?
     
     @available(iOS 12.1, *)
@@ -113,9 +102,7 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
                 }
             }
             
-            if let sub = currentAppliance as? SubOpsItem {
-                performShowColorPalette(on: sub)
-            } else if let sub = operationPanel.items.compactMap ({ $0 as? SubOpsItem }).first(where: { $0.identifier?.contains(currentAppliance.identifier ?? "") ?? false}){
+            if let sub = operationPanel.items.compactMap ({ $0 as? SubOpsItem }).first(where: { $0.identifier?.contains(currentAppliance.identifier ?? "") ?? false}){
                 performShowColorPalette(on: sub)
             } else {
                 // Select to pencil
@@ -245,7 +232,7 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
             
             let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
             
-            if let item = operationPanel.items.first(where: { $0.identifier?.contains(identifier) ?? false }) {
+            if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) as? ApplianceItem {
                 currentAppliance = item
             }
             
@@ -301,7 +288,7 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
         if let appliance = item as? ApplianceItem {
             currentAppliance = appliance
         } else if let sub = item as? SubOpsItem, sub.containsSelectableAppliance {
-            currentAppliance = sub
+            currentAppliance = sub.selectedApplianceItem
         }
         
         if item is SubOpsItem {

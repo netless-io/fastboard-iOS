@@ -21,7 +21,13 @@ public class FastboardView: UIView, FastPanelControl {
     var webPencilableGesture: NSHashTable<UIGestureRecognizer> = .weakObjects()
     
     /// Is whiteboard only drawable with pencil
-    var isPencilDrawOnly: Bool = false
+    var isPencilDrawOnly: Bool = false {
+        didSet {
+            pencilHandler?.drawOnlyPencil = isPencilDrawOnly
+        }
+    }
+    
+    var pencilHandler: FastboardPencilDrawHandler?
     
     @objc
     public var overlay: FastboardOverlay?

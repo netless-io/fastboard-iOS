@@ -27,8 +27,10 @@ public class Fastboard: NSObject {
                 view.overlay?.setupWith(room: room, fastboardView: self.view, direction: view.operationBarDirection)
                 delegate?.fastboardDidSetupOverlay?(self, overlay: view.overlay)
             }
-            view.prepareForPencil()
             initStateAfterJoinRoom()
+            if !view.traitCollection.hasCompact {
+                view.prepareForPencil()
+            }
         }
     }
     
@@ -64,6 +66,7 @@ public class Fastboard: NSObject {
     
     @objc
     public func disconnectRoom() {
+        view.pencilHandler?.recoverApplianceFromTempRemove()
         room?.disconnect(nil)
     }
     
@@ -106,9 +109,6 @@ public class Fastboard: NSObject {
         guard let state = room?.state else { return }
         if let appliance = state.memberState?.currentApplianceName {
             view.overlay?.updateUIWithInitAppliance(appliance, shape: state.memberState?.shapeType)
-            if FastboardManager.followSystemPencilBehavoir {
-                updatePencilBehaviorAfterApplianceChanged(appliance)
-            }
         } else {
             view.overlay?.updateUIWithInitAppliance(nil, shape: nil)
         }
@@ -140,17 +140,24 @@ public class Fastboard: NSObject {
         }
         let fastboardOverlay = configuration.customOverlay ?? defaultOverlay()
         let fastboardView = FastboardView(overlay: fastboardOverlay)
-        self.init(view: fastboardView, roomConfig: configuration.whiteRoomConfig)
-        let whiteSDK = WhiteSDK(whiteBoardView: fastboardView.whiteboardView,
-                                config: configuration.whiteSdkConfiguration,
-                                commonCallbackDelegate: sdkDelegateProxy)
-        self.whiteSDK = whiteSDK
-        prepareForPencil()
+        self.init(view: fastboardView,
+                  roomConfig: configuration.whiteRoomConfig,
+                  sdkConfig: configuration.whiteSdkConfiguration)
     }
     
-    init(view: FastboardView, roomConfig: WhiteRoomConfig){
+    init(view: FastboardView,
+         roomConfig: WhiteRoomConfig,
+         sdkConfig: WhiteSdkConfiguration){
         self.view = view
         self.roomConfig = roomConfig
+        super.init()
+        let whiteSDK = WhiteSDK(whiteBoardView: view.whiteboardView,
+                                config: sdkConfig,
+                                commonCallbackDelegate: self.sdkDelegateProxy)
+        self.whiteSDK = whiteSDK
+        if !view.traitCollection.hasCompact {
+            self.prepareForSystemPencilBehavior()
+        }
     }
 }
 
@@ -169,10 +176,8 @@ extension Fastboard: WhiteRoomCallbackDelegate {
     }
     
     public func fireRoomStateChanged(_ modifyState: WhiteRoomState!) {
-        if FastboardManager.followSystemPencilBehavoir {
-            if let appliance = modifyState.memberState?.currentApplianceName {
-                updatePencilBehaviorAfterApplianceChanged(appliance)
-            }
+        if let _ = modifyState.memberState {
+            view.pencilHandler?.roomAppliaceDidUpdate()
         }
         if let sceneState = modifyState.sceneState {
             view.overlay?.updateSceneState(sceneState)

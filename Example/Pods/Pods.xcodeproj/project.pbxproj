@@ -138,6 +138,7 @@
 		8A350A882792F58F00EB5CB2 /* FastboardView+Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A350A872792F58F00EB5CB2 /* FastboardView+Pencil.swift */; };
 		8A350A8A2792F82500EB5CB2 /* Fastboard+Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A350A892792F82500EB5CB2 /* Fastboard+Pencil.swift */; };
 		8A45187E279000F7000945B2 /* Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A45187D279000F7000945B2 /* Load.m */; };
+		8AD7692227941F9000935433 /* FastboardPencilDrawHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD7692127941F9000935433 /* FastboardPencilDrawHandler.swift */; };
 		8AE868BC3E2E6FC92F4717835180C47D /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B2D67B29E86B22DA359B71AAE78780CB /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AFF5F593094DA55075AE697D36696E0 /* WhiteDisplayerState.h in Headers */ = {isa = PBXBuildFile; fileRef = CD97D0A462378E0B8748FCC66A2AF394 /* WhiteDisplayerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C6546C1EF4F153DF3795CC6FE189E5B /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4E312092F60C198718721D8F81F224 /* ConstraintInsets.swift */; };
@@ -545,6 +546,7 @@
 		8A350A872792F58F00EB5CB2 /* FastboardView+Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FastboardView+Pencil.swift"; sourceTree = "<group>"; };
 		8A350A892792F82500EB5CB2 /* Fastboard+Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fastboard+Pencil.swift"; sourceTree = "<group>"; };
 		8A45187D279000F7000945B2 /* Load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Load.m; sourceTree = "<group>"; };
+		8AD7692127941F9000935433 /* FastboardPencilDrawHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastboardPencilDrawHandler.swift; sourceTree = "<group>"; };
 		8CA9EE05426C9BDA9E172F1DC62E5DED /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		8E2E1F2EBD85C1488017450B1E6C2E06 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		8E4C8E8C5C96893519E51A44760AE239 /* Pods-OCExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OCExample-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 			children = (
 				FCC4FD4EBC5566B36726D7A430F47C48 /* FastboardView.swift */,
 				8A350A872792F58F00EB5CB2 /* FastboardView+Pencil.swift */,
+				8AD7692127941F9000935433 /* FastboardPencilDrawHandler.swift */,
 				FCB7278ACD601368D5BE4FAAC123612E /* FastPanelControl.swift */,
 				9A427722B784561769E1D01E4E279C29 /* Overlay */,
 				DCDEC851B7097B25DF02BDEFABED04EB /* Panel */,
@@ -2139,6 +2142,7 @@
 				7AECE695839F181F745730C9825780FC /* IndicatorMoreButton.swift in Sources */,
 				10A6A667F746570F2F629093D985FBA7 /* Region.swift in Sources */,
 				51F0C789EB25E722DFFFF039B4464ECF /* RegularFastboardOverlay.swift in Sources */,
+				8AD7692227941F9000935433 /* FastboardPencilDrawHandler.swift in Sources */,
 				B880FFD5DE351FA4A9AC73E163151CB6 /* SubPanelView.swift in Sources */,
 				23A5677102FE945C584FC005018DA480 /* Theme.swift in Sources */,
 				75CF9E2EA8ABA37A9DEAAFFAD2333717 /* ThemeManager.swift in Sources */,

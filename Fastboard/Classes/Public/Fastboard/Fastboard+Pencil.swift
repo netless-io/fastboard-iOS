@@ -7,29 +7,28 @@
 
 import Foundation
 import Whiteboard
+import UIKit
 
 extension Fastboard {
-    func prepareForPencil() {
+    func prepareForSystemPencilBehavior() {
         // Pencil stuff
-        updateIfFollowSystemPencilBehavior(FastboardManager.followSystemPencilBehavoir)
+        updateIfFollowSystemPencilBehavior(FastboardManager.followSystemPencilBehavior)
         NotificationCenter.default.addObserver(self, selector: #selector(pencilFollowBehaviorDidChange), name: pencilBehaviorUpdateNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onWillResignActiveNotification), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
-    func updatePencilBehaviorAfterApplianceChanged(_ new: WhiteApplianceNameKey?) {
-        if #available(iOS 12.1, *) {
-            view.applyWithPencilDrawOnly(UIPencilInteraction.prefersPencilOnlyDrawing, currentAppliance: new)
-        }
+    @objc func onWillResignActiveNotification() {
+        view.pencilHandler?.recoverApplianceFromTempRemove()
     }
     
     @objc
     func pencilFollowBehaviorDidChange() {
-        updateIfFollowSystemPencilBehavior(FastboardManager.followSystemPencilBehavoir)
+        updateIfFollowSystemPencilBehavior(FastboardManager.followSystemPencilBehavior)
     }
     
     fileprivate func updateIfFollowSystemPencilBehavior(_ follow: Bool) {
         if #available(iOS 12.1, *) {
-            view.applyWithPencilDrawOnly(follow ? UIPencilInteraction.prefersPencilOnlyDrawing : false,
-                                         currentAppliance: room?.memberState.currentApplianceName)
+            view.isPencilDrawOnly = follow ? UIPencilInteraction.prefersPencilOnlyDrawing : false
             if follow {
                 if !view.interactions.contains(where: { $0 is UIPencilInteraction }) {
                     let pencil = UIPencilInteraction()
@@ -48,7 +47,7 @@ extension Fastboard {
     
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "prefersPencilOnlyDrawing", let newValue = change?[.newKey] as? Bool {
-            view.applyWithPencilDrawOnly(newValue, currentAppliance: room?.memberState.currentApplianceName)
+            view.isPencilDrawOnly = newValue
         }
     }
 }

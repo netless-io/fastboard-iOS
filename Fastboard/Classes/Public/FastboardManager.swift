@@ -18,8 +18,9 @@ public class FastboardManager: NSObject {
     /// Enable default panel animation, default is true
     public static var enablePanelAnimation: Bool = true
     
-    /// Change this value to indicate if pencil will follow the system preferrence
-    public static var followSystemPencilBehavoir = true {
+    /// Change this value to indicate if pencil will follow the system preference
+    /// And this variable will only effect on iPad (Which has no compact sizeClass)
+    public static var followSystemPencilBehavior = true {
         didSet {
             NotificationCenter.default.post(name: pencilBehaviorUpdateNotificationName, object: nil)
         }

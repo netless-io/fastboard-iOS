@@ -9,17 +9,12 @@ import Foundation
 import Whiteboard
 
 extension FastboardView {
-    func applyWithPencilDrawOnly(_ only: Bool, currentAppliance: WhiteApplianceNameKey?) {
-        isPencilDrawOnly = only
-        if let currentAppliance = currentAppliance {
-            syncPencilStatusWithCurrentAppliance(currentAppliance)
-        }
-    }
-    
-    /// Call this after webview setup
+    /// Call this after webView setup
     func prepareForPencil() {
-        getAllPencilRelatedGestures().forEach {
-            webPencilableGesture.add($0)
+        if let gesture = getAllPencilRelatedGestures().first(where: { $0.classForCoder.description() == "UIWebTouchEventsGestureRecognizer" }) {
+            pencilHandler = FastboardPencilDrawHandler(room: whiteboardView.room, drawOnlyPencil: isPencilDrawOnly)
+            pencilHandler?.originalDelegate = gesture.delegate
+            gesture.delegate = pencilHandler
         }
     }
     
@@ -30,27 +25,5 @@ extension FastboardView {
         else { return [] }
         let pencilValue = UITouch.TouchType.pencil.rawValue
         return gestures.filter { $0.allowedTouchTypes.contains(where: { $0.intValue == pencilValue })}
-    }
-    
-    fileprivate func syncPencilStatusWithCurrentAppliance(_ appliance: WhiteApplianceNameKey) {
-        // Process about pencil
-        if appliance == .AppliancePencil {
-            applyPencilInteracteOnly(isPencilDrawOnly)
-        } else {
-            applyPencilInteracteOnly(false)
-        }
-    }
-    
-    fileprivate func applyPencilInteracteOnly(_ pencilOnly: Bool) {
-        let directTouchValue = UITouch.TouchType.direct.rawValue
-        webPencilableGesture.allObjects.enumerated().forEach {
-            var types = $0.element.allowedTouchTypes
-            if pencilOnly, types.contains(where: { $0.intValue == directTouchValue}) {
-                types = types.filter { $0.intValue != directTouchValue}
-            } else if !pencilOnly, !types.contains(where: { $0.intValue == directTouchValue}) {
-                types.append(NSNumber(value: directTouchValue))
-            }
-            $0.element.allowedTouchTypes = types
-        }
     }
 }
