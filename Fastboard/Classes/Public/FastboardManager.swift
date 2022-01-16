@@ -20,6 +20,8 @@ public class FastboardManager: NSObject {
     
     /// Change this value to indicate if pencil will follow the system preference
     /// And this variable will only effect on iPad (Which has no compact sizeClass)
+    /// Default is true
+    @objc
     public static var followSystemPencilBehavior = true {
         didSet {
             NotificationCenter.default.post(name: pencilBehaviorUpdateNotificationName, object: nil)

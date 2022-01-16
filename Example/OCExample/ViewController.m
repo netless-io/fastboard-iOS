@@ -225,6 +225,10 @@
     }
 }
 
+- (void)onPencil {
+    FastboardManager.followSystemPencilBehavior = !FastboardManager.followSystemPencilBehavior;
+}
+
 - (void)onReload {
     UIApplication.sharedApplication.keyWindow.rootViewController = [ViewController new];
 }
@@ -311,7 +315,8 @@
                         @"Writable",
                         @"Custom",
                         @"Layout",
-                        @"Reload"];
+                        @"Reload",
+                        @"Pencil"];
     NSMutableArray* btns = [NSMutableArray new];
     [titles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString* title = obj;
