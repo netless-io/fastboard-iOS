@@ -77,6 +77,7 @@ public class DefaultOperationItem: NSObject {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_previous")!,
                           action: { room, _ in
             let index = room.sceneState.index
+            guard index > 0 else { return }
             let previousIndex = UInt(index - 1)
             room.setSceneIndex(previousIndex, completionHandler: nil)
         }, identifier: DefaultOperationIdentifier.operationType(.previousPage)!.identifier)
@@ -87,6 +88,7 @@ public class DefaultOperationItem: NSObject {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_next")!,
                           action: { room, _ in
             let index = room.sceneState.index
+            guard room.sceneState.scenes.count > index else { return }
             let nextIndex = UInt(index + 1)
             room.setSceneIndex(nextIndex, completionHandler: nil)
         }, identifier: DefaultOperationIdentifier.operationType(.nextPage)!.identifier)
@@ -125,6 +127,7 @@ public class DefaultOperationItem: NSObject {
     public static func pageIndicatorItem() -> FastOperationItem {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .body)
+        label.textAlignment = .center
         return IndicatorItem(view: label,
                              identifier: DefaultOperationIdentifier.operationType(.pageIndicator)!.identifier)
     }
