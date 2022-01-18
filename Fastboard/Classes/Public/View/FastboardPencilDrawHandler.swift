@@ -41,7 +41,6 @@ class FastboardPencilDrawHandler: NSObject {
         super.init()
         self.room = room
     }
-    // Only weak retain this object. Do nothing
     weak var originalDelegate: UIGestureRecognizerDelegate?
     weak var room: WhiteRoom?
     fileprivate var isPencilTouch = false
@@ -96,17 +95,19 @@ class FastboardPencilDrawHandler: NSObject {
 
 extension FastboardPencilDrawHandler: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if !drawOnlyPencil { return true }
+        if !drawOnlyPencil {
+            return originalDelegate?.gestureRecognizer?(gestureRecognizer, shouldReceive: touch) ?? true
+        }
         isPencilTouch = touch.type == .pencil
         if !isPencilTouch {
             removeApplianceIfNeed()
         } else {
             recoverApplianceFromTempRemove()
         }
-        return true
+        return originalDelegate?.gestureRecognizer?(gestureRecognizer, shouldReceive: touch) ?? true
     }
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        true
+        originalDelegate?.gestureRecognizerShouldBegin?(gestureRecognizer) ?? true
     }
 }
