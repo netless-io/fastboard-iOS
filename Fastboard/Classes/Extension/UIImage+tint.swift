@@ -8,6 +8,18 @@
 import UIKit
 
 extension UIImage {
+    @available(iOS 13.0, *)
+    func dynamicDraw(_ color: UIColor,
+                     backgroundColor: UIColor? = nil,
+                     cornerRadius: CGFloat = 0,
+                     backgroundEdgeInset: UIEdgeInsets = .zero,
+                     traitCollection: UITraitCollection) -> UIImage {
+        redraw(color.resolvedColor(with: traitCollection),
+               backgroundColor: backgroundColor?.resolvedColor(with: traitCollection),
+               cornerRadius: cornerRadius,
+               backgroundEdgeInset: backgroundEdgeInset)
+    }
+    
     func redraw(_ color: UIColor,
                    backgroundColor: UIColor? = nil,
                    cornerRadius: CGFloat = 0,
@@ -16,6 +28,7 @@ extension UIImage {
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
         let context = UIGraphicsGetCurrentContext()
         var bg: UIImage?
+        
         // Draw background
         if let bgColor = backgroundColor {
             context?.setFillColor(bgColor.cgColor)
