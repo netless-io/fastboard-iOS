@@ -167,6 +167,7 @@ public class CompactFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
     public func updateSceneState(_ scene: WhiteSceneState) {
         if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.pageIndicator)!.identifier })?.associatedView as? UILabel {
             label.text = "\(scene.index + 1) / \(scene.scenes.count)"
+            scenePanel.view?.invalidateIntrinsicContentSize()
         }
         if let last = scenePanel.items.first(where: {
             $0.identifier == DefaultOperationIdentifier.operationType(.previousPage)!.identifier

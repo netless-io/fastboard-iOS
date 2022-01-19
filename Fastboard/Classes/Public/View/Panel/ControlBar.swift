@@ -57,12 +57,17 @@ public class ControlBar: UIView {
     }
     
     public override var intrinsicContentSize: CGSize {
-        let hideCount = stack.arrangedSubviews.filter { $0.isHidden }.count 
-        if stack.axis == .vertical {
-            return .init(width: itemWidth, height: itemWidth * CGFloat(stack.arrangedSubviews.count - hideCount))
-        } else {
-            return .init(width: itemWidth * CGFloat(stack.arrangedSubviews.count - hideCount), height: itemWidth)
+        let isHorizontal = stack.axis == .horizontal
+        let accumulate = stack.arrangedSubviews.reduce(CGFloat(0)) { partialResult, item in
+            guard !item.isHidden else { return partialResult }
+            if let label = item as? UILabel {
+                let i = label.intrinsicContentSize.width / 5
+                let roundedWidth = CGFloat(ceil(i) * 5)
+                return partialResult + roundedWidth
+            }
+            return partialResult + itemWidth
         }
+        return isHorizontal ? .init(width: accumulate, height: itemWidth) : .init(width: itemWidth, height: accumulate)
     }
     
     @objc
@@ -109,6 +114,10 @@ public class ControlBar: UIView {
         
         views.forEach({
             stack.addArrangedSubview($0)
+            if $0 is UIButton {
+                $0.widthAnchor.constraint(equalToConstant: itemWidth).isActive = direction == .horizontal
+                $0.heightAnchor.constraint(equalToConstant: itemWidth).isActive = direction == .horizontal
+            }
         })
     }
     
@@ -193,7 +202,7 @@ public class ControlBar: UIView {
     
     lazy var stack: UIStackView = {
         let stack = UIStackView()
-        stack.distribution = .fillEqually
+        stack.distribution = .fillProportionally
         stack.axis = direction
         stack.spacing = 0
         return stack
