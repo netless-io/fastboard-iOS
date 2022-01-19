@@ -36,6 +36,8 @@ public protocol FastboardOverlay: FastPanelControl {
     
     func updateBoxState(_ state: WhiteWindowBoxState?)
     
+    func updateRoomPhaseUpdate(_ phase: FastRoomPhase)
+    
     @available(iOS 12.1, *)
     @objc
     optional func respondToPencilTap(_ tap: UIPencilPreferredAction)

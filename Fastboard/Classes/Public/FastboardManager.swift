@@ -27,4 +27,8 @@ public class FastboardManager: NSObject {
             NotificationCenter.default.post(name: pencilBehaviorUpdateNotificationName, object: nil)
         }
     }
+    
+    /// Indicate whether an UIActivityIndicatorView should be add to Fastboard in bad network environment
+    @objc
+    public static var showActivityIndicatorWhenReconnecting: Bool = true
 }

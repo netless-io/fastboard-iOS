@@ -9,6 +9,31 @@ import Foundation
 import Whiteboard
 
 public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDelegate {
+    func showReconnectingView(_ show: Bool) {
+        if show {
+            if reconnectingView.superview == nil {
+                operationPanel.view?.superview?.addSubview(reconnectingView)
+                reconnectingView.frame = operationPanel.view?.superview?.bounds ?? .zero
+                reconnectingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                reconnectingView.activityView.startAnimating()
+            } else {
+                reconnectingView.activityView.startAnimating()
+            }
+        } else {
+            reconnectingView.removeFromSuperview()
+        }
+    }
+    
+    public func updateRoomPhaseUpdate(_ phase: FastRoomPhase) {
+        guard FastboardManager.showActivityIndicatorWhenReconnecting else { return }
+        switch phase {
+        case .reconnecting:
+            showReconnectingView(true)
+        default:
+            showReconnectingView(false)
+        }
+    }
+    
     private var currentAppliance: ApplianceItem? {
         didSet {
             guard currentAppliance !== oldValue else { return }
@@ -361,6 +386,8 @@ public class RegularFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
         .undoRedo: createUndoRedoPanel(),
         .scenes: createScenesPanel()
     ]
+    
+    lazy var reconnectingView: ReconnectingView = ReconnectingView()
 }
 
 extension RegularFastboardOverlay {

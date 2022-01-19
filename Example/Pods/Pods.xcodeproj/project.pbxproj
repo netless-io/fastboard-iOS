@@ -135,6 +135,7 @@
 		8449EB1DFD43E222D687D5A8D2088D2D /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FBB480935709270FAB327CED1C7EC8 /* ConstraintLayoutGuideDSL.swift */; };
 		86D4F351311B93F14AC515F052F6D686 /* Pods-OCExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 445B98484705D0C33F331764BA570A12 /* Pods-OCExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		871DFF78013803C5EC16B54C065899A7 /* WhiteCameraConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D1B150F29C4011242CD3C5B8EE7AB5 /* WhiteCameraConfig.m */; };
+		8A20A3A82796B73100024040 /* ReconnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20A3A72796B73100024040 /* ReconnectingView.swift */; };
 		8A350A882792F58F00EB5CB2 /* FastboardView+Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A350A872792F58F00EB5CB2 /* FastboardView+Pencil.swift */; };
 		8A350A8A2792F82500EB5CB2 /* Fastboard+Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A350A892792F82500EB5CB2 /* Fastboard+Pencil.swift */; };
 		8A45187E279000F7000945B2 /* Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A45187D279000F7000945B2 /* Load.m */; };
@@ -543,6 +544,7 @@
 		894E86FA64D66B4F2D59B28F7B904A15 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		8956D96615F63386B0C55D2E39314336 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		89ADAAE5969FB1BFEB87F616096BD2DA /* WhiteCameraState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraState.m; path = Whiteboard/Classes/Object/WhiteCameraState.m; sourceTree = "<group>"; };
+		8A20A3A72796B73100024040 /* ReconnectingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconnectingView.swift; sourceTree = "<group>"; };
 		8A350A872792F58F00EB5CB2 /* FastboardView+Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FastboardView+Pencil.swift"; sourceTree = "<group>"; };
 		8A350A892792F82500EB5CB2 /* Fastboard+Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fastboard+Pencil.swift"; sourceTree = "<group>"; };
 		8A45187D279000F7000945B2 /* Load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Load.m; sourceTree = "<group>"; };
@@ -1246,6 +1248,7 @@
 			children = (
 				0BAA84A190FF55564D40AFC1B34D8217 /* CompactFastboardOverlay.swift */,
 				6EE1DF5498FB21C18D680A2D30E5DF14 /* RegularFastboardOverlay.swift */,
+				8A20A3A72796B73100024040 /* ReconnectingView.swift */,
 			);
 			path = Trait;
 			sourceTree = "<group>";
@@ -2129,6 +2132,7 @@
 				8A350A882792F58F00EB5CB2 /* FastboardView+Pencil.swift in Sources */,
 				418F31551381770529FBB0E116A68E0E /* FastboardView.swift in Sources */,
 				CCACA5C65D5CF0C32D5AEEB0F83BA770 /* FastConfiguration.swift in Sources */,
+				8A20A3A82796B73100024040 /* ReconnectingView.swift in Sources */,
 				6F27704CAEDA358F92FFD7522B2032BA /* FastError.swift in Sources */,
 				9931A40FE23E2838EE2EDDE9FD9AA2E0 /* FastOperation+NeedColor.swift in Sources */,
 				785F04EC85DFC3F3FA10E25F9F5E9BA2 /* FastOperation+NeedDelete.swift in Sources */,
