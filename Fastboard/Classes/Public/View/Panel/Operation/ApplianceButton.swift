@@ -88,26 +88,49 @@ class PanelItemButton: UIButton {
     func tryUpdateStyle() {
         // Throttle
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.updateStyle), object: nil)
-        perform(#selector(self.updateStyle), with: nil, afterDelay: 0.1)
+        perform(#selector(self.updateStyle), with: nil, afterDelay: 0.3)
     }
     
     @objc func updateStyle() {
         switch style {
         case .selectableAppliance:
             guard let image = rawImage else { return }
-            if let normalColor = iconNormalColor {
-                let normalImage = image.redraw(normalColor)
-                setImage(normalImage, for: .normal)
-            }
-            if let iconSelectedColor = iconSelectedColor {
-                let selectedImage = image.redraw(iconSelectedColor)
-                setImage(selectedImage, for: .selected)
-                
-                if let iconHighlightBgColor = iconHighlightBgColor {
-                    let highlightImage = image.redraw(iconSelectedColor,
-                                 backgroundColor: iconHighlightBgColor,
-                                 cornerRadius: 5)
-                    setImage(highlightImage, for: .highlighted)
+            if #available(iOS 13.0, *) {
+                if let normalColor = iconNormalColor {
+                    let normalImage: UIImage
+                    normalImage = image.dynamicDraw(normalColor, traitCollection: traitCollection)
+                    setImage(normalImage, for: .normal)
+                }
+                if let iconSelectedColor = iconSelectedColor {
+                    let selectedImage: UIImage
+                    selectedImage = image.dynamicDraw(iconSelectedColor, traitCollection: traitCollection)
+                    setImage(selectedImage, for: .selected)
+                    
+                    if let iconHighlightBgColor = iconHighlightBgColor {
+                        let highlightImage = image.dynamicDraw(iconSelectedColor,
+                                                               backgroundColor: iconHighlightBgColor,
+                                                               cornerRadius: 5,
+                                                               traitCollection: traitCollection)
+                        setImage(highlightImage, for: .highlighted)
+                    }
+                }
+            } else {
+                if let normalColor = iconNormalColor {
+                    let normalImage: UIImage
+                    normalImage = image.redraw(normalColor)
+                    setImage(normalImage, for: .normal)
+                }
+                if let iconSelectedColor = iconSelectedColor {
+                    let selectedImage: UIImage
+                    selectedImage = image.redraw(iconSelectedColor)
+                    setImage(selectedImage, for: .selected)
+                    
+                    if let iconHighlightBgColor = iconHighlightBgColor {
+                        let highlightImage = image.redraw(iconSelectedColor,
+                                     backgroundColor: iconHighlightBgColor,
+                                     cornerRadius: 5)
+                        setImage(highlightImage, for: .highlighted)
+                    }
                 }
             }
         case .justExecution:
@@ -115,8 +138,13 @@ class PanelItemButton: UIButton {
             switch image.renderingMode {
             case .alwaysTemplate:
                 if let normalColor = iconNormalColor {
-                    let normalImage = image.redraw(normalColor)
-                    setImage(normalImage, for: .normal)
+                    if #available(iOS 13.0, *) {
+                        let normalImage = image.dynamicDraw(normalColor, traitCollection: traitCollection)
+                        setImage(normalImage, for: .normal)
+                    } else {
+                        let normalImage = image.redraw(normalColor)
+                        setImage(normalImage, for: .normal)
+                    }
                 } else {
                     setImage(image, for: .normal)
                 }

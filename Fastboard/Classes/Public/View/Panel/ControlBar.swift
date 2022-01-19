@@ -13,6 +13,7 @@ public class ControlBar: UIView {
     @objc
     public dynamic var itemWidth: CGFloat = 40 {
         didSet {
+            // Update buttons constant
             invalidateIntrinsicContentSize()
         }
     }
@@ -33,47 +34,34 @@ public class ControlBar: UIView {
     
     @objc
     dynamic override var borderColor: UIColor? {
-        didSet {
-            layer.borderColor = borderColor?.cgColor
-            borderLayer.fillColor = borderColor?.cgColor
+        get { nil }
+        set {
+            if #available(iOS 13.0, *) {
+                layer.borderColor = newValue?.resolvedColor(with: traitCollection).cgColor
+                borderLayer.fillColor = newValue?.resolvedColor(with: traitCollection).cgColor
+            } else {
+                layer.borderColor = newValue?.cgColor
+                borderLayer.fillColor = newValue?.cgColor
+            }
         }
-    }
-    
-    enum NarrowStyle {
-        case none
-        case narrowMoreThan(count: Int)
-    }
-    
-    var manualHideItemViews: [UIView] = []
-    
-    func updateItemViewHide(_ itemView: UIView, hide: Bool) {
-        if hide, !manualHideItemViews.contains(itemView) {
-            manualHideItemViews.append(itemView)
-        } else if !hide, manualHideItemViews.contains(itemView) {
-            manualHideItemViews.removeAll(where: { $0 == itemView })
-        }
-        itemView.isHidden = hide
-        invalidateIntrinsicContentSize()
     }
     
     public override var intrinsicContentSize: CGSize {
-        let isHorizontal = stack.axis == .horizontal
-        let accumulate = stack.arrangedSubviews.reduce(CGFloat(0)) { partialResult, item in
-            guard !item.isHidden else { return partialResult }
-            if let label = item as? UILabel {
-                let i = label.intrinsicContentSize.width / 5
-                let roundedWidth = CGFloat(ceil(i) * 5)
-                return partialResult + roundedWidth
-            }
-            return partialResult + itemWidth
+        layoutForSubItems()
+        if direction == .horizontal {
+            let x = subviews.filter { !($0 is UIVisualEffectView) && !($0.isHidden)}.map { $0.frame }.map { $0.maxX }.max() ?? 0
+            return .init(width: x, height: itemWidth)
+        } else {
+            let y = subviews.filter { !($0 is UIVisualEffectView) && !($0.isHidden)}.map { $0.frame }.map { $0.maxY }.max() ?? 0
+            return .init(width: itemWidth, height: y)
         }
-        return isHorizontal ? .init(width: accumulate, height: itemWidth) : .init(width: itemWidth, height: accumulate)
     }
     
     @objc
     public var direction: NSLayoutConstraint.Axis {
         didSet {
-            stack.axis = direction
+            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
     
@@ -84,41 +72,18 @@ public class ControlBar: UIView {
         }
     }
     
-    let narrowMoreThan: Int
-    
     init(direction: NSLayoutConstraint.Axis,
          borderMask: CACornerMask,
-         views: [UIView],
-         narrowStyle: NarrowStyle = .none) {
+         views: [UIView]) {
         self.direction = direction
         self.borderMask = borderMask
-        switch narrowStyle {
-        case .none:
-            narrowMoreThan = 0
-        case .narrowMoreThan(let count):
-            narrowMoreThan = count
-        }
         super.init(frame: .zero)
         
-        let effect: UIBlurEffect = .init(style: .regular)
-        let effectView = UIVisualEffectView(effect: effect)
         addSubview(effectView)
-        effectView.frame = bounds
-        effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        updateMask()
-        
-        autoresizesSubviews = true
-        addSubview(stack)
-        stack.frame = bounds
-        stack.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
         views.forEach({
-            stack.addArrangedSubview($0)
-            if $0 is UIButton {
-                $0.widthAnchor.constraint(equalToConstant: itemWidth).isActive = direction == .horizontal
-                $0.heightAnchor.constraint(equalToConstant: itemWidth).isActive = direction == .horizontal
-            }
+            addSubview($0)
         })
+        updateMask()
     }
     
     required init?(coder: NSCoder) {
@@ -141,8 +106,33 @@ public class ControlBar: UIView {
         }
     }
     
+    func layoutForSubItems() {
+        let isHorizontal = direction == .horizontal
+        var lastStart: CGFloat = 0
+        subviews
+            .filter { !($0 is UIVisualEffectView) && !$0.isHidden }
+            .enumerated()
+            .forEach { index, v in
+                let itemValue: CGFloat
+                if let label = v as? UILabel {
+                    let i = label.intrinsicContentSize.width / 5
+                    let roundedWidth = CGFloat(ceil(i) * 5)
+                    itemValue = roundedWidth
+                } else {
+                    itemValue = itemWidth
+                }
+                v.frame = .init(x: isHorizontal ? lastStart : 0,
+                                y: isHorizontal ? 0 : lastStart,
+                                width: isHorizontal ? itemValue : itemWidth,
+                                height: isHorizontal ? itemWidth : itemValue)
+                lastStart = isHorizontal ? v.frame.maxX : v.frame.maxY
+        }
+    }
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
+        layoutForSubItems()
+        effectView.frame = bounds
         if #available(iOS 11.0, *) {
 
         } else {
@@ -171,50 +161,11 @@ public class ControlBar: UIView {
         }
     }
     
-    @objc func onClickScale(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        let isNarrow = sender.isSelected
-        if !isNarrow {
-            stack.arrangedSubviews.filter { view in
-                let btn = view as! UIButton
-                return !self.manualHideItemViews.contains(btn)
-            }.forEach({
-                $0.isHidden = false
-            })
-        } else {
-            stack.arrangedSubviews
-                .filter { view in
-                    let btn = view as! UIButton
-                    return !self.manualHideItemViews.contains(btn)
-                }.enumerated().forEach { i in
-                    // The last one can't be hide
-                    if i.element === foldButton {
-                        i.element.isHidden = false
-                        return
-                    }
-                    i.element.isHidden = i.offset >= narrowMoreThan
-                }
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.layoutIfNeeded()
-        }
-    }
-    
-    lazy var stack: UIStackView = {
-        let stack = UIStackView()
-        stack.distribution = .fillProportionally
-        stack.axis = direction
-        stack.spacing = 0
-        return stack
-    }()
-    
-    lazy var foldButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.addTarget(self, action: #selector(onClickScale), for: .touchUpInside)
-        return btn
-    }()
-    
     lazy var borderLayer = CAShapeLayer()
     lazy var cornerRadiusLayer = CAShapeLayer()
+    
+    lazy var effectView: UIVisualEffectView = {
+        let effect: UIBlurEffect = .init(style: .regular)
+        return UIVisualEffectView(effect: effect)
+    }()
 }
-
