@@ -32,7 +32,7 @@ public class DefaultTheme: NSObject {
                                           selectedIconColor: .systemBlue,
                                           highlightBgColor: .lightGray,
                                           subOpsIndicatorColor: .lightGray,
-                                          pageTextLabelColor: .white))
+                                          pageTextLabelColor: .gray))
     }
     
     @available(iOS 13, *)

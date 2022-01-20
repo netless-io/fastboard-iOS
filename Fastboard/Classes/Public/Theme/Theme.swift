@@ -67,7 +67,9 @@ open class ControlBarAssets: NSObject {
 
 open class ThemeAsset: NSObject {
     @objc
-    public init(whiteboardAssets: WhiteboardAssets, controlBarAssets: ControlBarAssets, panelItemAssets: PanelItemAssets) {
+    public init(whiteboardAssets: WhiteboardAssets,
+                controlBarAssets: ControlBarAssets,
+                panelItemAssets: PanelItemAssets) {
         self.whiteboardAssets = whiteboardAssets
         self.controlBarAssets = controlBarAssets
         self.panelItemAssets = panelItemAssets
