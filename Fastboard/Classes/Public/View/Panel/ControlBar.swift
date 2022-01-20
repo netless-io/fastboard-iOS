@@ -37,8 +37,13 @@ public class ControlBar: UIView {
         get { nil }
         set {
             if #available(iOS 13.0, *) {
-                layer.borderColor = newValue?.resolvedColor(with: traitCollection).cgColor
-                borderLayer.fillColor = newValue?.resolvedColor(with: traitCollection).cgColor
+                self.layer.borderColor = newValue?.resolvedColor(with: self.traitCollection).cgColor
+                self.borderLayer.fillColor = newValue?.resolvedColor(with: self.traitCollection).cgColor
+                traitCollectionUpdateHandler = { [weak self] _ in
+                    guard let self = self else { return }
+                    self.layer.borderColor = newValue?.resolvedColor(with: self.traitCollection).cgColor
+                    self.borderLayer.fillColor = newValue?.resolvedColor(with: self.traitCollection).cgColor
+                }
             } else {
                 layer.borderColor = newValue?.cgColor
                 borderLayer.fillColor = newValue?.cgColor
