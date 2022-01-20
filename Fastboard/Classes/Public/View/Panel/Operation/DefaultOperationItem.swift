@@ -125,7 +125,8 @@ public class DefaultOperationItem: NSObject {
     
     @objc
     public static func pageIndicatorItem() -> FastOperationItem {
-        let label = UILabel()
+        let label = PageIndicatorLabel()
+        label.textColor = PageIndicatorLabel.appearance().textColor
         label.font = .preferredFont(forTextStyle: .body)
         label.textAlignment = .center
         return IndicatorItem(view: label,

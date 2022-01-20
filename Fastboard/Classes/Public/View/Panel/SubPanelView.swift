@@ -9,7 +9,6 @@ import Foundation
 
 class SubPanelContainer: UIView {}
 
-
 class SubPanelView: UIView {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard !isHidden else { return nil }
