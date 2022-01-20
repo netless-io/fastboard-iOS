@@ -9,20 +9,18 @@ import UIKit
 import Whiteboard
 
 extension WhiteBoardView {
-    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        // Workaround for dynamic color support
-        if #available(iOS 13.0, *) {
-            backgroundColor = backgroundColor?.resolvedColor(with: traitCollection)
-        } else {
-        }
-    }
-    
     @objc
     dynamic var themeBgColor: UIColor? {
         get { nil }
         set {
             backgroundColor = newValue
+            traitCollectionUpdateHandler = { [weak self] _ in
+                if #available(iOS 13.0, *) {
+                    if let t = self?.traitCollection {
+                        self?.backgroundColor = newValue?.resolvedColor(with: t)
+                    }
+                }
+            }
         }
     }
 }
