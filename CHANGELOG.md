@@ -1,5 +1,16 @@
 # ChangeLog
 
+## [1.0.0-beta.5]
+## 更新
+- 更新`Whiteboad`版本到2.15.25
+## 新增
+- 弱网重连时增加Loading
+## 优化
+- 更新拦截Pencil行为，保留系统WKWebView代理行为
+- 修改翻页显示和点击错误
+- ControlBar使用Frame实现，不再使用UIStackView
+## 修复
+- 主题功能一些错误
 ## [1.0.0-beta.2]
 ## 新增
 - 使用默认Overlay既可支持ApplePencil系统行为
