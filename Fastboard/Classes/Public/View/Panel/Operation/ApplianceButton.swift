@@ -15,6 +15,12 @@ class PanelItemButton: UIButton {
         indicatorView.isHidden = true
     }
     
+    override var isSelected: Bool {
+        didSet {
+            indicatorView.tintColor = isSelected ? iconSelectedColor : iconNormalColor
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -93,7 +99,7 @@ class PanelItemButton: UIButton {
     
     @objc func updateStyle() {
         switch style {
-        case .selectableAppliance:
+        case .selectableAppliance, .justExecution:
             guard let image = rawImage else { return }
             if #available(iOS 13.0, *) {
                 if let normalColor = iconNormalColor {
@@ -133,24 +139,24 @@ class PanelItemButton: UIButton {
                     }
                 }
             }
-        case .justExecution:
-            guard let image = rawImage else { return }
-            switch image.renderingMode {
-            case .alwaysTemplate:
-                if let normalColor = iconNormalColor {
-                    if #available(iOS 13.0, *) {
-                        let normalImage = image.dynamicDraw(normalColor, traitCollection: traitCollection)
-                        setImage(normalImage, for: .normal)
-                    } else {
-                        let normalImage = image.redraw(normalColor)
-                        setImage(normalImage, for: .normal)
-                    }
-                } else {
-                    setImage(image, for: .normal)
-                }
-            default:
-                setImage(image, for: .normal)
-            }
+//        case .justExecution:
+//            guard let image = rawImage else { return }
+//            switch image.renderingMode {
+//            case .alwaysTemplate:
+//                if let normalColor = iconNormalColor {
+//                    if #available(iOS 13.0, *) {
+//                        let normalImage = image.dynamicDraw(normalColor, traitCollection: traitCollection)
+//                        setImage(normalImage, for: .normal)
+//                    } else {
+//                        let normalImage = image.redraw(normalColor)
+//                        setImage(normalImage, for: .normal)
+//                    }
+//                } else {
+//                    setImage(image, for: .normal)
+//                }
+//            default:
+//                setImage(image, for: .normal)
+//            }
         case .color(let color):
             let normalImage = UIImage.colorItemImage(withColor: color,
                                                      size: .init(width: 24, height: 24),
