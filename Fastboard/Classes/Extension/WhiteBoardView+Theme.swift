@@ -13,13 +13,15 @@ extension WhiteBoardView {
     dynamic var themeBgColor: UIColor? {
         get { nil }
         set {
-            backgroundColor = newValue
-            traitCollectionUpdateHandler = { [weak self] _ in
-                if #available(iOS 13.0, *) {
+            if #available(iOS 13.0, *) {
+                backgroundColor = newValue?.resolvedColor(with: traitCollection)
+                traitCollectionUpdateHandler = { [weak self] t in
                     if let t = self?.traitCollection {
                         self?.backgroundColor = newValue?.resolvedColor(with: t)
                     }
                 }
+            } else {
+                backgroundColor = newValue
             }
         }
     }

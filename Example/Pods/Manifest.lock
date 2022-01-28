@@ -1,7 +1,7 @@
 PODS:
   - dsBridge (3.0.6)
-  - Fastboard (0.2.0):
-    - Whiteboard (~> 2.15.20)
+  - Fastboard (1.0.0-beta.6):
+    - Whiteboard (~> 2.15)
   - Masonry (1.1.0)
   - SnapKit (5.0.1)
   - Whiteboard (2.15.20):
@@ -48,7 +48,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
-  Fastboard: 28997ca954fac20560adf7fc93a3fcf5abb3d8be
+  Fastboard: ebcadf83337237bab407dd98b7f4eccc9d97f871
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Whiteboard: c76e38a220a0ebb867a40aeb847a4b4b7307bac8
