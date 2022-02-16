@@ -97,66 +97,48 @@ class PanelItemButton: UIButton {
         perform(#selector(self.updateStyle), with: nil, afterDelay: 0.3)
     }
     
+    func set(rawImage: UIImage,
+             drawColor: UIColor,
+             backgroundColor: UIColor? = nil,
+             cornerRadius: CGFloat = 0,
+             state: State) {
+        if #available(iOS 13.0, *) {
+            let image = rawImage.dynamicDraw(drawColor, backgroundColor: backgroundColor, cornerRadius: cornerRadius, traitCollection: traitCollection)
+            setImage(image, for: state)
+        } else {
+            let image = rawImage.redraw(drawColor, backgroundColor: backgroundColor, cornerRadius: cornerRadius)
+            setImage(image.redraw(drawColor), for: state)
+        }
+    }
+    
     @objc func updateStyle() {
         switch style {
-        case .selectableAppliance, .justExecution:
+        case .selectableAppliance:
             guard let image = rawImage else { return }
-            if #available(iOS 13.0, *) {
-                if let normalColor = iconNormalColor {
-                    let normalImage: UIImage
-                    normalImage = image.dynamicDraw(normalColor, traitCollection: traitCollection)
-                    setImage(normalImage, for: .normal)
+            if let normalColor = iconNormalColor {
+                set(rawImage: image, drawColor: normalColor, state: .normal)
+            }
+            if let iconSelectedColor = iconSelectedColor {
+                set(rawImage: image, drawColor: iconSelectedColor, state: .selected)
+                if let iconHighlightBgColor = iconHighlightBgColor {
+                    set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)
                 }
+            }
+        case .justExecution:
+            guard let image = rawImage else { return }
+            if image.renderingMode == .alwaysTemplate,
+               let normalColor = iconNormalColor {
+                set(rawImage: image, drawColor: normalColor, state: .normal)
+                
                 if let iconSelectedColor = iconSelectedColor {
-                    let selectedImage: UIImage
-                    selectedImage = image.dynamicDraw(iconSelectedColor, traitCollection: traitCollection)
-                    setImage(selectedImage, for: .selected)
-                    
+                    set(rawImage: image, drawColor: iconSelectedColor, state: .selected)
                     if let iconHighlightBgColor = iconHighlightBgColor {
-                        let highlightImage = image.dynamicDraw(iconSelectedColor,
-                                                               backgroundColor: iconHighlightBgColor,
-                                                               cornerRadius: 5,
-                                                               traitCollection: traitCollection)
-                        setImage(highlightImage, for: .highlighted)
+                        set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)
                     }
                 }
             } else {
-                if let normalColor = iconNormalColor {
-                    let normalImage: UIImage
-                    normalImage = image.redraw(normalColor)
-                    setImage(normalImage, for: .normal)
-                }
-                if let iconSelectedColor = iconSelectedColor {
-                    let selectedImage: UIImage
-                    selectedImage = image.redraw(iconSelectedColor)
-                    setImage(selectedImage, for: .selected)
-                    
-                    if let iconHighlightBgColor = iconHighlightBgColor {
-                        let highlightImage = image.redraw(iconSelectedColor,
-                                     backgroundColor: iconHighlightBgColor,
-                                     cornerRadius: 5)
-                        setImage(highlightImage, for: .highlighted)
-                    }
-                }
+                setImage(image, for: .normal)
             }
-//        case .justExecution:
-//            guard let image = rawImage else { return }
-//            switch image.renderingMode {
-//            case .alwaysTemplate:
-//                if let normalColor = iconNormalColor {
-//                    if #available(iOS 13.0, *) {
-//                        let normalImage = image.dynamicDraw(normalColor, traitCollection: traitCollection)
-//                        setImage(normalImage, for: .normal)
-//                    } else {
-//                        let normalImage = image.redraw(normalColor)
-//                        setImage(normalImage, for: .normal)
-//                    }
-//                } else {
-//                    setImage(image, for: .normal)
-//                }
-//            default:
-//                setImage(image, for: .normal)
-//            }
         case .color(let color):
             let normalImage = UIImage.colorItemImage(withColor: color,
                                                      size: .init(width: 24, height: 24),
