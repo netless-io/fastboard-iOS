@@ -3,15 +3,18 @@ use_frameworks!
 platform :ios, '10.0'
 
 target 'OCExample' do
-  pod 'Fastboard', :path => '../'
+  pod 'Fastboard/fpa', :path => '../'
+  pod 'Whiteboard/fpa', :git => 'https://github.com/vince-hz/Whiteboard-iOS.git', :branch => 'feature/fpa'
   pod 'Masonry'
   end
 
 target 'Fastboard_Example' do
-  pod 'Fastboard', :path => '../'
+  pod 'Fastboard/fpa', :path => '../'
+  pod 'Whiteboard/fpa', :git => 'https://github.com/vince-hz/Whiteboard-iOS.git', :branch => 'feature/fpa'
   pod 'SnapKit'
 
   target 'Fastboard_Tests' do
     inherit! :search_paths
   end
 end
+

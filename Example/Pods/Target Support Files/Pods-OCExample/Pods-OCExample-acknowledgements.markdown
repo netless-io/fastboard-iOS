@@ -1,6 +1,11 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AgoraFPA_iOS
+
+Copyright 2018 agora.io. All rights reserved.
+
+
 ## Fastboard
 
 Copyright (c) 2021 yunshi <405029644@qq.com>

@@ -57,7 +57,14 @@ class ViewController: UIViewController {
                                        roomUUID: RoomInfo.ROOMUUID.value,
                                        roomToken: RoomInfo.ROOMTOKEN.value,
                                        region: .CN,
-                                       userUID: "some-unique-id")
+                                       userUID: "some-unique-id",
+                                       useFPA: true)
+        // Without fpa
+//        let config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
+//                                       roomUUID: RoomInfo.ROOMUUID.value,
+//                                       roomToken: RoomInfo.ROOMTOKEN.value,
+//                                       region: .CN,
+//                                       userUID: "some-unique-id")
         config.customOverlay = custom
         let fastboard = Fastboard(configuration: config)
         fastboard.delegate = self

@@ -147,9 +147,9 @@
         CGFloat g;
         CGFloat b;
         CGFloat a;
-
+        
         [backgroundColor getRed:&r green:&g blue:&b alpha:&a];
-
+        
         //fix issue: iOS 10/11 rgb css don's support float
         NSUInteger R = floorf(r * 255.0);
         NSUInteger G = floorf(g * 255.0);

@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "Whiteboard.h"
 #import "WhiteAudioMixerBridge.h"
 #import "WhiteBoardView.h"
 #import "WhiteCommonCallbacks.h"
@@ -20,12 +19,7 @@
 #import "WhiteWebViewInjection.h"
 #import "WhiteSDK.h"
 #import "WhiteSdkConfiguration.h"
-#import "WhiteConversionInfo.h"
-#import "WhiteConverter.h"
 #import "WhiteObject.h"
-#import "WhiteCombinePlayer.h"
-#import "WhiteSliderView.h"
-#import "WhiteVideoView.h"
 #import "WhiteAppParam.h"
 #import "WhiteCameraBound.h"
 #import "WhiteCameraConfig.h"
@@ -41,13 +35,7 @@
 #import "WhiteRoomMember.h"
 #import "WhiteScene.h"
 #import "WhiteSceneState.h"
-#import "WhitePlayer.h"
-#import "WhitePlayerConfig.h"
-#import "WhitePlayerConsts.h"
-#import "WhitePlayerEvent.h"
-#import "WhitePlayerState.h"
-#import "WhitePlayerTimeInfo.h"
-#import "WhiteSDK+Replayer.h"
+#import "WhiteWindowParams.h"
 #import "WhiteBroadcastState.h"
 #import "WhiteImageInformation.h"
 #import "WhiteRoom.h"
@@ -55,6 +43,9 @@
 #import "WhiteRoomConfig.h"
 #import "WhiteRoomState.h"
 #import "WhiteSDK+Room.h"
+#import "WhiteSocket.h"
+#import "WhiteFPA.h"
+#import "WhiteRoomConfig+FPA.h"
 
 FOUNDATION_EXPORT double WhiteboardVersionNumber;
 FOUNDATION_EXPORT const unsigned char WhiteboardVersionString[];

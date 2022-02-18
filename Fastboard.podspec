@@ -15,13 +15,25 @@ Pod::Spec.new do |s|
 
   s.swift_version = '5.0'
   s.ios.deployment_target = '10.0'
-  s.source_files = 'Fastboard/Classes/**/*'
-  s.resource_bundles = {
-    'Icons' => ['Fastboard/Assets/*']
-  }
   
-  s.dependency 'Whiteboard', '~> 2.16'
-  s.frameworks = 'UIKit'
-
+  s.subspec 'core' do |core|
+    core.source_files = 'Fastboard/Classes/**/*'
+#    core.dependency 'Whiteboard', '~> 2.16'
+    core.exclude_files = 'Fastboard/Classes/FPA/*'
+    core.resource_bundles = {
+      'Icons' => ['Fastboard/Assets/*.xcassets'],
+      'LocalizedStrings' => ['Fastboard/Assets/*.lproj/*.strings']
+    }
+    core.frameworks = 'UIKit'
+  end
+  
+  s.subspec 'fpa' do |fpa|
+    fpa.source_files = 'Fastboard/Classes/FPA/*'
+    fpa.dependency 'Fastboard/core'
+    fpa.dependency 'Whiteboard/fpa'
+  end
+  
+  s.default_subspec = 'core'
+  
   
 end
