@@ -17,12 +17,27 @@ let errorDomain = "io.agora.fastboard"
 
 @objc
 public class FastError: NSError {
+    let type: ErrorType
+    
     init(type: ErrorType, error: Error) {
+        self.type = type
         super.init(domain: errorDomain, code: type.rawValue, userInfo: (error as NSError).userInfo)
     }
     
     init(type: ErrorType, info: [String: Any]? = nil) {
+        self.type = type
         super.init(domain: errorDomain, code: type.rawValue, userInfo: info)
+    }
+    
+    public override var localizedDescription: String {
+        switch type {
+        case .setupSDK:
+            return .localizedStringFrom(key: "setupSDKError")
+        case .disconnected:
+            return .localizedStringFrom(key: "disconnectedError")
+        case .joinRoom:
+            return .localizedStringFrom(key: "joinRoomError")
+        }
     }
     
     required init?(coder: NSCoder) {
