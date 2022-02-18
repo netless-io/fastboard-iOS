@@ -58,18 +58,22 @@ public class DefaultOperationItem: NSObject {
     
     @objc
     public static func redoItem() -> FastOperationItem {
-        JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_redo")!,
+        let item = JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_redo")!,
                           action: { room, _ in
             room.redo()
         }, identifier: DefaultOperationIdentifier.operationType(.redo)!.identifier)
+        item.button.isEnabled = false
+        return item
     }
     
     @objc
     public static func undoItem() -> FastOperationItem {
-        JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_undo")!,
+        let item = JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_undo")!,
                           action: { room, _ in
             room.undo()
         }, identifier: DefaultOperationIdentifier.operationType(.undo)!.identifier)
+        item.button.isEnabled = false
+        return item
     }
     
     @objc

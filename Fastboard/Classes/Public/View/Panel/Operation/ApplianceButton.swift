@@ -68,6 +68,12 @@ class PanelItemButton: UIButton {
         }
     }
     
+    @objc dynamic var justExecutionNormalColor: UIColor? = nil {
+        didSet {
+            tryUpdateStyle()
+        }
+    }
+    
     @objc dynamic var iconNormalColor: UIColor? = nil {
         didSet {
             tryUpdateStyle()
@@ -127,8 +133,8 @@ class PanelItemButton: UIButton {
         case .justExecution:
             guard let image = rawImage else { return }
             if image.renderingMode == .alwaysTemplate,
-               let normalColor = iconNormalColor {
-                set(rawImage: image, drawColor: normalColor, state: .normal)
+               let justExecutionNormalColor = justExecutionNormalColor {
+                set(rawImage: image, drawColor: justExecutionNormalColor, state: .normal)
                 
                 if let iconSelectedColor = iconSelectedColor {
                     set(rawImage: image, drawColor: iconSelectedColor, state: .selected)
