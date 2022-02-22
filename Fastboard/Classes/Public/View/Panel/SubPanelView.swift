@@ -102,7 +102,11 @@ class SubPanelView: UIView {
     let itemSize: CGSize = .init(width: 40, height: 40)
     
     func rebuildFrom(views: [UIView]) {
-        containerView.subviews.forEach { $0.removeFromSuperview() }
+        containerView.subviews.forEach {
+            if !($0 is UIVisualEffectView) {
+                $0.removeFromSuperview()
+            }
+        }
         setupFromItemViews(views: views)
     }
     

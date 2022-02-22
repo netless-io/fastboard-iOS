@@ -28,10 +28,10 @@ public class DefaultTheme: NSObject {
                                                       containerColor: .lightGray),
                    controlBarAssets: ControlBarAssets(backgroundColor: .black,
                                                       borderColor: .lightGray),
-                   panelItemAssets: .init(normalIconColor: .white,
-                                          selectedIconColor: .systemBlue,
-                                          highlightBgColor: .lightGray,
-                                          subOpsIndicatorColor: .lightGray,
+                   panelItemAssets: .init(normalIconColor: .gray,
+                                          selectedIconColor: .white,
+                                          highlightBgColor: .darkGray,
+                                          subOpsIndicatorColor: .white,
                                           pageTextLabelColor: .gray))
     }
     
