@@ -1,30 +1,46 @@
 PODS:
   - AgoraFPA_iOS (1.0.0)
   - dsBridge (3.0.6)
-  - Fastboard/core (1.0.0-beta.7)
+  - Fastboard (1.0.0-beta.7):
+    - Fastboard/core (= 1.0.0-beta.7)
+  - Fastboard/core (1.0.0-beta.7):
+    - Whiteboard
   - Fastboard/fpa (1.0.0-beta.7):
     - Fastboard/core
     - Whiteboard/fpa
   - Masonry (1.1.0)
   - SnapKit (5.0.1)
+  - Whiteboard (2.16.1):
+    - Whiteboard/Converter (= 2.16.1)
+    - Whiteboard/NativeReplayer (= 2.16.1)
+    - Whiteboard/Replayer (= 2.16.1)
+    - Whiteboard/Room (= 2.16.1)
   - Whiteboard/Base (2.16.1):
     - dsBridge (~> 3.0.2)
+    - Whiteboard/Object
+  - Whiteboard/Converter (2.16.1):
     - Whiteboard/Object
   - Whiteboard/fpa (2.16.1):
     - AgoraFPA_iOS (~> 1.0.0)
     - Whiteboard/Room
   - Whiteboard/Model (2.16.1):
     - YYModel (~> 1.0.4)
+  - Whiteboard/NativeReplayer (2.16.1):
+    - Whiteboard/Replayer
   - Whiteboard/Object (2.16.1):
     - Whiteboard/Model
+  - Whiteboard/Replayer (2.16.1):
+    - Whiteboard/Base
   - Whiteboard/Room (2.16.1):
     - Whiteboard/Base
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - Fastboard (from `../`)
   - Fastboard/fpa (from `../`)
   - Masonry
   - SnapKit
+  - Whiteboard (from `https://github.com/vince-hz/Whiteboard-iOS.git`, branch `feature/fpa`)
   - Whiteboard/fpa (from `https://github.com/vince-hz/Whiteboard-iOS.git`, branch `feature/fpa`)
 
 SPEC REPOS:
@@ -50,12 +66,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AgoraFPA_iOS: 2202f574e6832567e368d5e69ad6da121a18ee4a
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
-  Fastboard: bc1fe67310e9b6f854f647d30dcf0f1c9e47ff66
+  Fastboard: 8b0b8ccecaec52311736725c8321ba9f6b7b24c6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Whiteboard: 0a17f352bbea3f67e0f3ac63780a42c96800b64e
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: f8a1a813c55cc4233c88cc255920cfef491611c9
+PODFILE CHECKSUM: 5f7f16ebe213ee814d6d3ed91fa6041d4740b764
 
 COCOAPODS: 1.11.2

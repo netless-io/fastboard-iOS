@@ -24,6 +24,11 @@
     {
       "name": "core",
       "source_files": "Fastboard/Classes/**/*",
+      "dependencies": {
+        "Whiteboard": [
+
+        ]
+      },
       "exclude_files": "Fastboard/Classes/FPA/*",
       "resource_bundles": {
         "Icons": [
@@ -39,10 +44,10 @@
       "name": "fpa",
       "source_files": "Fastboard/Classes/FPA/*",
       "dependencies": {
-        "Fastboard/core": [
+        "Whiteboard/fpa": [
 
         ],
-        "Whiteboard/fpa": [
+        "Fastboard/core": [
 
         ]
       }
