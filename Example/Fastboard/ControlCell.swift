@@ -15,6 +15,7 @@ class ControlCell: UICollectionViewCell {
         layer.cornerRadius = 4
     }
 
+    
     @IBOutlet weak var controlStatusLabel: UILabel!
     @IBOutlet weak var controlTitleLabel: UILabel!
 }

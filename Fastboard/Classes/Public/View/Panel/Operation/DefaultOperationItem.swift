@@ -80,10 +80,7 @@ public class DefaultOperationItem: NSObject {
     public static func previousPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_previous")!,
                           action: { room, _ in
-            let index = room.sceneState.index
-            guard index > 0 else { return }
-            let previousIndex = UInt(index - 1)
-            room.setSceneIndex(previousIndex, completionHandler: nil)
+            room.prevPage(nil)
         }, identifier: DefaultOperationIdentifier.operationType(.previousPage)!.identifier)
     }
     
@@ -91,10 +88,7 @@ public class DefaultOperationItem: NSObject {
     public static func nextPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_next")!,
                           action: { room, _ in
-            let index = room.sceneState.index
-            guard room.sceneState.scenes.count > index else { return }
-            let nextIndex = UInt(index + 1)
-            room.setSceneIndex(nextIndex, completionHandler: nil)
+            room.nextPage(nil)
         }, identifier: DefaultOperationIdentifier.operationType(.nextPage)!.identifier)
     }
     
@@ -104,7 +98,7 @@ public class DefaultOperationItem: NSObject {
                           action: { room, _ in
             let index = room.sceneState.index
             let nextIndex = UInt(index + 1)
-            room.putScenes("/", scenes: [WhiteScene()], index: nextIndex)
+            room.addPage()
             room.setSceneIndex(nextIndex, completionHandler: nil)
         }, identifier: DefaultOperationIdentifier.operationType(.newPage)!.identifier)
     }

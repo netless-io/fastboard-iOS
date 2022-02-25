@@ -51,6 +51,8 @@ class ExampleControlView: UICollectionView {
         } else {
             layout.itemSize = CGSize(width: controlWidth, height: controlHeight)
         }
+        
+        layout.scrollDirection = bounds.height <= controlHeight ? .horizontal : .vertical
     }
     
     init(items: [ExampleItem]) {

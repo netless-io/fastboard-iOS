@@ -18,22 +18,25 @@
 "Hide PanelItem" = "Hide ToolBox";
 
 
-"Insert Mock DOC" = "Insert Mock DOC";
+"Insert Mock DOC" = "Insert DOC";
 
 
-"Insert Mock Image" = "Insert Mock Image";
+"Insert Mock Image" = "Insert Image";
 
 
-"Insert Mock MP3" = "Insert Mock MP3";
+"Insert Mock MP3" = "Insert MP3";
 
 
-"Insert Mock MP4" = "Insert Mock MP4";
+"Insert Mock MP4" = "Insert MP4";
 
 
-"Insert Mock PDF" = "Insert Mock PDF";
+"Insert Mock PDF" = "Insert PDF";
 
 
-"Insert Mock PPT" = "Insert Mock PPT";
+"Insert Mock PPT" = "Insert PPT";
+
+
+"Insert Mock PPTX" = "Insert PPTX";
 
 
 "Left" = "Left";

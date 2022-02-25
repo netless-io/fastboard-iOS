@@ -102,9 +102,11 @@ class ViewController: UIViewController {
         activity.snp.makeConstraints { $0.edges.equalToSuperview() }
         activity.startAnimating()
         exampleControlView.isHidden = true
+        mediaControlView.isHidden = true
         fastboard.joinRoom { _ in
             activity.stopAnimating()
             self.exampleControlView.isHidden = false
+            self.mediaControlView.isHidden = false
         }
         self.fastboard = fastboard
     }
@@ -430,49 +432,85 @@ class ViewController: UIViewController {
         return array
     }()
     
+    func insertItem(_ item: StorageItem) {
+        if item.fileType == .img {
+            URLSession.shared.downloadTask(with: URLRequest(url: item.fileURL)) { url, r, err in
+                guard
+                    let url = url,
+                    let data = try? Data(contentsOf: url),
+                    let img = UIImage(data: data)
+                else {
+                    return
+                }
+                self.fastboard.insertImg(item.fileURL, imageSize: img.size)
+            }.resume()
+        }
+        if item.fileType == .video ||
+            item.fileType == .music {
+            self.fastboard.insertMedia(item.fileURL, title: item.fileName, completionHandler: nil)
+            return
+        }
+        WhiteConverterV5.checkProgress(withTaskUUID: item.taskUUID,
+                                       token: item.taskToken,
+                                       region: item.region,
+                                       taskType: item.taskType) { info, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let info = info else { return }
+            let pages = info.progress?.convertedFileList ?? []
+            
+            switch item.fileType {
+            case .img, .music, .video:
+                return
+            case .word, .pdf:
+                self.fastboard.insertStaticDocument(pages,
+                                                    title: item.fileName,
+                                                    completionHandler: nil)
+            case .ppt:
+                if item.taskType == .dynamic {
+                    self.fastboard.insertPptx(pages,
+                                              title: item.fileName,
+                                              completionHandler: nil)
+                } else {
+                    self.fastboard.insertStaticDocument(pages,
+                                                        title: item.fileName,
+                                                        completionHandler: nil)
+                }
+            default:
+                return
+            }
+        }
+    }
+    
     // MARK: Lazy
     lazy var exampleControlView = ExampleControlView(items: exampleItems)
     
     lazy var mediaControlView = ExampleControlView(items: [
-        .init(title: NSLocalizedString("Insert Mock DOC", comment: ""), status: nil, clickBlock: { [unowned self] item in
-            let doc = storage.first(where: { $0.fileType == .word })!
-            [(doc.fileURL, doc.fileURL, )]
-            self.fastboard.insertStaticDocument(<#T##pages: [(url: URL, preview: URL, size: CGSize)]##[(url: URL, preview: URL, size: CGSize)]#>, title: <#T##String#>, completionHandler: <#T##((String) -> Void)?##((String) -> Void)?##(String) -> Void#>)
-//            self.fastboard.insertStaticDocument(<#T##pages: [(url: URL, preview: URL, size: CGSize)]##[(url: URL, preview: URL, size: CGSize)]#>, title: <#T##String#>, completionHandler: <#T##((String) -> Void)?##((String) -> Void)?##(String) -> Void#>)
+        .init(title: NSLocalizedString("Insert Mock PPTX", comment: ""), status: nil, clickBlock: { [unowned self] _ in
+            if let item = storage.first(where: { $0.taskType == .dynamic }) { self.insertItem(item) }
+        }),
+        .init(title: NSLocalizedString("Insert Mock DOC", comment: ""), status: nil, clickBlock: { [unowned self] _ in
+            if let item = storage.first(where: { $0.fileType == .word }) { self.insertItem(item) }
+        }),
+        .init(title: NSLocalizedString("Insert Mock PDF", comment: ""), status: nil, clickBlock: { [unowned self] _ in
+            if let item = storage.first(where: { $0.fileType == .pdf }) { self.insertItem(item) }
+        }),
+        .init(title: NSLocalizedString("Insert Mock PPT", comment: ""), status: nil, clickBlock: { [unowned self] _ in
+            if let item = storage.first(where: { $0.fileType == .ppt && $0.taskType == .static })
+            { self.insertItem(item) }
+        }),
+        .init(title: NSLocalizedString("Insert Mock MP4", comment: ""), status: nil, clickBlock: { [unowned self] _ in
+            if let item = storage.first(where: { $0.fileType == .video }) { self.insertItem(item) }
+        }),
+        .init(title: NSLocalizedString("Insert Mock MP3", comment: ""), status: nil, clickBlock: { [unowned self] _ in
+            if let item = storage.first(where: { $0.fileType == .music }) { self.insertItem(item) }
+        }),
+        .init(title: NSLocalizedString("Insert Mock Image", comment: ""), status: nil, clickBlock: { [unowned self] _ in
+            if let item = storage.first(where: { $0.fileType == .img }) { self.insertItem(item) }
         })
-])
-//    [
-//        {
-//            "name":"开始使用 Flat.pdf",
-//            "url":"https://flat-storage.oss-accelerate.aliyuncs.com/cloud-storage/2022-02/15/09faea1a-42f2-4ef6-a40d-7866cc5e1104/09faea1a-42f2-4ef6-a40d-7866cc5e1104.pdf",
-//            "taskUUID":"fddaeb908e0b11ecb94f39bd66b92986",
-//            "taskToken":"NETLESSTASK_YWs9NWJod2NUeXk2MmRZWC11WiZub25jZT1mZTFlZjk3MC04ZTBiLTExZWMtYTMzNS01MWEyMGJkNzRiZjYmcm9sZT0yJnNpZz1jZGQwMzMyZTFlZTkwNGEyNjhlMjQ0NDc0NWQ4MTY0ZTAzNzNiOTIxZmI4ZDY0YTE0MTJiZTU5MmUwMjM3MzM4JnV1aWQ9ZmRkYWViOTA4ZTBiMTFlY2I5NGYzOWJkNjZiOTI5ODY"
-//        },
-//        {
-//            "name":"Get Started with Flat.pptx",
-//            "url":"https://flat-storage.oss-accelerate.aliyuncs.com/cloud-storage/2022-02/15/d9e8a040-5b44-4867-b4ea-dcd5551dd5a8/d9e8a040-5b44-4867-b4ea-dcd5551dd5a8.pptx",
-//            "taskUUID":"feae41208e0b11ecb954e907f43a0c2c",
-//            "taskToken":"NETLESSTASK_YWs9NWJod2NUeXk2MmRZWC11WiZub25jZT1mZWI5YjJkMC04ZTBiLTExZWMtYTMzNS01MWEyMGJkNzRiZjYmcm9sZT0yJnNpZz00MDc2MjU2YmIwNzI3YmU1NWUxMGQ1YmMxOTI1ZjNjZWZlMDIyZjE3Yzg2MzU4MWM3MjQzZDdhZGQ0MzVkOGM4JnV1aWQ9ZmVhZTQxMjA4ZTBiMTFlY2I5NTRlOTA3ZjQzYTBjMmM",
-//        },
-//        {
-//            "name":"oceans.mp4",
-//            "fileSize":23014356,
-//            "url":"https://flat-storage.oss-accelerate.aliyuncs.com/cloud-storage/2022-02/15/55509848-5437-463e-b52c-f81d1319c837/55509848-5437-463e-b52c-f81d1319c837.mp4",
-//        },
-//        {
-//            "name":"lena_color.png",
-//            "url":"https://flat-storage.oss-accelerate.aliyuncs.com/cloud-storage/2022-02/15/ebe8320a-a90e-4e03-ad3a-a5dc06ae6eda/ebe8320a-a90e-4e03-ad3a-a5dc06ae6eda.png",
-//            "width":512,
-//            "height": 512
-//        },
-//        {
-//            "name":"lena_gray.png",
-//            "url":"https://flat-storage.oss-accelerate.aliyuncs.com/cloud-storage/2022-02/15/8d487d84-e527-4760-aeb6-e13235fd541f/8d487d84-e527-4760-aeb6-e13235fd541f.png",
-//            "width":512,
-//            "height": 512
-//        }
-//    ]
-
+    ])
 }
 
 extension ViewController: FastboardDelegate {
