@@ -62,21 +62,21 @@ class ViewController: UIViewController {
     
     func setupFastboard(custom: FastboardOverlay? = nil) {
         let config: FastConfiguration
-//        if #available(iOS 13.0, *) {
-//            config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
-//                                           roomUUID: RoomInfo.ROOMUUID.value,
-//                                           roomToken: RoomInfo.ROOMTOKEN.value,
-//                                           region: .CN,
-//                                           userUID: "some-unique-id",
-//                                           useFPA: true)
-//        } else {
+        if #available(iOS 13.0, *) {
+            config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
+                                           roomUUID: RoomInfo.ROOMUUID.value,
+                                           roomToken: RoomInfo.ROOMTOKEN.value,
+                                           region: .CN,
+                                           userUID: "some-unique-id",
+                                           useFPA: true)
+        } else {
             // Without fpa
             config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
                                            roomUUID: RoomInfo.ROOMUUID.value,
                                            roomToken: RoomInfo.ROOMTOKEN.value,
                                            region: .CN,
                                            userUID: "some-unique-id")
-//        }
+        }
         config.customOverlay = custom
         let fastboard = Fastboard(configuration: config)
         fastboard.delegate = self

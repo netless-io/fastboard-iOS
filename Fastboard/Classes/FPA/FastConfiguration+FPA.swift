@@ -25,7 +25,6 @@ extension FastConfiguration {
                   userUID: userUID)
         whiteRoomConfig.nativeWebSocket = useFPA
         if useFPA {
-            WhiteFPA.setupFpa(WhiteFPA.defaultFpaConfig(), chain: WhiteFPA.defaultChain())
             FpaProxyService.shared().setupDelegate(FPADelegate.shared)
         }
     }

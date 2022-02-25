@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'core' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard', '~> 2.16.3'
+    core.dependency 'Whiteboard', '~> 2.16.4'
     core.exclude_files = 'Fastboard/Classes/FPA/*'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
@@ -27,11 +27,11 @@ Pod::Spec.new do |s|
     core.frameworks = 'UIKit'
   end
   
-  # s.subspec 'fpa' do |fpa|
-  #   fpa.source_files = 'Fastboard/Classes/FPA/*'
-  #   fpa.dependency 'Whiteboard/fpa'
-  #   fpa.dependency 'Fastboard/core'
-  # end
+   s.subspec 'fpa' do |fpa|
+     fpa.source_files = 'Fastboard/Classes/FPA/*'
+     fpa.dependency 'Whiteboard/fpa'
+     fpa.dependency 'Fastboard/core'
+   end
   
   s.default_subspec = 'core'
   
