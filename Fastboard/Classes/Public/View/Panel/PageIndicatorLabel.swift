@@ -8,7 +8,12 @@
 import UIKit
 
 class PageIndicatorLabel: UILabel {
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        textColor = textColor
+    @objc dynamic var configurableTextColor: UIColor {
+        get {
+            return textColor
+        }
+        set {
+            textColor = newValue
+        }
     }
 }

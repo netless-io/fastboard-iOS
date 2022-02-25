@@ -68,6 +68,18 @@ class PanelItemButton: UIButton {
         }
     }
     
+    @objc dynamic var disableColor: UIColor? = nil {
+        didSet {
+            tryUpdateStyle()
+        }
+    }
+    
+    @objc dynamic var highlightColor: UIColor? = nil {
+        didSet {
+            tryUpdateStyle()
+        }
+    }
+    
     @objc dynamic var justExecutionNormalColor: UIColor? = nil {
         didSet {
             tryUpdateStyle()
@@ -126,9 +138,13 @@ class PanelItemButton: UIButton {
             }
             if let iconSelectedColor = iconSelectedColor {
                 set(rawImage: image, drawColor: iconSelectedColor, state: .selected)
-                if let iconHighlightBgColor = iconHighlightBgColor {
-                    set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)
-                }
+                set(rawImage: image, drawColor: iconSelectedColor, state: [.selected, .highlighted])
+            }
+            if let highlightColor = highlightColor {
+                set(rawImage: image, drawColor: highlightColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)
+            }
+            if let disableColor = disableColor {
+                set(rawImage: image, drawColor: disableColor, state: .disabled)
             }
         case .justExecution:
             guard let image = rawImage else { return }
@@ -136,11 +152,11 @@ class PanelItemButton: UIButton {
                let justExecutionNormalColor = justExecutionNormalColor {
                 set(rawImage: image, drawColor: justExecutionNormalColor, state: .normal)
                 
-                if let iconSelectedColor = iconSelectedColor {
-                    set(rawImage: image, drawColor: iconSelectedColor, state: .selected)
-                    if let iconHighlightBgColor = iconHighlightBgColor {
-                        set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)
-                    }
+                if let highlightColor = highlightColor {
+                    set(rawImage: image, drawColor: highlightColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)
+                }
+                if let disableColor = disableColor {
+                    set(rawImage: image, drawColor: disableColor, state: .disabled)
                 }
             } else {
                 setImage(image, for: .normal)

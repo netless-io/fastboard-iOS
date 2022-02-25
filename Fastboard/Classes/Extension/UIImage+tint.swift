@@ -28,9 +28,11 @@ extension UIImage {
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
         let context = UIGraphicsGetCurrentContext()
         var bg: UIImage?
+        var alpha = CGFloat(0)
+        backgroundColor?.getWhite(nil, alpha: &alpha)
         
         // Draw background
-        if let bgColor = backgroundColor {
+        if let bgColor = backgroundColor, alpha > 0 {
             context?.setFillColor(bgColor.cgColor)
             let bgRect = rect.inset(by: backgroundEdgeInset)
             let path = UIBezierPath(roundedRect: bgRect, cornerRadius: cornerRadius)

@@ -29,9 +29,10 @@ public class DefaultOperationItem: NSObject {
     @objc
     public static func clean() -> FastOperationItem {
         let image = UIImage.currentBundle(named: "whiteboard_clean")!
-        return JustExecutionItem(image: image,
-                          action: { room, _ in room.cleanScene(true) },
-                                 identifier: DefaultOperationIdentifier.operationType(.clean)!.identifier)
+        return JustExecutionItem(
+            image: image,
+            action: { room, _ in room.cleanScene(true) },
+            identifier: DefaultOperationIdentifier.operationType(.clean)!.identifier)
     }
     
     @objc
@@ -124,7 +125,6 @@ public class DefaultOperationItem: NSObject {
     @objc
     public static func pageIndicatorItem() -> FastOperationItem {
         let label = PageIndicatorLabel()
-        label.textColor = PageIndicatorLabel.appearance().textColor
         label.font = .preferredFont(forTextStyle: .body)
         label.textAlignment = .center
         return IndicatorItem(view: label,

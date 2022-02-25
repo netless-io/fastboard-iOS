@@ -23,10 +23,18 @@ open class WhiteboardAssets: NSObject {
 
 open class PanelItemAssets: NSObject {
     @objc
-    public init(normalIconColor: UIColor, selectedIconColor: UIColor, highlightBgColor: UIColor, subOpsIndicatorColor: UIColor, pageTextLabelColor: UIColor) {
+    public init(normalIconColor: UIColor,
+                selectedIconColor: UIColor,
+                highlightColor: UIColor,
+                highlightBgColor: UIColor,
+                disableColor: UIColor,
+                subOpsIndicatorColor: UIColor,
+                pageTextLabelColor: UIColor) {
         self.normalIconColor = normalIconColor
         self.selectedIconColor = selectedIconColor
+        self.highlightColor = highlightColor
         self.highlightBgColor = highlightBgColor
+        self.disableColor = disableColor
         self.subOpsIndicatorColor = subOpsIndicatorColor
         self.pageTextLabelColor = pageTextLabelColor
     }
@@ -38,7 +46,13 @@ open class PanelItemAssets: NSObject {
     open var selectedIconColor: UIColor
     
     @objc
+    open var highlightColor: UIColor
+    
+    @objc
     open var highlightBgColor: UIColor
+    
+    @objc
+    open var disableColor: UIColor
     
     @objc
     open var subOpsIndicatorColor: UIColor
