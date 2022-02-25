@@ -8,24 +8,25 @@
 import UIKit
 import Whiteboard
 
-class PanelItemButton: UIButton {
-    override init(frame: CGRect) {
+public class PanelItemButton: UIButton {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(indicatorView)
         indicatorView.isHidden = true
     }
     
-    override var isSelected: Bool {
+    public override var isSelected: Bool {
         didSet {
             indicatorView.tintColor = isSelected ? iconSelectedColor : iconNormalColor
         }
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var indicatorInset: UIEdgeInsets = .zero {
+    @objc
+    public dynamic var indicatorInset: UIEdgeInsets = .zero {
         didSet {
             setNeedsLayout()
             layoutIfNeeded()
@@ -62,6 +63,12 @@ class PanelItemButton: UIButton {
         }
     }
     
+    @objc dynamic var iconSelectedBgColor: UIColor? = nil {
+        didSet {
+            tryUpdateStyle()
+        }
+    }
+    
     @objc dynamic var iconSelectedColor: UIColor? = nil {
         didSet {
             tryUpdateStyle()
@@ -92,7 +99,7 @@ class PanelItemButton: UIButton {
         }
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if #available(iOS 13.0, *) {
             if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
@@ -101,7 +108,7 @@ class PanelItemButton: UIButton {
         }
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         guard let size = indicatorView.image?.size else { return }
         let x = bounds.width - size.width - indicatorInset.right
@@ -130,6 +137,8 @@ class PanelItemButton: UIButton {
     }
     
     @objc func updateStyle() {
+        indicatorView.tintColor = isSelected ? iconSelectedColor : iconNormalColor
+        
         switch style {
         case .selectableAppliance:
             guard let image = rawImage else { return }
@@ -137,8 +146,8 @@ class PanelItemButton: UIButton {
                 set(rawImage: image, drawColor: normalColor, state: .normal)
             }
             if let iconSelectedColor = iconSelectedColor {
-                set(rawImage: image, drawColor: iconSelectedColor, state: .selected)
-                set(rawImage: image, drawColor: iconSelectedColor, state: [.selected, .highlighted])
+                set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, state: .selected)
+                set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, state: [.selected, .highlighted])
             }
             if let highlightColor = highlightColor {
                 set(rawImage: image, drawColor: highlightColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)

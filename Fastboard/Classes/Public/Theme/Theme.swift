@@ -25,6 +25,7 @@ open class PanelItemAssets: NSObject {
     @objc
     public init(normalIconColor: UIColor,
                 selectedIconColor: UIColor,
+                selectedIconBgColor: UIColor,
                 highlightColor: UIColor,
                 highlightBgColor: UIColor,
                 disableColor: UIColor,
@@ -32,6 +33,7 @@ open class PanelItemAssets: NSObject {
                 pageTextLabelColor: UIColor) {
         self.normalIconColor = normalIconColor
         self.selectedIconColor = selectedIconColor
+        self.selectedIconBgColor = selectedIconBgColor
         self.highlightColor = highlightColor
         self.highlightBgColor = highlightBgColor
         self.disableColor = disableColor
@@ -44,6 +46,9 @@ open class PanelItemAssets: NSObject {
     
     @objc
     open var selectedIconColor: UIColor
+    
+    @objc
+    open var selectedIconBgColor: UIColor
     
     @objc
     open var highlightColor: UIColor

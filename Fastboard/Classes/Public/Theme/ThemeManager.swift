@@ -44,6 +44,7 @@ public class ThemeManager: NSObject {
         PanelItemButton.appearance().iconHighlightBgColor = asset.highlightBgColor
         PanelItemButton.appearance().justExecutionNormalColor = asset.normalIconColor
         PanelItemButton.appearance().highlightColor = asset.highlightColor
+        PanelItemButton.appearance().iconSelectedBgColor = asset.selectedIconBgColor
         
         UIImageView.appearance(whenContainedInInstancesOf: [PanelItemButton.self]).tintColor = asset.subOpsIndicatorColor
         PageIndicatorLabel.appearance().configurableTextColor = asset.pageTextLabelColor
