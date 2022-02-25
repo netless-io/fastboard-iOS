@@ -11,7 +11,8 @@ import Whiteboard
 
 extension WhiteRegionKey: Codable {}
 
-struct StorageItem: Codable {
+@objc
+class StorageItem: NSObject, Codable {
     enum FileType: CaseIterable {
         case img
         case pdf

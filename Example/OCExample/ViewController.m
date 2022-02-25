@@ -13,6 +13,7 @@
 #import <Whiteboard/Whiteboard.h>
 #import "Utility.h"
 #import "CustomFastboardOverlay.h"
+#import "OCExample-Swift.h"
 
 @interface ViewController() <FastboardDelegate>
 @property (nonatomic, strong) UIStackView* stackView;
@@ -138,10 +139,26 @@
 }
 
 - (void)onUserTheme {
-    WhiteboardAssets* white = [[WhiteboardAssets alloc] initWithWhiteboardBackgroundColor:UIColor.greenColor containerColor:UIColor.yellowColor];
-    ControlBarAssets* control = [[ControlBarAssets alloc] initWithBackgroundColor:UIColor.blueColor borderColor:UIColor.grayColor effectStyle:[UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular]];
-    PanelItemAssets* panel = [[PanelItemAssets alloc] initWithNormalIconColor:UIColor.blackColor selectedIconColor:UIColor.systemRedColor highlightBgColor:UIColor.cyanColor subOpsIndicatorColor:UIColor.yellowColor pageTextLabelColor:UIColor.orangeColor];
-    ThemeAsset* asset = [[ThemeAsset alloc] initWithWhiteboardAssets:white controlBarAssets:control panelItemAssets:panel];
+    WhiteboardAssets* white = [[WhiteboardAssets alloc]
+                               initWithWhiteboardBackgroundColor:UIColor.whiteColor
+                               containerColor:UIColor.grayColor];
+    CustomColor* customColor = [OCBridge getCustomColor];
+    ControlBarAssets* control = [[ControlBarAssets alloc]
+                                 initWithBackgroundColor:[[UIColor alloc] initWithHexString:customColor.controlBarBg]
+                                 borderColor:UIColor.clearColor
+                                 effectStyle:[UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular]];
+    
+    PanelItemAssets* panel = [[PanelItemAssets alloc] initWithNormalIconColor:UIColor.whiteColor
+                                   selectedIconColor:[[UIColor alloc] initWithHexString:customColor.selColor]
+                                 selectedIconBgColor:[[UIColor alloc] initWithHexString:customColor.iconSelectedBgColor]
+                                      highlightColor:[[UIColor alloc] initWithHexString:customColor.highlightColor]
+                                    highlightBgColor:UIColor.clearColor
+                                        disableColor:[UIColor.grayColor colorWithAlphaComponent:0.7]
+                                subOpsIndicatorColor:UIColor.whiteColor
+                                  pageTextLabelColor:UIColor.whiteColor];
+    ThemeAsset* asset = [[ThemeAsset alloc] initWithWhiteboardAssets:white
+                                                    controlBarAssets:control
+                                                     panelItemAssets:panel];
     [FastboardThemeManager.shared apply:asset];
 }
 

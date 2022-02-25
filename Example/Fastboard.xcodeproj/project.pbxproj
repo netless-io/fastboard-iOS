@@ -17,6 +17,14 @@
 		8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD19278BCBD700B5CB71 /* RoomInfo.m */; };
 		8A28DD1C278BD84E00B5CB71 /* README-En.md in Resources */ = {isa = PBXBuildFile; fileRef = 8A28DD1B278BD84E00B5CB71 /* README-En.md */; };
 		8A310FC12787DEA800376BB5 /* ExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A310FC02787DEA800376BB5 /* ExampleTheme.swift */; };
+		8A32FA7527C885B000FA9367 /* customColor.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A32FA7427C885B000FA9367 /* customColor.json */; };
+		8A32FA7827C885ED00FA9367 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32FA7727C885ED00FA9367 /* CustomColor.swift */; };
+		8A32FA7A27C886AB00FA9367 /* UIColor+Convince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32FA7927C886AB00FA9367 /* UIColor+Convince.swift */; };
+		8A32FA7B27C8AEBF00FA9367 /* storage.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AB02BBE27C4CF0500792EF6 /* storage.json */; };
+		8A32FA7C27C8AEE400FA9367 /* StorageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB02BBC27C4CE6A00792EF6 /* StorageItem.swift */; };
+		8A32FA7D27C8AF6100FA9367 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32FA7727C885ED00FA9367 /* CustomColor.swift */; };
+		8A32FA8027C8B6C500FA9367 /* UIColor+Convince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32FA7927C886AB00FA9367 /* UIColor+Convince.swift */; };
+		8A32FA8127C8B80B00FA9367 /* customColor.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A32FA7427C885B000FA9367 /* customColor.json */; };
 		8AAB0ED4277AB0E40062E8D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */; };
 		8AAB0ED7277AB0E40062E8D1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED6277AB0E40062E8D1 /* SceneDelegate.m */; };
 		8AAB0EDA277AB0E40062E8D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED9277AB0E40062E8D1 /* ViewController.m */; };
@@ -60,6 +68,9 @@
 		8A28DD19278BCBD700B5CB71 /* RoomInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomInfo.m; sourceTree = "<group>"; };
 		8A28DD1B278BD84E00B5CB71 /* README-En.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "README-En.md"; path = "../README-En.md"; sourceTree = "<group>"; };
 		8A310FC02787DEA800376BB5 /* ExampleTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTheme.swift; sourceTree = "<group>"; };
+		8A32FA7427C885B000FA9367 /* customColor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = customColor.json; sourceTree = "<group>"; };
+		8A32FA7727C885ED00FA9367 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		8A32FA7927C886AB00FA9367 /* UIColor+Convince.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convince.swift"; sourceTree = "<group>"; };
 		8AAB0ED0277AB0E40062E8D1 /* OCExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAB0ED2277AB0E40062E8D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,10 +156,12 @@
 		607FACD21AFB9204008FA782 /* Example for Fastboard */ = {
 			isa = PBXGroup;
 			children = (
-				8AB02BC027C4CF8500792EF6 /* MockStorage */,
+				8A32FA7627C885CB00FA9367 /* Resource */,
 				8AB02BB527C47F9000792EF6 /* Localizable.strings */,
+				8AB02BC027C4CF8500792EF6 /* MockStorage */,
 				8AB02B9D27C4757200792EF6 /* Control */,
 				8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */,
+				8A32FA7927C886AB00FA9367 /* UIColor+Convince.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				8AE96585278842FC00722F89 /* Utility.swift */,
@@ -158,6 +171,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				8A32FA7727C885ED00FA9367 /* CustomColor.swift */,
 			);
 			name = "Example for Fastboard";
 			path = Fastboard;
@@ -182,6 +196,15 @@
 				8A28DD14278BC0E900B5CB71 /* FastboardConfig.xcconfig */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		8A32FA7627C885CB00FA9367 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8A32FA7427C885B000FA9367 /* customColor.json */,
+				8AB02BBE27C4CF0500792EF6 /* storage.json */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		8AAB0ED1277AB0E40062E8D1 /* OCExample */ = {
@@ -219,7 +242,6 @@
 		8AB02BC027C4CF8500792EF6 /* MockStorage */ = {
 			isa = PBXGroup;
 			children = (
-				8AB02BBE27C4CF0500792EF6 /* storage.json */,
 				8AB02BBC27C4CE6A00792EF6 /* StorageItem.swift */,
 			);
 			name = MockStorage;
@@ -329,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AB02BB827C47F9000792EF6 /* Localizable.strings in Resources */,
+				8A32FA7527C885B000FA9367 /* customColor.json in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				8AB02BA127C4758200792EF6 /* ControlCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
@@ -341,9 +364,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A32FA8127C8B80B00FA9367 /* customColor.json in Resources */,
 				8AB02B9627C470B800792EF6 /* LaunchScreen.xib in Resources */,
 				8AB02B9A27C4744300792EF6 /* Main.storyboard in Resources */,
 				8AFA91D5278C396D00E0CA61 /* Images.xcassets in Resources */,
+				8A32FA7B27C8AEBF00FA9367 /* storage.json in Resources */,
 				8A28DD1C278BD84E00B5CB71 /* README-En.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,8 +383,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Fastboard_Example/Pods-Fastboard_Example-frameworks.sh",
-				"${PODS_ROOT}/AgoraFPA_iOS/AgoraFPA.framework",
-				"${PODS_ROOT}/AgoraFPA_iOS/AgoraFpaProxyService.framework",
 				"${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
@@ -368,8 +391,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AgoraFPA.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AgoraFpaProxyService.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fastboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whiteboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
@@ -432,8 +453,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-OCExample/Pods-OCExample-frameworks.sh",
-				"${PODS_ROOT}/AgoraFPA_iOS/AgoraFPA.framework",
-				"${PODS_ROOT}/AgoraFPA_iOS/AgoraFpaProxyService.framework",
 				"${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework",
@@ -442,8 +461,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AgoraFPA.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AgoraFpaProxyService.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fastboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whiteboard.framework",
@@ -470,6 +487,8 @@
 				8AB02BA027C4758200792EF6 /* ControlCell.swift in Sources */,
 				8A28DD16278BC1BD00B5CB71 /* RoomInfo.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				8A32FA7A27C886AB00FA9367 /* UIColor+Convince.swift in Sources */,
+				8A32FA7827C885ED00FA9367 /* CustomColor.swift in Sources */,
 				8AB02BBD27C4CE6A00792EF6 /* StorageItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,12 +499,15 @@
 			files = (
 				8AFA91CE278C280E00E0CA61 /* Utility.m in Sources */,
 				8AFA91C9278C27A700E0CA61 /* Utility.swift in Sources */,
+				8A32FA8027C8B6C500FA9367 /* UIColor+Convince.swift in Sources */,
+				8A32FA7D27C8AF6100FA9367 /* CustomColor.swift in Sources */,
 				8AB02B9727C4715C00792EF6 /* CustomFastboardOverlay.m in Sources */,
 				8AAB0EDA277AB0E40062E8D1 /* ViewController.m in Sources */,
 				8AAB0ED4277AB0E40062E8D1 /* AppDelegate.m in Sources */,
 				8AAB0EE5277AB0E40062E8D1 /* main.m in Sources */,
 				8AAB0ED7277AB0E40062E8D1 /* SceneDelegate.m in Sources */,
 				8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */,
+				8A32FA7C27C8AEE400FA9367 /* StorageItem.swift in Sources */,
 				8A28DD18278BCB1900B5CB71 /* RoomInfo.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,6 +715,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L922897LKX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -733,6 +756,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = L922897LKX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIColor {
-    convenience init (hexString: String) {
+    @objc
+    public convenience init (hexString: String) {
         var cString: String = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         if cString.count < 6 {
             self.init(r: 0, g: 0, b: 0, a: 1)

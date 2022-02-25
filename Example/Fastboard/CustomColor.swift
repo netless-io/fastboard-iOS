@@ -8,12 +8,27 @@
 
 import Foundation
 
-struct CustomColor: Codable {
-    let controlBarBg: String
-    let selColor: String
-    let highlightColor: String
-    let iconSelectedBgColor: String
+@objc
+public class CustomColor:NSObject, Codable {
+    @objc
+    public let controlBarBg: String
+    
+    @objc
+    public let selColor: String
+    
+    @objc
+    public let highlightColor: String
+    
+    @objc
+    public let iconSelectedBgColor: String
 }
 
 let json = Bundle.main.path(forResource: "customColor", ofType: "json")!
 let customColor = try! JSONDecoder().decode(CustomColor.self, from: try! Data(contentsOf: URL(fileURLWithPath: json)))
+
+/// For OC
+@objc
+public class OCBridge: NSObject {
+    @objc
+    public class func getCustomColor() -> CustomColor { customColor }
+}

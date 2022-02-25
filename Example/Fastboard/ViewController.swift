@@ -62,21 +62,21 @@ class ViewController: UIViewController {
     
     func setupFastboard(custom: FastboardOverlay? = nil) {
         let config: FastConfiguration
-        if #available(iOS 13.0, *) {
-            config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
-                                           roomUUID: RoomInfo.ROOMUUID.value,
-                                           roomToken: RoomInfo.ROOMTOKEN.value,
-                                           region: .CN,
-                                           userUID: "some-unique-id",
-                                           useFPA: true)
-        } else {
+//        if #available(iOS 13.0, *) {
+//            config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
+//                                           roomUUID: RoomInfo.ROOMUUID.value,
+//                                           roomToken: RoomInfo.ROOMTOKEN.value,
+//                                           region: .CN,
+//                                           userUID: "some-unique-id",
+//                                           useFPA: true)
+//        } else {
             // Without fpa
             config = FastConfiguration(appIdentifier: RoomInfo.APPID.value,
                                            roomUUID: RoomInfo.ROOMUUID.value,
                                            roomToken: RoomInfo.ROOMTOKEN.value,
                                            region: .CN,
                                            userUID: "some-unique-id")
-        }
+//        }
         config.customOverlay = custom
         let fastboard = Fastboard(configuration: config)
         fastboard.delegate = self
@@ -189,12 +189,30 @@ class ViewController: UIViewController {
     var usingCustomTheme: Bool = false {
         didSet {
             if usingCustomTheme {
-                let white = WhiteboardAssets(whiteboardBackgroundColor: .green, containerColor: .yellow)
-                let control = ControlBarAssets(backgroundColor: .blue, borderColor: .gray, effectStyle: .init(style: .regular))
-                let panel = PanelItemAssets(normalIconColor: .black, selectedIconColor: .systemRed, highlightBgColor: .cyan, subOpsIndicatorColor: .yellow, pageTextLabelColor: .orange)
-                let theme = ThemeAsset(whiteboardAssets: white, controlBarAssets: control, panelItemAssets: panel)
+                ControlBar.appearance().itemWidth = 26
+                ControlBar.appearance().commonRadius = 4
+                PanelItemButton.appearance().indicatorInset = .init(top: 0, left: 0, bottom: 3, right: 3)
+                let white = WhiteboardAssets(whiteboardBackgroundColor: .white,
+                                             containerColor: .gray)
+                let control = ControlBarAssets(backgroundColor: .init(hexString: customColor.controlBarBg),
+                                               borderColor: .clear,
+                                               effectStyle: .init(style: .regular))
+                let panel = PanelItemAssets(normalIconColor: .white,
+                                            selectedIconColor: .init(hexString: customColor.selColor),
+                                            selectedIconBgColor: .init(hexString: customColor.iconSelectedBgColor),
+                                            highlightColor: .init(hexString: customColor.highlightColor),
+                                            highlightBgColor: .clear,
+                                            disableColor: UIColor.gray.withAlphaComponent(0.7),
+                                            subOpsIndicatorColor: .white,
+                                            pageTextLabelColor: .white)
+                let theme = ThemeAsset(whiteboardAssets: white,
+                                       controlBarAssets: control,
+                                       panelItemAssets: panel)
                 ThemeManager.shared.apply(theme)
             } else {
+                PanelItemButton.appearance().indicatorInset = .init(top: 0, left: 0, bottom: 8, right: 8)
+                ControlBar.appearance().commonRadius = 10
+                ControlBar.appearance().itemWidth = 40
                 let i = self.currentTheme
                 self.currentTheme = i
             }
