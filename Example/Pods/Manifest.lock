@@ -1,9 +1,13 @@
 PODS:
+  - AgoraFPA_iOS (1.0.0)
   - dsBridge (3.0.6)
   - Fastboard (1.0.0-beta.7):
     - Fastboard/core (= 1.0.0-beta.7)
   - Fastboard/core (1.0.0-beta.7):
-    - Whiteboard (~> 2.16.3)
+    - Whiteboard (~> 2.16.4)
+  - Fastboard/fpa (1.0.0-beta.7):
+    - Fastboard/core
+    - Whiteboard/fpa
   - Masonry (1.1.0)
   - SnapKit (5.0.1)
   - Whiteboard (2.16.4):
@@ -16,6 +20,9 @@ PODS:
     - Whiteboard/Object
   - Whiteboard/Converter (2.16.4):
     - Whiteboard/Object
+  - Whiteboard/fpa (2.16.4):
+    - AgoraFPA_iOS (~> 1.0.0)
+    - Whiteboard/Room
   - Whiteboard/Model (2.16.4):
     - YYModel (~> 1.0.4)
   - Whiteboard/NativeReplayer (2.16.4):
@@ -30,12 +37,15 @@ PODS:
 
 DEPENDENCIES:
   - Fastboard (from `../`)
+  - Fastboard/fpa (from `../`)
   - Masonry
   - SnapKit
-  - Whiteboard (from `https://github.com/netless-io/Whiteboard-iOS.git`)
+  - Whiteboard (from `https://github.com/netless-io/Whiteboard-iOS`)
+  - Whiteboard/fpa (from `https://github.com/netless-io/Whiteboard-iOS`)
 
 SPEC REPOS:
   trunk:
+    - AgoraFPA_iOS
     - dsBridge
     - Masonry
     - SnapKit
@@ -45,21 +55,22 @@ EXTERNAL SOURCES:
   Fastboard:
     :path: "../"
   Whiteboard:
-    :git: https://github.com/netless-io/Whiteboard-iOS.git
+    :git: https://github.com/netless-io/Whiteboard-iOS
 
 CHECKOUT OPTIONS:
   Whiteboard:
-    :commit: 2abe29fd0b930a78a9305a386cccc49034eefca0
-    :git: https://github.com/netless-io/Whiteboard-iOS.git
+    :commit: 80f1d6b61f91a785585faf80beff67b1aa0fcf93
+    :git: https://github.com/netless-io/Whiteboard-iOS
 
 SPEC CHECKSUMS:
+  AgoraFPA_iOS: 2202f574e6832567e368d5e69ad6da121a18ee4a
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
-  Fastboard: 2d4c7743c4e695c2a8984fc45fccb1778ab016ff
+  Fastboard: c3a69e3933d4e5cd8ad55aeebf6c18a336c8a124
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  Whiteboard: 1ddf3b360f1dadcc5033101370191767e90d4e40
+  Whiteboard: 4171412993d6c8cef3fd66377654e9ff960e0388
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 1bea5ae2c96e3b0b03ca025a1f37335f2e498675
+PODFILE CHECKSUM: 8cdc27783b50b75a1564056994040547358efcae
 
 COCOAPODS: 1.11.2

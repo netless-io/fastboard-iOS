@@ -1,12 +1,12 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 def share
   pod 'Fastboard', :path => '../'
-#  pod 'Fastboard/fpa', :path => '../'
-  pod 'Whiteboard', :git => 'https://github.com/netless-io/Whiteboard-iOS.git'
-#  pod 'Whiteboard/fpa', :git => 'https://github.com/netless-io/Whiteboard-iOS.git'
+  pod 'Fastboard/fpa', :path => '../'
+  pod 'Whiteboard', :git => 'https://github.com/netless-io/Whiteboard-iOS'
+  pod 'Whiteboard/fpa', :git => 'https://github.com/netless-io/Whiteboard-iOS'
 end
   
 

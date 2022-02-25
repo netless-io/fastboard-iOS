@@ -26,7 +26,7 @@
       "source_files": "Fastboard/Classes/**/*",
       "dependencies": {
         "Whiteboard": [
-          "~> 2.16.3"
+          "~> 2.16.4"
         ]
       },
       "exclude_files": "Fastboard/Classes/FPA/*",
@@ -39,6 +39,18 @@
         ]
       },
       "frameworks": "UIKit"
+    },
+    {
+      "name": "fpa",
+      "source_files": "Fastboard/Classes/FPA/*",
+      "dependencies": {
+        "Whiteboard/fpa": [
+
+        ],
+        "Fastboard/core": [
+
+        ]
+      }
     }
   ],
   "swift_version": "5.0"
