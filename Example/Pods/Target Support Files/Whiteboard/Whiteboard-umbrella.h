@@ -21,7 +21,9 @@
 #import "WhiteSDK.h"
 #import "WhiteSdkConfiguration.h"
 #import "WhiteConversionInfo.h"
+#import "WhiteConversionInfoV5.h"
 #import "WhiteConverter.h"
+#import "WhiteConverterV5.h"
 #import "WhiteObject.h"
 #import "WhiteCombinePlayer.h"
 #import "WhiteSliderView.h"
@@ -57,8 +59,6 @@
 #import "WhiteRoomState.h"
 #import "WhiteSDK+Room.h"
 #import "WhiteSocket.h"
-#import "WhiteFPA.h"
-#import "WhiteRoomConfig+FPA.h"
 
 FOUNDATION_EXPORT double WhiteboardVersionNumber;
 FOUNDATION_EXPORT const unsigned char WhiteboardVersionString[];

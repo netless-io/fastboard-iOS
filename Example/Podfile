@@ -4,9 +4,9 @@ platform :ios, '10.0'
 
 def share
   pod 'Fastboard', :path => '../'
-  pod 'Fastboard/fpa', :path => '../'
-  pod 'Whiteboard', :git => 'https://github.com/vince-hz/Whiteboard-iOS.git', :branch => 'feature/fpa'
-  pod 'Whiteboard/fpa', :git => 'https://github.com/vince-hz/Whiteboard-iOS.git', :branch => 'feature/fpa'
+#  pod 'Fastboard/fpa', :path => '../'
+  pod 'Whiteboard', :git => 'https://github.com/netless-io/Whiteboard-iOS.git'
+#  pod 'Whiteboard/fpa', :git => 'https://github.com/netless-io/Whiteboard-iOS.git'
 end
   
 

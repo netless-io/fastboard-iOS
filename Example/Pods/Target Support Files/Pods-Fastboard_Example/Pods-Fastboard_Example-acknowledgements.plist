@@ -14,17 +14,6 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright 2018 agora.io. All rights reserved.
-</string>
-			<key>License</key>
-			<string>Copyright</string>
-			<key>Title</key>
-			<string>AgoraFPA_iOS</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
 			<string>Copyright (c) 2021 yunshi &lt;405029644@qq.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
