@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Fastboard'
-  s.version          = '1.0.0-beta.9'
+  s.version          = '1.0.0-beta.10'
   s.summary          = 'Quickly create a whiteboard interface for iOS'
 
   s.description      = <<-DESC
@@ -33,6 +33,9 @@ Pod::Spec.new do |s|
      fpa.dependency 'Fastboard/core'
      # Remove this when `fpa` deployment_target removed
      fpa.ios.deployment_target = '11.0'
+     fpa.pod_target_xcconfig = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
+     fpa.user_target_xcconfig = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
+
    end
   
   s.default_subspec = 'core'
