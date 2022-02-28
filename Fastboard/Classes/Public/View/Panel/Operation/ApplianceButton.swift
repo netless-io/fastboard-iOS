@@ -33,25 +33,26 @@ public class PanelItemButton: UIButton {
         }
     }
     
-    var hasSubOps: Bool = false {
+    public var hasSubOps: Bool = false {
         didSet {
             indicatorView.isHidden = !hasSubOps
         }
     }
     
-    enum Style {
+    public enum Style {
         case selectableAppliance
         case justExecution
         case color(UIColor)
     }
     
-    var style: Style = .selectableAppliance {
+    public var style: Style = .selectableAppliance {
         didSet {
             tryUpdateStyle()
         }
     }
     
-    var rawImage: UIImage? {
+    @objc
+    public var rawImage: UIImage? {
         didSet {
             tryUpdateStyle()
         }

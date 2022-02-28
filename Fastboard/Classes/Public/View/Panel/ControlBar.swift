@@ -34,7 +34,7 @@ public class ControlBar: UIView {
     var forceHideButtons: [UIButton] = []
     
     public
-    func updateButtonHide(_ button: UIButton, hide: Bool) {
+    func forceButtonHide(_ button: UIButton, hide: Bool) {
         if hide, !forceHideButtons.contains(button) {
             forceHideButtons.append(button)
         } else if !hide, forceHideButtons.contains(button) {
@@ -110,7 +110,7 @@ public class ControlBar: UIView {
         }
     }
     
-    init(direction: NSLayoutConstraint.Axis,
+    public init(direction: NSLayoutConstraint.Axis,
          borderMask: CACornerMask,
          views: [UIView]) {
         self.direction = direction
