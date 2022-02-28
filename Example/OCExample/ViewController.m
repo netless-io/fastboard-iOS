@@ -67,7 +67,7 @@
 
 - (void)onBarSize {
     if (ControlBar.appearance.itemWidth == 48) {
-        ControlBar.appearance.itemWidth = 40;
+        ControlBar.appearance.itemWidth = 44;
     } else {
         ControlBar.appearance.itemWidth = 48;
     }

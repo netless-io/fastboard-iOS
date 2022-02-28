@@ -33,7 +33,7 @@ public class ControlBar: UIView {
     
     var forceHideButtons: [UIButton] = []
     
-    public 
+    public
     func updateButtonHide(_ button: UIButton, hide: Bool) {
         if hide, !forceHideButtons.contains(button) {
             forceHideButtons.append(button)
@@ -44,7 +44,7 @@ public class ControlBar: UIView {
     }
     
     @objc
-    public dynamic var itemWidth: CGFloat = 40 {
+    public dynamic var itemWidth: CGFloat = 44 {
         didSet {
             // Update buttons constant
             invalidateIntrinsicContentSize()

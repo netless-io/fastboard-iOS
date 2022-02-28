@@ -212,7 +212,7 @@ class ViewController: UIViewController {
             } else {
                 PanelItemButton.appearance().indicatorInset = .init(top: 0, left: 0, bottom: 8, right: 8)
                 ControlBar.appearance().commonRadius = 10
-                ControlBar.appearance().itemWidth = 40
+                ControlBar.appearance().itemWidth = 44
                 let i = self.currentTheme
                 self.currentTheme = i
             }
@@ -294,7 +294,7 @@ class ViewController: UIViewController {
                 AppearanceManager.shared.commitUpdate()
             } else {
                 reloadFastboard()
-                ControlBar.appearance().itemWidth = 40
+                ControlBar.appearance().itemWidth = 44
                 AppearanceManager.shared.commitUpdate()
             }
             exampleItems.first(where: { $0.title == NSLocalizedString("Custom Overlay", comment: "")})?.status = NSLocalizedString(usingCustomOverlay ? "On" : "Off", comment: "")
@@ -335,7 +335,7 @@ class ViewController: UIViewController {
             }),
             .init(title: NSLocalizedString("BarSize", comment: ""), status: "40", clickBlock: { item in
                 if ControlBar.appearance().itemWidth == 48 {
-                    ControlBar.appearance().itemWidth = 40
+                    ControlBar.appearance().itemWidth = 44
                 } else {
                     ControlBar.appearance().itemWidth = 48
                 }
