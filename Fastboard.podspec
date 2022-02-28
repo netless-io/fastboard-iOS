@@ -31,6 +31,8 @@ Pod::Spec.new do |s|
      fpa.source_files = 'Fastboard/Classes/FPA/*'
      fpa.dependency 'Whiteboard/fpa'
      fpa.dependency 'Fastboard/core'
+     # Remove this when `fpa` deployment_target removed
+     fpa.ios.deployment_target = '11.0'
    end
   
   s.default_subspec = 'core'
