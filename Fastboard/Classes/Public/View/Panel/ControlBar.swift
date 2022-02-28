@@ -10,6 +10,39 @@ import UIKit
 /// All the views inserted in this container should not update the button isHidden property
 /// call 'updateButtonHide'
 public class ControlBar: UIView {
+    public enum NarrowStyle {
+        case none
+        case narrowMoreThan(count: Int)
+    }
+    
+    public var narrowStyle = NarrowStyle.none {
+        didSet {
+            switch narrowStyle {
+            case .none:
+                if foldButton.superview != nil { foldButton.removeFromSuperview() }
+                foldButton.isSelected = false
+                applyNarrowCount(nil)
+            case .narrowMoreThan(let count):
+                if foldButton.superview == nil { addSubview(foldButton) }
+                foldButton.isSelected = true
+                applyNarrowCount(count)
+            }
+            layoutForSubItems()
+        }
+    }
+    
+    var forceHideButtons: [UIButton] = []
+    
+    public 
+    func updateButtonHide(_ button: UIButton, hide: Bool) {
+        if hide, !forceHideButtons.contains(button) {
+            forceHideButtons.append(button)
+        } else if !hide, forceHideButtons.contains(button) {
+            forceHideButtons.removeAll(where: { $0 == button })
+        }
+        button.isHidden = hide
+    }
+    
     @objc
     public dynamic var itemWidth: CGFloat = 40 {
         didSet {
@@ -114,6 +147,14 @@ public class ControlBar: UIView {
     func layoutForSubItems() {
         let isHorizontal = direction == .horizontal
         var lastStart: CGFloat = 0
+        
+        // Rearrange foldButton index to last
+        if subviews.contains(foldButton),
+            subviews.last != foldButton {
+            foldButton.removeFromSuperview()
+            addSubview(foldButton)
+        }
+        
         subviews
             .filter { !($0 is UIVisualEffectView) && !$0.isHidden }
             .enumerated()
@@ -166,11 +207,68 @@ public class ControlBar: UIView {
         }
     }
     
+    // MARK: - Action
+    func applyNarrowCount(_ count: Int?) {
+        if let moreThanCount = count {
+            subviews
+                .compactMap { $0 as? UIButton }
+                .filter { !self.forceHideButtons.contains($0) }
+                .enumerated()
+                .forEach { i in
+                    // The last one can't be hide
+                    if i.element === foldButton {
+                        i.element.isHidden = false
+                        return
+                    }
+                    i.element.isHidden = i.offset >= moreThanCount
+                }
+        } else {
+            subviews
+                .compactMap { $0 as? UIButton }
+                .filter { !self.forceHideButtons.contains($0) }
+                .forEach { $0.isHidden = false }
+        }
+        layoutForSubItems()
+        invalidateIntrinsicContentSize()
+        UIView.animate(withDuration: 0.3) {
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
+        }
+    }
+    
+    @objc func onClickScale(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        let isNarrow = sender.isSelected
+        if isNarrow {
+            guard case let .narrowMoreThan(count: moreThanCount) = narrowStyle else { return }
+            applyNarrowCount(moreThanCount)
+        } else {
+            applyNarrowCount(nil)
+        }
+    }
+    
+    // MARK: - Lazy
     lazy var borderLayer = CAShapeLayer()
     lazy var cornerRadiusLayer = CAShapeLayer()
     
     lazy var effectView: UIVisualEffectView = {
         let effect: UIBlurEffect = .init(style: .regular)
         return UIVisualEffectView(effect: effect)
+    }()
+    
+    lazy var foldButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        let downImage = UIImage.currentBundle(named: "small_arr_down")?.redraw(PanelItemButton.appearance().iconNormalColor ?? .black)
+        let upImage = UIImage.currentBundle(named: "small_arr_top")?.redraw(PanelItemButton.appearance().iconNormalColor ?? .black)
+        func updateIcon() {
+            btn.setImage(upImage, for: .normal) // expand
+            btn.setImage(downImage, for: .selected) // narrow
+        }
+        updateIcon()
+        btn.traitCollectionUpdateHandler = { _ in
+            updateIcon()
+        }
+        btn.addTarget(self, action: #selector(onClickScale), for: .touchUpInside)
+        return btn
     }()
 }
