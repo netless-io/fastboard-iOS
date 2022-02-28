@@ -12,9 +12,9 @@ public class DefaultTheme: NSObject {
     @objc
     public class var defaultLightTheme: ThemeAsset {
         ThemeAsset(whiteboardAssets: WhiteboardAssets(whiteboardBackgroundColor: .white,
-                                                      containerColor: .lightGray),
+                                                      containerColor: .white),
                    controlBarAssets: ControlBarAssets(backgroundColor: .white,
-                                                      borderColor: .lightGray),
+                                                      borderColor: .init(hexString: "#E5E8F0")),
                    panelItemAssets: .init(normalIconColor: .init(hexString: "#5D6066"),
                                           selectedIconColor: .init(hexString: "#3381FF"),
                                           selectedIconBgColor: .clear,
@@ -22,13 +22,13 @@ public class DefaultTheme: NSObject {
                                           highlightBgColor: .clear,
                                           disableColor: .init(hexString: "#7B7E84"),
                                           subOpsIndicatorColor: .init(hexString: "#5D6066"),
-                                          pageTextLabelColor: .darkText))
+                                          pageTextLabelColor: .init(hexString: "#5D6066")))
     }
     
     @objc
     public static var defaultDarkTheme: ThemeAsset {
         ThemeAsset(whiteboardAssets: WhiteboardAssets(whiteboardBackgroundColor: .init(hexString: "#14181E"),
-                                                      containerColor: .lightGray),
+                                                      containerColor: .init(hexString: "#14181E")),
                    controlBarAssets: ControlBarAssets(backgroundColor: .init(hexString: "#14181E"),
                                                       borderColor: .init(hexString: "#5D6066")),
                    panelItemAssets: .init(normalIconColor: .init(hexString: "#999CA3"),
@@ -38,7 +38,7 @@ public class DefaultTheme: NSObject {
                                           highlightBgColor: .clear,
                                           disableColor: .init(hexString: "#4B4D54"),
                                           subOpsIndicatorColor: .init(hexString: "#999CA3"),
-                                          pageTextLabelColor: .lightText))
+                                          pageTextLabelColor: .init(hexString: "#999CA3")))
     }
     
     @available(iOS 13, *)
