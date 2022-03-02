@@ -13,6 +13,7 @@ extension Fastboard {
     ///   - src: media source
     ///   - title: media title
     ///   - completionHandler: source id in whiteboard
+    @objc
     public func insertMedia(_ src: URL, title: String, completionHandler: ((String)->Void)? = nil) {
         let appParam = WhiteAppParam.createMediaPlayerApp(src.absoluteString, title: title)
         room?.addApp(appParam, completionHandler: completionHandler ?? { _ in })
@@ -22,6 +23,7 @@ extension Fastboard {
     /// - Parameters:
     ///   - src: image source
     ///   - imageSize: image size
+    @objc
     public func insertImg(_ src: URL, imageSize: CGSize) {
         let info = WhiteImageInformation(size: imageSize)
         if let x = room?.state.cameraState?.centerX,
@@ -37,6 +39,7 @@ extension Fastboard {
     ///   - pages: pptx files. source, preview, and itemSize
     ///   - title: pptx's title
     ///   - completionHandler: source id in whiteboard
+    @objc
     public func insertPptx(_ pages: [WhitePptPage],
                            title: String,
                            completionHandler: ((String)->Void)? = nil) {
@@ -52,6 +55,7 @@ extension Fastboard {
     ///   - pages: files. source, preview, and itemSize
     ///   - title: file title
     ///   - completionHandler: source id in whiteboard
+    @objc
     public func insertStaticDocument(_ pages: [WhitePptPage],
                                      title: String,
                                      completionHandler: ((String)->Void)? = nil) {
