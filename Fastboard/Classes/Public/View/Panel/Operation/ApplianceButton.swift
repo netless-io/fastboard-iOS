@@ -8,6 +8,7 @@
 import UIKit
 import Whiteboard
 
+/// Represents a operationItem as a view
 public class PanelItemButton: UIButton {
     public override init(frame: CGRect) {
         super.init(frame: frame)

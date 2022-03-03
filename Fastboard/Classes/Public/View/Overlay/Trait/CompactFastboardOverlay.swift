@@ -8,6 +8,7 @@
 import Foundation
 import Whiteboard
 
+/// Overlay for iPhone
 public class CompactFastboardOverlay: NSObject, FastboardOverlay, FastPanelDelegate {
     func showReconnectingView(_ show: Bool) {
         if show {

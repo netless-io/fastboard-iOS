@@ -7,8 +7,8 @@
 
 import UIKit
 
+/// Include built-in themes style for fastboard
 public class DefaultTheme: NSObject {
-    
     @objc
     public class var defaultLightTheme: ThemeAsset {
         ThemeAsset(whiteboardAssets: WhiteboardAssets(whiteboardBackgroundColor: .white,

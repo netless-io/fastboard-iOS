@@ -8,6 +8,7 @@
 import Foundation
 import Whiteboard
 
+/// Represents the fastboard behavior
 @objc
 public protocol FastboardDelegate: AnyObject {
     func fastboard(_ fastboard: Fastboard, error: FastError)

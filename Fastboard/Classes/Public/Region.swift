@@ -8,6 +8,7 @@
 import Foundation
 import Whiteboard
 
+/// Data Center
 @objc (FastRegion)
 public enum Region: Int {
     /// China

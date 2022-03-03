@@ -8,6 +8,7 @@
 import UIKit
 import Whiteboard
 
+/// Representing whiteboard object.
 public class Fastboard: NSObject {
     /// The view you should add to your viewController
     @objc
@@ -129,6 +130,9 @@ public class Fastboard: NSObject {
         }
     }
     
+    
+    /// Create a Fastboard with FastConfiguration
+    /// - Parameter configuration: Configuration for fastboard
     @objc
     public convenience init(configuration: FastConfiguration) {
         func defaultOverlay() -> FastboardOverlay {

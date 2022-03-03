@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Represents a fastpanel behavior
 @objc
 public protocol FastPanelDelegate: AnyObject {
     func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem)

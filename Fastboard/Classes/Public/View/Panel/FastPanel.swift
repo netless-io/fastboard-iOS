@@ -8,6 +8,8 @@
 import Foundation
 import Whiteboard
 
+/// The controller of a set of FastOperationItems
+/// It always contains a controlBar
 @objc
 public class FastPanel: NSObject {
     @objc

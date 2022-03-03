@@ -8,6 +8,7 @@
 import UIKit
 import Whiteboard
 
+/// Manage the fastboard theme style
 @objc (FastboardThemeManager)
 public class ThemeManager: NSObject {
     @objc

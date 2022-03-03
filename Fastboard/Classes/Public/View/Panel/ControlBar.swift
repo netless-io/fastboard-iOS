@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// The ToolBar in fastboard
 /// All the views inserted in this container should not update the button isHidden property
 /// call 'updateButtonHide'
 public class ControlBar: UIView {

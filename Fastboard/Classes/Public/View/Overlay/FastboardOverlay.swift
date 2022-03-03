@@ -14,6 +14,7 @@ public enum OperationBarDirection: Int {
     case right
 }
 
+/// Represents the control layer for fastboard
 @objc
 public protocol FastboardOverlay: FastPanelControl {
     func setupWith(room: WhiteRoom, fastboardView: FastboardView, direction: OperationBarDirection)

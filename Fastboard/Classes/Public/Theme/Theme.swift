@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Represents whiteboard theme style
 open class WhiteboardAssets: NSObject {
     @objc
     public init(whiteboardBackgroundColor: UIColor, containerColor: UIColor) {
@@ -21,6 +22,7 @@ open class WhiteboardAssets: NSObject {
     open var containerColor: UIColor
 }
 
+/// Represents panelItem theme style
 open class PanelItemAssets: NSObject {
     @objc
     public init(normalIconColor: UIColor,
@@ -66,6 +68,7 @@ open class PanelItemAssets: NSObject {
     open var pageTextLabelColor: UIColor
 }
 
+/// Represents controlBar theme style
 open class ControlBarAssets: NSObject {
     @objc
     public init(backgroundColor: UIColor, borderColor: UIColor, effectStyle: UIBlurEffect? = nil) {
@@ -84,6 +87,7 @@ open class ControlBarAssets: NSObject {
     var effectStyle: UIBlurEffect?
 }
 
+/// Represents fastboard theme style
 open class ThemeAsset: NSObject {
     @objc
     public init(whiteboardAssets: WhiteboardAssets,

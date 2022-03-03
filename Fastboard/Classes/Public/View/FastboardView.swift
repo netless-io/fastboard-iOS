@@ -9,6 +9,7 @@ import Foundation
 import Whiteboard
 import UIKit
 
+/// Main view for fastboard
 public class FastboardView: UIView, FastPanelControl {
     @objc
     public dynamic var operationBarDirection: OperationBarDirection = .left {
