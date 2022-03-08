@@ -45,6 +45,7 @@ public class FastConfiguration: NSObject {
                 wsc.deviceType = .desktop
             }
         }
+        wsc.log = true
         whiteSdkConfiguration = wsc
         let wrc = WhiteRoomConfig(uuid: roomUUID, roomToken: roomToken, uid: userUID)
         wrc.disableNewPencil = false
