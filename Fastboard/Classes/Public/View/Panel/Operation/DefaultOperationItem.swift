@@ -98,10 +98,8 @@ public class DefaultOperationItem: NSObject {
     public static func newPageItem() -> FastOperationItem {
         JustExecutionItem(image: UIImage.currentBundle(named: "scene_new")!,
                           action: { room, _ in
-            let index = room.sceneState.index
-            let nextIndex = UInt(index + 1)
             room.addPage()
-            room.setSceneIndex(nextIndex, completionHandler: nil)
+            room.nextPage(nil)
         }, identifier: DefaultOperationIdentifier.operationType(.newPage)!.identifier)
     }
     

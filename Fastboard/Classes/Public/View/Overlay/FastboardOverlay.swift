@@ -29,7 +29,7 @@ public protocol FastboardOverlay: FastPanelControl {
     
     func updateStrokeWidth(_ width: Float)
     
-    func updateSceneState(_ scene: WhiteSceneState)
+    func updatePageState(_ state: WhitePageState)
     
     func updateUndoEnable(_ enable: Bool)
     

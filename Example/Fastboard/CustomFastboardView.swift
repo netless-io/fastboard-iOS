@@ -46,7 +46,7 @@ class CustomFastboardOverlay: FastboardOverlay {
         return
     }
     
-    func updateSceneState(_ scene: WhiteSceneState) {
+    func updatePageState(_ state: WhitePageState) {
         return
     }
     

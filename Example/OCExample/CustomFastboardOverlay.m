@@ -52,7 +52,7 @@
     
 }
 
-- (void)updateSceneState:(WhiteSceneState * _Nonnull)scene {
+- (void)updatePageState:(WhitePageState *)state {
     
 }
 

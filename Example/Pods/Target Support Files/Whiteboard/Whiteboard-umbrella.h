@@ -37,6 +37,7 @@
 #import "WhiteFontFace.h"
 #import "WhiteMemberInformation.h"
 #import "WhiteMemberState.h"
+#import "WhitePageState.h"
 #import "WhitePanEvent.h"
 #import "WhitePptPage.h"
 #import "WhiteRectangleConfig.h"

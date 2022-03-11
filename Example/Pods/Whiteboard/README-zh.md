@@ -18,10 +18,17 @@
 
 ## 引用
 
-在 Podfile 中写入
+- ### CocoaPods
 
 ```
 pod 'Whiteboard'
+```
+
+- ### Swift Package Manager
+```swift
+ dependencies: [
+    .package(url: "https://github.com/netless-io/Whiteboard-iOS.git", .upToNextMajor(from: "2.15.0"))
+]
 ```
 
 <details><summary>White-SDK-iOS 闭源库迁移</summary>
@@ -226,6 +233,15 @@ sdk 现在支持使用 CombinePlayer，在 Native 端播放音视频，sdk 会�
 1. podfile 添加 `pod 'Whiteboard/fpa'` 依赖
 2. 配置 WhiteRoomConfig 的 `nativeWebSocket` 为 YES
 3. 如需监听FPA连接状态，可以调用 `[[FpaProxyService sharedFpaProxyService] setupDelegate:(id<FpaProxyServiceDelegate>)self];`
+
+注意：如果是M1的电脑想要在模拟器调试，请在Podfile里加入如下声明：
+```ruby
+  post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+```
+
 
 ## 部分问题
 

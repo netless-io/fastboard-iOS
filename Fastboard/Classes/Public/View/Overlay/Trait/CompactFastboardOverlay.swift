@@ -165,20 +165,20 @@ public class CompactFastboardOverlay: NSObject, FastboardOverlay, FastPanelDeleg
         colorAndStrokePanel.updateStrokeWidth(width)
     }
     
-    public func updateSceneState(_ scene: WhiteSceneState) {
+    public func updatePageState(_ state: WhitePageState) {
         if let label = scenePanel.items.first(where: { $0.identifier == DefaultOperationIdentifier.operationType(.pageIndicator)!.identifier })?.associatedView as? UILabel {
-            label.text = "\(scene.index + 1) / \(scene.scenes.count)"
+            label.text = "\(state.index + 1) / \(state.length)"
             scenePanel.view?.invalidateIntrinsicContentSize()
         }
         if let last = scenePanel.items.first(where: {
             $0.identifier == DefaultOperationIdentifier.operationType(.previousPage)!.identifier
         }) {
-            (last.associatedView as? UIButton)?.isEnabled = scene.index > 0
+            (last.associatedView as? UIButton)?.isEnabled = state.index > 0
         }
         if let next = scenePanel.items.first(where: {
             $0.identifier == DefaultOperationIdentifier.operationType(.nextPage)!.identifier
         }) {
-            (next.associatedView as? UIButton)?.isEnabled = scene.index + 1 < scene.scenes.count
+            (next.associatedView as? UIButton)?.isEnabled = state.index + 1 < state.length
         }
     }
     

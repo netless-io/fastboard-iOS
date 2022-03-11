@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'core' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard', '~> 2.16.4'
+    core.dependency 'Whiteboard', '~> 2.16.6'
     core.exclude_files = 'Fastboard/Classes/FPA/*'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
