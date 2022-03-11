@@ -11,7 +11,9 @@ import Whiteboard
 /// Represents the fastboard behavior
 @objc
 public protocol FastboardDelegate: AnyObject {
-    func fastboard(_ fastboard: Fastboard, error: FastError)
+    func fastboardDidJoinRoomSuccess(_ fastboard: Fastboard, room: WhiteRoom)
+    
+    func fastboardDidOccurError(_ fastboard: Fastboard, error: FastError)
     
     func fastboardUserKickedOut(_ fastboard: Fastboard, reason: String)
     

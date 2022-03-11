@@ -89,19 +89,20 @@ public class Fastboard: NSObject {
             guard let self = self else { return }
             if let error = error {
                 let fastError = FastError(type: .joinRoom, error: error)
-                self.delegate?.fastboard(self, error: fastError)
+                self.delegate?.fastboardDidOccurError(self, error: fastError)
                 completionHandler?(.failure(fastError))
                 return
             }
             guard let room = room else {
                 let fastError = FastError(type: .joinRoom, info: ["info": "join success without room"])
-                self.delegate?.fastboard(self, error: fastError)
+                self.delegate?.fastboardDidOccurError(self, error: fastError)
                 completionHandler?(.failure(fastError))
                 return
             }
             room.disableSerialization(false)
             self.room = room
             completionHandler?(.success(room))
+            self.delegate?.fastboardDidJoinRoomSuccess(self, room: room)
         }
     }
     
@@ -116,8 +117,8 @@ public class Fastboard: NSObject {
         
         view.overlay?.updateBoxState(state.windowBoxState)
         
-        if let scene = state.sceneState {
-            view.overlay?.updateSceneState(scene)
+        if let pageState = state.pageState {
+            view.overlay?.updatePageState(pageState)
         }
         
         if let strokeWidth = state.memberState?.strokeWidth?.floatValue {
@@ -170,7 +171,7 @@ extension Fastboard: WhiteCommonCallbackDelegate {
     }
     
     public func sdkSetupFail(_ error: Error) {
-        delegate?.fastboard(self, error: .init(type: .setupSDK, error: error))
+        delegate?.fastboardDidOccurError(self, error: .init(type: .setupSDK, error: error))
     }
 }
 
@@ -185,8 +186,8 @@ extension Fastboard: WhiteRoomCallbackDelegate {
         if let _ = modifyState.memberState {
             view.pencilHandler?.roomApplianceDidUpdate()
         }
-        if let sceneState = modifyState.sceneState {
-            view.overlay?.updateSceneState(sceneState)
+        if let pageState = modifyState.pageState {
+            view.overlay?.updatePageState(pageState)
         }
         if let boxState = modifyState.windowBoxState {
             view.overlay?.updateBoxState(boxState)
@@ -194,7 +195,7 @@ extension Fastboard: WhiteRoomCallbackDelegate {
     }
     
     public func fireDisconnectWithError(_ error: String!) {
-        delegate?.fastboard(self, error: .init(type: .disconnected, info: ["info": error ?? ""]))
+        delegate?.fastboardDidOccurError(self, error: .init(type: .disconnected, info: ["info": error ?? ""]))
     }
     
     public func fireKicked(withReason reason: String!) {

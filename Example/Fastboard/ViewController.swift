@@ -532,6 +532,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: FastboardDelegate {
+    func fastboardDidJoinRoomSuccess(_ fastboard: Fastboard, room: WhiteRoom) {
+        print(#function, room)
+    }
+    
     func fastboardPhaseDidUpdate(_ fastboard: Fastboard, phase: FastRoomPhase) {
         print(#function, phase)
     }
@@ -540,7 +544,7 @@ extension ViewController: FastboardDelegate {
         print(#function, reason)
     }
     
-    func fastboard(_ fastboard: Fastboard, error: FastError) {
+    func fastboardDidOccurError(_ fastboard: Fastboard, error: FastError) {
         print(#function, error.localizedDescription)
     }
 }
