@@ -46,6 +46,7 @@ public class FastConfiguration: NSObject {
             }
         }
         wsc.log = true
+        wsc.loggerOptions["printLevelMask"] = WhiteSDKLoggerOptionLevelKey.error.rawValue
         whiteSdkConfiguration = wsc
         let wrc = WhiteRoomConfig(uuid: roomUUID, roomToken: roomToken, uid: userUID)
         wrc.disableNewPencil = false
