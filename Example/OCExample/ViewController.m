@@ -16,6 +16,7 @@
 #import "OCExample-Swift.h"
 
 @interface ViewController() <FastboardDelegate>
+@property (nonatomic, strong) UIScrollView* scrollView;
 @property (nonatomic, strong) UIStackView* stackView;
 @property (nonatomic, copy) Theme theme;
 @property (nonatomic, assign) BOOL isHide;
@@ -246,6 +247,123 @@
     FastboardManager.followSystemPencilBehavior = !FastboardManager.followSystemPencilBehavior;
 }
 
+- (void)onInsertIMAGE {
+    for (StorageItem* i in [StorageItem localStorage]) {
+        if (i.fileType == FileTypeImg) {
+            [self insertItem:i];
+            return;
+        }
+    }
+}
+
+- (void)onInsertMP3 {
+    for (StorageItem* i in [StorageItem localStorage]) {
+        if (i.fileType == FileTypeMusic) {
+            [self insertItem:i];
+            return;
+        }
+    }
+}
+
+- (void)onInsertMP4 {
+    for (StorageItem* i in [StorageItem localStorage]) {
+        if (i.fileType == FileTypeVideo) {
+            [self insertItem:i];
+            return;
+        }
+    }
+}
+
+- (void)onInsertPPT {
+    for (StorageItem* i in [StorageItem localStorage]) {
+        if (i.fileType == FileTypePpt && i.taskType == WhiteConvertTypeStatic) {
+            [self insertItem:i];
+            return;
+        }
+    }
+}
+
+- (void)onInsertPDF {
+    for (StorageItem* i in [StorageItem localStorage]) {
+        if (i.fileType == FileTypePdf) {
+            [self insertItem:i];
+            return;
+        }
+    }
+}
+
+- (void)onInsertDOC {
+    for (StorageItem* i in [StorageItem localStorage]) {
+        if (i.fileType == FileTypeWord) {
+            [self insertItem:i];
+            return;
+        }
+    }
+}
+
+- (void)onInsertPPTX {
+    for (StorageItem* i in [StorageItem localStorage]) {
+        if (i.taskType == WhiteConvertTypeDynamic) {
+            [self insertItem:i];
+            return;
+        }
+    }
+}
+
+- (void)insertItem:(StorageItem *)item {
+    if (item.fileType == FileTypeImg) {
+        [[NSURLSession.sharedSession downloadTaskWithURL:item.fileURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error) { return ; }
+            NSData* data = [[NSData alloc] initWithContentsOfURL:location];
+            UIImage* img = [UIImage imageWithData:data];
+            [self->_fastboard insertImg:item.fileURL imageSize:img.size];
+        }] resume];
+    }
+    
+    if ((item.fileType == FileTypeVideo) || (item.fileType == FileTypeMusic)) {
+        [self->_fastboard insertMedia:item.fileURL title:item.fileName completionHandler:nil];
+        return;
+    }
+    
+    [WhiteConverterV5 checkProgressWithTaskUUID:item.taskUUID
+                                          token:item.taskToken
+                                         region:item.region
+                                       taskType:item.taskType result:^(WhiteConversionInfoV5 * _Nullable info, NSError * _Nullable error) {
+        if (error) { return; }
+        if (!info) { return; }
+        
+        NSArray* pages = info.progress.convertedFileList;
+        if (!pages) { return; }
+        switch (item.fileType) {
+            case FileTypeImg:
+                break;
+            case FileTypePdf:
+                [self->_fastboard insertStaticDocument:pages
+                                                 title:item.fileName completionHandler:nil];
+                break;
+            case FileTypeVideo:
+                break;
+            case FileTypeMusic:
+                break;
+            case FileTypePpt:
+                if (item.taskType == WhiteConvertTypeDynamic) {
+                    [self->_fastboard insertPptx:pages
+                                           title:item.fileName completionHandler:nil];
+                } else {
+                    [self->_fastboard insertStaticDocument:pages
+                                                     title:item.fileName completionHandler:nil];
+                }
+                break;
+            case FileTypeWord:
+                [self->_fastboard insertStaticDocument:pages
+                                                 title:item.fileName completionHandler:nil];
+                break;
+            case FileTypeUnknown:
+                break;
+        }
+    }];
+}
+
 - (void)onReload {
     UIApplication.sharedApplication.keyWindow.rootViewController = [ViewController new];
 }
@@ -271,12 +389,18 @@
 }
 
 - (void)setupTools {
-    [self.view addSubview:self.stackView];
+    [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.stackView];
     self.stackView.axis = UILayoutConstraintAxisVertical;
     self.stackView.distribution = UIStackViewDistributionFillEqually;
-    [self.stackView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).inset(10);
+    
+    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.top.equalTo(self.view).inset(10);
         make.right.equalTo(self.view).inset(88);
+        make.width.equalTo(@120);
+    }];
+    [self.stackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.scrollView);
         make.width.equalTo(@120);
     }];
 }
@@ -333,7 +457,14 @@
                         @"Custom",
                         @"Layout",
                         @"Reload",
-                        @"Pencil"];
+                        @"Pencil",
+                        @"InsertPPTX",
+                        @"InsertDOC",
+                        @"InsertPDF",
+                        @"InsertPPT",
+                        @"InsertMP4",
+                        @"InsertMP3",
+                        @"InsertIMAGE",];
     NSMutableArray* btns = [NSMutableArray new];
     [titles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString* title = obj;
@@ -358,6 +489,14 @@
         _stackView = [[UIStackView alloc] initWithArrangedSubviews:[self setupButtons]];
     }
     return _stackView;
+}
+
+- (UIScrollView *)scrollView {
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] init];
+        _scrollView.showsVerticalScrollIndicator = NO;
+    }
+    return _scrollView;
 }
 
 

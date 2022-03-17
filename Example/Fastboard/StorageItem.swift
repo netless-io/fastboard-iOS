@@ -12,8 +12,9 @@ import Whiteboard
 extension WhiteRegionKey: Codable {}
 
 @objc
-class StorageItem: NSObject, Codable {
-    enum FileType: CaseIterable {
+public class StorageItem: NSObject, Codable {
+    @objc
+    public enum FileType: Int, CaseIterable {
         case img
         case pdf
         case video
@@ -53,18 +54,32 @@ class StorageItem: NSObject, Codable {
         }
     }
     
-    var fileName: String
-    var fileType: FileType { .init(fileName: fileName) }
+    @objc
+    public var fileName: String
     
-    var taskType: WhiteConvertTypeV5 {
+    @objc
+    public var fileType: FileType { .init(fileName: fileName) }
+    
+    @objc
+    public var taskType: WhiteConvertTypeV5 {
         if fileName.hasSuffix("pptx") { return .dynamic }
         return .static
     }
     
-    let fileURL: URL
-    let region: WhiteRegionKey
-    let taskUUID: String
-    let taskToken: String
+    @objc
+    public let fileURL: URL
+    
+    @objc
+    public let region: WhiteRegionKey
+    
+    @objc
+    public let taskUUID: String
+    
+    @objc
+    public let taskToken: String
+    
+    @objc
+    public class func localStorage() -> [StorageItem] { storage }
 }
 
 
