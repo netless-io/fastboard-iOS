@@ -18,18 +18,22 @@ public class ControlBar: UIView {
     
     public var narrowStyle = NarrowStyle.none {
         didSet {
-            switch narrowStyle {
-            case .none:
-                if foldButton.superview != nil { foldButton.removeFromSuperview() }
-                foldButton.isSelected = false
-                applyNarrowCount(nil)
-            case .narrowMoreThan(let count):
-                if foldButton.superview == nil { addSubview(foldButton) }
-                foldButton.isSelected = true
-                applyNarrowCount(count)
-            }
-            layoutForSubItems()
+            updateNarrowStatus()
         }
+    }
+    
+    func updateNarrowStatus() {
+        switch narrowStyle {
+        case .none:
+            if foldButton.superview != nil { foldButton.removeFromSuperview() }
+            foldButton.isSelected = false
+            applyNarrowCount(nil)
+        case .narrowMoreThan(let count):
+            if foldButton.superview == nil { addSubview(foldButton) }
+            foldButton.isSelected = true
+            applyNarrowCount(count)
+        }
+        layoutForSubItems()
     }
     
     var forceHideButtons: [UIButton] = []
@@ -41,7 +45,7 @@ public class ControlBar: UIView {
         } else if !hide, forceHideButtons.contains(button) {
             forceHideButtons.removeAll(where: { $0 == button })
         }
-        button.isHidden = hide
+        updateNarrowStatus()
     }
     
     @objc
