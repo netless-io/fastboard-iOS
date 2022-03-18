@@ -22,6 +22,7 @@
 		001C483A2E0D35C90116DBEA86EF879F /* WhiteMemberState.m in Sources */ = {isa = PBXBuildFile; fileRef = F727F35F64E4B15D3B9F782FB74C132B /* WhiteMemberState.m */; };
 		011CDEAF479C154543F75062BEF130F8 /* Fastboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1242A34B89F2F7591B74C9915AFB7B17 /* Fastboard.swift */; };
 		029E559D827D1DFF8EAA6F5F29FA0B5F /* WhiteRectangleConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 239BB7F4698A1825D601461ADCFFD026 /* WhiteRectangleConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		035D08C20C3FFEDF5ED45A46438B5AE0 /* video.b3db6331.js in Resources */ = {isa = PBXBuildFile; fileRef = 2455FFA3CDDFA21047EB6CD9A93D7BA8 /* video.b3db6331.js */; };
 		03D54E44A85E90353EE687A13C1D25E6 /* FastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C034B0E57F8D094E8A4D1FA465EC24 /* FastboardView.swift */; };
 		040B50EF1D01CE37C23EAE836C27E020 /* WhiteBoardView+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 770168F920F0E1415A21AAADEB905A85 /* WhiteBoardView+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		05029382FC2C6461423326762812721B /* FastPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971FAEBFA1F9A38CC43B8DC75E683A4 /* FastPanelDelegate.swift */; };
@@ -33,10 +34,9 @@
 		0E2CF51992BA162C57CCF1AE4C09E9D9 /* WhiteWindowParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843105E074F1D0F16037ABBB5AC13ED /* WhiteWindowParams.m */; };
 		0E8CCAE597756C61B2D7B60EEF4A29E4 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 00888AC97102FAE1C96F650F39842D7E /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0FEE394687B5463B1771FEA75810ED1E /* FastProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = E870AD66B33C4DA593C04332792975E2 /* FastProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11AA8A16ADA8BEA5FC9834717F2004A0 /* netless.87dcc75b.js in Resources */ = {isa = PBXBuildFile; fileRef = 38A2AB621CABA283760E185403401E90 /* netless.87dcc75b.js */; };
 		125766B0B9DBA9050FB65AA217C7D4B5 /* WhiteVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B343098EC8FE28EDD81BACA110B2C0 /* WhiteVideoView.m */; };
-		13B6B98DA12B1846CFB0B285AB1B715D /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = F65CB3DE08A4D5954655E96F954E751C /* index.html */; };
 		144DA93A55A598F5197F10C729FBDD69 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96039917A2BF73B42B174E71AFA8798 /* UILayoutSupport+Extensions.swift */; };
-		14B268DC02F8F85E1923916A712EF47B /* web-sdk.6d91b890.js in Resources */ = {isa = PBXBuildFile; fileRef = 5CE9E420840438EC1F0C72BF307CAD08 /* web-sdk.6d91b890.js */; };
 		169A73E88622A9A048D09C39A360A09A /* YYModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F602167BD8C1CD39623F47640808B04E /* YYModel-dummy.m */; };
 		1707D8C1CCAB2965D5184BE5B4E0B5FB /* WhiteBroadcastState.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C6741BC305ABEC3CF35582D53A251E /* WhiteBroadcastState.m */; };
 		170D998B4E9714A07C52F14084ED0E0E /* WhiteSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76709C3F2FDB96A280A1C02EABD2F379 /* WhiteSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,7 +54,6 @@
 		2147AD1FC42D13E814AD7B5276E96918 /* Pods-Fastboard_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C06C6660DF18AEC0AC765494A71A78 /* Pods-Fastboard_Example-dummy.m */; };
 		22B45AAC80B2B44E3D7D986F5703CD76 /* WhiteCameraConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB16EA82E4CFC625E832B298F2FE7B /* WhiteCameraConfig.m */; };
 		23D68E718AD2DA96BEA8399FED239464 /* WhiteMemberState.h in Headers */ = {isa = PBXBuildFile; fileRef = FD606CBE513497F839FCD0272213F3A0 /* WhiteMemberState.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26BC9A5CC72449E0FC890CEDC55D2E0F /* netless.css in Resources */ = {isa = PBXBuildFile; fileRef = 7F58786A2ABABF56E1642635FECF27A1 /* netless.css */; };
 		2744C3B348266193CC1FE750D6C18533 /* WhiteRoomConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C4B6B0F75ED90143A923190054BCD1 /* WhiteRoomConfig.m */; };
 		274DF0E2BF04F6F4F9F1E70CF513A4F2 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC67E693125AC693A36D2CF886F6F04 /* ConstraintLayoutSupportDSL.swift */; };
 		2839E3707C14798138E8A0C72ACE4C25 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5CFC71B5BD8D194D8650A2D163415D /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -89,8 +88,9 @@
 		4CA13A0527BC57DE2C54A0F3B5ED8652 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5A23CC2B4C6DB4F245FF3475E8FB4 /* LayoutConstraintItem.swift */; };
 		4CC9B43AD90714A316815FAA71DC89A2 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F69D718E7ED1FC75A6DD3D7F3E4EF4D /* MASConstraintMaker.m */; };
 		505DC2AE68D8C6D96CA4889A0A113F71 /* WhiteRectangleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C84BD9EFF460695EBA679DB0DE271A /* WhiteRectangleConfig.m */; };
+		50F38F9901073A92EA4F515C3C882083 /* vendor.a5dc885d.js in Resources */ = {isa = PBXBuildFile; fileRef = E14C94DE052CD376E30F576E982FB3C0 /* vendor.a5dc885d.js */; };
+		5169B18D4739B3460DF250F7372B76C0 /* netless.css in Resources */ = {isa = PBXBuildFile; fileRef = 75B07E4CC08038290C71BB728F584005 /* netless.css */; };
 		51A4A1046676D304410544EB56732A49 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F75E5A406EE031F7C60011BFAF25E /* Constraint.swift */; };
-		529BFEBB6EEA03D3D15B54D06ABA633B /* netless.63561a05.js in Resources */ = {isa = PBXBuildFile; fileRef = 4D046ECA18D34680B4F9779BD67E73C1 /* netless.63561a05.js */; };
 		5328B209DD54BFAC4FEDA21D1D6D40B3 /* WhitePanEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 945F73330C5DFB87FF135C8AF4C439B0 /* WhitePanEvent.m */; };
 		53305278F1654F968B4E02DF71B098BE /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B543A9969B640964B25122D13A6011 /* MASViewAttribute.m */; };
 		535430957E25CCB9556D027ED35E2558 /* Bundle+localizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695923EEB29790A9097BB99916E15A17 /* Bundle+localizedString.swift */; };
@@ -108,7 +108,6 @@
 		5B717C0B06BC634C2112D1577DA9C64D /* WhiteRoomConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 18891E26CC6A153AB3A0121B37149B0A /* WhiteRoomConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B7A590EFA5512E47398D6AACE713407 /* Fastboard-LocalizedStrings in Resources */ = {isa = PBXBuildFile; fileRef = 826795FBAEC2583C68D7750D6624F02C /* Fastboard-LocalizedStrings */; };
 		5CB71F339EA29E84CC9367658B2B4D76 /* FastPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F11231BADECBBAE0496EB5EDD09EB32 /* FastPanel.swift */; };
-		5DF72AADA89DA41411EF0E8BD0E3763E /* runtime.42cce1dd.js in Resources */ = {isa = PBXBuildFile; fileRef = 386C6B095BD3D73185DF4E193462B337 /* runtime.42cce1dd.js */; };
 		5E8BA529DFB4529006967624044FEC1C /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B12B41A072B87C6BACDF0E1C2510FB /* ConstraintViewDSL.swift */; };
 		5F473099D659918556362C567D6EFB0F /* WhitePlayerEvent+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B70D5DBC09DC8C22A69706080D9561 /* WhitePlayerEvent+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		611E0DAE40BAA8EA992CA3E7AE91AA6E /* WhiteVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = 529B12DD7B1163690343A7E48132142F /* WhiteVideoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -121,6 +120,7 @@
 		67B6CEF71042F8CCCD3F37B89BA419E6 /* WhiteRoomCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = C71C4DC85EDC98D5A94D6D3023FFA3EF /* WhiteRoomCallbacks.m */; };
 		681706B901EFA9F0F4DF3003FDF26CC2 /* WhiteSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 78711BBC27FE8C5155E68B935C70FE1A /* WhiteSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68AB1A9B93E15ECDF9D80E7BC266D9C5 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34DBE8A4735EE1B85AE918A1F6B999C /* Region.swift */; };
+		68D677B20C7A2C3E9D158CA04475AC2B /* web-sdk.6d91b890.js in Resources */ = {isa = PBXBuildFile; fileRef = FBAE14B5BDDA2BDA121057871D8AA836 /* web-sdk.6d91b890.js */; };
 		697B6DE74646B2C686E6D814F7389C2F /* WhitePanEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB0A267A7E917A5CD478D6A8EA2E7EA /* WhitePanEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6BB664E696CAF1EA564594D15D0C000A /* InternalApis.h in Headers */ = {isa = PBXBuildFile; fileRef = B73C7C020CE066FE035A5908A81FD67D /* InternalApis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		701B51C9666877B46E8294961EF1D7F4 /* WhiteMemberInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 28556599197F71EAFEB63600AE7827A5 /* WhiteMemberInformation.m */; };
@@ -130,7 +130,6 @@
 		75A2804DCDC169EED499E5359C46E435 /* ApplianceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFEC83C2ADA531799BA1E06BD2B64BA /* ApplianceButton.swift */; };
 		7764AA5F6BBFC6ECE43959923DD007D3 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4169E6F4FC713B99BFACE994552CCD55 /* ConstraintDirectionalInsetTarget.swift */; };
 		77788B151F69712B50D645D4A83753CF /* FastOperation+NeedDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3542535B235D9A3A2E33240EFB9C5D /* FastOperation+NeedDelete.swift */; };
-		77D31544BEA559D6C41B5DEFD58BD1FF /* fe8b532 in Resources */ = {isa = PBXBuildFile; fileRef = B4C21805C852940F09919A5A730229A5 /* fe8b532 */; };
 		77D55DAFE335F7FFA4764AB6037CC88B /* WhiteRoomState.h in Headers */ = {isa = PBXBuildFile; fileRef = C36BE722550A787A647DD597359606F3 /* WhiteRoomState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78251F42EB680FB72F040A1986279CD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		7895D72D46AB1A4C214CB49A6F04E995 /* WhiteRoomConfig+FPA.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B1A0731AE53F23FCB761CB9669D7CD /* WhiteRoomConfig+FPA.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -145,7 +144,6 @@
 		7F63A0D4721DAC649861A51E5210D432 /* WhiteObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E39349130DDA837F2914DEC2FC0C177 /* WhiteObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F66FEB17EC1FC72DAD4357B88A54B0C /* WhiteBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C72DF1499063BE0272610C748AF1AF /* WhiteBoardView.m */; };
 		7F919BDC01C0DD07CF80FFC40154EABE /* WhiteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE5C17673C5F1936B85033A0BF7F257 /* WhiteEvent.m */; };
-		8107F544233AA61DAA7A4E98158CC626 /* vendor.a5dc885d.js in Resources */ = {isa = PBXBuildFile; fileRef = F77E0960679652C2AD209E766DDAB03A /* vendor.a5dc885d.js */; };
 		814F09A361F7FAD3381EDEEC02F108AB /* Whiteboard-Whiteboard in Resources */ = {isa = PBXBuildFile; fileRef = B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */; };
 		8171D105E2C5CD3C1357D544942B4446 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
 		81B88733CC93C5543F3F20FD3EABC5BC /* FPADelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE9F0E6097505BFCE134C77CE04D2B /* FPADelegate.swift */; };
@@ -155,6 +153,7 @@
 		85EA433D0ED3871F71AC231E1AFD0727 /* WhiteSDK+Replayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D67F3F7E12E6E3CB32CDB59CFDAE49 /* WhiteSDK+Replayer.m */; };
 		8724F9872C16D8B562123D245B201D1D /* WhiteCameraState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D09FE0A63D277CCDFC2A0CE1F1CE2 /* WhiteCameraState.m */; };
 		88E78CB419C32528B771A425248E9E05 /* UIView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382B3A45C530ADD1D38277462473DB99 /* UIView+Theme.swift */; };
+		89591FF498CCB05E2B9C4578A8FDA219 /* runtime.42cce1dd.js in Resources */ = {isa = PBXBuildFile; fileRef = CF6D2E5F3C081EEEC6D52DAAC9FA374C /* runtime.42cce1dd.js */; };
 		89A61938887A1D12E78244A79AA63862 /* WhiteCommonCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A8DDB4D87B36CDA2D9E2E10F5678CA /* WhiteCommonCallbacks.m */; };
 		89D93E4D8E7C69A7F8E2088805178FD6 /* WhiteGlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 473C46F1662560071E244790FCB2E432 /* WhiteGlobalState.m */; };
 		8A335662B4B7FDAB3C94FF2EB3820C70 /* WhiteRoom.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AF90A95274060E9EBAA624C0AB6EBE /* WhiteRoom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -163,6 +162,7 @@
 		8C6546C1EF4F153DF3795CC6FE189E5B /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7D44E974866CA75E771919075385B /* ConstraintInsets.swift */; };
 		8D28D78C49E1F07A7A2E53B33199F781 /* Fastboard-Icons in Resources */ = {isa = PBXBuildFile; fileRef = 92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */; };
 		8D813AC98E0A7071FFB93DFE7BB1FCD1 /* FastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1953A7B6452B11B43EF01299FCBE3142 /* FastboardOverlay.swift */; };
+		8DE24A8E789FC18BD3E24839FDBAEE71 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 44F1B60149EE596B756484C9FF3BB9F8 /* main.css */; };
 		8FD9CD608C4EAAFDE6AC7B8B9EF0FF5E /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DBA0E0AAF4DADFBD800F25A8248CD4 /* ConstraintDescription.swift */; };
 		90FD5AE525E138A473723FD79AF73273 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41E8D42FCBFD6899BF3567493D1FD6 /* ConstraintDSL.swift */; };
 		924D8116B6341910922A603FFE012255 /* FastOperationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98CEA4563FE97B097A0B2E1E06137B /* FastOperationItem.swift */; };
@@ -173,6 +173,7 @@
 		95DC6C2C7873971A4CA07E1B98BEC054 /* CompactFastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995C3A0CBC58EAE128BFF1E642914601 /* CompactFastboardOverlay.swift */; };
 		968B4874A9F12D67C8B901136C9C8157 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D65C03E11AE810F356DA238A1D1670 /* SnapKit-dummy.m */; };
 		970C052F4BEB5C6FE5C815D863229F3E /* WhiteFPA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B594934FF4C8A2A5C4CEA0A40CAD6C8 /* WhiteFPA.m */; };
+		97D6E7B2714626E47C4AC96DA584EEB1 /* main.53820617.js in Resources */ = {isa = PBXBuildFile; fileRef = 1108EEE980B4061E179734467380177D /* main.53820617.js */; };
 		9812AA03AEE93370A0DAF7AB76A099F6 /* WhitePptPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B7DE5F7489600394722110B3339C18A /* WhitePptPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98B8CEFDFB1E4961435CE646729C99F5 /* WhitePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F994190C8BE492BB3DAF94C93C72262D /* WhitePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		997488AACCC3CFC63D6B58368C2318C6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1C19ED3FD74A6D5D5964C36D72131 /* Theme.swift */; };
@@ -182,6 +183,7 @@
 		9C634FC3871B940C7E1879A5396AC1A0 /* WhiteDisplayerState.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EB309E43B27E1478FE196F54DE29EA1 /* WhiteDisplayerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C63F645FB13743ABFEEC172700FF658 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		9E581662AB62B1AD4791F581833EC563 /* WhiteSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F9B66678B99221E3DB3F39C895ADDA /* WhiteSliderView.m */; };
+		9E659F863EBA7264FAF3753C07D5A587 /* e6d798d in Resources */ = {isa = PBXBuildFile; fileRef = 53191BF6E404686AB08157246F4C9695 /* e6d798d */; };
 		9F4E7BD161BDC5436DDFEF90711FE130 /* dsBridge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7220A4D58426D5FF0A0F8ED6F5B03673 /* dsBridge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0F754C88A64972A40A9008B0AD52109 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15400D51779176B74F5AA7557D82974 /* ConstraintDirectionalInsets.swift */; };
 		A1336977ADAAD492D6CFD089A8C6E358 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF30C1055770F6845622378976D6B /* View+MASAdditions.m */; };
@@ -217,6 +219,7 @@
 		C02B572615AFB0789C194FCBEA4D5EF2 /* Appearancemanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD487DF849E603E4550CE2E906CAAF5 /* Appearancemanager.swift */; };
 		C05CFCED87D7A4B6097473A2620C590D /* WhiteAppParam.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD361AD5E5D636C0F3641C59E6BBBE3 /* WhiteAppParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0D62606C31939543376A03B54469553 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
+		C0DDD642E845A0B750F7DAA0DE3625DA /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 7B44833FA607F52A543C4C705372C680 /* index.html */; };
 		C108464EDFBF48FC1D5CE3C2EC8683B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		C2651852703B1D7B04B43FA47BB63754 /* DWKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 12F0BACF6CB55A694FD6E13EE6FFD889 /* DWKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C28FB9A641DF6D3A3764949C72982CD4 /* UIColor+Convince.swift in Sources */ = {isa = PBXBuildFile; fileRef = B867A36427FA89579D75847FAC0D3387 /* UIColor+Convince.swift */; };
@@ -232,7 +235,6 @@
 		C5A9F2E8838861AEC9CBB689FBE3A6DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		C61D3BC32A28A405C934C00039AD2583 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F69796F2B87F85FCAAF357E621CB6B /* ConstraintConstantTarget.swift */; };
 		C6D70ACEA72030B94B0D2E168FCE661D /* WhiteMemberInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = E2F8382C06727743FBF835909DEC7B75 /* WhiteMemberInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C750CBEDE1A441CA601A0B98FEA9865F /* main.53820617.js in Resources */ = {isa = PBXBuildFile; fileRef = C55DD88A64A1B48EB9A607C55B1DE1FC /* main.53820617.js */; };
 		C7D83D99D755676EF8A09CC77845BAF4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF983A99D4B24314763F17E2C7241B /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		C8663F82E4CE6364DD52516C38607132 /* FastConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA73E9625D6F4CF84703C57157D7488 /* FastConfiguration.swift */; };
 		C921F1E9FFC327C1FA26B10EDBD2975F /* FastboardPencilDrawHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65E83E3110DA001767E80FD6FC6C4D /* FastboardPencilDrawHandler.swift */; };
@@ -257,7 +259,6 @@
 		D59C2826AD288ECFF576B2AFA312716C /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6523B9ED3DDA44A3B7E4DFC5F73C3AD /* ConstraintRelation.swift */; };
 		D6404C1FD4547FD137EE5573BD57C7D0 /* WhiteSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C69C722D2CEFECA139B3E7865CEFF6E /* WhiteSDK.m */; };
 		D6A13E1BABB81D72FBDE3D07F20990BF /* Whiteboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC76C6C97CA5B409237A82FB706AC46 /* Whiteboard-dummy.m */; };
-		D8EB056AC56C3FCDC6B0DB1FB79783C5 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 5C8699C0BCE3839EE44A33A5E65BDBD4 /* main.css */; };
 		D952F90E7E458D559482E58FBBB67336 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C43D6417497BF5DCCFBBB435DA6C2AD /* YYClassInfo.m */; };
 		DA4732EDE32C6E8C1BB59726112667C4 /* FastboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337FB5A5F4AE6F7A83D5598C4A4857 /* FastboardManager.swift */; };
 		DB805156B8B773029FEB0C2567C86B87 /* WhiteBoardView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691AB06811148588C82E9FD0BFD3BFDF /* WhiteBoardView+Theme.swift */; };
@@ -284,7 +285,6 @@
 		EF112D6D4A6E672DA2AD82C2D4FEBB0A /* Whiteboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B1E53BF1A4F02E9D7792CE7C6C52F6 /* Whiteboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF6A4B80A40A41C25D49763B53A6E783 /* WhiteCameraState.h in Headers */ = {isa = PBXBuildFile; fileRef = 427CD7058E2D0D5F13E50D41B2BD7EFF /* WhiteCameraState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F01FA21D5CA538F2412610BF258AE334 /* Whiteboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F1257ECB4296F2046FBF1130EDE48 /* Whiteboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F030744C010623B8BA8A3175ADDB0D88 /* video.b3db6331.js in Resources */ = {isa = PBXBuildFile; fileRef = 862B1435DB22C68DE50C21E66311122E /* video.b3db6331.js */; };
 		F10586462FB54CEA169A1A7A469A926D /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC27EECB81C9D09AA323B325CBE5AF14 /* Debugging.swift */; };
 		F1D21AFDBFA28FAA8DBB385960A12CC5 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036B117EFBD3F1384C4CEBC1874ACDE /* DefaultTheme.swift */; };
 		F24D06C23DAB2F52A30C886A7A8177C7 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BA4C6C2F1AB542E8DE941FC45A7C3 /* ConstraintView.swift */; };
@@ -472,6 +472,7 @@
 		107C7E456A3C348D1706B97C92309D15 /* dsBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsBridge.release.xcconfig; sourceTree = "<group>"; };
 		10A98696A06B674F8BCD293AA95500DB /* WhiteRoomCallbacks+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteRoomCallbacks+Private.h"; path = "Whiteboard/Classes/Room/WhiteRoomCallbacks+Private.h"; sourceTree = "<group>"; };
 		10E6FC3A209C1377664CFA20804DCC62 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		1108EEE980B4061E179734467380177D /* main.53820617.js */ = {isa = PBXFileReference; includeInIndex = 1; name = main.53820617.js; path = Whiteboard/Resource/main.53820617.js; sourceTree = "<group>"; };
 		11A7B7D365F8E82798B7E1B5BB1E3C00 /* FastError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastError.swift; sourceTree = "<group>"; };
 		1242A34B89F2F7591B74C9915AFB7B17 /* Fastboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fastboard.swift; sourceTree = "<group>"; };
 		12F0BACF6CB55A694FD6E13EE6FFD889 /* DWKWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWKWebView.h; path = dsbridge/DWKWebView.h; sourceTree = "<group>"; };
@@ -499,6 +500,7 @@
 		2338967813D2B6011268E4CADBECB798 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		236A1D912D2490D6A3F99C714A64556B /* Pods-Fastboard_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fastboard_Example-Info.plist"; sourceTree = "<group>"; };
 		239BB7F4698A1825D601461ADCFFD026 /* WhiteRectangleConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRectangleConfig.h; path = Whiteboard/Classes/Object/WhiteRectangleConfig.h; sourceTree = "<group>"; };
+		2455FFA3CDDFA21047EB6CD9A93D7BA8 /* video.b3db6331.js */ = {isa = PBXFileReference; includeInIndex = 1; name = video.b3db6331.js; path = Whiteboard/Resource/video.b3db6331.js; sourceTree = "<group>"; };
 		246992E30D9089EAE7AD24A43BD3A29C /* WhiteSdkConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSdkConfiguration.m; path = Whiteboard/Classes/SDK/WhiteSdkConfiguration.m; sourceTree = "<group>"; };
 		24B57B88FA8EFF44E056DA10FC2890FD /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		265FBF8C3F63C782D5E0056DDF42A882 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
@@ -518,7 +520,7 @@
 		2F97F3B7A006C0CFB5CF290FA69B2671 /* Pods-OCExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OCExample"; path = Pods_OCExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3428EC4BBDB5142AEA82B959835F2D14 /* WhitePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayer.m; path = Whiteboard/Classes/Replayer/WhitePlayer.m; sourceTree = "<group>"; };
 		382B3A45C530ADD1D38277462473DB99 /* UIView+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Theme.swift"; sourceTree = "<group>"; };
-		386C6B095BD3D73185DF4E193462B337 /* runtime.42cce1dd.js */ = {isa = PBXFileReference; includeInIndex = 1; name = runtime.42cce1dd.js; path = Whiteboard/Resource/runtime.42cce1dd.js; sourceTree = "<group>"; };
+		38A2AB621CABA283760E185403401E90 /* netless.87dcc75b.js */ = {isa = PBXFileReference; includeInIndex = 1; name = netless.87dcc75b.js; path = Whiteboard/Resource/netless.87dcc75b.js; sourceTree = "<group>"; };
 		3AADF2790C570AFDF4223663B8C8731E /* WhiteCameraConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraConfig.h; path = Whiteboard/Classes/Object/WhiteCameraConfig.h; sourceTree = "<group>"; };
 		3C43D6417497BF5DCCFBBB435DA6C2AD /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
 		3C79D0FCE6B98DA92ACA7CF230C1ECC0 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 		4413CA911D87B9C2D448EA70BFF9E7EC /* TraitUpdateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TraitUpdateHandler.swift; sourceTree = "<group>"; };
 		44606A8D88B29BB88D84DE2EB2DE84B4 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		44AD785C1B928839666052D47329C76D /* WhiteCameraBound.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraBound.h; path = Whiteboard/Classes/Object/WhiteCameraBound.h; sourceTree = "<group>"; };
+		44F1B60149EE596B756484C9FF3BB9F8 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; name = main.css; path = Whiteboard/Resource/main.css; sourceTree = "<group>"; };
 		4506D875998940F39333D431E7D8E3D6 /* YYModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYModel.debug.xcconfig; sourceTree = "<group>"; };
 		473C46F1662560071E244790FCB2E432 /* WhiteGlobalState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteGlobalState.m; path = Whiteboard/Classes/Displayer/WhiteGlobalState.m; sourceTree = "<group>"; };
 		47B1A0731AE53F23FCB761CB9669D7CD /* WhiteRoomConfig+FPA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteRoomConfig+FPA.h"; path = "Whiteboard/Classes/fpa/WhiteRoomConfig+FPA.h"; sourceTree = "<group>"; };
@@ -542,11 +545,11 @@
 		4C1DF3A399B712187C81F1422FD4E509 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		4C21ABDFE6DF7B99BE89BF1950C89EED /* WhiteSdkConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSdkConfiguration.h; path = Whiteboard/Classes/SDK/WhiteSdkConfiguration.h; sourceTree = "<group>"; };
 		4C73740CA1B79589E37713AF88EAA985 /* Load.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Load.m; sourceTree = "<group>"; };
-		4D046ECA18D34680B4F9779BD67E73C1 /* netless.63561a05.js */ = {isa = PBXFileReference; includeInIndex = 1; name = netless.63561a05.js; path = Whiteboard/Resource/netless.63561a05.js; sourceTree = "<group>"; };
 		4E38C8788BAB32140CEA92B595EA1E27 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		4FE1B4E6EA6E02BC3317CC5403AC46BA /* DelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
 		51142B36579B902F504D5F200B8BA26A /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		529B12DD7B1163690343A7E48132142F /* WhiteVideoView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteVideoView.h; path = Whiteboard/Classes/NativeReplayer/WhiteVideoView.h; sourceTree = "<group>"; };
+		53191BF6E404686AB08157246F4C9695 /* e6d798d */ = {isa = PBXFileReference; includeInIndex = 1; name = e6d798d; path = Whiteboard/Resource/e6d798d; sourceTree = "<group>"; };
 		562BB569D90432C343DF35D0731AFE0D /* WhiteScene.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteScene.m; path = Whiteboard/Classes/Object/WhiteScene.m; sourceTree = "<group>"; };
 		562BBA9A40E10104E344889FAE4877C8 /* Pods-OCExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OCExample-frameworks.sh"; sourceTree = "<group>"; };
 		566DB1047536864D83BF1AD217C10F8C /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
@@ -556,8 +559,6 @@
 		5A9935D398019DEE57ED97453FDA6CD2 /* UIImage+Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Bundle.swift"; sourceTree = "<group>"; };
 		5B73771A5A60FC542EC3F2B1B0F1F820 /* NSObject+YYModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YYModel.m"; path = "YYModel/NSObject+YYModel.m"; sourceTree = "<group>"; };
 		5C6524F09595FD58719543E185FD86F1 /* WhitePlayerEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerEvent.m; path = Whiteboard/Classes/Replayer/WhitePlayerEvent.m; sourceTree = "<group>"; };
-		5C8699C0BCE3839EE44A33A5E65BDBD4 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; name = main.css; path = Whiteboard/Resource/main.css; sourceTree = "<group>"; };
-		5CE9E420840438EC1F0C72BF307CAD08 /* web-sdk.6d91b890.js */ = {isa = PBXFileReference; includeInIndex = 1; name = "web-sdk.6d91b890.js"; path = "Whiteboard/Resource/web-sdk.6d91b890.js"; sourceTree = "<group>"; };
 		5D5639991ADD76C37356681C187A05CE /* WhitePlayerEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerEvent.h; path = Whiteboard/Classes/Replayer/WhitePlayerEvent.h; sourceTree = "<group>"; };
 		5E39349130DDA837F2914DEC2FC0C177 /* WhiteObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteObject.h; path = Whiteboard/Classes/Model/WhiteObject.h; sourceTree = "<group>"; };
 		5FD2793A6DEA6E8FEFE27E7CB34629FA /* Pods-Fastboard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fastboard_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -592,6 +593,7 @@
 		73C4B6B0F75ED90143A923190054BCD1 /* WhiteRoomConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomConfig.m; path = Whiteboard/Classes/Room/WhiteRoomConfig.m; sourceTree = "<group>"; };
 		73F9B66678B99221E3DB3F39C895ADDA /* WhiteSliderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSliderView.m; path = Whiteboard/Classes/NativeReplayer/WhiteSliderView.m; sourceTree = "<group>"; };
 		7466096BD33E5D2AB33D8576605C320D /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
+		75B07E4CC08038290C71BB728F584005 /* netless.css */ = {isa = PBXFileReference; includeInIndex = 1; name = netless.css; path = Whiteboard/Resource/netless.css; sourceTree = "<group>"; };
 		76709C3F2FDB96A280A1C02EABD2F379 /* WhiteSliderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSliderView.h; path = Whiteboard/Classes/NativeReplayer/WhiteSliderView.h; sourceTree = "<group>"; };
 		770168F920F0E1415A21AAADEB905A85 /* WhiteBoardView+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteBoardView+Private.h"; path = "Whiteboard/Classes/Displayer/WhiteBoardView+Private.h"; sourceTree = "<group>"; };
 		7712340E6526F50EE3E9C180A51683CE /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
@@ -604,9 +606,9 @@
 		79CD051F7D566B647E9C9F1AF7F44C8E /* ReconnectingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReconnectingView.swift; sourceTree = "<group>"; };
 		7A976B5FEEBE3B84A11E50E38A6F5732 /* WhiteSdkConfiguration+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSdkConfiguration+Private.h"; path = "Whiteboard/Classes/SDK/WhiteSdkConfiguration+Private.h"; sourceTree = "<group>"; };
 		7B389010635777BEB32BB70B5C885935 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		7B44833FA607F52A543C4C705372C680 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = Whiteboard/Resource/index.html; sourceTree = "<group>"; };
 		7BFB16EA82E4CFC625E832B298F2FE7B /* WhiteCameraConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraConfig.m; path = Whiteboard/Classes/Object/WhiteCameraConfig.m; sourceTree = "<group>"; };
 		7E56ED3842C0D55C129C44DDABF3014E /* WhiteCombinePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCombinePlayer.h; path = Whiteboard/Classes/NativeReplayer/WhiteCombinePlayer.h; sourceTree = "<group>"; };
-		7F58786A2ABABF56E1642635FECF27A1 /* netless.css */ = {isa = PBXFileReference; includeInIndex = 1; name = netless.css; path = Whiteboard/Resource/netless.css; sourceTree = "<group>"; };
 		7FE98293BF49811C97506C93A65CB810 /* NSObject+YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYModel.h"; path = "YYModel/NSObject+YYModel.h"; sourceTree = "<group>"; };
 		8032C5EB6386AAF72A6DF8F618B87517 /* Pods-OCExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OCExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		80341E922F1CA92597F33A20992DC9D1 /* dsBridge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = dsBridge.modulemap; sourceTree = "<group>"; };
@@ -616,7 +618,6 @@
 		846EEDB7BBF4BD17B6680184BC9E1546 /* String+localized.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 		84A1C19ED3FD74A6D5D5964C36D72131 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8533C10CB5AAD566A4030CFE86A4F4C0 /* WhiteDisplayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteDisplayer.m; path = Whiteboard/Classes/Displayer/WhiteDisplayer.m; sourceTree = "<group>"; };
-		862B1435DB22C68DE50C21E66311122E /* video.b3db6331.js */ = {isa = PBXFileReference; includeInIndex = 1; name = video.b3db6331.js; path = Whiteboard/Resource/video.b3db6331.js; sourceTree = "<group>"; };
 		868AE538F7FBBDFBAC8B73121A5FB021 /* WhiteRoomMember.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomMember.h; path = Whiteboard/Classes/Object/WhiteRoomMember.h; sourceTree = "<group>"; };
 		86AA34AD91D14EB5EED406838514B6BC /* WhitePptPage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePptPage.m; path = Whiteboard/Classes/Object/WhitePptPage.m; sourceTree = "<group>"; };
 		8971AF59A370577EAA157CB1449A86C8 /* WhiteConversionInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConversionInfo.m; path = Whiteboard/Classes/Converter/WhiteConversionInfo.m; sourceTree = "<group>"; };
@@ -672,7 +673,6 @@
 		B3AA0FF94F12D51F50436998BF70F31F /* UIColor+NSNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+NSNumber.swift"; sourceTree = "<group>"; };
 		B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Whiteboard-Whiteboard"; path = Whiteboard.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45CAB58EF3052DBD9E4B565894BF2A6 /* Pods-Fastboard_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Fastboard_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B4C21805C852940F09919A5A730229A5 /* fe8b532 */ = {isa = PBXFileReference; includeInIndex = 1; name = fe8b532; path = Whiteboard/Resource/fe8b532; sourceTree = "<group>"; };
 		B4D67F3F7E12E6E3CB32CDB59CFDAE49 /* WhiteSDK+Replayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WhiteSDK+Replayer.m"; path = "Whiteboard/Classes/Replayer/WhiteSDK+Replayer.m"; sourceTree = "<group>"; };
 		B668FAB61E32AF5C2934A76BD02FB714 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		B73C7C020CE066FE035A5908A81FD67D /* InternalApis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InternalApis.h; path = dsbridge/InternalApis.h; sourceTree = "<group>"; };
@@ -695,7 +695,6 @@
 		C465A0E5F1EC55F27B026BB67F277E60 /* DSCallInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCallInfo.m; path = dsbridge/DSCallInfo.m; sourceTree = "<group>"; };
 		C4C72DF1499063BE0272610C748AF1AF /* WhiteBoardView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteBoardView.m; path = Whiteboard/Classes/Displayer/WhiteBoardView.m; sourceTree = "<group>"; };
 		C524E1EDE92DF39BFC623055F53FDA86 /* ResourceBundle-Whiteboard-Whiteboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Whiteboard-Whiteboard-Info.plist"; sourceTree = "<group>"; };
-		C55DD88A64A1B48EB9A607C55B1DE1FC /* main.53820617.js */ = {isa = PBXFileReference; includeInIndex = 1; name = main.53820617.js; path = Whiteboard/Resource/main.53820617.js; sourceTree = "<group>"; };
 		C55E4CBB0D22AA19DBAA58155E6C8033 /* WhiteConverterV5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConverterV5.m; path = Whiteboard/Classes/Converter/WhiteConverterV5.m; sourceTree = "<group>"; };
 		C5A5612D13CF8E6F4DA0999EEE866CA3 /* README-En.md */ = {isa = PBXFileReference; includeInIndex = 1; path = "README-En.md"; sourceTree = "<group>"; };
 		C6B1E53BF1A4F02E9D7792CE7C6C52F6 /* Whiteboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whiteboard-umbrella.h"; sourceTree = "<group>"; };
@@ -712,6 +711,7 @@
 		CE0083528E328B791F54057366D7B701 /* WhitePlayer+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhitePlayer+Private.h"; path = "Whiteboard/Classes/Replayer/WhitePlayer+Private.h"; sourceTree = "<group>"; };
 		CF10E01B1DA083F9CD1331BA6E79D737 /* WhiteSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSocket.m; path = Whiteboard/Classes/Room/WhiteSocket.m; sourceTree = "<group>"; };
 		CF564DD7233344BB225C9381E35B4170 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		CF6D2E5F3C081EEEC6D52DAAC9FA374C /* runtime.42cce1dd.js */ = {isa = PBXFileReference; includeInIndex = 1; name = runtime.42cce1dd.js; path = Whiteboard/Resource/runtime.42cce1dd.js; sourceTree = "<group>"; };
 		D09797E9ED7CEF018902C4765FC035EB /* UIView+anchor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+anchor.swift"; sourceTree = "<group>"; };
 		D224E4CB9DFE9F71BF7B027C12F2E7E4 /* DefaultOperationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultOperationType.swift; sourceTree = "<group>"; };
 		D22F7F9CFDA5B9FD06E64724ED975260 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
@@ -729,6 +729,7 @@
 		DD5762C3DF82A61AFE4FF55180FB99A5 /* WhiteSDK+Room.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WhiteSDK+Room.m"; path = "Whiteboard/Classes/Room/WhiteSDK+Room.m"; sourceTree = "<group>"; };
 		DDFEC83C2ADA531799BA1E06BD2B64BA /* ApplianceButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ApplianceButton.swift; sourceTree = "<group>"; };
 		E0D7D44E974866CA75E771919075385B /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
+		E14C94DE052CD376E30F576E982FB3C0 /* vendor.a5dc885d.js */ = {isa = PBXFileReference; includeInIndex = 1; name = vendor.a5dc885d.js; path = Whiteboard/Resource/vendor.a5dc885d.js; sourceTree = "<group>"; };
 		E14F648C573BCBDBDAE7E18B2AE5F2DA /* Pods-OCExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OCExample.modulemap"; sourceTree = "<group>"; };
 		E1A42D1D2932FD6E398BC9D3D73E4947 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		E1C1674B8375C98DEBDB8D57C911A410 /* Fastboard+Media.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Fastboard+Media.swift"; sourceTree = "<group>"; };
@@ -757,12 +758,10 @@
 		F5C93A35D978AF1B7E43D7E31552A318 /* Whiteboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Whiteboard-Info.plist"; sourceTree = "<group>"; };
 		F602167BD8C1CD39623F47640808B04E /* YYModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYModel-dummy.m"; sourceTree = "<group>"; };
 		F6523B9ED3DDA44A3B7E4DFC5F73C3AD /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
-		F65CB3DE08A4D5954655E96F954E751C /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = Whiteboard/Resource/index.html; sourceTree = "<group>"; };
 		F6C4173DA32B4E4C8809AE634DA57E6F /* WhiteDisplayer+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteDisplayer+Private.h"; path = "Whiteboard/Classes/Displayer/WhiteDisplayer+Private.h"; sourceTree = "<group>"; };
 		F6D453C5DD332BE4AD9BD37070AEE993 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		F727F35F64E4B15D3B9F782FB74C132B /* WhiteMemberState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteMemberState.m; path = Whiteboard/Classes/Object/WhiteMemberState.m; sourceTree = "<group>"; };
 		F76FF30C1055770F6845622378976D6B /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
-		F77E0960679652C2AD209E766DDAB03A /* vendor.a5dc885d.js */ = {isa = PBXFileReference; includeInIndex = 1; name = vendor.a5dc885d.js; path = Whiteboard/Resource/vendor.a5dc885d.js; sourceTree = "<group>"; };
 		F82CD3627D1B284500BEBCDA53F1FFAD /* Pods-Fastboard_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Fastboard_Example.modulemap"; sourceTree = "<group>"; };
 		F89A00AB645CA9EFFA1E71004E7D7F91 /* WhiteSDK+Room.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSDK+Room.h"; path = "Whiteboard/Classes/Room/WhiteSDK+Room.h"; sourceTree = "<group>"; };
 		F8EA1CE109D56007C724DC6A5347D849 /* FastRoomPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomPhase.swift; sourceTree = "<group>"; };
@@ -771,6 +770,7 @@
 		F994190C8BE492BB3DAF94C93C72262D /* WhitePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayer.h; path = Whiteboard/Classes/Replayer/WhitePlayer.h; sourceTree = "<group>"; };
 		F9EDBB96B5DCF07AE07C5CD5BCFE1479 /* WhiteBroadcastState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteBroadcastState.h; path = Whiteboard/Classes/Room/WhiteBroadcastState.h; sourceTree = "<group>"; };
 		FB65E83E3110DA001767E80FD6FC6C4D /* FastboardPencilDrawHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardPencilDrawHandler.swift; sourceTree = "<group>"; };
+		FBAE14B5BDDA2BDA121057871D8AA836 /* web-sdk.6d91b890.js */ = {isa = PBXFileReference; includeInIndex = 1; name = "web-sdk.6d91b890.js"; path = "Whiteboard/Resource/web-sdk.6d91b890.js"; sourceTree = "<group>"; };
 		FBD1F9F2185749413F9FEAC11C83654C /* YYModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YYModel.modulemap; sourceTree = "<group>"; };
 		FD606CBE513497F839FCD0272213F3A0 /* WhiteMemberState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteMemberState.h; path = Whiteboard/Classes/Object/WhiteMemberState.h; sourceTree = "<group>"; };
 		FD62799CC6EBF66A3FDAA90AFA6139CB /* Pods-Fastboard_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Fastboard_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -1314,23 +1314,6 @@
 			path = Operation;
 			sourceTree = "<group>";
 		};
-		9E4715724A01738D007A38EFD2E5A7D6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B4C21805C852940F09919A5A730229A5 /* fe8b532 */,
-				F65CB3DE08A4D5954655E96F954E751C /* index.html */,
-				5C8699C0BCE3839EE44A33A5E65BDBD4 /* main.css */,
-				C55DD88A64A1B48EB9A607C55B1DE1FC /* main.53820617.js */,
-				7F58786A2ABABF56E1642635FECF27A1 /* netless.css */,
-				4D046ECA18D34680B4F9779BD67E73C1 /* netless.63561a05.js */,
-				386C6B095BD3D73185DF4E193462B337 /* runtime.42cce1dd.js */,
-				F77E0960679652C2AD209E766DDAB03A /* vendor.a5dc885d.js */,
-				862B1435DB22C68DE50C21E66311122E /* video.b3db6331.js */,
-				5CE9E420840438EC1F0C72BF307CAD08 /* web-sdk.6d91b890.js */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		A6D76DB3D1F5FB5EC2EE6AC593476D5F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1494,6 +1477,23 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		DE29E1929E8104BA3614032E082EAE3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53191BF6E404686AB08157246F4C9695 /* e6d798d */,
+				7B44833FA607F52A543C4C705372C680 /* index.html */,
+				44F1B60149EE596B756484C9FF3BB9F8 /* main.css */,
+				1108EEE980B4061E179734467380177D /* main.53820617.js */,
+				75B07E4CC08038290C71BB728F584005 /* netless.css */,
+				38A2AB621CABA283760E185403401E90 /* netless.87dcc75b.js */,
+				CF6D2E5F3C081EEEC6D52DAAC9FA374C /* runtime.42cce1dd.js */,
+				E14C94DE052CD376E30F576E982FB3C0 /* vendor.a5dc885d.js */,
+				2455FFA3CDDFA21047EB6CD9A93D7BA8 /* video.b3db6331.js */,
+				FBAE14B5BDDA2BDA121057871D8AA836 /* web-sdk.6d91b890.js */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		DE867793E09A2AEBA58F5DDDF9B00429 /* Fastboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1559,7 +1559,7 @@
 				9A968896EECF88FE5381C52F87CAFAF0 /* NativeReplayer */,
 				C23E701FF9B0CD59FB2CEECEECEB5517 /* Object */,
 				03904F3E246D626F2F07D57EEF868231 /* Replayer */,
-				9E4715724A01738D007A38EFD2E5A7D6 /* Resources */,
+				DE29E1929E8104BA3614032E082EAE3F /* Resources */,
 				6EE9EAEE9FAA01997208048EDC89F196 /* Room */,
 				8785BF72BF5E4A6375C872ADCC94125B /* Support Files */,
 			);
@@ -1762,7 +1762,7 @@
 			buildPhases = (
 				DA8F7D05DB676F8CBE12299F545492F5 /* Sources */,
 				98540B869F953036A34D0A21B090F37B /* Frameworks */,
-				274E470CC6EB44603653B4A755D66A1A /* Resources */,
+				C45678293199799097F86EAA38C8B76E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -2010,23 +2010,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		274E470CC6EB44603653B4A755D66A1A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				77D31544BEA559D6C41B5DEFD58BD1FF /* fe8b532 in Resources */,
-				13B6B98DA12B1846CFB0B285AB1B715D /* index.html in Resources */,
-				D8EB056AC56C3FCDC6B0DB1FB79783C5 /* main.css in Resources */,
-				C750CBEDE1A441CA601A0B98FEA9865F /* main.53820617.js in Resources */,
-				26BC9A5CC72449E0FC890CEDC55D2E0F /* netless.css in Resources */,
-				529BFEBB6EEA03D3D15B54D06ABA633B /* netless.63561a05.js in Resources */,
-				5DF72AADA89DA41411EF0E8BD0E3763E /* runtime.42cce1dd.js in Resources */,
-				8107F544233AA61DAA7A4E98158CC626 /* vendor.a5dc885d.js in Resources */,
-				F030744C010623B8BA8A3175ADDB0D88 /* video.b3db6331.js in Resources */,
-				14B268DC02F8F85E1923916A712EF47B /* web-sdk.6d91b890.js in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		30EDC0C5AE2071C2EE0D243495D6100E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2068,6 +2051,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C45678293199799097F86EAA38C8B76E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E659F863EBA7264FAF3753C07D5A587 /* e6d798d in Resources */,
+				C0DDD642E845A0B750F7DAA0DE3625DA /* index.html in Resources */,
+				8DE24A8E789FC18BD3E24839FDBAEE71 /* main.css in Resources */,
+				97D6E7B2714626E47C4AC96DA584EEB1 /* main.53820617.js in Resources */,
+				5169B18D4739B3460DF250F7372B76C0 /* netless.css in Resources */,
+				11AA8A16ADA8BEA5FC9834717F2004A0 /* netless.87dcc75b.js in Resources */,
+				89591FF498CCB05E2B9C4578A8FDA219 /* runtime.42cce1dd.js in Resources */,
+				50F38F9901073A92EA4F515C3C882083 /* vendor.a5dc885d.js in Resources */,
+				035D08C20C3FFEDF5ED45A46438B5AE0 /* video.b3db6331.js in Resources */,
+				68D677B20C7A2C3E9D158CA04475AC2B /* web-sdk.6d91b890.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

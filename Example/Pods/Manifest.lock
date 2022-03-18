@@ -4,34 +4,34 @@ PODS:
   - Fastboard (1.0.1):
     - Fastboard/core (= 1.0.1)
   - Fastboard/core (1.0.1):
-    - Whiteboard (~> 2.16.6)
+    - Whiteboard (~> 2.16.7)
   - Fastboard/fpa (1.0.1):
     - Fastboard/core
     - Whiteboard/fpa
   - Masonry (1.1.0)
   - SnapKit (5.0.1)
-  - Whiteboard (2.16.6):
-    - Whiteboard/Converter (= 2.16.6)
-    - Whiteboard/NativeReplayer (= 2.16.6)
-    - Whiteboard/Replayer (= 2.16.6)
-    - Whiteboard/Room (= 2.16.6)
-  - Whiteboard/Base (2.16.6):
+  - Whiteboard (2.16.7):
+    - Whiteboard/Converter (= 2.16.7)
+    - Whiteboard/NativeReplayer (= 2.16.7)
+    - Whiteboard/Replayer (= 2.16.7)
+    - Whiteboard/Room (= 2.16.7)
+  - Whiteboard/Base (2.16.7):
     - dsBridge (~> 3.0.2)
     - Whiteboard/Object
-  - Whiteboard/Converter (2.16.6):
+  - Whiteboard/Converter (2.16.7):
     - Whiteboard/Object
-  - Whiteboard/fpa (2.16.6):
+  - Whiteboard/fpa (2.16.7):
     - AgoraFPA_iOS (~> 1.0.0)
     - Whiteboard/Room
-  - Whiteboard/Model (2.16.6):
+  - Whiteboard/Model (2.16.7):
     - YYModel (~> 1.0.4)
-  - Whiteboard/NativeReplayer (2.16.6):
+  - Whiteboard/NativeReplayer (2.16.7):
     - Whiteboard/Replayer
-  - Whiteboard/Object (2.16.6):
+  - Whiteboard/Object (2.16.7):
     - Whiteboard/Model
-  - Whiteboard/Replayer (2.16.6):
+  - Whiteboard/Replayer (2.16.7):
     - Whiteboard/Base
-  - Whiteboard/Room (2.16.6):
+  - Whiteboard/Room (2.16.7):
     - Whiteboard/Base
   - YYModel (1.0.4)
 
@@ -59,16 +59,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Whiteboard:
-    :commit: 8e57b53f4a8e276e92e16f128de2fac9674458f1
+    :commit: 65146e83d9a4a3420e8aa7a0ef513bd60d259e02
     :git: https://github.com/netless-io/Whiteboard-iOS
 
 SPEC CHECKSUMS:
   AgoraFPA_iOS: 2202f574e6832567e368d5e69ad6da121a18ee4a
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
-  Fastboard: eec4d3939884ecee3e98ca2b493d73f442efc1b0
+  Fastboard: ee0f183e18d385dd532bfd0e2afe3c6743c7c072
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  Whiteboard: b3e0310b09b3c34fe53e66e91a759bc7aa278d93
+  Whiteboard: 2856a9441ae192ba8091167d4a219916e246588c
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 8cdc27783b50b75a1564056994040547358efcae
