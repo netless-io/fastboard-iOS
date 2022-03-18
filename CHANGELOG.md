@@ -1,5 +1,12 @@
 # ChangeLog
 
+## [1.0.2] - 2022-03-18
+## 升级
+- 升级`Whiteboard-iOS`到2.16.7
+## 新增
+- 新增OC插入多媒体示例
+## 优化
+- 优化`ControlBar`forceHide行为
 ## [1.0.0-beta.10] - 2022-02-28
 ## 新增
 - 多种文档的插入Api。支持ppt/pptx/doc/docx/pdf/mp4/mp4/jpg/png等常见格式
