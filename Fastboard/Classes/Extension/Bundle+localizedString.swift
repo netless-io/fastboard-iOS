@@ -9,7 +9,7 @@ import Foundation
 
 extension Bundle {
     static var localizedBundle: Bundle {
-        let path = Bundle(for: FastboardManager.self).path(forResource: "LocalizedStrings", ofType: "bundle")
+        let path = Bundle(for: Fastboard.self).path(forResource: "LocalizedStrings", ofType: "bundle")
         return Bundle(path: path!)!
     }
 }

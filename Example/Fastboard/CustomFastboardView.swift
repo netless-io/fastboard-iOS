@@ -11,7 +11,7 @@ import Whiteboard
 import Fastboard
 import SnapKit
 
-class CustomFastboardOverlay: FastboardOverlay {
+class CustomFastboardOverlay: FastRoomOverlay {
     func updateRoomPhaseUpdate(_ phase: FastRoomPhase) {
         return
     }
@@ -58,7 +58,7 @@ class CustomFastboardOverlay: FastboardOverlay {
         return
     }
     
-    func itemWillBeExecution(fastPanel: FastPanel, item: FastOperationItem) {
+    func itemWillBeExecution(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {
         return
     }
     
@@ -66,11 +66,11 @@ class CustomFastboardOverlay: FastboardOverlay {
         totalPanels.forEach { $0.view?.isHidden = hide }
     }
     
-    func setPanelItemHide(item: DefaultOperationIdentifier, hide: Bool) {
+    func setPanelItemHide(item: FastRoomDefaultOperationIdentifier, hide: Bool) {
         totalPanels.forEach { $0.setItemHide(fromKey: item, hide: hide)}
     }
     
-    func setupWith(room: WhiteRoom, fastboardView: FastboardView, direction: OperationBarDirection) {
+    func setupWith(room: WhiteRoom, fastboardView: FastRoomView, direction: OperationBarDirection) {
         let operationView = operationsPanel.setup(room: room, direction: .horizontal, mask: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         fastboardView.addSubview(operationView)
         operationView.snp.makeConstraints { make in
@@ -79,7 +79,7 @@ class CustomFastboardOverlay: FastboardOverlay {
         }
     }
     
-    var totalPanels: [FastPanel] {
+    var totalPanels: [FastRoomPanel] {
         [operationsPanel]
     }
     
@@ -87,11 +87,11 @@ class CustomFastboardOverlay: FastboardOverlay {
 }
 
 extension CustomFastboardOverlay {
-    func createOperationPanel() -> FastPanel {
-        var items: [FastOperationItem] = []
-        items.append(DefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
-        items.append(DefaultOperationItem.selectableApplianceItem(.ApplianceEraser, shape: nil))
-        let panel = FastPanel(items: items)
+    func createOperationPanel() -> FastRoomPanel {
+        var items: [FastRoomOperationItem] = []
+        items.append(FastRoomDefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
+        items.append(FastRoomDefaultOperationItem.selectableApplianceItem(.ApplianceEraser, shape: nil))
+        let panel = FastRoomPanel(items: items)
         return panel
     }
 }

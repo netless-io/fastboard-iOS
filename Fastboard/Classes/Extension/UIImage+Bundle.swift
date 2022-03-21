@@ -8,7 +8,7 @@
 import Foundation
 
 let defaultBundle: Bundle = {
-    let path = Bundle(for: FastboardManager.self).path(forResource: "Icons", ofType: "bundle")
+    let path = Bundle(for: Fastboard.self).path(forResource: "Icons", ofType: "bundle")
     return Bundle(path: path!)!
 }()
 

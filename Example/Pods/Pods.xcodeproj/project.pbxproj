@@ -20,32 +20,36 @@
 
 /* Begin PBXBuildFile section */
 		001C483A2E0D35C90116DBEA86EF879F /* WhiteMemberState.m in Sources */ = {isa = PBXBuildFile; fileRef = F727F35F64E4B15D3B9F782FB74C132B /* WhiteMemberState.m */; };
-		011CDEAF479C154543F75062BEF130F8 /* Fastboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1242A34B89F2F7591B74C9915AFB7B17 /* Fastboard.swift */; };
 		029E559D827D1DFF8EAA6F5F29FA0B5F /* WhiteRectangleConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 239BB7F4698A1825D601461ADCFFD026 /* WhiteRectangleConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02AC82D1EA88C2FD0E096618E586D408 /* FastRoom+Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC102764B95C2EDE44B2BADB40D20A6C /* FastRoom+Pencil.swift */; };
 		035D08C20C3FFEDF5ED45A46438B5AE0 /* video.b3db6331.js in Resources */ = {isa = PBXBuildFile; fileRef = 2455FFA3CDDFA21047EB6CD9A93D7BA8 /* video.b3db6331.js */; };
-		03D54E44A85E90353EE687A13C1D25E6 /* FastboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C034B0E57F8D094E8A4D1FA465EC24 /* FastboardView.swift */; };
 		040B50EF1D01CE37C23EAE836C27E020 /* WhiteBoardView+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 770168F920F0E1415A21AAADEB905A85 /* WhiteBoardView+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		05029382FC2C6461423326762812721B /* FastPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971FAEBFA1F9A38CC43B8DC75E683A4 /* FastPanelDelegate.swift */; };
+		0458A1790C10A8C1D1DAE1ADD0771F6B /* FastProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C394D587772A1C92D3CA557DF48A87 /* FastProxy.m */; };
 		053CC062B004731659AEBD67D85A4ACD /* WhiteSceneState.m in Sources */ = {isa = PBXBuildFile; fileRef = BC29D3B773277C388F1969B91B0FE0F2 /* WhiteSceneState.m */; };
 		0606ED7A241CE2F3F59FC8601EE17707 /* WhitePlayerEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D5639991ADD76C37356681C187A05CE /* WhitePlayerEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07798F676244901B75BCD0FF625136AA /* WhitePlayerTimeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A9100EA2C2B8E7063FFCDC2AA678D667 /* WhitePlayerTimeInfo.m */; };
+		095D9AC90C70ECA897D988EDD2481528 /* FastRoomConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7C5D566DE21269B4CD95C84085E7ED /* FastRoomConfiguration.swift */; };
 		0AD428586747EA8CDC51415A53868EBD /* WhiteConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C856938A8E92FA444BEEFDF67D2DEDB /* WhiteConverter.m */; };
 		0CA41399533B21C62E8A42EC166F11B5 /* JSBUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EE90B6DCF40C8A103D32FC231324CD7 /* JSBUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0E2CF51992BA162C57CCF1AE4C09E9D9 /* WhiteWindowParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843105E074F1D0F16037ABBB5AC13ED /* WhiteWindowParams.m */; };
 		0E8CCAE597756C61B2D7B60EEF4A29E4 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 00888AC97102FAE1C96F650F39842D7E /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0FEE394687B5463B1771FEA75810ED1E /* FastProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = E870AD66B33C4DA593C04332792975E2 /* FastProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FEE394687B5463B1771FEA75810ED1E /* FastProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = FB3241CF75DEE0A2E78568D42D0C0777 /* FastProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11AA8A16ADA8BEA5FC9834717F2004A0 /* netless.87dcc75b.js in Resources */ = {isa = PBXBuildFile; fileRef = 38A2AB621CABA283760E185403401E90 /* netless.87dcc75b.js */; };
+		11BF23F7B6EA9789BF6279EF1743A921 /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D615A7B91BF374DB6D31AC7A0D2F06E4 /* DelegateProxy.swift */; };
 		125766B0B9DBA9050FB65AA217C7D4B5 /* WhiteVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B343098EC8FE28EDD81BACA110B2C0 /* WhiteVideoView.m */; };
 		144DA93A55A598F5197F10C729FBDD69 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96039917A2BF73B42B174E71AFA8798 /* UILayoutSupport+Extensions.swift */; };
 		169A73E88622A9A048D09C39A360A09A /* YYModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F602167BD8C1CD39623F47640808B04E /* YYModel-dummy.m */; };
 		1707D8C1CCAB2965D5184BE5B4E0B5FB /* WhiteBroadcastState.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C6741BC305ABEC3CF35582D53A251E /* WhiteBroadcastState.m */; };
 		170D998B4E9714A07C52F14084ED0E0E /* WhiteSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76709C3F2FDB96A280A1C02EABD2F379 /* WhiteSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1710B00096D21DA0663A7C86370BD0FA /* WhiteRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3E859B116CB05ED2822BF24BBC2700 /* WhiteRoom.m */; };
+		171FB461B2A78BBF4D059DA072211F92 /* FastRoomPanelItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE3BD46767B233C83C14C878162D59 /* FastRoomPanelItemButton.swift */; };
 		17BE0F4E51B0FB968125F1A520607FD8 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37240A998521D2A70BF452695D7CB84 /* ConstraintMultiplierTarget.swift */; };
 		185831A3B68F474A63C78DD3A49F544D /* WhiteSceneState.h in Headers */ = {isa = PBXBuildFile; fileRef = A751A472476BEF168A8F69B042B3F000 /* WhiteSceneState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19300CF68F5718C6F9C3476F1A98C1DC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D8EB40940CCABFC10068B412182170 /* MASCompositeConstraint.m */; };
 		1984718B8EA38437F8F42A9E32FA8120 /* WhiteConversionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = AC14E972D7D3CACB3568E83EF063B328 /* WhiteConversionInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B433A1BF92BBD5811F61A000E4771C2 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA2050E69E1AB7C76FE92F61D71DE67 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BF47C9C9FFB4B78F6F2B5B820EECC62 /* FastboardPencilDrawHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265F5ABDCC56AC1754FE9D6F4F5E014 /* FastboardPencilDrawHandler.swift */; };
+		1CD3ACE6B517627ADEA4D0FB7A75ABF2 /* Bundle+localizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C06DFD9AB8A559DFBB35D2121BABC6 /* Bundle+localizedString.swift */; };
 		1CDE381A6C7B9BC0EFEDF34510590EB3 /* YYModel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2046D2FE910174DA6DE482282E0B67DD /* YYModel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D8D7A8C113C547AEE1AF4BDBD97BC9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		1E9EEA756F2774D73347F1660EEFE3E9 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3F58A44A34A7D0CD5E46DF0D595A9 /* ConstraintView+Extensions.swift */; };
@@ -57,24 +61,23 @@
 		2744C3B348266193CC1FE750D6C18533 /* WhiteRoomConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C4B6B0F75ED90143A923190054BCD1 /* WhiteRoomConfig.m */; };
 		274DF0E2BF04F6F4F9F1E70CF513A4F2 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC67E693125AC693A36D2CF886F6F04 /* ConstraintLayoutSupportDSL.swift */; };
 		2839E3707C14798138E8A0C72ACE4C25 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5CFC71B5BD8D194D8650A2D163415D /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AAA12289BEA8144390FBCA22EA91ECB /* Fastboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3315FD60D8FD94451BF0F3B77A0FF58 /* Fastboard.swift */; };
 		2C37A1C0260BEA8FAEED28C64ECFF49A /* InternalApis.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E5678D875BC15AC51470D8C5128D10 /* InternalApis.m */; };
-		2D116D01785E45AC48CA99ADDEEB1EE6 /* FastConfiguration+FPA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68503C104634A873F148B4E120460F /* FastConfiguration+FPA.swift */; };
-		2D200212DD4C163B09D0932815BBFCA0 /* Fastboard+FastPanelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC778122E72053792C471D9F9B00052 /* Fastboard+FastPanelControl.swift */; };
 		2DD43DE8E94A3E5DF6C281CBBAC0213D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
-		313BFF9B9890FD2B950D0FEAB0480AA6 /* Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C73740CA1B79589E37713AF88EAA985 /* Load.m */; };
+		30DDCE3E0FCBE3A3E3654199C2222042 /* Fastboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E02809C87BD76EB128440098832E5B /* Fastboard-dummy.m */; };
+		317B00AC8C46E0378E9F5B8FF85D9640 /* UIColor+NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5C146943A9C0C125750F562C02D55 /* UIColor+NSNumber.swift */; };
 		31F7C35C8863FA25A741A884E21BE7D0 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 289043187A9D89EEC3B9E0F1E4119779 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32A15FA26DA388C1CC493226A5D7C0C2 /* DefaultOperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D224E4CB9DFE9F71BF7B027C12F2E7E4 /* DefaultOperationType.swift */; };
-		338917C31CB90EB3A987F2F46296D71F /* FastError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A7B7D365F8E82798B7E1B5BB1E3C00 /* FastError.swift */; };
+		3253E504824FC00232CC5042DF798E85 /* FastRoomOperationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5490C94C1D68A17997D98A7BAA5D564F /* FastRoomOperationItem.swift */; };
+		325FF85AF6FB977D472193B00C0EFE96 /* FastRoomThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900F0BE8E3CBB5B5C778B9F5BD2A8D68 /* FastRoomThemeManager.swift */; };
 		33E08C300A5072C07AF4FC0CB4CE7C73 /* WhiteConverterV5.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E4CBB0D22AA19DBAA58155E6C8033 /* WhiteConverterV5.m */; };
-		369AF10B19AEB27F6D510F01E957968A /* FastPanelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D621E04418BF4B62896E86B876617F /* FastPanelControl.swift */; };
-		39BDF33508ED6335F46818E3AB16709D /* FastboardView+Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9335B938B5B940DBC71E7892F346F /* FastboardView+Pencil.swift */; };
-		3AA8C35D948F584C5468DC9FFF4C6CDF /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1B4E6EA6E02BC3317CC5403AC46BA /* DelegateProxy.swift */; };
 		3B60C02F6E42FD06B128473E00A94224 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC89AEE3E7251C2A2174C9EC6C039A /* ConstraintLayoutSupport.swift */; };
 		3CD3AF61B451616C96FECD8E35B99B91 /* WhitePlayerTimeInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7286C7DFD830DDE9AEC06E8623E8D9CD /* WhitePlayerTimeInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CD5FAFC746A76D73C3F501734199DFF /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA9CD54908CF2630B87CBB4C7C3E4C3 /* Typealiases.swift */; };
 		3D0EFFE30E3193932A034220E3C4C0FA /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AEF26282C7307251B1608C25F2BC379 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DEDFA52B3A196F6D3E1F0937617628A /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2CF76AB93D2E4A30A0EAD32D3E616D /* ConstraintLayoutGuide+Extensions.swift */; };
 		4037B86E4A4E050B77BD32C08A69B056 /* WhiteImageInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 73141B98574AE03DCC606FEE51702352 /* WhiteImageInformation.m */; };
+		41FF812B40FE7630F3DE5660CF83B6E7 /* TraitCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683B2C860ABE3800C832CF4220FAAC2A /* TraitCollection+Extension.swift */; };
+		4321A0284570EB4915A954E3BCD2AE07 /* FastPanelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02A35F7FA5D98B2949CBC19A6C4E7E /* FastPanelControl.swift */; };
 		43863B6D6A0E47B6648BB7B469736EDD /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265FBF8C3F63C782D5E0056DDF42A882 /* LayoutConstraint.swift */; };
 		439E845E1285AA23DEDBC148E682BB06 /* WhiteRoomCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 7309B411C6D73E7A6F900EF7A9407124 /* WhiteRoomCallbacks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43D3E7E798C6A9BAADFC77F46203D7EC /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2338967813D2B6011268E4CADBECB798 /* CoreFoundation.framework */; };
@@ -82,54 +85,55 @@
 		4571A8AAB3B1DD3057BB0B1CE4728BC4 /* WhiteSdkConfiguration+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A976B5FEEBE3B84A11E50E38A6F5732 /* WhiteSdkConfiguration+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		4775D22F91D3EBCD20940CCE997C8374 /* WhiteConversionInfoV5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6022D05D5EE8AEA8AB0A03BE6B49C755 /* WhiteConversionInfoV5.m */; };
 		47E4CA5D4135471D09B03302619559F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
-		48C3C5757EF790E01DC03A38E40BB6F3 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EEDB7BBF4BD17B6680184BC9E1546 /* String+localized.swift */; };
 		4A1AA2F40ECCD8399FFBA846A763392D /* WhitePageState.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB4427FA4EB6E936B5B10D3685F78DE /* WhitePageState.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B488F9632F8F95A553F5EF90A7DB1AC /* FastboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A80384609A02522BA270BCFC434F0 /* FastboardDelegate.swift */; };
 		4CA13A0527BC57DE2C54A0F3B5ED8652 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5A23CC2B4C6DB4F245FF3475E8FB4 /* LayoutConstraintItem.swift */; };
 		4CC9B43AD90714A316815FAA71DC89A2 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F69D718E7ED1FC75A6DD3D7F3E4EF4D /* MASConstraintMaker.m */; };
 		505DC2AE68D8C6D96CA4889A0A113F71 /* WhiteRectangleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C84BD9EFF460695EBA679DB0DE271A /* WhiteRectangleConfig.m */; };
 		50F38F9901073A92EA4F515C3C882083 /* vendor.a5dc885d.js in Resources */ = {isa = PBXBuildFile; fileRef = E14C94DE052CD376E30F576E982FB3C0 /* vendor.a5dc885d.js */; };
+		5169914195DC838C1F2A3FC5E0752491 /* FPADelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7862B7496675C2852F682CD3309622 /* FPADelegate.swift */; };
 		5169B18D4739B3460DF250F7372B76C0 /* netless.css in Resources */ = {isa = PBXBuildFile; fileRef = 75B07E4CC08038290C71BB728F584005 /* netless.css */; };
 		51A4A1046676D304410544EB56732A49 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03F75E5A406EE031F7C60011BFAF25E /* Constraint.swift */; };
 		5328B209DD54BFAC4FEDA21D1D6D40B3 /* WhitePanEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 945F73330C5DFB87FF135C8AF4C439B0 /* WhitePanEvent.m */; };
 		53305278F1654F968B4E02DF71B098BE /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B543A9969B640964B25122D13A6011 /* MASViewAttribute.m */; };
-		535430957E25CCB9556D027ED35E2558 /* Bundle+localizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695923EEB29790A9097BB99916E15A17 /* Bundle+localizedString.swift */; };
 		536B025B15159A68D11F55762EDB4D5D /* WhiteDisplayer+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C4173DA32B4E4C8809AE634DA57E6F /* WhiteDisplayer+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		5484C6C55DB5BB8186B8B6387EC2B865 /* WhiteSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 68AA6F0BDB0A08A366FAEDC77FE85305 /* WhiteSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54BEFE9F75005D327641073B838C6776 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 44606A8D88B29BB88D84DE2EB2DE84B4 /* MASLayoutConstraint.m */; };
 		557B6FEEB1F8E941D9A503FFB584F7A8 /* WhitePageState.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BE822EA0F02841466EEC06782ED61E /* WhitePageState.m */; };
 		5657966B86D8E81E0A599A7BF8CCCBD6 /* WhiteConversionInfoV5.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D982C5F3A680B752FC015E2AC04BB1D /* WhiteConversionInfoV5.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		567ABE0681AA82748435E32386DE12D7 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4112AC89913F9ABD828E77F2CF2F587E /* ViewController+MASAdditions.m */; };
-		5790537E405A4C7F2B88004394FE16D4 /* TraitCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019CF8E6E3BFA8B3E1A01C5E2D1E0AB2 /* TraitCollection+Extension.swift */; };
-		5946345B80223E43FF77FC49E40B4E9A /* Fastboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BC31475A463EF4D85491384E058985 /* Fastboard-dummy.m */; };
+		56D33D708BE7F8ABCC3E4DC316960242 /* WhiteBoardView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A09D957CBB2CD4440334F55B8ABA1E /* WhiteBoardView+Theme.swift */; };
 		5A8F051A17181F52067C97F7EC6C9D74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
 		5ACCAC8938768018B2A6185D21FD3297 /* WhiteCameraConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AADF2790C570AFDF4223663B8C8731E /* WhiteCameraConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AF532A2D5BCCAAF78246494FEE44CB3 /* YYClassInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = AEFC263BADD7D41EE94A12E62CD12DF1 /* YYClassInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B717C0B06BC634C2112D1577DA9C64D /* WhiteRoomConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 18891E26CC6A153AB3A0121B37149B0A /* WhiteRoomConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B7A590EFA5512E47398D6AACE713407 /* Fastboard-LocalizedStrings in Resources */ = {isa = PBXBuildFile; fileRef = 826795FBAEC2583C68D7750D6624F02C /* Fastboard-LocalizedStrings */; };
-		5CB71F339EA29E84CC9367658B2B4D76 /* FastPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F11231BADECBBAE0496EB5EDD09EB32 /* FastPanel.swift */; };
 		5E8BA529DFB4529006967624044FEC1C /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B12B41A072B87C6BACDF0E1C2510FB /* ConstraintViewDSL.swift */; };
+		5F412F1FCACFA37D11B1FB5041989F61 /* FastRoomOperationItem+NeedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD65360C74403BB9265860031F010B3 /* FastRoomOperationItem+NeedColor.swift */; };
 		5F473099D659918556362C567D6EFB0F /* WhitePlayerEvent+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B70D5DBC09DC8C22A69706080D9561 /* WhitePlayerEvent+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		611E0DAE40BAA8EA992CA3E7AE91AA6E /* WhiteVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = 529B12DD7B1163690343A7E48132142F /* WhiteVideoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61225B0B9AEC591476E30C9A575013B3 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7913E14F15F53B24BD61225EC52C56D5 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		619BD6BA1EB78259AB47FD84D8E01CAC /* CompactFastRoomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CAB93900734734ABADBCA458403246 /* CompactFastRoomOverlay.swift */; };
 		6217A7B4AC7BC719E2698BAE92968B29 /* WhitePptPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AA34AD91D14EB5EED406838514B6BC /* WhitePptPage.m */; };
 		62F299B4704A7C95FB5866C6CDE2E2FD /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5D25EB29468273093FF17A6877817 /* ConstraintOffsetTarget.swift */; };
-		633D1F019C3978F25A3CEEA6EF44F715 /* Fastboard+Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B86F1655312B7CFC2A89DE83C89BDA6 /* Fastboard+Pencil.swift */; };
+		63913892D3FA0FB98B81EE8851A6A265 /* UIView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56F7E850D0DAF9FC9EFC93DA05ADC07 /* UIView+Theme.swift */; };
 		63F862C303D162831C582F2217632E24 /* WhiteConversionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8971AF59A370577EAA157CB1449A86C8 /* WhiteConversionInfo.m */; };
 		66405FCEB8556A6966D84927A51DDF54 /* WhiteSdkConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C21ABDFE6DF7B99BE89BF1950C89EED /* WhiteSdkConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		665D1C73EE3E07359AB5430BC6AACD36 /* FastPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947EDBC14CB7B1329241DBAEEF3054D /* FastPanelDelegate.swift */; };
 		67B6CEF71042F8CCCD3F37B89BA419E6 /* WhiteRoomCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = C71C4DC85EDC98D5A94D6D3023FFA3EF /* WhiteRoomCallbacks.m */; };
 		681706B901EFA9F0F4DF3003FDF26CC2 /* WhiteSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 78711BBC27FE8C5155E68B935C70FE1A /* WhiteSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		68AB1A9B93E15ECDF9D80E7BC266D9C5 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34DBE8A4735EE1B85AE918A1F6B999C /* Region.swift */; };
 		68D677B20C7A2C3E9D158CA04475AC2B /* web-sdk.6d91b890.js in Resources */ = {isa = PBXBuildFile; fileRef = FBAE14B5BDDA2BDA121057871D8AA836 /* web-sdk.6d91b890.js */; };
 		697B6DE74646B2C686E6D814F7389C2F /* WhitePanEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB0A267A7E917A5CD478D6A8EA2E7EA /* WhitePanEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A68AA258498FCE74966F2DE15699A61 /* FastRoomControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9726B58C2257746833CA983FAB7847 /* FastRoomControlBar.swift */; };
 		6BB664E696CAF1EA564594D15D0C000A /* InternalApis.h in Headers */ = {isa = PBXBuildFile; fileRef = B73C7C020CE066FE035A5908A81FD67D /* InternalApis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C44CACDB7AF0A8D8F86ECE6DF7DDC35 /* FastRoomPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13883163EB78AE8AE8F9401BB42B38BA /* FastRoomPanel.swift */; };
+		6CF7AED70DE60D75DC1C7B7279F34322 /* FastRoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD83EDBD8551DFF9E0A53CCFCD0541 /* FastRoomDelegate.swift */; };
+		6E568A5146B1011DCD242A79767C7329 /* ReconnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6AAE21AD7950430681AAA6CFC2456A /* ReconnectingView.swift */; };
 		701B51C9666877B46E8294961EF1D7F4 /* WhiteMemberInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 28556599197F71EAFEB63600AE7827A5 /* WhiteMemberInformation.m */; };
 		715AB2C777F6FCAB5EE0C667A909B698 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 24B57B88FA8EFF44E056DA10FC2890FD /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		724B64058EF9122D614A36E00AC4196C /* WhiteSdkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 246992E30D9089EAE7AD24A43BD3A29C /* WhiteSdkConfiguration.m */; };
 		7580FAAB1BDA52F5A969E5571D1A5973 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE1F42FFE796E6F07250371D19BF6CF /* ConstraintAttributes.swift */; };
-		75A2804DCDC169EED499E5359C46E435 /* ApplianceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFEC83C2ADA531799BA1E06BD2B64BA /* ApplianceButton.swift */; };
+		76685A6F402BED5348C2424281482CF4 /* FastRoomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3EF6127DD3163844E0E8F044835299 /* FastRoomError.swift */; };
 		7764AA5F6BBFC6ECE43959923DD007D3 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4169E6F4FC713B99BFACE994552CCD55 /* ConstraintDirectionalInsetTarget.swift */; };
-		77788B151F69712B50D645D4A83753CF /* FastOperation+NeedDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3542535B235D9A3A2E33240EFB9C5D /* FastOperation+NeedDelete.swift */; };
 		77D55DAFE335F7FFA4764AB6037CC88B /* WhiteRoomState.h in Headers */ = {isa = PBXBuildFile; fileRef = C36BE722550A787A647DD597359606F3 /* WhiteRoomState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78251F42EB680FB72F040A1986279CD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		7895D72D46AB1A4C214CB49A6F04E995 /* WhiteRoomConfig+FPA.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B1A0731AE53F23FCB761CB9669D7CD /* WhiteRoomConfig+FPA.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -137,6 +141,7 @@
 		79B06267AAFE6576ED1D87C5DC0600E8 /* WhiteSDK+Room.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5762C3DF82A61AFE4FF55180FB99A5 /* WhiteSDK+Room.m */; };
 		7A73635AF9511777384DE88D343E46A3 /* WhiteConverterV5.h in Headers */ = {isa = PBXBuildFile; fileRef = 036B28DE72A3044D74B72DA4D96A3B9C /* WhiteConverterV5.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AB282D17AE0496DA13D0273EE915AF6 /* WhitePlayer+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CE0083528E328B791F54057366D7B701 /* WhitePlayer+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		7AD5E7E8F9209A920A5BB3EF354F7E7C /* FastRoomThemeAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560AE9D6F5C22F70298CBF5786C276D /* FastRoomThemeAsset.swift */; };
 		7B05A8DE072977F90AA84A0E98E23167 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E6FC3A209C1377664CFA20804DCC62 /* MASConstraint.m */; };
 		7B6E779F84A78B57A947E3ACA9C238DE /* WhiteImageInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DFAD9221D7E2A23DC432FA1BAB76ACF /* WhiteImageInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C1ECAC159287F145D256FF0EEFF3371 /* WhiteWebViewInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C165F095C0030D5328B0703F1ECC041 /* WhiteWebViewInjection.m */; };
@@ -146,13 +151,11 @@
 		7F919BDC01C0DD07CF80FFC40154EABE /* WhiteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE5C17673C5F1936B85033A0BF7F257 /* WhiteEvent.m */; };
 		814F09A361F7FAD3381EDEEC02F108AB /* Whiteboard-Whiteboard in Resources */ = {isa = PBXBuildFile; fileRef = B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */; };
 		8171D105E2C5CD3C1357D544942B4446 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03504BC490B33B26405B98309F94474E /* UIKit.framework */; };
-		81B88733CC93C5543F3F20FD3EABC5BC /* FPADelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE9F0E6097505BFCE134C77CE04D2B /* FPADelegate.swift */; };
 		825062025906CE93C5D124E1FD9A811E /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF92500030B641B9ACB2B5EC579D7DB /* ConstraintMakerExtendable.swift */; };
 		8449EB1DFD43E222D687D5A8D2088D2D /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A42D1D2932FD6E398BC9D3D73E4947 /* ConstraintLayoutGuideDSL.swift */; };
 		8460BE018FE877BBEE1DF34065BA4CED /* JSBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8811451B328FF2227D7FABE9711D7F /* JSBUtil.m */; };
 		85EA433D0ED3871F71AC231E1AFD0727 /* WhiteSDK+Replayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D67F3F7E12E6E3CB32CDB59CFDAE49 /* WhiteSDK+Replayer.m */; };
 		8724F9872C16D8B562123D245B201D1D /* WhiteCameraState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D09FE0A63D277CCDFC2A0CE1F1CE2 /* WhiteCameraState.m */; };
-		88E78CB419C32528B771A425248E9E05 /* UIView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382B3A45C530ADD1D38277462473DB99 /* UIView+Theme.swift */; };
 		89591FF498CCB05E2B9C4578A8FDA219 /* runtime.42cce1dd.js in Resources */ = {isa = PBXBuildFile; fileRef = CF6D2E5F3C081EEEC6D52DAAC9FA374C /* runtime.42cce1dd.js */; };
 		89A61938887A1D12E78244A79AA63862 /* WhiteCommonCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A8DDB4D87B36CDA2D9E2E10F5678CA /* WhiteCommonCallbacks.m */; };
 		89D93E4D8E7C69A7F8E2088805178FD6 /* WhiteGlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 473C46F1662560071E244790FCB2E432 /* WhiteGlobalState.m */; };
@@ -161,109 +164,104 @@
 		8C5F9AD6E5AAB3660D53B0CE5791A011 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F78F729959C350C47985B2E93F8E9A4 /* AVFoundation.framework */; };
 		8C6546C1EF4F153DF3795CC6FE189E5B /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7D44E974866CA75E771919075385B /* ConstraintInsets.swift */; };
 		8D28D78C49E1F07A7A2E53B33199F781 /* Fastboard-Icons in Resources */ = {isa = PBXBuildFile; fileRef = 92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */; };
-		8D813AC98E0A7071FFB93DFE7BB1FCD1 /* FastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1953A7B6452B11B43EF01299FCBE3142 /* FastboardOverlay.swift */; };
 		8DE24A8E789FC18BD3E24839FDBAEE71 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 44F1B60149EE596B756484C9FF3BB9F8 /* main.css */; };
 		8FD9CD608C4EAAFDE6AC7B8B9EF0FF5E /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DBA0E0AAF4DADFBD800F25A8248CD4 /* ConstraintDescription.swift */; };
+		900ABAA1B383CE803B2154EB6825B86C /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71546FE9D4347409295AF6938C2B2DE0 /* Region.swift */; };
 		90FD5AE525E138A473723FD79AF73273 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41E8D42FCBFD6899BF3567493D1FD6 /* ConstraintDSL.swift */; };
-		924D8116B6341910922A603FFE012255 /* FastOperationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98CEA4563FE97B097A0B2E1E06137B /* FastOperationItem.swift */; };
-		929D3C582FF758D5C2144975F186B4E8 /* Fastboard+Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1674B8375C98DEBDB8D57C911A410 /* Fastboard+Media.swift */; };
-		92B8778645838ECCD72203892EC7EB54 /* DefaultOperationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBD5DED2B54F966FDAE61E6C0E8FBBC /* DefaultOperationItem.swift */; };
+		91DB43D304EBC1FD70B825822118950F /* FastRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFA42588FBF16A5F7674FB4C77F3AA /* FastRoomView.swift */; };
+		93885834968B8EF4A7C7CCD6C9BC3630 /* FastRoomView+Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31667E7ADB38342F068CA8C9285468E4 /* FastRoomView+Pencil.swift */; };
 		95593B01AA755EA48C20C25381198B2B /* WhiteCameraBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 702A4AE3C434CBB83784F7F3EF5FE2C5 /* WhiteCameraBound.m */; };
 		95A50B72298BA608B3D29E30E16A3220 /* NSObject+YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FE98293BF49811C97506C93A65CB810 /* NSObject+YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95DC6C2C7873971A4CA07E1B98BEC054 /* CompactFastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995C3A0CBC58EAE128BFF1E642914601 /* CompactFastboardOverlay.swift */; };
 		968B4874A9F12D67C8B901136C9C8157 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D65C03E11AE810F356DA238A1D1670 /* SnapKit-dummy.m */; };
 		970C052F4BEB5C6FE5C815D863229F3E /* WhiteFPA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B594934FF4C8A2A5C4CEA0A40CAD6C8 /* WhiteFPA.m */; };
 		97D6E7B2714626E47C4AC96DA584EEB1 /* main.53820617.js in Resources */ = {isa = PBXBuildFile; fileRef = 1108EEE980B4061E179734467380177D /* main.53820617.js */; };
 		9812AA03AEE93370A0DAF7AB76A099F6 /* WhitePptPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B7DE5F7489600394722110B3339C18A /* WhitePptPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98B8CEFDFB1E4961435CE646729C99F5 /* WhitePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F994190C8BE492BB3DAF94C93C72262D /* WhitePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		997488AACCC3CFC63D6B58368C2318C6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1C19ED3FD74A6D5D5964C36D72131 /* Theme.swift */; };
 		9A5B4B76A798A678161536FB18DB7DD3 /* WhiteConsts.h in Headers */ = {isa = PBXBuildFile; fileRef = A50B99BA7B666D62EA6F6B789DED79FB /* WhiteConsts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B031DEB8CD2D392893551D22B7BA353 /* UIColor+NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AA0FF94F12D51F50436998BF70F31F /* UIColor+NSNumber.swift */; };
-		9B0C974DD954ACE418AE456051E89C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B32CC3D07EFAC7103EAAADDC2A01ED2 /* Localizable.strings */; };
+		9B0C974DD954ACE418AE456051E89C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCAB3F75AE7C761CA69E9CB5F03959DB /* Localizable.strings */; };
 		9C634FC3871B940C7E1879A5396AC1A0 /* WhiteDisplayerState.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EB309E43B27E1478FE196F54DE29EA1 /* WhiteDisplayerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C63F645FB13743ABFEEC172700FF658 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		9E581662AB62B1AD4791F581833EC563 /* WhiteSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F9B66678B99221E3DB3F39C895ADDA /* WhiteSliderView.m */; };
 		9E659F863EBA7264FAF3753C07D5A587 /* e6d798d in Resources */ = {isa = PBXBuildFile; fileRef = 53191BF6E404686AB08157246F4C9695 /* e6d798d */; };
 		9F4E7BD161BDC5436DDFEF90711FE130 /* dsBridge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7220A4D58426D5FF0A0F8ED6F5B03673 /* dsBridge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0136ED74123F0EDC810BEEB6152BA4D /* UIView+anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6BC10691F093A5D335490DE3A4BBF9 /* UIView+anchor.swift */; };
+		A042BB8D83957078584CB17E2C471167 /* FastRoomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2261D5D89F161D492DDD0C19C75297AF /* FastRoomOverlay.swift */; };
+		A0B1DB7042E5F42C39966BA11D6691C0 /* FastRoomOperationItem+NeedDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AFBB800BB39B82DDB03EA5456C9F8D /* FastRoomOperationItem+NeedDelete.swift */; };
 		A0F754C88A64972A40A9008B0AD52109 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15400D51779176B74F5AA7557D82974 /* ConstraintDirectionalInsets.swift */; };
 		A1336977ADAAD492D6CFD089A8C6E358 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF30C1055770F6845622378976D6B /* View+MASAdditions.m */; };
 		A2C11BDC99234C40C79DB8A14BE90537 /* WhiteAudioMixerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FBDB0158DA88617D8F7E3508C36205 /* WhiteAudioMixerBridge.m */; };
 		A4467357581E8345DD348683CC4111AF /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0170A9CD1D28A170D5D3B9F61234FBCA /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4C2B8C8A10A09C7AD3DB3F5CBF49F5E /* UIImage+ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE05125C80EC67CA76A68937CAE5A67 /* UIImage+ColorItem.swift */; };
 		A53D3AF15CE8D348306EF11619C5D166 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217CF97C70E8231DC886BA9D8DD62E3D /* ConstraintMakerEditable.swift */; };
 		A58990A9CF5A722BB0DDDB30F9E7E96F /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BD93CC935164A090A0A9296BDF5DF866 /* YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A83A6757F6C0003332D57B41FE24BEEA /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B389010635777BEB32BB70B5C885935 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA7075DC19178C0F140B6FF6D2949CC4 /* WhiteEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 00AD10F6CA1F9F6BC4C0A71989D2882B /* WhiteEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAA2DD6FE86A76F3C2B8FD06116355F7 /* WhitePlayerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 28076FB5CD3D588A243436D41D1AB5C7 /* WhitePlayerConfig.m */; };
-		AC64B4FE2E40789FBFAFD180D1D8CE84 /* ReconnectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CD051F7D566B647E9C9F1AF7F44C8E /* ReconnectingView.swift */; };
-		ACA69A05B05F114B911C85422DDCD5D2 /* FastOperation+NeedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0707B19570D4F2F1C20D67CC64864E /* FastOperation+NeedColor.swift */; };
-		AEB697E14DD334D558B65B547773E0F9 /* FastProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A08EBB113E888E921CC1327ED6D2C864 /* FastProxy.m */; };
+		AAB3BE0ADCC777E227684B16D74D71B6 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38F4930B13E9FE7E90306F5A658E694 /* String+localized.swift */; };
 		B10646B6AF73D470221EF25A5DEEEB6F /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EC16196214CAB6B44C4425B9DD845712 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2956B793253E2190E13E3CD1A458198 /* UIView+anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09797E9ED7CEF018902C4765FC035EB /* UIView+anchor.swift */; };
+		B2181BA52B29380155DCFCE4660E2378 /* FastRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF346AED3E9D59864F505925F8FE9B /* FastRoom.swift */; };
 		B2C7EA057816212B63485A6C8ED99893 /* dsBridge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EDB4EF1AA7D1B53ED88EEA94C6A146 /* dsBridge-dummy.m */; };
 		B382AE391499EB2E3941DEB31D5C1BBE /* WhiteSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = CF10E01B1DA083F9CD1331BA6E79D737 /* WhiteSocket.m */; };
 		B39DBD26CD301DC059CAAA8D2EAD01C8 /* WhiteFPA.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ABD18812B760955C4B40A5502CE6AD6 /* WhiteFPA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4637B619302181C033DCEA606747A10 /* WhiteSDK+Room.h in Headers */ = {isa = PBXBuildFile; fileRef = F89A00AB645CA9EFFA1E71004E7D7F91 /* WhiteSDK+Room.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4BE7728D87333785F811FED48CF134E /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB8774CFEA0B95896828CAA2C750181 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4EF8106C424DFF61254EA36E9A232B4 /* Load.m in Sources */ = {isa = PBXBuildFile; fileRef = C541B7D5AD3CA55ED1FBA6FD3CD5EE24 /* Load.m */; };
 		B543FD108C1C6AF6129CB4991553218B /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7466096BD33E5D2AB33D8576605C320D /* ConstraintConfig.swift */; };
 		B61AA5459C2B345AD6D84D8A5111C9CE /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ACE838C55F80AD2E30E7E026B674CED /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B64C8FC6EEDCC8CA8B459EAE903D5DE6 /* WhiteScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 562BB569D90432C343DF35D0731AFE0D /* WhiteScene.m */; };
-		B81C48A57786E8AA2BEEC04CA659F11C /* UIImage+ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EDE5BD182FD85350D29D4BAB015681 /* UIImage+ColorItem.swift */; };
-		B85207249E7786A86B23EE3280855A1B /* TraitUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4413CA911D87B9C2D448EA70BFF9E7EC /* TraitUpdateHandler.swift */; };
 		B877D0EBF5923B22700C7240E41D8BF2 /* WhiteAppParam.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EDAC6523C9FB9AE1974291EE08DA2 /* WhiteAppParam.m */; };
+		B9B749FB6E9EEFA106C7F1EBAE0B6A16 /* FastRoomPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9897FCEBADC76DC44C3D5FF9CEF44FE3 /* FastRoomPhase.swift */; };
+		B9D55438D6F25739BD2040D05A848CCC /* UIImage+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005DA9FD8D49FC1E69838CD3C2A5176 /* UIImage+Bundle.swift */; };
 		BA70F9330D83422D3D35CA9729D7F589 /* WhiteCombinePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E188E5A912B77B0DEB3E06FC807BB59 /* WhiteCombinePlayer.m */; };
 		BC297663051FC588A7CF71DC0137BE34 /* WhiteFontFace.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FDD86D62CF4CE04D13D89D76133883 /* WhiteFontFace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD333CDBCF5D2FD55920336FC271DF33 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE99AEA35490407A1ACC5CDC18735BBF /* ConstraintItem.swift */; };
+		BD4AA4C8AADE6A35059C22E6D16D65F0 /* FastRoom+FastPanelControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766156A9C2D7511FA4B77DFB893FE85 /* FastRoom+FastPanelControl.swift */; };
 		BE050DABC9BF806B3379AFD2367F4194 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C79D0FCE6B98DA92ACA7CF230C1ECC0 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEA99A49E5F8DA685E33DABA606041FF /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D453C5DD332BE4AD9BD37070AEE993 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEBF920FEB959B46A76BAADF22E5CD15 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B668FAB61E32AF5C2934A76BD02FB714 /* ConstraintInsetTarget.swift */; };
-		C02B572615AFB0789C194FCBEA4D5EF2 /* Appearancemanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD487DF849E603E4550CE2E906CAAF5 /* Appearancemanager.swift */; };
 		C05CFCED87D7A4B6097473A2620C590D /* WhiteAppParam.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD361AD5E5D636C0F3641C59E6BBBE3 /* WhiteAppParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0D62606C31939543376A03B54469553 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		C0DDD642E845A0B750F7DAA0DE3625DA /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 7B44833FA607F52A543C4C705372C680 /* index.html */; };
 		C108464EDFBF48FC1D5CE3C2EC8683B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		C2651852703B1D7B04B43FA47BB63754 /* DWKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 12F0BACF6CB55A694FD6E13EE6FFD889 /* DWKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C28FB9A641DF6D3A3764949C72982CD4 /* UIColor+Convince.swift in Sources */ = {isa = PBXBuildFile; fileRef = B867A36427FA89579D75847FAC0D3387 /* UIColor+Convince.swift */; };
 		C2BF59A9E2D780A9D4A894EDBDAA4CC7 /* WhiteSDK+Replayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E7CEFD94E780D2D0E30863B9E7B4C4 /* WhiteSDK+Replayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C2D28248A986655961DCFE1DF97178FC /* WhiteDisplayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EA7C15C5550D767F1534A6124B2CEE8 /* WhiteDisplayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C32E2228FB86865E08E2B14FDDF61EB6 /* WhiteCommonCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 14C1CCDFB41C29DDBD4E538087428C43 /* WhiteCommonCallbacks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C36094D2A4877DEA7EBCFA743857ED57 /* WhiteAudioMixerBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = A2DB337F0B513CB7EF803D0A575929C0 /* WhiteAudioMixerBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C392030D0E2D51F018896583453895C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		C3E8CA6E942C9350248DCB8E3ED55143 /* WhitePlayerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6524F09595FD58719543E185FD86F1 /* WhitePlayerEvent.m */; };
-		C3FC5A1D088AA89F40E93A075B66C83F /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B8EC5CDE4A42D614D757FCA04B402 /* ThemeManager.swift */; };
 		C434CF011A262F10FF82D2312E851C9B /* WhiteCameraBound.h in Headers */ = {isa = PBXBuildFile; fileRef = 44AD785C1B928839666052D47329C76D /* WhiteCameraBound.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C539B339ADC738E7160694565E111B71 /* PageIndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E636097F8FDB49CB12E8DC55002DD5 /* PageIndicatorLabel.swift */; };
+		C4EB26C5BF17D15C826FA59E7874A21B /* RegularFastRoomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC72F2517EF732FD235F5D3ED7E402B /* RegularFastRoomOverlay.swift */; };
 		C5A9F2E8838861AEC9CBB689FBE3A6DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		C61D3BC32A28A405C934C00039AD2583 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F69796F2B87F85FCAAF357E621CB6B /* ConstraintConstantTarget.swift */; };
 		C6D70ACEA72030B94B0D2E168FCE661D /* WhiteMemberInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = E2F8382C06727743FBF835909DEC7B75 /* WhiteMemberInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7D83D99D755676EF8A09CC77845BAF4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF983A99D4B24314763F17E2C7241B /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		C8663F82E4CE6364DD52516C38607132 /* FastConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA73E9625D6F4CF84703C57157D7488 /* FastConfiguration.swift */; };
-		C921F1E9FFC327C1FA26B10EDBD2975F /* FastboardPencilDrawHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65E83E3110DA001767E80FD6FC6C4D /* FastboardPencilDrawHandler.swift */; };
 		C9375F078B54A9030D4B9C2E73222A5D /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EAFB3FC133250AAF1E9D502E868D9C /* NSArray+MASAdditions.m */; };
-		CA182FCBF31B30BF8296486396549255 /* UIImage+tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F62BFEAF48860B5979F224AA409212 /* UIImage+tint.swift */; };
-		CA862D6B65D91E187CD164EADB770D24 /* FastRoomPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EA1CE109D56007C724DC6A5347D849 /* FastRoomPhase.swift */; };
 		CABFF76E9AC020D5F55DBC2F40902711 /* DWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B26C5010D2945BDC3C6AA80A114C8FA8 /* DWKWebView.m */; };
+		CAD468AEC9DA467C183C3607E442E606 /* FastRoomConfiguration+FPA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF8E240C1E5BC836EF3F2E5B83E2F0 /* FastRoomConfiguration+FPA.swift */; };
 		CB194156C900B767B0160AF72EDF354D /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA301E00166B89D7389C3C349B9BD6DB /* ConstraintMaker.swift */; };
 		CB8E4BF0D710970BE2CB4C87ED1043E4 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564DD7233344BB225C9381E35B4170 /* ConstraintMakerRelatable.swift */; };
+		CC10159341C57B0F92907D61C1BD4324 /* FastRoomDefaultOperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB6D03F7B67BBBB9827AEC255FB8AE /* FastRoomDefaultOperationType.swift */; };
 		CC48EC8C6DB54BCB8207C9C3D43C7CCF /* WhiteConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B8B2EECAAFAC29D4C72AEAF30852D4C6 /* WhiteConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC83F25950611CAB5A22A4A3E8C4799D /* Pods-Fastboard_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FE34D8704E039FD6BBAA76EC79A00B /* Pods-Fastboard_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCA22C9F421C9E8C13009947816D8C82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */; };
 		CE137B5E9DD82010ECD5422179B307B1 /* Pods-OCExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DE6EEAFE999286AB24587B567D8FB /* Pods-OCExample-dummy.m */; };
+		CE46F54D235D00CC2330285E3349ED3C /* FastRoomDefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F160E7981F3C8FA24F5C1F2F68BF5AED /* FastRoomDefaultTheme.swift */; };
 		CECDB459AFB5AD0040AF86378F2DBF97 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0244F4522989D9293CB4ABA5CA3C893E /* Masonry-dummy.m */; };
 		CED3690B5498806BC6EE8CBF395B677C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F93DB95A6C32DA31668145D91D5B911A /* WebKit.framework */; };
 		CEE7BDCC3F3073CBBF7A76BC6CF3E519 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE6D9CA39305566D0D6F4064AB319B6 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D05318FE46EC713AC693E56F5ECC62BE /* UIImage+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9935D398019DEE57ED97453FDA6CD2 /* UIImage+Bundle.swift */; };
 		D13D417B236E736EEAE7217B5CE3EC5C /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7240C2D621A161C6480CBF5436573486 /* ConstraintMakerFinalizable.swift */; };
 		D2F69327DFFA99042D1CDB2383BEB0FE /* WhiteFontFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8E8D065426D54F01F69C18B175EBD /* WhiteFontFace.m */; };
+		D2F8F20E233A36429E0F079AB7F495BC /* PageIndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907F4CBE0661303C595B9CA9FDB44CA /* PageIndicatorLabel.swift */; };
 		D386A31EDDDE3F49E4DA9695037D2967 /* WhiteGlobalState.h in Headers */ = {isa = PBXBuildFile; fileRef = 787556029083342ACE12099295D9347F /* WhiteGlobalState.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D52554DF0BBCC54E161420CD71F0CF89 /* RegularFastboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA5B35BE9AB0403F19D6026EBFF1247 /* RegularFastboardOverlay.swift */; };
+		D4501DE4E510782AAE4BB19AABD0A57A /* FastRoomDefaultOperationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD9C7A9DA6450E9C3994BAF6058AAD /* FastRoomDefaultOperationItem.swift */; };
 		D59C2826AD288ECFF576B2AFA312716C /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6523B9ED3DDA44A3B7E4DFC5F73C3AD /* ConstraintRelation.swift */; };
 		D6404C1FD4547FD137EE5573BD57C7D0 /* WhiteSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C69C722D2CEFECA139B3E7865CEFF6E /* WhiteSDK.m */; };
 		D6A13E1BABB81D72FBDE3D07F20990BF /* Whiteboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC76C6C97CA5B409237A82FB706AC46 /* Whiteboard-dummy.m */; };
 		D952F90E7E458D559482E58FBBB67336 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C43D6417497BF5DCCFBBB435DA6C2AD /* YYClassInfo.m */; };
-		DA4732EDE32C6E8C1BB59726112667C4 /* FastboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337FB5A5F4AE6F7A83D5598C4A4857 /* FastboardManager.swift */; };
-		DB805156B8B773029FEB0C2567C86B87 /* WhiteBoardView+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691AB06811148588C82E9FD0BFD3BFDF /* WhiteBoardView+Theme.swift */; };
 		DBCB1D78307E31DC88E64451474BC1E6 /* DSCallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C465A0E5F1EC55F27B026BB67F277E60 /* DSCallInfo.m */; };
 		DD296C5F9A3C820D189FFCA5A2462600 /* WhiteDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8533C10CB5AAD566A4030CFE86A4F4C0 /* WhiteDisplayer.m */; };
+		DE9B4B16678AC21FB7255A3D85B1B69C /* Appearancemanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E179665E7B0A247C4E6FDA34FA0F085 /* Appearancemanager.swift */; };
 		DEA838D5CE0144DD1B116ADC05FEAEEF /* WhitePlayerConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A176E572D5C6F44219CE87BE8AA8DF46 /* WhitePlayerConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E36244E8BF4AC941E82DAF16DDF4BBC2 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E38C8788BAB32140CEA92B595EA1E27 /* ConstraintPriorityTarget.swift */; };
 		E437639AFC19E4E6A4C84B3EF7A40AA4 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B73771A5A60FC542EC3F2B1B0F1F820 /* NSObject+YYModel.m */; };
@@ -277,26 +275,28 @@
 		E8EAADACF3BAE33BDECBC7214EAE9CD2 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F7F9CFDA5B9FD06E64724ED975260 /* ConstraintRelatableTarget.swift */; };
 		E95A6461741C4F76BE8C4C55C86833BB /* DSCallInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 273AB325C1E8E33F40AD2504C93F1B14 /* DSCallInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E96406FB807B305551D5E4CEAC6D5188 /* WhiteRoomCallbacks+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 10A98696A06B674F8BCD293AA95500DB /* WhiteRoomCallbacks+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EA4955A7068B0C70C0FC2D53CD69324B /* FastRoom+Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DB40667F297104F2C1DD6BC0BE6F8 /* FastRoom+Media.swift */; };
+		EB6793ADABFF4B2E1635B2772E64C0AF /* SubPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA0AEEC7F09BB97FB53310A6E90246 /* SubPanelView.swift */; };
 		EB8AADF099A83E2420BD0BDF3F0D0EE8 /* dsbridge.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF70C938E3EF74A4083F0DC1705D26E /* dsbridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6F45B228D8FF1CEF7493704B34B5B6 /* WhiteBoardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 08862B8D2E7DA965B3454BDE766F0CF3 /* WhiteBoardView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECD4884E13B40A8EE30E6937E5AA2F6A /* WhitePlayerState.h in Headers */ = {isa = PBXBuildFile; fileRef = 0987B0BBDBDBF701477D56515C0538AD /* WhitePlayerState.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE2074BACE3344E0E9EE25846D6A3743 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7DE78DDB459ED0D2152C3CD6F1ED7F /* Icons.xcassets */; };
+		EE2074BACE3344E0E9EE25846D6A3743 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05CBB3CCC8376B2629975E5D2361CC1D /* Icons.xcassets */; };
+		EE629892C3D5955B48E82FD82057EF7C /* UIColor+Convince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEF5AAB6BFB4220E72D5D8B33A4B117 /* UIColor+Convince.swift */; };
 		EE6C364198A763EBBF49237035D86439 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12588D1BD183B569A1954ADAE0BAC8 /* ConstraintLayoutGuide.swift */; };
 		EF112D6D4A6E672DA2AD82C2D4FEBB0A /* Whiteboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B1E53BF1A4F02E9D7792CE7C6C52F6 /* Whiteboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF6A4B80A40A41C25D49763B53A6E783 /* WhiteCameraState.h in Headers */ = {isa = PBXBuildFile; fileRef = 427CD7058E2D0D5F13E50D41B2BD7EFF /* WhiteCameraState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F01FA21D5CA538F2412610BF258AE334 /* Whiteboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5F1257ECB4296F2046FBF1130EDE48 /* Whiteboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F10586462FB54CEA169A1A7A469A926D /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC27EECB81C9D09AA323B325CBE5AF14 /* Debugging.swift */; };
-		F1D21AFDBFA28FAA8DBB385960A12CC5 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A036B117EFBD3F1384C4CEBC1874ACDE /* DefaultTheme.swift */; };
 		F24D06C23DAB2F52A30C886A7A8177C7 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BA4C6C2F1AB542E8DE941FC45A7C3 /* ConstraintView.swift */; };
 		F25909095FD426E37EFC61E8C6FEA1FB /* WhitePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3428EC4BBDB5142AEA82B959835F2D14 /* WhitePlayer.m */; };
 		F2C817C166B2DE613222C41015A586C9 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D990DA97A4C30FD998E05B4E82EB7F /* ConstraintMakerPriortizable.swift */; };
-		F33C88A3B34C787EC44C4F596DDDC742 /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AF475C1E611EAB8AE2E68F5FC6183 /* ControlBar.swift */; };
+		F30BC570E61856BF103F30D2D6AFABD6 /* UIImage+tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F22279A612BA5E08AD0A9240EF1D7C /* UIImage+tint.swift */; };
 		F343BA4E457FFDB0165492AECAEF0BCC /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51142B36579B902F504D5F200B8BA26A /* ConstraintPriority.swift */; };
 		F43D609FF67E4C0B807080BD311B7E54 /* WhitePlayerState.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DCD98021EA6A488EB3A2DB79644625 /* WhitePlayerState.m */; };
+		F484A615CE3AF9706DE7B5F7660E67A4 /* TraitUpdateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52F6263F89D4A5D9B1A6666125547FD /* TraitUpdateHandler.swift */; };
 		F4AA96CF3B43358A8806D219A786F38E /* Pods-OCExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0D05C978497D6C14286C53784B4B6C5 /* Pods-OCExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5EAE6603F8875B323591BC4A8898FB0 /* SubPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1285EA9DD95AE114F77F788A12663B /* SubPanelView.swift */; };
 		F86DCF19FB1C2A0601DDD0BA77E2D9AA /* WhiteRoom+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = B107895CCA5956F315E4515A4CD63767 /* WhiteRoom+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		F92A2D0EAE3C84276612E07DBC71DD04 /* Fastboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5F49A3933DEE65FA9AB20F63808E542 /* Fastboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F92A2D0EAE3C84276612E07DBC71DD04 /* Fastboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 355005951878799004E326BDC0F96309 /* Fastboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA9E75A444136D4B695535FAED3D58A7 /* WhiteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B8995DD59912D27CDC66E3B930D982F8 /* WhiteObject.m */; };
 		FDCC3ABAF9B4907CA95609ECDC9C320E /* WhiteSDK+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD68C8581ADAB36AE4ACDEA3216A570 /* WhiteSDK+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		FF134738377309286652385ACCEABC35 /* WhiteWindowParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 084B0D4CB2536620A209722C16AB7EAE /* WhiteWindowParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -445,57 +445,60 @@
 		00E7CEFD94E780D2D0E30863B9E7B4C4 /* WhiteSDK+Replayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSDK+Replayer.h"; path = "Whiteboard/Classes/Replayer/WhiteSDK+Replayer.h"; sourceTree = "<group>"; };
 		011C5DE4F829BC5830DC52B160E89606 /* dsBridge-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsBridge-prefix.pch"; sourceTree = "<group>"; };
 		0170A9CD1D28A170D5D3B9F61234FBCA /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
-		019CF8E6E3BFA8B3E1A01C5E2D1E0AB2 /* TraitCollection+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "TraitCollection+Extension.swift"; sourceTree = "<group>"; };
 		01AF90A95274060E9EBAA624C0AB6EBE /* WhiteRoom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoom.h; path = Whiteboard/Classes/Room/WhiteRoom.h; sourceTree = "<group>"; };
 		0244F4522989D9293CB4ABA5CA3C893E /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		03504BC490B33B26405B98309F94474E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		036B28DE72A3044D74B72DA4D96A3B9C /* WhiteConverterV5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConverterV5.h; path = Whiteboard/Classes/Converter/WhiteConverterV5.h; sourceTree = "<group>"; };
 		0496A30F7B825EF5707DE53EDB879541 /* Pods-Fastboard_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Fastboard_Example"; path = Pods_Fastboard_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DDEF160EDFBED7BC1BD29DBA07E9A8 /* AgoraFPA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraFPA.framework; sourceTree = "<group>"; };
+		05CBB3CCC8376B2629975E5D2361CC1D /* Icons.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Icons.xcassets; path = Fastboard/Assets/Icons.xcassets; sourceTree = "<group>"; };
 		05D3A4846F0C6C146EBD13119298A1DE /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		06D8477D900E8C35814EF7F4FDA71E31 /* ResourceBundle-LocalizedStrings-Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-LocalizedStrings-Fastboard-Info.plist"; sourceTree = "<group>"; };
+		07BFA42588FBF16A5F7674FB4C77F3AA /* FastRoomView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomView.swift; sourceTree = "<group>"; };
 		084B0D4CB2536620A209722C16AB7EAE /* WhiteWindowParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteWindowParams.h; path = Whiteboard/Classes/Object/WhiteWindowParams.h; sourceTree = "<group>"; };
 		08862B8D2E7DA965B3454BDE766F0CF3 /* WhiteBoardView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteBoardView.h; path = Whiteboard/Classes/Displayer/WhiteBoardView.h; sourceTree = "<group>"; };
+		0947EDBC14CB7B1329241DBAEEF3054D /* FastPanelDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastPanelDelegate.swift; sourceTree = "<group>"; };
 		0987B0BBDBDBF701477D56515C0538AD /* WhitePlayerState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerState.h; path = Whiteboard/Classes/Replayer/WhitePlayerState.h; sourceTree = "<group>"; };
 		09FBDB0158DA88617D8F7E3508C36205 /* WhiteAudioMixerBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteAudioMixerBridge.m; path = Whiteboard/Classes/Displayer/WhiteAudioMixerBridge.m; sourceTree = "<group>"; };
 		0AAF983A99D4B24314763F17E2C7241B /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		0ABD18812B760955C4B40A5502CE6AD6 /* WhiteFPA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteFPA.h; path = Whiteboard/Classes/fpa/WhiteFPA.h; sourceTree = "<group>"; };
+		0AE05125C80EC67CA76A68937CAE5A67 /* UIImage+ColorItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorItem.swift"; sourceTree = "<group>"; };
 		0B594934FF4C8A2A5C4CEA0A40CAD6C8 /* WhiteFPA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteFPA.m; path = Whiteboard/Classes/fpa/WhiteFPA.m; sourceTree = "<group>"; };
-		0BA73E9625D6F4CF84703C57157D7488 /* FastConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastConfiguration.swift; sourceTree = "<group>"; };
 		0C165F095C0030D5328B0703F1ECC041 /* WhiteWebViewInjection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteWebViewInjection.m; path = Whiteboard/Classes/Displayer/WhiteWebViewInjection.m; sourceTree = "<group>"; };
 		0C4A2F834A14363D552A539E042CA6CB /* YYModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYModel.release.xcconfig; sourceTree = "<group>"; };
 		0C69C722D2CEFECA139B3E7865CEFF6E /* WhiteSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSDK.m; path = Whiteboard/Classes/SDK/WhiteSDK.m; sourceTree = "<group>"; };
+		0C6AAE21AD7950430681AAA6CFC2456A /* ReconnectingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReconnectingView.swift; sourceTree = "<group>"; };
 		0CF92500030B641B9ACB2B5EC579D7DB /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		0EC76C6C97CA5B409237A82FB706AC46 /* Whiteboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Whiteboard-dummy.m"; sourceTree = "<group>"; };
-		0EC778122E72053792C471D9F9B00052 /* Fastboard+FastPanelControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Fastboard+FastPanelControl.swift"; sourceTree = "<group>"; };
 		0F63FD32AB75EDD088C61982E5C9F289 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0F78F729959C350C47985B2E93F8E9A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		107C7E456A3C348D1706B97C92309D15 /* dsBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsBridge.release.xcconfig; sourceTree = "<group>"; };
 		10A98696A06B674F8BCD293AA95500DB /* WhiteRoomCallbacks+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteRoomCallbacks+Private.h"; path = "Whiteboard/Classes/Room/WhiteRoomCallbacks+Private.h"; sourceTree = "<group>"; };
+		10AD9C7A9DA6450E9C3994BAF6058AAD /* FastRoomDefaultOperationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomDefaultOperationItem.swift; sourceTree = "<group>"; };
 		10E6FC3A209C1377664CFA20804DCC62 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		1108EEE980B4061E179734467380177D /* main.53820617.js */ = {isa = PBXFileReference; includeInIndex = 1; name = main.53820617.js; path = Whiteboard/Resource/main.53820617.js; sourceTree = "<group>"; };
-		11A7B7D365F8E82798B7E1B5BB1E3C00 /* FastError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastError.swift; sourceTree = "<group>"; };
-		1242A34B89F2F7591B74C9915AFB7B17 /* Fastboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fastboard.swift; sourceTree = "<group>"; };
 		12F0BACF6CB55A694FD6E13EE6FFD889 /* DWKWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWKWebView.h; path = dsbridge/DWKWebView.h; sourceTree = "<group>"; };
+		13883163EB78AE8AE8F9401BB42B38BA /* FastRoomPanel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomPanel.swift; sourceTree = "<group>"; };
 		14C1CCDFB41C29DDBD4E538087428C43 /* WhiteCommonCallbacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCommonCallbacks.h; path = Whiteboard/Classes/Displayer/WhiteCommonCallbacks.h; sourceTree = "<group>"; };
-		15EDE5BD182FD85350D29D4BAB015681 /* UIImage+ColorItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+ColorItem.swift"; sourceTree = "<group>"; };
+		150CD264A314F32F7260526B0035058F /* Fastboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Fastboard.release.xcconfig; sourceTree = "<group>"; };
+		15F4AFD8563A043CFA8D5C84B95DD801 /* Fastboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Fastboard-prefix.pch"; sourceTree = "<group>"; };
 		183693B2B63842BF4572D8AC574DEB40 /* WhiteDisplayerState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteDisplayerState.m; path = Whiteboard/Classes/Displayer/WhiteDisplayerState.m; sourceTree = "<group>"; };
 		1843105E074F1D0F16037ABBB5AC13ED /* WhiteWindowParams.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteWindowParams.m; path = Whiteboard/Classes/Object/WhiteWindowParams.m; sourceTree = "<group>"; };
 		18891E26CC6A153AB3A0121B37149B0A /* WhiteRoomConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomConfig.h; path = Whiteboard/Classes/Room/WhiteRoomConfig.h; sourceTree = "<group>"; };
-		1953A7B6452B11B43EF01299FCBE3142 /* FastboardOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardOverlay.swift; sourceTree = "<group>"; };
 		1ACE838C55F80AD2E30E7E026B674CED /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		1B2CF76AB93D2E4A30A0EAD32D3E616D /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		1B5D09FE0A63D277CCDFC2A0CE1F1CE2 /* WhiteCameraState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraState.m; path = Whiteboard/Classes/Object/WhiteCameraState.m; sourceTree = "<group>"; };
 		1B7DE5F7489600394722110B3339C18A /* WhitePptPage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePptPage.h; path = Whiteboard/Classes/Object/WhitePptPage.h; sourceTree = "<group>"; };
-		1B86F1655312B7CFC2A89DE83C89BDA6 /* Fastboard+Pencil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Fastboard+Pencil.swift"; sourceTree = "<group>"; };
 		1BC67E693125AC693A36D2CF886F6F04 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
-		1DA5B35BE9AB0403F19D6026EBFF1247 /* RegularFastboardOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegularFastboardOverlay.swift; sourceTree = "<group>"; };
+		1DBA6D17CB2D0FFCB8C9D4973E70C7CF /* Fastboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Fastboard.modulemap; sourceTree = "<group>"; };
+		1DEE3BD46767B233C83C14C878162D59 /* FastRoomPanelItemButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomPanelItemButton.swift; sourceTree = "<group>"; };
 		1DFAD9221D7E2A23DC432FA1BAB76ACF /* WhiteImageInformation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteImageInformation.h; path = Whiteboard/Classes/Room/WhiteImageInformation.h; sourceTree = "<group>"; };
 		1EA7C15C5550D767F1534A6124B2CEE8 /* WhiteDisplayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteDisplayer.h; path = Whiteboard/Classes/Displayer/WhiteDisplayer.h; sourceTree = "<group>"; };
-		1F11231BADECBBAE0496EB5EDD09EB32 /* FastPanel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastPanel.swift; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* Masonry */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2046D2FE910174DA6DE482282E0B67DD /* YYModel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYModel-umbrella.h"; sourceTree = "<group>"; };
 		217CF97C70E8231DC886BA9D8DD62E3D /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		21FC89AEE3E7251C2A2174C9EC6C039A /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		2261D5D89F161D492DDD0C19C75297AF /* FastRoomOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomOverlay.swift; sourceTree = "<group>"; };
 		22B343098EC8FE28EDD81BACA110B2C0 /* WhiteVideoView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteVideoView.m; path = Whiteboard/Classes/NativeReplayer/WhiteVideoView.m; sourceTree = "<group>"; };
 		2338967813D2B6011268E4CADBECB798 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		236A1D912D2490D6A3F99C714A64556B /* Pods-Fastboard_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fastboard_Example-Info.plist"; sourceTree = "<group>"; };
@@ -503,91 +506,96 @@
 		2455FFA3CDDFA21047EB6CD9A93D7BA8 /* video.b3db6331.js */ = {isa = PBXFileReference; includeInIndex = 1; name = video.b3db6331.js; path = Whiteboard/Resource/video.b3db6331.js; sourceTree = "<group>"; };
 		246992E30D9089EAE7AD24A43BD3A29C /* WhiteSdkConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSdkConfiguration.m; path = Whiteboard/Classes/SDK/WhiteSdkConfiguration.m; sourceTree = "<group>"; };
 		24B57B88FA8EFF44E056DA10FC2890FD /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		2560AE9D6F5C22F70298CBF5786C276D /* FastRoomThemeAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomThemeAsset.swift; sourceTree = "<group>"; };
 		265FBF8C3F63C782D5E0056DDF42A882 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		273AB325C1E8E33F40AD2504C93F1B14 /* DSCallInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCallInfo.h; path = dsbridge/DSCallInfo.h; sourceTree = "<group>"; };
-		27489FE695319CEDF80989DE47861D39 /* Fastboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Fastboard.release.xcconfig; sourceTree = "<group>"; };
 		28076FB5CD3D588A243436D41D1AB5C7 /* WhitePlayerConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerConfig.m; path = Whiteboard/Classes/Replayer/WhitePlayerConfig.m; sourceTree = "<group>"; };
 		28556599197F71EAFEB63600AE7827A5 /* WhiteMemberInformation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteMemberInformation.m; path = Whiteboard/Classes/Object/WhiteMemberInformation.m; sourceTree = "<group>"; };
 		289043187A9D89EEC3B9E0F1E4119779 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
-		2AC9335B938B5B940DBC71E7892F346F /* FastboardView+Pencil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastboardView+Pencil.swift"; sourceTree = "<group>"; };
 		2AD2A0FD30856C7C734A998A3E3AAC1C /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		2AEF26282C7307251B1608C25F2BC379 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		2BE6D9CA39305566D0D6F4064AB319B6 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		2C3EF6127DD3163844E0E8F044835299 /* FastRoomError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomError.swift; sourceTree = "<group>"; };
 		2C856938A8E92FA444BEEFDF67D2DEDB /* WhiteConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConverter.m; path = Whiteboard/Classes/Converter/WhiteConverter.m; sourceTree = "<group>"; };
 		2E188E5A912B77B0DEB3E06FC807BB59 /* WhiteCombinePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCombinePlayer.m; path = Whiteboard/Classes/NativeReplayer/WhiteCombinePlayer.m; sourceTree = "<group>"; };
-		2EBD5DED2B54F966FDAE61E6C0E8FBBC /* DefaultOperationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultOperationItem.swift; sourceTree = "<group>"; };
-		2F276717CF68A5D7F8CCE00756D3B251 /* ResourceBundle-LocalizedStrings-Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-LocalizedStrings-Fastboard-Info.plist"; sourceTree = "<group>"; };
 		2F97F3B7A006C0CFB5CF290FA69B2671 /* Pods-OCExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OCExample"; path = Pods_OCExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31667E7ADB38342F068CA8C9285468E4 /* FastRoomView+Pencil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastRoomView+Pencil.swift"; sourceTree = "<group>"; };
+		31C394D587772A1C92D3CA557DF48A87 /* FastProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FastProxy.m; sourceTree = "<group>"; };
 		3428EC4BBDB5142AEA82B959835F2D14 /* WhitePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayer.m; path = Whiteboard/Classes/Replayer/WhitePlayer.m; sourceTree = "<group>"; };
-		382B3A45C530ADD1D38277462473DB99 /* UIView+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Theme.swift"; sourceTree = "<group>"; };
+		355005951878799004E326BDC0F96309 /* Fastboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Fastboard-umbrella.h"; sourceTree = "<group>"; };
 		38A2AB621CABA283760E185403401E90 /* netless.87dcc75b.js */ = {isa = PBXFileReference; includeInIndex = 1; name = netless.87dcc75b.js; path = Whiteboard/Resource/netless.87dcc75b.js; sourceTree = "<group>"; };
 		3AADF2790C570AFDF4223663B8C8731E /* WhiteCameraConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraConfig.h; path = Whiteboard/Classes/Object/WhiteCameraConfig.h; sourceTree = "<group>"; };
 		3C43D6417497BF5DCCFBBB435DA6C2AD /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
 		3C79D0FCE6B98DA92ACA7CF230C1ECC0 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		3C9726B58C2257746833CA983FAB7847 /* FastRoomControlBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomControlBar.swift; sourceTree = "<group>"; };
+		3CAECA6890331B460656338620CF18AA /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3D70D404B2C7C7A4630BC46B6BFE2126 /* dsBridge-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "dsBridge-Info.plist"; sourceTree = "<group>"; };
+		3E7862B7496675C2852F682CD3309622 /* FPADelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FPADelegate.swift; path = Fastboard/Classes/FPA/FPADelegate.swift; sourceTree = "<group>"; };
 		3FA2050E69E1AB7C76FE92F61D71DE67 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		3FEF5AAB6BFB4220E72D5D8B33A4B117 /* UIColor+Convince.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Convince.swift"; sourceTree = "<group>"; };
+		40A09D957CBB2CD4440334F55B8ABA1E /* WhiteBoardView+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "WhiteBoardView+Theme.swift"; sourceTree = "<group>"; };
 		40B37C62EB68BB930D6D0CE7CE575334 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		4112AC89913F9ABD828E77F2CF2F587E /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		4169E6F4FC713B99BFACE994552CCD55 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
 		427CD7058E2D0D5F13E50D41B2BD7EFF /* WhiteCameraState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraState.h; path = Whiteboard/Classes/Object/WhiteCameraState.h; sourceTree = "<group>"; };
-		4413CA911D87B9C2D448EA70BFF9E7EC /* TraitUpdateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TraitUpdateHandler.swift; sourceTree = "<group>"; };
 		44606A8D88B29BB88D84DE2EB2DE84B4 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		44AD785C1B928839666052D47329C76D /* WhiteCameraBound.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraBound.h; path = Whiteboard/Classes/Object/WhiteCameraBound.h; sourceTree = "<group>"; };
 		44F1B60149EE596B756484C9FF3BB9F8 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; name = main.css; path = Whiteboard/Resource/main.css; sourceTree = "<group>"; };
+		44F22279A612BA5E08AD0A9240EF1D7C /* UIImage+tint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+tint.swift"; sourceTree = "<group>"; };
 		4506D875998940F39333D431E7D8E3D6 /* YYModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYModel.debug.xcconfig; sourceTree = "<group>"; };
+		45DF346AED3E9D59864F505925F8FE9B /* FastRoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoom.swift; sourceTree = "<group>"; };
 		473C46F1662560071E244790FCB2E432 /* WhiteGlobalState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteGlobalState.m; path = Whiteboard/Classes/Displayer/WhiteGlobalState.m; sourceTree = "<group>"; };
 		47B1A0731AE53F23FCB761CB9669D7CD /* WhiteRoomConfig+FPA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteRoomConfig+FPA.h"; path = "Whiteboard/Classes/fpa/WhiteRoomConfig+FPA.h"; sourceTree = "<group>"; };
-		48E636097F8FDB49CB12E8DC55002DD5 /* PageIndicatorLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PageIndicatorLabel.swift; sourceTree = "<group>"; };
 		496479F97411CD075AEE8247181A8CAA /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
-		4AFE9F0E6097505BFCE134C77CE04D2B /* FPADelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FPADelegate.swift; path = Fastboard/Classes/FPA/FPADelegate.swift; sourceTree = "<group>"; };
 		4B5F1257ECB4296F2046FBF1130EDE48 /* Whiteboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Whiteboard.h; path = Whiteboard/Classes/Whiteboard.h; sourceTree = "<group>"; };
 		4BE1F42FFE796E6F07250371D19BF6CF /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		4C1DF3A399B712187C81F1422FD4E509 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		4C21ABDFE6DF7B99BE89BF1950C89EED /* WhiteSdkConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSdkConfiguration.h; path = Whiteboard/Classes/SDK/WhiteSdkConfiguration.h; sourceTree = "<group>"; };
-		4C73740CA1B79589E37713AF88EAA985 /* Load.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Load.m; sourceTree = "<group>"; };
 		4E38C8788BAB32140CEA92B595EA1E27 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		4FE1B4E6EA6E02BC3317CC5403AC46BA /* DelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
 		51142B36579B902F504D5F200B8BA26A /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		529B12DD7B1163690343A7E48132142F /* WhiteVideoView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteVideoView.h; path = Whiteboard/Classes/NativeReplayer/WhiteVideoView.h; sourceTree = "<group>"; };
 		53191BF6E404686AB08157246F4C9695 /* e6d798d */ = {isa = PBXFileReference; includeInIndex = 1; name = e6d798d; path = Whiteboard/Resource/e6d798d; sourceTree = "<group>"; };
+		5490C94C1D68A17997D98A7BAA5D564F /* FastRoomOperationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomOperationItem.swift; sourceTree = "<group>"; };
 		562BB569D90432C343DF35D0731AFE0D /* WhiteScene.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteScene.m; path = Whiteboard/Classes/Object/WhiteScene.m; sourceTree = "<group>"; };
 		562BBA9A40E10104E344889FAE4877C8 /* Pods-OCExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OCExample-frameworks.sh"; sourceTree = "<group>"; };
 		566DB1047536864D83BF1AD217C10F8C /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
 		579895DF8EB4DADAE14308CEE770E981 /* WhitePlayerConsts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerConsts.h; path = Whiteboard/Classes/Replayer/WhitePlayerConsts.h; sourceTree = "<group>"; };
 		57C84BD9EFF460695EBA679DB0DE271A /* WhiteRectangleConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRectangleConfig.m; path = Whiteboard/Classes/Object/WhiteRectangleConfig.m; sourceTree = "<group>"; };
 		5A3E859B116CB05ED2822BF24BBC2700 /* WhiteRoom.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoom.m; path = Whiteboard/Classes/Room/WhiteRoom.m; sourceTree = "<group>"; };
-		5A9935D398019DEE57ED97453FDA6CD2 /* UIImage+Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Bundle.swift"; sourceTree = "<group>"; };
 		5B73771A5A60FC542EC3F2B1B0F1F820 /* NSObject+YYModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YYModel.m"; path = "YYModel/NSObject+YYModel.m"; sourceTree = "<group>"; };
+		5BAA0AEEC7F09BB97FB53310A6E90246 /* SubPanelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubPanelView.swift; sourceTree = "<group>"; };
 		5C6524F09595FD58719543E185FD86F1 /* WhitePlayerEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerEvent.m; path = Whiteboard/Classes/Replayer/WhitePlayerEvent.m; sourceTree = "<group>"; };
+		5CD65360C74403BB9265860031F010B3 /* FastRoomOperationItem+NeedColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastRoomOperationItem+NeedColor.swift"; sourceTree = "<group>"; };
 		5D5639991ADD76C37356681C187A05CE /* WhitePlayerEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerEvent.h; path = Whiteboard/Classes/Replayer/WhitePlayerEvent.h; sourceTree = "<group>"; };
 		5E39349130DDA837F2914DEC2FC0C177 /* WhiteObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteObject.h; path = Whiteboard/Classes/Model/WhiteObject.h; sourceTree = "<group>"; };
 		5FD2793A6DEA6E8FEFE27E7CB34629FA /* Pods-Fastboard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fastboard_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6022D05D5EE8AEA8AB0A03BE6B49C755 /* WhiteConversionInfoV5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConversionInfoV5.m; path = Whiteboard/Classes/Converter/WhiteConversionInfoV5.m; sourceTree = "<group>"; };
 		6029D797524C2838561F02AD8033CE4F /* Pods-Fastboard_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fastboard_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		64337FB5A5F4AE6F7A83D5598C4A4857 /* FastboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardManager.swift; sourceTree = "<group>"; };
+		6265F5ABDCC56AC1754FE9D6F4F5E014 /* FastboardPencilDrawHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardPencilDrawHandler.swift; sourceTree = "<group>"; };
+		63DB6D03F7B67BBBB9827AEC255FB8AE /* FastRoomDefaultOperationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomDefaultOperationType.swift; sourceTree = "<group>"; };
 		6484FB7E391680F32A6D25F366F829E0 /* Pods-Fastboard_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fastboard_Example.release.xcconfig"; sourceTree = "<group>"; };
 		66168018F1499DA051616BFBA60948A8 /* dsBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dsBridge.debug.xcconfig; sourceTree = "<group>"; };
 		6838693C0820BAD46D8B03AE523D2319 /* WhiteWebViewInjection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteWebViewInjection.h; path = Whiteboard/Classes/Displayer/WhiteWebViewInjection.h; sourceTree = "<group>"; };
+		683B2C860ABE3800C832CF4220FAAC2A /* TraitCollection+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "TraitCollection+Extension.swift"; sourceTree = "<group>"; };
 		68AA6F0BDB0A08A366FAEDC77FE85305 /* WhiteSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSDK.h; path = Whiteboard/Classes/SDK/WhiteSDK.h; sourceTree = "<group>"; };
-		691AB06811148588C82E9FD0BFD3BFDF /* WhiteBoardView+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "WhiteBoardView+Theme.swift"; sourceTree = "<group>"; };
-		695923EEB29790A9097BB99916E15A17 /* Bundle+localizedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+localizedString.swift"; sourceTree = "<group>"; };
-		697C361BC200401A0447E477AF09DA8F /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AD50124A46C49FD75B5B63498F97C67 /* Pods-OCExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OCExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		6AF279AB629184C658EFA156D552216E /* Fastboard */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Fastboard; path = Fastboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C8A763ADA49D6AE7DB0822298699AA8 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6D982C5F3A680B752FC015E2AC04BB1D /* WhiteConversionInfoV5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConversionInfoV5.h; path = Whiteboard/Classes/Converter/WhiteConversionInfoV5.h; sourceTree = "<group>"; };
+		6DEF8E240C1E5BC836EF3F2E5B83E2F0 /* FastRoomConfiguration+FPA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FastRoomConfiguration+FPA.swift"; path = "Fastboard/Classes/FPA/FastRoomConfiguration+FPA.swift"; sourceTree = "<group>"; };
+		6E179665E7B0A247C4E6FDA34FA0F085 /* Appearancemanager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Appearancemanager.swift; sourceTree = "<group>"; };
 		6EC5A205524BF50803148751609151A2 /* Whiteboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Whiteboard.debug.xcconfig; sourceTree = "<group>"; };
 		6EE5C17673C5F1936B85033A0BF7F257 /* WhiteEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteEvent.m; path = Whiteboard/Classes/Object/WhiteEvent.m; sourceTree = "<group>"; };
 		6F3DE6EEAFE999286AB24587B567D8FB /* Pods-OCExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OCExample-dummy.m"; sourceTree = "<group>"; };
-		6F68503C104634A873F148B4E120460F /* FastConfiguration+FPA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FastConfiguration+FPA.swift"; path = "Fastboard/Classes/FPA/FastConfiguration+FPA.swift"; sourceTree = "<group>"; };
 		6F69D718E7ED1FC75A6DD3D7F3E4EF4D /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
 		702A4AE3C434CBB83784F7F3EF5FE2C5 /* WhiteCameraBound.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraBound.m; path = Whiteboard/Classes/Object/WhiteCameraBound.m; sourceTree = "<group>"; };
 		70B543A9969B640964B25122D13A6011 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		71546FE9D4347409295AF6938C2B2DE0 /* Region.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		7220A4D58426D5FF0A0F8ED6F5B03673 /* dsBridge-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dsBridge-umbrella.h"; sourceTree = "<group>"; };
 		7240C2D621A161C6480CBF5436573486 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		7286C7DFD830DDE9AEC06E8623E8D9CD /* WhitePlayerTimeInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerTimeInfo.h; path = Whiteboard/Classes/Replayer/WhitePlayerTimeInfo.h; sourceTree = "<group>"; };
 		729F22256BE943946010F13FB0BE3914 /* Whiteboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Whiteboard.release.xcconfig; sourceTree = "<group>"; };
 		72C6741BC305ABEC3CF35582D53A251E /* WhiteBroadcastState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteBroadcastState.m; path = Whiteboard/Classes/Room/WhiteBroadcastState.m; sourceTree = "<group>"; };
-		72D621E04418BF4B62896E86B876617F /* FastPanelControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastPanelControl.swift; sourceTree = "<group>"; };
 		7309B411C6D73E7A6F900EF7A9407124 /* WhiteRoomCallbacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomCallbacks.h; path = Whiteboard/Classes/Room/WhiteRoomCallbacks.h; sourceTree = "<group>"; };
 		73141B98574AE03DCC606FEE51702352 /* WhiteImageInformation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteImageInformation.m; path = Whiteboard/Classes/Room/WhiteImageInformation.m; sourceTree = "<group>"; };
 		73C4B6B0F75ED90143A923190054BCD1 /* WhiteRoomConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomConfig.m; path = Whiteboard/Classes/Room/WhiteRoomConfig.m; sourceTree = "<group>"; };
@@ -602,53 +610,51 @@
 		787556029083342ACE12099295D9347F /* WhiteGlobalState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteGlobalState.h; path = Whiteboard/Classes/Displayer/WhiteGlobalState.h; sourceTree = "<group>"; };
 		7913E14F15F53B24BD61225EC52C56D5 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		797D46A7F1534583458B98BF2BB479A7 /* dsBridge */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = dsBridge; path = dsBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		798BE3E82ABDE32B736DA3DBE2EB28F4 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		79CD051F7D566B647E9C9F1AF7F44C8E /* ReconnectingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReconnectingView.swift; sourceTree = "<group>"; };
 		7A976B5FEEBE3B84A11E50E38A6F5732 /* WhiteSdkConfiguration+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSdkConfiguration+Private.h"; path = "Whiteboard/Classes/SDK/WhiteSdkConfiguration+Private.h"; sourceTree = "<group>"; };
 		7B389010635777BEB32BB70B5C885935 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		7B44833FA607F52A543C4C705372C680 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = Whiteboard/Resource/index.html; sourceTree = "<group>"; };
 		7BFB16EA82E4CFC625E832B298F2FE7B /* WhiteCameraConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraConfig.m; path = Whiteboard/Classes/Object/WhiteCameraConfig.m; sourceTree = "<group>"; };
+		7E028C00EE4A88726749D8BF2B2749C4 /* Fastboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Fastboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7E56ED3842C0D55C129C44DDABF3014E /* WhiteCombinePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCombinePlayer.h; path = Whiteboard/Classes/NativeReplayer/WhiteCombinePlayer.h; sourceTree = "<group>"; };
 		7FE98293BF49811C97506C93A65CB810 /* NSObject+YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYModel.h"; path = "YYModel/NSObject+YYModel.h"; sourceTree = "<group>"; };
 		8032C5EB6386AAF72A6DF8F618B87517 /* Pods-OCExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OCExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		80341E922F1CA92597F33A20992DC9D1 /* dsBridge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = dsBridge.modulemap; sourceTree = "<group>"; };
-		8133393465738834B239A34204DA4A1F /* Fastboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Fastboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		820341911E0AFC75DC175C1E97AB1D5F /* YYModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYModel-prefix.pch"; sourceTree = "<group>"; };
 		826795FBAEC2583C68D7750D6624F02C /* Fastboard-LocalizedStrings */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Fastboard-LocalizedStrings"; path = LocalizedStrings.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		846EEDB7BBF4BD17B6680184BC9E1546 /* String+localized.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
-		84A1C19ED3FD74A6D5D5964C36D72131 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8533C10CB5AAD566A4030CFE86A4F4C0 /* WhiteDisplayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteDisplayer.m; path = Whiteboard/Classes/Displayer/WhiteDisplayer.m; sourceTree = "<group>"; };
 		868AE538F7FBBDFBAC8B73121A5FB021 /* WhiteRoomMember.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomMember.h; path = Whiteboard/Classes/Object/WhiteRoomMember.h; sourceTree = "<group>"; };
 		86AA34AD91D14EB5EED406838514B6BC /* WhitePptPage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePptPage.m; path = Whiteboard/Classes/Object/WhitePptPage.m; sourceTree = "<group>"; };
+		8766156A9C2D7511FA4B77DFB893FE85 /* FastRoom+FastPanelControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastRoom+FastPanelControl.swift"; sourceTree = "<group>"; };
+		87B5C146943A9C0C125750F562C02D55 /* UIColor+NSNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+NSNumber.swift"; sourceTree = "<group>"; };
 		8971AF59A370577EAA157CB1449A86C8 /* WhiteConversionInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConversionInfo.m; path = Whiteboard/Classes/Converter/WhiteConversionInfo.m; sourceTree = "<group>"; };
 		8ADD1E21AE5258839259D32B53491446 /* WhiteSocket+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSocket+Private.h"; path = "Whiteboard/Classes/Room/WhiteSocket+Private.h"; sourceTree = "<group>"; };
 		8C12588D1BD183B569A1954ADAE0BAC8 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		8CD8E8D065426D54F01F69C18B175EBD /* WhiteFontFace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteFontFace.m; path = Whiteboard/Classes/Object/WhiteFontFace.m; sourceTree = "<group>"; };
-		8D0707B19570D4F2F1C20D67CC64864E /* FastOperation+NeedColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastOperation+NeedColor.swift"; sourceTree = "<group>"; };
-		8F17DADD7DAC699C775C900DDF7B888F /* ResourceBundle-Icons-Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Icons-Fastboard-Info.plist"; sourceTree = "<group>"; };
+		8E7C5D566DE21269B4CD95C84085E7ED /* FastRoomConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomConfiguration.swift; sourceTree = "<group>"; };
+		900F0BE8E3CBB5B5C778B9F5BD2A8D68 /* FastRoomThemeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomThemeManager.swift; sourceTree = "<group>"; };
 		90B70D5DBC09DC8C22A69706080D9561 /* WhitePlayerEvent+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhitePlayerEvent+Private.h"; path = "Whiteboard/Classes/Replayer/WhitePlayerEvent+Private.h"; sourceTree = "<group>"; };
 		92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Fastboard-Icons"; path = Icons.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		94162F1FC5E2DE9AE8E25B932F21B128 /* WhiteRoomMember.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomMember.m; path = Whiteboard/Classes/Object/WhiteRoomMember.m; sourceTree = "<group>"; };
 		945F73330C5DFB87FF135C8AF4C439B0 /* WhitePanEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePanEvent.m; path = Whiteboard/Classes/Object/WhitePanEvent.m; sourceTree = "<group>"; };
 		94D8EB40940CCABFC10068B412182170 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
-		94F62BFEAF48860B5979F224AA409212 /* UIImage+tint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+tint.swift"; sourceTree = "<group>"; };
+		95AFBB800BB39B82DDB03EA5456C9F8D /* FastRoomOperationItem+NeedDelete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastRoomOperationItem+NeedDelete.swift"; sourceTree = "<group>"; };
 		964A33B73E0D1AE3115D1F5D69D03A5D /* Pods-OCExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OCExample-Info.plist"; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9897FCEBADC76DC44C3D5FF9CEF44FE3 /* FastRoomPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomPhase.swift; sourceTree = "<group>"; };
 		98EAFB3FC133250AAF1E9D502E868D9C /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		995C3A0CBC58EAE128BFF1E642914601 /* CompactFastboardOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CompactFastboardOverlay.swift; sourceTree = "<group>"; };
+		9907F4CBE0661303C595B9CA9FDB44CA /* PageIndicatorLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PageIndicatorLabel.swift; sourceTree = "<group>"; };
 		99C06C6660DF18AEC0AC765494A71A78 /* Pods-Fastboard_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Fastboard_Example-dummy.m"; sourceTree = "<group>"; };
 		9B3DB892371162C3CEA8256006B5899A /* AgoraFpaProxyService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraFpaProxyService.framework; sourceTree = "<group>"; };
-		9CE398FCAD799D76FECB7BEBD2E6305B /* Fastboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Fastboard.modulemap; sourceTree = "<group>"; };
+		9BC72F2517EF732FD235F5D3ED7E402B /* RegularFastRoomOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegularFastRoomOverlay.swift; sourceTree = "<group>"; };
+		9D3B03594693F2AFB1CE2062D9BB909D /* Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Fastboard-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DF6F86CB9991D2480B91CB6351B9F2F /* Masonry-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Masonry-Info.plist"; sourceTree = "<group>"; };
 		9EB309E43B27E1478FE196F54DE29EA1 /* WhiteDisplayerState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteDisplayerState.h; path = Whiteboard/Classes/Displayer/WhiteDisplayerState.h; sourceTree = "<group>"; };
 		9EE90B6DCF40C8A103D32FC231324CD7 /* JSBUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSBUtil.h; path = dsbridge/JSBUtil.h; sourceTree = "<group>"; };
 		9F2B9724678446F09CA968682C625168 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		9FB8774CFEA0B95896828CAA2C750181 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
-		A036B117EFBD3F1384C4CEBC1874ACDE /* DefaultTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
+		A005DA9FD8D49FC1E69838CD3C2A5176 /* UIImage+Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Bundle.swift"; sourceTree = "<group>"; };
 		A03F75E5A406EE031F7C60011BFAF25E /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
-		A08EBB113E888E921CC1327ED6D2C864 /* FastProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FastProxy.m; sourceTree = "<group>"; };
-		A0C034B0E57F8D094E8A4D1FA465EC24 /* FastboardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardView.swift; sourceTree = "<group>"; };
 		A176E572D5C6F44219CE87BE8AA8DF46 /* WhitePlayerConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerConfig.h; path = Whiteboard/Classes/Replayer/WhitePlayerConfig.h; sourceTree = "<group>"; };
 		A2DB337F0B513CB7EF803D0A575929C0 /* WhiteAudioMixerBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteAudioMixerBridge.h; path = Whiteboard/Classes/Displayer/WhiteAudioMixerBridge.h; sourceTree = "<group>"; };
 		A2F69796F2B87F85FCAAF357E621CB6B /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
@@ -657,35 +663,33 @@
 		A50B99BA7B666D62EA6F6B789DED79FB /* WhiteConsts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConsts.h; path = Whiteboard/Classes/Object/WhiteConsts.h; sourceTree = "<group>"; };
 		A6FDD86D62CF4CE04D13D89D76133883 /* WhiteFontFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteFontFace.h; path = Whiteboard/Classes/Object/WhiteFontFace.h; sourceTree = "<group>"; };
 		A751A472476BEF168A8F69B042B3F000 /* WhiteSceneState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSceneState.h; path = Whiteboard/Classes/Object/WhiteSceneState.h; sourceTree = "<group>"; };
+		A7ECB5F6CD4052C4AF88479B14E62462 /* Fastboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Fastboard.debug.xcconfig; sourceTree = "<group>"; };
 		A9100EA2C2B8E7063FFCDC2AA678D667 /* WhitePlayerTimeInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerTimeInfo.m; path = Whiteboard/Classes/Replayer/WhitePlayerTimeInfo.m; sourceTree = "<group>"; };
-		A971FAEBFA1F9A38CC43B8DC75E683A4 /* FastPanelDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastPanelDelegate.swift; sourceTree = "<group>"; };
 		AA0172430C63D57DF39F0BA6A5336070 /* Pods-OCExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OCExample.debug.xcconfig"; sourceTree = "<group>"; };
 		AAD361AD5E5D636C0F3641C59E6BBBE3 /* WhiteAppParam.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteAppParam.h; path = Whiteboard/Classes/Object/WhiteAppParam.h; sourceTree = "<group>"; };
 		AC14E972D7D3CACB3568E83EF063B328 /* WhiteConversionInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConversionInfo.h; path = Whiteboard/Classes/Converter/WhiteConversionInfo.h; sourceTree = "<group>"; };
 		AC27EECB81C9D09AA323B325CBE5AF14 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		AEFC263BADD7D41EE94A12E62CD12DF1 /* YYClassInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYClassInfo.h; path = YYModel/YYClassInfo.h; sourceTree = "<group>"; };
+		B0CD83EDBD8551DFF9E0A53CCFCD0541 /* FastRoomDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomDelegate.swift; sourceTree = "<group>"; };
 		B0D05C978497D6C14286C53784B4B6C5 /* Pods-OCExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OCExample-umbrella.h"; sourceTree = "<group>"; };
 		B107895CCA5956F315E4515A4CD63767 /* WhiteRoom+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteRoom+Private.h"; path = "Whiteboard/Classes/Room/WhiteRoom+Private.h"; sourceTree = "<group>"; };
-		B25AF475C1E611EAB8AE2E68F5FC6183 /* ControlBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
+		B1E02809C87BD76EB128440098832E5B /* Fastboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Fastboard-dummy.m"; sourceTree = "<group>"; };
 		B26C5010D2945BDC3C6AA80A114C8FA8 /* DWKWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DWKWebView.m; path = dsbridge/DWKWebView.m; sourceTree = "<group>"; };
-		B28B42FEA8F8FD4B9BF2BE14419CF604 /* Fastboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Fastboard.debug.xcconfig; sourceTree = "<group>"; };
 		B3A8DDB4D87B36CDA2D9E2E10F5678CA /* WhiteCommonCallbacks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCommonCallbacks.m; path = Whiteboard/Classes/Displayer/WhiteCommonCallbacks.m; sourceTree = "<group>"; };
-		B3AA0FF94F12D51F50436998BF70F31F /* UIColor+NSNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+NSNumber.swift"; sourceTree = "<group>"; };
 		B43929320E40A048DEF21A95905050F2 /* Whiteboard-Whiteboard */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Whiteboard-Whiteboard"; path = Whiteboard.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45CAB58EF3052DBD9E4B565894BF2A6 /* Pods-Fastboard_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Fastboard_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B4D67F3F7E12E6E3CB32CDB59CFDAE49 /* WhiteSDK+Replayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WhiteSDK+Replayer.m"; path = "Whiteboard/Classes/Replayer/WhiteSDK+Replayer.m"; sourceTree = "<group>"; };
+		B52F6263F89D4A5D9B1A6666125547FD /* TraitUpdateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TraitUpdateHandler.swift; sourceTree = "<group>"; };
 		B668FAB61E32AF5C2934A76BD02FB714 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		B73C7C020CE066FE035A5908A81FD67D /* InternalApis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InternalApis.h; path = dsbridge/InternalApis.h; sourceTree = "<group>"; };
-		B867A36427FA89579D75847FAC0D3387 /* UIColor+Convince.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Convince.swift"; sourceTree = "<group>"; };
 		B8995DD59912D27CDC66E3B930D982F8 /* WhiteObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteObject.m; path = Whiteboard/Classes/Model/WhiteObject.m; sourceTree = "<group>"; };
 		B8B2EECAAFAC29D4C72AEAF30852D4C6 /* WhiteConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConverter.h; path = Whiteboard/Classes/Converter/WhiteConverter.h; sourceTree = "<group>"; };
-		BA3542535B235D9A3A2E33240EFB9C5D /* FastOperation+NeedDelete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastOperation+NeedDelete.swift"; sourceTree = "<group>"; };
 		BA41E8D42FCBFD6899BF3567493D1FD6 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		BC29D3B773277C388F1969B91B0FE0F2 /* WhiteSceneState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSceneState.m; path = Whiteboard/Classes/Object/WhiteSceneState.m; sourceTree = "<group>"; };
 		BD93CC935164A090A0A9296BDF5DF866 /* YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYModel.h; path = YYModel/YYModel.h; sourceTree = "<group>"; };
 		BDB812222A40E350C6ADFAEC44616B89 /* Pods-OCExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OCExample.release.xcconfig"; sourceTree = "<group>"; };
+		BDEE67BC7398094BF83794D1597609ED /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		BF07350E583AF349A194294437B0C06E /* Whiteboard */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Whiteboard; path = Whiteboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFD487DF849E603E4550CE2E906CAAF5 /* Appearancemanager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Appearancemanager.swift; sourceTree = "<group>"; };
 		C0E5D25EB29468273093FF17A6877817 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		C2DBA0E0AAF4DADFBD800F25A8248CD4 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		C33104B8026EEC5AD0161EFD51A4D86A /* Whiteboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whiteboard-prefix.pch"; sourceTree = "<group>"; };
@@ -695,54 +699,48 @@
 		C465A0E5F1EC55F27B026BB67F277E60 /* DSCallInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCallInfo.m; path = dsbridge/DSCallInfo.m; sourceTree = "<group>"; };
 		C4C72DF1499063BE0272610C748AF1AF /* WhiteBoardView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteBoardView.m; path = Whiteboard/Classes/Displayer/WhiteBoardView.m; sourceTree = "<group>"; };
 		C524E1EDE92DF39BFC623055F53FDA86 /* ResourceBundle-Whiteboard-Whiteboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Whiteboard-Whiteboard-Info.plist"; sourceTree = "<group>"; };
+		C541B7D5AD3CA55ED1FBA6FD3CD5EE24 /* Load.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Load.m; path = Fastboard/Classes/Load.m; sourceTree = "<group>"; };
 		C55E4CBB0D22AA19DBAA58155E6C8033 /* WhiteConverterV5.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConverterV5.m; path = Whiteboard/Classes/Converter/WhiteConverterV5.m; sourceTree = "<group>"; };
-		C5A5612D13CF8E6F4DA0999EEE866CA3 /* README-En.md */ = {isa = PBXFileReference; includeInIndex = 1; path = "README-En.md"; sourceTree = "<group>"; };
 		C6B1E53BF1A4F02E9D7792CE7C6C52F6 /* Whiteboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whiteboard-umbrella.h"; sourceTree = "<group>"; };
 		C71C4DC85EDC98D5A94D6D3023FFA3EF /* WhiteRoomCallbacks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomCallbacks.m; path = Whiteboard/Classes/Room/WhiteRoomCallbacks.m; sourceTree = "<group>"; };
 		C8941CD4E43D886F82B7951DE2073396 /* WhiteRoomState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteRoomState.m; path = Whiteboard/Classes/Room/WhiteRoomState.m; sourceTree = "<group>"; };
 		C8BE822EA0F02841466EEC06782ED61E /* WhitePageState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePageState.m; path = Whiteboard/Classes/Object/WhitePageState.m; sourceTree = "<group>"; };
-		C8E0EE761910188A53A7EA21090D4BEE /* Fastboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Fastboard-prefix.pch"; sourceTree = "<group>"; };
 		CAA9CD54908CF2630B87CBB4C7C3E4C3 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
-		CB1285EA9DD95AE114F77F788A12663B /* SubPanelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SubPanelView.swift; sourceTree = "<group>"; };
 		CBF70C938E3EF74A4083F0DC1705D26E /* dsbridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dsbridge.h; path = dsbridge/dsbridge.h; sourceTree = "<group>"; };
 		CC4CF67FB6AB17D40328CF83765E8715 /* YYModel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YYModel-Info.plist"; sourceTree = "<group>"; };
+		CC9DB40667F297104F2C1DD6BC0BE6F8 /* FastRoom+Media.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastRoom+Media.swift"; sourceTree = "<group>"; };
 		CD54E077B7C25534BD19710747A7E2CF /* AgoraFPA_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraFPA_iOS.release.xcconfig; sourceTree = "<group>"; };
-		CD98CEA4563FE97B097A0B2E1E06137B /* FastOperationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastOperationItem.swift; sourceTree = "<group>"; };
+		CDD575FA571D31A01109BD88E4400869 /* README-En.md */ = {isa = PBXFileReference; includeInIndex = 1; path = "README-En.md"; sourceTree = "<group>"; };
 		CE0083528E328B791F54057366D7B701 /* WhitePlayer+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhitePlayer+Private.h"; path = "Whiteboard/Classes/Replayer/WhitePlayer+Private.h"; sourceTree = "<group>"; };
 		CF10E01B1DA083F9CD1331BA6E79D737 /* WhiteSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSocket.m; path = Whiteboard/Classes/Room/WhiteSocket.m; sourceTree = "<group>"; };
 		CF564DD7233344BB225C9381E35B4170 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		CF6D2E5F3C081EEEC6D52DAAC9FA374C /* runtime.42cce1dd.js */ = {isa = PBXFileReference; includeInIndex = 1; name = runtime.42cce1dd.js; path = Whiteboard/Resource/runtime.42cce1dd.js; sourceTree = "<group>"; };
-		D09797E9ED7CEF018902C4765FC035EB /* UIView+anchor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+anchor.swift"; sourceTree = "<group>"; };
-		D224E4CB9DFE9F71BF7B027C12F2E7E4 /* DefaultOperationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultOperationType.swift; sourceTree = "<group>"; };
 		D22F7F9CFDA5B9FD06E64724ED975260 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		D33A80384609A02522BA270BCFC434F0 /* FastboardDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardDelegate.swift; sourceTree = "<group>"; };
+		D2EBE0363652C1A48922345089D8D486 /* ResourceBundle-Icons-Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Icons-Fastboard-Info.plist"; sourceTree = "<group>"; };
+		D3315FD60D8FD94451BF0F3B77A0FF58 /* Fastboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fastboard.swift; sourceTree = "<group>"; };
 		D4D65C03E11AE810F356DA238A1D1670 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
+		D56F7E850D0DAF9FC9EFC93DA05ADC07 /* UIView+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Theme.swift"; sourceTree = "<group>"; };
 		D5723C8CA2CB2F502C2BEEA1346A433D /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
-		D6BC31475A463EF4D85491384E058985 /* Fastboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Fastboard-dummy.m"; sourceTree = "<group>"; };
+		D615A7B91BF374DB6D31AC7A0D2F06E4 /* DelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
 		D7D990DA97A4C30FD998E05B4E82EB7F /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
-		D86F060AAECDEA8ECF0D12A827A88D56 /* Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Fastboard-Info.plist"; sourceTree = "<group>"; };
 		DA301E00166B89D7389C3C349B9BD6DB /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
-		DA7DE78DDB459ED0D2152C3CD6F1ED7F /* Icons.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Icons.xcassets; path = Fastboard/Assets/Icons.xcassets; sourceTree = "<group>"; };
 		DAD68C8581ADAB36AE4ACDEA3216A570 /* WhiteSDK+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSDK+Private.h"; path = "Whiteboard/Classes/SDK/WhiteSDK+Private.h"; sourceTree = "<group>"; };
 		DB5EDAC6523C9FB9AE1974291EE08DA2 /* WhiteAppParam.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteAppParam.m; path = Whiteboard/Classes/Object/WhiteAppParam.m; sourceTree = "<group>"; };
 		DBE594BE60575582AEDCCBA212F08033 /* Masonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.release.xcconfig; sourceTree = "<group>"; };
 		DD5762C3DF82A61AFE4FF55180FB99A5 /* WhiteSDK+Room.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WhiteSDK+Room.m"; path = "Whiteboard/Classes/Room/WhiteSDK+Room.m"; sourceTree = "<group>"; };
-		DDFEC83C2ADA531799BA1E06BD2B64BA /* ApplianceButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ApplianceButton.swift; sourceTree = "<group>"; };
 		E0D7D44E974866CA75E771919075385B /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		E14C94DE052CD376E30F576E982FB3C0 /* vendor.a5dc885d.js */ = {isa = PBXFileReference; includeInIndex = 1; name = vendor.a5dc885d.js; path = Whiteboard/Resource/vendor.a5dc885d.js; sourceTree = "<group>"; };
 		E14F648C573BCBDBDAE7E18B2AE5F2DA /* Pods-OCExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OCExample.modulemap"; sourceTree = "<group>"; };
 		E1A42D1D2932FD6E398BC9D3D73E4947 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
-		E1C1674B8375C98DEBDB8D57C911A410 /* Fastboard+Media.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Fastboard+Media.swift"; sourceTree = "<group>"; };
-		E2EA13C9A4A2A67C4EDB2212F620E173 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		E2F8382C06727743FBF835909DEC7B75 /* WhiteMemberInformation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteMemberInformation.h; path = Whiteboard/Classes/Object/WhiteMemberInformation.h; sourceTree = "<group>"; };
 		E460D5B0416D36F66EE8EC89E5D2FA0A /* YYModel */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YYModel; path = YYModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5F49A3933DEE65FA9AB20F63808E542 /* Fastboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Fastboard-umbrella.h"; sourceTree = "<group>"; };
+		E5C06DFD9AB8A559DFBB35D2121BABC6 /* Bundle+localizedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+localizedString.swift"; sourceTree = "<group>"; };
 		E6B12B41A072B87C6BACDF0E1C2510FB /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		E6D5A23CC2B4C6DB4F245FF3475E8FB4 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		E6DCD98021EA6A488EB3A2DB79644625 /* WhitePlayerState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerState.m; path = Whiteboard/Classes/Replayer/WhitePlayerState.m; sourceTree = "<group>"; };
-		E870AD66B33C4DA593C04332792975E2 /* FastProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FastProxy.h; sourceTree = "<group>"; };
 		E8EDB4EF1AA7D1B53ED88EEA94C6A146 /* dsBridge-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "dsBridge-dummy.m"; sourceTree = "<group>"; };
 		E9A3F58A44A34A7D0CD5E46DF0D595A9 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
+		E9CAB93900734734ABADBCA458403246 /* CompactFastRoomOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CompactFastRoomOverlay.swift; sourceTree = "<group>"; };
 		EC1355D819EAC4AAE5DFA66CA8289D31 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		EC16196214CAB6B44C4425B9DD845712 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		EC5CFC71B5BD8D194D8650A2D163415D /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
@@ -751,9 +749,9 @@
 		EDB0A267A7E917A5CD478D6A8EA2E7EA /* WhitePanEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePanEvent.h; path = Whiteboard/Classes/Object/WhitePanEvent.h; sourceTree = "<group>"; };
 		EE99AEA35490407A1ACC5CDC18735BBF /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		EF742DC9F9F3CEA8E9CBDA37733FE019 /* AgoraFPA_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraFPA_iOS.debug.xcconfig; sourceTree = "<group>"; };
-		EF8B8EC5CDE4A42D614D757FCA04B402 /* ThemeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		F15400D51779176B74F5AA7557D82974 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Source/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
-		F34DBE8A4735EE1B85AE918A1F6B999C /* Region.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		F160E7981F3C8FA24F5C1F2F68BF5AED /* FastRoomDefaultTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomDefaultTheme.swift; sourceTree = "<group>"; };
+		F38F4930B13E9FE7E90306F5A658E694 /* String+localized.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 		F563EC6E65D027CBBDCFC7E7C7E82BC6 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
 		F5C93A35D978AF1B7E43D7E31552A318 /* Whiteboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Whiteboard-Info.plist"; sourceTree = "<group>"; };
 		F602167BD8C1CD39623F47640808B04E /* YYModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYModel-dummy.m"; sourceTree = "<group>"; };
@@ -764,16 +762,18 @@
 		F76FF30C1055770F6845622378976D6B /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		F82CD3627D1B284500BEBCDA53F1FFAD /* Pods-Fastboard_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Fastboard_Example.modulemap"; sourceTree = "<group>"; };
 		F89A00AB645CA9EFFA1E71004E7D7F91 /* WhiteSDK+Room.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WhiteSDK+Room.h"; path = "Whiteboard/Classes/Room/WhiteSDK+Room.h"; sourceTree = "<group>"; };
-		F8EA1CE109D56007C724DC6A5347D849 /* FastRoomPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomPhase.swift; sourceTree = "<group>"; };
 		F93DB95A6C32DA31668145D91D5B911A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		F96039917A2BF73B42B174E71AFA8798 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		F994190C8BE492BB3DAF94C93C72262D /* WhitePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayer.h; path = Whiteboard/Classes/Replayer/WhitePlayer.h; sourceTree = "<group>"; };
 		F9EDBB96B5DCF07AE07C5CD5BCFE1479 /* WhiteBroadcastState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteBroadcastState.h; path = Whiteboard/Classes/Room/WhiteBroadcastState.h; sourceTree = "<group>"; };
-		FB65E83E3110DA001767E80FD6FC6C4D /* FastboardPencilDrawHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardPencilDrawHandler.swift; sourceTree = "<group>"; };
+		FB3241CF75DEE0A2E78568D42D0C0777 /* FastProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FastProxy.h; sourceTree = "<group>"; };
 		FBAE14B5BDDA2BDA121057871D8AA836 /* web-sdk.6d91b890.js */ = {isa = PBXFileReference; includeInIndex = 1; name = "web-sdk.6d91b890.js"; path = "Whiteboard/Resource/web-sdk.6d91b890.js"; sourceTree = "<group>"; };
 		FBD1F9F2185749413F9FEAC11C83654C /* YYModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YYModel.modulemap; sourceTree = "<group>"; };
+		FC02A35F7FA5D98B2949CBC19A6C4E7E /* FastPanelControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastPanelControl.swift; sourceTree = "<group>"; };
+		FC102764B95C2EDE44B2BADB40D20A6C /* FastRoom+Pencil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FastRoom+Pencil.swift"; sourceTree = "<group>"; };
 		FD606CBE513497F839FCD0272213F3A0 /* WhiteMemberState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteMemberState.h; path = Whiteboard/Classes/Object/WhiteMemberState.h; sourceTree = "<group>"; };
 		FD62799CC6EBF66A3FDAA90AFA6139CB /* Pods-Fastboard_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Fastboard_Example-frameworks.sh"; sourceTree = "<group>"; };
+		FE6BC10691F093A5D335490DE3A4BBF9 /* UIView+anchor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+anchor.swift"; sourceTree = "<group>"; };
 		FEE599FE869E1B7D146F6E9229203C21 /* WhiteConsts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteConsts.m; path = Whiteboard/Classes/Object/WhiteConsts.m; sourceTree = "<group>"; };
 		FF1BA4C6C2F1AB542E8DE941FC45A7C3 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -874,6 +874,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035899AB068E18CD9D91221A449B6C3E /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				10AD9C7A9DA6450E9C3994BAF6058AAD /* FastRoomDefaultOperationItem.swift */,
+				63DB6D03F7B67BBBB9827AEC255FB8AE /* FastRoomDefaultOperationType.swift */,
+				5490C94C1D68A17997D98A7BAA5D564F /* FastRoomOperationItem.swift */,
+				5CD65360C74403BB9265860031F010B3 /* FastRoomOperationItem+NeedColor.swift */,
+				95AFBB800BB39B82DDB03EA5456C9F8D /* FastRoomOperationItem+NeedDelete.swift */,
+				1DEE3BD46767B233C83C14C878162D59 /* FastRoomPanelItemButton.swift */,
+			);
+			name = Operation;
+			path = Operation;
+			sourceTree = "<group>";
+		};
 		03904F3E246D626F2F07D57EEF868231 /* Replayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -896,10 +910,41 @@
 			name = Replayer;
 			sourceTree = "<group>";
 		};
+		0D6C3411B44D0BF465AE454248B4D935 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E5C06DFD9AB8A559DFBB35D2121BABC6 /* Bundle+localizedString.swift */,
+				F38F4930B13E9FE7E90306F5A658E694 /* String+localized.swift */,
+				683B2C860ABE3800C832CF4220FAAC2A /* TraitCollection+Extension.swift */,
+				B52F6263F89D4A5D9B1A6666125547FD /* TraitUpdateHandler.swift */,
+				3FEF5AAB6BFB4220E72D5D8B33A4B117 /* UIColor+Convince.swift */,
+				87B5C146943A9C0C125750F562C02D55 /* UIColor+NSNumber.swift */,
+				A005DA9FD8D49FC1E69838CD3C2A5176 /* UIImage+Bundle.swift */,
+				0AE05125C80EC67CA76A68937CAE5A67 /* UIImage+ColorItem.swift */,
+				44F22279A612BA5E08AD0A9240EF1D7C /* UIImage+tint.swift */,
+				D56F7E850D0DAF9FC9EFC93DA05ADC07 /* UIView+Theme.swift */,
+				40A09D957CBB2CD4440334F55B8ABA1E /* WhiteBoardView+Theme.swift */,
+			);
+			name = Extension;
+			path = Fastboard/Classes/Extension;
+			sourceTree = "<group>";
+		};
+		0F7A86EB7B5720DB3AAC7A339BA3AC5E /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				D3315FD60D8FD94451BF0F3B77A0FF58 /* Fastboard.swift */,
+				71546FE9D4347409295AF6938C2B2DE0 /* Region.swift */,
+				2144D5EA3D0CE71D52FE3A515934D136 /* FastRoom */,
+				18D92505D74661DD8694F6DCA995D201 /* Theme */,
+			);
+			name = Public;
+			path = Fastboard/Classes/Public;
+			sourceTree = "<group>";
+		};
 		111395B7E582273289A9CEB8085A98F7 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DE867793E09A2AEBA58F5DDDF9B00429 /* Fastboard */,
+				AA5FE8717D1DF3F4B67C7CAA8265E574 /* Fastboard */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -914,15 +959,16 @@
 			name = fpa;
 			sourceTree = "<group>";
 		};
-		14F905F09CF14388071ACA9B52111E0B /* Proxy */ = {
+		18D92505D74661DD8694F6DCA995D201 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				4FE1B4E6EA6E02BC3317CC5403AC46BA /* DelegateProxy.swift */,
-				E870AD66B33C4DA593C04332792975E2 /* FastProxy.h */,
-				A08EBB113E888E921CC1327ED6D2C864 /* FastProxy.m */,
+				6E179665E7B0A247C4E6FDA34FA0F085 /* Appearancemanager.swift */,
+				F160E7981F3C8FA24F5C1F2F68BF5AED /* FastRoomDefaultTheme.swift */,
+				2560AE9D6F5C22F70298CBF5786C276D /* FastRoomThemeAsset.swift */,
+				900F0BE8E3CBB5B5C778B9F5BD2A8D68 /* FastRoomThemeManager.swift */,
 			);
-			name = Proxy;
-			path = Fastboard/Classes/Proxy;
+			name = Theme;
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		18DF421D089251640568765BE3EF4571 /* SnapKit */ = {
@@ -999,21 +1045,21 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
-		207DC6FAFB1FCF8DD3F05591CD09969B /* Public */ = {
+		2144D5EA3D0CE71D52FE3A515934D136 /* FastRoom */ = {
 			isa = PBXGroup;
 			children = (
-				64337FB5A5F4AE6F7A83D5598C4A4857 /* FastboardManager.swift */,
-				0BA73E9625D6F4CF84703C57157D7488 /* FastConfiguration.swift */,
-				11A7B7D365F8E82798B7E1B5BB1E3C00 /* FastError.swift */,
-				F8EA1CE109D56007C724DC6A5347D849 /* FastRoomPhase.swift */,
-				4C73740CA1B79589E37713AF88EAA985 /* Load.m */,
-				F34DBE8A4735EE1B85AE918A1F6B999C /* Region.swift */,
-				F4B04935D3BCF5B54F21064A90AD035E /* Fastboard */,
-				DE217E606D88C428F77AEA5E65B772D2 /* Theme */,
-				6B5F24B793B544CA2AA12F8876F1E0DF /* View */,
+				45DF346AED3E9D59864F505925F8FE9B /* FastRoom.swift */,
+				8766156A9C2D7511FA4B77DFB893FE85 /* FastRoom+FastPanelControl.swift */,
+				CC9DB40667F297104F2C1DD6BC0BE6F8 /* FastRoom+Media.swift */,
+				FC102764B95C2EDE44B2BADB40D20A6C /* FastRoom+Pencil.swift */,
+				8E7C5D566DE21269B4CD95C84085E7ED /* FastRoomConfiguration.swift */,
+				B0CD83EDBD8551DFF9E0A53CCFCD0541 /* FastRoomDelegate.swift */,
+				2C3EF6127DD3163844E0E8F044835299 /* FastRoomError.swift */,
+				9897FCEBADC76DC44C3D5FF9CEF44FE3 /* FastRoomPhase.swift */,
+				E03E5F6FF55C8A889DEA07ADF193A815 /* View */,
 			);
-			name = Public;
-			path = Fastboard/Classes/Public;
+			name = FastRoom;
+			path = FastRoom;
 			sourceTree = "<group>";
 		};
 		2D30649F2697B72421193727B9B69EEC /* Pods-Fastboard_Example */ = {
@@ -1052,6 +1098,19 @@
 				B8995DD59912D27CDC66E3B930D982F8 /* WhiteObject.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		32A3A5D05B15B9F88437DE1F7A24AE0C /* core */ = {
+			isa = PBXGroup;
+			children = (
+				05CBB3CCC8376B2629975E5D2361CC1D /* Icons.xcassets */,
+				C541B7D5AD3CA55ED1FBA6FD3CD5EE24 /* Load.m */,
+				DCAB3F75AE7C761CA69E9CB5F03959DB /* Localizable.strings */,
+				0D6C3411B44D0BF465AE454248B4D935 /* Extension */,
+				8319CE57ED679C4E39794A68937098A6 /* Proxy */,
+				0F7A86EB7B5720DB3AAC7A339BA3AC5E /* Public */,
+			);
+			name = core;
 			sourceTree = "<group>";
 		};
 		374A6BFFE99589EC051847E52B888FA3 /* Support Files */ = {
@@ -1137,6 +1196,23 @@
 			path = "../Target Support Files/YYModel";
 			sourceTree = "<group>";
 		};
+		543BCE6C76C666B6BAA3D7AC4B6D40E1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1DBA6D17CB2D0FFCB8C9D4973E70C7CF /* Fastboard.modulemap */,
+				B1E02809C87BD76EB128440098832E5B /* Fastboard-dummy.m */,
+				9D3B03594693F2AFB1CE2062D9BB909D /* Fastboard-Info.plist */,
+				15F4AFD8563A043CFA8D5C84B95DD801 /* Fastboard-prefix.pch */,
+				355005951878799004E326BDC0F96309 /* Fastboard-umbrella.h */,
+				A7ECB5F6CD4052C4AF88479B14E62462 /* Fastboard.debug.xcconfig */,
+				150CD264A314F32F7260526B0035058F /* Fastboard.release.xcconfig */,
+				D2EBE0363652C1A48922345089D8D486 /* ResourceBundle-Icons-Fastboard-Info.plist */,
+				06D8477D900E8C35814EF7F4FDA71E31 /* ResourceBundle-LocalizedStrings-Fastboard-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Fastboard";
+			sourceTree = "<group>";
+		};
 		5DD1AF2ECA94F6E70F27024EDB96FE3F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,41 +1224,6 @@
 				E14DD0FF2546060F829EF65DD49BD0CA /* YYModel */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		69D6E8210482D964B9E3ACA944A54BD3 /* Overlay */ = {
-			isa = PBXGroup;
-			children = (
-				1953A7B6452B11B43EF01299FCBE3142 /* FastboardOverlay.swift */,
-				6A978478C5AF8EF11D419B6FE6C41F4F /* Trait */,
-			);
-			name = Overlay;
-			path = Overlay;
-			sourceTree = "<group>";
-		};
-		6A978478C5AF8EF11D419B6FE6C41F4F /* Trait */ = {
-			isa = PBXGroup;
-			children = (
-				995C3A0CBC58EAE128BFF1E642914601 /* CompactFastboardOverlay.swift */,
-				79CD051F7D566B647E9C9F1AF7F44C8E /* ReconnectingView.swift */,
-				1DA5B35BE9AB0403F19D6026EBFF1247 /* RegularFastboardOverlay.swift */,
-			);
-			name = Trait;
-			path = Trait;
-			sourceTree = "<group>";
-		};
-		6B5F24B793B544CA2AA12F8876F1E0DF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FB65E83E3110DA001767E80FD6FC6C4D /* FastboardPencilDrawHandler.swift */,
-				A0C034B0E57F8D094E8A4D1FA465EC24 /* FastboardView.swift */,
-				2AC9335B938B5B940DBC71E7892F346F /* FastboardView+Pencil.swift */,
-				72D621E04418BF4B62896E86B876617F /* FastPanelControl.swift */,
-				69D6E8210482D964B9E3ACA944A54BD3 /* Overlay */,
-				A83246DB22614F642094F96998917D93 /* Panel */,
-			);
-			name = View;
-			path = View;
 			sourceTree = "<group>";
 		};
 		6EE9EAEE9FAA01997208048EDC89F196 /* Room */ = {
@@ -1229,6 +1270,21 @@
 			path = dsBridge;
 			sourceTree = "<group>";
 		};
+		7780B0A915A9C39FF1E1E9BEC25446A1 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				0947EDBC14CB7B1329241DBAEEF3054D /* FastPanelDelegate.swift */,
+				3C9726B58C2257746833CA983FAB7847 /* FastRoomControlBar.swift */,
+				13883163EB78AE8AE8F9401BB42B38BA /* FastRoomPanel.swift */,
+				9907F4CBE0661303C595B9CA9FDB44CA /* PageIndicatorLabel.swift */,
+				5BAA0AEEC7F09BB97FB53310A6E90246 /* SubPanelView.swift */,
+				FE6BC10691F093A5D335490DE3A4BBF9 /* UIView+anchor.swift */,
+				035899AB068E18CD9D91221A449B6C3E /* Operation */,
+			);
+			name = Panel;
+			path = Panel;
+			sourceTree = "<group>";
+		};
 		7AE95F5E82475A8F83F4AF078DCC7A7C /* AgoraFPA_iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1237,6 +1293,27 @@
 			);
 			name = AgoraFPA_iOS;
 			path = AgoraFPA_iOS;
+			sourceTree = "<group>";
+		};
+		802977F614EBFDC944DB8C8701E20129 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				2261D5D89F161D492DDD0C19C75297AF /* FastRoomOverlay.swift */,
+				F61C8A6A5640D64A164DC924D4B3DF1E /* Trait */,
+			);
+			name = Overlay;
+			path = Overlay;
+			sourceTree = "<group>";
+		};
+		8319CE57ED679C4E39794A68937098A6 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				D615A7B91BF374DB6D31AC7A0D2F06E4 /* DelegateProxy.swift */,
+				FB3241CF75DEE0A2E78568D42D0C0777 /* FastProxy.h */,
+				31C394D587772A1C92D3CA557DF48A87 /* FastProxy.m */,
+			);
+			name = Proxy;
+			path = Fastboard/Classes/Proxy;
 			sourceTree = "<group>";
 		};
 		8785BF72BF5E4A6375C872ADCC94125B /* Support Files */ = {
@@ -1300,52 +1377,6 @@
 			path = "../Target Support Files/dsBridge";
 			sourceTree = "<group>";
 		};
-		9B4AB815212341885D89892BBA5FB6CE /* Operation */ = {
-			isa = PBXGroup;
-			children = (
-				DDFEC83C2ADA531799BA1E06BD2B64BA /* ApplianceButton.swift */,
-				2EBD5DED2B54F966FDAE61E6C0E8FBBC /* DefaultOperationItem.swift */,
-				D224E4CB9DFE9F71BF7B027C12F2E7E4 /* DefaultOperationType.swift */,
-				8D0707B19570D4F2F1C20D67CC64864E /* FastOperation+NeedColor.swift */,
-				BA3542535B235D9A3A2E33240EFB9C5D /* FastOperation+NeedDelete.swift */,
-				CD98CEA4563FE97B097A0B2E1E06137B /* FastOperationItem.swift */,
-			);
-			name = Operation;
-			path = Operation;
-			sourceTree = "<group>";
-		};
-		A6D76DB3D1F5FB5EC2EE6AC593476D5F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9CE398FCAD799D76FECB7BEBD2E6305B /* Fastboard.modulemap */,
-				D6BC31475A463EF4D85491384E058985 /* Fastboard-dummy.m */,
-				D86F060AAECDEA8ECF0D12A827A88D56 /* Fastboard-Info.plist */,
-				C8E0EE761910188A53A7EA21090D4BEE /* Fastboard-prefix.pch */,
-				E5F49A3933DEE65FA9AB20F63808E542 /* Fastboard-umbrella.h */,
-				B28B42FEA8F8FD4B9BF2BE14419CF604 /* Fastboard.debug.xcconfig */,
-				27489FE695319CEDF80989DE47861D39 /* Fastboard.release.xcconfig */,
-				8F17DADD7DAC699C775C900DDF7B888F /* ResourceBundle-Icons-Fastboard-Info.plist */,
-				2F276717CF68A5D7F8CCE00756D3B251 /* ResourceBundle-LocalizedStrings-Fastboard-Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Fastboard";
-			sourceTree = "<group>";
-		};
-		A83246DB22614F642094F96998917D93 /* Panel */ = {
-			isa = PBXGroup;
-			children = (
-				B25AF475C1E611EAB8AE2E68F5FC6183 /* ControlBar.swift */,
-				1F11231BADECBBAE0496EB5EDD09EB32 /* FastPanel.swift */,
-				A971FAEBFA1F9A38CC43B8DC75E683A4 /* FastPanelDelegate.swift */,
-				48E636097F8FDB49CB12E8DC55002DD5 /* PageIndicatorLabel.swift */,
-				CB1285EA9DD95AE114F77F788A12663B /* SubPanelView.swift */,
-				D09797E9ED7CEF018902C4765FC035EB /* UIView+anchor.swift */,
-				9B4AB815212341885D89892BBA5FB6CE /* Operation */,
-			);
-			name = Panel;
-			path = Panel;
-			sourceTree = "<group>";
-		};
 		A9D71514FAA26068697E398E4C5BBA9F /* Converter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1361,12 +1392,24 @@
 			name = Converter;
 			sourceTree = "<group>";
 		};
-		ACBBD5C2ABD752B0BC8FC332B31F7C5C /* Pod */ = {
+		AA5FE8717D1DF3F4B67C7CAA8265E574 /* Fastboard */ = {
 			isa = PBXGroup;
 			children = (
-				8133393465738834B239A34204DA4A1F /* Fastboard.podspec */,
-				E2EA13C9A4A2A67C4EDB2212F620E173 /* LICENSE */,
-				C5A5612D13CF8E6F4DA0999EEE866CA3 /* README-En.md */,
+				32A3A5D05B15B9F88437DE1F7A24AE0C /* core */,
+				C4F42C0BF9EDD344376AF89CC269ECE4 /* fpa */,
+				B6C68CCA23296D95DFDFE54B29FF9E7D /* Pod */,
+				543BCE6C76C666B6BAA3D7AC4B6D40E1 /* Support Files */,
+			);
+			name = Fastboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		B6C68CCA23296D95DFDFE54B29FF9E7D /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7E028C00EE4A88726749D8BF2B2749C4 /* Fastboard.podspec */,
+				BDEE67BC7398094BF83794D1597609ED /* LICENSE */,
+				CDD575FA571D31A01109BD88E4400869 /* README-En.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -1420,6 +1463,15 @@
 			name = Object;
 			sourceTree = "<group>";
 		};
+		C4F42C0BF9EDD344376AF89CC269ECE4 /* fpa */ = {
+			isa = PBXGroup;
+			children = (
+				6DEF8E240C1E5BC836EF3F2E5B83E2F0 /* FastRoomConfiguration+FPA.swift */,
+				3E7862B7496675C2852F682CD3309622 /* FPADelegate.swift */,
+			);
+			name = fpa;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -1465,18 +1517,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DE217E606D88C428F77AEA5E65B772D2 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				BFD487DF849E603E4550CE2E906CAAF5 /* Appearancemanager.swift */,
-				A036B117EFBD3F1384C4CEBC1874ACDE /* DefaultTheme.swift */,
-				84A1C19ED3FD74A6D5D5964C36D72131 /* Theme.swift */,
-				EF8B8EC5CDE4A42D614D757FCA04B402 /* ThemeManager.swift */,
-			);
-			name = Theme;
-			path = Theme;
-			sourceTree = "<group>";
-		};
 		DE29E1929E8104BA3614032E082EAE3F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1494,16 +1534,18 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		DE867793E09A2AEBA58F5DDDF9B00429 /* Fastboard */ = {
+		E03E5F6FF55C8A889DEA07ADF193A815 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ED7DDFC82CCBAE0D4BDD4DADA67562D5 /* core */,
-				FA863DB78740069BAC78BE503EE8583C /* fpa */,
-				ACBBD5C2ABD752B0BC8FC332B31F7C5C /* Pod */,
-				A6D76DB3D1F5FB5EC2EE6AC593476D5F /* Support Files */,
+				6265F5ABDCC56AC1754FE9D6F4F5E014 /* FastboardPencilDrawHandler.swift */,
+				FC02A35F7FA5D98B2949CBC19A6C4E7E /* FastPanelControl.swift */,
+				07BFA42588FBF16A5F7674FB4C77F3AA /* FastRoomView.swift */,
+				31667E7ADB38342F068CA8C9285468E4 /* FastRoomView+Pencil.swift */,
+				802977F614EBFDC944DB8C8701E20129 /* Overlay */,
+				7780B0A915A9C39FF1E1E9BEC25446A1 /* Panel */,
 			);
-			name = Fastboard;
-			path = ../..;
+			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		E14DD0FF2546060F829EF65DD49BD0CA /* YYModel */ = {
@@ -1529,25 +1571,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E4ECC5979816A26CA73E8DAEDD655AE8 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				695923EEB29790A9097BB99916E15A17 /* Bundle+localizedString.swift */,
-				846EEDB7BBF4BD17B6680184BC9E1546 /* String+localized.swift */,
-				019CF8E6E3BFA8B3E1A01C5E2D1E0AB2 /* TraitCollection+Extension.swift */,
-				4413CA911D87B9C2D448EA70BFF9E7EC /* TraitUpdateHandler.swift */,
-				B867A36427FA89579D75847FAC0D3387 /* UIColor+Convince.swift */,
-				B3AA0FF94F12D51F50436998BF70F31F /* UIColor+NSNumber.swift */,
-				5A9935D398019DEE57ED97453FDA6CD2 /* UIImage+Bundle.swift */,
-				15EDE5BD182FD85350D29D4BAB015681 /* UIImage+ColorItem.swift */,
-				94F62BFEAF48860B5979F224AA409212 /* UIImage+tint.swift */,
-				382B3A45C530ADD1D38277462473DB99 /* UIView+Theme.swift */,
-				691AB06811148588C82E9FD0BFD3BFDF /* WhiteBoardView+Theme.swift */,
-			);
-			name = Extension;
-			path = Fastboard/Classes/Extension;
-			sourceTree = "<group>";
-		};
 		E5ACEA7191CC9D4F4948DF5FB1730DFF /* Whiteboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1567,38 +1590,15 @@
 			path = Whiteboard;
 			sourceTree = "<group>";
 		};
-		ED7DDFC82CCBAE0D4BDD4DADA67562D5 /* core */ = {
+		F61C8A6A5640D64A164DC924D4B3DF1E /* Trait */ = {
 			isa = PBXGroup;
 			children = (
-				DA7DE78DDB459ED0D2152C3CD6F1ED7F /* Icons.xcassets */,
-				5B32CC3D07EFAC7103EAAADDC2A01ED2 /* Localizable.strings */,
-				E4ECC5979816A26CA73E8DAEDD655AE8 /* Extension */,
-				14F905F09CF14388071ACA9B52111E0B /* Proxy */,
-				207DC6FAFB1FCF8DD3F05591CD09969B /* Public */,
+				E9CAB93900734734ABADBCA458403246 /* CompactFastRoomOverlay.swift */,
+				0C6AAE21AD7950430681AAA6CFC2456A /* ReconnectingView.swift */,
+				9BC72F2517EF732FD235F5D3ED7E402B /* RegularFastRoomOverlay.swift */,
 			);
-			name = core;
-			sourceTree = "<group>";
-		};
-		F4B04935D3BCF5B54F21064A90AD035E /* Fastboard */ = {
-			isa = PBXGroup;
-			children = (
-				1242A34B89F2F7591B74C9915AFB7B17 /* Fastboard.swift */,
-				0EC778122E72053792C471D9F9B00052 /* Fastboard+FastPanelControl.swift */,
-				E1C1674B8375C98DEBDB8D57C911A410 /* Fastboard+Media.swift */,
-				1B86F1655312B7CFC2A89DE83C89BDA6 /* Fastboard+Pencil.swift */,
-				D33A80384609A02522BA270BCFC434F0 /* FastboardDelegate.swift */,
-			);
-			name = Fastboard;
-			path = Fastboard;
-			sourceTree = "<group>";
-		};
-		FA863DB78740069BAC78BE503EE8583C /* fpa */ = {
-			isa = PBXGroup;
-			children = (
-				6F68503C104634A873F148B4E120460F /* FastConfiguration+FPA.swift */,
-				4AFE9F0E6097505BFCE134C77CE04D2B /* FPADelegate.swift */,
-			);
-			name = fpa;
+			name = Trait;
+			path = Trait;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1954,7 +1954,7 @@
 			buildConfigurationList = 5DE69663AB44C2B0C7D0F6F40644947F /* Build configuration list for PBXNativeTarget "Fastboard" */;
 			buildPhases = (
 				E09B22B478555593AAAA3FB8CC081367 /* Headers */,
-				7F97F99052CB05EAB621266A578E42D5 /* Sources */,
+				2C7D6148B6C594B88712C7FB8EE81160 /* Sources */,
 				53669B1B6F336F610A7565C06C302D8E /* Frameworks */,
 				FA234B146CB4F6DA4574918B57D58713 /* Resources */,
 			);
@@ -2156,6 +2156,64 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C7D6148B6C594B88712C7FB8EE81160 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9B4B16678AC21FB7255A3D85B1B69C /* Appearancemanager.swift in Sources */,
+				1CD3ACE6B517627ADEA4D0FB7A75ABF2 /* Bundle+localizedString.swift in Sources */,
+				619BD6BA1EB78259AB47FD84D8E01CAC /* CompactFastRoomOverlay.swift in Sources */,
+				11BF23F7B6EA9789BF6279EF1743A921 /* DelegateProxy.swift in Sources */,
+				2AAA12289BEA8144390FBCA22EA91ECB /* Fastboard.swift in Sources */,
+				30DDCE3E0FCBE3A3E3654199C2222042 /* Fastboard-dummy.m in Sources */,
+				1BF47C9C9FFB4B78F6F2B5B820EECC62 /* FastboardPencilDrawHandler.swift in Sources */,
+				4321A0284570EB4915A954E3BCD2AE07 /* FastPanelControl.swift in Sources */,
+				665D1C73EE3E07359AB5430BC6AACD36 /* FastPanelDelegate.swift in Sources */,
+				0458A1790C10A8C1D1DAE1ADD0771F6B /* FastProxy.m in Sources */,
+				B2181BA52B29380155DCFCE4660E2378 /* FastRoom.swift in Sources */,
+				BD4AA4C8AADE6A35059C22E6D16D65F0 /* FastRoom+FastPanelControl.swift in Sources */,
+				EA4955A7068B0C70C0FC2D53CD69324B /* FastRoom+Media.swift in Sources */,
+				02AC82D1EA88C2FD0E096618E586D408 /* FastRoom+Pencil.swift in Sources */,
+				095D9AC90C70ECA897D988EDD2481528 /* FastRoomConfiguration.swift in Sources */,
+				CAD468AEC9DA467C183C3607E442E606 /* FastRoomConfiguration+FPA.swift in Sources */,
+				6A68AA258498FCE74966F2DE15699A61 /* FastRoomControlBar.swift in Sources */,
+				D4501DE4E510782AAE4BB19AABD0A57A /* FastRoomDefaultOperationItem.swift in Sources */,
+				CC10159341C57B0F92907D61C1BD4324 /* FastRoomDefaultOperationType.swift in Sources */,
+				CE46F54D235D00CC2330285E3349ED3C /* FastRoomDefaultTheme.swift in Sources */,
+				6CF7AED70DE60D75DC1C7B7279F34322 /* FastRoomDelegate.swift in Sources */,
+				76685A6F402BED5348C2424281482CF4 /* FastRoomError.swift in Sources */,
+				3253E504824FC00232CC5042DF798E85 /* FastRoomOperationItem.swift in Sources */,
+				5F412F1FCACFA37D11B1FB5041989F61 /* FastRoomOperationItem+NeedColor.swift in Sources */,
+				A0B1DB7042E5F42C39966BA11D6691C0 /* FastRoomOperationItem+NeedDelete.swift in Sources */,
+				A042BB8D83957078584CB17E2C471167 /* FastRoomOverlay.swift in Sources */,
+				6C44CACDB7AF0A8D8F86ECE6DF7DDC35 /* FastRoomPanel.swift in Sources */,
+				171FB461B2A78BBF4D059DA072211F92 /* FastRoomPanelItemButton.swift in Sources */,
+				B9B749FB6E9EEFA106C7F1EBAE0B6A16 /* FastRoomPhase.swift in Sources */,
+				7AD5E7E8F9209A920A5BB3EF354F7E7C /* FastRoomThemeAsset.swift in Sources */,
+				325FF85AF6FB977D472193B00C0EFE96 /* FastRoomThemeManager.swift in Sources */,
+				91DB43D304EBC1FD70B825822118950F /* FastRoomView.swift in Sources */,
+				93885834968B8EF4A7C7CCD6C9BC3630 /* FastRoomView+Pencil.swift in Sources */,
+				5169914195DC838C1F2A3FC5E0752491 /* FPADelegate.swift in Sources */,
+				B4EF8106C424DFF61254EA36E9A232B4 /* Load.m in Sources */,
+				D2F8F20E233A36429E0F079AB7F495BC /* PageIndicatorLabel.swift in Sources */,
+				6E568A5146B1011DCD242A79767C7329 /* ReconnectingView.swift in Sources */,
+				900ABAA1B383CE803B2154EB6825B86C /* Region.swift in Sources */,
+				C4EB26C5BF17D15C826FA59E7874A21B /* RegularFastRoomOverlay.swift in Sources */,
+				AAB3BE0ADCC777E227684B16D74D71B6 /* String+localized.swift in Sources */,
+				EB6793ADABFF4B2E1635B2772E64C0AF /* SubPanelView.swift in Sources */,
+				41FF812B40FE7630F3DE5660CF83B6E7 /* TraitCollection+Extension.swift in Sources */,
+				F484A615CE3AF9706DE7B5F7660E67A4 /* TraitUpdateHandler.swift in Sources */,
+				EE629892C3D5955B48E82FD82057EF7C /* UIColor+Convince.swift in Sources */,
+				317B00AC8C46E0378E9F5B8FF85D9640 /* UIColor+NSNumber.swift in Sources */,
+				B9D55438D6F25739BD2040D05A848CCC /* UIImage+Bundle.swift in Sources */,
+				A4C2B8C8A10A09C7AD3DB3F5CBF49F5E /* UIImage+ColorItem.swift in Sources */,
+				F30BC570E61856BF103F30D2D6AFABD6 /* UIImage+tint.swift in Sources */,
+				A0136ED74123F0EDC810BEEB6152BA4D /* UIView+anchor.swift in Sources */,
+				63913892D3FA0FB98B81EE8851A6A265 /* UIView+Theme.swift in Sources */,
+				56D33D708BE7F8ABCC3E4DC316960242 /* WhiteBoardView+Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3003736003A11F9793D9EA6DC169AED7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2190,64 +2248,6 @@
 				CABFF76E9AC020D5F55DBC2F40902711 /* DWKWebView.m in Sources */,
 				2C37A1C0260BEA8FAEED28C64ECFF49A /* InternalApis.m in Sources */,
 				8460BE018FE877BBEE1DF34065BA4CED /* JSBUtil.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F97F99052CB05EAB621266A578E42D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C02B572615AFB0789C194FCBEA4D5EF2 /* Appearancemanager.swift in Sources */,
-				75A2804DCDC169EED499E5359C46E435 /* ApplianceButton.swift in Sources */,
-				535430957E25CCB9556D027ED35E2558 /* Bundle+localizedString.swift in Sources */,
-				95DC6C2C7873971A4CA07E1B98BEC054 /* CompactFastboardOverlay.swift in Sources */,
-				F33C88A3B34C787EC44C4F596DDDC742 /* ControlBar.swift in Sources */,
-				92B8778645838ECCD72203892EC7EB54 /* DefaultOperationItem.swift in Sources */,
-				32A15FA26DA388C1CC493226A5D7C0C2 /* DefaultOperationType.swift in Sources */,
-				F1D21AFDBFA28FAA8DBB385960A12CC5 /* DefaultTheme.swift in Sources */,
-				3AA8C35D948F584C5468DC9FFF4C6CDF /* DelegateProxy.swift in Sources */,
-				011CDEAF479C154543F75062BEF130F8 /* Fastboard.swift in Sources */,
-				2D200212DD4C163B09D0932815BBFCA0 /* Fastboard+FastPanelControl.swift in Sources */,
-				929D3C582FF758D5C2144975F186B4E8 /* Fastboard+Media.swift in Sources */,
-				633D1F019C3978F25A3CEEA6EF44F715 /* Fastboard+Pencil.swift in Sources */,
-				5946345B80223E43FF77FC49E40B4E9A /* Fastboard-dummy.m in Sources */,
-				4B488F9632F8F95A553F5EF90A7DB1AC /* FastboardDelegate.swift in Sources */,
-				DA4732EDE32C6E8C1BB59726112667C4 /* FastboardManager.swift in Sources */,
-				8D813AC98E0A7071FFB93DFE7BB1FCD1 /* FastboardOverlay.swift in Sources */,
-				C921F1E9FFC327C1FA26B10EDBD2975F /* FastboardPencilDrawHandler.swift in Sources */,
-				03D54E44A85E90353EE687A13C1D25E6 /* FastboardView.swift in Sources */,
-				39BDF33508ED6335F46818E3AB16709D /* FastboardView+Pencil.swift in Sources */,
-				C8663F82E4CE6364DD52516C38607132 /* FastConfiguration.swift in Sources */,
-				2D116D01785E45AC48CA99ADDEEB1EE6 /* FastConfiguration+FPA.swift in Sources */,
-				338917C31CB90EB3A987F2F46296D71F /* FastError.swift in Sources */,
-				ACA69A05B05F114B911C85422DDCD5D2 /* FastOperation+NeedColor.swift in Sources */,
-				77788B151F69712B50D645D4A83753CF /* FastOperation+NeedDelete.swift in Sources */,
-				924D8116B6341910922A603FFE012255 /* FastOperationItem.swift in Sources */,
-				5CB71F339EA29E84CC9367658B2B4D76 /* FastPanel.swift in Sources */,
-				369AF10B19AEB27F6D510F01E957968A /* FastPanelControl.swift in Sources */,
-				05029382FC2C6461423326762812721B /* FastPanelDelegate.swift in Sources */,
-				AEB697E14DD334D558B65B547773E0F9 /* FastProxy.m in Sources */,
-				CA862D6B65D91E187CD164EADB770D24 /* FastRoomPhase.swift in Sources */,
-				81B88733CC93C5543F3F20FD3EABC5BC /* FPADelegate.swift in Sources */,
-				313BFF9B9890FD2B950D0FEAB0480AA6 /* Load.m in Sources */,
-				C539B339ADC738E7160694565E111B71 /* PageIndicatorLabel.swift in Sources */,
-				AC64B4FE2E40789FBFAFD180D1D8CE84 /* ReconnectingView.swift in Sources */,
-				68AB1A9B93E15ECDF9D80E7BC266D9C5 /* Region.swift in Sources */,
-				D52554DF0BBCC54E161420CD71F0CF89 /* RegularFastboardOverlay.swift in Sources */,
-				48C3C5757EF790E01DC03A38E40BB6F3 /* String+localized.swift in Sources */,
-				F5EAE6603F8875B323591BC4A8898FB0 /* SubPanelView.swift in Sources */,
-				997488AACCC3CFC63D6B58368C2318C6 /* Theme.swift in Sources */,
-				C3FC5A1D088AA89F40E93A075B66C83F /* ThemeManager.swift in Sources */,
-				5790537E405A4C7F2B88004394FE16D4 /* TraitCollection+Extension.swift in Sources */,
-				B85207249E7786A86B23EE3280855A1B /* TraitUpdateHandler.swift in Sources */,
-				C28FB9A641DF6D3A3764949C72982CD4 /* UIColor+Convince.swift in Sources */,
-				9B031DEB8CD2D392893551D22B7BA353 /* UIColor+NSNumber.swift in Sources */,
-				D05318FE46EC713AC693E56F5ECC62BE /* UIImage+Bundle.swift in Sources */,
-				B81C48A57786E8AA2BEEC04CA659F11C /* UIImage+ColorItem.swift in Sources */,
-				CA182FCBF31B30BF8296486396549255 /* UIImage+tint.swift in Sources */,
-				B2956B793253E2190E13E3CD1A458198 /* UIView+anchor.swift in Sources */,
-				88E78CB419C32528B771A425248E9E05 /* UIView+Theme.swift in Sources */,
-				DB805156B8B773029FEB0C2567C86B87 /* WhiteBoardView+Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2461,11 +2461,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5B32CC3D07EFAC7103EAAADDC2A01ED2 /* Localizable.strings */ = {
+		DCAB3F75AE7C761CA69E9CB5F03959DB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				697C361BC200401A0447E477AF09DA8F /* Localizable.strings */,
-				798BE3E82ABDE32B736DA3DBE2EB28F4 /* Localizable.strings */,
+				3CAECA6890331B460656338620CF18AA /* Localizable.strings */,
+				6C8A763ADA49D6AE7DB0822298699AA8 /* Localizable.strings */,
 			);
 			name = Localizable.strings;
 			path = Fastboard/Assets;
@@ -2555,7 +2555,7 @@
 		};
 		18FEACA8DE139C40975F69347FDC6FA8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27489FE695319CEDF80989DE47861D39 /* Fastboard.release.xcconfig */;
+			baseConfigurationReference = 150CD264A314F32F7260526B0035058F /* Fastboard.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2588,7 +2588,7 @@
 		};
 		2305773A6CC230EB503E2E7C3708C738 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27489FE695319CEDF80989DE47861D39 /* Fastboard.release.xcconfig */;
+			baseConfigurationReference = 150CD264A314F32F7260526B0035058F /* Fastboard.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fastboard";
 				IBSC_MODULE = Fastboard;
@@ -2672,7 +2672,7 @@
 		};
 		4336E583D926F7093202410A054889AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B28B42FEA8F8FD4B9BF2BE14419CF604 /* Fastboard.debug.xcconfig */;
+			baseConfigurationReference = A7ECB5F6CD4052C4AF88479B14E62462 /* Fastboard.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fastboard";
 				IBSC_MODULE = Fastboard;
@@ -2734,7 +2734,7 @@
 		};
 		458D88E264E92DE823A5F4C843FB8E27 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B28B42FEA8F8FD4B9BF2BE14419CF604 /* Fastboard.debug.xcconfig */;
+			baseConfigurationReference = A7ECB5F6CD4052C4AF88479B14E62462 /* Fastboard.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fastboard";
 				IBSC_MODULE = Fastboard;
@@ -2914,7 +2914,7 @@
 		};
 		59E2E5A71C014F7346FC484FD94F10EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27489FE695319CEDF80989DE47861D39 /* Fastboard.release.xcconfig */;
+			baseConfigurationReference = 150CD264A314F32F7260526B0035058F /* Fastboard.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Fastboard";
 				IBSC_MODULE = Fastboard;
@@ -3205,7 +3205,7 @@
 		};
 		F25D9757AE6F4930DDDCAEA44F6F2DA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B28B42FEA8F8FD4B9BF2BE14419CF604 /* Fastboard.debug.xcconfig */;
+			baseConfigurationReference = A7ECB5F6CD4052C4AF88479B14E62462 /* Fastboard.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;

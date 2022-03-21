@@ -11,28 +11,28 @@
 #import <Whiteboard/Whiteboard.h>
 #import <Masonry/Masonry.h>
 
-@interface CustomFastboardOverlay() <FastboardOverlay>
-@property (nonatomic, strong) FastPanel* operationsPanel;
+@interface CustomFastboardOverlay() <FastRoomOverlay>
+@property (nonatomic, strong) FastRoomPanel* operationsPanel;
 @end
 
 @implementation CustomFastboardOverlay
 - (void)setAllPanelWithHide:(BOOL)hide {
-    for (FastPanel* panel in [self allPanels]) {
+    for (FastRoomPanel* panel in [self allPanels]) {
         [panel.view setHidden:hide];
     }
 }
 
-- (void)setPanelItemHideWithItem:(DefaultOperationIdentifier * _Nonnull)item hide:(BOOL)hide {
-    for (FastPanel* panel in [self allPanels]) {
+- (void)setPanelItemHideWithItem:(FastRoomDefaultOperationIdentifier * _Nonnull)item hide:(BOOL)hide {
+    for (FastRoomPanel* panel in [self allPanels]) {
         [panel setItemHideFromKey:item hide:hide];
     }
 }
 
-- (void)itemWillBeExecutionWithFastPanel:(FastPanel * _Nonnull)fastPanel item:(id<FastOperationItem> _Nonnull)item {
+- (void)itemWillBeExecutionWithFastPanel:(FastRoomPanel * _Nonnull)fastPanel item:(id<FastRoomOperationItem> _Nonnull)item {
     
 }
 
-- (void)setupWithRoom:(WhiteRoom * _Nonnull)room fastboardView:(FastboardView * _Nonnull)fastboardView direction:(enum OperationBarDirection)direction {
+- (void)setupWithRoom:(WhiteRoom * _Nonnull)room fastboardView:(FastRoomView * _Nonnull)fastboardView direction:(enum OperationBarDirection)direction {
     
     UIView* operationView = [self.operationsPanel setupWithRoom:room
                               direction:direction
@@ -74,21 +74,21 @@
     
 }
 
-- (FastPanel*)createOperationPanel {
+- (FastRoomPanel*)createOperationPanel {
     NSMutableArray* items = [NSMutableArray array];
-    DefaultOperationItem* pencil = [DefaultOperationItem selectableApplianceItem:AppliancePencil shape:nil];
-    DefaultOperationItem* eraser = [DefaultOperationItem selectableApplianceItem:ApplianceEraser shape:nil];
+    FastRoomDefaultOperationItem* pencil = [FastRoomDefaultOperationItem selectableApplianceItem:AppliancePencil shape:nil];
+    FastRoomDefaultOperationItem* eraser = [FastRoomDefaultOperationItem selectableApplianceItem:ApplianceEraser shape:nil];
     [items addObject:pencil];
     [items addObject:eraser];
-    return [[FastPanel alloc] initWithItems:items];
+    return [[FastRoomPanel alloc] initWithItems:items];
 }
 
 // MARK: - Getter
-- (NSArray<FastPanel*>*)allPanels {
+- (NSArray<FastRoomPanel*>*)allPanels {
     return @[self.operationsPanel];
 }
 
-- (FastPanel *)operationsPanel {
+- (FastRoomPanel *)operationsPanel {
     if (!_operationsPanel) {
         _operationsPanel = [self createOperationPanel];
     }
