@@ -1,5 +1,8 @@
 # ChangeLog
-
+## [1.0.3] - 2022-03-21
+### 变更
+- `Fastboard`改名为`FastRoom`
+- `Fastboard`增加`createFastRoom:`方法
 ## [1.0.2] - 2022-03-18
 ## 升级
 - 升级`Whiteboard-iOS`到2.16.7
