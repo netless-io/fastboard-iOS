@@ -45,39 +45,39 @@
 # 代码示例
 ### Swift
 ```swift
-let config = FastConfiguration(appIdentifier: *,
-                               roomUUID: *,
-                               mToken: *,
-                               region: *,
-                               userUID: *)
-// 创建白板
-let fastboard = Fastboard(configuration: config)
+// 创建白板房间
+let config = FastRoomConfiguration(appIdentifier: *,
+                                   roomUUID: *,
+                                   roomToken: *,
+                                   region: *,
+                                   userUID: *)
+let fastRoom = Fastboard.createFastRoom(withFastRoomConfig: config)
 fastboard.delegate = self
 // 添加到视图层级
-let fastboardView = fastboard.view
-view.addSubview(fastboardView)
-fastboardView.frame = view.bounds
+let fastRoomView = fastRoom.view
+view.addSubview(fastRoomView)
+fastRoomView.frame = view.bounds
 // 白板加入房间
-fastboard.joinRoom()
+fastRoom.joinRoom()
 // 持有白板
-self.fastboard = fastboard
+self.fastRoom = fastRoom
 ```
 ### OC
 ```ObjectiveC
-FastConfiguration* config = [[FastConfiguration alloc] initWithAppIdentifier:*]
-                                                                    roomUUID:*
-                                                                    roomToken:*
-                                                                    region: *
-                                                                    userUID:*];
+FastRoomConfiguration* config = [[FastRoomConfiguration alloc] initWithAppIdentifier:* 
+                                                                            roomUUID:*
+                                                                           roomToken:*
+                                                                              region:*
+                                                                             userUID:*];
 // 创建、持有白板
-_fastboard = [[Fastboard alloc] initWithConfiguration:config];
-FastboardView *fastView = _fastboard.view;
-_fastboard.delegate = self;
+_fastRoom = [Fastboard createFastRoomWithFastRoomConfig:config];
+FastboardView *fastRoomView = _fastRoom.view;
+_fastRoom.delegate = self;
 // 加入房间
-[_fastboard joinRoom];
+[_fastRoom joinRoom];
 //加入视图层级
-[self.view addSubview:fastView];
-fastView.frame = self.view.bounds;
+[self.view addSubview:fastRoomView];
+fastRoomView.frame = self.view.bounds;
 ```
 
 # 接入方式
@@ -104,47 +104,47 @@ public func disconnectRoom()
 以下的所有的内容在示例工程中均有代码演示
 ## 切换主题
 - 切换预置主题
-    - 白色 `Themanager.shared.apply(DefaultTheme.defaultLightTheme)`
-    - 黑色 `Themanager.shared.apply(DefaultTheme.defaultDarkTheme)`
-    - 自动 `Themanager.shared.apply(DefaultTheme.defaultAutoTheme)`
+    - 白色 `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultLightTheme)`
+    - 黑色 `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultDarkTheme)`
+    - 自动 `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultAutoTheme)`
 - 切换自定义主题
     ```Swift
-    let white = WhiteboardAssets(whiteboardBackgroundColor: .green, containerColor: .yellow)
+    let white = FastRoomWhiteboardAssets(whiteboardBackgroundColor: .green, containerColor: .yellow)
 
-    let control = ControlBarAssets(backgroundColor: .blue, borderColor: .gray, effectStyle: .init(style: .regular))
+    let control = FastRoomControlBarAssets(backgroundColor: .blue, borderColor: .gray, effectStyle: .init(style: .regular))
 
-    let panel = PanelItemAssets(normalIconColor: .black, selectedIconColor: .systemRed, highlightBgColor: .cyan, subOpsIndicatorColor: .yellow, pageTextLabelColor: .orange)
+    let panel = FastRoomPanelItemAssets(normalIconColor: .black, selectedIconColor: .systemRed, highlightBgColor: .cyan, subOpsIndicatorColor: .yellow, pageTextLabelColor: .orange)
 
-    let theme = ThemeAsset(whiteboardAssets: white, controlBarAssets: control, panelItemAssets: panel)
+    let theme = FastRoomThemeAsset(whiteboardAssets: white, controlBarAssets: control, panelItemAssets: panel)
 
-    ThemeManager.shared.apply(theme)
+    FastRoomThemeManager.shared.apply(theme)
     ```
 
 ## 修改画笔颜色集合
 - 切换预置画笔颜色 
   ```Swift
-  DefaultOperationItem.defaultColors = [.red, .yellow, .blue]
+  FastRoomDefaultOperationItem.defaultColors = [.red, .yellow, .blue]
   ```
 
 ## 切换默认布局工具栏
 - iPhone
     ```swift
-    CompactFastboardOverlay.defaultCompactAppliance = [
+    CompactFastRoomOverlay.defaultCompactAppliance = [
                     .AppliancePencil,
                     .ApplianceSelector,
                     .ApplianceEraser]
     ```
  - iPad
      ```swift
-     var items: [FastOperationItem] = []
-     let shape = SubOpsItem(subOps: RegularFastboardOverlay.shapeItems)
+     var items: [FastRoomOperationItem] = []
+     let shape = SubOpsItem(subOps: RegularFastRoomOverlay.shapeItems)
      items.append(shape)
-     items.append(DefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
-     items.append(DefaultOperationItem.clean())
+     items.append(FastRoomDefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
+     items.append(FastRoomDefaultOperationItem.clean())
 
-     let panel = FastPanel(items: items)
+     let panel = FastRoomPanel(items: items)
 
-     RegularFastboardOverlay.customOptionPanel = {
+     RegularFastRoomOverlay.customOptionPanel = {
        return panel
      }
      ```       
@@ -152,31 +152,31 @@ public func disconnectRoom()
 - 调整全局外观
   ```swift
   // 工具栏方向左边
-  FastboardView.appearance().operationBarDirection == .left
+  FastRoomView.appearance().operationBarDirection == .left
   // 工具栏方向右边
-  FastboardView.appearance().operationBarDirection == .right
+  FastRoomView.appearance().operationBarDirection == .right
   // 工具栏宽度
-  ControlBar.appearance().itemWidth = 64
+  FastRoomControlBar.appearance().itemWidth = 64
   // Icon替换
-  ThemeManager.shared.updateIcons(using: **Some Bundle**)
+  FastRoomThemeManager.shared.updateIcons(using: **Some Bundle**)
   ```
 ## 工具栏显示隐藏
 - 工具栏显示隐藏
   ```swift
   // 全部隐藏 
-  fastboard.setAllPanel(hide: **isHide**)
+  fastRoom.setAllPanel(hide: **isHide**)
   // 特定隐藏
-  fastboard.setPanelItemHide(item: **key**, hide: **isHide**)
+  fastRoom.setPanelItemHide(item: **key**, hide: **isHide**)
   ```
 ## 自定义工具栏
 - 使用自己的工具栏（不推荐)
   ```swift
-  let config = FastConfiguration(appIdentifier: *,
+  let config = FastRoomConfiguration(appIdentifier: *,
                                roomUUID: *,
                                mToken: *,
                                region: *,
                                userUID: *)
-  // 实现自己的一个FastOverlay
+  // 实现自己的一个FastRoomOverlay
   let customOverlay = CustomOverlay()
   // 添加到FastConfiguration中
   config.customOverlay = customOverlay
@@ -191,5 +191,5 @@ public func disconnectRoom()
 ## 跟随Pencil行为
 - 选择Pencil行为
   ```swift
-  FastboardManager.followSystemPencilBehavior
+  Fastboard.followSystemPencilBehavior
   ```

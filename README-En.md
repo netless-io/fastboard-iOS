@@ -46,39 +46,39 @@ Development environment: Xcode 12+
 ### Swift
 ```swift
 // Create fastboard
-let config = FastConfiguration(appIdentifier: *,
-                               roomUUID: *,
-                               mToken: *,
-                               region: *,
-                               userUID: *)                              
-let fastboard = Fastboard(configuration: config)
+let config = FastRoomConfiguration(appIdentifier: *,
+                                   roomUUID: *,
+                                   roomToken: *,
+                                   region: *,
+                                   userUID: *)
+let fastRoom = Fastboard.createFastRoom(withFastRoomConfig: config)
 fastboard.delegate = self
 // Add to view hierarchy
-let fastboardView = fastboard.view
-view.addSubview(fastboardView)
-fastboardView.frame = view.bounds
+let fastRoomView = fastRoom.view
+view.addSubview(fastRoomView)
+fastRoomView.frame = view.bounds
 // Join room
-fastboard.joinRoom()
-// Hold the object
-self.fastboard = fastboard
+fastRoom.joinRoom()
+// Retain the object
+self.fastRoom = fastRoom
 ```
 
 ### OC
 ```ObjectiveC
 // Create and hold fastboard
-FastConfiguration* config = [[FastConfiguration alloc] initWithAppIdentifier:*]
-                                                                    roomUUID:*
-                                                                    roomToken:*
-                                                                    region: *
-                                                                    userUID:*];
-_fastboard = [[Fastboard alloc] initWithConfiguration:config];
-FastboardView *fastView = _fastboard.view;
-_fastboard.delegate = self;
+FastRoomConfiguration* config = [[FastRoomConfiguration alloc] initWithAppIdentifier:* 
+                                                                            roomUUID:*
+                                                                           roomToken:*
+                                                                              region:*
+                                                                             userUID:*];
+_fastRoom = [Fastboard createFastRoomWithFastRoomConfig:config];
+FastboardView *fastRoomView = _fastRoom.view;
+_fastRoom.delegate = self;
 // join room
-[_fastboard joinRoom];
+[_fastRoom joinRoom];
 // Add to view hierarchy
-[self.view addSubview:fastView];
-fastView.frame = self.view.bounds;
+[self.view addSubview:fastRoomView];
+fastRoomView.frame = self.view.bounds;
 ```
 # Integration
 - CocoaPods
@@ -104,47 +104,47 @@ public func disconnectRoom()
 All of the following are demonstrated in code in the sample project
 ## Toggle theme
 - Switching preset themes
-    - Light `Themanager.shared.apply(DefaultTheme.defaultLightTheme)`
-    - Dark `Themanager.shared.apply(DefaultTheme.defaultDarkTheme)`
-    - Auto `Themanager.shared.apply(DefaultTheme.defaultAutoTheme)`
+    - Light `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultLightTheme)`
+    - Dark `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultDarkTheme)`
+    - Auto `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultAutoTheme)`
 - Switching custom themes
     ```Swift
-    let white = WhiteboardAssets(whiteboardBackgroundColor: .green, containerColor: .yellow)
+    let white = FastRoomWhiteboardAssets(whiteboardBackgroundColor: .green, containerColor: .yellow)
 
-    let control = ControlBarAssets(backgroundColor: .blue, borderColor: .gray, effectStyle: .init(style: .regular))
+    let control = FastRoomControlBarAssets(backgroundColor: .blue, borderColor: .gray, effectStyle: .init(style: .regular))
 
-    let panel = PanelItemAssets(normalIconColor: .black, selectedIconColor: .systemRed, highlightBgColor: .cyan, subOpsIndicatorColor: .yellow, pageTextLabelColor: .orange)
+    let panel = FastRoomPanelItemAssets(normalIconColor: .black, selectedIconColor: .systemRed, highlightBgColor: .cyan, subOpsIndicatorColor: .yellow, pageTextLabelColor: .orange)
 
-    let theme = ThemeAsset(whiteboardAssets: white, controlBarAssets: control, panelItemAssets: panel)
+    let theme = FastRoomThemeAsset(whiteboardAssets: white, controlBarAssets: control, panelItemAssets: panel)
 
-    ThemeManager.shared.apply(theme)
+    FastRoomThemeManager.shared.apply(theme)
     ```
 
 ## Modify brush color collection
 - Modify brush color collection 
   ```Swift
-  DefaultOperationItem.defaultColors = [.red, .yellow, .blue]
+  FastRoomDefaultOperationItem.defaultColors = [.red, .yellow, .blue]
   ```
 
 ## Toggle the default layout overlay
 - iPhone
     ```swift
-    CompactFastboardOverlay.defaultCompactAppliance = [
+    CompactFastRoomOverlay.defaultCompactAppliance = [
                     .AppliancePencil,
                     .ApplianceSelector,
                     .ApplianceEraser]
     ```
  - iPad
      ```swift
-     var items: [FastOperationItem] = []
-     let shape = SubOpsItem(subOps: RegularFastboardOverlay.shapeItems)
+     var items: [FastRoomOperationItem] = []
+     let shape = SubOpsItem(subOps: RegularFastRoomOverlay.shapeItems)
      items.append(shape)
-     items.append(DefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
-     items.append(DefaultOperationItem.clean())
+     items.append(FastRoomDefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
+     items.append(FastRoomDefaultOperationItem.clean())
 
-     let panel = FastPanel(items: items)
+     let panel = FastRoomPanel(items: items)
 
-     RegularFastboardOverlay.customOptionPanel = {
+     RegularFastRoomOverlay.customOptionPanel = {
        return panel
      }
      ```       
@@ -152,26 +152,26 @@ All of the following are demonstrated in code in the sample project
 - Adjust global appearance
   ```swift
   // Toolbar direction left
-  FastboardView.appearance().operationBarDirection == .left
+  FastRoomView.appearance().operationBarDirection == .left
   // Toolbar direction right
-  FastboardView.appearance().operationBarDirection == .right
+  FastRoomView.appearance().operationBarDirection == .right
   // Toolbar width
-  ControlBar.appearance().itemWidth = 64
+  FastRoomControlBar.appearance().itemWidth = 64
   // Toolbar Icons replace
-  ThemeManager.shared.updateIcons(using: **Some Bundle**)
+  FastRoomThemeManager.shared.updateIcons(using: **Some Bundle**)
   ```
 ## Overlay show hide
 - Overlay show hide
   ```swift
   // Hide all
-  fastboard.setAllPanel(hide: **isHide**)
+  fastRoom.setAllPanel(hide: **isHide**)
   // Specific Hide 
-  fastboard.setPanelItemHide(item: **key**, hide: **isHide**)
+  fastRoom.setPanelItemHide(item: **key**, hide: **isHide**)
   ```
 ## Customized overlay
 - Use your own overlay (not recommended)
   ```swift
-  let config = FastConfiguration(appIdentifier: *,
+  let config = FastRoomConfiguration(appIdentifier: *,
                                roomUUID: *,
                                mToken: *,
                                region: *,
@@ -191,5 +191,5 @@ All of the following are demonstrated in code in the sample project
 ## Follow ApplePencil preferred behavior
 - Choose whether followSystemPencilBehavior
 ```swift
-  FastboardManager.followSystemPencilBehavior
+  Fastboard.followSystemPencilBehavior
 ```
