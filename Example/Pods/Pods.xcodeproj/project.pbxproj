@@ -159,6 +159,9 @@
 		888EFE3AB77C7AD9D1C2F46A7AD983AE /* YYModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BD93CC935164A090A0A9296BDF5DF866 /* YYModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88F223DF8CCAE043086383F25E41951D /* WhitePptPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2C7E310EF7681A08E3BB365AC7D631 /* WhitePptPage.m */; };
 		8908980A42BE919F133345C21578CB1D /* WhiteRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9531CEB057F6DF67F06430DBD3F4A0 /* WhiteRoom.m */; };
+		8A0A85E027EC4D22005CFC84 /* FastReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A85DE27EC4CB5005CFC84 /* FastReplay.swift */; };
+		8A0A85E527EC4F61005CFC84 /* FastReplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A85E327EC4F25005CFC84 /* FastReplayView.swift */; };
+		8A0A85E627EC5055005CFC84 /* FastReplayConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A85E127EC4E5A005CFC84 /* FastReplayConfiguration.swift */; };
 		8AE868BC3E2E6FC92F4717835180C47D /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1355D819EAC4AAE5DFA66CA8289D31 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BA5867E7116E9976458C5702DB56FD2 /* WhiteBroadcastState.m in Sources */ = {isa = PBXBuildFile; fileRef = E748045E1CAC9B118B7C8242DF1BC9D9 /* WhiteBroadcastState.m */; };
 		8C6546C1EF4F153DF3795CC6FE189E5B /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7D44E974866CA75E771919075385B /* ConstraintInsets.swift */; };
@@ -605,7 +608,7 @@
 		7712340E6526F50EE3E9C180A51683CE /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
 		776FE4C379FF725CC5C051F7F68244C6 /* WhiteRoomConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRoomConfig.h; path = Whiteboard/Classes/Room/WhiteRoomConfig.h; sourceTree = "<group>"; };
 		7913E14F15F53B24BD61225EC52C56D5 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		797D46A7F1534583458B98BF2BB479A7 /* dsBridge */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = dsBridge; path = dsBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		797D46A7F1534583458B98BF2BB479A7 /* dsBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = dsBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A50A2910818BF265A15F3EEDFCCAA39 /* FastRoomPanel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomPanel.swift; sourceTree = "<group>"; };
 		7B389010635777BEB32BB70B5C885935 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		7E028C00EE4A88726749D8BF2B2749C4 /* Fastboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Fastboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -626,6 +629,9 @@
 		87A535F434792888350BD0E4D95D85FE /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = main.css; path = Whiteboard/Resource/main.css; sourceTree = "<group>"; };
 		87B5C146943A9C0C125750F562C02D55 /* UIColor+NSNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+NSNumber.swift"; sourceTree = "<group>"; };
 		8866F1D091591DE3F7E5B9AC3B612710 /* WhiteBroadcastState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteBroadcastState.h; path = Whiteboard/Classes/Room/WhiteBroadcastState.h; sourceTree = "<group>"; };
+		8A0A85DE27EC4CB5005CFC84 /* FastReplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastReplay.swift; sourceTree = "<group>"; };
+		8A0A85E127EC4E5A005CFC84 /* FastReplayConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastReplayConfiguration.swift; sourceTree = "<group>"; };
+		8A0A85E327EC4F25005CFC84 /* FastReplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastReplayView.swift; sourceTree = "<group>"; };
 		8B091AAC9C7C4E7CB204C54AD3072CDB /* WhiteCommonCallbacks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCommonCallbacks.h; path = Whiteboard/Classes/Displayer/WhiteCommonCallbacks.h; sourceTree = "<group>"; };
 		8C12588D1BD183B569A1954ADAE0BAC8 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		8C4E0392A144DADA0BE824C3C0228E53 /* WhitePlayerEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerEvent.m; path = Whiteboard/Classes/Replayer/WhitePlayerEvent.m; sourceTree = "<group>"; };
@@ -1365,6 +1371,16 @@
 			path = "Target Support Files/Pods-OCExample";
 			sourceTree = "<group>";
 		};
+		8A0A85DD27EC4C80005CFC84 /* Replay */ = {
+			isa = PBXGroup;
+			children = (
+				8A0A85DE27EC4CB5005CFC84 /* FastReplay.swift */,
+				8A0A85E327EC4F25005CFC84 /* FastReplayView.swift */,
+				8A0A85E127EC4E5A005CFC84 /* FastReplayConfiguration.swift */,
+			);
+			path = Replay;
+			sourceTree = "<group>";
+		};
 		9ACCD1F585492D79FB00880D503DCDAD /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1552,6 +1568,7 @@
 		D8C25B0028AA0A03C62093A796B4FBDA /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				8A0A85DD27EC4C80005CFC84 /* Replay */,
 				10CB997D76FE012B485B12E96C07C3E5 /* Fastboard.swift */,
 				03623306F4A07BAE22FA633AA9F35FD8 /* Region.swift */,
 				D009CBCF3E6B8BF30079B7BDD66F5485 /* FastRoom */,
@@ -1564,7 +1581,7 @@
 		DA88AF324380163011EE67B01D5E39E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				797D46A7F1534583458B98BF2BB479A7 /* dsBridge */,
+				797D46A7F1534583458B98BF2BB479A7 /* dsBridge.framework */,
 				6AF279AB629184C658EFA156D552216E /* Fastboard */,
 				92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */,
 				826795FBAEC2583C68D7750D6624F02C /* Fastboard-LocalizedStrings */,
@@ -1825,7 +1842,7 @@
 			);
 			name = dsBridge;
 			productName = dsBridge;
-			productReference = 797D46A7F1534583458B98BF2BB479A7 /* dsBridge */;
+			productReference = 797D46A7F1534583458B98BF2BB479A7 /* dsBridge.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		205483BBB45EA83BC53758911C1C8F5F /* Pods-OCExample */ = {
@@ -1980,6 +1997,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					1A6F633BD0A4B9EF892715BEB76AC948 = {
+						LastSwiftMigration = 1330;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2258,6 +2280,7 @@
 				695D220291AC27CDB0F79DD756957DF3 /* Fastboard.swift in Sources */,
 				B451F845FAC90C6AA0D77BFC5A10BFE0 /* Fastboard-dummy.m in Sources */,
 				A28F5069F7E7C0BB3399D78ECE35195A /* FastboardPencilDrawHandler.swift in Sources */,
+				8A0A85E627EC5055005CFC84 /* FastReplayConfiguration.swift in Sources */,
 				D534F2CA1B9A0D72E8FA0E715B6A2D5C /* FastPanelControl.swift in Sources */,
 				D2F6C206E97E051D035E3EC090193E07 /* FastPanelDelegate.swift in Sources */,
 				A6986BCE872430B9B7313E4E9F7A6B79 /* FastProxy.m in Sources */,
@@ -2277,12 +2300,14 @@
 				FB49705C02F57E9773A6DC186D14258F /* FastRoomOperationItem+NeedColor.swift in Sources */,
 				D526B3A1199F0315EB7E02A44CC832A0 /* FastRoomOperationItem+NeedDelete.swift in Sources */,
 				61E5D936380E6B78FFC7DAFF19B1A94D /* FastRoomOverlay.swift in Sources */,
+				8A0A85E027EC4D22005CFC84 /* FastReplay.swift in Sources */,
 				FBD04D0134A0A6E93F9153EF25AD4F51 /* FastRoomPanel.swift in Sources */,
 				2C4244B59E2D9D83F0582577D383238C /* FastRoomPanelItemButton.swift in Sources */,
 				3521A85A6628676D285AA241FD007B29 /* FastRoomPhase.swift in Sources */,
 				1CB6C4A62547BB99E1969819D48C571E /* FastRoomThemeAsset.swift in Sources */,
 				3F9AD25A26704E5C312554DEDC571084 /* FastRoomThemeManager.swift in Sources */,
 				56B7BE8497B625F5ED78C09069E4A039 /* FastRoomView.swift in Sources */,
+				8A0A85E527EC4F61005CFC84 /* FastReplayView.swift in Sources */,
 				9B96E889F0F298B763324B8F5696B341 /* FastRoomView+Pencil.swift in Sources */,
 				12BBE5208A964267A135AB9A911B50D0 /* FPADelegate.swift in Sources */,
 				8380D98D68C841BE667EDCE323AF67EB /* Load.m in Sources */,
@@ -2614,6 +2639,7 @@
 			baseConfigurationReference = 66168018F1499DA051616BFBA60948A8 /* dsBridge.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2633,6 +2659,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3195,6 +3222,7 @@
 			baseConfigurationReference = 107C7E456A3C348D1706B97C92309D15 /* dsBridge.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";

@@ -19,4 +19,9 @@ public class Fastboard: NSObject {
     public class func createFastRoom(withFastRoomConfig config: FastRoomConfiguration) -> FastRoom {
         return FastRoom(configuration: config)
     }
+    
+    @objc
+    public class func createFastReply(withFastReplyConfig config: FastReplyConfiguration) -> FastReply {
+        return FastReply(configuration: config)
+    }
 }
