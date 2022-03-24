@@ -2,6 +2,26 @@
 
 [English](Advance)
 
+## 插入多媒体内容
+
+在实时白板中可以插入多种文件类型。插入的方法可以`FastRoom`中找到
+- 插入音乐或视频
+   
+  `func insertMedia(_ src: URL, title: String, completionHandler: ((String)->Void)? = nil)`
+- 插入图片
+
+  `func insertImg(_ src: URL, imageSize: CGSize)`
+- 插入动态ppt
+
+  `func insertPptx(_ pages: [WhitePptPage],
+                           title: String,
+                           completionHandler: ((String)->Void)? = nil)`
+- 插入静态文件(包括 pdf, ppt, doc)
+
+  `func insertStaticDocument(_ pages: [WhitePptPage],
+                                     title: String,
+                                     completionHandler: ((String)->Void)? = nil)`
+
 ## 自定义App插件
 
 自定义App插件可以扩展白板功能，用户通过编写js代码来实现自己的白板插件。
@@ -13,7 +33,9 @@
 自定义App插件详情见[Whiteboard-README-CustomApp](https://github.com/netless-io/Whiteboard-iOS/blob/master/README-zh.md#自定义App插件)
 
 ## 界面自定义
+
 以下的所有的内容在示例工程中均有代码演示
+
 ### 切换主题
 - 切换预置主题
     - 白色 `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultLightTheme)`

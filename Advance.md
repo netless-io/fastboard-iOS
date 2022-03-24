@@ -1,6 +1,26 @@
 # Advance
 
-[中文](Advance-zh)
+[中文](Advance-zh.md)
+
+## Inserting multimedia content
+
+A variety of file types can be inserted in the Fastboard. The methods of insertion can be found in `FastRoom`
+- Inserting music or video
+   
+  `func insertMedia(_ src: URL, title: String, completionHandler: ((String)->Void)? = nil)`
+- Inserting an image
+
+  `func insertImg(_ src: URL, imageSize: CGSize)`
+- Insert dynamic ppt
+
+  `func insertPptx(_ pages: [WhitePptPage],
+                           title: String,
+                           completionHandler: ((String)->Void)? = nil)`
+- Insert static files (including pdf, ppt, doc)
+
+  `func insertStaticDocument(_ pages: [WhitePptPage],
+                                     title: String,
+                                     completionHandler: ((String)->Void)? = nil)`
 
 ## Custom App Plugin
 
