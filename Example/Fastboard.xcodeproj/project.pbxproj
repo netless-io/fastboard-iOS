@@ -17,7 +17,7 @@
 		8A28DD16278BC1BD00B5CB71 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */; };
 		8A28DD18278BCB1900B5CB71 /* RoomInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD17278BCB1900B5CB71 /* RoomInfo.h */; };
 		8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD19278BCBD700B5CB71 /* RoomInfo.m */; };
-		8A28DD1C278BD84E00B5CB71 /* README-En.md in Resources */ = {isa = PBXBuildFile; fileRef = 8A28DD1B278BD84E00B5CB71 /* README-En.md */; };
+		8A28DD1C278BD84E00B5CB71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8A28DD1B278BD84E00B5CB71 /* README.md */; };
 		8A310FC12787DEA800376BB5 /* ExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A310FC02787DEA800376BB5 /* ExampleTheme.swift */; };
 		8A32FA7527C885B000FA9367 /* customColor.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A32FA7427C885B000FA9367 /* customColor.json */; };
 		8A32FA7827C885ED00FA9367 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32FA7727C885ED00FA9367 /* CustomColor.swift */; };
@@ -51,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		22C403ED202C8833654663D1 /* Pods-Fastboard_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Example.release.xcconfig"; path = "Target Support Files/Pods-Fastboard_Example/Pods-Fastboard_Example.release.xcconfig"; sourceTree = "<group>"; };
-		232246E3091BF31CA271C55B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		232246E3091BF31CA271C55B /* README-zh.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = "README-zh.md"; path = "../README-zh.md"; sourceTree = "<group>"; };
 		30F099742273D1E816E706CE /* Pods_Fastboard_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fastboard_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		470BB35885E53C67CAAA0CAC /* Pods-Fastboard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Example.debug.xcconfig"; path = "Target Support Files/Pods-Fastboard_Example/Pods-Fastboard_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5735BD3E615FCD4E13798F44 /* Fastboard.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Fastboard.podspec; path = ../Fastboard.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -65,13 +65,13 @@
 		812F452516B81B7ADBC6F7AC /* Pods-Fastboard_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Tests.release.xcconfig"; path = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		829F94F2DB88098BADCF84A3 /* Pods-OCExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCExample.debug.xcconfig"; path = "Target Support Files/Pods-OCExample/Pods-OCExample.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = monaco.iife.js; sourceTree = "<group>"; };
-		8A0A85E727EC5A27005CFC84 /* Advance.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Advance.md; path = ../Advance.md; sourceTree = "<group>"; };
-		8A0A85E927EC5A8D005CFC84 /* Advance-En.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "Advance-En.md"; path = "../Advance-En.md"; sourceTree = "<group>"; };
+		8A0A85E727EC5A27005CFC84 /* Advance-zh.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "Advance-zh.md"; path = "../Advance-zh.md"; sourceTree = "<group>"; };
+		8A0A85E927EC5A8D005CFC84 /* Advance.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Advance.md; path = ../Advance.md; sourceTree = "<group>"; };
 		8A28DD14278BC0E900B5CB71 /* FastboardConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastboardConfig.xcconfig; sourceTree = "<group>"; };
 		8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 		8A28DD17278BCB1900B5CB71 /* RoomInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomInfo.h; sourceTree = "<group>"; };
 		8A28DD19278BCBD700B5CB71 /* RoomInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomInfo.m; sourceTree = "<group>"; };
-		8A28DD1B278BD84E00B5CB71 /* README-En.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "README-En.md"; path = "../README-En.md"; sourceTree = "<group>"; };
+		8A28DD1B278BD84E00B5CB71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8A310FC02787DEA800376BB5 /* ExampleTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTheme.swift; sourceTree = "<group>"; };
 		8A32FA7427C885B000FA9367 /* customColor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = customColor.json; sourceTree = "<group>"; };
 		8A32FA7727C885ED00FA9367 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -193,12 +193,12 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				8A0A85E927EC5A8D005CFC84 /* Advance-En.md */,
+				8A0A85E927EC5A8D005CFC84 /* Advance.md */,
 				8AFA91E9278E66A200E0CA61 /* CHANGELOG.md */,
-				8A0A85E727EC5A27005CFC84 /* Advance.md */,
-				8A28DD1B278BD84E00B5CB71 /* README-En.md */,
+				8A0A85E727EC5A27005CFC84 /* Advance-zh.md */,
+				8A28DD1B278BD84E00B5CB71 /* README.md */,
 				5735BD3E615FCD4E13798F44 /* Fastboard.podspec */,
-				232246E3091BF31CA271C55B /* README.md */,
+				232246E3091BF31CA271C55B /* README-zh.md */,
 				96FF1AB9A8B5AED401A61FB7 /* LICENSE */,
 				8A28DD14278BC0E900B5CB71 /* FastboardConfig.xcconfig */,
 			);
@@ -379,7 +379,7 @@
 				8AB02B9A27C4744300792EF6 /* Main.storyboard in Resources */,
 				8AFA91D5278C396D00E0CA61 /* Images.xcassets in Resources */,
 				8A32FA7B27C8AEBF00FA9367 /* storage.json in Resources */,
-				8A28DD1C278BD84E00B5CB71 /* README-En.md in Resources */,
+				8A28DD1C278BD84E00B5CB71 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

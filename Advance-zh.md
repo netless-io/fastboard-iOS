@@ -1,25 +1,25 @@
-# Advance
+# 高级功能
 
-[中文](Advance-zh)
+[English](Advance)
 
-## Custom App Plugin
+## 自定义App插件
 
-The Custom App plugin extends the whiteboard functionality, and users write js code to implement their own whiteboard plugin.
+自定义App插件可以扩展白板功能，用户通过编写js代码来实现自己的白板插件。
 
-To operate the Custom App plugin you need to use `WhiteSDK` and `WhiteRoom` objects, both of which can be found in `FastRoom`.
+操作自定义App插件需要用到`WhiteSDK`和`WhiteRoom`对象，这两个对象均可以在`FastRoom`中找到。
 
-The corresponding property names are `whiteSDK` and `room`.
+对应的属性名为`whiteSDK`和`room`
 
-Custom App plugin details can be found in [Whiteboard-README-CustomApp](https://github.com/netless-io/Whiteboard-iOS/blob/master/README.md#custom-app-plugin)
+自定义App插件详情见[Whiteboard-README-CustomApp](https://github.com/netless-io/Whiteboard-iOS/blob/master/README-zh.md#自定义App插件)
 
-## Interface customization
-All of the following are demonstrated in code in the sample project
-### Toggle theme
-- Switching preset themes
-    - Light `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultLightTheme)`
-    - Dark `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultDarkTheme)`
-    - Auto `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultAutoTheme)`
-- Switching custom themes
+## 界面自定义
+以下的所有的内容在示例工程中均有代码演示
+### 切换主题
+- 切换预置主题
+    - 白色 `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultLightTheme)`
+    - 黑色 `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultDarkTheme)`
+    - 自动 `FastRoomThemeManager.shared.apply(FastRoomDefaultTheme.defaultAutoTheme)`
+- 切换自定义主题
     ```Swift
     let white = FastRoomWhiteboardAssets(whiteboardBackgroundColor: .green, containerColor: .yellow)
 
@@ -32,13 +32,13 @@ All of the following are demonstrated in code in the sample project
     FastRoomThemeManager.shared.apply(theme)
     ```
 
-### Modify brush color collection
-- Modify brush color collection 
+### 修改画笔颜色集合
+- 切换预置画笔颜色 
   ```Swift
   FastRoomDefaultOperationItem.defaultColors = [.red, .yellow, .blue]
   ```
 
-### Toggle the default layout overlay
+### 切换默认布局工具栏
 - iPhone
     ```swift
     CompactFastRoomOverlay.defaultCompactAppliance = [
@@ -60,48 +60,48 @@ All of the following are demonstrated in code in the sample project
        return panel
      }
      ```       
-### Adjust global appearance
-- Adjust global appearance
+### 调整全局外观
+- 调整全局外观
   ```swift
-  // Toolbar direction left
+  // 工具栏方向左边
   FastRoomView.appearance().operationBarDirection == .left
-  // Toolbar direction right
+  // 工具栏方向右边
   FastRoomView.appearance().operationBarDirection == .right
-  // Toolbar width
+  // 工具栏宽度
   FastRoomControlBar.appearance().itemWidth = 64
-  // Toolbar Icons replace
+  // Icon替换
   FastRoomThemeManager.shared.updateIcons(using: **Some Bundle**)
   ```
-### Overlay show hide
-- Overlay show hide
+### 工具栏显示隐藏
+- 工具栏显示隐藏
   ```swift
-  // Hide all
+  // 全部隐藏 
   fastRoom.setAllPanel(hide: **isHide**)
-  // Specific Hide 
+  // 特定隐藏
   fastRoom.setPanelItemHide(item: **key**, hide: **isHide**)
   ```
-### Customized overlay
-- Use your own overlay (not recommended)
+### 自定义工具栏
+- 使用自己的工具栏（不推荐)
   ```swift
   let config = FastRoomConfiguration(appIdentifier: *,
                                roomUUID: *,
                                mToken: *,
                                region: *,
                                userUID: *)
-  // Implement a FastOverlay of your own
+  // 实现自己的一个FastRoomOverlay
   let customOverlay = CustomOverlay()
-  // Add to FastConfiguration
+  // 添加到FastConfiguration中
   config.customOverlay = customOverlay
-  // Generate Fastboard
+  // 生成Fastboard
   ```
-- Remake overlay Constraints
+- 自定义工具栏约束
   ```swift
-  // invalid all overlay layout
+  // 使默认布局失效
   public func invalidAllLayout()
   ```
 
-### Follow ApplePencil preferred behavior
-- Choose whether followSystemPencilBehavior
-```swift
+### 跟随Pencil行为
+- 选择Pencil行为
+  ```swift
   Fastboard.followSystemPencilBehavior
-```
+  ```

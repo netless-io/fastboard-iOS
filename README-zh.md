@@ -1,34 +1,33 @@
 # Fastboard
-<p><a href="./README-zh.md">中文</a></p>
+<p><a href="./README.md">En</a></p>
 
-Quickly create interactive whiteboard interfaces with operator panels
+快速创建带有操作面板的互动白板界面
 
-Quickly configure the appearance of the operator panel
+支持快速配置操作面板外观
 
-Built-in common interactive tools, choose freely as needed
+内置常用互动工具，根据需要自由选择
 
-Support for following ApplePencil system behavior
+支持跟随ApplePencil系统行为
 
-[Advance](Advance.md)
+[高级功能](Advance-zh.md)
 
-# Quick Start
+# 快速体验
+克隆仓库，并且在终端中进入Example目录，执行`pod install`
 
-Clone the repository and go to the Example directory in the terminal and execute `pod install`.
+找到FastboardConfig.xcconfig文件，填入APPID、ROOMUUID和ROOMTOKEN
 
-Find the FastboardConfig.xcconfig file and fill in the APPID and ROMUUID and ROOMTOKEN.
+打开Xcode进入workspace选择你的Team，设定bundle identifier和证书(模拟器不需要)
 
-Open Xcode and go to workspace, select your team, and set your bundle identifier and credentials.
+选择一个模拟器或者真机
 
-Select an simulator or a real machine and press cmd+R to run the sample project.
-# Requirement
-Running device: iOS 10 +
+按下cmd+R运行示例工程
+# 要求设备
+运行设备：iOS 10 +，开发环境：Xcode 12+
 
-Development environment: Xcode 12+
-
-# Code Example
+# 代码示例
 ### Swift
 ```swift
-// Create fastboard
+// 创建白板房间
 let config = FastRoomConfiguration(appIdentifier: *,
                                    roomUUID: *,
                                    roomToken: *,
@@ -36,49 +35,49 @@ let config = FastRoomConfiguration(appIdentifier: *,
                                    userUID: *)
 let fastRoom = Fastboard.createFastRoom(withFastRoomConfig: config)
 fastboard.delegate = self
-// Add to view hierarchy
+// 添加到视图层级
 let fastRoomView = fastRoom.view
 view.addSubview(fastRoomView)
 fastRoomView.frame = view.bounds
-// Join room
+// 白板加入房间
 fastRoom.joinRoom()
-// Retain the object
+// 持有白板
 self.fastRoom = fastRoom
 ```
-
 ### OC
 ```ObjectiveC
-// Create and hold fastboard
 FastRoomConfiguration* config = [[FastRoomConfiguration alloc] initWithAppIdentifier:* 
                                                                             roomUUID:*
                                                                            roomToken:*
                                                                               region:*
                                                                              userUID:*];
+// 创建、持有白板
 _fastRoom = [Fastboard createFastRoomWithFastRoomConfig:config];
 FastboardView *fastRoomView = _fastRoom.view;
 _fastRoom.delegate = self;
-// join room
+// 加入房间
 [_fastRoom joinRoom];
-// Add to view hierarchy
+//加入视图层级
 [self.view addSubview:fastRoomView];
 fastRoomView.frame = self.view.bounds;
 ```
-# Integration
+
+# 接入方式
 - CocoaPods
   ```ruby
   pod ‘Fastboard’
   ```
 
-# Room Setting
-## Join Room
+# 房间设置
+## 加入房间
 ```swift
 public func joinRoom(completionHandler: ((Result<WhiteRoom, FastError>)->Void)? = nil)
 ```
-## Disconnect Room
+## 离开房间
 ```swift
 public func disconnectRoom()
 ```
-## Update Room Writable
+## 设置是否可写
   ```swift
   public func updateWritable(_ writable: Bool, completion: ((Error?)->Void)?
   ```
