@@ -18,6 +18,7 @@
 #import "WhiteDisplayerState.h"
 #import "WhiteGlobalState.h"
 #import "WhiteWebViewInjection.h"
+#import "WhiteRegisterAppParams.h"
 #import "WhiteSDK.h"
 #import "WhiteSdkConfiguration.h"
 #import "WhiteConversionInfo.h"
@@ -60,6 +61,7 @@
 #import "WhiteRoomState.h"
 #import "WhiteSDK+Room.h"
 #import "WhiteSocket.h"
+#import "WritableDetectRoom.h"
 #import "WhiteFPA.h"
 #import "WhiteRoomConfig+FPA.h"
 

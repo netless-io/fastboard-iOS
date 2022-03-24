@@ -1,6 +1,6 @@
 {
   "name": "Whiteboard",
-  "version": "2.16.7",
+  "version": "2.16.9",
   "summary": "netless.io Whiteboard API on iOS",
   "description": "White-SDK-iOS 的开源版本实现，基于 White-SDK-iOS 2.4.18 继续开发",
   "homepage": "https://github.com/netless-io/whiteboard-ios",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/netless-io/Whiteboard-iOS.git",
-    "tag": "2.16.7"
+    "tag": "2.16.9"
   },
   "platforms": {
     "ios": "10.0"

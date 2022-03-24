@@ -41,6 +41,7 @@
         _isWritable = true;
         _uid = uid;
         _disableNewPencil = true;
+        _enableWritableAssert = false;
         if (_userPayload) {
             NSDictionary *dict = @{@"key": _userPayload};
             if (![NSJSONSerialization isValidJSONObject:dict]) {

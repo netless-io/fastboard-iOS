@@ -19,6 +19,10 @@
 #import "WhiteRoomConfig+FPA.h"
 #endif
 
+#if DEBUG
+#import "WritableDetectRoom.h"
+#endif
+
 
 @implementation WhiteSDK (Room)
 
@@ -52,6 +56,15 @@
     __weak typeof(self.bridge)weakBridge = self.bridge;
     WhiteRoom *room = [[WhiteRoom alloc] initWithUuid:config.uuid bridge:weakBridge];
     self.bridge.roomCallbacks.room = room;
+#if DEBUG
+    if (config.enableWritableAssert) {
+        [WritableDetectRoom startObserveRoom:room];
+    }
+    
+    room.shouldCheckingRepeatSetWritable = config.enableWritableAssert;
+#else
+    room.shouldCheckingRepeatSetWritable = false;
+#endif
     
     [self.bridge callHandler:@"sdk.joinRoom" arguments:@[config] completionHandler:^(id _Nullable value) {
        

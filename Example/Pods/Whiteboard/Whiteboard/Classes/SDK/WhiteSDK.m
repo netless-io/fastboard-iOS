@@ -23,7 +23,7 @@
 
 + (NSString *)version
 {
-    return @"2.16.7";
+    return @"2.16.9";
 }
 
 - (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callback audioMixerBridgeDelegate:( id<WhiteAudioMixerBridgeDelegate>)mixer
@@ -81,6 +81,13 @@
 - (void)updateTextFont:(NSArray <NSString *>*)fonts;
 {
     [self.bridge callHandler:@"sdk.updateNativeTextareaFont" arguments:@[fonts]];
+}
+
+#pragma mark - 自定义App
+
+- (void)registerAppWithParams:(WhiteRegisterAppParams *)params
+{
+    [self.bridge callHandler:@"sdk.registerApp" arguments:@[params]];
 }
 
 #pragma mark - Private
