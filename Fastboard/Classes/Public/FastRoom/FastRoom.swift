@@ -28,12 +28,13 @@ public class FastRoom: NSObject {
     
     /// The whiteSDK object, do not update it's delegate directly
     /// using 'commonDelegate' instead
-    var whiteSDK: WhiteSDK!
+    @objc
+    public var whiteSDK: WhiteSDK!
     
     /// The whiteRoom object, do not update it's delegate directly
     /// using 'roomDelegate' instead
     @objc
-    public fileprivate(set) var room: WhiteRoom? {
+    public var room: WhiteRoom? {
         didSet {
             if let room = room {
                 view.overlay?.setupWith(room: room, fastboardView: self.view, direction: view.operationBarDirection)

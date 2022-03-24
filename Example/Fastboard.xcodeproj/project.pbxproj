@@ -12,6 +12,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		8A0A85DB27EC46D4005CFC84 /* monaco.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */; };
+		8A0A85DC27EC46D4005CFC84 /* monaco.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */; };
 		8A28DD16278BC1BD00B5CB71 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */; };
 		8A28DD18278BCB1900B5CB71 /* RoomInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD17278BCB1900B5CB71 /* RoomInfo.h */; };
 		8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD19278BCBD700B5CB71 /* RoomInfo.m */; };
@@ -62,6 +64,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		812F452516B81B7ADBC6F7AC /* Pods-Fastboard_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Tests.release.xcconfig"; path = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		829F94F2DB88098BADCF84A3 /* Pods-OCExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCExample.debug.xcconfig"; path = "Target Support Files/Pods-OCExample/Pods-OCExample.debug.xcconfig"; sourceTree = "<group>"; };
+		8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = monaco.iife.js; sourceTree = "<group>"; };
 		8A28DD14278BC0E900B5CB71 /* FastboardConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastboardConfig.xcconfig; sourceTree = "<group>"; };
 		8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 		8A28DD17278BCB1900B5CB71 /* RoomInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomInfo.h; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 		8A32FA7627C885CB00FA9367 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */,
 				8A32FA7427C885B000FA9367 /* customColor.json */,
 				8AB02BBE27C4CF0500792EF6 /* storage.json */,
 			);
@@ -351,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AB02BB827C47F9000792EF6 /* Localizable.strings in Resources */,
+				8A0A85DB27EC46D4005CFC84 /* monaco.iife.js in Resources */,
 				8A32FA7527C885B000FA9367 /* customColor.json in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				8AB02BA127C4758200792EF6 /* ControlCell.xib in Resources */,
@@ -366,6 +371,7 @@
 			files = (
 				8A32FA8127C8B80B00FA9367 /* customColor.json in Resources */,
 				8AB02B9627C470B800792EF6 /* LaunchScreen.xib in Resources */,
+				8A0A85DC27EC46D4005CFC84 /* monaco.iife.js in Resources */,
 				8AB02B9A27C4744300792EF6 /* Main.storyboard in Resources */,
 				8AFA91D5278C396D00E0CA61 /* Images.xcassets in Resources */,
 				8A32FA7B27C8AEBF00FA9367 /* storage.json in Resources */,

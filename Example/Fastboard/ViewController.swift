@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupCustomApps()
     }
     
     func setupViews() {
@@ -58,6 +59,14 @@ class ViewController: UIViewController {
         setupFastboard()
         setupBottomTools()
         setupMediaTools()
+    }
+    
+    func setupCustomApps() {
+        guard let js = Bundle.main.url(forResource: "monaco.iife", withExtension: "js")
+        else { return }
+        let jsCode = try! String(contentsOf: js)
+        let params = WhiteRegisterAppParams(javascriptString: jsCode, kind: "Monaco", variable: "NetlessAppMonaco.default")
+        fastRoom.whiteSDK.registerApp(with: params)
     }
     
     func setupFastboard(custom: FastRoomOverlay? = nil) {
@@ -478,7 +487,6 @@ class ViewController: UIViewController {
             }
             guard let info = info else { return }
             let pages = info.progress?.convertedFileList ?? []
-            
             switch item.fileType {
             case .img, .music, .video:
                 return
@@ -527,6 +535,12 @@ class ViewController: UIViewController {
         }),
         .init(title: NSLocalizedString("Insert Mock Image", comment: ""), status: nil, clickBlock: { [unowned self] _ in
             if let item = storage.first(where: { $0.fileType == .img }) { self.insertItem(item) }
+        }),
+        .init(title: "VSCode", status: nil, enable: true, clickBlock: { [unowned self] _ in
+            let options = WhiteAppOptions()
+            options.title = "VSCode"
+            let params = WhiteAppParam(kind: "Monaco", options: options, attrs: [:])
+            self.fastRoom.room?.addApp(params, completionHandler: { _ in })
         })
     ])
 }
