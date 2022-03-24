@@ -28,6 +28,8 @@ Built-in common interactive tools, choose freely as needed
 
 Support for following ApplePencil system behavior
 
+[Advance](Advance-En.md)
+
 # Quick Start
 
 Clone the repository and go to the Example directory in the terminal and execute `pod install`.

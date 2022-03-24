@@ -29,6 +29,8 @@
 
 支持跟随ApplePencil系统行为
 
+[高级功能](Advance.md)
+
 # 快速体验
 克隆仓库，并且在终端中进入Example目录，执行`pod install`
 
