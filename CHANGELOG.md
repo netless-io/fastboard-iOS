@@ -2,6 +2,11 @@
 ## [1.0.4] - 2022-03-24
 ### 新增
 - 支持自定义App注册和插入，详见README
+## [1.0.4] - 2022-04-21
+### 升级
+- `Whiteboard`升级到2.16.18
+### 修复
+- 修复`FastRoomControlBar`的`forceHide`
 ## [1.0.3] - 2022-03-21
 ### 变更
 - `Fastboard`改名为`FastRoom`
