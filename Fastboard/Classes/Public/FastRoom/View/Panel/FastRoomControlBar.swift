@@ -230,8 +230,7 @@ public class FastRoomControlBar: UIView {
         } else {
             subviews
                 .compactMap { $0 as? UIButton }
-                .filter { !self.forceHideButtons.contains($0) }
-                .forEach { $0.isHidden = false }
+                .forEach { $0.isHidden = self.forceHideButtons.contains($0) }
         }
         layoutForSubItems()
         invalidateIntrinsicContentSize()
