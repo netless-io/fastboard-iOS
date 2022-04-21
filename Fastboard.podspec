@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'core' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard', '~> 2.16.9'
+    core.dependency 'Whiteboard', '~> 2.16.18'
     core.exclude_files = 'Fastboard/Classes/FPA/*'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
@@ -33,12 +33,9 @@ Pod::Spec.new do |s|
      fpa.dependency 'Fastboard/core'
      # Remove this when `fpa` deployment_target removed
      fpa.ios.deployment_target = '11.0'
-     fpa.pod_target_xcconfig = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
-     fpa.user_target_xcconfig = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
 
    end
   
   s.default_subspec = 'core'
-  
   
 end
