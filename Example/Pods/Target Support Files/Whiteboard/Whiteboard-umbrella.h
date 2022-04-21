@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "Whiteboard.h"
 #import "WhiteAudioMixerBridge.h"
 #import "WhiteBoardView.h"
 #import "WhiteCommonCallbacks.h"
@@ -25,6 +24,7 @@
 #import "WhiteConversionInfoV5.h"
 #import "WhiteConverter.h"
 #import "WhiteConverterV5.h"
+#import "NSObject+YY.h"
 #import "WhiteObject.h"
 #import "WhiteCombinePlayer.h"
 #import "WhiteSliderView.h"
@@ -62,6 +62,7 @@
 #import "WhiteSDK+Room.h"
 #import "WhiteSocket.h"
 #import "WritableDetectRoom.h"
+#import "Whiteboard.h"
 #import "WhiteFPA.h"
 #import "WhiteRoomConfig+FPA.h"
 

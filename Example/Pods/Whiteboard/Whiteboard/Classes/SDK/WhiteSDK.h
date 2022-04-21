@@ -127,12 +127,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setCommonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callbackDelegate;
 
+#pragma mark - CustomApp
+
 /**
  注册自定义App
  
  @param params 注册参数，详见 [WhiteRegisterAppParams](WhiteRegisterAppParams)
  */
-- (void)registerAppWithParams:(WhiteRegisterAppParams *)params;
+- (void)registerAppWithParams:(WhiteRegisterAppParams *)params completionHandler:(void (^)(NSError * _Nullable error))completionHandler;
 
 @end
 NS_ASSUME_NONNULL_END

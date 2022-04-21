@@ -1,6 +1,6 @@
 {
   "name": "Whiteboard",
-  "version": "2.16.9",
+  "version": "2.16.18",
   "summary": "netless.io Whiteboard API on iOS",
   "description": "White-SDK-iOS 的开源版本实现，基于 White-SDK-iOS 2.4.18 继续开发",
   "homepage": "https://github.com/netless-io/whiteboard-ios",
@@ -13,34 +13,43 @@
   },
   "source": {
     "git": "https://github.com/netless-io/Whiteboard-iOS.git",
-    "tag": "2.16.9"
+    "tag": "2.16.18"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "resource_bundles": {
-    "Whiteboard": [
-      "Whiteboard/Resource/*"
-    ]
-  },
-  "source_files": "Whiteboard/Classes/Whiteboard.h",
-  "default_subspecs": [
-    "Converter",
-    "Room",
-    "Replayer",
-    "NativeReplayer"
-  ],
+  "default_subspecs": "Whiteboard-YYModel",
   "subspecs": [
     {
+      "name": "Resource",
+      "resource_bundles": {
+        "Whiteboard": [
+          "Whiteboard/Resource/*"
+        ]
+      }
+    },
+    {
       "name": "Model",
+      "dependencies": {
+        "YYModel": [
+
+        ]
+      },
       "source_files": "Whiteboard/Classes/Model/**",
       "public_header_files": "Whiteboard/Classes/Model/**.h",
       "private_header_files": "Whiteboard/Classes/Object/*+Private.h",
+      "frameworks": "UIKit"
+    },
+    {
+      "name": "Model-YYKit",
       "dependencies": {
-        "YYModel": [
-          "~> 1.0.4"
+        "YYKit": [
+
         ]
       },
+      "source_files": "Whiteboard/Classes/Model/**",
+      "public_header_files": "Whiteboard/Classes/Model/**.h",
+      "private_header_files": "Whiteboard/Classes/Object/*+Private.h",
       "frameworks": "UIKit"
     },
     {
@@ -56,11 +65,33 @@
       "frameworks": "UIKit"
     },
     {
+      "name": "Object-YYKit",
+      "source_files": "Whiteboard/Classes/Object/**",
+      "public_header_files": "Whiteboard/Classes/Object/**.h",
+      "private_header_files": "Whiteboard/Classes/Object/*+Private.h",
+      "dependencies": {
+        "Whiteboard/Model-YYKit": [
+
+        ]
+      },
+      "frameworks": "UIKit"
+    },
+    {
       "name": "Converter",
       "source_files": "Whiteboard/Classes/Converter/**",
       "public_header_files": "Whiteboard/Classes/Converter/**.h",
       "dependencies": {
         "Whiteboard/Object": [
+
+        ]
+      }
+    },
+    {
+      "name": "Converter-YYKit",
+      "source_files": "Whiteboard/Classes/Converter/**",
+      "public_header_files": "Whiteboard/Classes/Converter/**.h",
+      "dependencies": {
+        "Whiteboard/Object-YYKit": [
 
         ]
       }
@@ -81,10 +112,34 @@
       ],
       "frameworks": "WebKit",
       "dependencies": {
-        "dsBridge": [
-          "~> 3.0.2"
+        "NTLBridge": [
+          "~> 3.1.2"
         ],
         "Whiteboard/Object": [
+
+        ]
+      }
+    },
+    {
+      "name": "Base-YYKit",
+      "source_files": [
+        "Whiteboard/Classes/SDK/**",
+        "Whiteboard/Classes/Displayer/**"
+      ],
+      "public_header_files": [
+        "Whiteboard/Classes/Displayer/**.h",
+        "Whiteboard/Classes/SDK/**.h"
+      ],
+      "private_header_files": [
+        "Whiteboard/Classes/Displayer/*+Private.h",
+        "Whiteboard/Classes/SDK/*+Private.h"
+      ],
+      "frameworks": "WebKit",
+      "dependencies": {
+        "NTLBridge": [
+          "~> 3.1.2"
+        ],
+        "Whiteboard/Object-YYKit": [
 
         ]
       }
@@ -99,6 +154,63 @@
 
         ]
       }
+    },
+    {
+      "name": "Room-YYKit",
+      "source_files": "Whiteboard/Classes/Room/**",
+      "public_header_files": "Whiteboard/Classes/Room/**.h",
+      "private_header_files": "Whiteboard/Classes/Room/*+Private.h",
+      "dependencies": {
+        "Whiteboard/Base-YYKit": [
+
+        ]
+      }
+    },
+    {
+      "name": "Replayer",
+      "source_files": "Whiteboard/Classes/Replayer/**",
+      "public_header_files": "Whiteboard/Classes/Replayer/**.h",
+      "private_header_files": "Whiteboard/Classes/Replayer/*+Private.h",
+      "dependencies": {
+        "Whiteboard/Base": [
+
+        ]
+      }
+    },
+    {
+      "name": "Replayer-YYKit",
+      "source_files": "Whiteboard/Classes/Replayer/**",
+      "public_header_files": "Whiteboard/Classes/Replayer/**.h",
+      "private_header_files": "Whiteboard/Classes/Replayer/*+Private.h",
+      "dependencies": {
+        "Whiteboard/Base-YYKit": [
+
+        ]
+      }
+    },
+    {
+      "name": "NativeReplayer",
+      "source_files": "Whiteboard/Classes/NativeReplayer/**",
+      "public_header_files": "Whiteboard/Classes/NativeReplayer/**.h",
+      "private_header_files": "Whiteboard/Classes/NativeReplayer/*+Private.h",
+      "dependencies": {
+        "Whiteboard/Replayer": [
+
+        ]
+      },
+      "frameworks": "AVFoundation"
+    },
+    {
+      "name": "NativeReplayer-YYKit",
+      "source_files": "Whiteboard/Classes/NativeReplayer/**",
+      "public_header_files": "Whiteboard/Classes/NativeReplayer/**.h",
+      "private_header_files": "Whiteboard/Classes/NativeReplayer/*+Private.h",
+      "dependencies": {
+        "Whiteboard/Replayer-YYKit": [
+
+        ]
+      },
+      "frameworks": "AVFoundation"
     },
     {
       "name": "fpa",
@@ -124,27 +236,65 @@
       }
     },
     {
-      "name": "Replayer",
-      "source_files": "Whiteboard/Classes/Replayer/**",
-      "public_header_files": "Whiteboard/Classes/Replayer/**.h",
-      "private_header_files": "Whiteboard/Classes/Replayer/*+Private.h",
+      "name": "fpa-YYKit",
+      "source_files": "Whiteboard/Classes/fpa/**",
+      "public_header_files": "Whiteboard/Classes/fpa/**.h",
+      "private_header_files": "Whiteboard/Classes/fpa/*+Private.h",
       "dependencies": {
-        "Whiteboard/Base": [
+        "Whiteboard/Room-YYKit": [
+
+        ],
+        "AgoraFPA_iOS": [
+          "~> 1.0.0"
+        ]
+      },
+      "platforms": {
+        "ios": "11.0"
+      },
+      "pod_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+      },
+      "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+      }
+    },
+    {
+      "name": "Whiteboard-YYModel",
+      "public_header_files": "Whiteboard/Classes/Whiteboard.h",
+      "source_files": "Whiteboard/Classes/Whiteboard.h",
+      "dependencies": {
+        "Whiteboard/Resource": [
+
+        ],
+        "Whiteboard/Converter": [
+
+        ],
+        "Whiteboard/Room": [
+
+        ],
+        "Whiteboard/NativeReplayer": [
 
         ]
       }
     },
     {
-      "name": "NativeReplayer",
-      "source_files": "Whiteboard/Classes/NativeReplayer/**",
-      "public_header_files": "Whiteboard/Classes/NativeReplayer/**.h",
-      "private_header_files": "Whiteboard/Classes/NativeReplayer/*+Private.h",
+      "name": "Whiteboard-YYKit",
+      "public_header_files": "Whiteboard/Classes/Whiteboard.h",
+      "source_files": "Whiteboard/Classes/Whiteboard.h",
       "dependencies": {
-        "Whiteboard/Replayer": [
+        "Whiteboard/Resource": [
+
+        ],
+        "Whiteboard/Converter-YYKit": [
+
+        ],
+        "Whiteboard/Room-YYKit": [
+
+        ],
+        "Whiteboard/NativeReplayer-YYKit": [
 
         ]
-      },
-      "frameworks": "AVFoundation"
+      }
     }
   ]
 }

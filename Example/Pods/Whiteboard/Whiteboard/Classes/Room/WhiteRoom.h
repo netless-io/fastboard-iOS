@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSNumber *observerId;
 /** 房间 uuid */
 @property (nonatomic, copy, readonly) NSString *uuid;
-/** 全局状态，由于遗留问题，目前该 API，不支持 customGlobalState，如需获取 customGlobalState，请使用 room.state.globalState */
+/** 房间的全局状态。详见 [WhiteGlobalState](WhiteGlobalState)。 */
 @property (nonatomic, strong, readonly) WhiteGlobalState *globalState;
 /** 教具信息 */
 @property (nonatomic, strong, readonly) WhiteReadonlyMemberState *memberState;
@@ -254,6 +254,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WhiteRoom (Scene)
 
+/**
+ 为当前的 WindowManger 直接设置attributes
+ 
+ @param attributes 需要设置的attributes
+ */
+- (void)setWindowManagerWithAttributes:(NSDictionary *)attributes;
 
 /**
  获取房间当前场景组下的场景状态。 
@@ -505,8 +511,7 @@ NS_ASSUME_NONNULL_BEGIN
  **Note:**
 
  - 该方法为异步调用。
- - 通过 [setCustomGlobalStateClass](setCustomGlobalStateClass) 设置自定义状态后，如需异步获取，可以通过 [getRoomStateWithResult](getRoomStateWithResult) 获取自定义 [GlobalState](GlobalState)。
- - 调用 [setGlobalState](setGlobalState) 方法后，可以立刻调用该方法。 
+ - 调用 [setGlobalState](setGlobalState) 方法后，可以立刻调用该方法。
  @param result 回调。返回房间的全局状态，详见 [GlobalState](GlobalState)。 
  */
 - (void)getGlobalStateWithResult:(void (^) (WhiteGlobalState *state))result;
@@ -570,6 +575,14 @@ NS_ASSUME_NONNULL_BEGIN
  * @param appParams app 类型以及配置内容
  */
 - (void)addApp:(WhiteAppParam *)appParams completionHandler:(void (^)(NSString *appId))completionHandler;
+
+/**
+ * 关闭窗口
+ * 该方法仅在多窗口下有效, 无论appId是否有效都会触发回调
+ *
+ * @param appId 添加app时返回的id
+ */
+- (void)closeApp:(NSString *)appId completionHandler:(void (^)(void))completionHandler;
 
 
 /** 获取 syncedState 所有状态值 */

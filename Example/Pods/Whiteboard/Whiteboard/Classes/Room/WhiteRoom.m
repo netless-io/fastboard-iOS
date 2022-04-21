@@ -11,6 +11,7 @@
 #import "WhiteConsts.h"
 #import "WhiteDisplayer+Private.h"
 #import "WhiteObject.h"
+#import "WhiteDisplayerState+Private.h"
 
 @interface WhiteRoom()
 @property (nonatomic, assign, readwrite) NSTimeInterval delay;
@@ -28,7 +29,6 @@
 {
     self = [super initWithUuid:uuid bridge:bridge];
     _state = [[WhiteRoomState alloc] init];
-    _globalState = [[WhiteGlobalState alloc] init];
     _uuid = uuid;
     _isUpdatingWritable = NO;
     return self;
@@ -36,11 +36,13 @@
 
 #pragma mark - Property
 
+- (WhiteGlobalState *)globalState {
+    return self.bridge.room.state.globalState;
+}
+
 - (void)setGlobalState:(WhiteGlobalState *)modifyState
 {
     [self.bridge callHandler:@"room.setGlobalState" arguments:@[modifyState]];
-    NSDictionary *update = [modifyState jsonDict];
-    [_globalState yy_modelSetWithJSON:update];
 }
 
 - (void)setMemberState:(WhiteMemberState *)modifyState
@@ -147,6 +149,11 @@
 }
 
 #pragma mark - Scene API
+
+- (void)setWindowManagerWithAttributes:(NSDictionary *)attributes
+{
+    [self.bridge callHandler:@"room.setWindowManagerAttributes" arguments:@[attributes]];
+}
 
 - (void)putScenes:(NSString *)dir scenes:(NSArray<WhiteScene *> *)scenes index:(NSUInteger)index
 {
@@ -331,8 +338,7 @@
 {
     [self.bridge callHandler:@"room.getGlobalState" completionHandler:^(id  _Nullable value) {
         if (result) {
-            WhiteGlobalState *jsState = [WhiteGlobalState modelWithJSON:value];
-            result(jsState);
+            result([WhiteDisplayerState getGlobalStateInstanceFromJSON:value]);
         }
     }];
 }
@@ -473,6 +479,14 @@ static NSString * const RoomSyncNamespace = @"room.sync.%@";
     [self.bridge callHandler:@"room.addApp" arguments:@[appParams.kind, appParams.options, appParams.attrs] completionHandler:^(id  _Nullable value) {
         if (completionHandler) {
             completionHandler(value);
+        }
+    }];
+}
+
+- (void)closeApp:(NSString *)appId completionHandler:(void (^)(void))completionHandler {
+    [self.bridge callHandler:@"room.closeApp" arguments:@[appId] completionHandler:^(id  _Nullable value) {
+        if (completionHandler) {
+            completionHandler();
         }
     }];
 }

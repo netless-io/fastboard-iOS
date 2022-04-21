@@ -14,6 +14,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		8A0A85DB27EC46D4005CFC84 /* monaco.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */; };
 		8A0A85DC27EC46D4005CFC84 /* monaco.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */; };
+		8A0A85EB27EC7304005CFC84 /* plyr.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85EA27EC7304005CFC84 /* plyr.iife.js */; };
+		8A0A85EC27EC7304005CFC84 /* plyr.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85EA27EC7304005CFC84 /* plyr.iife.js */; };
 		8A28DD16278BC1BD00B5CB71 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */; };
 		8A28DD18278BCB1900B5CB71 /* RoomInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD17278BCB1900B5CB71 /* RoomInfo.h */; };
 		8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A28DD19278BCBD700B5CB71 /* RoomInfo.m */; };
@@ -67,6 +69,7 @@
 		8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = monaco.iife.js; sourceTree = "<group>"; };
 		8A0A85E727EC5A27005CFC84 /* Advance-zh.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "Advance-zh.md"; path = "../Advance-zh.md"; sourceTree = "<group>"; };
 		8A0A85E927EC5A8D005CFC84 /* Advance.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Advance.md; path = ../Advance.md; sourceTree = "<group>"; };
+		8A0A85EA27EC7304005CFC84 /* plyr.iife.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = plyr.iife.js; sourceTree = "<group>"; };
 		8A28DD14278BC0E900B5CB71 /* FastboardConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = FastboardConfig.xcconfig; sourceTree = "<group>"; };
 		8A28DD15278BC1BD00B5CB71 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 		8A28DD17278BCB1900B5CB71 /* RoomInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomInfo.h; sourceTree = "<group>"; };
@@ -194,13 +197,13 @@
 			isa = PBXGroup;
 			children = (
 				8A0A85E927EC5A8D005CFC84 /* Advance.md */,
-				8AFA91E9278E66A200E0CA61 /* CHANGELOG.md */,
 				8A0A85E727EC5A27005CFC84 /* Advance-zh.md */,
 				8A28DD1B278BD84E00B5CB71 /* README.md */,
-				5735BD3E615FCD4E13798F44 /* Fastboard.podspec */,
 				232246E3091BF31CA271C55B /* README-zh.md */,
-				96FF1AB9A8B5AED401A61FB7 /* LICENSE */,
+				8AFA91E9278E66A200E0CA61 /* CHANGELOG.md */,
 				8A28DD14278BC0E900B5CB71 /* FastboardConfig.xcconfig */,
+				5735BD3E615FCD4E13798F44 /* Fastboard.podspec */,
+				96FF1AB9A8B5AED401A61FB7 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */,
 				8A32FA7427C885B000FA9367 /* customColor.json */,
 				8AB02BBE27C4CF0500792EF6 /* storage.json */,
+				8A0A85EA27EC7304005CFC84 /* plyr.iife.js */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -364,6 +368,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				8AB02BA127C4758200792EF6 /* ControlCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				8A0A85EB27EC7304005CFC84 /* plyr.iife.js in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				8AB02BBF27C4CF0500792EF6 /* storage.json in Resources */,
 			);
@@ -375,6 +380,7 @@
 			files = (
 				8A32FA8127C8B80B00FA9367 /* customColor.json in Resources */,
 				8AB02B9627C470B800792EF6 /* LaunchScreen.xib in Resources */,
+				8A0A85EC27EC7304005CFC84 /* plyr.iife.js in Resources */,
 				8A0A85DC27EC46D4005CFC84 /* monaco.iife.js in Resources */,
 				8AB02B9A27C4744300792EF6 /* Main.storyboard in Resources */,
 				8AFA91D5278C396D00E0CA61 /* Images.xcassets in Resources */,
@@ -396,9 +402,9 @@
 				"${PODS_ROOT}/AgoraFPA_iOS/AgoraFPA.framework",
 				"${PODS_ROOT}/AgoraFPA_iOS/AgoraFpaProxyService.framework",
 				"${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework",
+				"${BUILT_PRODUCTS_DIR}/NTLBridge/NTLBridge.framework",
 				"${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-				"${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -406,9 +412,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AgoraFPA.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AgoraFpaProxyService.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fastboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NTLBridge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whiteboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/dsBridge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,9 +477,9 @@
 				"${PODS_ROOT}/AgoraFPA_iOS/AgoraFpaProxyService.framework",
 				"${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/NTLBridge/NTLBridge.framework",
 				"${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-				"${BUILT_PRODUCTS_DIR}/dsBridge/dsBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -481,9 +487,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AgoraFpaProxyService.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fastboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NTLBridge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whiteboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/dsBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -600,7 +606,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;

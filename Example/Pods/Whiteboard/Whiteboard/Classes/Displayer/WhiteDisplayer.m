@@ -69,6 +69,16 @@
 
 #pragma mark - 页面（场景）API
 
+- (void)getSceneFromScenePath:(NSString *)scenePath result:(void (^)(WhiteScene * _Nullable))result
+{
+    [self.bridge callHandler:[NSString stringWithFormat:kDisplayerNamespace, @"getScene"] arguments:@[scenePath] completionHandler:^(id  _Nullable value) {
+        if (result) {
+            WhiteScene* scene = [WhiteScene modelWithJSON:value];
+            result(scene);
+        }
+    }];
+}
+
 - (void)getScenePathType:(NSString *)pathOrDir result:(void (^) (WhiteScenePathType pathType))result;
 {
     [self.bridge callHandler:[NSString stringWithFormat:kDisplayerNamespace, @"scenePathType"] arguments:@[pathOrDir] completionHandler:^(id  _Nullable value) {
@@ -195,6 +205,19 @@ static NSString * const kAsyncDisplayerNamespace = @"displayerAsync.%@";
         UIImage *image = [UIImage imageWithData:data scale:[UIScreen mainScreen].scale];
         if (completionHandler) {
             completionHandler(image);
+        }
+    }];
+}
+
+- (void)getWindowManagerAttributesWithResult:(void (^)(NSDictionary * _Nonnull))result
+{
+    [self.bridge callHandler:[NSString stringWithFormat:kDisplayerNamespace, @"getWindowManagerAttributes"] completionHandler:^(id  _Nullable value) {
+        if (result) {
+            if ([value isKindOfClass:[NSDictionary class]]) {
+                result(value);
+            } else {
+                result(nil);
+            }
         }
     }];
 }

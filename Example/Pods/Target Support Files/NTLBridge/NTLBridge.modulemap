@@ -1,0 +1,6 @@
+framework module NTLBridge {
+  umbrella header "NTLBridge-umbrella.h"
+
+  export *
+  module * { export * }
+}

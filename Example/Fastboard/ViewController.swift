@@ -66,7 +66,17 @@ class ViewController: UIViewController {
         else { return }
         let jsCode = try! String(contentsOf: js)
         let params = WhiteRegisterAppParams(javascriptString: jsCode, kind: "Monaco", variable: "NetlessAppMonaco.default")
-        fastRoom.whiteSDK.registerApp(with: params)
+        fastRoom.whiteSDK.registerApp(with: params) { error in
+            
+        }
+        				
+        guard let youtubeJs = Bundle.main.url(forResource: "plyr.iife", withExtension: "js")
+        else { return }
+        let youtubeJsCode = try! String(contentsOf: youtubeJs)
+        let youtubeParams = WhiteRegisterAppParams(javascriptString: youtubeJsCode, kind: "Plyr", variable: "NetlessAppPlyr.default")
+        fastRoom.whiteSDK.registerApp(with: youtubeParams) { error in
+            
+        }
     }
     
     func setupFastboard(custom: FastRoomOverlay? = nil) {
@@ -76,8 +86,8 @@ class ViewController: UIViewController {
                                            roomUUID: RoomInfo.ROOMUUID.value,
                                            roomToken: RoomInfo.ROOMTOKEN.value,
                                            region: .CN,
-                                           userUID: "some-unique-id",
-                                           useFPA: true)
+                                           userUID: "some-unique-id-1",
+                                           useFPA: globalUsingFPA)
         } else {
             // Without fpa
             config = FastRoomConfiguration(appIdentifier: RoomInfo.APPID.value,
@@ -515,7 +525,10 @@ class ViewController: UIViewController {
     
     lazy var mediaControlView = ExampleControlView(items: [
         .init(title: NSLocalizedString("Insert Mock PPTX", comment: ""), status: nil, clickBlock: { [unowned self] _ in
-            if let item = storage.first(where: { $0.taskType == .dynamic }) { self.insertItem(item) }
+            if let item = storage.first(where: { $0.taskType == .dynamic }) {
+                self.insertItem(item)
+                self.fastRoom.room?.setViewMode(.broadcaster)
+            }
         }),
         .init(title: NSLocalizedString("Insert Mock DOC", comment: ""), status: nil, clickBlock: { [unowned self] _ in
             if let item = storage.first(where: { $0.fileType == .word }) { self.insertItem(item) }
@@ -541,6 +554,15 @@ class ViewController: UIViewController {
             options.title = "VSCode"
             let params = WhiteAppParam(kind: "Monaco", options: options, attrs: [:])
             self.fastRoom.room?.addApp(params, completionHandler: { _ in })
+        }),
+        .init(title: "Youtube", status: nil, enable: true, clickBlock: { [unowned self] _ in
+            let options = WhiteAppOptions()
+            options.title = "Youtube"
+            let appParams = WhiteAppParam(kind: "Plyr",
+                                          options: options,
+                                          attrs: ["src": "https://www.youtube.com/embed/bTqVqk7FSmY",
+                                                  "provider": "youtube"])
+            self.fastRoom.room?.addApp(appParams, completionHandler: { _ in })
         })
     ])
 }
