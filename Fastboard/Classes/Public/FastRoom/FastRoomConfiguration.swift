@@ -36,6 +36,7 @@ public class FastRoomConfiguration: NSObject {
                 region: Region,
                 userUID: String) {
         let wsc = WhiteSdkConfiguration(app: appIdentifier)
+        wsc.setValue(["fastboard/\(versionNumber)"], forKey: "netlessUA")
         wsc.renderEngine = .canvas
         wsc.userCursor = false
         wsc.useMultiViews = true

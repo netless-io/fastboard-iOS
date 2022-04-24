@@ -18,10 +18,16 @@ fi
 
 echo 'star bump version to' $NEWVERSION
 sed -i '' 's/'$OLDTAG'/'$NEWVERSION'/g' Fastboard.podspec
+sed -i '' 's/'$OLDTAG'/'$NEWVERSION'/g' Fastboard/Classes/Public/Fastboard.swift
 echo 'update version text in podspec'
-git add Fastboard.podspec
-git commit -m 'Update podspec'
+git add Fastboard.podspec Fastboard/Classes/Public/Fastboard.swift
+git commit -m 'Update version number'
 echo 'git commit'
+cd Example
+pod install
+git add .
+git commit -m 'Update example pod'
+cd ..
 git tag $NEWVERSION
 echo 'add tag to git'
 git push netless
