@@ -127,3 +127,16 @@
   ```swift
   Fastboard.followSystemPencilBehavior
   ```
+
+### 使用YYKit
+本SDK默认有依赖YYModel, 如果需要更改依赖为YYKit，可以使用如下命令:
+
+``` ruby
+pod 'Fastboard/core-YYKit'
+```
+
+如果使用了fpa:
+
+``` ruby
+pod 'Fastboard/fpa-YYKit'
+```
