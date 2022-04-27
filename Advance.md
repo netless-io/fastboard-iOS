@@ -1,6 +1,21 @@
-# Advance
-
 [中文](Advance-zh.md)
+
+- [Confirm whiteboard ratio](#confirm-whiteboard-ratio)
+- [Inserting multimedia content](#inserting-multimedia-content)
+- [Custom App Plugin](#custom-app-plugin)
+- [Interface customization](#interface-customization)
+  - [Toggle theme](#toggle-theme)
+  - [Modify brush color collection](#modify-brush-color-collection)
+  - [Toggle the default layout overlay](#toggle-the-default-layout-overlay)
+  - [Adjust global appearance](#adjust-global-appearance)
+  - [Overlay show hide](#overlay-show-hide)
+  - [Customized overlay](#customized-overlay)
+  - [Follow ApplePencil preferred behavior](#follow-applepencil-preferred-behavior)
+- [Using YYKit](#using-yykit)
+
+## Confirm whiteboard ratio
+
+[How to set the whiteboard scale correctly](ratio.md)
 
 ## Inserting multimedia content
 
@@ -126,7 +141,7 @@ All of the following are demonstrated in code in the sample project
   Fastboard.followSystemPencilBehavior
 ```
 
-### Using YYKit
+## Using YYKit
 This SDK has a dependency on YYModel by default, if you need to change the dependency to YYKit, you can use the following command:
 
 ``` ruby

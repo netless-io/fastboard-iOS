@@ -1,27 +1,29 @@
-# 如何设置白板比例
-白板会保证所有房间内所有人看到的内容是一样的。
+# How to set the whiteboard scale correctly
+The whiteboard needs to ensure that everyone in the room sees the same content.
 
-在确定白板比例之前，你需要先确定一下你的白板将在哪里被展示，展示什么内容。
+So, before you can determine the whiteboard ratio, you need to determine where your whiteboard will be displayed and what content will be displayed as a way to determine the ratio setting for your whiteboard.
 
-这里有两种可能：
+Here are two common examples.
 
-## 1. 在各种设备上尽可能的占满屏幕
+## 1. Content-rich and want to utilize as many screens as possible on various devices
 
-你的产品是跨端跨设备的，可能有平板，手机，横屏手机，并且里面的内容形式不确定。
+Your product is cross-end and cross-device, maybe a tablet, a cell phone, a landscape phone.
 
-你希望尽可能的利用当前屏幕的可用区域。类似这样:
+Also the form of content inside is uncertain. There may be videos, PPT, board books...
+
+You want to use as much of the available area of the current screen as possible. Something like this:
 <img src="Arts/view-rectangle_magic.png">
 
-为了平衡所有设备的展示效果，推荐你选择16:9的比例，也就是Fastboard默认的设置比例，不需要额外写代码。
+To balance the display across all devices, it is recommended that you choose the 16:9 ratio, which is the default setting for Fastboard, and you don't need to set up additional code.
 
-你可以通过调整视图上其他元素的位置来让你的`FastRoomView`保持16:9的比例。
+User screens are many times not in 16:9 ratio, so you can keep your `FastRoomView` in 16:9 ratio by adjusting the position of other elements on the view.
 
-我们的一个开源教学产品 Flat 有类似的布局代码，它通过调整屏幕内视频和白板位置来达到屏幕高利用率，具体代码可以参考[这里](https://github.com/vince-hz/flat-ios/blob/main/Flat/Modules/ClassRoom/ViewController/ClassRoomLayout.swift)
+One of our open source teaching products, Flat, has similar layout code that achieves high screen utilization by adjusting the position of the video and whiteboard within the screen, see [here](https://github.com/vince-hz/flat-ios/blob/main/Flat/Modules/ClassRoom/ViewController/ClassRoomLayout.swift)
 
-## 2. 固定样式
+## 2. Fixed style
 
-你的白板样式是固定的，你只想展示一个指定比例的可用区域。
+Your whiteboard style is fixed and you only want to display a specified percentage of the available area.
 
-举个例子，你现在希望无论在哪个端，房间内用户看到的都是一个正方形。
+For example, you now want the users in the room to see a square whiteboard area that everyone is doodling in together.
 
-这时候你应该修改 `Fastboard.globalFastboardRatio` 为你想要的 1 : 1。
+At this point you should change `Fastboard.globalFastboardRatio` to the 1 : 1.
