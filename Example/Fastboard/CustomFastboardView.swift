@@ -12,25 +12,15 @@ import Fastboard
 import SnapKit
 
 class CustomFastboardOverlay: FastRoomOverlay {
-    func updateRoomPhaseUpdate(_ phase: FastRoomPhase) {
-        return
-    }
+    func updateRoomPhaseUpdate(_ phase: FastRoomPhase) {}
     
-    func dismissAllSubPanels() {
-        return
-    }
+    func dismissAllSubPanels() {}
     
-    func invalidAllLayout() {
-        return
-    }
+    func invalidAllLayout() {}
     
-    func updateBoxState(_ state: WhiteWindowBoxState?) {
-        return
-    }
+    func updateBoxState(_ state: WhiteWindowBoxState?) {}
     
-    func updateControlBarLayout(direction: OperationBarDirection) {
-        return
-    }
+    func updateControlBarLayout(direction: OperationBarDirection) {}
     
     func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         if let appliance = appliance {
@@ -38,29 +28,17 @@ class CustomFastboardOverlay: FastRoomOverlay {
         }
     }
     
-    func updateStrokeColor(_ color: UIColor) {
-        return
-    }
+    func updateStrokeColor(_ color: UIColor) {}
     
-    func updateStrokeWidth(_ width: Float) {
-        return
-    }
+    func updateStrokeWidth(_ width: Float) {}
     
-    func updatePageState(_ state: WhitePageState) {
-        return
-    }
+    func updatePageState(_ state: WhitePageState) {}
     
-    func updateUndoEnable(_ enable: Bool) {
-        return
-    }
+    func updateUndoEnable(_ enable: Bool) {}
     
-    func updateRedoEnable(_ enable: Bool) {
-        return
-    }
+    func updateRedoEnable(_ enable: Bool) {}
     
-    func itemWillBeExecution(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {
-        return
-    }
+    func itemWillBeExecution(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {}
     
     func setAllPanel(hide: Bool) {
         totalPanels.forEach { $0.view?.isHidden = hide }

@@ -68,9 +68,7 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         operationRightConstraint = nil
     }
     
-    public func updateBoxState(_ state: WhiteWindowBoxState?) {
-        return
-    }
+    public func updateBoxState(_ state: WhiteWindowBoxState?) {}
     
     var allConstraints: [NSLayoutConstraint] = []
     var operationLeftConstraint: NSLayoutConstraint?
