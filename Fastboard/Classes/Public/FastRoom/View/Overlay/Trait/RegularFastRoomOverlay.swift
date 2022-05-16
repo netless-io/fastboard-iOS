@@ -54,7 +54,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
     public func respondToPencilTap(_ tap: UIPencilPreferredAction) {
         guard let currentAppliance = currentAppliance else { return }
         func isCurrentEraser() -> Bool {
-            currentAppliance.identifier?.contains(identifierFor(appliance: .ApplianceEraser, withShapeKey: nil)) ?? false
+            currentAppliance.identifier?.contains(identifierFor(appliance: .ApplianceEraser, shape: nil)) ?? false
         }
         func active(item: FastRoomOperationItem, withSubPanel: Bool) {
             func performSub(_ sub: SubOpsItem) {
@@ -77,7 +77,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         }
         
         func pencilItem() -> FastRoomOperationItem? {
-            let pencilId = identifierFor(appliance: .AppliancePencil, withShapeKey: nil)
+            let pencilId = identifierFor(appliance: .AppliancePencil, shape: nil)
             return operationPanel.items.first(where: {
                 $0.identifier?.contains(pencilId) ?? false
             })
@@ -106,7 +106,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
                 // Set exchange for eraser
                 exchangeForEraser = currentAppliance
                 // Switch to eraser
-                if let eraser = operationPanel.items.compactMap({ $0 as? ApplianceItem }).first(where: { $0.identifier == identifierFor(appliance: .ApplianceEraser, withShapeKey: nil)}) {
+                if let eraser = operationPanel.items.compactMap({ $0 as? ApplianceItem }).first(where: { $0.identifier == identifierFor(appliance: .ApplianceEraser, shape: nil)}) {
                     eraser.onClick(eraser.button)
                 }
             }
@@ -136,7 +136,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
                 performShowColorPalette(on: sub)
             } else {
                 // Select to pencil
-                let pencilId = identifierFor(appliance: .AppliancePencil, withShapeKey: nil)
+                let pencilId = identifierFor(appliance: .AppliancePencil, shape: nil)
                 if let pencil = operationPanel.items.first(where: {
                     $0.identifier?.contains(pencilId) ?? false
                 }) {
@@ -260,7 +260,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         if let appliance = appliance {
             operationPanel.updateWithApplianceOutside(appliance, shape: shape)
             
-            let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
+            let identifier = identifierFor(appliance: appliance, shape: shape)
             
             if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) as? ApplianceItem {
                 currentAppliance = item

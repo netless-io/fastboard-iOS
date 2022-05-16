@@ -115,9 +115,7 @@ public class FastRoomControlBar: UIView {
         }
     }
     
-    public init(direction: NSLayoutConstraint.Axis,
-         borderMask: CACornerMask,
-         views: [UIView]) {
+    public init(direction: NSLayoutConstraint.Axis, borderMask: CACornerMask, views: [UIView]) {
         self.direction = direction
         self.borderMask = borderMask
         super.init(frame: .zero)

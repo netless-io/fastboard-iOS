@@ -150,7 +150,7 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         if let appliance = appliance {
             operationPanel.updateWithApplianceOutside(appliance, shape: shape)
             
-            let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
+            let identifier = identifierFor(appliance: appliance, shape: shape)
             if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) {
                 updateDisplayStyleFromNewOperationItem(item)
             }

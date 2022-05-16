@@ -135,7 +135,7 @@ public class FastRoomPanel: NSObject {
     @objc
     public func updateWithApplianceOutside(_ appliance: WhiteApplianceNameKey, shape: WhiteApplianceShapeTypeKey?) {
         deselectAll()
-        let identifier = identifierFor(appliance: appliance, withShapeKey: shape)
+        let identifier = identifierFor(appliance: appliance, shape: shape)
         for item in items {
             if let i = item as? ApplianceItem, i.identifier == identifier {
                 (i.associatedView as? UIButton)?.isSelected = true
