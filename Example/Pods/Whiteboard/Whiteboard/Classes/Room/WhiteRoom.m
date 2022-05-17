@@ -82,6 +82,25 @@
 
 - (void)updateRoomState:(WhiteRoomState *)state {
     [_state yy_modelSetWithJSON:[state yy_modelToJSONObject]];
+    
+    if (state.memberState.currentApplianceName) {
+        [self.applePencilDrawHandler roomApplianceDidUpdate];
+    }
+}
+
+#pragma mark - Apple Pencil
+- (void)setDrawOnlyApplePencil:(BOOL)drawOnlyPencil
+{
+    if (self.applePencilDrawHandler) {
+        self.applePencilDrawHandler.drawOnlyApplePencil = drawOnlyPencil;
+    } else if (drawOnlyPencil && UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        [self prepareForApplePencilDrawOnly];
+    }
+}
+
+- (void)prepareForApplePencilDrawOnly
+{
+    self.applePencilDrawHandler = [[ApplePencilDrawHandler alloc] initWithRoom:self drawOnlyPencil:YES];
 }
 
 #pragma mark - Set Action
@@ -110,6 +129,7 @@
 - (void)disconnect:(void (^ _Nullable) (void))completeHandler
 {
     self.disconnectedBySelf = YES;
+    [self.applePencilDrawHandler recoverApplianceFromTempRemove];
     [self.bridge callHandler:@"room.disconnect" completionHandler:^(id  _Nullable value) {
         if (completeHandler) {
             completeHandler();
@@ -149,6 +169,16 @@
 }
 
 #pragma mark - Scene API
+
+- (void)setPrefersColorScheme:(WhitePrefersColorScheme)colorScheme
+{
+    [self.bridge callHandler:@"room.setPrefersColorScheme" arguments:@[colorScheme]];
+}
+
+- (void)setContainerSizeRatio:(NSNumber *)ratio
+{
+    [self.bridge callHandler:@"room.setContainerSizeRatio" arguments:@[ratio]];
+}
 
 - (void)setWindowManagerWithAttributes:(NSDictionary *)attributes
 {

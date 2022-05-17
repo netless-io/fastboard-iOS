@@ -53,6 +53,7 @@
 #import "WhitePlayerState.h"
 #import "WhitePlayerTimeInfo.h"
 #import "WhiteSDK+Replayer.h"
+#import "ApplePencilDrawHandler.h"
 #import "WhiteBroadcastState.h"
 #import "WhiteImageInformation.h"
 #import "WhiteRoom.h"

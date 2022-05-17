@@ -52,6 +52,15 @@ NS_ASSUME_NONNULL_BEGIN
 /** 连接状态 */
 @property (nonatomic, assign, readonly) WhiteRoomPhase phase;
 
+#pragma mark - Apple Pencil
+
+/**
+ 设置是否只允许ApplePencil涂鸦
+ 
+ 详见 [drawOnlyApplePencil](drawOnlyApplePencil)
+ */
+- (void)setDrawOnlyApplePencil:(BOOL)drawOnlyPencil;
+
 #pragma mark - Set API
 
 /**
@@ -253,6 +262,22 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 页面（场景）管理 API
 
 @interface WhiteRoom (Scene)
+
+/**
+ 多窗口下更新窗口颜色配置
+ 
+ @param colorScheme (WhitePrefersColorScheme)[WhitePrefersColorScheme]
+ */
+- (void)setPrefersColorScheme:(WhitePrefersColorScheme)colorScheme;
+
+/** 暗黑模式, 本地效果， 不会同步到远端， 默认Light, 设置auto只有在iOS13以上才会生效*/
+
+/**
+ 多窗口下更新房间尺寸比例
+ 
+ @param ratio 目标尺寸比例
+ */
+- (void)setContainerSizeRatio:(NSNumber *)ratio;
 
 /**
  为当前的 WindowManger 直接设置attributes

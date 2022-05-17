@@ -1,37 +1,37 @@
 PODS:
   - AgoraFPA_iOS (1.0.0)
-  - Fastboard (1.0.5):
-    - Fastboard/core (= 1.0.5)
-  - Fastboard/core (1.0.5):
-    - Whiteboard (~> 2.16.18)
-  - Fastboard/fpa (1.0.5):
+  - Fastboard (1.0.6):
+    - Fastboard/core (= 1.0.6)
+  - Fastboard/core (1.0.6):
+    - Whiteboard (~> 2.16.21)
+  - Fastboard/fpa (1.0.6):
     - Fastboard/core
     - Whiteboard/fpa
   - Masonry (1.1.0)
   - NTLBridge (3.1.2)
   - SnapKit (5.0.1)
-  - Whiteboard (2.16.18):
-    - Whiteboard/Whiteboard-YYModel (= 2.16.18)
-  - Whiteboard/Base (2.16.18):
+  - Whiteboard (2.16.21):
+    - Whiteboard/Whiteboard-YYModel (= 2.16.21)
+  - Whiteboard/Base (2.16.21):
     - NTLBridge (~> 3.1.2)
     - Whiteboard/Object
-  - Whiteboard/Converter (2.16.18):
+  - Whiteboard/Converter (2.16.21):
     - Whiteboard/Object
-  - Whiteboard/fpa (2.16.18):
+  - Whiteboard/fpa (2.16.21):
     - AgoraFPA_iOS (~> 1.0.0)
     - Whiteboard/Room
-  - Whiteboard/Model (2.16.18):
+  - Whiteboard/Model (2.16.21):
     - YYModel
-  - Whiteboard/NativeReplayer (2.16.18):
+  - Whiteboard/NativeReplayer (2.16.21):
     - Whiteboard/Replayer
-  - Whiteboard/Object (2.16.18):
+  - Whiteboard/Object (2.16.21):
     - Whiteboard/Model
-  - Whiteboard/Replayer (2.16.18):
+  - Whiteboard/Replayer (2.16.21):
     - Whiteboard/Base
-  - Whiteboard/Resource (2.16.18)
-  - Whiteboard/Room (2.16.18):
+  - Whiteboard/Resource (2.16.21)
+  - Whiteboard/Room (2.16.21):
     - Whiteboard/Base
-  - Whiteboard/Whiteboard-YYModel (2.16.18):
+  - Whiteboard/Whiteboard-YYModel (2.16.21):
     - Whiteboard/Converter
     - Whiteboard/NativeReplayer
     - Whiteboard/Resource
@@ -43,8 +43,6 @@ DEPENDENCIES:
   - Fastboard/fpa (from `../`)
   - Masonry
   - SnapKit
-  - Whiteboard (from `https://github.com/netless-io/Whiteboard-iOS`)
-  - Whiteboard/fpa (from `https://github.com/netless-io/Whiteboard-iOS`)
 
 SPEC REPOS:
   trunk:
@@ -52,28 +50,22 @@ SPEC REPOS:
     - Masonry
     - NTLBridge
     - SnapKit
+    - Whiteboard
     - YYModel
 
 EXTERNAL SOURCES:
   Fastboard:
     :path: "../"
-  Whiteboard:
-    :git: https://github.com/netless-io/Whiteboard-iOS
-
-CHECKOUT OPTIONS:
-  Whiteboard:
-    :commit: 55c83c5fe23195f4f2d92f47658ff351952fba97
-    :git: https://github.com/netless-io/Whiteboard-iOS
 
 SPEC CHECKSUMS:
   AgoraFPA_iOS: 2202f574e6832567e368d5e69ad6da121a18ee4a
-  Fastboard: b84579d72e8263351988edbac53faa01b93ab786
+  Fastboard: cd2ed49eb951c7c730e545a328210be1379c2ae9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   NTLBridge: b3433dc0dbe85c803e92a742328dc3119e331ed3
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  Whiteboard: aa3386b6b328f84cbdc03bfebb3b228f6a83f98e
+  Whiteboard: 820bd60c38e91de529a40636a304af9aea1aa1a4
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 9b5fbc792888a54769ad0723dee9d08043309a66
+PODFILE CHECKSUM: c651acd9301c60bb8226ad1643dbc22c37a3cd5e
 
 COCOAPODS: 1.11.3
