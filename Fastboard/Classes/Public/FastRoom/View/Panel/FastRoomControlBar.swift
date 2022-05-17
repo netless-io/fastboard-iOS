@@ -39,10 +39,10 @@ public class FastRoomControlBar: UIView {
     var forceHideButtons: [UIButton] = []
     
     public
-    func forceButtonHide(_ button: UIButton, hide: Bool) {
-        if hide, !forceHideButtons.contains(button) {
+    func forceUpdate(button: UIButton, visible: Bool) {
+        if !visible, !forceHideButtons.contains(button) {
             forceHideButtons.append(button)
-        } else if !hide, forceHideButtons.contains(button) {
+        } else if visible, forceHideButtons.contains(button) {
             forceHideButtons.removeAll(where: { $0 == button })
         }
         updateNarrowStatus()
