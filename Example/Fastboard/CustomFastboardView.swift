@@ -12,7 +12,7 @@ import Fastboard
 import SnapKit
 
 class CustomFastboardOverlay: FastRoomOverlay {
-    func updateRoomPhaseUpdate(_ phase: FastRoomPhase) {}
+    func updateRoomPhase(_ phase: FastRoomPhase) {}
     
     func dismissAllSubPanels() {}
     

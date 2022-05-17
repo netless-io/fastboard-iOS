@@ -37,7 +37,7 @@ public protocol FastRoomOverlay: FastPanelControl {
     
     func updateBoxState(_ state: WhiteWindowBoxState?)
     
-    func updateRoomPhaseUpdate(_ phase: FastRoomPhase)
+    func updateRoomPhase(_ phase: FastRoomPhase)
     
     @available(iOS 12.1, *)
     @objc

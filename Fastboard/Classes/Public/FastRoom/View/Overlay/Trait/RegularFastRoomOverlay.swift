@@ -29,7 +29,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         }
     }
     
-    public func updateRoomPhaseUpdate(_ phase: FastRoomPhase) {
+    public func updateRoomPhase(_ phase: FastRoomPhase) {
         guard RegularFastRoomOverlay.showActivityIndicatorWhenReconnecting else { return }
         switch phase {
         case .reconnecting:

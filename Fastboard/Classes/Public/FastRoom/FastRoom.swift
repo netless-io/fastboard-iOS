@@ -189,7 +189,7 @@ extension FastRoom: WhiteCommonCallbackDelegate {
 extension FastRoom: WhiteRoomCallbackDelegate {
     public func firePhaseChanged(_ phase: WhiteRoomPhase) {
         let fastPhase = FastRoomPhase(rawValue: phase.rawValue) ?? .unknown
-        view.overlay?.updateRoomPhaseUpdate(fastPhase)
+        view.overlay?.updateRoomPhase(fastPhase)
         delegate?.fastboardPhaseDidUpdate(self, phase: fastPhase)
     }
     
