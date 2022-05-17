@@ -231,22 +231,27 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         updateDisplayStyleFromNewOperationItem(item)
     }
     
-    enum DisplayStyle {
-        case all
-        case hideColorShowDelete
-        case hideDeleteShowColor
-        case hideColorAndDelete
+    struct DisplayStyle: OptionSet {
+        typealias RawValue = UInt
+        let rawValue: UInt
+        init(rawValue: UInt) {
+            self.rawValue = rawValue
+        }
+        
+        static let all: DisplayStyle = .init(rawValue: 0)
+        static let hideColor: DisplayStyle = .init(rawValue: 1 << 0)
+        static let hideDelete: DisplayStyle = .init(rawValue: 1 << 1)
     }
     
     func updateDisplayStyleFromNewOperationItem(_ item: FastRoomOperationItem) {
         if !item.needColor, !item.needDelete {
-            displayStyle = .hideColorAndDelete
+            displayStyle = DisplayStyle.hideColor.union(DisplayStyle.hideDelete)
             return
         }
         if item.needColor {
-            displayStyle = .hideDeleteShowColor
+            displayStyle = .hideDelete
         } else if item.needDelete {
-            displayStyle = .hideColorShowDelete
+            displayStyle = .hideColor
         } else {
             displayStyle = .all
         }
@@ -254,24 +259,9 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
     
     func updateDisplayStyle(_ style: DisplayStyle) {
         undoRedoPanel.view?.isHidden = false
-        switch style {
-        case .all:
-            colorAndStrokePanel.view?.isHidden = false
-            operationPanel.view?.isHidden = false
-            deleteSelectionPanel.view?.isHidden = false
-        case .hideColorShowDelete:
-            colorAndStrokePanel.view?.isHidden = true
-            operationPanel.view?.isHidden = false
-            deleteSelectionPanel.view?.isHidden = false
-        case .hideDeleteShowColor:
-            colorAndStrokePanel.view?.isHidden = false
-            operationPanel.view?.isHidden = false
-            deleteSelectionPanel.view?.isHidden = true
-        case .hideColorAndDelete:
-            colorAndStrokePanel.view?.isHidden = true
-            operationPanel.view?.isHidden = false
-            deleteSelectionPanel.view?.isHidden = true
-        }
+        operationPanel.view?.isHidden = false
+        colorAndStrokePanel.view?.isHidden = style.contains(.hideColor)
+        deleteSelectionPanel.view?.isHidden = style.contains(.hideDelete)
     }
     
     var totalPanels: [FastRoomPanel] {
