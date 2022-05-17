@@ -29,9 +29,9 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         }
     }
     
-    public func updateRoomPhase(_ phase: FastRoomPhase) {
+    public func update(roomPhase: FastRoomPhase) {
         guard CompactFastRoomOverlay.showActivityIndicatorWhenReconnecting else { return }
-        switch phase {
+        switch roomPhase {
         case .reconnecting:
             showReconnectingView(true)
         default:
@@ -68,7 +68,7 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         operationRightConstraint = nil
     }
     
-    public func updateBoxState(_ state: WhiteWindowBoxState?) {}
+    public func update(boxState: WhiteWindowBoxState?) {}
     
     var allConstraints: [NSLayoutConstraint] = []
     var operationLeftConstraint: NSLayoutConstraint?
@@ -137,7 +137,7 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         }
     }
     
-    public func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
+    public func initUIWith(appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         if let appliance = appliance {
             operationPanel.updateWithApplianceOutside(appliance, shape: shape)
             
@@ -150,37 +150,37 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         }
     }
     
-    public func updateStrokeColor(_ color: UIColor) {
-        colorAndStrokePanel.updateSelectedColor(color)
+    public func update(strokeColor: UIColor) {
+        colorAndStrokePanel.updateSelectedColor(strokeColor)
     }
     
-    public func updateStrokeWidth(_ width: Float) {
-        colorAndStrokePanel.updateStrokeWidth(width)
+    public func update(strokeWidth: Float) {
+        colorAndStrokePanel.updateStrokeWidth(strokeWidth)
     }
     
-    public func updatePageState(_ state: WhitePageState) {
+    public func update(pageState: WhitePageState) {
         if let label = scenePanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.pageIndicator)!.identifier })?.associatedView as? UILabel {
-            label.text = "\(state.index + 1) / \(state.length)"
+            label.text = "\(pageState.index + 1) / \(pageState.length)"
             scenePanel.view?.invalidateIntrinsicContentSize()
         }
         if let last = scenePanel.items.first(where: {
             $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.previousPage)!.identifier
         }) {
-            (last.associatedView as? UIButton)?.isEnabled = state.index > 0
+            (last.associatedView as? UIButton)?.isEnabled = pageState.index > 0
         }
         if let next = scenePanel.items.first(where: {
             $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.nextPage)!.identifier
         }) {
-            (next.associatedView as? UIButton)?.isEnabled = state.index + 1 < state.length
+            (next.associatedView as? UIButton)?.isEnabled = pageState.index + 1 < pageState.length
         }
     }
     
-    public func updateUndoEnable(_ enable: Bool) {
-        undoRedoPanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.undo)!.identifier })?.setEnable(enable)
+    public func update(undoEnable: Bool) {
+        undoRedoPanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.undo)!.identifier })?.setEnable(undoEnable)
     }
     
-    public func updateRedoEnable(_ enable: Bool) {
-        undoRedoPanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.redo)!.identifier })?.setEnable(enable)
+    public func update(redoEnable: Bool) {
+        undoRedoPanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.redo)!.identifier })?.setEnable(redoEnable)
     }
     
     public func setAllPanel(hide: Bool) {

@@ -12,31 +12,31 @@ import Fastboard
 import SnapKit
 
 class CustomFastboardOverlay: FastRoomOverlay {
-    func updateRoomPhase(_ phase: FastRoomPhase) {}
+    func update(roomPhase: FastRoomPhase) {}
     
     func dismissAllSubPanels() {}
     
     func invalidAllLayout() {}
     
-    func updateBoxState(_ state: WhiteWindowBoxState?) {}
+    func update(boxState: WhiteWindowBoxState?) {}
     
     func updateControlBarLayout(direction: OperationBarDirection) {}
     
-    func updateUIWithInitAppliance(_ appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
+    func initUIWith(appliance: WhiteApplianceNameKey?, shape: WhiteApplianceShapeTypeKey?) {
         if let appliance = appliance {
             operationsPanel.updateWithApplianceOutside(appliance, shape: shape)
         }
     }
     
-    func updateStrokeColor(_ color: UIColor) {}
+    func update(strokeColor: UIColor) {}
     
-    func updateStrokeWidth(_ width: Float) {}
+    func update(strokeWidth: Float) {}
     
-    func updatePageState(_ state: WhitePageState) {}
+    func update(pageState: WhitePageState) {}
     
-    func updateUndoEnable(_ enable: Bool) {}
+    func update(undoEnable: Bool) {}
     
-    func updateRedoEnable(_ enable: Bool) {}
+    func update(redoEnable: Bool) {}
     
     func itemWillBeExecution(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {}
     

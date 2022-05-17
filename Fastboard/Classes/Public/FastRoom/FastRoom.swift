@@ -122,24 +122,24 @@ public class FastRoom: NSObject {
     func initStateAfterJoinRoom() {
         guard let state = room?.state else { return }
         if let appliance = state.memberState?.currentApplianceName {
-            view.overlay?.updateUIWithInitAppliance(appliance, shape: state.memberState?.shapeType)
+            view.overlay?.initUIWith(appliance: appliance, shape: state.memberState?.shapeType)
         } else {
-            view.overlay?.updateUIWithInitAppliance(nil, shape: nil)
+            view.overlay?.initUIWith(appliance: nil, shape: nil)
         }
         
-        view.overlay?.updateBoxState(state.windowBoxState)
+        view.overlay?.update(boxState: state.windowBoxState)
         
         if let pageState = state.pageState {
-            view.overlay?.updatePageState(pageState)
+            view.overlay?.update(pageState: pageState)
         }
         
         if let strokeWidth = state.memberState?.strokeWidth?.floatValue {
-            view.overlay?.updateStrokeWidth(strokeWidth)
+            view.overlay?.update(strokeWidth: strokeWidth)
         }
         
         if let nums = state.memberState?.strokeColor {
             let color = UIColor.init(numberArray: nums)
-            view.overlay?.updateStrokeColor(color)
+            view.overlay?.update(strokeColor: color)
         }
     }
     
@@ -189,7 +189,7 @@ extension FastRoom: WhiteCommonCallbackDelegate {
 extension FastRoom: WhiteRoomCallbackDelegate {
     public func firePhaseChanged(_ phase: WhiteRoomPhase) {
         let fastPhase = FastRoomPhase(rawValue: phase.rawValue) ?? .unknown
-        view.overlay?.updateRoomPhase(fastPhase)
+        view.overlay?.update(roomPhase: fastPhase)
         delegate?.fastboardPhaseDidUpdate(self, phase: fastPhase)
     }
     
@@ -198,10 +198,10 @@ extension FastRoom: WhiteRoomCallbackDelegate {
             view.pencilHandler?.roomApplianceDidUpdate()
         }
         if let pageState = modifyState.pageState {
-            view.overlay?.updatePageState(pageState)
+            view.overlay?.update(pageState: pageState)
         }
         if let boxState = modifyState.windowBoxState {
-            view.overlay?.updateBoxState(boxState)
+            view.overlay?.update(boxState: boxState)
         }
     }
     
@@ -214,10 +214,10 @@ extension FastRoom: WhiteRoomCallbackDelegate {
     }
     
     public func fireCanUndoStepsUpdate(_ canUndoSteps: Int) {
-        view.overlay?.updateUndoEnable(canUndoSteps > 0)
+        view.overlay?.update(undoEnable: canUndoSteps > 0)
     }
     
     public func fireCanRedoStepsUpdate(_ canRedoSteps: Int) {
-        view.overlay?.updateRedoEnable(canRedoSteps > 0)
+        view.overlay?.update(redoEnable: canRedoSteps > 0)
     }
 }
