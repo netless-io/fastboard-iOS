@@ -8,9 +8,10 @@
 
 import UIKit
 
-let controlHeight = CGFloat(44)
-let controlWidth = CGFloat(166)
-let margin = CGFloat(3)
+let minMargin: CGFloat = 3
+let controlHeight: CGFloat = 44
+let minControlWidth: CGFloat = 150
+let maxControlWidth: CGFloat = 166
 
 class ExampleItem {
     internal init(title: String, status: String? = nil, enable: Bool = true, clickBlock: ((ExampleItem) -> Void)? = nil) {
@@ -36,21 +37,21 @@ class ExampleControlView: UICollectionView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let count: CGFloat
-        if bounds.width > bounds.height {
-            count = 5
-        } else {
-            count = 3
-        }
-        let m = (count - 1) * margin
-        let width = (bounds.width - m) / count
-        layout.minimumLineSpacing = margin
-        layout.minimumInteritemSpacing = margin
-        if width > controlWidth {
-            layout.itemSize = CGSize(width: width, height: controlHeight)
-        } else {
-            layout.itemSize = CGSize(width: controlWidth, height: controlHeight)
-        }
+        guard !bounds.isEmpty else { return }
+        let suitableRows: [CGFloat] = [5, 4, 3, 2]
+        let numberPerRow = suitableRows.first { r in
+            let minWidth = minControlWidth * r
+            let minMargin = minMargin * (r + 1)
+            let estimateMinWidth = minWidth + minMargin
+            return estimateMinWidth <= bounds.width
+        }!
+        
+        let totalMargin = (numberPerRow - 1) * minMargin
+        let estimateWidth = (bounds.width - totalMargin) / numberPerRow
+        layout.minimumLineSpacing = minMargin
+        layout.minimumInteritemSpacing = minMargin
+        let width = estimateWidth >= maxControlWidth ? maxControlWidth : estimateWidth
+        layout.itemSize = CGSize(width: width, height: controlHeight)
         
         layout.scrollDirection = bounds.height <= controlHeight ? .horizontal : .vertical
     }

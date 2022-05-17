@@ -43,7 +43,7 @@ extension WhiteApplianceShapeTypeKey: CaseIterable {
 
 class ViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        .landscape
+        .all
     }
     
     var fastRoom: FastRoom!
@@ -102,15 +102,32 @@ class ViewController: UIViewController {
         let fastRoomView = fastRoom.view
         view.autoresizesSubviews = true
         view.addSubview(fastRoomView)
+        let leftGuide = UILayoutGuide()
+        let rightGuide = UILayoutGuide()
+        view.addLayoutGuide(leftGuide)
+        view.addLayoutGuide(rightGuide)
+        leftGuide.snp.makeConstraints { make in
+            make.left.top.bottom.equalToSuperview()
+        }
+        rightGuide.snp.makeConstraints { make in
+            make.right.top.bottom.equalToSuperview()
+            make.left.equalTo(fastRoomView.snp.right)
+            make.width.equalTo(leftGuide)
+            make.width.greaterThanOrEqualTo(0)
+        }
         fastRoomView.snp.makeConstraints { make in
+            make.left.equalTo(leftGuide.snp.right)
             if #available(iOS 11.0, *) {
                 make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(44)
             } else {
                 make.top.equalToSuperview().inset(44)
             }
-            make.left.right.equalToSuperview().inset(88)
+            make.width.greaterThanOrEqualTo(144)
+            make.height.lessThanOrEqualToSuperview().inset(90)
             make.height.equalTo(fastRoomView.snp.width).multipliedBy(1 / Fastboard.globalFastboardRatio)
         }
+        fastRoomView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
         let activity: UIActivityIndicatorView
         if #available(iOS 13.0, *) {
             activity = UIActivityIndicatorView(activityIndicatorStyle: .medium)
@@ -118,7 +135,7 @@ class ViewController: UIViewController {
             activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         }
         fastRoomView.addSubview(activity)
-        activity.snp.makeConstraints { $0.edges.equalToSuperview() }
+        activity.snp.makeConstraints { $0.center.equalToSuperview() }
         activity.startAnimating()
         exampleControlView.isHidden = true
         mediaControlView.isHidden = true

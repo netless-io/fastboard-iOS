@@ -13,8 +13,10 @@ class ControlCell: UICollectionViewCell {
         super.awakeFromNib()
         clipsToBounds = true
         layer.cornerRadius = 4
+        
+        controlTitleLabel.adjustsFontSizeToFitWidth = true
+        controlTitleLabel.minimumScaleFactor = 0.5
     }
-
     
     @IBOutlet weak var controlStatusLabel: UILabel!
     @IBOutlet weak var controlTitleLabel: UILabel!

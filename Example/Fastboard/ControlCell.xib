@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,23 +12,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ControlCell" customModule="Fastboard_Example" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="385" height="142"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="385" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="D9T-Da-dXr">
-                        <rect key="frame" x="187.5" y="74" width="10" height="38"/>
+                        <rect key="frame" x="4" y="74" width="312" height="38"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPd-Wd-Kz9">
-                                <rect key="frame" x="0.0" y="0.0" width="10" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPd-Wd-Kz9">
+                                <rect key="frame" x="0.0" y="0.0" width="312" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyy-uZ-KCz">
-                                <rect key="frame" x="0.0" y="23.5" width="10" height="14.5"/>
+                                <rect key="frame" x="0.0" y="23.5" width="312" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="systemBlueColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,6 +41,7 @@
             <color key="backgroundColor" systemColor="systemGray4Color"/>
             <constraints>
                 <constraint firstItem="D9T-Da-dXr" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="DwG-Xu-zit"/>
+                <constraint firstItem="YPd-Wd-Kz9" firstAttribute="width" relation="lessThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="width" constant="-8" id="FmR-zB-vbn"/>
                 <constraint firstItem="D9T-Da-dXr" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="dAo-sp-gli"/>
             </constraints>
             <size key="customSize" width="385" height="142"/>
@@ -48,7 +49,7 @@
                 <outlet property="controlStatusLabel" destination="Vyy-uZ-KCz" id="OR6-AM-03R"/>
                 <outlet property="controlTitleLabel" destination="YPd-Wd-Kz9" id="yBi-Ey-4MQ"/>
             </connections>
-            <point key="canvasLocation" x="-207" y="-5"/>
+            <point key="canvasLocation" x="-499" y="-11"/>
         </collectionViewCell>
     </objects>
     <resources>
