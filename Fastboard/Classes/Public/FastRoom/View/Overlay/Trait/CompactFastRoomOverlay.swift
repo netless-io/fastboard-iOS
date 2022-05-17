@@ -82,55 +82,46 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
                                                direction: .horizontal)
         let sceneView = scenePanel.setup(room: room,
                                          direction: .horizontal)
-        fastboardView.addSubview(colorView)
-        fastboardView.addSubview(operationView)
-        fastboardView.addSubview(deleteView)
-        fastboardView.addSubview(undoRedoView)
-        fastboardView.addSubview(sceneView)
+        let opViews = [
+            colorView,
+            operationView,
+            deleteView,
+            undoRedoView,
+            sceneView
+        ]
+        opViews.forEach {
+            fastboardView.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         let margin: CGFloat = 8
-        
         operationLeftConstraint = operationView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin)
         operationRightConstraint = operationView.rightAnchor.constraint(equalTo: fastboardView.whiteboardView.rightAnchor, constant: -margin)
         let operationC0 = operationView.centerYAnchor.constraint(equalTo: fastboardView.whiteboardView.centerYAnchor)
-        operationC0.isActive = true
-        operationView.translatesAutoresizingMaskIntoConstraints = false
-        
         let colorC0 = colorView.rightAnchor.constraint(equalTo: operationView.rightAnchor)
-        colorC0.isActive = true
         let colorC1 = colorView.bottomAnchor.constraint(equalTo: operationView.topAnchor, constant: -margin)
-        colorC1.isActive = true
-        colorView.translatesAutoresizingMaskIntoConstraints = false
-        
         let deleteC0 = deleteView.rightAnchor.constraint(equalTo: colorView.rightAnchor)
-        deleteC0.isActive = true
         let deleteC1 = deleteView.bottomAnchor.constraint(equalTo: colorView.bottomAnchor)
-        deleteC1.isActive = true
-        deleteView.translatesAutoresizingMaskIntoConstraints = false
-        
         let undoRedoC0 = undoRedoView.leftAnchor.constraint(equalTo: fastboardView.whiteboardView.leftAnchor, constant: margin)
-        undoRedoC0.isActive = true
         let undoRedoC1 = undoRedoView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin)
-        undoRedoC1.isActive = true
-        undoRedoView.translatesAutoresizingMaskIntoConstraints = false
-        
         let sceneC0 = sceneView.centerXAnchor.constraint(equalTo: fastboardView.whiteboardView.centerXAnchor)
-        sceneC0.isActive = true
         let sceneC1 = sceneView.bottomAnchor.constraint(equalTo: fastboardView.whiteboardView.bottomAnchor, constant: -margin)
-        sceneC1.isActive = true
-        sceneView.translatesAutoresizingMaskIntoConstraints = false
         
-        allConstraints.append(operationLeftConstraint!)
-        allConstraints.append(operationRightConstraint!)
-        allConstraints.append(operationC0)
-        allConstraints.append(colorC0)
-        allConstraints.append(colorC1)
-        allConstraints.append(deleteC0)
-        allConstraints.append(deleteC1)
-        allConstraints.append(undoRedoC0)
-        allConstraints.append(undoRedoC1)
-        allConstraints.append(sceneC0)
-        allConstraints.append(sceneC1)
+        let generatedConstraints = [
+            operationLeftConstraint!,
+            operationRightConstraint!,
+            operationC0,
+            colorC0,
+            colorC1,
+            deleteC0,
+            deleteC1,
+            undoRedoC0,
+            undoRedoC1,
+            sceneC0,
+            sceneC1
+        ]
+        generatedConstraints.forEach { $0.isActive = true }
+        allConstraints.append(contentsOf: generatedConstraints)
         
         updateControlBarLayout(direction: direction)
     }
