@@ -200,7 +200,7 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         panels.values.forEach { $0.setItemHide(fromKey: item, hide: hide)}
     }
     
-    public func itemWillBeExecution(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {
+    public func itemWillBeExecuted(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {
         if item is SubOpsItem {
             // Hide all the other subPanels
             panels.forEach { $0.value.dismissAllSubPanels(except: item)}

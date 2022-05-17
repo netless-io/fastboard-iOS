@@ -81,7 +81,7 @@ public class FastRoomPanel: NSObject {
         if let strokeWidth = item as? SliderOperationItem {
             updateStrokeWidth(strokeWidth.value)
         }
-        delegate?.itemWillBeExecution(fastPanel: self, item: item)
+        delegate?.itemWillBeExecuted(fastPanel: self, item: item)
     }
     
     /// - Parameter except: The operation's associate view will not be dismissed

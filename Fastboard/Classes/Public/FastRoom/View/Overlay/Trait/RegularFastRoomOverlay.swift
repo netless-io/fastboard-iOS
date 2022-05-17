@@ -321,7 +321,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         panels.values.forEach { $0.setItemHide(fromKey: item, hide: hide)}
     }
     
-    public func itemWillBeExecution(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {
+    public func itemWillBeExecuted(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {
         if let appliance = item as? ApplianceItem {
             currentAppliance = appliance
         } else if let sub = item as? SubOpsItem, sub.containsSelectableAppliance {
