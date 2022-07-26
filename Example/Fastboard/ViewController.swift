@@ -70,13 +70,13 @@ class ViewController: UIViewController {
             
         }
         				
-        guard let youtubeJs = Bundle.main.url(forResource: "plyr.iife", withExtension: "js")
-        else { return }
-        let youtubeJsCode = try! String(contentsOf: youtubeJs)
-        let youtubeParams = WhiteRegisterAppParams(javascriptString: youtubeJsCode, kind: "Plyr", variable: "NetlessAppPlyr.default")
-        fastRoom.whiteSDK.registerApp(with: youtubeParams) { error in
-            
-        }
+//        guard let youtubeJs = Bundle.main.url(forResource: "plyr.iife", withExtension: "js")
+//        else { return }
+//        let youtubeJsCode = try! String(contentsOf: youtubeJs)
+//        let youtubeParams = WhiteRegisterAppParams(javascriptString: youtubeJsCode, kind: "Plyr", variable: "NetlessAppPlyr.default")
+//        fastRoom.whiteSDK.registerApp(with: youtubeParams) { error in
+//            
+//        }
     }
     
     func setupFastboard(custom: FastRoomOverlay? = nil) {
