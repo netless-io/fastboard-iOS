@@ -55,6 +55,7 @@ public class FastRoomConfiguration: NSObject {
         windowParas.chessboard = false
         windowParas.containerSizeRatio = NSNumber(value: 1 / Fastboard.globalFastboardRatio)
         wrc.windowParams = windowParas
+        wrc.disableEraseImage = true
         whiteRoomConfig = wrc
         super.init()
     }
