@@ -337,6 +337,12 @@ class ViewController: UIViewController {
         }
     }
     
+    var hideAllPanel = false {
+        didSet {
+            fastRoom.view.overlay?.setAllPanel(hide: hideAllPanel)
+        }
+    }
+    
     lazy var exampleItems: [ExampleItem] = {
         var array: [ExampleItem] = [
             .init(title: NSLocalizedString("Reset", comment: ""), status: nil, clickBlock: { [unowned self] _ in
@@ -471,6 +477,10 @@ class ViewController: UIViewController {
                         make.bottom.centerX.equalTo(self.fastRoom.view.whiteboardView)
                     })
                 }
+            }),
+            .init(title: NSLocalizedString("Hide All Panel", comment: ""), status: NSLocalizedString(self.hideAllPanel ? "On" : "Off", comment: ""), enable: true, clickBlock: { [unowned self] item in
+                self.hideAllPanel = !self.hideAllPanel
+                item.status = NSLocalizedString(self.hideAllPanel ? "On" : "Off", comment: "")
             })
         ]
         if #available(iOS 13.0, *) {
