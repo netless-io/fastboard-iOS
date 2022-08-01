@@ -85,9 +85,15 @@ public class FastRoom: NSObject {
     
     @objc
     public func updateWritable(_ writable: Bool, completion: ((Error?)->Void)?) {
-        room?.setWritable(writable, completionHandler: { [weak room] success, error in
+        room?.setWritable(writable, completionHandler: { [weak room, weak self] success, error in
             if success, writable {
                 room?.disableSerialization(false)
+                
+                // Get latest color when set writable true
+                if writable, let colorNumbers = room?.state.memberState?.strokeColor {
+                    let color = UIColor.init(numberArray: colorNumbers)
+                    self?.view.overlay?.update(strokeColor: color)
+                }
             }
             completion?(error)
         })
