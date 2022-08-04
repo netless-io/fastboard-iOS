@@ -4,6 +4,43 @@
 #import "InternalApis.h"
 #import <objc/message.h>
 
+
+@protocol ScriptDelegate <NSObject>
+
+-(NSString *)call:(NSString*) method :(NSString*) argStr;
+
+@end
+
+@interface InternalScriptsHandler : NSObject<WKScriptMessageHandler>
+
+@property (nonatomic, weak) id<ScriptDelegate> handler;
+
+@end
+
+@implementation InternalScriptsHandler
+
+- (instancetype)initWithHandler:(id<ScriptDelegate>)handler {
+    self = [super init];
+    if (self) {
+        _handler = handler;
+    }
+    return self;
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
+{
+    NSDictionary *dict = message.body;
+    if ([dict isKindOfClass:[NSDictionary class]]) {
+        NSString *method = dict[@"method"];
+        NSString *arg = dict[@"arg"];
+        if (self.handler && method && arg) {
+            [self.handler call:method :arg];
+        }
+    }
+}
+
+@end
+
 @implementation DWKWebView
 {
     void (^alertHandler)(void);
@@ -43,10 +80,14 @@
     isDebug=false;
     dialogTextDic=@{};
     
+    InternalScriptsHandler *internal = [[InternalScriptsHandler alloc] initWithHandler:(id<ScriptDelegate>)self];
+    
     WKUserScript *script = [[WKUserScript alloc] initWithSource:@"window._dswk=true;"
                                                   injectionTime:WKUserScriptInjectionTimeAtDocumentStart
                                                forMainFrameOnly:YES];
+    
     [configuration.userContentController addUserScript:script];
+    [configuration.userContentController addScriptMessageHandler:internal name:@"asyncBridge"];
     self = [super initWithFrame:frame configuration: configuration];
     if (self) {
         super.UIDelegate=self;
@@ -109,6 +150,21 @@ completionHandler:(void (^)(NSString * _Nullable result))completionHandler
             [alert show];
         }
     }
+}
+
+- (WKNavigation *)loadData:(NSData *)data MIMEType:(NSString *)MIMEType characterEncodingName:(NSString *)characterEncodingName baseURL:(NSURL *)baseURL {
+    [self resetCallInfoList];
+    return [super loadData:data MIMEType:MIMEType characterEncodingName:characterEncodingName baseURL:baseURL];
+}
+
+- (WKNavigation *)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
+    [self resetCallInfoList];
+    return [super loadHTMLString:string baseURL:baseURL];
+}
+
+- (WKNavigation *)loadRequest:(NSURLRequest *)request {
+    [self resetCallInfoList];
+    return [super loadRequest:request];
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message
@@ -330,6 +386,10 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completi
 
 - (void)setDebugMode:(bool)debug{
     isDebug=debug;
+}
+
+- (void)resetCallInfoList {
+    callInfoList = [NSMutableArray array];
 }
 
 - (void)loadUrl: (NSString *)url
