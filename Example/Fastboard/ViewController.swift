@@ -282,7 +282,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var defaultPadItems = RegularFastRoomOverlay.customOptionPanel
+    var defaultPadItems = RegularFastRoomOverlay.customOperationPanel
     var usingCustomPadItems = false {
         didSet {
             if usingCustomPadItems {
@@ -292,11 +292,11 @@ class ViewController: UIViewController {
                 items.append(FastRoomDefaultOperationItem.selectableApplianceItem(.AppliancePencil, shape: nil))
                 items.append(FastRoomDefaultOperationItem.clean())
                 let panel = FastRoomPanel(items: items)
-                RegularFastRoomOverlay.customOptionPanel = {
+                RegularFastRoomOverlay.customOperationPanel = {
                     return panel
                 }
             } else {
-                RegularFastRoomOverlay.customOptionPanel = defaultPadItems
+                RegularFastRoomOverlay.customOperationPanel = defaultPadItems
             }
             reloadFastboard(overlay: nil)
             exampleItems.first(where: { $0.title == NSLocalizedString("Update Pad Items", comment: "") })?.status = NSLocalizedString(usingCustomPadItems ? "On" : "Off", comment: "")

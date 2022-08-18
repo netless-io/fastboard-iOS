@@ -154,7 +154,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
     }
     
     @objc
-    public static var customOptionPanel: (()->FastRoomPanel)?
+    public static var customOperationPanel: (()->FastRoomPanel)?
     
     @objc
     public static var shapeItems: [FastRoomOperationItem] = [
@@ -427,7 +427,7 @@ extension RegularFastRoomOverlay {
     }
     
     func createOperationPanel() -> FastRoomPanel {
-        if let panel = RegularFastRoomOverlay.customOptionPanel?() {
+        if let panel = RegularFastRoomOverlay.customOperationPanel?() {
             panel.delegate = self
             return panel
         }
