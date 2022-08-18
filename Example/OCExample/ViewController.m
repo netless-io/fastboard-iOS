@@ -184,7 +184,7 @@
     [items addObject:[FastRoomDefaultOperationItem selectableApplianceItem:AppliancePencil shape:nil]];
     [items addObject:[FastRoomDefaultOperationItem clean]];
     FastRoomPanel* panel = [[FastRoomPanel alloc] initWithItems:items];
-    RegularFastRoomOverlay.customOptionPanel = ^FastRoomPanel * _Nonnull{
+    RegularFastRoomOverlay.customOperationPanel = ^FastRoomPanel * _Nonnull{
         return panel;
     };
     [self reloadFastboardOverlay:nil];

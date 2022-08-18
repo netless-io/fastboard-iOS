@@ -426,12 +426,7 @@ extension RegularFastRoomOverlay {
         return panel
     }
     
-    func createOperationPanel() -> FastRoomPanel {
-        if let panel = RegularFastRoomOverlay.customOperationPanel?() {
-            panel.delegate = self
-            return panel
-        }
-        
+    public static var defaultOperationPanelItems: [FastRoomOperationItem] {
         var shapeOps: [FastRoomOperationItem] = RegularFastRoomOverlay.shapeItems
         shapeOps.append(FastRoomDefaultOperationItem.strokeWidthItem())
         shapeOps.append(contentsOf: FastRoomDefaultOperationItem.defaultColorItems())
@@ -459,7 +454,16 @@ extension RegularFastRoomOverlay {
             shapes,
             FastRoomDefaultOperationItem.clean()
         ]
-        let panel = FastRoomPanel(items: ops)
+        return ops
+    }
+    
+    func createOperationPanel() -> FastRoomPanel {
+        if let panel = RegularFastRoomOverlay.customOperationPanel?() {
+            panel.delegate = self
+            return panel
+        }
+        
+        let panel = FastRoomPanel(items: Self.defaultOperationPanelItems)
         panel.delegate = self
         return panel
     }
