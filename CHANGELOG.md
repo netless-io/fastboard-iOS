@@ -1,5 +1,10 @@
 # ChangeLog
 
+## [1.0.9] - 2022-08-18
+### 升级
+- `Whiteboard`升级到2.16.36
+### 优化
+- `RegularFastRoomOverlay` 增加属性暴露，便于修改样式
 ## [1.0.8] - 2022-08-01
 ### 升级
 - `Whiteboard`升级到2.16.30
