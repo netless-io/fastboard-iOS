@@ -234,13 +234,15 @@ class ViewController: UIViewController {
                                                borderColor: .clear,
                                                effectStyle: .init(style: .regular))
                 let panel = FastRoomPanelItemAssets(normalIconColor: .white,
-                                            selectedIconColor: .init(hexString: customColor.selColor),
-                                            selectedIconBgColor: .init(hexString: customColor.iconSelectedBgColor),
-                                            highlightColor: .init(hexString: customColor.highlightColor),
-                                            highlightBgColor: .clear,
-                                            disableColor: UIColor.gray.withAlphaComponent(0.7),
-                                            subOpsIndicatorColor: .white,
-                                            pageTextLabelColor: .white)
+                                                    selectedIconColor: .init(hexString: customColor.selColor),
+                                                    selectedIconBgColor: .init(hexString: customColor.iconSelectedBgColor),
+                                                    highlightColor: .init(hexString: customColor.highlightColor),
+                                                    highlightBgColor: .clear,
+                                                    disableColor: UIColor.gray.withAlphaComponent(0.7),
+                                                    subOpsIndicatorColor: .white,
+                                                    pageTextLabelColor: .white,
+                                                    selectedBackgroundCornerradius: 0,
+                                                    selectedBackgroundEdgeinset: .zero)
                 let theme = FastRoomThemeAsset(whiteboardAssets: white,
                                        controlBarAssets: control,
                                        panelItemAssets: panel)

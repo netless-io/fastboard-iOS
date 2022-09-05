@@ -150,13 +150,15 @@
                                  effectStyle:[UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular]];
     
     FastRoomPanelItemAssets* panel = [[FastRoomPanelItemAssets alloc] initWithNormalIconColor:UIColor.whiteColor
-                                   selectedIconColor:[[UIColor alloc] initWithHexString:customColor.selColor]
-                                 selectedIconBgColor:[[UIColor alloc] initWithHexString:customColor.iconSelectedBgColor]
-                                      highlightColor:[[UIColor alloc] initWithHexString:customColor.highlightColor]
-                                    highlightBgColor:UIColor.clearColor
-                                        disableColor:[UIColor.grayColor colorWithAlphaComponent:0.7]
-                                subOpsIndicatorColor:UIColor.whiteColor
-                                  pageTextLabelColor:UIColor.whiteColor];
+                                                                            selectedIconColor:[[UIColor alloc] initWithHexString:customColor.selColor]
+                                                                          selectedIconBgColor:[[UIColor alloc] initWithHexString:customColor.iconSelectedBgColor]
+                                                                               highlightColor:[[UIColor alloc] initWithHexString:customColor.highlightColor]
+                                                                             highlightBgColor:UIColor.clearColor
+                                                                                 disableColor:[UIColor.grayColor colorWithAlphaComponent:0.7]
+                                                                         subOpsIndicatorColor:UIColor.whiteColor
+                                                                           pageTextLabelColor:UIColor.whiteColor
+                                                               selectedBackgroundCornerradius:0
+                                                                  selectedBackgroundEdgeinset:UIEdgeInsetsZero];
     FastRoomThemeAsset* asset = [[FastRoomThemeAsset alloc] initWithWhiteboardAssets:white
                                                     controlBarAssets:control
                                                      panelItemAssets:panel];
