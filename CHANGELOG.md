@@ -1,5 +1,8 @@
 # ChangeLog
 
+## [1.0.10] - 2022-09-05
+### 新增
+- `FastRoomPanelItemAsset` 新增 `selectedBackgroundCornerradius` 和 `selectedBackgroundEdgeinset` 参数。 对应选中状态的背景圆角和背景内边距。从 1.1.0 以下的用户迁移来可以设置该值为 0 和 UIEdgeInsetsZero
 ## [1.0.9] - 2022-08-18
 ### 升级
 - `Whiteboard`升级到2.16.36
