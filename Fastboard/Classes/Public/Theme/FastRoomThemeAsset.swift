@@ -88,13 +88,13 @@ open class FastRoomControlBarAssets: NSObject {
     }
     
     @objc
-    var backgroundColor: UIColor
+    open var backgroundColor: UIColor
     
     @objc
-    var borderColor: UIColor
+    open var borderColor: UIColor
     
     @objc
-    var effectStyle: UIBlurEffect?
+    open var effectStyle: UIBlurEffect?
 }
 
 /// Represents fastboard theme style
