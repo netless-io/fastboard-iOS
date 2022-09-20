@@ -1,5 +1,7 @@
 # ChangeLog
 
+## [2.0.0-alpha.0] - 2022-09-20
+- 升级 `Whiteboard` 到 2.17.0-alpha.2
 ## [1.1.1] - 2022-09-19
 ### 新增
 - `FastRoomControlBarAssets` 新增 `open` 属性 `backgroundColor` 、 `borderColor` 和 `effectStyle`
