@@ -154,7 +154,7 @@ public class FastRoomPanelItemButton: UIButton {
             setImage(image, for: state)
         } else {
             let image = rawImage.redraw(drawColor, backgroundColor: backgroundColor, cornerRadius: cornerRadius, backgroundEdgeInset: inset)
-            setImage(image.redraw(drawColor), for: state)
+            setImage(image, for: state)
         }
     }
     

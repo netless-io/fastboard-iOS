@@ -2,6 +2,9 @@
 
 ## [2.0.0-alpha.0] - 2022-09-20
 - 升级 `Whiteboard` 到 2.17.0-alpha.2
+## [1.1.2] - 2022-09-21
+### 修复
+- iOS 13 以前设置教具背景色显示错误
 ## [1.1.1] - 2022-09-19
 ### 新增
 - `FastRoomControlBarAssets` 新增 `open` 属性 `backgroundColor` 、 `borderColor` 和 `effectStyle`
