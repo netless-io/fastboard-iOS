@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Fastboard'
-  s.version          = '2.0.0-alpha.1'
+  s.version          = '2.0.0-alpha.2'
   s.summary          = 'Quickly create a whiteboard interface for iOS'
 
   s.description      = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'core' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard', '~> 2.17.0-alhpa.2'
+    core.dependency 'Whiteboard', '~> 2.17.0-alhpa.4'
     core.exclude_files = 'Fastboard/Classes/FPA/*'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'core-YYKit' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard/Whiteboard-YYKit', '~> 2.17.0-alhpa.2'
+    core.dependency 'Whiteboard/Whiteboard-YYKit', '~> 2.17.0-alhpa.4'
     core.exclude_files = 'Fastboard/Classes/FPA/*'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
