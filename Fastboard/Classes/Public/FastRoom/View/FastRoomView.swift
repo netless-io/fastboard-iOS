@@ -43,16 +43,7 @@ public class FastRoomView: UIView, FastPanelControl {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        // Try fill width first
-        var width = bounds.width
-        var height = width / Fastboard.globalFastboardRatio
-        if height > bounds.height {
-            height = bounds.height
-            width = Fastboard.globalFastboardRatio * height
-        }
-        let x = (bounds.width - width) / 2
-        let y = (bounds.height - height) / 2
-        whiteboardView.frame = .init(x: x, y: y, width: width, height: height)
+        whiteboardView.frame = bounds
     }
     
     @objc
