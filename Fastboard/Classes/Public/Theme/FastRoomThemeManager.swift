@@ -14,13 +14,16 @@ public class FastRoomThemeManager: NSObject {
     @objc
     public static let shared = FastRoomThemeManager()
     
+    private(set) var currentThemeAsset: FastRoomThemeAsset
+    
     private override init() {
-        super.init()
         if #available(iOS 13.0, *) {
-            apply(FastRoomDefaultTheme.defaultAutoTheme)
+            self.currentThemeAsset = FastRoomDefaultTheme.defaultAutoTheme
         } else {
-            apply(FastRoomDefaultTheme.defaultLightTheme)
+            self.currentThemeAsset = FastRoomDefaultTheme.defaultLightTheme
         }
+        super.init()
+        apply(self.currentThemeAsset)
     }
     
     /// You should call it before fastboard create
@@ -29,9 +32,10 @@ public class FastRoomThemeManager: NSObject {
         iconsBundle = bundle
     }
     
+    // TODO: preferredColor scheme and telebox theme can't change in room
     @objc
     public func apply(_ theme: FastRoomThemeAsset) {
-        updateFastboard(theme.whiteboardAssets)
+        self.currentThemeAsset = theme
         updateControlBar(theme.controlBarAssets)
         updatePanelItem(theme.panelItemAssets)
         
@@ -51,13 +55,6 @@ public class FastRoomThemeManager: NSObject {
         
         UIImageView.appearance(whenContainedInInstancesOf: [FastRoomPanelItemButton.self]).tintColor = asset.subOpsIndicatorColor
         PageIndicatorLabel.appearance().configurableTextColor = asset.pageTextLabelColor
-    }
-    
-    @objc
-    func updateFastboard(_ asset: FastRoomWhiteboardAssets) {
-        WhiteBoardView.appearance().backgroundColor = asset.whiteboardBackgroundColor
-        FastRoomView.appearance().backgroundColor = asset.containerColor
-        WhiteBoardView.appearance().themeBgColor = asset.whiteboardBackgroundColor
     }
     
     @objc

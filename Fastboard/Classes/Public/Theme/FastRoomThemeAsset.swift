@@ -6,21 +6,7 @@
 //
 
 import UIKit
-
-/// Represents whiteboard theme style
-open class FastRoomWhiteboardAssets: NSObject {
-    @objc
-    public init(whiteboardBackgroundColor: UIColor, containerColor: UIColor) {
-        self.whiteboardBackgroundColor = whiteboardBackgroundColor
-        self.containerColor = containerColor
-    }
-    
-    @objc
-    open var whiteboardBackgroundColor: UIColor
-    
-    @objc
-    open var containerColor: UIColor
-}
+import Whiteboard
 
 /// Represents panelItem theme style
 open class FastRoomPanelItemAssets: NSObject {
@@ -100,20 +86,23 @@ open class FastRoomControlBarAssets: NSObject {
 /// Represents fastboard theme style
 open class FastRoomThemeAsset: NSObject {
     @objc
-    public init(whiteboardAssets: FastRoomWhiteboardAssets,
-                controlBarAssets: FastRoomControlBarAssets,
-                panelItemAssets: FastRoomPanelItemAssets) {
-        self.whiteboardAssets = whiteboardAssets
+    public init(controlBarAssets: FastRoomControlBarAssets,
+                panelItemAssets: FastRoomPanelItemAssets,
+                preferredColorScheme: WhitePrefersColorScheme?,
+                teleboxTheme: WhiteTeleBoxManagerThemeConfig?) {
         self.controlBarAssets = controlBarAssets
         self.panelItemAssets = panelItemAssets
+        self.preferredColorScheme = preferredColorScheme
+        self.teleboxTheme = teleboxTheme
     }
-    
-    @objc
-    open var whiteboardAssets: FastRoomWhiteboardAssets
     
     @objc
     open var controlBarAssets: FastRoomControlBarAssets
     
     @objc
     open var panelItemAssets: FastRoomPanelItemAssets
+    
+    var preferredColorScheme: WhitePrefersColorScheme?
+    
+    var teleboxTheme: WhiteTeleBoxManagerThemeConfig?
 }

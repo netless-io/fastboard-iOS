@@ -52,9 +52,14 @@ public class FastRoomConfiguration: NSObject {
         let wrc = WhiteRoomConfig(uuid: roomUUID, roomToken: roomToken, uid: userUID)
         wrc.disableNewPencil = false
         let windowParas = WhiteWindowParams()
-        windowParas.chessboard = false
         windowParas.containerSizeRatio = NSNumber(value: 1 / Fastboard.globalFastboardRatio)
         wrc.windowParams = windowParas
+        if let scheme = FastRoomThemeManager.shared.currentThemeAsset.preferredColorScheme {
+            wrc.windowParams?.prefersColorScheme = scheme
+        }
+        if let teleboxTheme = FastRoomThemeManager.shared.currentThemeAsset.teleboxTheme {
+            wrc.windowParams?.theme = teleboxTheme
+        }
         wrc.disableEraseImage = true
         whiteRoomConfig = wrc
         super.init()

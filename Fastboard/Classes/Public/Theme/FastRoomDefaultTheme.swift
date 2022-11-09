@@ -11,9 +11,7 @@ import UIKit
 public class FastRoomDefaultTheme: NSObject {
     @objc
     public class var defaultLightTheme: FastRoomThemeAsset {
-        FastRoomThemeAsset(whiteboardAssets: FastRoomWhiteboardAssets(whiteboardBackgroundColor: .white,
-                                                      containerColor: .white),
-                   controlBarAssets: FastRoomControlBarAssets(backgroundColor: .white,
+        FastRoomThemeAsset(controlBarAssets: FastRoomControlBarAssets(backgroundColor: .white,
                                                       borderColor: .init(hexString: "#E5E8F0")),
                    panelItemAssets: .init(normalIconColor: .init(hexString: "#5D6066"),
                                           selectedIconColor: .init(hexString: "#3381FF"),
@@ -24,14 +22,14 @@ public class FastRoomDefaultTheme: NSObject {
                                           subOpsIndicatorColor: .init(hexString: "#5D6066"),
                                           pageTextLabelColor: .init(hexString: "#5D6066"),
                                           selectedBackgroundCornerradius: 0,
-                                          selectedBackgroundEdgeinset: .zero))
+                                          selectedBackgroundEdgeinset: .zero),
+                           preferredColorScheme: .light,
+                           teleboxTheme: nil)
     }
     
     @objc
     public static var defaultDarkTheme: FastRoomThemeAsset {
-        FastRoomThemeAsset(whiteboardAssets: FastRoomWhiteboardAssets(whiteboardBackgroundColor: .init(hexString: "#14181E"),
-                                                      containerColor: .init(hexString: "#14181E")),
-                   controlBarAssets: FastRoomControlBarAssets(backgroundColor: .init(hexString: "#14181E"),
+        FastRoomThemeAsset(controlBarAssets: FastRoomControlBarAssets(backgroundColor: .init(hexString: "#14181E"),
                                                       borderColor: .init(hexString: "#5D6066")),
                    panelItemAssets: .init(normalIconColor: .init(hexString: "#999CA3"),
                                           selectedIconColor: .init(hexString: "#2867CC"),
@@ -42,13 +40,14 @@ public class FastRoomDefaultTheme: NSObject {
                                           subOpsIndicatorColor: .init(hexString: "#999CA3"),
                                           pageTextLabelColor: .init(hexString: "#999CA3"),
                                           selectedBackgroundCornerradius: 0,
-                                          selectedBackgroundEdgeinset: .zero))
+                                          selectedBackgroundEdgeinset: .zero),
+                           preferredColorScheme: .dark,
+                           teleboxTheme: nil)
     }
     
     @available(iOS 13, *)
     @objc
     public static var defaultAutoTheme: FastRoomThemeAsset {
-        let fastAsset = FastRoomWhiteboardAssets(whiteboardBackgroundColor: .systemBackground, containerColor: .secondarySystemBackground)
         let controlBarAssets = FastRoomControlBarAssets(backgroundColor: .clear, borderColor: .separator, effectStyle: .init(style: .systemMaterial))
         let panelItemAssets = FastRoomPanelItemAssets(normalIconColor: .init(dynamicProvider: { c in
             if c.userInterfaceStyle == .dark {
@@ -100,9 +99,10 @@ public class FastRoomDefaultTheme: NSObject {
             }
         }), selectedBackgroundCornerradius: 0, selectedBackgroundEdgeinset: .zero)
         
-        return FastRoomThemeAsset(whiteboardAssets: fastAsset,
-                   controlBarAssets: controlBarAssets,
-                          panelItemAssets: panelItemAssets
-        )
+        return FastRoomThemeAsset(
+            controlBarAssets: controlBarAssets,
+            panelItemAssets: panelItemAssets,
+            preferredColorScheme: .auto,
+            teleboxTheme: nil)
     }
 }
