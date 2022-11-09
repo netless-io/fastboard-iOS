@@ -1,6 +1,5 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/Whiteboard
-EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/NTLBridge" "${PODS_CONFIGURATION_BUILD_DIR}/YYModel" "${PODS_ROOT}/AgoraFPA_iOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "AgoraFPA" -framework "AgoraFpaProxyService" -framework "CoreFoundation" -framework "Foundation" -framework "NTLBridge" -framework "UIKit" -framework "WebKit" -framework "YYModel"

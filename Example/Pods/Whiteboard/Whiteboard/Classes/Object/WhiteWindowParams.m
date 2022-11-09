@@ -7,6 +7,9 @@
 
 #import "WhiteWindowParams.h"
 
+WhiteTeleBoxFullscreen const WhiteTeleBoxFullscreenNoTitleBar = @"no-titlebar";
+WhiteTeleBoxFullscreen const WhiteTeleBoxFullscreenAlwaysTitleBar = @"always-titlebar";
+
 WhitePrefersColorScheme const WhitePrefersColorSchemeAuto = @"auto";
 WhitePrefersColorScheme const WhitePrefersColorSchemeLight = @"light";
 WhitePrefersColorScheme const WhitePrefersColorSchemeDark = @"dark";
@@ -15,10 +18,10 @@ WhitePrefersColorScheme const WhitePrefersColorSchemeDark = @"dark";
 
 - (instancetype)init {
     self = [super init];
-    _chessboard = YES;
     _containerSizeRatio = @(9/16.0);
     _debug = YES;
     _prefersColorScheme = WhitePrefersColorSchemeLight;
+    _scrollVerticalOnly = FALSE;
     return self;
 }
 

@@ -140,9 +140,6 @@
 }
 
 - (void)onUserTheme {
-    FastRoomWhiteboardAssets* white = [[FastRoomWhiteboardAssets alloc]
-                               initWithWhiteboardBackgroundColor:UIColor.whiteColor
-                               containerColor:UIColor.grayColor];
     CustomColor* customColor = [OCBridge getCustomColor];
     FastRoomControlBarAssets* control = [[FastRoomControlBarAssets alloc]
                                  initWithBackgroundColor:[[UIColor alloc] initWithHexString:customColor.controlBarBg]
@@ -159,9 +156,10 @@
                                                                            pageTextLabelColor:UIColor.whiteColor
                                                                selectedBackgroundCornerradius:0
                                                                   selectedBackgroundEdgeinset:UIEdgeInsetsZero];
-    FastRoomThemeAsset* asset = [[FastRoomThemeAsset alloc] initWithWhiteboardAssets:white
-                                                    controlBarAssets:control
-                                                     panelItemAssets:panel];
+    FastRoomThemeAsset* asset = [[FastRoomThemeAsset alloc] initWithControlBarAssets:control
+                                                                     panelItemAssets:panel
+                                                                preferredColorScheme:WhitePrefersColorSchemeLight
+                                                                        teleboxTheme:nil];
     [FastRoomThemeManager.shared apply:asset];
 }
 

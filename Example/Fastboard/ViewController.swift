@@ -228,8 +228,6 @@ class ViewController: UIViewController {
                 FastRoomControlBar.appearance().itemWidth = 26
                 FastRoomControlBar.appearance().commonRadius = 4
                 FastRoomPanelItemButton.appearance().indicatorInset = .init(top: 0, left: 0, bottom: 3, right: 3)
-                let white = FastRoomWhiteboardAssets(whiteboardBackgroundColor: .white,
-                                             containerColor: .gray)
                 let control = FastRoomControlBarAssets(backgroundColor: .init(hexString: customColor.controlBarBg),
                                                borderColor: .clear,
                                                effectStyle: .init(style: .regular))
@@ -243,9 +241,13 @@ class ViewController: UIViewController {
                                                     pageTextLabelColor: .white,
                                                     selectedBackgroundCornerradius: 0,
                                                     selectedBackgroundEdgeinset: .zero)
-                let theme = FastRoomThemeAsset(whiteboardAssets: white,
-                                       controlBarAssets: control,
-                                       panelItemAssets: panel)
+                let teleboxTheme = WhiteTeleBoxManagerThemeConfig()
+                teleboxTheme.managerContainerBackground = "red"
+                teleboxTheme.managerStageBackground = "purple"
+                let theme = FastRoomThemeAsset(controlBarAssets: control,
+                                               panelItemAssets: panel,
+                                               preferredColorScheme: .light,
+                                               teleboxTheme: teleboxTheme)
                 FastRoomThemeManager.shared.apply(theme)
             } else {
                 FastRoomPanelItemButton.appearance().indicatorInset = .init(top: 0, left: 0, bottom: 8, right: 8)
