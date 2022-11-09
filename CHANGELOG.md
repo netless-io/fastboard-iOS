@@ -1,5 +1,9 @@
 # ChangeLog
 
+## [2.0.0-alpha.3] - 2022-11-09
+- 修改 ThemeAsset 配置方式
+## [2.0.0-alpha.2] - 2022-09-28
+- WhiteboardView 填充 FastboardView
 ## [2.0.0-alpha.1] - 2022-09-20
 - 合并 1.1.2
 ## [2.0.0-alpha.0] - 2022-09-20
