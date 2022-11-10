@@ -246,7 +246,7 @@ class ViewController: UIViewController {
                 teleboxTheme.managerStageBackground = "purple"
                 let theme = FastRoomThemeAsset(controlBarAssets: control,
                                                panelItemAssets: panel,
-                                               preferredColorScheme: .light,
+                                               prefersColorScheme: .light,
                                                teleboxTheme: teleboxTheme)
                 FastRoomThemeManager.shared.apply(theme)
             } else {

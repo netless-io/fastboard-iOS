@@ -156,10 +156,13 @@
                                                                            pageTextLabelColor:UIColor.whiteColor
                                                                selectedBackgroundCornerradius:0
                                                                   selectedBackgroundEdgeinset:UIEdgeInsetsZero];
+    WhiteTeleBoxManagerThemeConfig* teleboxThemeConfig = [WhiteTeleBoxManagerThemeConfig new];
+    teleboxThemeConfig.managerStageBackground = @"red";
+    teleboxThemeConfig.managerContainerBackground = @"purple";
     FastRoomThemeAsset* asset = [[FastRoomThemeAsset alloc] initWithControlBarAssets:control
                                                                      panelItemAssets:panel
-                                                                preferredColorScheme:WhitePrefersColorSchemeLight
-                                                                        teleboxTheme:nil];
+                                                                  prefersColorScheme:WhitePrefersColorSchemeLight
+                                                                        teleboxTheme:teleboxThemeConfig];
     [FastRoomThemeManager.shared apply:asset];
 }
 
