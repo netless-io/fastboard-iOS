@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Fastboard'
-  s.version          = '2.0.0-alpha.3'
+  s.version          = '2.0.0-alpha.4'
   s.summary          = 'Quickly create a whiteboard interface for iOS'
 
   s.description      = <<-DESC
