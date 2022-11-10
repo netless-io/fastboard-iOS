@@ -54,7 +54,7 @@ public class FastRoomConfiguration: NSObject {
         let windowParas = WhiteWindowParams()
         windowParas.containerSizeRatio = NSNumber(value: 1 / Fastboard.globalFastboardRatio)
         wrc.windowParams = windowParas
-        if let scheme = FastRoomThemeManager.shared.currentThemeAsset.preferredColorScheme {
+        if let scheme = FastRoomThemeManager.shared.currentThemeAsset.prefersColorScheme {
             wrc.windowParams?.prefersColorScheme = scheme
         }
         if let teleboxTheme = FastRoomThemeManager.shared.currentThemeAsset.teleboxTheme {

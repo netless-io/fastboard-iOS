@@ -124,6 +124,17 @@ public class FastRoom: NSObject {
         }
     }
     
+    // MARK: - Notification
+    @objc func onThemeManagerTeleBoxThemeUpdate(_ notification: Notification) {
+        guard let theme = notification.userInfo?["theme"] as? WhiteTeleBoxManagerThemeConfig else { return }
+        room?.setTeleBoxTheme(theme)
+    }
+    
+    @objc func onThemeManagerPrefersSchemeUpdate(_ notification: Notification) {
+        guard let scheme = notification.userInfo?["scheme"] as? WhitePrefersColorScheme else { return }
+        room?.setPrefersColorScheme(scheme)
+    }
+    
     // MARK: - Private
     func initStateAfterJoinRoom() {
         guard let state = room?.state else { return }
@@ -180,6 +191,8 @@ public class FastRoom: NSObject {
         if !view.traitCollection.hasCompact {
             self.prepareForSystemPencilBehavior()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(onThemeManagerPrefersSchemeUpdate), name: prefersSchemeUpdateNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onThemeManagerTeleBoxThemeUpdate), name: teleboxThemeUpdateNotificationName, object: nil)
     }
 }
 

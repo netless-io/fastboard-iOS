@@ -8,6 +8,9 @@
 import UIKit
 import Whiteboard
 
+let prefersSchemeUpdateNotificationName = Notification.Name("prefersSchemeUpdateNotificationName")
+let teleboxThemeUpdateNotificationName = Notification.Name("teleboxThemeUpdateNotificationName")
+
 /// Manage the fastboard theme style
 @objc
 public class FastRoomThemeManager: NSObject {
@@ -32,12 +35,14 @@ public class FastRoomThemeManager: NSObject {
         iconsBundle = bundle
     }
     
-    // TODO: preferredColor scheme and telebox theme can't change in room
     @objc
     public func apply(_ theme: FastRoomThemeAsset) {
         self.currentThemeAsset = theme
         updateControlBar(theme.controlBarAssets)
         updatePanelItem(theme.panelItemAssets)
+        
+        NotificationCenter.default.post(name: prefersSchemeUpdateNotificationName, object: nil, userInfo: ["scheme": theme.prefersColorScheme as Any])
+        NotificationCenter.default.post(name: teleboxThemeUpdateNotificationName, object: nil, userInfo: ["theme": theme.teleboxTheme as Any])
         
         AppearanceManager.shared.commitUpdate()
     }

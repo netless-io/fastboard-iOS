@@ -88,11 +88,11 @@ open class FastRoomThemeAsset: NSObject {
     @objc
     public init(controlBarAssets: FastRoomControlBarAssets,
                 panelItemAssets: FastRoomPanelItemAssets,
-                preferredColorScheme: WhitePrefersColorScheme?,
+                prefersColorScheme: WhitePrefersColorScheme?,
                 teleboxTheme: WhiteTeleBoxManagerThemeConfig?) {
         self.controlBarAssets = controlBarAssets
         self.panelItemAssets = panelItemAssets
-        self.preferredColorScheme = preferredColorScheme
+        self.prefersColorScheme = prefersColorScheme
         self.teleboxTheme = teleboxTheme
     }
     
@@ -102,7 +102,7 @@ open class FastRoomThemeAsset: NSObject {
     @objc
     open var panelItemAssets: FastRoomPanelItemAssets
     
-    var preferredColorScheme: WhitePrefersColorScheme?
+    var prefersColorScheme: WhitePrefersColorScheme?
     
     var teleboxTheme: WhiteTeleBoxManagerThemeConfig?
 }
