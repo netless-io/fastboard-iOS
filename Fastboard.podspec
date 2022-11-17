@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'core' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard', '~> 2.17.0-alhpa.9'
+    core.dependency 'Whiteboard', '~> 2.17.0-alhpa.12'
     core.exclude_files = 'Fastboard/Classes/FPA/*'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'core-YYKit' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard/Whiteboard-YYKit', '~> 2.17.0-alhpa.9'
+    core.dependency 'Whiteboard/Whiteboard-YYKit', '~> 2.17.0-alhpa.12'
     core.exclude_files = 'Fastboard/Classes/FPA/*'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
