@@ -1,5 +1,7 @@
 # ChangeLog
 
+## [2.0.0-alpha.5] - 2022-11-17
+- 将 `drawOnlyPencil` 的实现逻辑移到 `Whiteboard` 中
 ## [2.0.0-alpha.4] - 2022-11-10
 - 更新 ThemeAsset 配置方式
 ## [2.0.0-alpha.3] - 2022-11-09
