@@ -14,20 +14,13 @@ extension FastRoom {
         // Pencil stuff
         updateIfFollowSystemPencilBehavior(FastRoom.followSystemPencilBehavior)
         NotificationCenter.default.addObserver(self, selector: #selector(pencilFollowBehaviorDidChange), name: pencilBehaviorUpdateNotificationName, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onWillResignActiveNotification), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onDidBecomeActiveNotification), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     @objc func onDidBecomeActiveNotification() {
         if #available(iOS 13.0, *) {
-            if view.isPencilDrawOnly != UIPencilInteraction.prefersPencilOnlyDrawing {
-                view.isPencilDrawOnly = UIPencilInteraction.prefersPencilOnlyDrawing
-            }
+            room?.setDrawOnlyApplePencil(UIPencilInteraction.prefersPencilOnlyDrawing)
         }
-    }
-    
-    @objc func onWillResignActiveNotification() {
-        view.pencilHandler?.recoverApplianceFromTempRemove()
     }
     
     @objc
@@ -38,7 +31,7 @@ extension FastRoom {
     fileprivate func updateIfFollowSystemPencilBehavior(_ follow: Bool) {
         if #available(iOS 12.1, *) {
             if #available(iOS 13.0, *) {
-                view.isPencilDrawOnly = follow ? UIPencilInteraction.prefersPencilOnlyDrawing : false
+                room?.setDrawOnlyApplePencil(follow ? UIPencilInteraction.prefersPencilOnlyDrawing : false)
             }
             if follow {
                 if !view.interactions.contains(where: { $0 is UIPencilInteraction }) {

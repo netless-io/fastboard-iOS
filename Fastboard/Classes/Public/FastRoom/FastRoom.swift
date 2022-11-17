@@ -42,7 +42,7 @@ public class FastRoom: NSObject {
             }
             initStateAfterJoinRoom()
             if !view.traitCollection.hasCompact {
-                view.prepareForPencil()
+                self.prepareForSystemPencilBehavior()
             }
         }
     }
@@ -79,7 +79,6 @@ public class FastRoom: NSObject {
     
     @objc
     public func disconnectRoom() {
-        view.pencilHandler?.recoverApplianceFromTempRemove()
         room?.disconnect(nil)
     }
     
@@ -188,9 +187,6 @@ public class FastRoom: NSObject {
                                 config: sdkConfig,
                                 commonCallbackDelegate: self.sdkDelegateProxy)
         self.whiteSDK = whiteSDK
-        if !view.traitCollection.hasCompact {
-            self.prepareForSystemPencilBehavior()
-        }
         NotificationCenter.default.addObserver(self, selector: #selector(onThemeManagerPrefersSchemeUpdate), name: prefersSchemeUpdateNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onThemeManagerTeleBoxThemeUpdate), name: teleboxThemeUpdateNotificationName, object: nil)
     }
@@ -213,9 +209,6 @@ extension FastRoom: WhiteRoomCallbackDelegate {
     }
     
     public func fireRoomStateChanged(_ modifyState: WhiteRoomState!) {
-        if let _ = modifyState.memberState {
-            view.pencilHandler?.roomApplianceDidUpdate()
-        }
         if let pageState = modifyState.pageState {
             view.overlay?.update(pageState: pageState)
         }
