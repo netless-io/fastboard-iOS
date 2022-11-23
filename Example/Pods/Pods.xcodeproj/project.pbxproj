@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = AgoraFPA_iOS;
+			productName = AgoraFPA_iOS;
 		};
 /* End PBXAggregateTarget section */
 
@@ -182,6 +183,7 @@
 		85B82EC2FDC2405FE8C51FF4C8557098 /* NTLBridge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D51B296104E5A91D99A3C54300489578 /* NTLBridge-dummy.m */; };
 		85FE3C3027E7EAEBC34A928C963771A2 /* WhiteRoomCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = DF389CCEFC182BF8F839BDB13C8EC3C3 /* WhiteRoomCallbacks.m */; };
 		89E7104642F3DE37AC85B2A9CF07F9A4 /* SyncedStore+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 16639110747198754B1BDC9C71F6D31A /* SyncedStore+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		8AA268EB292DC7190065FC3C /* FastUserPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA268EA292DC7190065FC3C /* FastUserPayload.swift */; };
 		8AE868BC3E2E6FC92F4717835180C47D /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 560607EEF06B88CE4CACC1A9E7D64CE3 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B8F8F669C8E473795B99943CD313049 /* WhiteConversionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBD42B8C9CAACBA8D9841871C295BC0 /* WhiteConversionInfo.m */; };
 		8C079048B6329D8E21BB8F249FC57600 /* WhiteSocket+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = A39694B17C1B08A8958E9879A2E1F9DD /* WhiteSocket+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -530,7 +532,7 @@
 		24F3312C994F06FA82D7745CE00BEBC1 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		251724E0661720E734381070B07E0A07 /* WhiteCameraConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCameraConfig.h; path = Whiteboard/Classes/Object/WhiteCameraConfig.h; sourceTree = "<group>"; };
 		2560AE9D6F5C22F70298CBF5786C276D /* FastRoomThemeAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomThemeAsset.swift; sourceTree = "<group>"; };
-		256BBFB594AEB0CDD70A302AFF004BC3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		256BBFB594AEB0CDD70A302AFF004BC3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		26911041170C8033FA660201992221D0 /* NSObject+YYModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYModel.h"; path = "YYModel/NSObject+YYModel.h"; sourceTree = "<group>"; };
 		28C73E8F4BA1BC401672A0EB1B03588D /* WhiteBoardView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteBoardView.h; path = Whiteboard/Classes/Displayer/WhiteBoardView.h; sourceTree = "<group>"; };
 		2935EBAF951CC891398D50F026C002B7 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Sources/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
@@ -612,12 +614,12 @@
 		5E2254B95D0435248980A7A61A86BDAD /* NTLBridge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NTLBridge.modulemap; sourceTree = "<group>"; };
 		5E608D3F5F5ADFD37BB33E980C0CACD1 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Sources/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		5F485E81D529E3C25BB41AFCFD68283F /* Whiteboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Whiteboard.modulemap; sourceTree = "<group>"; };
-		5F48FE8E641E1D74447D71FFC360CE3C /* Fastboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Fastboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5F48FE8E641E1D74447D71FFC360CE3C /* Fastboard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Fastboard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5FD2793A6DEA6E8FEFE27E7CB34629FA /* Pods-Fastboard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Fastboard_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6029D797524C2838561F02AD8033CE4F /* Pods-Fastboard_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Fastboard_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		605FFD4F8583BED987B7BB65F7D1B2EA /* WhiteAudioMixerBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteAudioMixerBridge.h; path = Whiteboard/Classes/Displayer/WhiteAudioMixerBridge.h; sourceTree = "<group>"; };
-		611F9CB400DA149DD90C9B896EF166DF /* e20587c */ = {isa = PBXFileReference; includeInIndex = 1; name = e20587c; path = Whiteboard/Resource/e20587c; sourceTree = "<group>"; };
-		6225D4E0B390ED7F32D7445DCB729340 /* video.b3db6331.js */ = {isa = PBXFileReference; includeInIndex = 1; name = video.b3db6331.js; path = Whiteboard/Resource/video.b3db6331.js; sourceTree = "<group>"; };
+		611F9CB400DA149DD90C9B896EF166DF /* e20587c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = e20587c; path = Whiteboard/Resource/e20587c; sourceTree = "<group>"; };
+		6225D4E0B390ED7F32D7445DCB729340 /* video.b3db6331.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = video.b3db6331.js; path = Whiteboard/Resource/video.b3db6331.js; sourceTree = "<group>"; };
 		6265F5ABDCC56AC1754FE9D6F4F5E014 /* FastboardPencilDrawHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastboardPencilDrawHandler.swift; sourceTree = "<group>"; };
 		63DB6D03F7B67BBBB9827AEC255FB8AE /* FastRoomDefaultOperationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomDefaultOperationType.swift; sourceTree = "<group>"; };
 		64786D8C01824461F0CB7FD6B443702F /* WhiteObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteObject.h; path = Whiteboard/Classes/Model/WhiteObject.h; sourceTree = "<group>"; };
@@ -632,7 +634,7 @@
 		6C8A763ADA49D6AE7DB0822298699AA8 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6DEF8E240C1E5BC836EF3F2E5B83E2F0 /* FastRoomConfiguration+FPA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FastRoomConfiguration+FPA.swift"; path = "Fastboard/Classes/FPA/FastRoomConfiguration+FPA.swift"; sourceTree = "<group>"; };
 		6E179665E7B0A247C4E6FDA34FA0F085 /* Appearancemanager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Appearancemanager.swift; sourceTree = "<group>"; };
-		6E6C2AC50B22DA62CF5E8711B94D737E /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = Whiteboard/Resource/index.html; sourceTree = "<group>"; };
+		6E6C2AC50B22DA62CF5E8711B94D737E /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = index.html; path = Whiteboard/Resource/index.html; sourceTree = "<group>"; };
 		6F3DE6EEAFE999286AB24587B567D8FB /* Pods-OCExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OCExample-dummy.m"; sourceTree = "<group>"; };
 		6F4AECCD3CAE99CA6D2AA8600CC0D2C1 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		713DF293B1ED8FE9A986FA04604EABC4 /* WhiteCombinePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteCombinePlayer.h; path = Whiteboard/Classes/NativeReplayer/WhiteCombinePlayer.h; sourceTree = "<group>"; };
@@ -640,7 +642,7 @@
 		72799C9EB97F089CED67E88B2722DA07 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		72BCA5F924F04A78BF751B01CE92DE43 /* WhiteBoardView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteBoardView.m; path = Whiteboard/Classes/Displayer/WhiteBoardView.m; sourceTree = "<group>"; };
 		751A083B245673EE24C9835F5353170D /* WritableDetectRoom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WritableDetectRoom.h; path = Whiteboard/Classes/Room/WritableDetectRoom.h; sourceTree = "<group>"; };
-		75A92922DBF5D43888ED9A1C632AE4FC /* vendor.cf7bef63.js */ = {isa = PBXFileReference; includeInIndex = 1; name = vendor.cf7bef63.js; path = Whiteboard/Resource/vendor.cf7bef63.js; sourceTree = "<group>"; };
+		75A92922DBF5D43888ED9A1C632AE4FC /* vendor.cf7bef63.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = vendor.cf7bef63.js; path = Whiteboard/Resource/vendor.cf7bef63.js; sourceTree = "<group>"; };
 		75F1CD2F10734256D419677E5D18CA51 /* WhiteDisplayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteDisplayer.m; path = Whiteboard/Classes/Displayer/WhiteDisplayer.m; sourceTree = "<group>"; };
 		76CC7320A62D90CD2191ACCF66CBC196 /* WhitePageState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePageState.h; path = Whiteboard/Classes/Object/WhitePageState.h; sourceTree = "<group>"; };
 		774A30C8B073EB4E72B22FF7DFD6D389 /* WhiteConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConverter.h; path = Whiteboard/Classes/Converter/V4/WhiteConverter.h; sourceTree = "<group>"; };
@@ -667,15 +669,16 @@
 		8886126ED01B879B913FD90246A0FA17 /* WhiteSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSDK.h; path = Whiteboard/Classes/SDK/WhiteSDK.h; sourceTree = "<group>"; };
 		8916E2CF99878351CDE7E49FC3D23F76 /* WhiteFPA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteFPA.m; path = Whiteboard/Classes/fpa/WhiteFPA.m; sourceTree = "<group>"; };
 		89C5F76A5FFD94A7DF36A073E4692607 /* WhiteBroadcastState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteBroadcastState.h; path = Whiteboard/Classes/Room/WhiteBroadcastState.h; sourceTree = "<group>"; };
-		89E50098A2E9FEC3F1B15F2D44DED3A5 /* netless.67923822.js */ = {isa = PBXFileReference; includeInIndex = 1; name = netless.67923822.js; path = Whiteboard/Resource/netless.67923822.js; sourceTree = "<group>"; };
+		89E50098A2E9FEC3F1B15F2D44DED3A5 /* netless.67923822.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = netless.67923822.js; path = Whiteboard/Resource/netless.67923822.js; sourceTree = "<group>"; };
 		8A1E36EA8D0FAE9BCAD7A2E90C69AF4A /* WhiteCameraConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraConfig.m; path = Whiteboard/Classes/Object/WhiteCameraConfig.m; sourceTree = "<group>"; };
+		8AA268EA292DC7190065FC3C /* FastUserPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastUserPayload.swift; sourceTree = "<group>"; };
 		8C653BCF7CD5D48059D7F2CF24C93E79 /* WhitePlayerConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerConfig.h; path = Whiteboard/Classes/Replayer/WhitePlayerConfig.h; sourceTree = "<group>"; };
 		8C9E8EB4258C48D99B836CAFBA4CA2CD /* WhiteConversionInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConversionInfo.h; path = Whiteboard/Classes/Converter/V4/WhiteConversionInfo.h; sourceTree = "<group>"; };
 		8DF75ACBC13BA182DDB49B968482BDDE /* WhiteSDK.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSDK.m; path = Whiteboard/Classes/SDK/WhiteSDK.m; sourceTree = "<group>"; };
 		8E0DAC553CE2F15A23FF33A28DA96A2B /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Sources/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		8E30A4C411938E96D7014FD1F5506164 /* WhiteCommonCallbacks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCommonCallbacks.m; path = Whiteboard/Classes/Displayer/WhiteCommonCallbacks.m; sourceTree = "<group>"; };
 		8E7C5D566DE21269B4CD95C84085E7ED /* FastRoomConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomConfiguration.swift; sourceTree = "<group>"; };
-		8F05E31B37EB74C6083AA97C6330BC48 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; name = main.css; path = Whiteboard/Resource/main.css; sourceTree = "<group>"; };
+		8F05E31B37EB74C6083AA97C6330BC48 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = main.css; path = Whiteboard/Resource/main.css; sourceTree = "<group>"; };
 		900F0BE8E3CBB5B5C778B9F5BD2A8D68 /* FastRoomThemeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomThemeManager.swift; sourceTree = "<group>"; };
 		903501BA85952554EB38C09B7DD68575 /* WhitePageState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePageState.m; path = Whiteboard/Classes/Object/WhitePageState.m; sourceTree = "<group>"; };
 		92842DC65A4EE2E5A0E11A62B49986FA /* Fastboard-Icons */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Fastboard-Icons"; path = Icons.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -695,14 +698,14 @@
 		9BC72F2517EF732FD235F5D3ED7E402B /* RegularFastRoomOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegularFastRoomOverlay.swift; sourceTree = "<group>"; };
 		9C12C80AEFEB18802C19AB018A0D66D0 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Sources/Debugging.swift; sourceTree = "<group>"; };
 		9D3B03594693F2AFB1CE2062D9BB909D /* Fastboard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Fastboard-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E63ED506287E9188E37373367E5BEAF /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		9E87B2C7D43141E490D72BF932107592 /* WhiteAppParam.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteAppParam.h; path = Whiteboard/Classes/Object/WhiteAppParam.h; sourceTree = "<group>"; };
 		9EFE8FD3F59AE8F024BB672100D49EF4 /* Whiteboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Whiteboard.release.xcconfig; sourceTree = "<group>"; };
 		9F4F9B4BA15F8270590FA456A5B67B42 /* WhiteRectangleConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteRectangleConfig.h; path = Whiteboard/Classes/Object/WhiteRectangleConfig.h; sourceTree = "<group>"; };
 		9F583BA5F2EC38845172CF4A8E68ACEA /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Sources/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		A005DA9FD8D49FC1E69838CD3C2A5176 /* UIImage+Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Bundle.swift"; sourceTree = "<group>"; };
-		A07498006F7DA51951FF78B4C8E909D0 /* web-sdk.f46031ce.js */ = {isa = PBXFileReference; includeInIndex = 1; name = "web-sdk.f46031ce.js"; path = "Whiteboard/Resource/web-sdk.f46031ce.js"; sourceTree = "<group>"; };
+		A07498006F7DA51951FF78B4C8E909D0 /* web-sdk.f46031ce.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = "web-sdk.f46031ce.js"; path = "Whiteboard/Resource/web-sdk.f46031ce.js"; sourceTree = "<group>"; };
 		A1F996F8652236F96D5C2BF6267CEC21 /* WhiteConverterV5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteConverterV5.h; path = Whiteboard/Classes/Converter/V5/WhiteConverterV5.h; sourceTree = "<group>"; };
 		A2435C66BB71E8846621E511D0033580 /* WhitePlayerEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhitePlayerEvent.m; path = Whiteboard/Classes/Replayer/WhitePlayerEvent.m; sourceTree = "<group>"; };
 		A3746A25B70E59E039A5F2E43A02EEB6 /* Whiteboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Whiteboard-prefix.pch"; sourceTree = "<group>"; };
@@ -722,7 +725,7 @@
 		ADD6456863DF9B90C3AC761285409DB0 /* WhiteSliderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteSliderView.h; path = Whiteboard/Classes/NativeReplayer/WhiteSliderView.h; sourceTree = "<group>"; };
 		AE956ACCEE0032CD838EBAF5D5C0A4AA /* YYModel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YYModel-Info.plist"; sourceTree = "<group>"; };
 		AF42F0616B47439E7604C4C1F4E39541 /* WhiteGlobalState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteGlobalState.h; path = Whiteboard/Classes/Displayer/WhiteGlobalState.h; sourceTree = "<group>"; };
-		AFB049A198588306F69E3701A0D89A30 /* netless.css */ = {isa = PBXFileReference; includeInIndex = 1; name = netless.css; path = Whiteboard/Resource/netless.css; sourceTree = "<group>"; };
+		AFB049A198588306F69E3701A0D89A30 /* netless.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = netless.css; path = Whiteboard/Resource/netless.css; sourceTree = "<group>"; };
 		B0CD83EDBD8551DFF9E0A53CCFCD0541 /* FastRoomDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FastRoomDelegate.swift; sourceTree = "<group>"; };
 		B0D05C978497D6C14286C53784B4B6C5 /* Pods-OCExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OCExample-umbrella.h"; sourceTree = "<group>"; };
 		B12F939D2D7224FDA22B565F1142244D /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Sources/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
@@ -749,7 +752,7 @@
 		C5BAB7A8CDBA506B8BE6FD53B29A88EA /* WhiteCameraBound.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteCameraBound.m; path = Whiteboard/Classes/Object/WhiteCameraBound.m; sourceTree = "<group>"; };
 		C6BACACA0626C815B00EF30CF0D258E3 /* WhitePlayerState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayerState.h; path = Whiteboard/Classes/Replayer/WhitePlayerState.h; sourceTree = "<group>"; };
 		C71EA9F654BB82BCBC771DACA7C0F995 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
-		C740A26186CA1DBBD05BFDA9E7FD7091 /* runtime.42cce1dd.js */ = {isa = PBXFileReference; includeInIndex = 1; name = runtime.42cce1dd.js; path = Whiteboard/Resource/runtime.42cce1dd.js; sourceTree = "<group>"; };
+		C740A26186CA1DBBD05BFDA9E7FD7091 /* runtime.42cce1dd.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = runtime.42cce1dd.js; path = Whiteboard/Resource/runtime.42cce1dd.js; sourceTree = "<group>"; };
 		C79526D9E91A8621AB2896281E1C9ABE /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
 		C8C838B5584ACF0267638746BAA559C9 /* WhiteDisplayerState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhiteDisplayerState.h; path = Whiteboard/Classes/Displayer/WhiteDisplayerState.h; sourceTree = "<group>"; };
 		CA629A598F9A41ADC9C934302F22CC14 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Sources/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
@@ -780,7 +783,7 @@
 		E0D4130A5447207F6C3F27D1F110AE02 /* InternalApis.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = InternalApis.m; path = dsbridge/InternalApis.m; sourceTree = "<group>"; };
 		E0E105C11DD4ECE854BEDF78B8514FE9 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		E14F648C573BCBDBDAE7E18B2AE5F2DA /* Pods-OCExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OCExample.modulemap"; sourceTree = "<group>"; };
-		E1C1E12E71FDBFD09304B6A6D0D05A48 /* main.6fb3a392.js */ = {isa = PBXFileReference; includeInIndex = 1; name = main.6fb3a392.js; path = Whiteboard/Resource/main.6fb3a392.js; sourceTree = "<group>"; };
+		E1C1E12E71FDBFD09304B6A6D0D05A48 /* main.6fb3a392.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = main.6fb3a392.js; path = Whiteboard/Resource/main.6fb3a392.js; sourceTree = "<group>"; };
 		E1D41A6847AA48D2BB2F39A1B55BFB11 /* WhitePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WhitePlayer.h; path = Whiteboard/Classes/Replayer/WhitePlayer.h; sourceTree = "<group>"; };
 		E2A2E0A4B07D6BD6E1187936DA47ED79 /* WhiteSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WhiteSocket.m; path = Whiteboard/Classes/Room/WhiteSocket.m; sourceTree = "<group>"; };
 		E43093DF5AC28DB3202AC7A220D643C7 /* SyncedStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SyncedStore.m; path = Whiteboard/Classes/Displayer/SyncedStore.m; sourceTree = "<group>"; };
@@ -807,7 +810,7 @@
 		F389D30580D9562449ADEE6D22080AD2 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		F38F4930B13E9FE7E90306F5A658E694 /* String+localized.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 		F59AE25DF9B3DD18A6A063E5C2C8D7D7 /* AgoraFpaProxyService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraFpaProxyService.framework; sourceTree = "<group>"; };
-		F63D3F66A81137D7CB267EF533A2E317 /* README-zh.md */ = {isa = PBXFileReference; includeInIndex = 1; path = "README-zh.md"; sourceTree = "<group>"; };
+		F63D3F66A81137D7CB267EF533A2E317 /* README-zh.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = "README-zh.md"; sourceTree = "<group>"; };
 		F738B1B3B2D8782A6E4BF0B639CB7A41 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		F814555FB8B51992A53DADD324A260C6 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Sources/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		F8165F01195E27E68229EE1366376330 /* NTLBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NTLBridge.debug.xcconfig; sourceTree = "<group>"; };
@@ -934,7 +937,6 @@
 				95AFBB800BB39B82DDB03EA5456C9F8D /* FastRoomOperationItem+NeedDelete.swift */,
 				1DEE3BD46767B233C83C14C878162D59 /* FastRoomPanelItemButton.swift */,
 			);
-			name = Operation;
 			path = Operation;
 			sourceTree = "<group>";
 		};
@@ -996,7 +998,6 @@
 				2560AE9D6F5C22F70298CBF5786C276D /* FastRoomThemeAsset.swift */,
 				900F0BE8E3CBB5B5C778B9F5BD2A8D68 /* FastRoomThemeManager.swift */,
 			);
-			name = Theme;
 			path = Theme;
 			sourceTree = "<group>";
 		};
@@ -1008,12 +1009,12 @@
 				CC9DB40667F297104F2C1DD6BC0BE6F8 /* FastRoom+Media.swift */,
 				FC102764B95C2EDE44B2BADB40D20A6C /* FastRoom+Pencil.swift */,
 				8E7C5D566DE21269B4CD95C84085E7ED /* FastRoomConfiguration.swift */,
+				8AA268EA292DC7190065FC3C /* FastUserPayload.swift */,
 				B0CD83EDBD8551DFF9E0A53CCFCD0541 /* FastRoomDelegate.swift */,
 				2C3EF6127DD3163844E0E8F044835299 /* FastRoomError.swift */,
 				9897FCEBADC76DC44C3D5FF9CEF44FE3 /* FastRoomPhase.swift */,
 				E03E5F6FF55C8A889DEA07ADF193A815 /* View */,
 			);
-			name = FastRoom;
 			path = FastRoom;
 			sourceTree = "<group>";
 		};
@@ -1213,7 +1214,6 @@
 				FE6BC10691F093A5D335490DE3A4BBF9 /* UIView+anchor.swift */,
 				035899AB068E18CD9D91221A449B6C3E /* Operation */,
 			);
-			name = Panel;
 			path = Panel;
 			sourceTree = "<group>";
 		};
@@ -1223,7 +1223,6 @@
 				2261D5D89F161D492DDD0C19C75297AF /* FastRoomOverlay.swift */,
 				F61C8A6A5640D64A164DC924D4B3DF1E /* Trait */,
 			);
-			name = Overlay;
 			path = Overlay;
 			sourceTree = "<group>";
 		};
@@ -1340,7 +1339,6 @@
 				002BF7A7272F69DAFE2355B27CEE1D6E /* UILayoutSupport+Extensions.swift */,
 				6370293C39D29693EA152C84E21C4BA7 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1422,7 +1420,6 @@
 				E0E105C11DD4ECE854BEDF78B8514FE9 /* ViewController+MASAdditions.m */,
 				D8FF43F2713B5493F7E28E594264D9EA /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -1436,7 +1433,6 @@
 				F1C6CD1C2EAA136B3EC32274B1BAE37B /* YYModel.h */,
 				F42306FCA1EF5BD2F30C672215D42B3D /* Support Files */,
 			);
-			name = YYModel;
 			path = YYModel;
 			sourceTree = "<group>";
 		};
@@ -1508,7 +1504,6 @@
 				EB73BC4A8245E1AA6531ABF7CDB57FE9 /* Frameworks */,
 				3D012A94978636474F74761D0EC8AA15 /* Support Files */,
 			);
-			name = AgoraFPA_iOS;
 			path = AgoraFPA_iOS;
 			sourceTree = "<group>";
 		};
@@ -1597,7 +1592,6 @@
 				802977F614EBFDC944DB8C8701E20129 /* Overlay */,
 				7780B0A915A9C39FF1E1E9BEC25446A1 /* Panel */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1625,7 +1619,6 @@
 				C4ED894D4247F0E2029F9F7DAA8174C2 /* Support Files */,
 				A05D63E1E2A1DEF43D12C8A6CF994604 /* Whiteboard-YYModel */,
 			);
-			name = Whiteboard;
 			path = Whiteboard;
 			sourceTree = "<group>";
 		};
@@ -1643,7 +1636,6 @@
 				35E56D9572330B0D597CFF9570DFAA8A /* JSBUtil.m */,
 				CCD13C3DB220D17C04444F87ED1AEBE9 /* Support Files */,
 			);
-			name = NTLBridge;
 			path = NTLBridge;
 			sourceTree = "<group>";
 		};
@@ -1688,7 +1680,6 @@
 				0C6AAE21AD7950430681AAA6CFC2456A /* ReconnectingView.swift */,
 				9BC72F2517EF732FD235F5D3ED7E402B /* RegularFastRoomOverlay.swift */,
 			);
-			name = Trait;
 			path = Trait;
 			sourceTree = "<group>";
 		};
@@ -2264,6 +2255,7 @@
 				EB6793ADABFF4B2E1635B2772E64C0AF /* SubPanelView.swift in Sources */,
 				41FF812B40FE7630F3DE5660CF83B6E7 /* TraitCollection+Extension.swift in Sources */,
 				F484A615CE3AF9706DE7B5F7660E67A4 /* TraitUpdateHandler.swift in Sources */,
+				8AA268EB292DC7190065FC3C /* FastUserPayload.swift in Sources */,
 				EE629892C3D5955B48E82FD82057EF7C /* UIColor+Convince.swift in Sources */,
 				317B00AC8C46E0378E9F5B8FF85D9640 /* UIColor+NSNumber.swift in Sources */,
 				B9D55438D6F25739BD2040D05A848CCC /* UIImage+Bundle.swift in Sources */,
@@ -3048,8 +3040,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
