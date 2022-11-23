@@ -34,11 +34,12 @@ public class FastRoomConfiguration: NSObject {
                 roomUUID: String,
                 roomToken: String,
                 region: Region,
-                userUID: String) {
+                userUID: String,
+                userPayload: FastUserPayload? = nil) {
         let wsc = WhiteSdkConfiguration(app: appIdentifier)
         wsc.setValue(["fastboard/\(versionNumber)"], forKey: "netlessUA")
         wsc.renderEngine = .canvas
-        wsc.userCursor = false
+        wsc.userCursor = true
         wsc.useMultiViews = true
         wsc.region = region.toWhiteRegion()
         if #available(iOS 14.0, *) {
@@ -50,6 +51,9 @@ public class FastRoomConfiguration: NSObject {
         wsc.loggerOptions["printLevelMask"] = WhiteSDKLoggerOptionLevelKey.error.rawValue
         whiteSdkConfiguration = wsc
         let wrc = WhiteRoomConfig(uuid: roomUUID, roomToken: roomToken, uid: userUID)
+        if let userPayload = userPayload {
+            wrc.userPayload = userPayload.dic
+        }
         wrc.disableNewPencil = false
         let windowParas = WhiteWindowParams()
         windowParas.containerSizeRatio = NSNumber(value: 1 / Fastboard.globalFastboardRatio)
