@@ -17,12 +17,14 @@ extension FastRoomConfiguration {
                             roomToken: String,
                             region: Region,
                             userUID: String,
+                            userPayload: FastUserPayload? = nil,
                             useFPA: Bool) {
         self.init(appIdentifier: appIdentifier,
                   roomUUID: roomUUID,
                   roomToken: roomToken,
                   region: region,
-                  userUID: userUID)
+                  userUID: userUID,
+                  userPayload: userPayload)
         whiteRoomConfig.nativeWebSocket = useFPA
         if useFPA {
             FpaProxyService.shared().setupDelegate(FPADelegate.shared)
