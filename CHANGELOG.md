@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [2.0.0-alpha.6] - 2022-11-23
+### 变更
+- 默认开启用户光标
+- 默认开启 floatbar
+### 新增
+- 新增 `UserPayload` 类，可以在初始化 `FastRoomConfiguration` 时传入，用于在光标中显示的用户信息。
 ## [2.0.0-alpha.5] - 2022-11-17
 - 将 `drawOnlyPencil` 的实现逻辑移到 `Whiteboard` 中
 ## [2.0.0-alpha.4] - 2022-11-10
