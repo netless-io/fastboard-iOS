@@ -87,6 +87,7 @@ class ViewController: UIViewController {
                                            roomToken: RoomInfo.ROOMTOKEN.value,
                                            region: .CN,
                                            userUID: "some-unique-id-1",
+                                           userPayload: .init(nickName: "aaa", avatar: "https://example.com/avatar.jpg"),
                                            useFPA: globalUsingFPA)
         } else {
             // Without fpa

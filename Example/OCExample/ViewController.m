@@ -378,7 +378,8 @@
                                                                                 roomUUID:[RoomInfo getValueFrom:RoomInfoRoomID]
                                                                                roomToken:[RoomInfo getValueFrom:RoomInfoRoomToken]
                                                                                   region:FastRegionCN
-                                                                                 userUID:@"some-unique"];
+                                                                                 userUID:@"some-unique"
+                                                                             userPayload:nil];
     config.customOverlay = custom;
     _fastRoom = [Fastboard createFastRoomWithFastRoomConfig:config];
     FastRoomView *fastRoomView = _fastRoom.view;

@@ -10,28 +10,28 @@ PODS:
   - Masonry (1.1.0)
   - NTLBridge (3.1.4)
   - SnapKit (5.6.0)
-  - Whiteboard (2.17.0-alpha.8):
-    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.8)
-  - Whiteboard/Base (2.17.0-alpha.8):
+  - Whiteboard (2.17.0-alpha.12):
+    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.12)
+  - Whiteboard/Base (2.17.0-alpha.12):
     - NTLBridge (~> 3.1.4)
     - Whiteboard/Object
-  - Whiteboard/Converter (2.17.0-alpha.8):
+  - Whiteboard/Converter (2.17.0-alpha.12):
     - Whiteboard/Object
-  - Whiteboard/fpa (2.17.0-alpha.8):
+  - Whiteboard/fpa (2.17.0-alpha.12):
     - AgoraFPA_iOS (~> 1.0.0)
     - Whiteboard/Room
-  - Whiteboard/Model (2.17.0-alpha.8):
+  - Whiteboard/Model (2.17.0-alpha.12):
     - YYModel
-  - Whiteboard/NativeReplayer (2.17.0-alpha.8):
+  - Whiteboard/NativeReplayer (2.17.0-alpha.12):
     - Whiteboard/Replayer
-  - Whiteboard/Object (2.17.0-alpha.8):
+  - Whiteboard/Object (2.17.0-alpha.12):
     - Whiteboard/Model
-  - Whiteboard/Replayer (2.17.0-alpha.8):
+  - Whiteboard/Replayer (2.17.0-alpha.12):
     - Whiteboard/Base
-  - Whiteboard/Resource (2.17.0-alpha.8)
-  - Whiteboard/Room (2.17.0-alpha.8):
+  - Whiteboard/Resource (2.17.0-alpha.12)
+  - Whiteboard/Room (2.17.0-alpha.12):
     - Whiteboard/Base
-  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.8):
+  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.12):
     - Whiteboard/Converter
     - Whiteboard/NativeReplayer
     - Whiteboard/Resource
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   NTLBridge: 49780dc966976d3221a0eb03c7368617c1987cb6
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Whiteboard: 5b1b80b643a44bad2c8afd224acc9820480e217e
+  Whiteboard: 32bc7643dbd273e02c0537c1dc688136c58ec134
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: c651acd9301c60bb8226ad1643dbc22c37a3cd5e
