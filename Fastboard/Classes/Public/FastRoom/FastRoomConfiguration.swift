@@ -55,6 +55,7 @@ public class FastRoomConfiguration: NSObject {
             wrc.userPayload = userPayload.dic
         }
         wrc.disableNewPencil = false
+        wrc.floatBar = true
         let windowParas = WhiteWindowParams()
         windowParas.containerSizeRatio = NSNumber(value: 1 / Fastboard.globalFastboardRatio)
         wrc.windowParams = windowParas
