@@ -1,10 +1,10 @@
 PODS:
   - AgoraFPA_iOS (1.0.0)
-  - Fastboard (1.1.2):
-    - Fastboard/core (= 1.1.2)
-  - Fastboard/core (1.1.2):
+  - Fastboard (1.2.0):
+    - Fastboard/core (= 1.2.0)
+  - Fastboard/core (1.2.0):
     - Whiteboard (~> 2.16.36)
-  - Fastboard/fpa (1.1.2):
+  - Fastboard/fpa (1.2.0):
     - Fastboard/core
     - Whiteboard/fpa
   - Masonry (1.1.0)
@@ -59,7 +59,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AgoraFPA_iOS: 2202f574e6832567e368d5e69ad6da121a18ee4a
-  Fastboard: 2fb2863f6f6c23d1087f597660ddc74f1f198dec
+  Fastboard: 2384d75021c0d78741081aa274b25e968c3ee383
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   NTLBridge: 49780dc966976d3221a0eb03c7368617c1987cb6
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
