@@ -67,6 +67,8 @@ public class FastRoom: NSObject {
     }
     let roomConfig: WhiteRoomConfig
     
+    weak var audioMixerDelegate: FastAudioMixerDelegate?
+    
     lazy var roomDelegateProxy = WhiteRoomCallBackDelegateProxy.target(nil, middleMan: self)
     lazy var sdkDelegateProxy = WhiteCommonCallbackDelegateProxy.target(nil, middleMan: self)
     
@@ -174,18 +176,22 @@ public class FastRoom: NSObject {
         let fastboardView = FastRoomView(overlay: fastboardOverlay)
         self.init(view: fastboardView,
                   roomConfig: configuration.whiteRoomConfig,
-                  sdkConfig: configuration.whiteSdkConfiguration)
+                  sdkConfig: configuration.whiteSdkConfiguration,
+                  audioMixerDelegate: configuration.audioMixerDelegate)
     }
     
     init(view: FastRoomView,
          roomConfig: WhiteRoomConfig,
-         sdkConfig: WhiteSdkConfiguration){
+         sdkConfig: WhiteSdkConfiguration,
+         audioMixerDelegate: FastAudioMixerDelegate? = nil){
         self.view = view
         self.roomConfig = roomConfig
+        self.audioMixerDelegate = audioMixerDelegate
         super.init()
         let whiteSDK = WhiteSDK(whiteBoardView: view.whiteboardView,
                                 config: sdkConfig,
-                                commonCallbackDelegate: self.sdkDelegateProxy)
+                                commonCallbackDelegate: self.sdkDelegateProxy,
+                                audioMixerBridgeDelegate: audioMixerDelegate == nil ? nil : self)
         self.whiteSDK = whiteSDK
         NotificationCenter.default.addObserver(self, selector: #selector(onThemeManagerPrefersSchemeUpdate), name: prefersSchemeUpdateNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onThemeManagerTeleBoxThemeUpdate), name: teleboxThemeUpdateNotificationName, object: nil)
@@ -231,5 +237,32 @@ extension FastRoom: WhiteRoomCallbackDelegate {
     
     public func fireCanRedoStepsUpdate(_ canRedoSteps: Int) {
         view.overlay?.update(redoEnable: canRedoSteps > 0)
+    }
+}
+
+extension FastRoom: WhiteAudioMixerBridgeDelegate {
+    public func startAudioMixing(_ filePath: String, loopback: Bool, replace: Bool, cycle: Int) {
+        guard let mixer = whiteSDK.audioMixer else { return }
+        audioMixerDelegate?.startAudioMixing(audioBridge: mixer, filePath: filePath, loopback: loopback, replace: replace, cycle: cycle)
+    }
+    
+    public func stopAudioMixing() {
+        guard let mixer = whiteSDK.audioMixer else { return }
+        audioMixerDelegate?.stopAudioMixing(audioBridge: mixer)
+    }
+    
+    public func pauseAudioMixing() {
+        guard let mixer = whiteSDK.audioMixer else { return }
+        audioMixerDelegate?.pauseAudioMixing(audioBridge: mixer)
+    }
+    
+    public func resumeAudioMixing() {
+        guard let mixer = whiteSDK.audioMixer else { return }
+        audioMixerDelegate?.resumeAudioMixing(audioBridge: mixer)
+    }
+    
+    public func setAudioMixingPosition(_ position: Int) {
+        guard let mixer = whiteSDK.audioMixer else { return }
+        audioMixerDelegate?.setAudioMixingPosition(audioBridge: mixer, position)
     }
 }

@@ -21,6 +21,9 @@ public class FastRoomConfiguration: NSObject {
     /// Assign a custom overlay to create your own overlay style
     @objc
     public var customOverlay: FastRoomOverlay? = nil
+    
+    /// Rtc audio mixing delegate
+    public var audioMixerDelegate: FastAudioMixerDelegate?
  
     /// Create FastConfiguration
     /// - Parameters:
@@ -35,7 +38,8 @@ public class FastRoomConfiguration: NSObject {
                 roomToken: String,
                 region: Region,
                 userUID: String,
-                userPayload: FastUserPayload? = nil) {
+                userPayload: FastUserPayload? = nil,
+                audioMixerDelegate: FastAudioMixerDelegate? = nil) {
         let wsc = WhiteSdkConfiguration(app: appIdentifier)
         wsc.setValue(["fastboard/\(versionNumber)"], forKey: "netlessUA")
         wsc.renderEngine = .canvas
@@ -67,6 +71,7 @@ public class FastRoomConfiguration: NSObject {
         }
         wrc.disableEraseImage = true
         whiteRoomConfig = wrc
+        self.audioMixerDelegate = audioMixerDelegate
         super.init()
     }
     
