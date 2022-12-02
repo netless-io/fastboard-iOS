@@ -15,9 +15,9 @@ public class Fastboard: NSObject {
     @objc
     public static var globalFastboardRatio: CGFloat = 16.0 / 9.0
     
-    /// Create a Fastboard with FastConfiguration
-    /// - Parameter configuration: Configuration for fastboard
     @objc
+    /// Create a Fastboard with FastConfiguration
+    /// - Parameter config: Configuration for fastboard
     public class func createFastRoom(withFastRoomConfig config: FastRoomConfiguration) -> FastRoom {
         return FastRoom(configuration: config)
     }
