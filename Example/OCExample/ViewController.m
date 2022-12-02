@@ -379,7 +379,8 @@
                                                                                roomToken:[RoomInfo getValueFrom:RoomInfoRoomToken]
                                                                                   region:FastRegionCN
                                                                                  userUID:@"some-unique"
-                                                                             userPayload:nil];
+                                                                             userPayload:nil
+                                                                audioMixerDelegate:nil];
     config.customOverlay = custom;
     _fastRoom = [Fastboard createFastRoomWithFastRoomConfig:config];
     FastRoomView *fastRoomView = _fastRoom.view;
