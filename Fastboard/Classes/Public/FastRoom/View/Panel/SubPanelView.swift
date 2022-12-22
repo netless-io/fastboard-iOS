@@ -94,9 +94,10 @@ class SubPanelView: UIView {
     override var intrinsicContentSize: CGSize {
         let maxX = containerView.subviews.map { $0.frame.maxX }.max() ?? 0
         let maxY = containerView.subviews.map { $0.frame.maxY }.max() ?? 0
-        return .init(width: maxX + shadowMargin * 2, height: maxY + shadowMargin * 2 )
+        return .init(width: maxX + shadowMargin * 2 + spacing, height: maxY + shadowMargin * 2 + spacing)
     }
     
+    let spacing: CGFloat = 16
     let shadowMargin: CGFloat = 10
     let maxRowPerLine: Int = 4
     let itemSize: CGSize = .init(width: 40, height: 40)
@@ -111,6 +112,8 @@ class SubPanelView: UIView {
     }
     
     func rebuildLayout() {
+        let startX = spacing
+        let startY = spacing
         var rowIndex: CGFloat = -1
         var lineIndex: CGFloat = -1
         let layoutViews = containerView.subviews.filter { !($0 is UIVisualEffectView) && !$0.isHidden }
@@ -123,18 +126,16 @@ class SubPanelView: UIView {
                     lineIndex += 1
                 }
                 let slideHeight: CGFloat = 44
-                let inset: CGFloat = 8
-                let width: CGFloat = itemSize.width * CGFloat(maxRowPerLine) - (2 * inset)
-                let y = lastView?.frame.maxY ?? 0
-                view.frame = .init(x: inset,
+                let y = lastView?.frame.maxY ?? startY
+                view.frame = .init(x: startX,
                                    y: y,
-                                   width: width,
+                                   width: CGFloat(maxRowPerLine) * itemSize.width,
                                    height: slideHeight)
             } else {
                 rowIndex = CGFloat(Int(rowIndex + 1) % maxRowPerLine)
                 lineIndex = rowIndex == 0 ? lineIndex + 1 : lineIndex
-                let x = rowIndex == 0 ? 0 : (lastView?.frame.maxX ?? 0)
-                let y = rowIndex == 0 ? (lastView?.frame.maxY ?? 0) : (lastView?.frame.minY ?? 0)
+                let x = rowIndex == 0 ? startX : (lastView?.frame.maxX ?? startX)
+                let y = rowIndex == 0 ? (lastView?.frame.maxY ?? startY) : (lastView?.frame.minY ?? startY)
                 view.frame = .init(x: x,
                                    y: y,
                                    width: itemSize.width,

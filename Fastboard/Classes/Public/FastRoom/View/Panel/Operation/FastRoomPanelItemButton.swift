@@ -10,18 +10,19 @@ import Whiteboard
 
 /// Represents a operationItem as a view
 public class FastRoomPanelItemButton: UIButton {
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(indicatorView)
         indicatorView.isHidden = true
     }
     
-    public override var isSelected: Bool {
+    override public var isSelected: Bool {
         didSet {
             indicatorView.tintColor = isSelected ? iconSelectedColor : iconNormalColor
         }
     }
     
+    @available(*, unavailable)
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -66,43 +67,43 @@ public class FastRoomPanelItemButton: UIButton {
         }
     }
     
-    @objc dynamic var iconHighlightBgColor: UIColor? = nil {
+    @objc dynamic var iconHighlightBgColor: UIColor? {
         didSet {
             tryUpdateStyle()
         }
     }
     
-    @objc dynamic var iconSelectedBgColor: UIColor? = nil {
+    @objc dynamic var iconSelectedBgColor: UIColor? {
         didSet {
             tryUpdateStyle()
         }
     }
     
-    @objc dynamic var iconSelectedColor: UIColor? = nil {
+    @objc dynamic var iconSelectedColor: UIColor? {
         didSet {
             tryUpdateStyle()
         }
     }
     
-    @objc dynamic var disableColor: UIColor? = nil {
+    @objc dynamic var disableColor: UIColor? {
         didSet {
             tryUpdateStyle()
         }
     }
     
-    @objc dynamic var highlightColor: UIColor? = nil {
+    @objc dynamic var highlightColor: UIColor? {
         didSet {
             tryUpdateStyle()
         }
     }
     
-    @objc dynamic var justExecutionNormalColor: UIColor? = nil {
+    @objc dynamic var justExecutionNormalColor: UIColor? {
         didSet {
             tryUpdateStyle()
         }
     }
     
-    @objc dynamic var iconNormalColor: UIColor? = nil {
+    @objc dynamic var iconNormalColor: UIColor? {
         didSet {
             tryUpdateStyle()
         }
@@ -114,13 +115,13 @@ public class FastRoomPanelItemButton: UIButton {
         }
     }
     
-    @objc dynamic var selectedBackgroundEdgeinset: UIEdgeInsets = .zero {
+    @objc dynamic var selectedBackgroundEdgeInset: UIEdgeInsets = .zero {
         didSet {
             tryUpdateStyle()
         }
     }
     
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if #available(iOS 13.0, *) {
             if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
@@ -129,7 +130,7 @@ public class FastRoomPanelItemButton: UIButton {
         }
     }
     
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         guard let size = indicatorView.image?.size else { return }
         let x = bounds.width - size.width - indicatorInset.right
@@ -139,8 +140,8 @@ public class FastRoomPanelItemButton: UIButton {
     
     func tryUpdateStyle() {
         // Throttle
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.updateStyle), object: nil)
-        perform(#selector(self.updateStyle), with: nil, afterDelay: 0.3)
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(updateStyle), object: nil)
+        perform(#selector(updateStyle), with: nil, afterDelay: 0.3)
     }
     
     func set(rawImage: UIImage,
@@ -148,7 +149,8 @@ public class FastRoomPanelItemButton: UIButton {
              backgroundColor: UIColor? = nil,
              cornerRadius: CGFloat = 0,
              state: State,
-             inset: UIEdgeInsets = .zero) {
+             inset: UIEdgeInsets = .zero)
+    {
         if #available(iOS 13.0, *) {
             let image = rawImage.dynamicDraw(drawColor, backgroundColor: backgroundColor, cornerRadius: cornerRadius, backgroundEdgeInset: inset, traitCollection: traitCollection)
             setImage(image, for: state)
@@ -170,11 +172,11 @@ public class FastRoomPanelItemButton: UIButton {
             
             if let iconSelectedColor = iconSelectedColor {
                 if let rawSelectedImage = rawSelectedImage {
-                    set(rawImage: rawSelectedImage, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: .selected, inset: selectedBackgroundEdgeinset)
-                    set(rawImage: rawSelectedImage, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: [.selected, .highlighted], inset: selectedBackgroundEdgeinset)
+                    set(rawImage: rawSelectedImage, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: .selected, inset: selectedBackgroundEdgeInset)
+                    set(rawImage: rawSelectedImage, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: [.selected, .highlighted], inset: selectedBackgroundEdgeInset)
                 } else {
-                    set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: .selected, inset: selectedBackgroundEdgeinset)
-                    set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: [.selected, .highlighted], inset: selectedBackgroundEdgeinset)
+                    set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: .selected, inset: selectedBackgroundEdgeInset)
+                    set(rawImage: image, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: [.selected, .highlighted], inset: selectedBackgroundEdgeInset)
                 }
             }
             
@@ -188,7 +190,8 @@ public class FastRoomPanelItemButton: UIButton {
         case .justExecution:
             guard let image = rawImage else { return }
             if image.renderingMode == .alwaysTemplate,
-               let justExecutionNormalColor = justExecutionNormalColor {
+               let justExecutionNormalColor = justExecutionNormalColor
+            {
                 set(rawImage: image, drawColor: justExecutionNormalColor, state: .normal)
                 
                 if let highlightColor = highlightColor {
@@ -202,16 +205,15 @@ public class FastRoomPanelItemButton: UIButton {
             }
         case .color(let color):
             let normalImage = UIImage.colorItemImage(withColor: color,
-                                                     size: .init(width: 24, height: 24),
-                                                     radius: 4)
+                                                     size: .init(width: 16, height: 16),
+                                                     radius: 8)
             setImage(normalImage, for: .normal)
-            if let iconSelectedColor = iconSelectedColor {
-                let selectedImage = UIImage.selectedColorItemImage(withColor: color,
-                                                                   size: .init(width: 24, height: 24),
-                                                                   radius: 4,
-                                                                   borderColor: iconSelectedColor)
-                setImage(selectedImage, for: .selected)
-            }
+            let selectedImage = UIImage.selectedColorItemImage(withColor: color,
+                                                               size: .init(width: 16, height: 16),
+                                                               radius: 8,
+                                                               backgroundColor: iconSelectedBgColor ?? UIColor.blue.withAlphaComponent(0.3),
+                                                               backgroundCornerRadius: 8)
+            setImage(selectedImage, for: .selected)
             return
         }
     }
