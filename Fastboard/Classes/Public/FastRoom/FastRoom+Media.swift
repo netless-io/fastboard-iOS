@@ -25,11 +25,21 @@ extension FastRoom {
     ///   - imageSize: image size
     @objc
     public func insertImg(_ src: URL, imageSize: CGSize) {
-        let info = WhiteImageInformation(size: imageSize)
+        let info: WhiteImageInformation
+        let cameraScale = room?.state.cameraState?.scale.floatValue ?? 1
+        let containerWidth = view.bounds.width / 4 / CGFloat(cameraScale)
+        if imageSize.width > containerWidth {
+            let ratio = imageSize.width / imageSize.height
+            info = WhiteImageInformation(size: .init(width: containerWidth, height: containerWidth / ratio))
+        } else {
+            info = WhiteImageInformation(size: imageSize)
+        }
         if let x = room?.state.cameraState?.centerX,
-           let y = room?.state.cameraState?.centerY {
+           let y = room?.state.cameraState?.centerY
+        {
             info.centerX = CGFloat(x.floatValue)
             info.centerY = CGFloat(y.floatValue)
+            
         }
         room?.insertImage(info, src: src.absoluteString)
     }
