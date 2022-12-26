@@ -20,6 +20,8 @@ void methodExchange(Class cls, SEL oSelect, SEL swizzledSelector) {
 @implementation FastLoad
 
 + (void)load {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
     methodExchange([UIViewController class],
                    @selector(traitCollectionDidChange:),
                    @selector(_fastboard_exchangedTraitCollectionDidChange:));
@@ -28,10 +30,12 @@ void methodExchange(Class cls, SEL oSelect, SEL swizzledSelector) {
                    @selector(traitCollectionDidChange:),
                    @selector(_fastboard_exchangedTraitCollectionDidChange:));
     [FastLoad initTheme];
+#pragma clang diagnostic pop
 }
 
+
 + (void)initTheme {
-    [FastRoomThemeManager shared];
+    (void)[FastRoomThemeManager shared];
 }
 
 @end

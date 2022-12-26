@@ -118,7 +118,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
                     active(item: pencil, withSubPanel: false)
                 }
             }
-        case .showColorPalette:
+        case .showColorPalette, .showInkAttributes:
             func performShowColorPalette(on sub: SubOpsItem) {
                 if sub.subPanelView.superview == nil {
                     sub.setupSubPanelViewHierarchy()

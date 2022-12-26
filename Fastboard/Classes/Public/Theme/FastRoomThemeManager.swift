@@ -19,14 +19,14 @@ public class FastRoomThemeManager: NSObject {
     
     private(set) var currentThemeAsset: FastRoomThemeAsset
     
-    private override init() {
+    override private init() {
         if #available(iOS 13.0, *) {
             self.currentThemeAsset = FastRoomDefaultTheme.defaultAutoTheme
         } else {
             self.currentThemeAsset = FastRoomDefaultTheme.defaultLightTheme
         }
         super.init()
-        apply(self.currentThemeAsset)
+        apply(currentThemeAsset)
     }
     
     /// You should call it before fastboard create
@@ -37,7 +37,7 @@ public class FastRoomThemeManager: NSObject {
     
     @objc
     public func apply(_ theme: FastRoomThemeAsset) {
-        self.currentThemeAsset = theme
+        currentThemeAsset = theme
         updateControlBar(theme.controlBarAssets)
         updatePanelItem(theme.panelItemAssets)
         
