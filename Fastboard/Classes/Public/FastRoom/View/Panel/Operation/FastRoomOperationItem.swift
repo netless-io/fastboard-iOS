@@ -273,7 +273,7 @@ public class SubOpsItem: NSObject, FastRoomOperationItem {
               let item = selectedColorItem
         else { return }
         if !containsSelectableAppliance {
-            let image = UIImage.colorItemImage(withColor: item.color, size: .init(width: 18, height: 18), radius: 4)
+            let image = UIImage.colorItemImageWith(color: item.color)
             btn.setImage(image, for: .normal)
         }
     }

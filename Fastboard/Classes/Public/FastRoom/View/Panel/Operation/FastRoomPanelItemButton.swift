@@ -67,6 +67,12 @@ public class FastRoomPanelItemButton: UIButton {
         }
     }
     
+    @objc dynamic var selectedColorItemBgColor: UIColor? {
+        didSet {
+            tryUpdateStyle()
+        }
+    }
+    
     @objc dynamic var iconHighlightBgColor: UIColor? {
         didSet {
             tryUpdateStyle()
@@ -170,8 +176,8 @@ public class FastRoomPanelItemButton: UIButton {
                 set(rawImage: image, drawColor: normalColor, state: .normal)
             }
             
-            if let iconSelectedColor = iconSelectedColor {
-                if let rawSelectedImage = rawSelectedImage {
+            if let iconSelectedColor {
+                if let rawSelectedImage {
                     set(rawImage: rawSelectedImage, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: .selected, inset: selectedBackgroundEdgeInset)
                     set(rawImage: rawSelectedImage, drawColor: iconSelectedColor, backgroundColor: iconSelectedBgColor, cornerRadius: selectedBackgroundCornerradius, state: [.selected, .highlighted], inset: selectedBackgroundEdgeInset)
                 } else {
@@ -180,38 +186,34 @@ public class FastRoomPanelItemButton: UIButton {
                 }
             }
             
-            if let highlightColor = highlightColor {
+            if let highlightColor {
                 set(rawImage: image, drawColor: highlightColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)
             }
             
-            if let disableColor = disableColor {
+            if let disableColor {
                 set(rawImage: image, drawColor: disableColor, state: .disabled)
             }
         case .justExecution:
             guard let image = rawImage else { return }
             if image.renderingMode == .alwaysTemplate,
-               let justExecutionNormalColor = justExecutionNormalColor
+               let justExecutionNormalColor
             {
                 set(rawImage: image, drawColor: justExecutionNormalColor, state: .normal)
                 
-                if let highlightColor = highlightColor {
+                if let highlightColor {
                     set(rawImage: image, drawColor: highlightColor, backgroundColor: iconHighlightBgColor, cornerRadius: 5, state: .highlighted)
                 }
-                if let disableColor = disableColor {
+                if let disableColor {
                     set(rawImage: image, drawColor: disableColor, state: .disabled)
                 }
             } else {
                 setImage(image, for: .normal)
             }
         case .color(let color):
-            let normalImage = UIImage.colorItemImage(withColor: color,
-                                                     size: .init(width: 16, height: 16),
-                                                     radius: 8)
+            let normalImage = UIImage.colorItemImageWith(color: color)
             setImage(normalImage, for: .normal)
             let selectedImage = UIImage.selectedColorItemImage(withColor: color,
-                                                               size: .init(width: 16, height: 16),
-                                                               radius: 8,
-                                                               backgroundColor: iconSelectedBgColor ?? UIColor.blue.withAlphaComponent(0.3),
+                                                               backgroundColor: selectedColorItemBgColor ?? .clear,
                                                                backgroundCornerRadius: 8)
             setImage(selectedImage, for: .selected)
             return

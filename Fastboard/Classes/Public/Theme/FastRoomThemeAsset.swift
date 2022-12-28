@@ -14,6 +14,7 @@ open class FastRoomPanelItemAssets: NSObject {
     public init(normalIconColor: UIColor,
                 selectedIconColor: UIColor,
                 selectedIconBgColor: UIColor,
+                selectedColorItemBgColor: UIColor,
                 highlightColor: UIColor,
                 highlightBgColor: UIColor,
                 disableColor: UIColor,
@@ -24,6 +25,7 @@ open class FastRoomPanelItemAssets: NSObject {
         self.normalIconColor = normalIconColor
         self.selectedIconColor = selectedIconColor
         self.selectedIconBgColor = selectedIconBgColor
+        self.selectedColorItemBgColor = selectedColorItemBgColor
         self.highlightColor = highlightColor
         self.highlightBgColor = highlightBgColor
         self.disableColor = disableColor
@@ -47,6 +49,9 @@ open class FastRoomPanelItemAssets: NSObject {
     
     @objc
     open var selectedIconBgColor: UIColor
+    
+    @objc
+    open var selectedColorItemBgColor: UIColor
     
     @objc
     open var highlightColor: UIColor

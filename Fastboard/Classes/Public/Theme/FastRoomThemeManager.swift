@@ -55,6 +55,7 @@ public class FastRoomThemeManager: NSObject {
         FastRoomPanelItemButton.appearance().justExecutionNormalColor = asset.normalIconColor
         FastRoomPanelItemButton.appearance().highlightColor = asset.highlightColor
         FastRoomPanelItemButton.appearance().iconSelectedBgColor = asset.selectedIconBgColor
+        FastRoomPanelItemButton.appearance().selectedColorItemBgColor = asset.selectedColorItemBgColor
         FastRoomPanelItemButton.appearance().selectedBackgroundCornerradius = asset.selectedBackgroundCornerRadius
         FastRoomPanelItemButton.appearance().selectedBackgroundEdgeInset = asset.selectedBackgroundEdgeinset
         

@@ -7,11 +7,13 @@
 
 import Foundation
 
+private let colorItemSize: CGSize = .init(width: 16, height: 16)
+private let colorItemRadius: CGFloat = 8
 extension UIImage
 {
-    static func colorItemImage(withColor color: UIColor,
-                               size: CGSize,
-                               radius: CGFloat) -> UIImage?
+    static func colorItemImageWith(color: UIColor,
+                               size: CGSize = colorItemSize,
+                               radius: CGFloat = colorItemRadius) -> UIImage?
     {
         let radius: CGFloat = radius
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
@@ -26,8 +28,8 @@ extension UIImage
     }
     
     static func selectedColorItemImage(withColor color: UIColor,
-                                       size: CGSize,
-                                       radius: CGFloat,
+                                       size: CGSize = colorItemSize,
+                                       radius: CGFloat = colorItemRadius,
                                        backgroundColor: UIColor,
                                        backgroundCornerRadius: CGFloat) -> UIImage?
     {

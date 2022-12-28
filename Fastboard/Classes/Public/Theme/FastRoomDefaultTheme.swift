@@ -17,6 +17,7 @@ public class FastRoomDefaultTheme: NSObject {
                            panelItemAssets: .init(normalIconColor: .init(hexString: "#5D6066"),
                                                   selectedIconColor: .init(hexString: "#3381FF"),
                                                   selectedIconBgColor: .clear,
+                                                  selectedColorItemBgColor: .init(hexString: "#EBF2FF"),
                                                   highlightColor: .init(hexString: "#2867CC"),
                                                   highlightBgColor: .clear,
                                                   disableColor: .init(hexString: "#7B7E84"),
@@ -35,6 +36,7 @@ public class FastRoomDefaultTheme: NSObject {
                            panelItemAssets: .init(normalIconColor: .init(hexString: "#999CA3"),
                                                   selectedIconColor: .init(hexString: "#2867CC"),
                                                   selectedIconBgColor: .clear,
+                                                  selectedColorItemBgColor: .init(hexString: "#4B4D54"),
                                                   highlightColor: .init(hexString: "#1E4D99"),
                                                   highlightBgColor: .clear,
                                                   disableColor: .init(hexString: "#4B4D54"),
@@ -67,6 +69,12 @@ public class FastRoomDefaultTheme: NSObject {
                 return defaultDarkTheme.panelItemAssets.selectedIconBgColor
             } else {
                 return defaultLightTheme.panelItemAssets.selectedIconBgColor
+            }
+        }), selectedColorItemBgColor: .init(dynamicProvider: { c in
+            if c.userInterfaceStyle == .dark {
+                return defaultDarkTheme.panelItemAssets.selectedColorItemBgColor
+            } else {
+                return defaultLightTheme.panelItemAssets.selectedColorItemBgColor
             }
         }), highlightColor: .init(dynamicProvider: { c in
             if c.userInterfaceStyle == .dark {
