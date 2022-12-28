@@ -21,6 +21,9 @@ public class CustomColor:NSObject, Codable {
     
     @objc
     public let iconSelectedBgColor: String
+    
+    @objc
+    public let selectedColorItemBgColor: String
 }
 
 let json = Bundle.main.path(forResource: "customColor", ofType: "json")!

@@ -3,35 +3,35 @@ PODS:
   - Fastboard (2.0.0-alpha.9):
     - Fastboard/core (= 2.0.0-alpha.9)
   - Fastboard/core (2.0.0-alpha.9):
-    - Whiteboard (~> 2.17.0-alhpa.13)
+    - Whiteboard (~> 2.17.0-alhpa.17)
   - Fastboard/fpa (2.0.0-alpha.9):
     - Fastboard/core
     - Whiteboard/fpa
   - Masonry (1.1.0)
-  - NTLBridge (3.1.4)
+  - NTLBridge (3.1.5)
   - SnapKit (5.6.0)
-  - Whiteboard (2.17.0-alpha.12):
-    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.12)
-  - Whiteboard/Base (2.17.0-alpha.12):
+  - Whiteboard (2.17.0-alpha.16):
+    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.16)
+  - Whiteboard/Base (2.17.0-alpha.16):
     - NTLBridge (~> 3.1.4)
     - Whiteboard/Object
-  - Whiteboard/Converter (2.17.0-alpha.12):
+  - Whiteboard/Converter (2.17.0-alpha.16):
     - Whiteboard/Object
-  - Whiteboard/fpa (2.17.0-alpha.12):
+  - Whiteboard/fpa (2.17.0-alpha.16):
     - AgoraFPA_iOS (~> 1.0.0)
     - Whiteboard/Room
-  - Whiteboard/Model (2.17.0-alpha.12):
+  - Whiteboard/Model (2.17.0-alpha.16):
     - YYModel
-  - Whiteboard/NativeReplayer (2.17.0-alpha.12):
+  - Whiteboard/NativeReplayer (2.17.0-alpha.16):
     - Whiteboard/Replayer
-  - Whiteboard/Object (2.17.0-alpha.12):
+  - Whiteboard/Object (2.17.0-alpha.16):
     - Whiteboard/Model
-  - Whiteboard/Replayer (2.17.0-alpha.12):
+  - Whiteboard/Replayer (2.17.0-alpha.16):
     - Whiteboard/Base
-  - Whiteboard/Resource (2.17.0-alpha.12)
-  - Whiteboard/Room (2.17.0-alpha.12):
+  - Whiteboard/Resource (2.17.0-alpha.16)
+  - Whiteboard/Room (2.17.0-alpha.16):
     - Whiteboard/Base
-  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.12):
+  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.16):
     - Whiteboard/Converter
     - Whiteboard/NativeReplayer
     - Whiteboard/Resource
@@ -59,11 +59,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AgoraFPA_iOS: 2202f574e6832567e368d5e69ad6da121a18ee4a
-  Fastboard: c612b8ac7dec5bd452ec8bde9883c24d2d300b23
+  Fastboard: 3da3f66b53653ceccc9a3f34fc642084f3b0ce9a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  NTLBridge: 49780dc966976d3221a0eb03c7368617c1987cb6
+  NTLBridge: e94dc18242476b0238c10213a5438d9b9a59fcce
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Whiteboard: 32bc7643dbd273e02c0537c1dc688136c58ec134
+  Whiteboard: b24dce5c61b98fb02feb7f8e54c9a2e456d2ad9e
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: c651acd9301c60bb8226ad1643dbc22c37a3cd5e

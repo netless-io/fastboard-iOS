@@ -149,6 +149,7 @@
     FastRoomPanelItemAssets* panel = [[FastRoomPanelItemAssets alloc] initWithNormalIconColor:UIColor.whiteColor
                                                                             selectedIconColor:[[UIColor alloc] initWithHexString:customColor.selColor]
                                                                           selectedIconBgColor:[[UIColor alloc] initWithHexString:customColor.iconSelectedBgColor]
+                                                                     selectedColorItemBgColor: [[UIColor alloc] initWithHexString:customColor.selectedColorItemBgColor]
                                                                                highlightColor:[[UIColor alloc] initWithHexString:customColor.highlightColor]
                                                                              highlightBgColor:UIColor.clearColor
                                                                                  disableColor:[UIColor.grayColor colorWithAlphaComponent:0.7]

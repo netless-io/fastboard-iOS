@@ -2,5 +2,6 @@
     "controlBarBg": "#38485C",
     "selColor": "#FFFFFF",
     "highlightColor": "#2ed573",
-    "iconSelectedBgColor": "#4B9E86"
+    "iconSelectedBgColor": "#4B9E86",
+    "selectedColorItemBgColor": "#FF0000"
 }
