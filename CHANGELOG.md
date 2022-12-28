@@ -1,5 +1,7 @@
 # ChangeLog
 
+## [2.0.0-alpha.10] - 2022-12-28
+- 增加 `selectedColorItemBgColor`
 ## [2.0.0-alpha.9] - 2022-12-27
 - 更新子菜单样式
 - 消除 warnings
