@@ -144,6 +144,17 @@ public class FastRoomPanelItemButton: UIButton {
         indicatorView.frame = .init(origin: .init(x: x, y: y), size: size)
     }
     
+    func selectedColorItemImage(for color: UIColor) -> UIImage? {
+        if #available(iOS 13.0, *) {
+            return UIImage.selectedColorItemImage(withColor: color,
+                                                  backgroundColor: (selectedColorItemBgColor ?? .clear).resolvedColor(with: traitCollection),
+                                                  backgroundCornerRadius: 8)
+        }
+        return UIImage.selectedColorItemImage(withColor: color,
+                                              backgroundColor: selectedColorItemBgColor ?? .clear,
+                                              backgroundCornerRadius: 8)
+    }
+    
     func tryUpdateStyle() {
         // Throttle
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(updateStyle), object: nil)
@@ -210,13 +221,8 @@ public class FastRoomPanelItemButton: UIButton {
                 setImage(image, for: .normal)
             }
         case .color(let color):
-            let normalImage = UIImage.colorItemImageWith(color: color)
-            setImage(normalImage, for: .normal)
-            let selectedImage = UIImage.selectedColorItemImage(withColor: color,
-                                                               backgroundColor: selectedColorItemBgColor ?? .clear,
-                                                               backgroundCornerRadius: 8)
-            setImage(selectedImage, for: .selected)
-            return
+            setImage(UIImage.colorItemImageWith(color: color), for: .normal)
+            setImage(selectedColorItemImage(for: color), for: .selected)
         }
     }
     
