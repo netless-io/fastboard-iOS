@@ -19,7 +19,7 @@ extension FastRoom {
     }
     
     @objc func onDidBecomeActiveNotification() {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 14.0, *) {
             if view.isPencilDrawOnly != UIPencilInteraction.prefersPencilOnlyDrawing {
                 view.isPencilDrawOnly = UIPencilInteraction.prefersPencilOnlyDrawing
             }
@@ -37,7 +37,7 @@ extension FastRoom {
     
     fileprivate func updateIfFollowSystemPencilBehavior(_ follow: Bool) {
         if #available(iOS 12.1, *) {
-            if #available(iOS 13.0, *) {
+            if #available(iOS 14.0, *) {
                 view.isPencilDrawOnly = follow ? UIPencilInteraction.prefersPencilOnlyDrawing : false
             }
             if follow {
