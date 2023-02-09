@@ -32,6 +32,8 @@ class CustomFastboardOverlay: FastRoomOverlay {
     
     func update(strokeWidth: Float) {}
     
+    func update(pencilEraserWidth: Float) {}
+    
     func update(pageState: WhitePageState) {}
     
     func update(undoEnable: Bool) {}
