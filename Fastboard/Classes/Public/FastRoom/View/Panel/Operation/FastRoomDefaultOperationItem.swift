@@ -60,6 +60,20 @@ public class FastRoomDefaultOperationItem: NSObject {
     }
     
     @objc
+    public static func pencilEraserWidth() -> FastRoomOperationItem {
+        SliderOperationItem(value: 0,
+                            action: { room, s in
+            guard let s = s as? Float else { return }
+            let memberState = WhiteMemberState()
+            memberState.pencilEraserSize = NSNumber(value: s)
+            room.setMemberState(memberState)
+        }, sliderConfig: { slider in
+            slider.minimumValue = 1
+            slider.maximumValue = 3
+        }, identifier: FastRoomDefaultOperationIdentifier.operationType(.pencilEraserWidth)!.identifier)
+    }
+    
+    @objc
     public static func redoItem() -> FastRoomOperationItem {
         let item = JustExecutionItem(image: UIImage.currentBundle(named: "whiteboard_redo")!,
                           action: { room, _ in

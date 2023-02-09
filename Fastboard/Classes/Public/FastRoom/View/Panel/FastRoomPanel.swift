@@ -69,8 +69,16 @@ public class FastRoomPanel: NSObject {
     }
     
     func itemWillBeExecution(_ item: FastRoomOperationItem) {
-        if let _ = item as? ApplianceItem {
+        if let applianceItem = item as? ApplianceItem {
             deselectAll()
+            
+            switch applianceItem.identifier {
+            case identifierFor(appliance: .ApplianceEraser, shape: nil):
+                updatePencilEraseSize(hide: true)
+            case identifierFor(appliance: .AppliancePencilEraser, shape: nil):
+                updatePencilEraseSize(hide: false)
+            default: break
+            }
         }
         if let _ = item as? SubOpsItem {
             deselectAll()
@@ -101,14 +109,49 @@ public class FastRoomPanel: NSObject {
     }
     
     @objc
-    public func updateStrokeWidth(_ width: Float) {
-        let sliderOps = items
-            .compactMap { $0 as? SubOpsItem }
-            .flatMap { $0.subOps }
-            .compactMap { $0 as? SliderOperationItem }
+    public func updatePencilEraseSize(hide: Bool) {
+        flatItems
+            .filter { $0.identifier == FastRoomDefaultOperationType.pencilEraserWidth.identifier }
+            .compactMap { $0.associatedView }
+            .forEach { $0.isHidden = hide}
         
-        sliderOps.forEach {
-            $0.syncValueToSlider(width)
+        items
+            .compactMap { $0 as? SubOpsItem }
+            .filter { item in
+                item.subOps.contains { op in
+                    op.identifier == FastRoomDefaultOperationType.pencilEraserWidth.identifier
+                }
+            }
+            .forEach { $0.subPanelView.rebuildLayout() }
+    }
+    
+    @objc
+    public func updateStrokeWidth(_ width: Float) {
+        for item in items {
+            if let subOpsItem = item as? SubOpsItem {
+                for subItem in subOpsItem.subOps {
+                    if let slideItem = subItem as? SliderOperationItem {
+                        if slideItem.identifier == FastRoomDefaultOperationIdentifier.operationType(.strokeWidth)?.identifier {
+                            slideItem.syncValueToSlider(width)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc
+    public func updatePencilEraserWidth(_ width: Float) {
+        for item in items {
+            if let subOpsItem = item as? SubOpsItem {
+                for subItem in subOpsItem.subOps {
+                    if let slideItem = subItem as? SliderOperationItem {
+                        if slideItem.identifier == FastRoomDefaultOperationIdentifier.operationType(.pencilEraserWidth)?.identifier {
+                            slideItem.syncValueToSlider(width)
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -149,6 +192,9 @@ public class FastRoomPanel: NSObject {
                 }
             }
         }
+        
+        let isEraser = identifierFor(appliance: .ApplianceEraser, shape: nil) == identifier
+        updatePencilEraseSize(hide: isEraser)
     }
     
     @objc

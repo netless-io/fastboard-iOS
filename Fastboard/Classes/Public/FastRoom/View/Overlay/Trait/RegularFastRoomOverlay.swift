@@ -265,6 +265,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
             if let item = operationPanel.flatItems.first(where: { $0.identifier == identifier }) {
                 updateDisplayStyleFromNewOperationItem(item)
             }
+            
         } else {
             updateDisplayStyle(.all)
         }
@@ -276,6 +277,10 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
     
     public func update(strokeWidth: Float) {
         operationPanel.updateStrokeWidth(strokeWidth)
+    }
+    
+    public func update(pencilEraserWidth: Float) {
+        operationPanel.updatePencilEraserWidth(pencilEraserWidth)
     }
     
     public func update(pageState: WhitePageState) {
@@ -439,6 +444,12 @@ extension RegularFastRoomOverlay {
         pencilSubOps.append(contentsOf: FastRoomDefaultOperationItem.defaultColorItems())
         let pencilOp = SubOpsItem(subOps: pencilSubOps)
         
+        let eraserOps = SubOpsItem(subOps: [
+            FastRoomDefaultOperationItem.selectableApplianceItem(.AppliancePencilEraser),
+            FastRoomDefaultOperationItem.selectableApplianceItem(.ApplianceEraser),
+            FastRoomDefaultOperationItem.pencilEraserWidth()
+        ])
+        
         var textSubOps: [FastRoomOperationItem] = [
             FastRoomDefaultOperationItem.selectableApplianceItem(.ApplianceText)
         ]
@@ -450,7 +461,7 @@ extension RegularFastRoomOverlay {
             FastRoomDefaultOperationItem.selectableApplianceItem(.ApplianceSelector),
             pencilOp,
             textOp,
-            FastRoomDefaultOperationItem.selectableApplianceItem(.ApplianceEraser),
+            eraserOps,
             shapes,
             FastRoomDefaultOperationItem.clean()
         ]

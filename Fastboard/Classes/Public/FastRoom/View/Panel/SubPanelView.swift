@@ -92,8 +92,9 @@ class SubPanelView: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        let maxX = containerView.subviews.map { $0.frame.maxX }.max() ?? 0
-        let maxY = containerView.subviews.map { $0.frame.maxY }.max() ?? 0
+        let visualbleViews = containerView.subviews.filter { !($0 is UIVisualEffectView) && !$0.isHidden }
+        let maxX = visualbleViews.map { $0.frame.maxX }.max() ?? 0
+        let maxY = visualbleViews.map { $0.frame.maxY }.max() ?? 0
         return .init(width: maxX + shadowMargin * 2 + spacing, height: maxY + shadowMargin * 2 + spacing)
     }
     

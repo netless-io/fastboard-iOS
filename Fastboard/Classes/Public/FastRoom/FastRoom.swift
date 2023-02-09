@@ -155,6 +155,10 @@ public class FastRoom: NSObject {
             view.overlay?.update(strokeWidth: strokeWidth)
         }
         
+        if let pencilEraserSize = state.memberState?.pencilEraserSize?.floatValue {
+            view.overlay?.update(pencilEraserWidth: pencilEraserSize)
+        }
+        
         if let nums = state.memberState?.strokeColor {
             let color = UIColor.init(numberArray: nums)
             view.overlay?.update(strokeColor: color)

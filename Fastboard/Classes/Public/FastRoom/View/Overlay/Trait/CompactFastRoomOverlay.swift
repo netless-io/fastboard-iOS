@@ -158,6 +158,10 @@ public class CompactFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         colorAndStrokePanel.updateStrokeWidth(strokeWidth)
     }
     
+    public func update(pencilEraserWidth: Float) {
+        operationPanel.updatePencilEraserWidth(pencilEraserWidth)
+    }
+    
     public func update(pageState: WhitePageState) {
         if let label = scenePanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.pageIndicator)!.identifier })?.associatedView as? UILabel {
             label.text = "\(pageState.index + 1) / \(pageState.length)"

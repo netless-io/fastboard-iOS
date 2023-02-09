@@ -15,6 +15,7 @@ public enum FastRoomDefaultOperationType: Int {
     case color
     case deleteSelection
     case strokeWidth
+    case pencilEraserWidth
     case clean
     case redo
     case undo
@@ -30,6 +31,7 @@ public enum FastRoomDefaultOperationType: Int {
         case .color: return "color"
         case .deleteSelection: return "deleteSelection"
         case .strokeWidth: return "strokeWidth"
+        case .pencilEraserWidth: return "pencilEraserWidth"
         case .clean: return "clean"
         case .redo: return "redo"
         case .undo: return "undo"
