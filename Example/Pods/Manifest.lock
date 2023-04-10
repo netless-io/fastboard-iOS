@@ -1,37 +1,37 @@
 PODS:
-  - AgoraFPA_iOS (1.0.0)
-  - Fastboard (2.0.0-alpha.13):
-    - Fastboard/core (= 2.0.0-alpha.13)
-  - Fastboard/core (2.0.0-alpha.13):
-    - Whiteboard (~> 2.17.0-alpha.20)
-  - Fastboard/fpa (2.0.0-alpha.13):
+  - Fastboard (2.0.0-alpha.14):
+    - Fastboard/core (= 2.0.0-alpha.14)
+  - Fastboard/core (2.0.0-alpha.14):
+    - Whiteboard (~> 2.17.0-alpha.24)
+  - Fastboard/fpa (2.0.0-alpha.14):
     - Fastboard/core
     - Whiteboard/fpa
   - Masonry (1.1.0)
+  - NTL_AgoraFPA (1.0.0)
   - NTLBridge (3.1.5)
   - SnapKit (5.6.0)
-  - Whiteboard (2.17.0-alpha.20):
-    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.20)
-  - Whiteboard/Base (2.17.0-alpha.20):
+  - Whiteboard (2.17.0-alpha.24):
+    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.24)
+  - Whiteboard/Base (2.17.0-alpha.24):
     - NTLBridge (~> 3.1.4)
     - Whiteboard/Object
-  - Whiteboard/Converter (2.17.0-alpha.20):
+  - Whiteboard/Converter (2.17.0-alpha.24):
     - Whiteboard/Object
-  - Whiteboard/fpa (2.17.0-alpha.20):
-    - AgoraFPA_iOS (~> 1.0.0)
+  - Whiteboard/fpa (2.17.0-alpha.24):
+    - NTL_AgoraFPA (~> 1.0.0)
     - Whiteboard/Room
-  - Whiteboard/Model (2.17.0-alpha.20):
+  - Whiteboard/Model (2.17.0-alpha.24):
     - YYModel
-  - Whiteboard/NativeReplayer (2.17.0-alpha.20):
+  - Whiteboard/NativeReplayer (2.17.0-alpha.24):
     - Whiteboard/Replayer
-  - Whiteboard/Object (2.17.0-alpha.20):
+  - Whiteboard/Object (2.17.0-alpha.24):
     - Whiteboard/Model
-  - Whiteboard/Replayer (2.17.0-alpha.20):
+  - Whiteboard/Replayer (2.17.0-alpha.24):
     - Whiteboard/Base
-  - Whiteboard/Resource (2.17.0-alpha.20)
-  - Whiteboard/Room (2.17.0-alpha.20):
+  - Whiteboard/Resource (2.17.0-alpha.24)
+  - Whiteboard/Room (2.17.0-alpha.24):
     - Whiteboard/Base
-  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.20):
+  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.24):
     - Whiteboard/Converter
     - Whiteboard/NativeReplayer
     - Whiteboard/Resource
@@ -46,8 +46,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AgoraFPA_iOS
     - Masonry
+    - NTL_AgoraFPA
     - NTLBridge
     - SnapKit
     - Whiteboard
@@ -58,14 +58,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AgoraFPA_iOS: 2202f574e6832567e368d5e69ad6da121a18ee4a
-  Fastboard: 1bd6ccd76eb8c94d20e83d5ad4af2dd5e1a193f0
+  Fastboard: 70b0d34b827bf937dd32e4abf7988b58a09522a0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  NTL_AgoraFPA: 24a5d0541aba7818829d0051faa7b53317b944a0
   NTLBridge: e94dc18242476b0238c10213a5438d9b9a59fcce
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Whiteboard: 6c036cd33d4fb0efb34f5459645f27aad58a6874
+  Whiteboard: 10b699f7e47bdad272788eaf36b1eb8b966594c3
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: c651acd9301c60bb8226ad1643dbc22c37a3cd5e
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
