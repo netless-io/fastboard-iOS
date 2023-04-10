@@ -1,37 +1,37 @@
 PODS:
-  - AgoraFPA_iOS (1.0.0)
   - Fastboard (2.0.0-alpha.13):
     - Fastboard/core (= 2.0.0-alpha.13)
   - Fastboard/core (2.0.0-alpha.13):
-    - Whiteboard (~> 2.17.0-alpha.20)
+    - Whiteboard (~> 2.17.0-alpha.23)
   - Fastboard/fpa (2.0.0-alpha.13):
     - Fastboard/core
     - Whiteboard/fpa
   - Masonry (1.1.0)
+  - NTL_AgoraFPA (1.0.0)
   - NTLBridge (3.1.5)
   - SnapKit (5.6.0)
-  - Whiteboard (2.17.0-alpha.20):
-    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.20)
-  - Whiteboard/Base (2.17.0-alpha.20):
+  - Whiteboard (2.17.0-alpha.23):
+    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.23)
+  - Whiteboard/Base (2.17.0-alpha.23):
     - NTLBridge (~> 3.1.4)
     - Whiteboard/Object
-  - Whiteboard/Converter (2.17.0-alpha.20):
+  - Whiteboard/Converter (2.17.0-alpha.23):
     - Whiteboard/Object
-  - Whiteboard/fpa (2.17.0-alpha.20):
-    - AgoraFPA_iOS (~> 1.0.0)
+  - Whiteboard/fpa (2.17.0-alpha.23):
+    - NTL_AgoraFPA (~> 1.0.0)
     - Whiteboard/Room
-  - Whiteboard/Model (2.17.0-alpha.20):
+  - Whiteboard/Model (2.17.0-alpha.23):
     - YYModel
-  - Whiteboard/NativeReplayer (2.17.0-alpha.20):
+  - Whiteboard/NativeReplayer (2.17.0-alpha.23):
     - Whiteboard/Replayer
-  - Whiteboard/Object (2.17.0-alpha.20):
+  - Whiteboard/Object (2.17.0-alpha.23):
     - Whiteboard/Model
-  - Whiteboard/Replayer (2.17.0-alpha.20):
+  - Whiteboard/Replayer (2.17.0-alpha.23):
     - Whiteboard/Base
-  - Whiteboard/Resource (2.17.0-alpha.20)
-  - Whiteboard/Room (2.17.0-alpha.20):
+  - Whiteboard/Resource (2.17.0-alpha.23)
+  - Whiteboard/Room (2.17.0-alpha.23):
     - Whiteboard/Base
-  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.20):
+  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.23):
     - Whiteboard/Converter
     - Whiteboard/NativeReplayer
     - Whiteboard/Resource
@@ -46,8 +46,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AgoraFPA_iOS
     - Masonry
+    - NTL_AgoraFPA
     - NTLBridge
     - SnapKit
     - Whiteboard
@@ -58,14 +58,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AgoraFPA_iOS: 2202f574e6832567e368d5e69ad6da121a18ee4a
-  Fastboard: 1bd6ccd76eb8c94d20e83d5ad4af2dd5e1a193f0
+  Fastboard: b36297b7d53f4ad5846bf6f505106b905e10d019
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  NTL_AgoraFPA: 24a5d0541aba7818829d0051faa7b53317b944a0
   NTLBridge: e94dc18242476b0238c10213a5438d9b9a59fcce
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Whiteboard: 6c036cd33d4fb0efb34f5459645f27aad58a6874
+  Whiteboard: 401212487851f4c1e4f6f77d4b859752c0311193
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: c651acd9301c60bb8226ad1643dbc22c37a3cd5e
+PODFILE CHECKSUM: 1ef64b0dab63a16d0504a617fa0cc0e9b2cd647d
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

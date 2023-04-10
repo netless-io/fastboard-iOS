@@ -22,10 +22,10 @@ public class FastRoomView: UIView, FastPanelControl {
     public var overlay: FastRoomOverlay?
 
     @objc
-    public init(overlay: FastRoomOverlay?) {
+    public init(overlay: FastRoomOverlay?, customUrl: String?) {
         self.overlay = overlay
         super.init(frame: .zero)
-        setupWhiteboardView()
+        setupWhiteboardView(customUrl: customUrl)
     }
     
     public required init?(coder: NSCoder) {
@@ -40,8 +40,12 @@ public class FastRoomView: UIView, FastPanelControl {
     @objc
     public var whiteboardView: WhiteBoardView!
     
-    func setupWhiteboardView() {
-        whiteboardView = WhiteBoardView()
+    func setupWhiteboardView(customUrl: String?) {
+        if let customUrl {
+            whiteboardView = WhiteBoardView(customUrl: customUrl)
+        } else {
+            whiteboardView = WhiteBoardView()
+        }
         addSubview(whiteboardView)
     }
     

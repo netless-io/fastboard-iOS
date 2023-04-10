@@ -24,6 +24,8 @@ public class FastRoomConfiguration: NSObject {
     
     /// Rtc audio mixing delegate
     public var audioMixerDelegate: FastAudioMixerDelegate?
+    
+    public var customWhiteboardUrl: String?
  
     /// Create FastConfiguration
     /// - Parameters:
