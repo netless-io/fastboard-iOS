@@ -50,30 +50,30 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
     private var previousAppliance: ApplianceItem?
     private var exchangeForEraser: FastRoomOperationItem?
     
+    func active(item: FastRoomOperationItem, withSubPanel: Bool) {
+        func performSub(_ sub: SubOpsItem) {
+            sub.onClick(sub.associatedView as! UIButton)
+            if !withSubPanel {
+                // Do not show panel
+                sub.subPanelView.hide()
+            }
+        }
+        
+        if let a = item as? ApplianceItem {
+            a.onClick(a.button)
+            return
+        }
+        if let sub = item as? SubOpsItem {
+            performSub(sub)
+            return
+        }
+    }
+    
     @available(iOS 12.1, *)
     public func respondTo(pencilTap: UIPencilPreferredAction) {
         guard let currentAppliance = currentAppliance else { return }
         func isCurrentEraser() -> Bool {
             currentAppliance.identifier?.contains(identifierFor(appliance: .ApplianceEraser, shape: nil)) ?? false
-        }
-        func active(item: FastRoomOperationItem, withSubPanel: Bool) {
-            func performSub(_ sub: SubOpsItem) {
-                sub.onClick(sub.associatedView as! UIButton)
-                if !withSubPanel {
-                    // Do not show panel
-                    sub.subPanelView.hide()
-                }
-            }
-            
-            if let a = item as? ApplianceItem {
-                a.onClick(a.button)
-                return
-            }
-            if let sub = item as? SubOpsItem {
-                performSub(sub)
-                return
-            }
-            
         }
         
         func pencilItem() -> FastRoomOperationItem? {

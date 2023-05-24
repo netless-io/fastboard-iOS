@@ -213,6 +213,11 @@ public class SubOpsItem: NSObject, FastRoomOperationItem {
         (associatedView as? UIButton)?.isEnabled = enable
     }
     
+    var expand: Bool {
+        if subPanelView.superview == nil { return false }
+        return !subPanelView.isHidden
+    }
+    
     func insertItem(_ item: FastRoomOperationItem) {
         subOps.append(item)
         self.identifier = subOps.compactMap { $0.identifier }.joined(separator: "-")

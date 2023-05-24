@@ -36,13 +36,13 @@ public class FastRoom: NSObject {
     @objc
     public var room: WhiteRoom? {
         didSet {
-            if let room = room {
-                view.overlay?.setupWith(room: room, fastboardView: self.view, direction: view.operationBarDirection)
+            if let room {
+                view.overlay?.setupWith(room: room, fastboardView: view, direction: view.operationBarDirection)
                 delegate?.fastboardDidSetupOverlay?(self, overlay: view.overlay)
             }
             initStateAfterJoinRoom()
             if !view.traitCollection.hasCompact {
-                self.prepareForSystemPencilBehavior()
+                prepareForSystemPencilBehavior()
             }
         }
     }
@@ -65,6 +65,7 @@ public class FastRoom: NSObject {
         get { roomDelegateProxy.target as? WhiteRoomCallbackDelegate }
         set { roomDelegateProxy.target = newValue }
     }
+
     let roomConfig: WhiteRoomConfig
     
     weak var audioMixerDelegate: FastAudioMixerDelegate?
@@ -85,14 +86,14 @@ public class FastRoom: NSObject {
     }
     
     @objc
-    public func updateWritable(_ writable: Bool, completion: ((Error?)->Void)?) {
+    public func updateWritable(_ writable: Bool, completion: ((Error?) -> Void)?) {
         room?.setWritable(writable, completionHandler: { [weak room, weak self] success, error in
             if success, writable {
                 room?.disableSerialization(false)
                 
                 // Get latest color when set writable true
                 if writable, let colorNumbers = room?.state.memberState?.strokeColor {
-                    let color = UIColor.init(numberArray: colorNumbers)
+                    let color = UIColor(numberArray: colorNumbers)
                     self?.view.overlay?.update(strokeColor: color)
                 }
             }
@@ -101,18 +102,18 @@ public class FastRoom: NSObject {
     }
     
     /// Call the method to join the whiteRoom
-    public func joinRoom(completionHandler: ((Result<WhiteRoom, FastRoomError>)->Void)? = nil) {
+    public func joinRoom(completionHandler: ((Result<WhiteRoom, FastRoomError>) -> Void)? = nil) {
         delegate?.fastboardPhaseDidUpdate(self, phase: .connecting)
         whiteSDK.joinRoom(with: roomConfig,
-                          callbacks: roomDelegateProxy) { [weak self] success, room, error in
-            guard let self = self else { return }
-            if let error = error {
+                          callbacks: roomDelegateProxy) { [weak self] _, room, error in
+            guard let self else { return }
+            if let error {
                 let fastError = FastRoomError(type: .joinRoom, error: error)
                 self.delegate?.fastboardDidOccurError(self, error: fastError)
                 completionHandler?(.failure(fastError))
                 return
             }
-            guard let room = room else {
+            guard let room else {
                 let fastError = FastRoomError(type: .joinRoom, info: ["info": "join success without room"])
                 self.delegate?.fastboardDidOccurError(self, error: fastError)
                 completionHandler?(.failure(fastError))
@@ -126,6 +127,7 @@ public class FastRoom: NSObject {
     }
     
     // MARK: - Notification
+
     @objc func onThemeManagerTeleBoxThemeUpdate(_ notification: Notification) {
         guard let theme = notification.userInfo?["theme"] as? WhiteTeleBoxManagerThemeConfig else { return }
         room?.setTeleBoxTheme(theme)
@@ -137,6 +139,7 @@ public class FastRoom: NSObject {
     }
     
     // MARK: - Private
+
     func initStateAfterJoinRoom() {
         guard let state = room?.state else { return }
         if let appliance = state.memberState?.currentApplianceName {
@@ -160,7 +163,7 @@ public class FastRoom: NSObject {
         }
         
         if let nums = state.memberState?.strokeColor {
-            let color = UIColor.init(numberArray: nums)
+            let color = UIColor(numberArray: nums)
             view.overlay?.update(strokeColor: color)
         }
     }
@@ -187,14 +190,15 @@ public class FastRoom: NSObject {
     init(view: FastRoomView,
          roomConfig: WhiteRoomConfig,
          sdkConfig: WhiteSdkConfiguration,
-         audioMixerDelegate: FastAudioMixerDelegate? = nil){
+         audioMixerDelegate: FastAudioMixerDelegate? = nil)
+    {
         self.view = view
         self.roomConfig = roomConfig
         self.audioMixerDelegate = audioMixerDelegate
         super.init()
         let whiteSDK = WhiteSDK(whiteBoardView: view.whiteboardView,
                                 config: sdkConfig,
-                                commonCallbackDelegate: self.sdkDelegateProxy,
+                                commonCallbackDelegate: sdkDelegateProxy,
                                 audioMixerBridgeDelegate: audioMixerDelegate == nil ? nil : self)
         self.whiteSDK = whiteSDK
         NotificationCenter.default.addObserver(self, selector: #selector(onThemeManagerPrefersSchemeUpdate), name: prefersSchemeUpdateNotificationName, object: nil)
@@ -203,8 +207,7 @@ public class FastRoom: NSObject {
 }
 
 extension FastRoom: WhiteCommonCallbackDelegate {
-    public func throwError(_ error: Error) {
-    }
+    public func throwError(_ error: Error) {}
     
     public func sdkSetupFail(_ error: Error) {
         delegate?.fastboardDidOccurError(self, error: .init(type: .setupSDK, error: error))
@@ -268,5 +271,69 @@ extension FastRoom: WhiteAudioMixerBridgeDelegate {
     public func setAudioMixingPosition(_ position: Int) {
         guard let mixer = whiteSDK.audioMixer else { return }
         audioMixerDelegate?.setAudioMixingPosition(audioBridge: mixer, position)
+    }
+}
+
+public extension FastRoom {
+    /// Only valid for `RegularFastRoomOverlay` yet.
+    func prevColor() -> UIColor? {
+        guard
+            let overlay = view.overlay as? RegularFastRoomOverlay,
+            let room
+        else { return nil }
+        let identifier = room.memberState.currentApplianceName.rawValue
+        let subOps = overlay.operationPanel.items.compactMap { $0 as? SubOpsItem }
+        if let op = subOps.first(where: { ($0.identifier ?? "").contains(identifier)}) {
+            if op.needColor {
+                let colors = op.subOps.compactMap({ $0 as? ColorItem })
+                if let index = colors.firstIndex(where: { $0 === op.selectedColorItem }) {
+                    let prevColor = colors[index == 0 ? colors.count - 1 : index - 1]
+                    prevColor.onClick()
+                    return prevColor.color
+                }
+            }
+        }
+        return nil
+    }
+    
+    /// Only valid for `RegularFastRoomOverlay` yet.
+    func nextColor() -> UIColor? {
+        guard
+            let overlay = view.overlay as? RegularFastRoomOverlay,
+            let room
+        else { return nil }
+        let identifier = room.memberState.currentApplianceName.rawValue
+        let subOps = overlay.operationPanel.items.compactMap { $0 as? SubOpsItem }
+        if let op = subOps.first(where: { ($0.identifier ?? "").contains(identifier)}) {
+            if op.needColor {
+                let colors = op.subOps.compactMap({ $0 as? ColorItem })
+                if let index = colors.firstIndex(where: { $0 === op.selectedColorItem }) {
+                    let nextColor = colors[index == colors.count - 1 ? 0 : index + 1]
+                    nextColor.onClick()
+                    return nextColor.color
+                }
+            }
+        }
+        return nil
+    }
+    
+    /// Only valid for `RegularFastRoomOverlay` yet.
+    func updateApplianceIdentifier(_ identifier: String) {
+        guard let overlay = view.overlay as? RegularFastRoomOverlay else { return }
+        let subOps = overlay.operationPanel.items.compactMap { $0 as? SubOpsItem }
+        for op in subOps {
+            let contains = (op.identifier ?? "").contains(identifier)
+            if contains {
+                overlay.active(item: op, withSubPanel: op.expand)
+                if let i = op.subOps.first(where: { ($0.identifier ?? "").contains(identifier)}) as? ApplianceItem {
+                    i.onClick(i.button)
+                }
+                return
+            }
+        }
+        let applianceItems = overlay.operationPanel.items.compactMap { $0 as? ApplianceItem }
+        if let item = applianceItems.first(where: { $0.identifier?.contains(identifier) ?? false }) {
+            overlay.active(item: item, withSubPanel: false)
+        }
     }
 }
