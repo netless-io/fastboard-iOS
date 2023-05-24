@@ -1,9 +1,9 @@
 PODS:
-  - Fastboard (2.0.0-alpha.14):
-    - Fastboard/core (= 2.0.0-alpha.14)
-  - Fastboard/core (2.0.0-alpha.14):
+  - Fastboard (2.0.0-alpha.15):
+    - Fastboard/core (= 2.0.0-alpha.15)
+  - Fastboard/core (2.0.0-alpha.15):
     - Whiteboard (~> 2.17.0-alpha.24)
-  - Fastboard/fpa (2.0.0-alpha.14):
+  - Fastboard/fpa (2.0.0-alpha.15):
     - Fastboard/core
     - Whiteboard/fpa
   - Masonry (1.1.0)
@@ -58,7 +58,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Fastboard: 70b0d34b827bf937dd32e4abf7988b58a09522a0
+  Fastboard: e737415737d7cbffc40d8febb2b8ace59a09a571
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   NTL_AgoraFPA: 24a5d0541aba7818829d0051faa7b53317b944a0
   NTLBridge: e94dc18242476b0238c10213a5438d9b9a59fcce
@@ -68,4 +68,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c651acd9301c60bb8226ad1643dbc22c37a3cd5e
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1
