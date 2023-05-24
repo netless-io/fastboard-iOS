@@ -1,5 +1,8 @@
 # ChangeLog
 
+## [2.0.0-alpha.15] - 2023-05-24
+- 为 iPad 的 FastRoom 新增 `prevColor` / `nextColor` / `updateApplianceIdentifier` 方法
+
 ## [2.0.0-alpha.13] - 2022-12-28
 
 - 新增 pencilEraser 工具
