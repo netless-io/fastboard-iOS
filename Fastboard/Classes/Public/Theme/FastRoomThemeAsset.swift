@@ -109,5 +109,6 @@ open class FastRoomThemeAsset: NSObject {
     
     var prefersColorScheme: WhitePrefersColorScheme?
     
-    var teleboxTheme: WhiteTeleBoxManagerThemeConfig?
+    @objc
+    open var teleboxTheme: WhiteTeleBoxManagerThemeConfig?
 }
