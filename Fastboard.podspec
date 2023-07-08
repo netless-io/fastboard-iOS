@@ -18,8 +18,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'core' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard', '~> 2.17.0-alpha.24'
-    core.exclude_files = 'Fastboard/Classes/FPA/*'
+    core.dependency 'Whiteboard', '~> 2.17.0-alpha.25'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
       'LocalizedStrings' => ['Fastboard/Assets/*.lproj/*.strings']
@@ -29,32 +28,13 @@ Pod::Spec.new do |s|
   
   s.subspec 'core-YYKit' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
-    core.dependency 'Whiteboard/Whiteboard-YYKit', '~> 2.17.0-alpha.24'
-    core.exclude_files = 'Fastboard/Classes/FPA/*'
+    core.dependency 'Whiteboard/Whiteboard-YYKit', '~> 2.17.0-alpha.25'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
       'LocalizedStrings' => ['Fastboard/Assets/*.lproj/*.strings']
     }
     core.frameworks = 'UIKit'
   end
-  
-   s.subspec 'fpa' do |fpa|
-     fpa.source_files = 'Fastboard/Classes/FPA/*'
-     fpa.dependency 'Whiteboard/fpa'
-     fpa.dependency 'Fastboard/core'
-     # Remove this when `fpa` deployment_target removed
-     fpa.ios.deployment_target = '11.0'
-
-   end
-   
-   s.subspec 'fpa-YYKit' do |fpa|
-     fpa.source_files = 'Fastboard/Classes/FPA/*'
-     fpa.dependency 'Whiteboard/fpa-YYKit'
-     fpa.dependency 'Fastboard/core-YYKit'
-     # Remove this when `fpa` deployment_target removed
-     fpa.ios.deployment_target = '11.0'
-
-   end
   
   s.default_subspec = 'core'
   
