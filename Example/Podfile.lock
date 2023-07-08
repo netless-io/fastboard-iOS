@@ -2,36 +2,29 @@ PODS:
   - Fastboard (2.0.0-alpha.16):
     - Fastboard/core (= 2.0.0-alpha.16)
   - Fastboard/core (2.0.0-alpha.16):
-    - Whiteboard (~> 2.17.0-alpha.24)
-  - Fastboard/fpa (2.0.0-alpha.16):
-    - Fastboard/core
-    - Whiteboard/fpa
+    - Whiteboard (~> 2.17.0-alpha.25)
   - Masonry (1.1.0)
-  - NTL_AgoraFPA (1.0.0)
   - NTLBridge (3.1.5)
   - SnapKit (5.6.0)
-  - Whiteboard (2.17.0-alpha.24):
-    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.24)
-  - Whiteboard/Base (2.17.0-alpha.24):
+  - Whiteboard (2.17.0-alpha.25):
+    - Whiteboard/Whiteboard-YYModel (= 2.17.0-alpha.25)
+  - Whiteboard/Base (2.17.0-alpha.25):
     - NTLBridge (~> 3.1.4)
     - Whiteboard/Object
-  - Whiteboard/Converter (2.17.0-alpha.24):
+  - Whiteboard/Converter (2.17.0-alpha.25):
     - Whiteboard/Object
-  - Whiteboard/fpa (2.17.0-alpha.24):
-    - NTL_AgoraFPA (~> 1.0.0)
-    - Whiteboard/Room
-  - Whiteboard/Model (2.17.0-alpha.24):
+  - Whiteboard/Model (2.17.0-alpha.25):
     - YYModel
-  - Whiteboard/NativeReplayer (2.17.0-alpha.24):
+  - Whiteboard/NativeReplayer (2.17.0-alpha.25):
     - Whiteboard/Replayer
-  - Whiteboard/Object (2.17.0-alpha.24):
+  - Whiteboard/Object (2.17.0-alpha.25):
     - Whiteboard/Model
-  - Whiteboard/Replayer (2.17.0-alpha.24):
+  - Whiteboard/Replayer (2.17.0-alpha.25):
     - Whiteboard/Base
-  - Whiteboard/Resource (2.17.0-alpha.24)
-  - Whiteboard/Room (2.17.0-alpha.24):
+  - Whiteboard/Resource (2.17.0-alpha.25)
+  - Whiteboard/Room (2.17.0-alpha.25):
     - Whiteboard/Base
-  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.24):
+  - Whiteboard/Whiteboard-YYModel (2.17.0-alpha.25):
     - Whiteboard/Converter
     - Whiteboard/NativeReplayer
     - Whiteboard/Resource
@@ -40,14 +33,13 @@ PODS:
 
 DEPENDENCIES:
   - Fastboard (from `../`)
-  - Fastboard/fpa (from `../`)
   - Masonry
   - SnapKit
+  - Whiteboard
 
 SPEC REPOS:
   trunk:
     - Masonry
-    - NTL_AgoraFPA
     - NTLBridge
     - SnapKit
     - Whiteboard
@@ -58,14 +50,13 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Fastboard: ffe79cdf141ea1e4c2bf08ce2faf507dbc043bf2
+  Fastboard: f68e6a8f8151189bdc36b416c1a518396530d956
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  NTL_AgoraFPA: 24a5d0541aba7818829d0051faa7b53317b944a0
   NTLBridge: e94dc18242476b0238c10213a5438d9b9a59fcce
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Whiteboard: 10b699f7e47bdad272788eaf36b1eb8b966594c3
+  Whiteboard: fcbe3d4788c390026164a3b3580d7aee5826673b
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: c651acd9301c60bb8226ad1643dbc22c37a3cd5e
+PODFILE CHECKSUM: 4144ca18cf85b1793c2afa24e1816d7ccd65d873
 
 COCOAPODS: 1.12.1

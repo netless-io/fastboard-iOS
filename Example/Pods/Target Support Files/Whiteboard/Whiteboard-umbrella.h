@@ -73,8 +73,6 @@
 #import "WhiteSocket.h"
 #import "WritableDetectRoom.h"
 #import "Whiteboard.h"
-#import "WhiteFPA.h"
-#import "WhiteRoomConfig+FPA.h"
 
 FOUNDATION_EXPORT double WhiteboardVersionNumber;
 FOUNDATION_EXPORT const unsigned char WhiteboardVersionString[];

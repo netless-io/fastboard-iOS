@@ -9,7 +9,7 @@
 import Foundation
 
 @objc
-public class CustomColor:NSObject, Codable {
+public class CustomColor: NSObject, Codable {
     @objc
     public let controlBarBg: String
     
