@@ -1,5 +1,8 @@
 # ChangeLog
 
+## [2.0.0-alpha.17] - 2023-07-08
+- 移除 fpa
+
 ## [2.0.0-alpha.15] - 2023-05-24
 - 为 iPad 的 FastRoom 新增 `prevColor` / `nextColor` / `updateApplianceIdentifier` 方法
 

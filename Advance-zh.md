@@ -148,9 +148,3 @@
 ``` ruby
 pod 'Fastboard/core-YYKit'
 ```
-
-如果使用了fpa:
-
-``` ruby
-pod 'Fastboard/fpa-YYKit'
-```
