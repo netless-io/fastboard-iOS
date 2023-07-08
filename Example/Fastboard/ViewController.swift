@@ -11,8 +11,6 @@ import Fastboard
 import Whiteboard
 import SnapKit
 
-var globalUsingFPA = false
-
 extension WhiteApplianceNameKey: CaseIterable {
     public static var allCases: [WhiteApplianceNameKey] {
         [.ApplianceClicker,
@@ -80,23 +78,11 @@ class ViewController: UIViewController {
     }
     
     func setupFastboard(custom: FastRoomOverlay? = nil) {
-        let config: FastRoomConfiguration
-        if #available(iOS 13.0, *) {
-            config = FastRoomConfiguration(appIdentifier: RoomInfo.APPID.value,
-                                           roomUUID: RoomInfo.ROOMUUID.value,
-                                           roomToken: RoomInfo.ROOMTOKEN.value,
-                                           region: .CN,
-                                           userUID: "some-unique-id-1",
-                                           userPayload: .init(nickName: "aaa", avatar: "https://example.com/avatar.jpg"),
-                                           useFPA: globalUsingFPA)
-        } else {
-            // Without fpa
-            config = FastRoomConfiguration(appIdentifier: RoomInfo.APPID.value,
+        let config: FastRoomConfiguration = FastRoomConfiguration(appIdentifier: RoomInfo.APPID.value,
                                            roomUUID: RoomInfo.ROOMUUID.value,
                                            roomToken: RoomInfo.ROOMTOKEN.value,
                                            region: .CN,
                                            userUID: "some-unique-id")
-        }
         config.customOverlay = custom
         let fastRoom = Fastboard.createFastRoom(withFastRoomConfig: config)
         fastRoom.delegate = self
@@ -486,16 +472,6 @@ class ViewController: UIViewController {
                 item.status = NSLocalizedString(self.hideAllPanel ? "On" : "Off", comment: "")
             })
         ]
-        if #available(iOS 13.0, *) {
-            array.append(.init(title: NSLocalizedString("UsingFPA", comment: ""), status: NSLocalizedString(globalUsingFPA ? "On" : "Off", comment: ""), clickBlock: { _ in
-                globalUsingFPA = !globalUsingFPA
-                let vc = ViewController()
-                UIApplication.shared.keyWindow?.rootViewController = vc
-            }))
-        } else {
-            array.append(.init(title: NSLocalizedString("UsingFPA", comment: ""), status: "iOS 13 available", clickBlock: { _ in
-            }))
-        }
         return array
     }()
     

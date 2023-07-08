@@ -34,7 +34,7 @@ typedef void (^JSCallback)(NSString * _Nullable result,BOOL complete);
 - (void)addJavascriptObject:(id _Nullable ) object namespace:(NSString *  _Nullable)nativeNamespace;
 
 // Remove the Javascript Object with the supplied namespace
-- (void)removeJavascriptObject:(NSString *  _Nullable) namespace;
+- (void)removeJavascriptObject:(NSString *  _Nullable) nativeNamespace;
 
 // Test whether the handler exist in javascript
 - (void) hasJavascriptMethod:(NSString * _Nonnull) handlerName methodExistCallback:(void(^ _Nullable)(bool exist))callback;

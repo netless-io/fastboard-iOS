@@ -86,7 +86,7 @@
 }
 
 - (void)recoverApplianceFromTempRemove {
-    if (self.hasRemovedAppliance) {
+    if ((self.hasRemovedAppliance) & (self.room.isWritable)) {
         WhiteMemberState *state = [[WhiteMemberState alloc] init];
         state.currentApplianceName = self.removedAppliance;
         [self.room setMemberState:state];
@@ -102,19 +102,22 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if (!self.drawOnlyApplePencil) {
         if (self.originalDelegate) {
-            if ([self.originalGesture respondsToSelector:@selector(gestureRecognizer:shouldReceiveTouch:)]) {
+            if ([self.originalDelegate respondsToSelector:@selector(gestureRecognizer:shouldReceiveTouch:)]) {
                 return [self.originalDelegate gestureRecognizer:gestureRecognizer shouldReceiveTouch:touch];
             }
         }
     }
-    self.isPencilTouch = (touch.type == UITouchTypePencil);
-    if (!self.isPencilTouch) {
-        [self removeApplianceIfNeed];
-    } else {
-        [self recoverApplianceFromTempRemove];
+    // 不可写状态的触摸不会触发Pencil阻拦事件
+    if (self.room.isWritable) {
+        self.isPencilTouch = (touch.type == UITouchTypePencil);
+        if (!self.isPencilTouch) {
+            [self removeApplianceIfNeed];
+        } else {
+            [self recoverApplianceFromTempRemove];
+        }
     }
     if (self.originalDelegate) {
-        if ([self.originalGesture respondsToSelector:@selector(gestureRecognizer:shouldReceiveTouch:)]) {
+        if ([self.originalDelegate respondsToSelector:@selector(gestureRecognizer:shouldReceiveTouch:)]) {
             return [self.originalDelegate gestureRecognizer:gestureRecognizer shouldReceiveTouch:touch];
         }
     }
@@ -123,7 +126,7 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if (self.originalDelegate) {
-        if ([self.originalGesture respondsToSelector:@selector(gestureRecognizerShouldBegin:)]) {
+        if ([self.originalDelegate respondsToSelector:@selector(gestureRecognizerShouldBegin:)]) {
             return [self.originalDelegate gestureRecognizerShouldBegin:gestureRecognizer];
         }
     }

@@ -23,6 +23,9 @@
 #import "WhiteRegisterAppParams.h"
 #import "WhiteSDK.h"
 #import "WhiteSdkConfiguration.h"
+#import "WhiteSlideAppParams.h"
+#import "WhiteSlideDelegate.h"
+#import "Whiteboard.h"
 #import "WhiteProjectorPolling.h"
 #import "WhiteProjectorQueryResult.h"
 #import "URLRequestPolling.h"
@@ -69,10 +72,9 @@
 #import "WhiteRoomState.h"
 #import "WhiteSDK+Room.h"
 #import "WhiteSocket.h"
+#import "WhiteWindowDocsEventOptions.h"
 #import "WritableDetectRoom.h"
 #import "Whiteboard.h"
-#import "WhiteFPA.h"
-#import "WhiteRoomConfig+FPA.h"
 
 FOUNDATION_EXPORT double WhiteboardVersionNumber;
 FOUNDATION_EXPORT const unsigned char WhiteboardVersionString[];

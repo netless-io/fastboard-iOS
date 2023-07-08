@@ -62,6 +62,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) WhiteRegionKey region;
 
 /**
+ * 白板请求 modules 数据的地址，配置后不会请求白板默认地址
+ * @example https://modules.example.com
+ */
+@property (nonatomic, copy, nullable) NSString *modulesOrigin;
+
+/**
  禁止/允许工具响应用户输入。
 
  - `YES`：禁止工具响应用户输入。
@@ -112,8 +118,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 在用选择工具（``currentApplianceName="selector"``）选中物体后，出现的浮动条。
- * 若为 ``false``（默认值），则永远不会出现浮动条。若为 ``true``，则会出现浮动条。
- * 并且，若为 ``true`` ， 只有选用单个物体或者同类物体才会出现浮动条。
+ * 若为 ``NO``（默认值），则永远不会出现浮动条。若为 ``YES``，则会出现浮动条。
+ * 并且，若为 ``YES`` ， 只有选用单个物体或者同类物体才会出现浮动条。
  */
 @property (nonatomic, assign) BOOL floatBar;
 
@@ -172,13 +178,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 加入房间的超时时间。单位为毫秒。
+ 加入房间的超时时间。单位为秒。
 
  SDK 超时后会主动断连，并触发 [firePhaseChanged](firePhaseChanged:) 回调。同时触发 [fireDisconnectWithError](fireDisconnectWithError:) 回调并返回”重连时长超出 xx 毫秒”的提示。
  */
 @property (nonatomic, strong) NSNumber *timeout;
 
-///** 是否开启多窗口，默认为 false，开启后，各种 API 会进行更改。正式版该 API 已经迁移到 WhiteSDKConfiguration 中 */
+///** 是否开启多窗口，默认为 NO，开启后，各种 API 会进行更改。正式版该 API 已经迁移到 WhiteSDKConfiguration 中 */
 //@property (nonatomic, assign) BOOL useMultiViews;
 
 /** 多窗口用的本地参数，只影响本地客户 */
@@ -207,7 +213,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-
-#if __has_include("WhiteRoomConfig+FPA.h")
-#import "WhiteRoomConfig+FPA.h"
-#endif
