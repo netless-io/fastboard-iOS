@@ -147,9 +147,3 @@ This SDK has a dependency on YYModel by default, if you need to change the depen
 ``` ruby
 pod 'Fastboard/core-YYKit'
 ```
-
-If you are using fpa:
-
-``` ruby
-pod 'Fastboard/fpa-YYKit'
-```

@@ -1,5 +1,7 @@
 # ChangeLog
 
+## [1.3.0] - 2023-07-08
+- 移除 fpa 功能
 ## [1.2.2] - 2023-02-09
 ### 修复
 - 修复 iOS 14 以下用户 `drawOnlyApplePencil`可能造成的 crash
