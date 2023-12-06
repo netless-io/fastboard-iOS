@@ -66,6 +66,18 @@ class BoardHelper: NSObject {
         list.append(item)
         fastRoom.room?.putScenes(defaultDir, scenes: newScenes, index: UInt.max)
         log(text: "[I]: did put scene at path:\(path)")
+      
+//      fastRoom.room?.setCameraBound(.init())
+//      fastRoom.room?.setCameraBound(<#T##cameraBound: WhiteCameraBound##WhiteCameraBound#>)
+//      let maxBound = WhiteContentModeConfig(contentMode: .aspectFitScale)
+//      maxBound.scale = 10
+//      let bound = WhiteCameraBound(
+//        center: .zero,
+//        minContent: .init(contentMode: .aspectFit),
+//        maxContent: .init(contentMode: .aspectFit)
+//      )
+//      let bound = WhiteCameraBound.defaultMinContentModeScale(1, maxContentModeScale: 10)
+//      fastRoom.room?.setCameraBound(bound)
         return true
     }
     
@@ -89,7 +101,8 @@ class BoardHelper: NSObject {
         }
         
         let dir = defaultDir
-        fastRoom.room?.getEntireScenes({ [weak self] dic in
+        fastRoom.room?.getEntireScenes({
+            [weak self] dic in
             guard let scenes = dic[dir] else {
                 return
             }
@@ -118,6 +131,22 @@ class BoardHelper: NSObject {
             
             fastRoom.view.whiteboardView.evaluateJavaScript("window.manager.setMainViewSceneIndex(\(index))")
             log(text: "[D]: did setMainViewSceneIndex \(index)")
+            
+            if let ppt = scenes[index].ppt {
+                let cameraBoundJsString = """
+                manager.mainView.setCameraBound({
+                    width: \(ppt.width),
+                    height: \(ppt.height),
+                    minContentMode: (s, b) => Math.min(s.width/b.width, s.height/b.height) || 0,
+                    maxContentMode: () => 2,
+                })
+                """
+                fastRoom.view.whiteboardView.evaluateJavaScript(cameraBoundJsString)
+                
+                let container = WhiteRectangleConfig(originX: -ppt.width / 2, originY: -ppt.height / 2, width: ppt.width, height: ppt.height)
+                container.animationMode = .immediately
+                fastRoom.room?.moveCamera(toContainer: container)
+            }
             
             for info in list {
                 info.activityPage = item.id == info.id ? page : 0

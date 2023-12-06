@@ -79,8 +79,8 @@ protocol HTTableViewCellDelegate: NSObjectProtocol {
 class HTTableViewCell: UITableViewCell {
     private let nameLabel = UILabel()
     private let pageLabel = UILabel()
-    private let lastBtn = UIButton()
-    private let nextBtn = UIButton()
+    let lastBtn = UIButton()
+    let nextBtn = UIButton()
     private let shareBtn = UIButton()
     var indexPath = IndexPath(row: 0, section: 0)
     private var item: Item!
@@ -185,7 +185,7 @@ class HTTableViewCell: UITableViewCell {
     func config(item: Item) {
         self.item = item
         nameLabel.text = item.name
-        pageLabel.text = "(\(item.currentPage)/\(item.pageCount))"
+        pageLabel.text = "(\(item.currentPage + 1)/\(item.pageCount))"
         shareBtn.isSelected = item.isShare
     }
     

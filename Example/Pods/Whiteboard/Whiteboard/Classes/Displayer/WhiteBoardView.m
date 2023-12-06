@@ -61,7 +61,9 @@
     
     [WhiteWebViewInjection allowDisplayingKeyboardWithoutUserAction:TRUE];
     self.scrollView.scrollEnabled = NO;
-    
+
+  self.inspectable = YES;
+  
     self.recorder = [[BridgeCallRecorder alloc] initWithRecordKeys:@{
         @"sdk.newWhiteSdk": @(FALSE),
         @"sdk.updateNativeFontFaceCSS": @(FALSE),

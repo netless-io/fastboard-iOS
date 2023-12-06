@@ -9,7 +9,7 @@
 import UIKit
 
 // 白板容器比例
-let htContainerRatio: CGFloat = 34.0 / 30.0
+let htContainerRatio: CGFloat = 16.0 / 9.0
 // 按钮字体
 let htItemSystemFontSize: CGFloat = 12
 // 按钮垂直间距

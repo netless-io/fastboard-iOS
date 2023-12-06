@@ -10,12 +10,12 @@ import Fastboard
 import UIKit
 import Whiteboard
 
-@objc class HTState:  WhiteGlobalState {
+@objc class HTState: WhiteGlobalState {
     override init() {
         currentSceneIndex = 0
         super.init()
     }
-    
+
     @objc var currentSceneIndex: Int
 }
 
@@ -39,18 +39,44 @@ class HTViewController: UIViewController {
         // DEBUG
         helpFunction()
         setupOtherView()
-        
+
         WhiteDisplayerState.setCustomGlobalStateClass(HTState.self)
     }
 
     @objc func onSwipeGesture(_ gesture: UISwipeGestureRecognizer) {
-        switch gesture.direction {
-        case .left:
-            fastRoom.room?.dispatchDocsEvent(.nextPage, options: nil, completionHandler: { _ in })
-        case .right:
-            fastRoom.room?.dispatchDocsEvent(.prevPage, options: nil, completionHandler: { _ in })
-        default: return
-        }
+        fastRoom.room?.getSceneState(result: { [weak self] sceneState in
+            let sceneName = sceneState.scenePath
+            guard let scene = sceneState.scenes.first(where: { sceneName.contains($0.name) }) else {
+                return
+            }
+            guard let ppt = scene.ppt else {
+                print("swipe on not ppt scene")
+                return
+            }
+            guard let tabName = scene.name.split(separator: "|").first else { return }
+            guard let tabIndex = self?.otherView.dataList.map(\.name).firstIndex(where: { tabName == $0 })
+            else { return }
+
+            let whiteboardSize = (self?.fastRoom.view.whiteboardView.bounds.size ?? .init(width: 1, height: 1))
+            let minScale = min(whiteboardSize.width / ppt.width, whiteboardSize.height / ppt.height)
+            guard let scale = self?.fastRoom.room?.state.cameraState?.scale else { return }
+            let isLessThanMinScale = abs(CGFloat(scale.floatValue) - minScale) <= 0.01
+            print(whiteboardSize, scale, minScale, ppt.width, ppt.height)
+            print("ppt swipe success detected", "tabName", tabName, "index", tabIndex, scale, "is less than min scale", isLessThanMinScale)
+            if !isLessThanMinScale {
+                return
+            }
+            guard let cell = self?.otherView.tableView.cellForRow(at: .init(row: tabIndex, section: 0)) as? HTTableViewCell else { return }
+            switch gesture.direction {
+            case .left:
+                cell.buttonTap(cell.nextBtn)
+                return
+            case .right:
+                cell.buttonTap(cell.lastBtn)
+                return
+            default: return
+            }
+        })
     }
 
     func setupGesture() {
@@ -76,7 +102,7 @@ class HTViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(88)
             make.centerX.equalToSuperview()
         }
-        
+
         let globalState = UIButton(type: .system)
         view.addSubview(globalState)
         globalState.setTitle("globalState", for: .normal)
@@ -86,28 +112,29 @@ class HTViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
+
     @objc func updateGlobalState() {
-        let state = HTState()
-        state.currentSceneIndex = .random(in: 0...20)
-        fastRoom.room?.setGlobalState(state)
+        fastRoom.room?.scalePpt(toFit: .continuous)
+//        let state = HTState()
+//        state.currentSceneIndex = .random(in: 0...20)
+//        fastRoom.room?.setGlobalState(state)
     }
-    
+
     func setupOtherView() {
         view.addSubview(otherView)
         otherView.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.left.equalTo(view.safeAreaLayoutGuide.snp.left)
             make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
-            make.height.equalTo(45*5)
+            make.height.equalTo(45 * 5)
         }
-        
+
         let list = [
             HTOtherView.Item(name: "whiteboard_1", pageCount: 3, currentPage: 0, isShare: false),
             HTOtherView.Item(name: "whiteboard_2", pageCount: 3, currentPage: 0, isShare: false),
             HTOtherView.Item(name: "whiteboard_3", pageCount: 3, currentPage: 0, isShare: false),
             HTOtherView.Item(name: "jpg", pageCount: 3, currentPage: 0, isShare: false),
-            HTOtherView.Item(name: "ppt", pageCount: 3, currentPage: 0, isShare: false)
+            HTOtherView.Item(name: "ppt", pageCount: 3, currentPage: 0, isShare: false),
         ]
         otherView.setDatas(list: list, delegate: self)
     }
@@ -153,7 +180,7 @@ class HTViewController: UIViewController {
             }
         })
     }
-    
+
     @objc func onTextTap() {
         fastRoom.view.overlay?.dismissAllSubPanels()
         fastRoom.view.whiteboardView.evaluateJavaScript("window.manager.focusedView.camera") { [weak self] state, error in
@@ -230,12 +257,12 @@ class HTViewController: UIViewController {
         WhiteWebViewInjection.allowDisplayingKeyboardWithoutUserAction(false)
         view.backgroundColor = .gray
         let windowRatio: CGFloat = htContainerRatio
+        Fastboard.globalFastboardRatio = windowRatio
         let config = FastRoomConfiguration(appIdentifier: RoomInfo.APPID.value,
                                            roomUUID: RoomInfo.ROOMUUID.value,
                                            roomToken: RoomInfo.ROOMTOKEN.value,
                                            region: .CN,
                                            userUID: "some-unique-id-xxx")
-        Fastboard.globalFastboardRatio = windowRatio
         config.customOverlay = HTOverlay(textTap: { [weak self] in
             self?.onTextTap()
         })
@@ -250,7 +277,7 @@ class HTViewController: UIViewController {
         fastRoomView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.width.equalToSuperview()
-            make.height.equalTo(fastRoomView.snp.width).multipliedBy(1 / windowRatio)
+            make.height.equalTo(fastRoomView.snp.width).multipliedBy(1 / windowRatio).offset(100)
         }
         self.fastRoom = fastRoom
 
@@ -287,6 +314,12 @@ class HTViewController: UIViewController {
         drawingButton.isHidden = true
         activity.startAnimating()
         fastRoom.joinRoom { [weak self] _ in
+            
+            print("kkk", self?.fastRoom.room?.globalState)
+            self?.fastRoom.room?.getGlobalState(result: { state in
+                print("jjj:", state)
+            })
+            
             self?.drawingButton.isHidden = false
             self?.update(editable: false)
             activity.stopAnimating()
@@ -370,12 +403,11 @@ extension HTViewController: UITextFieldDelegate {
 
 extension HTViewController: HTTableViewCellDelegate {
     func cellDidTap(index: IndexPath, action: HTAction, item: HTTableViewCell.Item) {
-        
         if action == .unshare { /** 点击白板停止分享 **/
             boardHelper.destoryWhiteBoard(path: item.name)
             return
         }
-        
+
         if action == .next {
             let ret = boardHelper.switchWhiteBoard(path: item.name, page: item.currentPage)
             if !ret {
@@ -383,7 +415,7 @@ extension HTViewController: HTTableViewCellDelegate {
             }
             return
         }
-        
+
         if action == .last {
             let ret = boardHelper.switchWhiteBoard(path: item.name, page: item.currentPage)
             if !ret {
@@ -391,7 +423,7 @@ extension HTViewController: HTTableViewCellDelegate {
             }
             return
         }
-        
+
         if index.row < 3 {
             if action == .share { /** 点击白板分享 **/
                 let scene1 = BoardHelper.Scene(name: "0", ppt: nil)
@@ -410,9 +442,8 @@ extension HTViewController: HTTableViewCellDelegate {
                     print("switchWhiteBoard fail")
                 }
             }
-            
         }
-        
+
         if index.row == 3 {
             if action == .share {
                 let jpgUrl = "https://placekitten.com/g/200/300"
@@ -432,9 +463,8 @@ extension HTViewController: HTTableViewCellDelegate {
                     print("switchWhiteBoard fail")
                 }
             }
-            
         }
-        
+
         if index.row == 4 {
             let pngUrl0 = "https://ht-global.oss-cn-hongkong.aliyuncs.com/whiteboard/live/staticConvert/b53340649aa449e1b56c14ebc3f7d53d/15.png"
             let pngUrl1 = "https://ht-global.oss-cn-hongkong.aliyuncs.com/whiteboard/live/staticConvert/b53340649aa449e1b56c14ebc3f7d53d/13.png"
@@ -457,9 +487,11 @@ extension HTViewController: HTTableViewCellDelegate {
         }
     }
 }
+
 extension HTViewController: WhiteRoomCallbackDelegate {
     func fireRoomStateChanged(_ modifyState: WhiteRoomState!) {
-        print(#function, modifyState)
+//        print(#function, modifyState)
+        print("fireRoomStateChanged", modifyState)
     }
 }
 
