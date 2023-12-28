@@ -43,6 +43,8 @@
 		8A32FA7D27C8AF6100FA9367 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32FA7727C885ED00FA9367 /* CustomColor.swift */; };
 		8A32FA8027C8B6C500FA9367 /* UIColor+Convince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32FA7927C886AB00FA9367 /* UIColor+Convince.swift */; };
 		8A32FA8127C8B80B00FA9367 /* customColor.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A32FA7427C885B000FA9367 /* customColor.json */; };
+		8AA625612B304E5400832C40 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA625602B304E5400832C40 /* StartViewController.swift */; };
+		8AA625622B304E5400832C40 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA625602B304E5400832C40 /* StartViewController.swift */; };
 		8AAB0ED4277AB0E40062E8D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */; };
 		8AAB0ED7277AB0E40062E8D1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED6277AB0E40062E8D1 /* SceneDelegate.m */; };
 		8AAB0EDA277AB0E40062E8D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB0ED9277AB0E40062E8D1 /* ViewController.m */; };
@@ -107,6 +109,7 @@
 		8A32FA7427C885B000FA9367 /* customColor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = customColor.json; sourceTree = "<group>"; };
 		8A32FA7727C885ED00FA9367 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		8A32FA7927C886AB00FA9367 /* UIColor+Convince.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convince.swift"; sourceTree = "<group>"; };
+		8AA625602B304E5400832C40 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		8AAB0ED0277AB0E40062E8D1 /* OCExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AAB0ED2277AB0E40062E8D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AAB0ED3277AB0E40062E8D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 				8A32FA7927C886AB00FA9367 /* UIColor+Convince.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				8AA625602B304E5400832C40 /* StartViewController.swift */,
 				8AE96585278842FC00722F89 /* Utility.swift */,
 				8A310FC02787DEA800376BB5 /* ExampleTheme.swift */,
 				8AE965812788350000722F89 /* CustomFastboardView.swift */,
@@ -451,16 +455,16 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Fastboard_Example/Pods-Fastboard_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework",
 				"${BUILT_PRODUCTS_DIR}/NTLBridge/NTLBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/White_YYModel/White_YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework",
-				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fastboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NTLBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/White_YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whiteboard.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,16 +526,16 @@
 				"${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NTLBridge/NTLBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/White_YYModel/White_YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework",
-				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fastboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NTLBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/White_YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whiteboard.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -566,6 +570,7 @@
 				8A28DD16278BC1BD00B5CB71 /* RoomInfo.swift in Sources */,
 				2605A8882AE382DB007DDD2E /* BoardHelper.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				8AA625612B304E5400832C40 /* StartViewController.swift in Sources */,
 				8A32FA7A27C886AB00FA9367 /* UIColor+Convince.swift in Sources */,
 				8A32FA7827C885ED00FA9367 /* CustomColor.swift in Sources */,
 				6169C06C2AE36F7B0082C515 /* HTExecutionItem.swift in Sources */,
@@ -585,6 +590,7 @@
 				8AAB0EDA277AB0E40062E8D1 /* ViewController.m in Sources */,
 				8AAB0ED4277AB0E40062E8D1 /* AppDelegate.m in Sources */,
 				8AAB0EE5277AB0E40062E8D1 /* main.m in Sources */,
+				8AA625622B304E5400832C40 /* StartViewController.swift in Sources */,
 				8AAB0ED7277AB0E40062E8D1 /* SceneDelegate.m in Sources */,
 				8A28DD1A278BCBD700B5CB71 /* RoomInfo.m in Sources */,
 				8A32FA7C27C8AEE400FA9367 /* StorageItem.swift in Sources */,

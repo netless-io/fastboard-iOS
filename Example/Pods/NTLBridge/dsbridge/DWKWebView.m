@@ -59,6 +59,7 @@
     NSString *jsCache;
     bool isPending;
     bool isDebug;
+    NSDate* _startDate;
 }
 
 
@@ -79,6 +80,7 @@
     isPending=false;
     isDebug=false;
     dialogTextDic=@{};
+    _startDate = [NSDate new];
     
     InternalScriptsHandler *internal = [[InternalScriptsHandler alloc] initWithHandler:(id<ScriptDelegate>)self];
     
@@ -534,6 +536,7 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completi
 
 - (id) dsinit:(NSDictionary *) args{
     [self dispatchStartupQueue];
+    NSLog(@"init whiteboard duration: %f", [[NSDate new] timeIntervalSinceDate:_startDate]);
     return nil;
 }
 

@@ -25,7 +25,7 @@ FOUNDATION_EXPORT WhiteSdkRenderEngineKey const WhiteSdkRenderEngineCanvas;
 
 /** 日志类型 */
 typedef NSString * WhiteSDKLoggerOptionLevelKey NS_STRING_ENUM;
-/** Debug 为最详细的日志，目前内容与 Info 一致 */
+/** Debug 为最详细的日志，会将 WebView 上所有的 Console 信息都打印到 native 上 */
 FOUNDATION_EXPORT WhiteSDKLoggerOptionLevelKey const WhiteSDKLoggerOptionLevelDebug;
 /** info 主要为连接日志 */
 FOUNDATION_EXPORT WhiteSDKLoggerOptionLevelKey const WhiteSDKLoggerOptionLevelInfo;
@@ -174,10 +174,10 @@ FOUNDATION_EXPORT WhiteSDKLoggerReportModeKey const WhiteSDKLoggerReportBan;
  */
 @property (nonatomic, copy) NSDictionary *loggerOptions;
 
-@property (nonatomic, assign) BOOL routeBackup __deprecated_msg("this api has no effect");
+@property (nonatomic, assign) BOOL routeBackup DEPRECATED_MSG_ATTRIBUTE("this api has no effect");
 
 /** @deprecated 该属性已废弃。请使用 WhiteSlideAppParams */
-@property (nonatomic, strong) WhitePptParams *pptParams __deprecated_msg("use WhiteSlideAppParams instead");
+@property (nonatomic, strong) WhitePptParams *pptParams DEPRECATED_MSG_ATTRIBUTE("use WhiteSlideAppParams instead");
 
 /** SlideApp 参数。详见 [WhiteSlideAppParams](WhiteSlideAppParams)  */
 @property (nonatomic, strong) WhiteSlideAppParams *whiteSlideAppParams;

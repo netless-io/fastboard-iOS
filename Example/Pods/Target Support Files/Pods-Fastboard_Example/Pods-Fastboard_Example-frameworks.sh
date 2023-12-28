@@ -178,15 +178,15 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NTLBridge/NTLBridge.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/White_YYModel/White_YYModel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Fastboard/Fastboard.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NTLBridge/NTLBridge.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/White_YYModel/White_YYModel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
