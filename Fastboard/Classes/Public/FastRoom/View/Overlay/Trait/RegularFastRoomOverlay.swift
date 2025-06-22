@@ -9,7 +9,7 @@ import Foundation
 import Whiteboard
 
 /// Overlay for iPad
-public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegate {
+open class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegate {
     /// Indicate whether an UIActivityIndicatorView should be add to Fastboard in bad network environment
     @objc
     public static var showActivityIndicatorWhenReconnecting: Bool = true
@@ -29,7 +29,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         }
     }
     
-    public func update(roomPhase: FastRoomPhase) {
+    open func update(roomPhase: FastRoomPhase) {
         guard RegularFastRoomOverlay.showActivityIndicatorWhenReconnecting else { return }
         switch roomPhase {
         case .reconnecting:
@@ -182,7 +182,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         operationRightConstraint = nil
     }
     
-    public func update(boxState: WhiteWindowBoxState?) {
+    open func update(boxState: WhiteWindowBoxState?) {
         let views = [undoRedoPanel.view, scenePanel.view]
         let hide = boxState == .max
         UIView.animate(withDuration: 0.3) {
@@ -241,7 +241,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         updateControlBarLayout(direction: direction)
     }
     
-    public func updateControlBarLayout(direction: OperationBarDirection) {
+    open func updateControlBarLayout(direction: OperationBarDirection) {
         let isLeft = direction == .left
         if isLeft {
             operationLeftConstraint?.isActive = true
@@ -270,15 +270,15 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         }
     }
     
-    public func update(strokeColor: UIColor) {
+    open func update(strokeColor: UIColor) {
         operationPanel.updateSelectedColor(strokeColor)
     }
     
-    public func update(strokeWidth: Float) {
+    open func update(strokeWidth: Float) {
         operationPanel.updateStrokeWidth(strokeWidth)
     }
     
-    public func update(pageState: WhitePageState) {
+    open func update(pageState: WhitePageState) {
         if let label = scenePanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.pageIndicator)!.identifier })?.associatedView as? UILabel {
             label.text = "\(pageState.index + 1) / \(pageState.length)"
             scenePanel.view?.invalidateIntrinsicContentSize()
@@ -295,12 +295,12 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         }
     }
     
-    public func update(undoEnable: Bool) {
+    open func update(undoEnable: Bool) {
         undoRedoPanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.undo)!.identifier
         })?.setEnable(undoEnable)
     }
     
-    public func update(redoEnable: Bool) {
+    open func update(redoEnable: Bool) {
         undoRedoPanel.items.first(where: { $0.identifier == FastRoomDefaultOperationIdentifier.operationType(.redo)!.identifier
         })?.setEnable(redoEnable)
     }
@@ -321,7 +321,7 @@ public class RegularFastRoomOverlay: NSObject, FastRoomOverlay, FastPanelDelegat
         panels.values.forEach { $0.setItemHide(fromKey: item, hide: hide)}
     }
     
-    public func itemWillBeExecuted(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {
+    open func itemWillBeExecuted(fastPanel: FastRoomPanel, item: FastRoomOperationItem) {
         if let appliance = item as? ApplianceItem {
             currentAppliance = appliance
         } else if let sub = item as? SubOpsItem, sub.containsSelectableAppliance {

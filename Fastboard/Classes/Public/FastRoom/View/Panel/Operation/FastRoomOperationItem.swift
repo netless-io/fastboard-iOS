@@ -134,7 +134,7 @@ public class ColorItem: FastRoomOperationItem {
         button.isEnabled = enable
     }
     
-    let color: UIColor
+    public let color: UIColor
     public var room: WhiteRoom?
     var interrupter: ((FastRoomOperationItem)->Void)?
     public var identifier: String?
