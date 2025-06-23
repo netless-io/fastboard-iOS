@@ -83,7 +83,14 @@ class ViewController: UIViewController {
                                            roomToken: RoomInfo.ROOMTOKEN.value,
                                            region: .CN,
                                            userUID: "some-unique-id")
-        config.customOverlay = custom
+      
+      FastRoomDefaultOperationItem.defaultColors = [.brown, .purple]
+      if UIDevice.current.userInterfaceIdiom == .phone {
+        config.customOverlay = FTCompactOverlay()
+      } else {
+        config.customOverlay = FTRegularOverlay()
+      }
+//        config.customOverlay = custom
         let fastRoom = Fastboard.createFastRoom(withFastRoomConfig: config)
         fastRoom.delegate = self
         let fastRoomView = fastRoom.view

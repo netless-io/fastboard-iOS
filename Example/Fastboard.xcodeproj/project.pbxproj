@@ -12,6 +12,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		617008C72E08FB3900F63B18 /* FTCustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617008C62E08FB3900F63B18 /* FTCustomOverlay.swift */; };
 		8A0A85DB27EC46D4005CFC84 /* monaco.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */; };
 		8A0A85DC27EC46D4005CFC84 /* monaco.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */; };
 		8A0A85EB27EC7304005CFC84 /* plyr.iife.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A85EA27EC7304005CFC84 /* plyr.iife.js */; };
@@ -64,6 +65,7 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		617008C62E08FB3900F63B18 /* FTCustomOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTCustomOverlay.swift; sourceTree = "<group>"; };
 		812F452516B81B7ADBC6F7AC /* Pods-Fastboard_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastboard_Tests.release.xcconfig"; path = "Target Support Files/Pods-Fastboard_Tests/Pods-Fastboard_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		829F94F2DB88098BADCF84A3 /* Pods-OCExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCExample.debug.xcconfig"; path = "Target Support Files/Pods-OCExample/Pods-OCExample.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0A85DA27EC46D4005CFC84 /* monaco.iife.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = monaco.iife.js; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				8A32FA7927C886AB00FA9367 /* UIColor+Convince.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				617008C62E08FB3900F63B18 /* FTCustomOverlay.swift */,
 				8AE96585278842FC00722F89 /* Utility.swift */,
 				8A310FC02787DEA800376BB5 /* ExampleTheme.swift */,
 				8AE965812788350000722F89 /* CustomFastboardView.swift */,
@@ -505,6 +508,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				8A32FA7A27C886AB00FA9367 /* UIColor+Convince.swift in Sources */,
 				8A32FA7827C885ED00FA9367 /* CustomColor.swift in Sources */,
+				617008C72E08FB3900F63B18 /* FTCustomOverlay.swift in Sources */,
 				8AB02BBD27C4CE6A00792EF6 /* StorageItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
