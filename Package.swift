@@ -14,12 +14,15 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "Whiteboard", url: "https://github.com/netless-io/Whiteboard-iOS.git", from: .init(2, 16, 81)),
+        .package(url: "https://github.com/netless-io/Whiteboard-iOS.git", from: .init(2, 16, 125)),
     ],
     targets: [
         .target(
             name: "Fastboard",
-            dependencies: ["Whiteboard", "FastboardDynamic"],
+            dependencies: [
+                .product(name: "Whiteboard", package: "Whiteboard-iOS"),
+                "FastboardDynamic",
+            ],
             path: "Fastboard",
             exclude: [
                 "Classes/Load.m",

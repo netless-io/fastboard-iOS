@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611D01572EB89DE2007421C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 611D01562EB89DE2007421C1 /* SnapKit */; };
 		8AC5FD352AC2C27C00DEC632 /* ExampleControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5FD1E2AC2C27C00DEC632 /* ExampleControlView.swift */; };
 		8AC5FD362AC2C27C00DEC632 /* ControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AC5FD1F2AC2C27C00DEC632 /* ControlCell.xib */; };
 		8AC5FD372AC2C27C00DEC632 /* ExampleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5FD202AC2C27C00DEC632 /* ExampleTheme.swift */; };
@@ -26,8 +27,6 @@
 		8AC5FD452AC2C27C00DEC632 /* StorageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5FD302AC2C27C00DEC632 /* StorageItem.swift */; };
 		8AC5FD462AC2C27C00DEC632 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AC5FD322AC2C27C00DEC632 /* Localizable.strings */; };
 		8AC5FD472AC2C27C00DEC632 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC5FD342AC2C27C00DEC632 /* CustomColor.swift */; };
-		8AC5FD4D2AC2C30600DEC632 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC5FD4C2AC2C30600DEC632 /* SnapKit */; };
-		8AC5FD4F2AC2C30600DEC632 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8AC5FD4E2AC2C30600DEC632 /* SnapKit-Dynamic */; };
 		8AC5FD582AC2C59100DEC632 /* FastboardConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8AC5FD572AC2C59100DEC632 /* FastboardConfig.xcconfig */; };
 		8ACF0B912AC2B9C200D50B22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACF0B8F2AC2B9C200D50B22 /* Main.storyboard */; };
 		8ACF0B962AC2B9C300D50B22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACF0B942AC2B9C300D50B22 /* LaunchScreen.storyboard */; };
@@ -80,9 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AC5FD4D2AC2C30600DEC632 /* SnapKit in Frameworks */,
-				8AC5FD4F2AC2C30600DEC632 /* SnapKit-Dynamic in Frameworks */,
 				8AFD61EE2B21CE0F007D765B /* Fastboard in Frameworks */,
+				611D01572EB89DE2007421C1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,9 +186,8 @@
 			);
 			name = "Fastboard-SPM-Example";
 			packageProductDependencies = (
-				8AC5FD4C2AC2C30600DEC632 /* SnapKit */,
-				8AC5FD4E2AC2C30600DEC632 /* SnapKit-Dynamic */,
 				8AFD61ED2B21CE0F007D765B /* Fastboard */,
+				611D01562EB89DE2007421C1 /* SnapKit */,
 			);
 			productName = "Fastboard-SPM-Example";
 			productReference = 8ACF0B862AC2B9C200D50B22 /* Fastboard-SPM-Example.app */;
@@ -223,8 +220,8 @@
 			);
 			mainGroup = 8ACF0B7D2AC2B9C200D50B22;
 			packageReferences = (
-				8AC5FD4B2AC2C30600DEC632 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8AFD61EA2B21CDA7007D765B /* XCLocalSwiftPackageReference "../.." */,
+				611D01552EB89DE2007421C1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8ACF0B872AC2B9C200D50B22 /* Products */;
 			projectDirPath = "";
@@ -517,26 +514,21 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8AC5FD4B2AC2C30600DEC632 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		611D01552EB89DE2007421C1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
+				minimumVersion = 5.7.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8AC5FD4C2AC2C30600DEC632 /* SnapKit */ = {
+		611D01562EB89DE2007421C1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8AC5FD4B2AC2C30600DEC632 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 611D01552EB89DE2007421C1 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		8AC5FD4E2AC2C30600DEC632 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8AC5FD4B2AC2C30600DEC632 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		8AFD61ED2B21CE0F007D765B /* Fastboard */ = {
 			isa = XCSwiftPackageProductDependency;
