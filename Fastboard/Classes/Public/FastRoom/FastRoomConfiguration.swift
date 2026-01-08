@@ -18,6 +18,10 @@ public class FastRoomConfiguration: NSObject {
     @objc
     public let whiteRoomConfig: WhiteRoomConfig
     
+    /// Enable https scheme when initializing WhiteBoardView (Experimental)
+    @objc
+    public var enableHttpScheme: Bool = false
+    
     /// Assign a custom overlay to create your own overlay style
     @objc
     public var customOverlay: FastRoomOverlay? = nil

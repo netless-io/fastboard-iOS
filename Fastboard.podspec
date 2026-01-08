@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Fastboard'
-  s.version          = '1.4.3'
+  s.version          = '1.4.4'
   s.summary          = 'Quickly create a whiteboard interface for iOS'
 
   s.description      = <<-DESC
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.subspec 'core' do |core|
     core.source_files = 'Fastboard/Classes/**/*'
     core.exclude_files = 'Fastboard/Classes/include'
-    core.dependency 'Whiteboard', '~> 2.16.81'
+    core.dependency 'Whiteboard', '~> 2.16.129'
     core.resource_bundles = {
       'Icons' => ['Fastboard/Assets/*.xcassets'],
       'LocalizedStrings' => ['Fastboard/Assets/*.lproj/*.strings']

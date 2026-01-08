@@ -1,5 +1,8 @@
 # ChangeLog
 
+## [1.4.4] - 2026-01-08
+- 更新 `Whiteboard` 依赖到 2.16.129
+- `FastRoomConfiguration` 新增 `enableHttpScheme` 参数，用于使用 `WKWebview.loadHTMLString:baseURL:` 加载本地资源。
 ## [1.4.3] - 2025-06-23
 - 修改 `FastRoomOverlay` 的部分实现为可重写。
 ## [1.4.2] - 2024-02-12

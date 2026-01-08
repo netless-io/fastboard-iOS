@@ -11,6 +11,8 @@ import UIKit
 
 /// Main view for fastboard
 public class FastRoomView: UIView, FastPanelControl {
+    private let enableHttpScheme: Bool
+
     @objc
     public dynamic var operationBarDirection: OperationBarDirection = .left {
         didSet {
@@ -31,8 +33,9 @@ public class FastRoomView: UIView, FastPanelControl {
     public var overlay: FastRoomOverlay?
 
     @objc
-    public init(overlay: FastRoomOverlay?) {
+    public init(overlay: FastRoomOverlay?, enableHttpScheme: Bool = false) {
         self.overlay = overlay
+        self.enableHttpScheme = enableHttpScheme
         super.init(frame: .zero)
         setupWhiteboardView()
     }
@@ -59,7 +62,7 @@ public class FastRoomView: UIView, FastPanelControl {
     public var whiteboardView: WhiteBoardView!
     
     func setupWhiteboardView() {
-        whiteboardView = WhiteBoardView()
+        whiteboardView = WhiteBoardView(enableHttpsScheme: enableHttpScheme)
         addSubview(whiteboardView)
     }
     

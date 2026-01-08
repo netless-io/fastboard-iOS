@@ -161,7 +161,8 @@ public class FastRoom: NSObject {
             }
         }
         let fastboardOverlay = configuration.customOverlay ?? defaultOverlay()
-        let fastboardView = FastRoomView(overlay: fastboardOverlay)
+        let fastboardView = FastRoomView(overlay: fastboardOverlay,
+                                         enableHttpScheme: configuration.enableHttpScheme)
         self.init(view: fastboardView,
                   roomConfig: configuration.whiteRoomConfig,
                   sdkConfig: configuration.whiteSdkConfiguration)
