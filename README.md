@@ -9,7 +9,9 @@ Built-in common interactive tools, choose freely as needed
 
 Support for following ApplePencil system behavior
 
-[Advance](Advance.md)
+[Advanced Features](Advance.md)
+
+[Custom JavaScript Interaction](CustomJS.md)
 
 # Quick Start
 

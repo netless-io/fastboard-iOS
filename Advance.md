@@ -3,6 +3,7 @@
 - [Confirm whiteboard ratio](#confirm-whiteboard-ratio)
 - [Inserting multimedia content](#inserting-multimedia-content)
 - [Custom App Plugin](#custom-app-plugin)
+- [Custom JavaScript Interaction](CustomJS.md)
 - [Interface customization](#interface-customization)
   - [Toggle theme](#toggle-theme)
   - [Modify brush color collection](#modify-brush-color-collection)
