@@ -10,11 +10,11 @@
 #endif
 #endif
 
-#import "dsbridge.h"
-#import "DSCallInfo.h"
-#import "DWKWebView.h"
-#import "InternalApis.h"
-#import "JSBUtil.h"
+#import "NTLDSCallInfo.h"
+#import "NTLDWKWebView.h"
+#import "NTLInternalApis.h"
+#import "NTLJSBUtil.h"
+#import "ntl_dsbridge.h"
 
 FOUNDATION_EXPORT double NTLBridgeVersionNumber;
 FOUNDATION_EXPORT const unsigned char NTLBridgeVersionString[];

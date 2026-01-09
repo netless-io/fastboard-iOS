@@ -1,17 +1,17 @@
 PODS:
-  - Fastboard (1.4.3):
-    - Fastboard/core (= 1.4.3)
-  - Fastboard/core (1.4.3):
-    - Whiteboard (~> 2.16.81)
+  - Fastboard (1.4.4):
+    - Fastboard/core (= 1.4.4)
+  - Fastboard/core (1.4.4):
+    - Whiteboard (~> 2.16.129)
   - Masonry (1.1.0)
-  - NTLBridge (3.1.6)
+  - NTLBridge (4.0.0)
   - SnapKit (5.6.0)
-  - White_YYModel (1.0.5)
-  - Whiteboard (2.16.81):
-    - Whiteboard/Whiteboard-Basic (= 2.16.81)
-  - Whiteboard/Resource (2.16.81)
-  - Whiteboard/Whiteboard-Basic (2.16.81):
-    - NTLBridge (~> 3.1.4)
+  - White_YYModel (1.0.7)
+  - Whiteboard (2.16.129):
+    - Whiteboard/Whiteboard-Basic (= 2.16.129)
+  - Whiteboard/Resource (2.16.129)
+  - Whiteboard/Whiteboard-Basic (2.16.129):
+    - NTLBridge (~> 4.0.0)
     - White_YYModel
     - Whiteboard/Resource
 
@@ -33,12 +33,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Fastboard: 3136e038252410e54ae87bb33bd8a8bdcda96329
+  Fastboard: 04779dcf8d30eab8abae3a04fb1e9d426bfebb78
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  NTLBridge: 6ef7f3c1fc956f2e2d701a89828d51674bd479c7
+  NTLBridge: b90c5bd836f221ee9eee0ea04518f50882b2d6d9
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  White_YYModel: b71cacc651398e636fa872d625d3f59713ce3715
-  Whiteboard: 2d3ef20ae10d1fa6c6fd233fd2bddc4575a0eea9
+  White_YYModel: 76d9165d5aa2eb7b730125ba6510044b0308e8c9
+  Whiteboard: 47c24b0d7673b19d028bf00c947e21c5a0cf1968
 
 PODFILE CHECKSUM: 5bc98ef6f1acb91e5aa69ed5ac0002b12e88cb65
 

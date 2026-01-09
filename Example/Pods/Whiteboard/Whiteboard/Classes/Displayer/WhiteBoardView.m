@@ -7,11 +7,11 @@
 
 #import "WhiteBoardView.h"
 #import "WhiteBoardView+Private.h"
-#import "WhiteWebViewInjection.h"
 #import "WhiteObject.h"
 #import "WhiteCommonCallbacks.h"
 #import "WhiteCallBridgeCommand.h"
 #import "BridgeCallRecorder.h"
+#import "WhiteboardResourceLoader.h"
 
 #ifndef dispatch_main_async_safe
 #define dispatch_main_async_safe(block)\
@@ -22,29 +22,84 @@
     }
 #endif
 
+@interface WebConsoleInteruptScriptHandler: NSObject<WKScriptMessageHandler>
+@property (nonatomic, copy) void (^handler)(WKScriptMessage *message);
+@end
+
+@implementation WebConsoleInteruptScriptHandler
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    if (self.handler) {
+        self.handler(message);
+    }
+}
+
+@end
+
 @interface WhiteBoardView ()
 
 @property (nonatomic, strong) BridgeCallRecorder* recorder;
+@property (nonatomic, copy) NSString* customResourceUrl;
+@property (nonatomic, strong) WhiteboardLocalFileResourceLoader *resourceLoader;
+@property (nonatomic, assign) BOOL enableHttpsScheme;
+
+- (void)loadInitialResource;
+- (instancetype)initWithFrame:(CGRect)frame
+                 configuration:(WKWebViewConfiguration *)configuration
+             customResourceUrl:(nullable NSString *)customResourceUrl
+            enableHttpsScheme:(BOOL)enableHttpsScheme;
 
 @end
 
 @implementation WhiteBoardView
 
 - (instancetype)init {
-    return [self initWithFrame:CGRectZero];
+    self = [self initWithEnableHttpsScheme:NO];
+    return self;
 }
 
-- (void)dealloc
-{
-    [WhiteWebViewInjection allowDisplayingKeyboardWithoutUserAction:FALSE];
+- (instancetype)initCustomUrl:(nullable NSString *)customUrl {
+    self = [self initCustomUrl:customUrl enableHttpsScheme:NO];
+    return self;
+}
+
+- (instancetype)initWithEnableHttpsScheme:(BOOL)enableHttpsScheme {
+    self = [self initCustomUrl:nil enableHttpsScheme:enableHttpsScheme];
+    return self;
+}
+
+- (instancetype)initCustomUrl:(nullable NSString *)customUrl enableHttpsScheme:(BOOL)enableHttpsScheme {
+    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+    self = [self initWithFrame:CGRectZero
+                 configuration:configuration
+             customResourceUrl:customUrl
+            enableHttpsScheme:enableHttpsScheme];
+    return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)configuration
+{
+    self = [self initWithFrame:frame
+                 configuration:configuration
+             customResourceUrl:nil
+            enableHttpsScheme:NO];
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+                 configuration:(WKWebViewConfiguration *)configuration
+             customResourceUrl:(nullable NSString *)customResourceUrl
+            enableHttpsScheme:(BOOL)enableHttpsScheme
 {
     configuration.allowsInlineMediaPlayback = YES;
     configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
     
     self = [super initWithFrame:frame configuration:configuration];
+    if (!self) {
+        return nil;
+    }
+    _customResourceUrl = [customResourceUrl copy];
+    _enableHttpsScheme = enableHttpsScheme;
     
     if (@available(iOS 11.0, *)) {
         self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -53,7 +108,6 @@
     _commonCallbacks = [[WhiteCommonCallbacks alloc] init];
     [self addJavascriptObject:_commonCallbacks namespace:@"sdk"];
     
-    [WhiteWebViewInjection allowDisplayingKeyboardWithoutUserAction:TRUE];
     self.scrollView.scrollEnabled = NO;
     
     self.recorder = [[BridgeCallRecorder alloc] initWithRecordKeys:@{
@@ -64,8 +118,10 @@
         @"sdk.registerApp": @(TRUE),
         @"sdk.joinRoom": @(TRUE)
     }];
-    
-    [self loadRequest:[NSURLRequest requestWithURL:[self resourceURL]]];
+    if (self.enableHttpsScheme) {
+        self.resourceLoader = [[WhiteboardLocalFileResourceLoader alloc] initWithWebView:self resourceBundle:[self whiteSDKBundle]];
+    }
+    [self loadInitialResource];
     
 #if DEBUG
     if (@available(iOS 16.4, *)) {
@@ -80,11 +136,14 @@
 }
 
 - (NSURL *)resourceURL {
+    if (self.customResourceUrl) {
+        return [NSURL URLWithString:self.customResourceUrl];
+    }
     return [NSURL fileURLWithPath:[[self whiteSDKBundle] pathForResource:@"index" ofType:@"html"]];
 }
 
 - (void)reloadFromCrash:(void (^)(void))completionHandler {
-    [self loadUrl:[self.resourceURL absoluteString]];
+    [self loadInitialResource];
     [self.recorder resumeCommandsFromBridgeView:self completionHandler:completionHandler];
 }
 
@@ -186,13 +245,14 @@ window.addEventListener('error', function(e) {\
     ";
     WKUserScript *script = [[WKUserScript alloc] initWithSource:logCaptureJsScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:NO];
     [self.configuration.userContentController addUserScript:script];
-    [self.configuration.userContentController addScriptMessageHandler:self name:@"_netless_web_console_log_"];
-}
-
-- (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message {
-    [self.commonCallbacks logger: @{
-        @"[WhiteWKConsole]": message.body
-    }];
+    WebConsoleInteruptScriptHandler *handler = [[WebConsoleInteruptScriptHandler alloc] init];
+    __weak typeof(self) weakSelf = self;
+    handler.handler = ^(WKScriptMessage *message) {
+        [weakSelf.commonCallbacks logger:@{
+            @"[WhiteWKConsole]": message.body
+        }];
+    };
+    [self.configuration.userContentController addScriptMessageHandler:handler name:@"_netless_web_console_log_"];
 }
 
 #pragma mark - Override
@@ -255,6 +315,19 @@ window.addEventListener('error', function(e) {\
     } else {
         self.opaque = NO;
     }
+}
+
+-(void)loadInitialResource
+{
+    NSURL *url = [self resourceURL];
+    if (self.enableHttpsScheme && self.resourceLoader) {
+        NSString *bundleId = [NSBundle mainBundle].bundleIdentifier ?: @"localhost";
+        NSString *baseURLString = [NSString stringWithFormat:@"https://%@", bundleId];
+        NSURL *baseURL = [NSURL URLWithString:baseURLString];
+        [self.resourceLoader loadResourceURL:url baseURL:baseURL];
+        return;
+    }
+    [self loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
 

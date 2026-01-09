@@ -7,6 +7,11 @@
 
 #import "WhiteMemberState.h"
 
+WhiteStrokeType const WhiteStrokeTypeNormal = @"Normal";
+WhiteStrokeType const WhiteStrokeTypeStroke = @"Stroke";
+WhiteStrokeType const WhiteStrokeTypeDotted = @"Dotted";
+WhiteStrokeType const WhiteStrokeTypeLongDotted = @"LongDotted";
+
 WhiteApplianceNameKey const ApplianceClicker = @"clicker";
 WhiteApplianceNameKey const AppliancePencil = @"pencil";
 WhiteApplianceNameKey const ApplianceSelector = @"selector";
@@ -20,6 +25,7 @@ WhiteApplianceNameKey const ApplianceArrow = @"arrow";
 WhiteApplianceNameKey const ApplianceHand = @"hand";
 WhiteApplianceNameKey const ApplianceLaserPointer = @"laserPointer";
 WhiteApplianceNameKey const ApplianceShape = @"shape";
+WhiteApplianceNameKey const ApplianceLaserPen = @"laserPen";
 
 WhiteApplianceShapeTypeKey const ApplianceShapeTypeTriangle = @"triangle";
 /** Shape 图形性状：菱形 */
@@ -32,12 +38,17 @@ WhiteApplianceShapeTypeKey const ApplianceShapeTypeSpeechBalloon = @"speechBallo
 
 @interface WhiteReadonlyMemberState ()
 @property (nonatomic, copy) WhiteApplianceNameKey currentApplianceName;
+@property (nonatomic, copy) WhiteStrokeType strokeType;
 @property (nonatomic, copy) NSArray<NSNumber *> *strokeColor;
 @property (nonatomic, strong) NSNumber *strokeWidth;
 @property (nonatomic, copy) NSArray<NSNumber *> *textColor;
 @property (nonatomic, strong) NSNumber *textSize;
 @property (nonatomic, strong) NSNumber *pencilEraserSize;
 @property (nonatomic, strong) WhiteApplianceShapeTypeKey shapeType;
+
+@property (nonatomic, strong) NSNumber *strokeOpacity;
+@property (nonatomic, copy) NSArray<NSNumber *> *fillColor;
+@property (nonatomic, strong) NSNumber *fillOpacity;
 @end
 
 @implementation WhiteReadonlyMemberState
@@ -69,12 +80,17 @@ WhiteApplianceShapeTypeKey const ApplianceShapeTypeSpeechBalloon = @"speechBallo
 
 @implementation WhiteMemberState
 @dynamic currentApplianceName;
+@dynamic strokeType;
 @dynamic strokeColor;
 @dynamic textColor;
 @dynamic strokeWidth;
 @dynamic textSize;
 @dynamic shapeType;
 @dynamic pencilEraserSize;
+
+@dynamic strokeOpacity;
+@dynamic fillColor;
+@dynamic fillOpacity;
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"strokeColor" : [NSNumber class], @"textColor" : [NSNumber class]};

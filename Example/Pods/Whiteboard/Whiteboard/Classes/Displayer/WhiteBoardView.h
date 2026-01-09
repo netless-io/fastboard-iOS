@@ -5,10 +5,10 @@
 //  Created by leavesster on 2018/8/15.
 //
 
-#if __has_include(<NTLBridge/dsbridge.h>)
-#import <NTLBridge/dsbridge.h>
+#if __has_include(<NTLBridge/ntl_dsbridge.h>)
+#import <NTLBridge/ntl_dsbridge.h>
 #else
-#import "dsbridge.h"
+#import "ntl_dsbridge.h"
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class WhiteRoom, WhitePlayer;
 
 /**白板界面类。*/
-@interface WhiteBoardView : DWKWebView
+@interface WhiteBoardView : NTLDWKWebView
 
 /**白板房间类。详见 [WhiteRoom](WhiteRoom)。*/
 @property (nonatomic, strong, nullable) WhiteRoom *room;
@@ -37,6 +37,21 @@ NS_ASSUME_NONNULL_BEGIN
  @return 初始化的 `WhiteBroadView` 对象。
  */
 - (instancetype)init;
+
+/**
+ 使用自定义 URL 加载白板资源。
+ */
+- (instancetype)initCustomUrl:(nullable NSString *)customUrl;
+
+/**
+ 初始化白板界面，并配置是否启用 https scheme 的本地资源加载方式（试验性功能）。
+ */
+- (instancetype)initWithEnableHttpsScheme:(BOOL)enableHttpsScheme;
+
+/**
+ 使用自定义 URL 加载白板资源，并配置是否启用 https scheme 的本地资源加载方式（试验性功能）。
+ */
+- (instancetype)initCustomUrl:(nullable NSString *)customUrl enableHttpsScheme:(BOOL)enableHttpsScheme;
 
 @end
 

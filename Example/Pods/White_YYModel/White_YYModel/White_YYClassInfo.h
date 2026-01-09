@@ -73,7 +73,7 @@ typedef NS_OPTIONS(NSUInteger, White_YYEncodingType) {
  @param typeEncoding  A Type-Encoding string.
  @return The encoding type.
  */
-White_YYEncodingType YYEncodingGetType(const char *typeEncoding);
+White_YYEncodingType White_YYEncodingGetType(const char *typeEncoding);
 
 
 /**

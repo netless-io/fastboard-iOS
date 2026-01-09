@@ -52,20 +52,31 @@
 
 
 + (instancetype)createSlideApp:(NSString *)dir taskId:(NSString *)taskId url:(NSString *)url title:(NSString *)title {
-    WhiteAppParam *param = [[WhiteAppParam alloc] init];
-    param.kind = @"Slide";
-    
-    WhiteAppOptions *ops = [[WhiteAppOptions alloc] init];
-    ops.scenePath = dir;
-    ops.title = title;
-    param.options = ops;
-    
-    param.attrs = @{
-        @"taskId": taskId,
-        @"url": url
-    };
-    
-    return param;
+    return [self createSlideApp:dir taskId:taskId url:url title:title previewlist:@[] resourceList:@[]];
+}
+
++ (instancetype)createSlideApp:(NSString *)dir taskId:(NSString *)taskId url:(NSString *)url title:(NSString *)title previewlist:(NSArray<NSString *> *)previewList resourceList:(NSArray<NSString *> *)resourceList {
+    return [self createSlideApp:dir taskId:taskId url:url title:title previewlist:previewList resourceList:resourceList customLinks:@[]];
+}
+
++ (instancetype)createSlideApp:(NSString *)dir taskId:(NSString *)taskId url:(NSString *)url title:(NSString *)title previewlist:(NSArray <NSString *>*)previewList resourceList: (NSArray <NSString *>*)resourceList customLinks:(NSArray <WhiteSlideCustomLink *>*)customLinks {
+  WhiteAppParam *param = [[WhiteAppParam alloc] init];
+  param.kind = @"Slide";
+  
+  WhiteAppOptions *ops = [[WhiteAppOptions alloc] init];
+  ops.scenePath = dir;
+  ops.title = title;
+  param.options = ops;
+  
+  param.attrs = @{
+      @"taskId": taskId,
+      @"url": url,
+      @"previewList": previewList,
+      @"resourceList": resourceList,
+      @"customLinks": customLinks
+  };
+  
+  return param;
 }
 
 + (instancetype)createSlideApp:(NSString *)dir scenes:(NSArray <WhiteScene *>*)scenes title:(NSString *)title {

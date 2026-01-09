@@ -36,7 +36,7 @@ pod 'Whiteboard'
 - ### Swift Package Manager
 ```swift
  dependencies: [
-    .package(url: "https://github.com/netless-io/Whiteboard-iOS.git", .upToNextMajor(from: "2.15.0"))
+    .package(url: "https://github.com/netless-io/Whiteboard-iOS.git", .upToNextMajor(from: "2.16.81"))
 ]
 ```
 
@@ -115,38 +115,6 @@ pod install
 
 运行设备：iOS 10 + 
 开发环境：Xcode 10+
-
-## 项目结构
-
-SDK由多个`subpod`组成，依赖结构如下图所示：
-
-![项目依赖结构](./struct.jpeg)
-
->参数配置类：用于描述和存储API参数，返回值，状态等配置项的类。主要用于与`webview`进行交互。
-
-1. Object：主要作用是通过`YYModel`处理`JSON`转换。包含以下部分：
-    1. `Object`基类，所有`sdk`中使用的参数配置类的基类。
-    2. `Room`，`Player`中API所涉及到的一些参数配置类。
-2. Base：包含`SDK``Displayer`以及部分相关类，主要为以下部分：
-    1. `WhiteSDK`以及其初始化参数类。
-    2. `WhiteSDK`设置的通用回调`WhiteCommonCallbacks`
-    3. `Room`与`Player`共同的父类`Displayer`类的实现。
-    4. `Displayer`中API所使用的一些参数配置类。
-    5. `Displayer`用来描述当前房间状态的类，为`RoomState`,`PlayerState`的基类。
-3. Room：实时房间相关内容：
-    1. `Room`类，及其相关事件回调类。
-    1. `WhiteSDK+Room`，使用`SDK`创建`Room`的API。
-    1. `Room`特有的参数配置类。
-    1. 描述`Room`状态相关的类。
-4. Player：回放房间相关内容：
-    1. `Player`类，及其相关事件回调类。
-    1. `WhiteSDK+Player`，使用`SDK`创建`Player`的API。
-    1. `Player`特有的参数配置类。
-    1. 描述`Player`状态相关的类。
-5. NativePlayer：在`iOS`端播放音视频，并与白板播放状态做同步
-    1. `WhiteCombinePlayer`类，及其相关部分类。
-6. Converter：动静态转换请求封装类。
-    * 动静态转换计费以QPS（日并发）计算，客户端无法控制并发，不推荐在生产环境下使用。详情请参考文档。
 
 ## Native音视频
 
@@ -297,9 +265,8 @@ Native端在使用自定义App时需要注册对应的App到SDK中。
 
 1. 目前 SDK 关键字为`White`，未严格使用前置三大写字母做前缀。
 2. 在白板内容比较复杂的情况下，白板有可能会因为内存不足的原因被系统kill掉,导致白屏，我们在 2.16.30 的版本中对该情况进行了主动恢复。在 2.16.30 的版本前，可以通过设置  `WhiteBoardView` 的 `navigationDelegate` 来监听 `webViewWebContentProcessDidTerminate:` 方法。当白板被kill掉时，会调用该方法，你可以在该方法中提示用户重新连接以恢复白板。
-3. 由于使用的场景存在较多可能性，第三方代码的引用方式请使用条件判断的方式来引入，比如 `#import "YYModel.h"` 需要替换成 `#if __has_include(<YYModel/YYModel.h>) #import <YYModel/YYModel.h>`.
-4. 从 2.16.63 版本开始，fpa加速停止提供服务。
-5. 如果你之前使用了 YYKit，从 2.16.77 版本开始，可以将 `Whiteboard/Whiteboard-YYKit` 替换为 `Whiteboard`。由于 YYModel 不再支持 Xcode 15 集成，已将 YYModel 代码 Fork 到 White_YYModel。
+3. 从 2.16.63 版本开始，fpa加速停止提供服务。
+4. 如果你之前使用了 YYKit，从 2.16.77 版本开始，可以将 `Whiteboard/Whiteboard-YYKit` 替换为 `Whiteboard`。由于 YYModel 不再支持 Xcode 15 集成，已将 YYModel 代码 Fork 到 White_YYModel。
 
 ## Whiteboard - Framework 拖拽方式集成
 
@@ -312,7 +279,7 @@ Framework 打包(需安装pod package 插件:`sudo gem install cocoapods-package
   
 
 关于Framework 手动添加  
-Whiteboard.framework  yymodel.framework dsBridge.framework  一并拖入Embed设置为 Do not embed
+Whiteboard.framework  White_YYModel.framework NTLBridge.framework  一并拖入Embed设置为 Do not embed
 
 FAQ：  
 遇到问题：have the same architectures (arm64) and can't be in the same fat output file  
@@ -323,5 +290,3 @@ FAQ：
 
 3.Command CodeSign failed with a nonzero exit code报错
 Whiteboard.framework 改为Do not embed
-
-- [ ] TODO:framework bundle 路径有问题

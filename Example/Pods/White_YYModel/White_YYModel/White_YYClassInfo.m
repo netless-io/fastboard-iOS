@@ -12,7 +12,7 @@
 #import "White_YYClassInfo.h"
 #import <objc/runtime.h>
 
-White_YYEncodingType YYEncodingGetType(const char *typeEncoding) {
+White_YYEncodingType White_YYEncodingGetType(const char *typeEncoding) {
     char *type = (char *)typeEncoding;
     if (!type) return White_YYEncodingTypeUnknown;
     size_t len = strlen(type);
@@ -104,7 +104,7 @@ White_YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     const char *typeEncoding = ivar_getTypeEncoding(ivar);
     if (typeEncoding) {
         _typeEncoding = [NSString stringWithUTF8String:typeEncoding];
-        _type = YYEncodingGetType(typeEncoding);
+        _type = White_YYEncodingGetType(typeEncoding);
     }
     return self;
 }
@@ -167,7 +167,7 @@ White_YYEncodingType YYEncodingGetType(const char *typeEncoding) {
             case 'T': { // Type encoding
                 if (attrs[i].value) {
                     _typeEncoding = [NSString stringWithUTF8String:attrs[i].value];
-                    type = YYEncodingGetType(attrs[i].value);
+                    type = White_YYEncodingGetType(attrs[i].value);
                     
                     if ((type & White_YYEncodingTypeMask) == White_YYEncodingTypeObject && _typeEncoding.length) {
                         NSScanner *scanner = [NSScanner scannerWithString:_typeEncoding];

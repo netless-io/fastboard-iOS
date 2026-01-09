@@ -8,10 +8,10 @@
 #import "WhiteCommonCallbacks.h"
 #import "WhiteConsts.h"
 #import "WhiteObject.h"
-#if __has_include(<NTLBridge/DWKWebView.h>)
-#import <NTLBridge/DWKWebView.h>
+#if __has_include(<NTLBridge/NTLDWKWebView.h>)
+#import <NTLBridge/NTLDWKWebView.h>
 #else
-#import "DWKWebView.h"
+#import "NTLDWKWebView.h"
 #endif
 
 @implementation WhiteCommonCallbacks
@@ -51,6 +51,14 @@
             completionHandler(result, YES);
         }];
     }
+}
+
+- (NSString *)slideOpenUrl:(NSString *)url
+{
+    if ([self.slideDelegate respondsToSelector:@selector(slideOpenUrl:)]) {
+        [self.slideDelegate slideOpenUrl:url];
+    }
+    return @"";
 }
 
 - (NSString *)urlInterrupter:(NSString *)url
@@ -118,6 +126,20 @@
     }
     if (dict && [dict[@"type"] isEqualToString:@"@slide/_report_volume_"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Slide-Volume" object:nil userInfo:dict];
+    }
+    if (dict && [dict[@"type"] isEqualToString:@"@slide/_error_"]) {
+        WhiteSlideErrorType errorType = dict[@"errorType"];
+        NSString* errorMsg = dict[@"errorMsg"];
+        NSString* slideId = dict[@"slideId"];
+        NSInteger slideIndex = -1;
+        NSNumber* slideIndexNumber = dict[@"slideIndex"];
+        if (slideIndexNumber && [slideIndexNumber isKindOfClass:[NSNumber class]]) {
+            slideIndex = [slideIndexNumber integerValue];
+        }
+        if ([self.slideDelegate respondsToSelector:@selector(onSlideError:errorMessage:slideId:slideIndex:)]) {
+            [self.slideDelegate onSlideError:errorType errorMessage:errorMsg slideId:slideId slideIndex:slideIndex];
+            return @"";
+        }
     }
     if (dict && [self.delegate respondsToSelector:@selector(customMessage:)]) {
         [self.delegate customMessage:dict];

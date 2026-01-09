@@ -11,12 +11,14 @@
 #import "WhiteSdkConfiguration+Private.h"
 #import "WhiteDisplayer+Private.h"
 #import "WhiteConsts.h"
+#import "WhiteWebViewInjection.h"
 
 @interface WhiteSDK()
 
 @property (nonatomic, strong, readwrite) WhiteSdkConfiguration *config;
 @property (nonatomic, strong, readwrite) WhiteAudioMixerBridge *audioMixer;
 @property (nonatomic, strong, readwrite) WhiteAudioEffectMixerBridge *effectMixer;
+@property (nonatomic, strong, readwrite) WhiteAudioPcmDataBrige *pcmBridge;
 
 @property (nonatomic, copy) NSString *requestingSlideLogSessionId;
 @property (nonatomic, copy) NSString *slideLogPath;
@@ -30,10 +32,10 @@
 
 + (NSString *)version
 {
-    return @"2.16.81";
+    return @"2.16.129";
 }
 
-- (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callback audioMixerBridgeDelegate:(nullable id<WhiteAudioMixerBridgeDelegate>)mixer effectMixerBridgeDelegate:(nullable id<WhiteAudioEffectMixerBridgeDelegate>)effectMixer {
+- (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callback audioMixerBridgeDelegate:(nullable id<WhiteAudioMixerBridgeDelegate>)mixer effectMixerBridgeDelegate:(nullable id<WhiteAudioEffectMixerBridgeDelegate>)effectMixer pcmDataDelegate:(nullable id<WhiteAudioPcmDataDelegate>)pcmDataDelegate {
     self = [super init];
     if (self) {
         _bridge = boardView;
@@ -49,29 +51,60 @@
             _effectMixer = [[WhiteAudioEffectMixerBridge alloc] initWithBridge:boardView delegate:effectMixer];
             [self.bridge addJavascriptObject:_effectMixer namespace:@"rtc"];
         }
+        if ([pcmDataDelegate conformsToProtocol:@protocol(WhiteAudioPcmDataDelegate)]) {
+            config.enablePcmDataCallback = YES;
+            _pcmBridge = [[WhiteAudioPcmDataBrige alloc] initWithBridge:boardView delegate:pcmDataDelegate];
+            [self.bridge addJavascriptObject:_pcmBridge namespace:@"pcm"];
+        }
         [self setupWebSdk];
     }
     return self;
 }
 
+- (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(id<WhiteCommonCallbackDelegate>)callback  pcmDataDelegate:(id<WhiteAudioPcmDataDelegate>)pcmDataDelegate {
+    return [self initWithWhiteBoardView:boardView config:config commonCallbackDelegate:callback audioMixerBridgeDelegate:nil effectMixerBridgeDelegate:nil pcmDataDelegate:pcmDataDelegate];
+}
+
 - (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callback effectMixerBridgeDelegate:(nullable id<WhiteAudioEffectMixerBridgeDelegate>)effectMixer {
-    return [self initWithWhiteBoardView:boardView config:config commonCallbackDelegate:callback audioMixerBridgeDelegate:nil effectMixerBridgeDelegate:effectMixer];
+    return [self initWithWhiteBoardView:boardView config:config commonCallbackDelegate:callback audioMixerBridgeDelegate:nil effectMixerBridgeDelegate:effectMixer pcmDataDelegate:nil];
 }
 
 - (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callback audioMixerBridgeDelegate:(nullable id<WhiteAudioMixerBridgeDelegate>)mixer
 {
-    return [self initWithWhiteBoardView:boardView config:config commonCallbackDelegate:callback audioMixerBridgeDelegate:mixer effectMixerBridgeDelegate:nil];
+    return [self initWithWhiteBoardView:boardView config:config commonCallbackDelegate:callback audioMixerBridgeDelegate:mixer effectMixerBridgeDelegate:nil pcmDataDelegate:nil];
 }
 
 - (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callback
 {
-    self = [self initWithWhiteBoardView:boardView config:config commonCallbackDelegate:callback audioMixerBridgeDelegate:nil effectMixerBridgeDelegate:nil];
+    self = [self initWithWhiteBoardView:boardView config:config commonCallbackDelegate:callback audioMixerBridgeDelegate:nil effectMixerBridgeDelegate:nil pcmDataDelegate:nil];
     return self;
 }
 
 - (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config
 {
     return [self initWithWhiteBoardView:boardView config:config commonCallbackDelegate:nil];
+}
+
++ (void)prepareWhiteConnectionForAppId:(NSString *)appId region:(WhiteRegionKey)region expireSeconds:(NSNumber * _Nullable)expireSeconds attachingSuperView:(UIView * _Nullable)superView
+{
+    expireSeconds = expireSeconds ? expireSeconds : @(3600 * 12); // Default is 12 hours.
+    float expire = [expireSeconds floatValue] * 1000;
+    WhiteBoardView *foo = [[WhiteBoardView alloc] init];
+    foo.alpha = 0;
+    [foo setHidden:YES];
+    superView = superView ? superView : UIApplication.sharedApplication.keyWindow;
+    [superView addSubview:foo];
+    NSDictionary *params = @{@"appId": appId, @"region": region, @"expire": @(expire)};
+    [foo callHandler:@"sdk.prepareWhiteConnection" arguments:@[params] completionHandler:^(id  _Nullable value) {
+        [foo removeFromSuperview];
+    }];
+}
+
+- (void)dealloc
+{
+    if (self.config.useWebKeyboardInjection) {
+        [WhiteWebViewInjection allowDisplayingKeyboardWithoutUserAction:FALSE];
+    }
 }
 
 #pragma mark - 字体
@@ -131,6 +164,9 @@
 #pragma mark - Private
 - (void)setupWebSdk
 {
+    if (self.config.useWebKeyboardInjection) {
+        [WhiteWebViewInjection allowDisplayingKeyboardWithoutUserAction:TRUE];
+    }
     if ([self.config.loggerOptions[@"printLevelMask"] isEqualToString:WhiteSDKLoggerOptionLevelDebug]) {
         [self.bridge observeWKWebViewConsole];
     }
@@ -153,6 +189,17 @@
             }
         }];
     });
+}
+
+- (void)recoverSlide:(NSString *)slideId slideIndex:(NSInteger)slideIndex {
+    NSString *js = [NSString stringWithFormat:@"window.postMessage({type: '@slide/_recover_', recoverBy: 'renderOtherPage', slideId: '%@', payload: { slideIndex: %ld }}, '*');", slideId, slideIndex];
+    [self.bridge evaluateJavaScript:js completionHandler:nil];
+}
+
+- (void)recoverSlide:(NSString *)slideId
+{
+    NSString *js = [NSString stringWithFormat:@"window.postMessage({type: '@slide/_recover_', recoverBy: 'reloadCurrentPage', slideId: '%@'}, '*');", slideId];
+    [self.bridge evaluateJavaScript:js completionHandler:nil];
 }
 
 - (void)updateSlideVolume:(CGFloat)volume
@@ -240,6 +287,11 @@
         self.requestLogHandler(YES, nil);
         [self cleanSlideLogResource];
     }
+}
+
+- (void)setParameters:(NSDictionary *)parameters
+{
+    [self.bridge callHandler:@"sdk.setParameters" arguments:@[parameters]];
 }
 
 @end

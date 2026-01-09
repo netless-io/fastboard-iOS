@@ -14,6 +14,7 @@
 #import "WhiteRegisterAppParams.h"
 #import "WhiteSlideDelegate.h"
 #import "WhiteAudioEffectMixerBridge.h"
+#import "WhiteAudioPcmDataDelegate.h"
 NS_ASSUME_NONNULL_BEGIN
 
 /** 白板 SDK 相关方法。 */
@@ -33,6 +34,17 @@ NS_ASSUME_NONNULL_BEGIN
  @return 初始化的 `WhiteSDK` 对象。
  */
 - (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callback effectMixerBridgeDelegate:(nullable id<WhiteAudioEffectMixerBridgeDelegate>)effectMixer;
+
+/**
+ 设置 RTC 混音并初始化 `WhiteSDK` 对象。
+ 请确保在调用其他 API 前先调用该方法创建并初始化白板 SDK 对象。
+ @param boardView     白板界面，详见 [WhiteBoardView](WhiteBoardView)。
+ @param config        白板 SDK 对象配置，详见 [WhiteSdkConfiguration](WhiteSdkConfiguration)。
+ @param callback      通用回调事件，详见 [WhiteCommonCallbackDelegate](WhiteCommonCallbackDelegate)。
+ @param pcmDataDelegate   PCM 裸数据回调 ，详见 [WhiteAudioPcmDataDelegate](WhiteAudioPcmDataDelegate)。设置该对象之后，白板中的所有音频会以 pcm data 的形式传出。
+ @return 初始化的 `WhiteSDK` 对象。
+ */
+- (instancetype)initWithWhiteBoardView:(WhiteBoardView *)boardView config:(WhiteSdkConfiguration *)config commonCallbackDelegate:(nullable id<WhiteCommonCallbackDelegate>)callback pcmDataDelegate:(nullable id<WhiteAudioPcmDataDelegate>)pcmDataDelegate;
 
 /**
  @deprecated 已废弃，请使用 initWithWhiteBoardView:config: commonCallbackDelegate:effectMixerBridgeDelegate: 。
@@ -58,6 +70,15 @@ NS_ASSUME_NONNULL_BEGIN
  Audio mixing 混音设置。
   */
 @property (nonatomic, strong, readonly, nullable) WhiteAudioMixerBridge *audioMixer DEPRECATED_MSG_ATTRIBUTE("Using WhiteAudioEffectMixerBridge instead");
+
+/**
+ 提前选择最佳接入域名，用于加快用户首次连接速度。
+ @param appId SDK 的 appId
+ @param region 需要选择的数据中心
+ @param expireSeconds 数据缓存时间，单位为秒，可为空，默认为 24 小时
+ @param superView 挂载的父视图，可为空，默认为 UIApplication.shared.keyWindow
+ */
++ (void)prepareWhiteConnectionForAppId:(NSString *)appId region:(WhiteRegionKey)region expireSeconds:(NSNumber * _Nullable )expireSeconds attachingSuperView: (UIView * _Nullable)superView;
 
 /**
  Play effect 混音设置。
@@ -124,7 +145,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)updateTextFont:(NSArray <NSString *>*)fonts;
 
-#pragma mark - PPT Volume
+#pragma mark - PPT
 
 /**
  获取当前 slide 音量
@@ -139,6 +160,21 @@ NS_ASSUME_NONNULL_BEGIN
  @param volume 音量值，0-1
  */
 - (void)updateSlideVolume:(CGFloat)volume;
+
+/**
+  * 恢复 Slide, 跳转到其他页, RESOURCE_ERROR 和 RUNTIME_ERROR 可以用这种方式恢复
+  *
+  * @param slideId 使用错误消息里告知的 slideId
+  * @param slideIndex 指定要跳转到哪一页, 如果想要跳转到下一页可以使用错误消息里告知的报错页码 + 1
+  */
+- (void)recoverSlide:(NSString *)slideId slideIndex:(NSInteger)slideIndex;
+
+/**
+ * 恢复 Slide, RESOURCE_ERROR 可以用这种方式恢复
+ *
+ * @param slideId 使用错误消息里告知的 slideId
+ */
+- (void)recoverSlide:(NSString *)slideId;
 
 #pragma mark - CommonCallback
 
@@ -179,6 +215,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param result 日志写入结果
  */
 - (void)requestSlideLogToFilePath:(NSString *)path result:(void(^)(BOOL success, NSError *error))result;
+
+#pragma mark - Private
+- (void)setParameters:(NSDictionary *)parameters;
 
 @end
 NS_ASSUME_NONNULL_END
