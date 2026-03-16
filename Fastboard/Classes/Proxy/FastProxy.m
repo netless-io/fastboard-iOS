@@ -19,31 +19,44 @@
     return [[FastProxy alloc] initWithTarget:target middleMan:middleMan];
 }
 
+- (BOOL)respondsToSelector:(SEL)aSelector {
+    id middleMan = self.middleMan;
+    id target = self.target;
+    return [middleMan respondsToSelector:aSelector] || [target respondsToSelector:aSelector];
+}
+
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
-    id result = [self.target methodSignatureForSelector:sel];
+    id middleMan = self.middleMan;
+    id target = self.target;
+    NSMethodSignature *result = [middleMan methodSignatureForSelector:sel];
     if (!result) {
-        result = [self.middleMan methodSignatureForSelector:sel];
+        result = [target methodSignatureForSelector:sel];
+    }
+    // Prevent NSProxy forwarding crash for respondsToSelector: when both refs are released.
+    if (!result && sel == @selector(respondsToSelector:)) {
+        result = [NSObject instanceMethodSignatureForSelector:@selector(respondsToSelector:)];
     }
     return result;
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
+    id middleMan = self.middleMan;
+    id target = self.target;
+    
     // Should trigger respond to selector only once
     if (invocation.selector == @selector(respondsToSelector:)) {
-        if ([self.middleMan respondsToSelector: invocation.selector]) {
-            [invocation invokeWithTarget:self.middleMan];
-            return;
-        } else if ([self.target respondsToSelector: invocation.selector]) {
-            [invocation invokeWithTarget:self.target];
-            return;
-        }
+        SEL selector = NULL;
+        [invocation getArgument:&selector atIndex:2];
+        BOOL result = [middleMan respondsToSelector:selector] || [target respondsToSelector:selector];
+        [invocation setReturnValue:&result];
+        return;
     }
     
-    if ([self.middleMan respondsToSelector:invocation.selector]) {
-        [invocation invokeWithTarget:self.middleMan];
+    if ([middleMan respondsToSelector:invocation.selector]) {
+        [invocation invokeWithTarget:middleMan];
     }
-    if ([self.target respondsToSelector:invocation.selector]) {
-        [invocation invokeWithTarget:self.target];
+    if ([target respondsToSelector:invocation.selector]) {
+        [invocation invokeWithTarget:target];
     }
 }
 
