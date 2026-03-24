@@ -8,7 +8,7 @@
 import UIKit
 import Whiteboard
 
-let versionNumber = "1.4.4"
+let versionNumber = "1.4.5"
 
 public class Fastboard: NSObject {
     /// Change this to update the whiteRoom ratio and whiteboardView ratio
