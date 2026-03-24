@@ -1,5 +1,7 @@
 # ChangeLog
 
+## [1.4.5] - 2026-03-24
+- 修复 `FastProxy` 代理对象被提前释放的时候，可能引发的 crash
 ## [1.4.4] - 2026-01-08
 - 更新 `Whiteboard` 依赖到 2.16.129
 - `FastRoomConfiguration` 新增 `enableHttpScheme` 参数，用于使用 `WKWebview.loadHTMLString:baseURL:` 加载本地资源。
